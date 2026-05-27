@@ -1,0 +1,200 @@
+---
+import BaseLayout from '../../layouts/Base.astro';
+import PPNav from '../../components/PPNav.astro';
+---
+<BaseLayout title="Insights — Edward James" theme="pp">
+  <link rel="stylesheet" href="/styles/rv.css" slot="head" />
+  <PPNav active="blog" />
+  <main style="padding-top:5rem;background:#F9FAFB;min-height:100vh;font-family:'Inter',sans-serif">
+
+    <div style="max-width:1280px;margin-inline:auto;padding:4rem 1.5rem;display:flex;flex-direction:column;gap:4rem">
+
+      <!-- Header -->
+      <section style="text-align:center;max-width:42rem;margin-inline:auto">
+        <span style="display:inline-block;padding:.375rem 1rem;background:#fff;border:1px solid #E5E7EB;border-radius:9999px;font-size:.8125rem;font-weight:600;color:#4B5563;margin-bottom:1.25rem;letter-spacing:.02em">INSIGHTS</span>
+        <h1 style="font-size:clamp(2.25rem,4vw,3.25rem);font-weight:700;color:#111827;letter-spacing:-.03em;margin:0 0 1rem">Perspectives on Strategy &amp; Leadership</h1>
+        <p style="font-size:1.0625rem;color:#4B5563;line-height:1.7;margin:0">Unfiltered analysis on corporate governance, M&amp;A, organizational transformation, and the realities of operating at the top of complex institutions.</p>
+      </section>
+
+      <!-- Featured Post -->
+      <section>
+        <div style="font-size:.75rem;font-weight:600;color:#4B5563;text-transform:uppercase;letter-spacing:.08em;margin-bottom:1.25rem">Featured Insight</div>
+        <a href="#" style="text-decoration:none;display:block;background:#fff;border-radius:2rem;border:1px solid #E5E7EB;box-shadow:0 4px 20px rgba(0,0,0,.05);overflow:hidden">
+          <div class="pp-featured-post" style="display:grid;grid-template-columns:1fr 1fr">
+            <div style="aspect-ratio:4/3;overflow:hidden;background:#F3F4F6">
+              <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Board Composition" style="width:100%;height:100%;object-fit:cover" />
+            </div>
+            <div style="padding:3rem;display:flex;flex-direction:column;justify-content:center">
+              <div style="display:flex;gap:.75rem;align-items:center;margin-bottom:1.25rem">
+                <span style="font-size:.75rem;font-weight:600;color:#4F46E5;background:rgba(79,70,229,.08);padding:.25rem .875rem;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em">Governance</span>
+                <span style="font-size:.8125rem;color:#9CA3AF">May 2025 · 12 min read</span>
+              </div>
+              <h2 style="font-size:1.625rem;font-weight:700;color:#111827;margin:0 0 1rem;line-height:1.3">The Board Composition Problem: Why Skill Gaps Still Persist Despite 20 Years of Reform Efforts</h2>
+              <p style="font-size:.9375rem;color:#4B5563;line-height:1.7;margin:0 0 2rem">Most boards still recruit for credentialing rather than competency. The result is a structural gap between the oversight boards are expected to provide and the actual skills available in the room. After two decades of governance reform initiatives, why hasn't this changed — and what would actually fix it?</p>
+              <div style="display:inline-flex;align-items:center;gap:.375rem;font-size:.875rem;font-weight:600;color:#111827">
+                Read Full Insight
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+              </div>
+            </div>
+          </div>
+        </a>
+      </section>
+
+      <!-- Post Grid -->
+      <section>
+        <h2 style="font-size:1.5rem;font-weight:700;color:#111827;margin:0 0 2rem;letter-spacing:-.02em">Recent Insights</h2>
+        <div class="pp-blog-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem">
+
+          <a href="#" style="text-decoration:none;background:#fff;border-radius:1.5rem;border:1px solid #E5E7EB;box-shadow:0 4px 20px rgba(0,0,0,.05);overflow:hidden;display:flex;flex-direction:column">
+            <div style="width:100%;aspect-ratio:16/9;overflow:hidden;background:#F3F4F6">
+              <img src="https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=800" alt="M&A Integration" style="width:100%;height:100%;object-fit:cover" />
+            </div>
+            <div style="padding:1.75rem;flex:1;display:flex;flex-direction:column">
+              <div style="display:flex;gap:.5rem;margin-bottom:.875rem">
+                <span style="font-size:.6875rem;font-weight:600;color:#4F46E5;background:rgba(79,70,229,.08);padding:.2rem .625rem;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em">M&amp;A</span>
+                <span style="font-size:.75rem;color:#9CA3AF">April 2025</span>
+              </div>
+              <h3 style="font-size:1rem;font-weight:700;color:#111827;margin:0 0 .625rem;line-height:1.4;flex:1">Why 70% of Mergers Underperform Their Stated Synergy Targets</h3>
+              <p style="font-size:.875rem;color:#4B5563;line-height:1.6;margin:0 0 1.25rem">The integration gap is cultural before it is operational. Most acquirers focus relentlessly on systems consolidation while allowing the organizational psychology to fray...</p>
+              <div style="display:inline-flex;align-items:center;gap:.375rem;font-size:.8125rem;font-weight:600;color:#111827;margin-top:auto">
+                Read More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" style="text-decoration:none;background:#fff;border-radius:1.5rem;border:1px solid #E5E7EB;box-shadow:0 4px 20px rgba(0,0,0,.05);overflow:hidden;display:flex;flex-direction:column">
+            <div style="width:100%;aspect-ratio:16/9;overflow:hidden;background:#F3F4F6">
+              <img src="https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Digital Transformation" style="width:100%;height:100%;object-fit:cover" />
+            </div>
+            <div style="padding:1.75rem;flex:1;display:flex;flex-direction:column">
+              <div style="display:flex;gap:.5rem;margin-bottom:.875rem">
+                <span style="font-size:.6875rem;font-weight:600;color:#4F46E5;background:rgba(79,70,229,.08);padding:.2rem .625rem;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em">Strategy</span>
+                <span style="font-size:.75rem;color:#9CA3AF">March 2025</span>
+              </div>
+              <h3 style="font-size:1rem;font-weight:700;color:#111827;margin:0 0 .625rem;line-height:1.4;flex:1">Digital Transformation Without a Strategic Anchor Is Just Spending</h3>
+              <p style="font-size:.875rem;color:#4B5563;line-height:1.6;margin:0 0 1.25rem">Technology investments fail when they precede clear strategic intent. The organizations that succeed are those that define the desired operational model first...</p>
+              <div style="display:inline-flex;align-items:center;gap:.375rem;font-size:.8125rem;font-weight:600;color:#111827;margin-top:auto">
+                Read More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" style="text-decoration:none;background:#fff;border-radius:1.5rem;border:1px solid #E5E7EB;box-shadow:0 4px 20px rgba(0,0,0,.05);overflow:hidden;display:flex;flex-direction:column">
+            <div style="width:100%;aspect-ratio:16/9;overflow:hidden;background:#F3F4F6">
+              <img src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Leadership Crisis" style="width:100%;height:100%;object-fit:cover" />
+            </div>
+            <div style="padding:1.75rem;flex:1;display:flex;flex-direction:column">
+              <div style="display:flex;gap:.5rem;margin-bottom:.875rem">
+                <span style="font-size:.6875rem;font-weight:600;color:#4F46E5;background:rgba(79,70,229,.08);padding:.2rem .625rem;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em">Leadership</span>
+                <span style="font-size:.75rem;color:#9CA3AF">February 2025</span>
+              </div>
+              <h3 style="font-size:1rem;font-weight:700;color:#111827;margin:0 0 .625rem;line-height:1.4;flex:1">The Three Warning Signs of an Executive Leadership Crisis — Before It Becomes Public</h3>
+              <p style="font-size:.875rem;color:#4B5563;line-height:1.6;margin:0 0 1.25rem">Board directors often see the warning signs months before a crisis becomes visible to shareholders. Here's what to watch for and when to act...</p>
+              <div style="display:inline-flex;align-items:center;gap:.375rem;font-size:.8125rem;font-weight:600;color:#111827;margin-top:auto">
+                Read More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" style="text-decoration:none;background:#fff;border-radius:1.5rem;border:1px solid #E5E7EB;box-shadow:0 4px 20px rgba(0,0,0,.05);overflow:hidden;display:flex;flex-direction:column">
+            <div style="width:100%;aspect-ratio:16/9;overflow:hidden;background:#F3F4F6">
+              <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Culture and Strategy" style="width:100%;height:100%;object-fit:cover" />
+            </div>
+            <div style="padding:1.75rem;flex:1;display:flex;flex-direction:column">
+              <div style="display:flex;gap:.5rem;margin-bottom:.875rem">
+                <span style="font-size:.6875rem;font-weight:600;color:#4F46E5;background:rgba(79,70,229,.08);padding:.2rem .625rem;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em">Culture</span>
+                <span style="font-size:.75rem;color:#9CA3AF">January 2025</span>
+              </div>
+              <h3 style="font-size:1rem;font-weight:700;color:#111827;margin:0 0 .625rem;line-height:1.4;flex:1">Culture Doesn't Eat Strategy. They Eat Each Other.</h3>
+              <p style="font-size:.875rem;color:#4B5563;line-height:1.6;margin:0 0 1.25rem">The Drucker aphorism is wrong in its simplicity. The real dynamic is far more complex — and far more actionable — than the cliché suggests...</p>
+              <div style="display:inline-flex;align-items:center;gap:.375rem;font-size:.8125rem;font-weight:600;color:#111827;margin-top:auto">
+                Read More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" style="text-decoration:none;background:#fff;border-radius:1.5rem;border:1px solid #E5E7EB;box-shadow:0 4px 20px rgba(0,0,0,.05);overflow:hidden;display:flex;flex-direction:column">
+            <div style="width:100%;aspect-ratio:16/9;overflow:hidden;background:#F3F4F6">
+              <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Private Equity" style="width:100%;height:100%;object-fit:cover" />
+            </div>
+            <div style="padding:1.75rem;flex:1;display:flex;flex-direction:column">
+              <div style="display:flex;gap:.5rem;margin-bottom:.875rem">
+                <span style="font-size:.6875rem;font-weight:600;color:#4F46E5;background:rgba(79,70,229,.08);padding:.2rem .625rem;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em">Finance</span>
+                <span style="font-size:.75rem;color:#9CA3AF">December 2024</span>
+              </div>
+              <h3 style="font-size:1rem;font-weight:700;color:#111827;margin:0 0 .625rem;line-height:1.4;flex:1">What Private Equity Gets Wrong About Operating Model Transformation</h3>
+              <p style="font-size:.875rem;color:#4B5563;line-height:1.6;margin:0 0 1.25rem">The 100-day playbook has become a liability. Most PE-backed operating model changes optimize for exit optics rather than structural durability...</p>
+              <div style="display:inline-flex;align-items:center;gap:.375rem;font-size:.8125rem;font-weight:600;color:#111827;margin-top:auto">
+                Read More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" style="text-decoration:none;background:#fff;border-radius:1.5rem;border:1px solid #E5E7EB;box-shadow:0 4px 20px rgba(0,0,0,.05);overflow:hidden;display:flex;flex-direction:column">
+            <div style="width:100%;aspect-ratio:16/9;overflow:hidden;background:#F3F4F6">
+              <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800" alt="CEO Succession" style="width:100%;height:100%;object-fit:cover" />
+            </div>
+            <div style="padding:1.75rem;flex:1;display:flex;flex-direction:column">
+              <div style="display:flex;gap:.5rem;margin-bottom:.875rem">
+                <span style="font-size:.6875rem;font-weight:600;color:#4F46E5;background:rgba(79,70,229,.08);padding:.2rem .625rem;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em">Governance</span>
+                <span style="font-size:.75rem;color:#9CA3AF">November 2024</span>
+              </div>
+              <h3 style="font-size:1rem;font-weight:700;color:#111827;margin:0 0 .625rem;line-height:1.4;flex:1">CEO Succession: Why Boards Keep Getting It Wrong</h3>
+              <p style="font-size:.875rem;color:#4B5563;line-height:1.6;margin:0 0 1.25rem">The most expensive governance failure a board can make is a failed CEO succession. Yet the process remains remarkably undisciplined at even the most sophisticated organizations...</p>
+              <div style="display:inline-flex;align-items:center;gap:.375rem;font-size:.8125rem;font-weight:600;color:#111827;margin-top:auto">
+                Read More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+              </div>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- Newsletter Opt-in -->
+      <section style="background:#111827;border-radius:2rem;padding:3.5rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.75rem;position:relative;overflow:hidden">
+        <div style="position:absolute;top:-4rem;right:-4rem;width:18rem;height:18rem;background:rgba(255,255,255,.04);border-radius:50%"></div>
+        <div style="position:relative;z-index:1;max-width:36rem">
+          <h2 style="font-size:1.75rem;font-weight:700;color:#fff;margin:0 0 .875rem;letter-spacing:-.02em">The Strategic Brief</h2>
+          <p style="font-size:1rem;color:#9CA3AF;line-height:1.65;margin:0 0 2rem">Monthly perspective on corporate governance, M&amp;A trends, and organizational transformation. No filler, no noise — just analysis that matters to leaders operating at scale.</p>
+          <form style="display:flex;gap:1rem;max-width:28rem;margin-inline:auto;flex-wrap:wrap" onsubmit="return false">
+            <input type="email" placeholder="your@company.com" style="flex:1;min-width:180px;padding:.875rem 1.25rem;border-radius:9999px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.08);color:#fff;font-size:.875rem;font-family:'Inter',sans-serif;outline:none" />
+            <button type="submit" style="padding:.875rem 1.75rem;background:#fff;color:#111827;border-radius:9999px;font-size:.875rem;font-weight:700;border:none;cursor:pointer;white-space:nowrap;font-family:'Inter',sans-serif">Subscribe</button>
+          </form>
+          <p style="font-size:.8125rem;color:#6B7280;margin:1rem 0 0">Sent on the first Tuesday of each month. Unsubscribe at any time.</p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer style="background:#fff;border-top:1px solid #E5E7EB;padding:3rem 1.5rem;font-family:'Inter',sans-serif">
+    <div style="max-width:1280px;margin-inline:auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem">
+      <div style="display:flex;align-items:center;gap:.625rem">
+        <div style="width:2rem;height:2rem;background:#111827;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.6875rem;font-weight:700">EJ</div>
+        <span style="font-size:.9375rem;font-weight:600;color:#111827">Edward James</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:2rem;flex-wrap:wrap">
+        <span style="font-size:.875rem;color:#6B7280">&copy; 2025 Edward James.</span>
+        <div style="display:flex;gap:1rem">
+          <a href="https://linkedin.com" target="_blank" rel="noopener" style="color:#6B7280;text-decoration:none" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener" style="color:#6B7280;text-decoration:none" aria-label="Twitter">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    @media (max-width: 767px) {
+      .pp-featured-post { grid-template-columns: 1fr !important; }
+      .pp-blog-grid { grid-template-columns: 1fr !important; }
+    }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .pp-blog-grid { grid-template-columns: repeat(2,1fr) !important; }
+    }
+  </style>
+</BaseLayout>

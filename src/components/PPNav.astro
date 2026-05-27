@@ -1,0 +1,180 @@
+---
+export interface Props {
+  active?: string;
+}
+const { active = '' } = Astro.props;
+
+const isActive = (page: string) => active === page;
+const isActiveGroup = (...pages: string[]) => pages.includes(active);
+---
+
+<header id="pp-header" style="position:fixed;top:0;width:100%;z-index:50;background:rgba(255,255,255,.8);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid #E5E7EB;transition:box-shadow .3s ease">
+  <div style="max-width:1280px;margin-inline:auto;padding-inline:1.5rem;height:5rem;display:flex;align-items:center;justify-content:space-between">
+
+    <!-- Logo -->
+    <a href="/pp/" style="display:flex;align-items:center;gap:.625rem;text-decoration:none;flex-shrink:0">
+      <div style="width:2rem;height:2rem;background:#111827;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.6875rem;font-weight:700;letter-spacing:.02em;font-family:'Inter',sans-serif">EJ</div>
+      <span style="font-family:'Inter',sans-serif;font-size:1.0625rem;font-weight:600;color:#111827;letter-spacing:-.02em">Edward James</span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav id="pp-desk-nav" style="display:flex;align-items:center;gap:1.75rem">
+      <a href="/pp/" style={`font-family:'Inter',sans-serif;font-size:.875rem;font-weight:500;color:${isActive('home') ? '#111827' : '#4B5563'};${isActive('home') ? 'border-bottom:2px solid #111827;padding-bottom:2px;' : ''}text-decoration:none;transition:color .2s ease`}>Home</a>
+
+      <!-- About dropdown -->
+      <div class="pp-dd" style="position:relative">
+        <button class="pp-dd-btn" style={`display:flex;align-items:center;gap:.3rem;font-size:.875rem;font-weight:500;color:${isActiveGroup('about','resume') ? '#111827' : '#4B5563'};${isActiveGroup('about','resume') ? 'border-bottom:2px solid #111827;padding-bottom:2px;' : ''}background:none;border:none;cursor:pointer;transition:color .2s ease;font-family:'Inter',sans-serif;padding:0`}>
+          About
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="pp-dd-arrow" style="transition:transform .2s ease;margin-top:1px"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="pp-dd-menu" style="position:absolute;top:100%;left:50%;transform:translateX(-50%);min-width:180px;padding-top:.75rem;opacity:0;pointer-events:none;transition:opacity .2s cubic-bezier(.4,0,.2,1),transform .2s cubic-bezier(.4,0,.2,1);transform-origin:top center">
+          <div style="background:#fff;border:1px solid #E5E7EB;border-radius:16px;box-shadow:0 8px 32px -8px rgba(0,0,0,.12);padding:.5rem">
+            <a href="/pp/about/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:#4B5563;transition:all .15s ease;text-decoration:none;font-family:'Inter',sans-serif" class="pp-dd-item">About</a>
+            <a href="/pp/resume/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:#4B5563;transition:all .15s ease;text-decoration:none;font-family:'Inter',sans-serif" class="pp-dd-item">Resume</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Expertise -->
+      <a href="/pp/expertise/" style={`font-family:'Inter',sans-serif;font-size:.875rem;font-weight:500;color:${isActive('expertise') ? '#111827' : '#4B5563'};${isActive('expertise') ? 'border-bottom:2px solid #111827;padding-bottom:2px;' : ''}text-decoration:none;transition:color .2s ease`}>Expertise</a>
+
+      <!-- Portfolio dropdown -->
+      <div class="pp-dd" style="position:relative">
+        <button class="pp-dd-btn" style={`display:flex;align-items:center;gap:.3rem;font-size:.875rem;font-weight:500;color:${isActiveGroup('portfolio','projects') ? '#111827' : '#4B5563'};${isActiveGroup('portfolio','projects') ? 'border-bottom:2px solid #111827;padding-bottom:2px;' : ''}background:none;border:none;cursor:pointer;transition:color .2s ease;font-family:'Inter',sans-serif;padding:0`}>
+          Portfolio
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="pp-dd-arrow" style="transition:transform .2s ease;margin-top:1px"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="pp-dd-menu" style="position:absolute;top:100%;left:50%;transform:translateX(-50%);min-width:180px;padding-top:.75rem;opacity:0;pointer-events:none;transition:opacity .2s cubic-bezier(.4,0,.2,1),transform .2s cubic-bezier(.4,0,.2,1);transform-origin:top center">
+          <div style="background:#fff;border:1px solid #E5E7EB;border-radius:16px;box-shadow:0 8px 32px -8px rgba(0,0,0,.12);padding:.5rem">
+            <a href="/pp/portfolio/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:#4B5563;transition:all .15s ease;text-decoration:none;font-family:'Inter',sans-serif" class="pp-dd-item">Portfolio</a>
+            <a href="/pp/projects/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:#4B5563;transition:all .15s ease;text-decoration:none;font-family:'Inter',sans-serif" class="pp-dd-item">Projects</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Insights dropdown -->
+      <div class="pp-dd" style="position:relative">
+        <button class="pp-dd-btn" style={`display:flex;align-items:center;gap:.3rem;font-size:.875rem;font-weight:500;color:${isActiveGroup('blog','publications','testimonials') ? '#111827' : '#4B5563'};${isActiveGroup('blog','publications','testimonials') ? 'border-bottom:2px solid #111827;padding-bottom:2px;' : ''}background:none;border:none;cursor:pointer;transition:color .2s ease;font-family:'Inter',sans-serif;padding:0`}>
+          Insights
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="pp-dd-arrow" style="transition:transform .2s ease;margin-top:1px"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="pp-dd-menu" style="position:absolute;top:100%;left:50%;transform:translateX(-50%);min-width:180px;padding-top:.75rem;opacity:0;pointer-events:none;transition:opacity .2s cubic-bezier(.4,0,.2,1),transform .2s cubic-bezier(.4,0,.2,1);transform-origin:top center">
+          <div style="background:#fff;border:1px solid #E5E7EB;border-radius:16px;box-shadow:0 8px 32px -8px rgba(0,0,0,.12);padding:.5rem">
+            <a href="/pp/blog/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:#4B5563;transition:all .15s ease;text-decoration:none;font-family:'Inter',sans-serif" class="pp-dd-item">Blog</a>
+            <a href="/pp/publications/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:#4B5563;transition:all .15s ease;text-decoration:none;font-family:'Inter',sans-serif" class="pp-dd-item">Publications</a>
+            <a href="/pp/testimonials/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:#4B5563;transition:all .15s ease;text-decoration:none;font-family:'Inter',sans-serif" class="pp-dd-item">Testimonials</a>
+          </div>
+        </div>
+      </div>
+
+      <a href="/pp/contact/" style={`font-family:'Inter',sans-serif;font-size:.875rem;font-weight:500;color:${isActive('contact') ? '#111827' : '#4B5563'};${isActive('contact') ? 'border-bottom:2px solid #111827;padding-bottom:2px;' : ''}text-decoration:none;transition:color .2s ease`}>Contact</a>
+    </nav>
+
+    <!-- Right actions -->
+    <div style="display:flex;align-items:center;gap:1rem">
+      <a href="/pp/contact/" id="pp-contact-btn" style="padding:.625rem 1.25rem;background:#111827;color:#fff;border-radius:9999px;font-size:.875rem;font-weight:500;font-family:'Inter',sans-serif;text-decoration:none;transition:background .2s ease;white-space:nowrap">Contact Me</a>
+      <!-- Mobile hamburger -->
+      <button id="pp-mob-toggle" aria-label="Menu" style="display:none;padding:.5rem;background:none;border:none;color:#111827;cursor:pointer;align-items:center;justify-content:center">
+        <svg id="pp-menu-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg id="pp-close-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="pp-mob-menu" style="display:none;flex-direction:column;padding:1rem 1.5rem 1.5rem;border-top:1px solid #E5E7EB;background:rgba(255,255,255,.97);backdrop-filter:blur(16px)">
+    <a href="/pp/" style="padding:.75rem 0;font-size:.9375rem;color:#111827;border-bottom:1px solid #F3F4F6;text-decoration:none;font-family:'Inter',sans-serif">Home</a>
+    <div style="padding:.75rem 0;border-bottom:1px solid #F3F4F6">
+      <span style="font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:#6B7280;display:block;margin-bottom:.5rem;font-family:'Inter',sans-serif">About</span>
+      <div style="display:flex;gap:1.5rem;padding-left:.5rem">
+        <a href="/pp/about/" style="font-size:.875rem;color:#374151;text-decoration:none;font-family:'Inter',sans-serif">About</a>
+        <a href="/pp/resume/" style="font-size:.875rem;color:#374151;text-decoration:none;font-family:'Inter',sans-serif">Resume</a>
+      </div>
+    </div>
+    <a href="/pp/expertise/" style="padding:.75rem 0;font-size:.9375rem;color:#111827;border-bottom:1px solid #F3F4F6;text-decoration:none;font-family:'Inter',sans-serif">Expertise</a>
+    <div style="padding:.75rem 0;border-bottom:1px solid #F3F4F6">
+      <span style="font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:#6B7280;display:block;margin-bottom:.5rem;font-family:'Inter',sans-serif">Portfolio</span>
+      <div style="display:flex;gap:1.5rem;padding-left:.5rem">
+        <a href="/pp/portfolio/" style="font-size:.875rem;color:#374151;text-decoration:none;font-family:'Inter',sans-serif">Portfolio</a>
+        <a href="/pp/projects/" style="font-size:.875rem;color:#374151;text-decoration:none;font-family:'Inter',sans-serif">Projects</a>
+      </div>
+    </div>
+    <div style="padding:.75rem 0;border-bottom:1px solid #F3F4F6">
+      <span style="font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:#6B7280;display:block;margin-bottom:.5rem;font-family:'Inter',sans-serif">Insights</span>
+      <div style="display:flex;gap:1.5rem;padding-left:.5rem">
+        <a href="/pp/blog/" style="font-size:.875rem;color:#374151;text-decoration:none;font-family:'Inter',sans-serif">Blog</a>
+        <a href="/pp/publications/" style="font-size:.875rem;color:#374151;text-decoration:none;font-family:'Inter',sans-serif">Publications</a>
+        <a href="/pp/testimonials/" style="font-size:.875rem;color:#374151;text-decoration:none;font-family:'Inter',sans-serif">Testimonials</a>
+      </div>
+    </div>
+    <a href="/pp/contact/" style="padding:.75rem 0;font-size:.9375rem;color:#111827;text-decoration:none;font-family:'Inter',sans-serif">Contact</a>
+  </div>
+</header>
+
+<script>
+  // Dropdown logic
+  document.querySelectorAll('.pp-dd').forEach(dd => {
+    const btn = dd.querySelector('.pp-dd-btn') as HTMLElement;
+    const menu = dd.querySelector('.pp-dd-menu') as HTMLElement;
+    const arrow = dd.querySelector('.pp-dd-arrow') as HTMLElement;
+    let open = false;
+    const show = () => {
+      menu.style.opacity = '1';
+      menu.style.pointerEvents = 'auto';
+      menu.style.transform = 'translateX(-50%) translateY(0)';
+      if (arrow) arrow.style.transform = 'rotate(180deg)';
+      open = true;
+    };
+    const hide = () => {
+      menu.style.opacity = '0';
+      menu.style.pointerEvents = 'none';
+      menu.style.transform = 'translateX(-50%) translateY(-4px)';
+      if (arrow) arrow.style.transform = 'rotate(0)';
+      open = false;
+    };
+    dd.addEventListener('mouseenter', show);
+    dd.addEventListener('mouseleave', hide);
+    if (btn) btn.addEventListener('click', () => open ? hide() : show());
+  });
+
+  // Hover on dropdown items
+  document.querySelectorAll('.pp-dd-item').forEach(item => {
+    const el = item as HTMLElement;
+    el.addEventListener('mouseenter', () => { el.style.background = '#F9FAFB'; el.style.color = '#111827'; });
+    el.addEventListener('mouseleave', () => { el.style.background = ''; el.style.color = '#4B5563'; });
+  });
+
+  // Contact button hover
+  const contactBtn = document.getElementById('pp-contact-btn') as HTMLElement;
+  if (contactBtn) {
+    contactBtn.addEventListener('mouseenter', () => { contactBtn.style.background = '#374151'; });
+    contactBtn.addEventListener('mouseleave', () => { contactBtn.style.background = '#111827'; });
+  }
+
+  // Mobile toggle
+  const toggle = document.getElementById('pp-mob-toggle') as HTMLElement;
+  const mobMenu = document.getElementById('pp-mob-menu') as HTMLElement;
+  const menuIcon = document.getElementById('pp-menu-icon') as HTMLElement;
+  const closeIcon = document.getElementById('pp-close-icon') as HTMLElement;
+  let mobOpen = false;
+  if (toggle && mobMenu) {
+    toggle.addEventListener('click', () => {
+      mobOpen = !mobOpen;
+      mobMenu.style.display = mobOpen ? 'flex' : 'none';
+      if (menuIcon) menuIcon.style.display = mobOpen ? 'none' : 'block';
+      if (closeIcon) closeIcon.style.display = mobOpen ? 'block' : 'none';
+    });
+  }
+
+  // Responsive
+  const check = () => {
+    const mob = window.innerWidth < 768;
+    const desk = document.getElementById('pp-desk-nav') as HTMLElement;
+    if (desk) desk.style.display = mob ? 'none' : 'flex';
+    if (toggle) toggle.style.display = mob ? 'flex' : 'none';
+    if (contactBtn) contactBtn.style.display = mob ? 'none' : 'inline-flex';
+    if (!mob && mobMenu) { mobMenu.style.display = 'none'; mobOpen = false; if (menuIcon) menuIcon.style.display = 'block'; if (closeIcon) closeIcon.style.display = 'none'; }
+  };
+  check();
+  window.addEventListener('resize', check);
+</script>

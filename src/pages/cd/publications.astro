@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../../layouts/Base.astro';
+import CDNav from '../../components/CDNav.astro';
+---
+
+<BaseLayout title="Publications — Wil B" theme="cd">
+  <link rel="stylesheet" href="/styles/rv.css" slot="head" />
+  <CDNav active="publications" />
+
+  <main style="padding-top:5rem;background:#fff;color:#1a1a1a;font-family:'Inter',sans-serif">
+
+    <!-- Page Header -->
+    <section style="border-bottom:1px solid #e7e7e7;padding:4rem 1.5rem 3rem">
+      <div style="max-width:1440px;margin-inline:auto">
+        <p style="font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b0b0b0;margin-bottom:.75rem">Insights / Publications</p>
+        <h1 style="font-size:clamp(2.5rem,6vw,5rem);font-weight:900;letter-spacing:-.04em;line-height:1.0;margin:0;color:#1a1a1a">In Print & Online.</h1>
+      </div>
+    </section>
+
+    <!-- Written Articles -->
+    <section style="max-width:1440px;margin-inline:auto;padding:5rem 1.5rem">
+      <p style="font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b0b0b0;margin-bottom:.5rem">Written Work</p>
+      <h2 style="font-size:clamp(1.5rem,3vw,2rem);font-weight:900;letter-spacing:-.03em;color:#1a1a1a;margin:0 0 2.5rem">Articles & Essays</h2>
+
+      <div style="display:flex;flex-direction:column;gap:0">
+        {[
+          {title:'The Death of the Generic Brand', publisher:'Design Milk', date:'March 2025', desc:'Why the era of "safe" visual identities is over — and what comes next for brands that want to survive in a world of infinite scroll.'},
+          {title:'Building at the Edge of Motion and Meaning', publisher:"It's Nice That", date:'January 2025', desc:'A deep dive into how motion design has evolved from decoration to a core strategic tool in brand communication.'},
+          {title:'Why Your Design System Is Failing You', publisher:'Smashing Magazine', date:'October 2024', desc:'The systemic reasons design systems get abandoned — and a framework for building ones that teams actually use.'},
+          {title:'The Technologist-Designer: A New Species', publisher:'Creative Review', date:'July 2024', desc:"What happens when you remove the wall between design and code, and why the next generation of creative directors will be fluent in both."},
+          {title:'Controlled Disruption: A Field Manual', publisher:'Awwwards Magazine', date:'April 2024', desc:'The principles and tactical playbook I use to push brands beyond their comfort zones without losing their core identity.'},
+          {title:'Rethinking the Portfolio for Creative Directors', publisher:'The Verge', date:'November 2023', desc:'How to present strategic creative leadership in a world that still defaults to showcasing pixels over process.'}
+        ].map(({title, publisher, date, desc}) => (
+          <div style="display:grid;grid-template-columns:1fr auto;gap:2rem;padding:2rem 0;border-bottom:1px solid #e7e7e7;align-items:start;cursor:pointer;transition:background .2s ease" onmouseenter="this.style.background='#fafafa'" onmouseleave="this.style.background=''">
+            <div>
+              <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem">
+                <span style="font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#b0b0b0">{publisher}</span>
+                <span style="width:1px;height:.75rem;background:#e7e7e7;display:inline-block"></span>
+                <span style="font-size:.6875rem;font-family:monospace;color:#b0b0b0">{date}</span>
+              </div>
+              <h3 style="font-size:1.0625rem;font-weight:800;color:#1a1a1a;letter-spacing:-.02em;margin:0 0 .625rem;line-height:1.3">{title}</h3>
+              <p style="font-size:.875rem;color:#6d6d6d;line-height:1.6;font-weight:300;margin:0;max-width:640px">{desc}</p>
+            </div>
+            <div style="flex-shrink:0;padding-top:.375rem">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b0b0b0" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Speaking -->
+    <section style="background:#f6f6f6;border-top:1px solid #e7e7e7;border-bottom:1px solid #e7e7e7;padding:5rem 1.5rem">
+      <div style="max-width:1440px;margin-inline:auto">
+        <p style="font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b0b0b0;margin-bottom:.5rem">Speaking</p>
+        <h2 style="font-size:clamp(1.5rem,3vw,2rem);font-weight:900;letter-spacing:-.03em;color:#1a1a1a;margin:0 0 2.5rem">On Stage</h2>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem">
+          {[
+            {event:'Awwwards Conference NYC', topic:'Controlled Disruption in Modern Brand Systems', date:'Oct 2024', location:'New York, USA', audience:'2,000+ designers'},
+            {event:'OFFF Barcelona', topic:'The Technologist-Designer: Bridging Code and Craft', date:'May 2024', location:'Barcelona, Spain', audience:'Festival main stage'},
+            {event:'Figma Config', topic:'Designing Design Systems That Survive Contact with Reality', date:'Jun 2023', location:'San Francisco, USA', audience:'Engineering+Design track'},
+            {event:'Smashing Conference', topic:'Motion as Brand Language', date:'Oct 2023', location:'Freiburg, Germany', audience:'300+ attendees'},
+            {event:'Brand Impact Awards', topic:'Panelist: The Future of Digital Brand Identity', date:'Mar 2025', location:'London, UK', audience:'Industry panel'},
+            {event:'Creative Mornings London', topic:'Why Safe Is the Riskiest Choice', date:'Feb 2025', location:'London, UK', audience:'Monthly community event'}
+          ].map(({event, topic, date, location, audience}) => (
+            <div style="background:#fff;border:1px solid #e7e7e7;padding:2rem;transition:transform .3s ease,box-shadow .3s ease" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 25px -5px rgba(0,0,0,.1)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem">
+                <span style="font-size:.6875rem;font-family:monospace;color:#b0b0b0">{date}</span>
+                <span style="font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#b0b0b0;background:#f6f6f6;padding:.25rem .625rem">{location}</span>
+              </div>
+              <h3 style="font-size:.9375rem;font-weight:800;color:#1a1a1a;letter-spacing:-.02em;margin:0 0 .375rem">{event}</h3>
+              <p style="font-size:.875rem;color:#6d6d6d;font-weight:400;margin:0 0 1rem;line-height:1.5;font-style:italic">"{topic}"</p>
+              <p style="font-size:.75rem;color:#b0b0b0;margin:0">{audience}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Awards -->
+    <section style="max-width:1440px;margin-inline:auto;padding:5rem 1.5rem">
+      <p style="font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b0b0b0;margin-bottom:.5rem">Recognition</p>
+      <h2 style="font-size:clamp(1.5rem,3vw,2rem);font-weight:900;letter-spacing:-.03em;color:#1a1a1a;margin:0 0 2.5rem">Awards</h2>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:0;border:1px solid #e7e7e7">
+        {[
+          {award:'Awwwards SOTD', count:'×3', years:'2022–2024'},
+          {award:'FWA Site of the Month', count:'×1', years:'2024'},
+          {award:'D&AD Pencil', count:'×2', years:'2023–2024'},
+          {award:'Commarts Webpick', count:'×4', years:'2022–2025'},
+          {award:'CSS Design Awards', count:'×6', years:'2021–2025'},
+          {award:'Hatch Awards Finalist', count:'×1', years:'2024'}
+        ].map(({award, count, years}, i) => (
+          <div style={`padding:2.5rem 2rem;background:#fff;${i % 3 !== 2 ? 'border-right:1px solid #e7e7e7;' : ''}${i < 3 ? 'border-bottom:1px solid #e7e7e7;' : ''}`}>
+            <div style="font-size:2.5rem;font-weight:900;color:#e7e7e7;line-height:1;margin-bottom:1rem;letter-spacing:-.04em">{count}</div>
+            <h3 style="font-size:.9375rem;font-weight:800;color:#1a1a1a;letter-spacing:-.02em;margin:0 0 .375rem">{award}</h3>
+            <p style="font-size:.75rem;font-family:monospace;color:#b0b0b0;margin:0">{years}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer style="background:#1a1a1a;padding:3rem 1.5rem">
+    <div style="max-width:1440px;margin-inline:auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem">
+      <div style="color:rgba(255,255,255,.5);font-size:.875rem">© 2025 Wil B. All rights reserved.</div>
+      <div style="display:flex;align-items:center;gap:1.5rem">
+        <a href="#" style="color:rgba(255,255,255,.6);font-size:.875rem;font-weight:500;text-decoration:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='rgba(255,255,255,.6)'">GitHub</a>
+        <a href="#" style="color:rgba(255,255,255,.6);font-size:.875rem;font-weight:500;text-decoration:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='rgba(255,255,255,.6)'">LinkedIn</a>
+        <a href="#" style="color:rgba(255,255,255,.6);font-size:.875rem;font-weight:500;text-decoration:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='rgba(255,255,255,.6)'">Instagram</a>
+        <a href="#" style="color:rgba(255,255,255,.6);font-size:.875rem;font-weight:500;text-decoration:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='rgba(255,255,255,.6)'">Twitter</a>
+      </div>
+    </div>
+  </footer>
+</BaseLayout>

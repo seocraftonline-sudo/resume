@@ -1,0 +1,219 @@
+---
+import BaseLayout from '../../layouts/Base.astro';
+import HCNav from '../../components/HCNav.astro';
+---
+<BaseLayout title="Michael Rivera — Life & Career Coach" theme="hc">
+  <link rel="stylesheet" href="/styles/rv.css" slot="head" />
+  <HCNav active="home" />
+
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:#0F172A;color:#F8FAFC;font-family:'Inter',sans-serif;overflow-x:hidden}
+    .hc-hero{position:relative;min-height:100vh;display:flex;align-items:center;padding-top:5rem;overflow:hidden}
+    .hc-hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,54,38,.95) 0%,rgba(15,23,42,1) 60%),url('https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=800') center/cover no-repeat;z-index:0}
+    .hc-hero-bg::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 40px,rgba(255,255,255,.02) 40px,rgba(255,255,255,.02) 80px)}
+    .glass-card{background:rgba(255,255,255,.03);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.05);border-radius:24px}
+    .section-pad{padding:6rem 1.5rem}
+    .container{max-width:1280px;margin-inline:auto}
+    .accent{color:#4ADE80}
+    .muted{color:#94A3B8}
+    .serif{font-family:'Playfair Display',serif}
+    .btn-green{display:inline-flex;align-items:center;gap:.5rem;background:#4ADE80;color:#0F172A;font-weight:600;font-size:.9375rem;padding:.875rem 2rem;border-radius:9999px;text-decoration:none;transition:box-shadow .2s ease,opacity .2s ease}
+    .btn-green:hover{box-shadow:0 0 24px rgba(74,222,128,.4);opacity:.95}
+    .btn-ghost{display:inline-flex;align-items:center;gap:.5rem;background:transparent;color:#F8FAFC;font-weight:500;font-size:.9375rem;padding:.875rem 2rem;border-radius:9999px;border:1px solid rgba(255,255,255,.2);text-decoration:none;transition:background .2s ease,border-color .2s ease}
+    .btn-ghost:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.35)}
+    @media(max-width:767px){
+      .hc-hero-inner{flex-direction:column!important;text-align:center}
+      .hc-hero-btns{justify-content:center!important}
+      .hc-stats{grid-template-columns:1fr 1fr!important}
+      .hc-services-grid{grid-template-columns:1fr!important}
+      .hc-blog-grid{grid-template-columns:1fr!important}
+      .section-pad{padding:4rem 1.25rem}
+    }
+  </style>
+
+  <main style="padding-top:5rem">
+
+    <!-- Hero -->
+    <section class="hc-hero">
+      <div class="hc-hero-bg"></div>
+      <div class="container" style="position:relative;z-index:1;padding-inline:1.5rem">
+        <div class="hc-hero-inner" style="display:flex;align-items:center;gap:4rem">
+          <div style="flex:1;max-width:640px">
+            <div style="display:inline-flex;align-items:center;gap:.5rem;padding:.375rem 1rem;border-radius:9999px;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);font-size:.8125rem;color:#94A3B8;margin-bottom:1.5rem">
+              <span style="width:8px;height:8px;border-radius:50%;background:#4ADE80;display:inline-block;animation:pulse 2s ease infinite"></span>
+              Life &amp; Career Coaching
+            </div>
+            <h1 class="serif" style="font-size:clamp(2.5rem,5vw,4rem);font-weight:700;line-height:1.15;margin-bottom:1.5rem;color:#F8FAFC">
+              Helping You Find<br/><em style="color:#4ADE80;font-style:italic">Clarity &amp; Direction</em>
+            </h1>
+            <p style="font-size:1.125rem;color:#94A3B8;line-height:1.75;margin-bottom:2.5rem;max-width:520px">
+              I partner with people navigating life's pivotal moments — career transitions, purpose crises, relationship crossroads — to help them move forward with intention and confidence.
+            </p>
+            <div class="hc-hero-btns" style="display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:3rem">
+              <a href="/hc/contact/" class="btn-green">Work With Me
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="/hc/about/" class="btn-ghost">My Story</a>
+            </div>
+            <div class="hc-stats" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:480px">
+              <div>
+                <div class="serif" style="font-size:2rem;font-weight:700;color:#F8FAFC">200+</div>
+                <div style="font-size:.8125rem;color:#94A3B8">Clients Served</div>
+              </div>
+              <div>
+                <div class="serif" style="font-size:2rem;font-weight:700;color:#F8FAFC">5+</div>
+                <div style="font-size:.8125rem;color:#94A3B8">Years Coaching</div>
+              </div>
+              <div>
+                <div class="serif" style="font-size:2rem;font-weight:700;color:#F8FAFC">95%</div>
+                <div style="font-size:.8125rem;color:#94A3B8">Satisfaction</div>
+              </div>
+            </div>
+          </div>
+          <div style="flex:0 0 420px;position:relative;display:flex;justify-content:center;align-items:center">
+            <div style="width:380px;height:480px;border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 24px 64px rgba(0,0,0,.5)">
+              <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Michael Rivera, Life Coach" style="width:100%;height:100%;object-fit:cover" />
+            </div>
+            <div class="glass-card" style="position:absolute;bottom:-1rem;left:-1rem;padding:1rem 1.25rem;border-radius:16px">
+              <div style="font-size:.75rem;color:#94A3B8;margin-bottom:.25rem">Next available</div>
+              <div style="font-size:.875rem;color:#F8FAFC;font-weight:600">Free discovery call →</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Preview -->
+    <section class="section-pad" style="background:#0F172A">
+      <div class="container">
+        <div style="text-align:center;margin-bottom:3.5rem">
+          <div style="font-size:.8125rem;text-transform:uppercase;letter-spacing:.12em;color:#4ADE80;margin-bottom:.75rem">How I Can Help</div>
+          <h2 class="serif" style="font-size:clamp(1.75rem,3vw,2.75rem);font-weight:700;color:#F8FAFC;margin-bottom:1rem">Core Offerings</h2>
+          <p style="color:#94A3B8;max-width:520px;margin-inline:auto;line-height:1.7">Three paths forward, tailored to where you are and what you need.</p>
+        </div>
+        <div class="hc-services-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem">
+          <div class="glass-card" style="padding:2rem;background:#1A3626;border-color:rgba(74,222,128,.15)">
+            <div style="width:48px;height:48px;border-radius:12px;background:rgba(74,222,128,.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            </div>
+            <h3 class="serif" style="font-size:1.25rem;font-weight:700;color:#F8FAFC;margin-bottom:.75rem">1-on-1 Coaching</h3>
+            <p style="font-size:.875rem;color:#94A3B8;line-height:1.7;margin-bottom:1.25rem">Deep, personalized sessions to help you navigate career transitions, personal growth, and life decisions with clarity and confidence.</p>
+            <a href="/hc/services/" style="font-size:.8125rem;color:#4ADE80;text-decoration:none;font-weight:500">Learn more →</a>
+          </div>
+          <div class="glass-card" style="padding:2rem">
+            <div style="width:48px;height:48px;border-radius:12px;background:rgba(74,222,128,.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 class="serif" style="font-size:1.25rem;font-weight:700;color:#F8FAFC;margin-bottom:.75rem">Group Programs</h3>
+            <p style="font-size:.875rem;color:#94A3B8;line-height:1.7;margin-bottom:1.25rem">Cohort-based programs where shared vulnerability and collective wisdom accelerate transformation in ways solo work simply can't match.</p>
+            <a href="/hc/services/" style="font-size:.8125rem;color:#4ADE80;text-decoration:none;font-weight:500">Learn more →</a>
+          </div>
+          <div class="glass-card" style="padding:2rem">
+            <div style="width:48px;height:48px;border-radius:12px;background:rgba(74,222,128,.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            </div>
+            <h3 class="serif" style="font-size:1.25rem;font-weight:700;color:#F8FAFC;margin-bottom:.75rem">Workshops</h3>
+            <p style="font-size:.875rem;color:#94A3B8;line-height:1.7;margin-bottom:1.25rem">Focused half-day and full-day experiences for teams, communities, and organizations ready to invest in meaningful human development.</p>
+            <a href="/hc/services/" style="font-size:.8125rem;color:#4ADE80;text-decoration:none;font-weight:500">Learn more →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Testimonial -->
+    <section class="section-pad" style="background:#1A3626;background:linear-gradient(135deg,#1A3626 0%,#0F2318 100%)">
+      <div class="container">
+        <div style="max-width:800px;margin-inline:auto;text-align:center">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="#4ADE80" style="margin-bottom:1.5rem;opacity:.7"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+          <blockquote class="serif" style="font-size:clamp(1.25rem,2.5vw,1.75rem);font-style:italic;color:#F8FAFC;line-height:1.6;margin-bottom:2rem">
+            "Working with Michael was the turning point I needed. He helped me see that I wasn't stuck — I was just between chapters. Six months later, I'm in a role I love and finally feel like myself again."
+          </blockquote>
+          <div style="display:flex;align-items:center;gap:.75rem;justify-content:center">
+            <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Sarah M." style="width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid rgba(74,222,128,.3)" />
+            <div style="text-align:left">
+              <div style="font-weight:600;color:#F8FAFC;font-size:.875rem">Sarah M.</div>
+              <div style="font-size:.8125rem;color:#94A3B8">Career Transition Client, 2024</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Writing -->
+    <section class="section-pad" style="background:#0F172A">
+      <div class="container">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:3rem;flex-wrap:wrap;gap:1rem">
+          <div>
+            <div style="font-size:.8125rem;text-transform:uppercase;letter-spacing:.12em;color:#4ADE80;margin-bottom:.5rem">Writing &amp; Reflections</div>
+            <h2 class="serif" style="font-size:clamp(1.75rem,3vw,2.5rem);font-weight:700;color:#F8FAFC">Recent Thoughts</h2>
+          </div>
+          <a href="/hc/blog/" style="font-size:.875rem;color:#4ADE80;text-decoration:none;font-weight:500">All posts →</a>
+        </div>
+        <div class="hc-blog-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem">
+          <article class="glass-card" style="overflow:hidden;display:flex;flex-direction:column">
+            <img src="https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Blog post" style="width:100%;height:200px;object-fit:cover" />
+            <div style="padding:1.5rem;flex:1;display:flex;flex-direction:column">
+              <div style="font-size:.75rem;color:#4ADE80;margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.08em">Career</div>
+              <h3 class="serif" style="font-size:1.1rem;font-weight:700;color:#F8FAFC;margin-bottom:.75rem;line-height:1.4">The Courage to Say "I Don't Know What I Want"</h3>
+              <p style="font-size:.8125rem;color:#94A3B8;line-height:1.6;flex:1;margin-bottom:1.25rem">Uncertainty isn't a flaw in your character. It might be the most honest thing you've said in years.</p>
+              <a href="/hc/blog/" style="font-size:.8125rem;color:#4ADE80;text-decoration:none;font-weight:500">Read more →</a>
+            </div>
+          </article>
+          <article class="glass-card" style="overflow:hidden;display:flex;flex-direction:column">
+            <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Blog post" style="width:100%;height:200px;object-fit:cover" />
+            <div style="padding:1.5rem;flex:1;display:flex;flex-direction:column">
+              <div style="font-size:.75rem;color:#4ADE80;margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.08em">Purpose</div>
+              <h3 class="serif" style="font-size:1.1rem;font-weight:700;color:#F8FAFC;margin-bottom:.75rem;line-height:1.4">Why Your "Dream Job" Might Be the Wrong Goal</h3>
+              <p style="font-size:.8125rem;color:#94A3B8;line-height:1.6;flex:1;margin-bottom:1.25rem">What if the pursuit of passion is keeping you from something far more sustaining?</p>
+              <a href="/hc/blog/" style="font-size:.8125rem;color:#4ADE80;text-decoration:none;font-weight:500">Read more →</a>
+            </div>
+          </article>
+          <article class="glass-card" style="overflow:hidden;display:flex;flex-direction:column">
+            <img src="https://images.pexels.com/photos/4101143/pexels-photo-4101143.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Blog post" style="width:100%;height:200px;object-fit:cover" />
+            <div style="padding:1.5rem;flex:1;display:flex;flex-direction:column">
+              <div style="font-size:.75rem;color:#4ADE80;margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.08em">Growth</div>
+              <h3 class="serif" style="font-size:1.1rem;font-weight:700;color:#F8FAFC;margin-bottom:.75rem;line-height:1.4">The Thing Nobody Tells You About Starting Over</h3>
+              <p style="font-size:.8125rem;color:#94A3B8;line-height:1.6;flex:1;margin-bottom:1.25rem">It doesn't feel like a beginning. It feels like grief. And that's exactly right.</p>
+              <a href="/hc/blog/" style="font-size:.8125rem;color:#4ADE80;text-decoration:none;font-weight:500">Read more →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section style="padding:5rem 1.5rem;background:linear-gradient(135deg,#1A3626 0%,#0F2318 100%);text-align:center">
+      <div class="container" style="max-width:700px">
+        <h2 class="serif" style="font-size:clamp(1.75rem,3.5vw,3rem);font-weight:700;color:#F8FAFC;margin-bottom:1.25rem">Ready to Begin Something Real?</h2>
+        <p style="color:#94A3B8;font-size:1.0625rem;line-height:1.7;margin-bottom:2.5rem">The first conversation is free, no pressure, no agenda. Just two people talking about what's possible.</p>
+        <a href="/hc/contact/" class="btn-green" style="font-size:1rem;padding:1rem 2.5rem">Schedule a Free Call</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="padding:3rem 1.5rem;background:rgba(0,0,0,.3);border-top:1px solid rgba(255,255,255,.05)">
+      <div class="container" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem">
+        <div class="serif" style="font-size:1.25rem;font-weight:700;color:#F8FAFC;display:flex;align-items:center;gap:.35rem">
+          Michael <span style="color:#4ADE80;font-size:.8rem">✦</span>
+        </div>
+        <div style="display:flex;gap:1.5rem">
+          <a href="#" aria-label="Twitter" style="color:#94A3B8;transition:color .2s ease">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn" style="color:#94A3B8;transition:color .2s ease">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram" style="color:#94A3B8;transition:color .2s ease">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </div>
+        <p style="font-size:.8125rem;color:#94A3B8">© 2025 Michael Rivera. All rights reserved.</p>
+      </div>
+    </footer>
+  </main>
+
+  <style is:global>
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+  </style>
+</BaseLayout>

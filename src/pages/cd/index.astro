@@ -1,0 +1,220 @@
+---
+import BaseLayout from '../../layouts/Base.astro';
+import CDNav from '../../components/CDNav.astro';
+---
+
+<BaseLayout title="Wil B — Creative Director, Founder, Technologist" theme="cd">
+  <link rel="stylesheet" href="/styles/rv.css" slot="head" />
+  <CDNav active="home" />
+
+  <main style="padding-top:5rem;background:#fff;color:#1a1a1a;font-family:'Inter',sans-serif">
+
+    <!-- Hero -->
+    <section style="max-width:1440px;margin-inline:auto;padding:5rem 1.5rem 4rem;display:grid;grid-template-columns:1fr;gap:3rem;align-items:center">
+      <div style="max-width:900px">
+        <p style="font-size:.75rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#b0b0b0;margin-bottom:1.5rem">Available for New Projects — Q3 2026</p>
+        <h1 style="font-size:clamp(2.75rem,7vw,6rem);font-weight:900;letter-spacing:-.04em;line-height:1.0;margin:0 0 1.5rem;color:#1a1a1a">
+          Creative Director.<br>
+          <span style="color:#b0b0b0">Founder. Technologist.</span>
+        </h1>
+        <p style="font-size:1.25rem;color:#6d6d6d;max-width:600px;line-height:1.6;font-weight:300;margin-bottom:2.5rem">
+          I build digital products that break the rules beautifully — blending deep technical knowledge with unconventional design thinking to create experiences that demand attention.
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:1rem;align-items:center">
+          <a href="/cd/portfolio/" style="padding:.875rem 2rem;background:#1a1a1a;color:#fff;font-size:.9375rem;font-weight:600;border-radius:999px;text-decoration:none;transition:transform .2s ease,box-shadow .2s ease" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 25px -5px rgba(0,0,0,.2)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">View Portfolio</a>
+          <a href="/cd/contact/" style="padding:.875rem 2rem;background:#fff;color:#1a1a1a;font-size:.9375rem;font-weight:600;border-radius:999px;text-decoration:none;border:1.5px solid #1a1a1a;transition:transform .2s ease,box-shadow .2s ease" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 25px -5px rgba(0,0,0,.1)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Row -->
+    <section style="background:#f6f6f6;padding:3.5rem 1.5rem;border-top:1px solid #e7e7e7;border-bottom:1px solid #e7e7e7">
+      <div style="max-width:1440px;margin-inline:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:2rem">
+        <div>
+          <div style="font-size:clamp(2.5rem,5vw,4rem);font-weight:900;letter-spacing:-.04em;color:#1a1a1a;line-height:1">8+</div>
+          <div style="font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#b0b0b0;margin-top:.5rem">Years Experience</div>
+        </div>
+        <div>
+          <div style="font-size:clamp(2.5rem,5vw,4rem);font-weight:900;letter-spacing:-.04em;color:#1a1a1a;line-height:1">60+</div>
+          <div style="font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#b0b0b0;margin-top:.5rem">Projects Delivered</div>
+        </div>
+        <div>
+          <div style="font-size:clamp(2.5rem,5vw,4rem);font-weight:900;letter-spacing:-.04em;color:#1a1a1a;line-height:1">30+</div>
+          <div style="font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#b0b0b0;margin-top:.5rem">Clients Served</div>
+        </div>
+        <div>
+          <div style="font-size:clamp(2.5rem,5vw,4rem);font-weight:900;letter-spacing:-.04em;color:#1a1a1a;line-height:1">14</div>
+          <div style="font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#b0b0b0;margin-top:.5rem">Design Awards</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Selected Work -->
+    <section style="max-width:1440px;margin-inline:auto;padding:5rem 1.5rem">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem;flex-wrap:wrap;gap:1rem">
+        <div>
+          <p style="font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b0b0b0;margin-bottom:.5rem">Selected Work</p>
+          <h2 style="font-size:clamp(1.75rem,3.5vw,2.5rem);font-weight:900;letter-spacing:-.03em;color:#1a1a1a;margin:0">Work that speaks.</h2>
+        </div>
+        <a href="/cd/portfolio/" style="font-size:.8125rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#1a1a1a;text-decoration:none;border-bottom:2px solid #1a1a1a;padding-bottom:2px">View All →</a>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem">
+        <!-- Card 1 -->
+        <div style="position:relative;background:#fff;border:1px solid #e7e7e7;border-radius:4px;overflow:hidden;cursor:pointer;transition:transform .3s ease,box-shadow .3s ease" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 25px -5px rgba(0,0,0,.12)';this.querySelector('.cd-overlay').style.opacity='1'" onmouseleave="this.style.transform='';this.style.boxShadow='';this.querySelector('.cd-overlay').style.opacity='0'">
+          <div style="aspect-ratio:4/3;overflow:hidden">
+            <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Brand Identity Project" style="width:100%;height:100%;object-fit:cover;transition:transform .5s ease" />
+          </div>
+          <div class="cd-overlay" style="position:absolute;inset:0;background:rgba(26,26,26,.85);display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem;opacity:0;transition:opacity .3s ease">
+            <span style="font-size:.6875rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b0b0b0;margin-bottom:.5rem">Branding</span>
+            <h3 style="font-size:1.25rem;font-weight:800;color:#fff;margin:0 0 .75rem;letter-spacing:-.02em">Meridian Fintech</h3>
+            <span style="display:inline-flex;align-items:center;gap:.5rem;color:#fff;font-size:.8125rem;font-weight:600">View Project <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
+          <div style="padding:1.25rem">
+            <span style="font-size:.6875rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b0b0b0">Branding</span>
+            <h3 style="font-size:1.125rem;font-weight:800;color:#1a1a1a;margin:.25rem 0 0;letter-spacing:-.02em">Meridian Fintech</h3>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div style="position:relative;background:#fff;border:1px solid #e7e7e7;border-radius:4px;overflow:hidden;cursor:pointer;transition:transform .3s ease,box-shadow .3s ease" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 25px -5px rgba(0,0,0,.12)';this.querySelector('.cd-overlay').style.opacity='1'" onmouseleave="this.style.transform='';this.style.boxShadow='';this.querySelector('.cd-overlay').style.opacity='0'">
+          <div style="aspect-ratio:4/3;overflow:hidden">
+            <img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Digital Experience Project" style="width:100%;height:100%;object-fit:cover;transition:transform .5s ease" />
+          </div>
+          <div class="cd-overlay" style="position:absolute;inset:0;background:rgba(26,26,26,.85);display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem;opacity:0;transition:opacity .3s ease">
+            <span style="font-size:.6875rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b0b0b0;margin-bottom:.5rem">Digital</span>
+            <h3 style="font-size:1.25rem;font-weight:800;color:#fff;margin:0 0 .75rem;letter-spacing:-.02em">Coder Platform</h3>
+            <span style="display:inline-flex;align-items:center;gap:.5rem;color:#fff;font-size:.8125rem;font-weight:600">View Project <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
+          <div style="padding:1.25rem">
+            <span style="font-size:.6875rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b0b0b0">Digital</span>
+            <h3 style="font-size:1.125rem;font-weight:800;color:#1a1a1a;margin:.25rem 0 0;letter-spacing:-.02em">Coder Platform</h3>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div style="position:relative;background:#fff;border:1px solid #e7e7e7;border-radius:4px;overflow:hidden;cursor:pointer;transition:transform .3s ease,box-shadow .3s ease" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 25px -5px rgba(0,0,0,.12)';this.querySelector('.cd-overlay').style.opacity='1'" onmouseleave="this.style.transform='';this.style.boxShadow='';this.querySelector('.cd-overlay').style.opacity='0'">
+          <div style="aspect-ratio:4/3;overflow:hidden">
+            <img src="https://images.pexels.com/photos/3153198/pexels-photo-3153198.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Motion Design Project" style="width:100%;height:100%;object-fit:cover;transition:transform .5s ease" />
+          </div>
+          <div class="cd-overlay" style="position:absolute;inset:0;background:rgba(26,26,26,.85);display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem;opacity:0;transition:opacity .3s ease">
+            <span style="font-size:.6875rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b0b0b0;margin-bottom:.5rem">Motion</span>
+            <h3 style="font-size:1.25rem;font-weight:800;color:#fff;margin:0 0 .75rem;letter-spacing:-.02em">Apex Motion Reel</h3>
+            <span style="display:inline-flex;align-items:center;gap:.5rem;color:#fff;font-size:.8125rem;font-weight:600">View Project <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
+          <div style="padding:1.25rem">
+            <span style="font-size:.6875rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b0b0b0">Motion</span>
+            <h3 style="font-size:1.125rem;font-weight:800;color:#1a1a1a;margin:.25rem 0 0;letter-spacing:-.02em">Apex Motion Reel</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What I Do -->
+    <section style="background:#f6f6f6;border-top:1px solid #e7e7e7;border-bottom:1px solid #e7e7e7;padding:5rem 1.5rem">
+      <div style="max-width:1440px;margin-inline:auto">
+        <p style="font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b0b0b0;margin-bottom:.5rem">What I Do</p>
+        <h2 style="font-size:clamp(1.75rem,3.5vw,2.5rem);font-weight:900;letter-spacing:-.03em;color:#1a1a1a;margin:0 0 3rem">Core expertise.</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem">
+
+          <div style="background:#fff;border:1px solid #e7e7e7;padding:2rem;transition:transform .3s ease,box-shadow .3s ease" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 25px -5px rgba(0,0,0,.1)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+            <div style="font-size:3rem;font-weight:900;color:#e7e7e7;line-height:1;margin-bottom:1rem">01</div>
+            <h3 style="font-size:1.125rem;font-weight:800;color:#1a1a1a;letter-spacing:-.02em;margin:0 0 .75rem">Brand Identity Systems</h3>
+            <p style="color:#6d6d6d;font-size:.9375rem;line-height:1.6;font-weight:300;margin:0">Crafting visual languages that communicate authority, build trust, and stand out in crowded markets — from logo to full brand architecture.</p>
+          </div>
+
+          <div style="background:#fff;border:1px solid #e7e7e7;padding:2rem;transition:transform .3s ease,box-shadow .3s ease" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 25px -5px rgba(0,0,0,.1)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+            <div style="font-size:3rem;font-weight:900;color:#e7e7e7;line-height:1;margin-bottom:1rem">02</div>
+            <h3 style="font-size:1.125rem;font-weight:800;color:#1a1a1a;letter-spacing:-.02em;margin:0 0 .75rem">Digital Product Design</h3>
+            <p style="color:#6d6d6d;font-size:.9375rem;line-height:1.6;font-weight:300;margin:0">Designing high-performance digital platforms that break conventions while maintaining flawless usability and conversion focus.</p>
+          </div>
+
+          <div style="background:#fff;border:1px solid #e7e7e7;padding:2rem;transition:transform .3s ease,box-shadow .3s ease" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 25px -5px rgba(0,0,0,.1)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+            <div style="font-size:3rem;font-weight:900;color:#e7e7e7;line-height:1;margin-bottom:1rem">03</div>
+            <h3 style="font-size:1.125rem;font-weight:800;color:#1a1a1a;letter-spacing:-.02em;margin:0 0 .75rem">Creative Technology</h3>
+            <p style="color:#6d6d6d;font-size:.9375rem;line-height:1.6;font-weight:300;margin:0">Bridging the gap between design and engineering — ensuring the final build matches the vision with motion, interaction, and precision.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial Quote Block -->
+    <section style="max-width:1440px;margin-inline:auto;padding:5rem 1.5rem">
+      <div style="background:#1a1a1a;padding:4rem 3rem;position:relative;overflow:hidden">
+        <div style="position:absolute;top:0;right:0;width:40%;height:100%;background-image:radial-gradient(circle at right,rgba(255,255,255,.05) 1px,transparent 1px);background-size:20px 20px"></div>
+        <div style="position:relative;z-index:1;max-width:800px">
+          <svg width="40" height="32" viewBox="0 0 40 32" fill="none" style="margin-bottom:2rem"><path d="M0 32V20.267C0 15.467 1.067 11.2 3.2 7.467 5.333 3.733 8.8 1.067 13.6 0l2.4 3.733C12.267 5.067 9.867 7.2 8.8 10.133c-.8 2.133-.8 4.267 0 6.4h8v15.2L0 32zm22.4 0V20.267c0-4.8 1.067-9.067 3.2-12.8C27.733 3.733 31.2 1.067 36 0l2.4 3.733c-3.733 1.333-6.133 3.467-7.2 6.4-.8 2.133-.8 4.267 0 6.4h8v15.2L22.4 32z" fill="rgba(255,255,255,.15)"/></svg>
+          <blockquote style="font-size:clamp(1.125rem,2.5vw,1.5rem);font-weight:400;color:#fff;line-height:1.6;margin:0 0 2rem;font-style:italic">"Wil doesn't just design interfaces — he engineers trust. His ability to take complex technical concepts and distill them into beautiful, intuitive experiences was instrumental in our Series B raise."</blockquote>
+          <div style="display:flex;align-items:center;gap:1rem">
+            <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Sarah Jenkins" style="width:3rem;height:3rem;border-radius:50%;object-fit:cover;filter:grayscale(100%)" />
+            <div>
+              <div style="font-weight:700;color:#fff;font-size:.9375rem">Sarah Jenkins</div>
+              <div style="color:#b0b0b0;font-size:.8125rem">Founder & CEO, Tabs Finance</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Blog Posts -->
+    <section style="background:#f6f6f6;border-top:1px solid #e7e7e7;padding:5rem 1.5rem">
+      <div style="max-width:1440px;margin-inline:auto">
+        <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem;flex-wrap:wrap;gap:1rem">
+          <div>
+            <p style="font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b0b0b0;margin-bottom:.5rem">From the Blog</p>
+            <h2 style="font-size:clamp(1.75rem,3.5vw,2.5rem);font-weight:900;letter-spacing:-.03em;color:#1a1a1a;margin:0">Engineering the everyday.</h2>
+          </div>
+          <a href="/cd/blog/" style="font-size:.8125rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#1a1a1a;text-decoration:none;border-bottom:2px solid #1a1a1a;padding-bottom:2px">Read All →</a>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem">
+          <a href="/cd/blog/" style="display:block;background:#fff;border:1px solid #e7e7e7;padding:2rem;text-decoration:none;transition:transform .3s ease,box-shadow .3s ease" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 25px -5px rgba(0,0,0,.1)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+            <span style="font-size:.6875rem;font-family:monospace;color:#b0b0b0;display:block;margin-bottom:.75rem">Dec 21, 2025 · Technical</span>
+            <h3 style="font-size:1.0625rem;font-weight:800;color:#1a1a1a;letter-spacing:-.02em;margin:0 0 .75rem;line-height:1.3">A Plex-powered, Netflix-inspired screensaver.</h3>
+            <p style="color:#6d6d6d;font-size:.875rem;line-height:1.6;font-weight:300;margin:0">Building a custom Apple TV screensaver using React Native and the Plex API.</p>
+          </a>
+
+          <a href="/cd/blog/" style="display:block;background:#fff;border:1px solid #e7e7e7;padding:2rem;text-decoration:none;transition:transform .3s ease,box-shadow .3s ease" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 25px -5px rgba(0,0,0,.1)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+            <span style="font-size:.6875rem;font-family:monospace;color:#b0b0b0;display:block;margin-bottom:.75rem">Oct 27, 2025 · Design</span>
+            <h3 style="font-size:1.0625rem;font-weight:800;color:#1a1a1a;letter-spacing:-.02em;margin:0 0 .75rem;line-height:1.3">Effortless lawn care with AI mapping.</h3>
+            <p style="color:#6d6d6d;font-size:.875rem;line-height:1.6;font-weight:300;margin:0">Redesigning the interface for autonomous mowers to focus on hands-off reliability.</p>
+          </a>
+
+          <a href="/cd/blog/" style="display:block;background:#fff;border:1px solid #e7e7e7;padding:2rem;text-decoration:none;transition:transform .3s ease,box-shadow .3s ease" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 25px -5px rgba(0,0,0,.1)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+            <span style="font-size:.6875rem;font-family:monospace;color:#b0b0b0;display:block;margin-bottom:.75rem">Sep 14, 2025 · Strategy</span>
+            <h3 style="font-size:1.0625rem;font-weight:800;color:#1a1a1a;letter-spacing:-.02em;margin:0 0 .75rem;line-height:1.3">Why safe is the riskiest brand choice you can make.</h3>
+            <p style="color:#6d6d6d;font-size:.875rem;line-height:1.6;font-weight:300;margin:0">The counterintuitive case for bold, opinionated brand identities in competitive markets.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section style="max-width:1440px;margin-inline:auto;padding:5rem 1.5rem;text-align:center">
+      <h2 style="font-size:clamp(2.5rem,6vw,5rem);font-weight:900;letter-spacing:-.04em;line-height:1.05;color:#1a1a1a;margin:0 0 1.5rem">Let's build something<br><span style="color:#b0b0b0">unexpected.</span></h2>
+      <p style="font-size:1.125rem;color:#6d6d6d;max-width:560px;margin-inline:auto;line-height:1.6;font-weight:300;margin-bottom:2.5rem">Currently accepting new projects for Q3 2026. Complex problems need beautiful solutions.</p>
+      <a href="/cd/contact/" style="display:inline-flex;align-items:center;gap:.625rem;padding:1rem 2.5rem;background:#1a1a1a;color:#fff;font-size:1rem;font-weight:700;border-radius:999px;text-decoration:none;transition:transform .2s ease,box-shadow .2s ease" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 30px -6px rgba(0,0,0,.3)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">Start a Conversation <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer style="background:#1a1a1a;padding:3rem 1.5rem">
+    <div style="max-width:1440px;margin-inline:auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem">
+      <div style="color:rgba(255,255,255,.5);font-size:.875rem">© 2025 Wil B. All rights reserved.</div>
+      <div style="display:flex;align-items:center;gap:1.5rem">
+        <a href="#" style="color:rgba(255,255,255,.6);font-size:.875rem;font-weight:500;text-decoration:none;transition:color .2s ease" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='rgba(255,255,255,.6)'">GitHub</a>
+        <a href="#" style="color:rgba(255,255,255,.6);font-size:.875rem;font-weight:500;text-decoration:none;transition:color .2s ease" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='rgba(255,255,255,.6)'">LinkedIn</a>
+        <a href="#" style="color:rgba(255,255,255,.6);font-size:.875rem;font-weight:500;text-decoration:none;transition:color .2s ease" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='rgba(255,255,255,.6)'">Instagram</a>
+        <a href="#" style="color:rgba(255,255,255,.6);font-size:.875rem;font-weight:500;text-decoration:none;transition:color .2s ease" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='rgba(255,255,255,.6)'">Twitter</a>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    @media (max-width:767px) {
+      main section { padding-left:1rem !important; padding-right:1rem !important; }
+    }
+  </style>
+</BaseLayout>

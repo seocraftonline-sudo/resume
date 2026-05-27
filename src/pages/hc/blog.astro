@@ -1,0 +1,189 @@
+---
+import BaseLayout from '../../layouts/Base.astro';
+import HCNav from '../../components/HCNav.astro';
+---
+<BaseLayout title="Writing & Reflections — Michael Rivera" theme="hc">
+  <link rel="stylesheet" href="/styles/rv.css" slot="head" />
+  <HCNav active="blog" />
+
+  <style>
+    *{box-sizing:border-box}
+    body{background:#0F172A;color:#F8FAFC;font-family:'Inter',sans-serif;overflow-x:hidden}
+    .glass-card{background:rgba(255,255,255,.03);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.05);border-radius:24px}
+    .section-pad{padding:6rem 1.5rem}
+    .container{max-width:1280px;margin-inline:auto}
+    .serif{font-family:'Playfair Display',serif}
+    .blog-card{display:flex;flex-direction:column;overflow:hidden;transition:transform .2s ease,box-shadow .2s ease}
+    .blog-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.3)}
+    @media(max-width:767px){
+      .featured-inner{flex-direction:column!important}
+      .posts-grid{grid-template-columns:1fr!important}
+      .section-pad{padding:4rem 1.25rem}
+    }
+  </style>
+
+  <main style="padding-top:5rem">
+
+    <!-- Hero -->
+    <section style="padding:6rem 1.5rem 4rem;background:linear-gradient(180deg,rgba(26,54,38,.9) 0%,rgba(15,23,42,1) 100%)">
+      <div class="container" style="text-align:center;max-width:720px">
+        <div style="display:inline-flex;align-items:center;gap:.5rem;padding:.375rem 1rem;border-radius:9999px;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);font-size:.8125rem;color:#94A3B8;margin-bottom:1.5rem">
+          <span style="width:6px;height:6px;border-radius:50%;background:#4ADE80;display:inline-block"></span>
+          Essays on Living Intentionally
+        </div>
+        <h1 class="serif" style="font-size:clamp(2rem,4vw,3.5rem);font-weight:700;color:#F8FAFC;line-height:1.2;margin-bottom:1.25rem">Writing &amp; Reflections</h1>
+        <p style="color:#94A3B8;font-size:1.0625rem;line-height:1.75">Honest writing about the messy, beautiful, hard work of becoming more fully yourself. Published every other week.</p>
+      </div>
+    </section>
+
+    <!-- Featured Essay -->
+    <section class="section-pad" style="background:#0F172A">
+      <div class="container">
+        <div style="font-size:.8125rem;text-transform:uppercase;letter-spacing:.12em;color:#4ADE80;margin-bottom:2rem">Featured Essay</div>
+        <div class="featured-inner" style="display:flex;gap:3rem;align-items:center">
+          <div style="flex:0 0 480px;border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.08)">
+            <img src="https://images.pexels.com/photos/4101143/pexels-photo-4101143.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Featured essay" style="width:100%;height:380px;object-fit:cover;display:block" />
+          </div>
+          <div style="flex:1">
+            <div style="display:flex;gap:.75rem;margin-bottom:1.25rem;flex-wrap:wrap">
+              <span style="padding:.25rem .75rem;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);border-radius:9999px;font-size:.75rem;color:#4ADE80">Career</span>
+              <span style="font-size:.8125rem;color:#94A3B8">January 14, 2025 · 8 min read</span>
+            </div>
+            <h2 class="serif" style="font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;color:#F8FAFC;line-height:1.3;margin-bottom:1.25rem">
+              On Grief as a Career Strategy
+            </h2>
+            <p style="color:#94A3B8;line-height:1.8;font-size:1rem;margin-bottom:1.25rem">
+              There's a story I hear often. Someone leaves a job — a relationship, a city, a version of themselves — and what follows isn't the clean beginning everyone promised. What follows is grief.
+            </p>
+            <p style="color:#94A3B8;line-height:1.8;font-size:1rem;margin-bottom:2rem">
+              We don't have good language for this. "Transition" is too tidy. "Change" is too neutral. What I'm describing is the disorientation of losing a self — even a self you chose to leave behind — and not yet knowing what comes next.
+            </p>
+            <a href="#" style="display:inline-flex;align-items:center;gap:.5rem;color:#4ADE80;text-decoration:none;font-weight:600;font-size:.9375rem">
+              Continue reading <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- All Posts -->
+    <section class="section-pad" style="background:rgba(26,54,38,.1);border-top:1px solid rgba(255,255,255,.05)">
+      <div class="container">
+        <div style="margin-bottom:3rem">
+          <h2 class="serif" style="font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;color:#F8FAFC;margin-bottom:.5rem">All Posts</h2>
+          <p style="color:#94A3B8">Honest writing on career, life, relationships, and the human condition.</p>
+        </div>
+        <div class="posts-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem">
+
+          <article class="glass-card blog-card">
+            <img src="https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Blog post" style="width:100%;height:200px;object-fit:cover" />
+            <div style="padding:1.5rem;flex:1;display:flex;flex-direction:column">
+              <div style="display:flex;gap:.5rem;margin-bottom:.75rem;flex-wrap:wrap">
+                <span style="padding:.2rem .6rem;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);border-radius:9999px;font-size:.7rem;color:#4ADE80">Career</span>
+                <span style="font-size:.75rem;color:#94A3B8">Dec 10, 2024</span>
+              </div>
+              <h3 class="serif" style="font-size:1.05rem;font-weight:700;color:#F8FAFC;margin-bottom:.6rem;line-height:1.4">The Courage to Say "I Don't Know What I Want"</h3>
+              <p style="font-size:.8125rem;color:#94A3B8;line-height:1.6;flex:1;margin-bottom:1rem">Uncertainty isn't a flaw in your character. It might be the most honest thing you've said in years.</p>
+              <a href="#" style="font-size:.8125rem;color:#4ADE80;text-decoration:none;font-weight:500">Read more →</a>
+            </div>
+          </article>
+
+          <article class="glass-card blog-card">
+            <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Blog post" style="width:100%;height:200px;object-fit:cover" />
+            <div style="padding:1.5rem;flex:1;display:flex;flex-direction:column">
+              <div style="display:flex;gap:.5rem;margin-bottom:.75rem;flex-wrap:wrap">
+                <span style="padding:.2rem .6rem;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);border-radius:9999px;font-size:.7rem;color:#4ADE80">Purpose</span>
+                <span style="font-size:.75rem;color:#94A3B8">Nov 26, 2024</span>
+              </div>
+              <h3 class="serif" style="font-size:1.05rem;font-weight:700;color:#F8FAFC;margin-bottom:.6rem;line-height:1.4">Why Your "Dream Job" Might Be the Wrong Goal</h3>
+              <p style="font-size:.8125rem;color:#94A3B8;line-height:1.6;flex:1;margin-bottom:1rem">What if the pursuit of passion is keeping you from something far more sustaining?</p>
+              <a href="#" style="font-size:.8125rem;color:#4ADE80;text-decoration:none;font-weight:500">Read more →</a>
+            </div>
+          </article>
+
+          <article class="glass-card blog-card">
+            <img src="https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Blog post" style="width:100%;height:200px;object-fit:cover" />
+            <div style="padding:1.5rem;flex:1;display:flex;flex-direction:column">
+              <div style="display:flex;gap:.5rem;margin-bottom:.75rem;flex-wrap:wrap">
+                <span style="padding:.2rem .6rem;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);border-radius:9999px;font-size:.7rem;color:#4ADE80">Growth</span>
+                <span style="font-size:.75rem;color:#94A3B8">Nov 12, 2024</span>
+              </div>
+              <h3 class="serif" style="font-size:1.05rem;font-weight:700;color:#F8FAFC;margin-bottom:.6rem;line-height:1.4">The Thing Nobody Tells You About Starting Over</h3>
+              <p style="font-size:.8125rem;color:#94A3B8;line-height:1.6;flex:1;margin-bottom:1rem">It doesn't feel like a beginning. It feels like grief. And that's exactly right.</p>
+              <a href="#" style="font-size:.8125rem;color:#4ADE80;text-decoration:none;font-weight:500">Read more →</a>
+            </div>
+          </article>
+
+          <article class="glass-card blog-card">
+            <img src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Blog post" style="width:100%;height:200px;object-fit:cover" />
+            <div style="padding:1.5rem;flex:1;display:flex;flex-direction:column">
+              <div style="display:flex;gap:.5rem;margin-bottom:.75rem;flex-wrap:wrap">
+                <span style="padding:.2rem .6rem;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);border-radius:9999px;font-size:.7rem;color:#4ADE80">Relationships</span>
+                <span style="font-size:.75rem;color:#94A3B8">Oct 29, 2024</span>
+              </div>
+              <h3 class="serif" style="font-size:1.05rem;font-weight:700;color:#F8FAFC;margin-bottom:.6rem;line-height:1.4">Being Known vs. Being Liked: The Difference Changes Everything</h3>
+              <p style="font-size:.8125rem;color:#94A3B8;line-height:1.6;flex:1;margin-bottom:1rem">Most of us have optimized for likability. But what we actually hunger for is to be genuinely known.</p>
+              <a href="#" style="font-size:.8125rem;color:#4ADE80;text-decoration:none;font-weight:500">Read more →</a>
+            </div>
+          </article>
+
+          <article class="glass-card blog-card">
+            <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Blog post" style="width:100%;height:200px;object-fit:cover" />
+            <div style="padding:1.5rem;flex:1;display:flex;flex-direction:column">
+              <div style="display:flex;gap:.5rem;margin-bottom:.75rem;flex-wrap:wrap">
+                <span style="padding:.2rem .6rem;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);border-radius:9999px;font-size:.7rem;color:#4ADE80">Life</span>
+                <span style="font-size:.75rem;color:#94A3B8">Oct 15, 2024</span>
+              </div>
+              <h3 class="serif" style="font-size:1.05rem;font-weight:700;color:#F8FAFC;margin-bottom:.6rem;line-height:1.4">What Midlife Actually Offers (If You're Willing to Look)</h3>
+              <p style="font-size:.8125rem;color:#94A3B8;line-height:1.6;flex:1;margin-bottom:1rem">The crisis narrative misses everything interesting about the middle of a human life. Let's talk about the opportunity instead.</p>
+              <a href="#" style="font-size:.8125rem;color:#4ADE80;text-decoration:none;font-weight:500">Read more →</a>
+            </div>
+          </article>
+
+          <article class="glass-card blog-card">
+            <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Blog post" style="width:100%;height:200px;object-fit:cover" />
+            <div style="padding:1.5rem;flex:1;display:flex;flex-direction:column">
+              <div style="display:flex;gap:.5rem;margin-bottom:.75rem;flex-wrap:wrap">
+                <span style="padding:.2rem .6rem;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);border-radius:9999px;font-size:.7rem;color:#4ADE80">Coaching</span>
+                <span style="font-size:.75rem;color:#94A3B8">Sep 30, 2024</span>
+              </div>
+              <h3 class="serif" style="font-size:1.05rem;font-weight:700;color:#F8FAFC;margin-bottom:.6rem;line-height:1.4">The Most Powerful Thing I Do in Every Session</h3>
+              <p style="font-size:.8125rem;color:#94A3B8;line-height:1.6;flex:1;margin-bottom:1rem">It's not a technique. It's not a framework. It happens in the first five minutes and most people don't notice.</p>
+              <a href="#" style="font-size:.8125rem;color:#4ADE80;text-decoration:none;font-weight:500">Read more →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section style="padding:5rem 1.5rem;background:linear-gradient(135deg,#1A3626 0%,#0F2318 100%)">
+      <div class="container" style="max-width:640px;margin-inline:auto;text-align:center">
+        <div style="width:52px;height:52px;border-radius:50%;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.2);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <h2 class="serif" style="font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;color:#F8FAFC;margin-bottom:.75rem">Stay in the Conversation</h2>
+        <p style="color:#94A3B8;line-height:1.75;margin-bottom:2rem">
+          Every other week, I send one piece of honest writing on life, work, and what it means to become more fully yourself. No noise, no hustle content. Just words that earn their place.
+        </p>
+        <form style="display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center">
+          <input type="email" placeholder="your@email.com" style="flex:1;min-width:220px;padding:.875rem 1.25rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:9999px;color:#F8FAFC;font-family:'Inter',sans-serif;font-size:.9375rem;outline:none" />
+          <button type="submit" style="padding:.875rem 2rem;background:#4ADE80;color:#0F172A;font-weight:600;border:none;border-radius:9999px;cursor:pointer;font-family:'Inter',sans-serif;font-size:.9375rem;white-space:nowrap">Join the List</button>
+        </form>
+        <p style="font-size:.8125rem;color:#94A3B8;margin-top:1rem;font-style:italic">12,000+ readers. Unsubscribe whenever. No spam — ever.</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="padding:3rem 1.5rem;background:rgba(0,0,0,.3);border-top:1px solid rgba(255,255,255,.05)">
+      <div class="container" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem">
+        <div style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:#F8FAFC;display:flex;align-items:center;gap:.35rem">Michael <span style="color:#4ADE80;font-size:.8rem">✦</span></div>
+        <div style="display:flex;gap:1.5rem">
+          <a href="#" style="color:#94A3B8"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" style="color:#94A3B8"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+        <p style="font-size:.8125rem;color:#94A3B8">© 2025 Michael Rivera. All rights reserved.</p>
+      </div>
+    </footer>
+  </main>
+</BaseLayout>

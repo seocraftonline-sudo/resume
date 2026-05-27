@@ -1,0 +1,151 @@
+---
+import BaseLayout from '../../layouts/Base.astro';
+import DNNav from '../../components/DNNav.astro';
+---
+<BaseLayout title="Projects — Alex Chen" theme="dn">
+  <link rel="stylesheet" href="/styles/rv.css" slot="head" />
+  <DNNav active="projects" />
+
+  <main style="padding-top:5rem;background:#fff;color:#0A0A0A;font-family:'Inter',sans-serif">
+
+    <!-- Hero -->
+    <section style="padding:4rem 1.5rem 3rem;max-width:1200px;margin-inline:auto">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#FF6600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.5rem">Deep Dives</p>
+      <h1 style="font-size:clamp(2rem,5vw,3.5rem);font-weight:800;letter-spacing:-.04em;margin:0 0 1rem">Projects</h1>
+      <p style="font-size:1.125rem;color:#555;max-width:600px;line-height:1.7;margin:0">Detailed case studies showing the problem, my approach, and measurable results.</p>
+    </section>
+
+    <!-- Featured Case Study -->
+    <section style="padding:0 1.5rem 5rem;max-width:1200px;margin-inline:auto">
+      <div style="border:1px solid #E5E5E5;border-radius:24px;overflow:hidden">
+        <div style="background:#0A0A0A;padding:2.5rem;display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:center">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#FF6600;background:rgba(255,102,0,.15);border:1px solid rgba(255,102,0,.3);padding:.375rem 1rem;border-radius:6px;white-space:nowrap">Case Study #01</div>
+          <h2 style="font-size:1.75rem;font-weight:700;color:#fff;margin:0;letter-spacing:-.03em">NexusAPI Gateway</h2>
+        </div>
+        <div style="padding:2.5rem">
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:3rem">
+            {[
+              {label:'Daily Requests',value:'50M+'},
+              {label:'Latency (p99)',value:'< 45ms'},
+              {label:'Uptime SLA',value:'99.98%'},
+            ].map(stat => (
+              <div style="background:#F5F5F5;border-radius:16px;padding:1.5rem;text-align:center">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:2rem;font-weight:700;color:#FF6600;margin-bottom:.25rem">{stat.value}</div>
+                <div style="font-size:.8125rem;color:#666;text-transform:uppercase;letter-spacing:.05em">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem">
+            <div>
+              <h3 style="font-family:'JetBrains Mono',monospace;font-size:.875rem;color:#FF6600;font-weight:500;margin-bottom:1rem">// The Problem</h3>
+              <p style="font-size:.9375rem;color:#555;line-height:1.75;margin:0 0 1.5rem">Our fintech client was running a monolithic Express.js backend that couldn't handle market-open traffic spikes. P99 latency hit 2.8 seconds under load, causing 15% cart abandonment. The existing architecture had no caching layer and deployed as a single EC2 instance.</p>
+
+              <h3 style="font-family:'JetBrains Mono',monospace;font-size:.875rem;color:#FF6600;font-weight:500;margin-bottom:1rem">// The Solution</h3>
+              <p style="font-size:.9375rem;color:#555;line-height:1.75;margin:0">Rebuilt as a distributed API gateway with AWS Lambda functions per route group, ElastiCache Redis for response caching, and SQS for async job processing. Added API key rotation, rate limiting per client, and a custom metrics dashboard.</p>
+            </div>
+            <div>
+              <h3 style="font-family:'JetBrains Mono',monospace;font-size:.875rem;color:#FF6600;font-weight:500;margin-bottom:1rem">// Tech Stack</h3>
+              <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem">
+                {['Node.js','TypeScript','AWS Lambda','API Gateway','ElastiCache','SQS','CloudWatch','Terraform'].map(t => (
+                  <span style="font-family:'JetBrains Mono',monospace;font-size:.8125rem;background:#F5F5F5;border:1px solid #E5E5E5;border-radius:8px;padding:.375rem .75rem;color:#0A0A0A">{t}</span>
+                ))}
+              </div>
+
+              <div style="background:#0A0A0A;border-radius:14px;padding:1.5rem">
+                <p style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:rgba(255,255,255,.4);margin-bottom:.75rem">// Key Result</p>
+                <p style="font-family:'JetBrains Mono',monospace;font-size:.9375rem;color:#FF6600;line-height:1.6;margin:0">"P99 latency dropped from 2,800ms to 45ms. Zero downtime in 18 months."</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Archive -->
+    <section style="padding:0 1.5rem;max-width:1200px;margin-inline:auto">
+      <h2 style="font-size:1.5rem;font-weight:700;letter-spacing:-.02em;margin:0 0 2rem">Projects Archive</h2>
+      <div style="display:flex;flex-direction:column;gap:1rem">
+        {[
+          {year:'2024',name:'Pulse Analytics Dashboard',desc:'Real-time data viz with WebSocket live updates',tech:['React','D3.js','WebSocket'],stars:'',link:true},
+          {year:'2024',name:'AuthShield SDK',desc:'Drop-in auth SDK for Node/Python with OAuth2 & JWT rotation',tech:['Node.js','Python','OAuth2'],stars:'890',link:true},
+          {year:'2023',name:'DevFlow CLI',desc:'Developer workflow automation — 2.4k GitHub stars',tech:['Python','Click','Docker'],stars:'2.4k',link:true},
+          {year:'2023',name:'StandUp App',desc:'Async daily standup for remote teams with Slack integration',tech:['React Native','Expo','Slack API'],stars:'',link:false},
+          {year:'2023',name:'Ledgr Dashboard',desc:'Institutional fintech dashboard with multi-currency ledger',tech:['Next.js','Prisma','Stripe'],stars:'',link:false},
+          {year:'2022',name:'ts-validator',desc:'Lightweight TypeScript runtime schema validator, zero deps',tech:['TypeScript','Rollup'],stars:'340',link:true},
+          {year:'2022',name:'Webhook Relay Service',desc:'Reliable webhook delivery with retries and replay dashboard',tech:['Go','PostgreSQL','Redis'],stars:'',link:false},
+        ].map(p => (
+          <div style="display:grid;grid-template-columns:80px 1fr auto;gap:1.5rem;align-items:center;padding:1.25rem 1.5rem;background:#F5F5F5;border-radius:16px;border:1px solid #E5E5E5">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:.8125rem;color:#999">{p.year}</span>
+            <div>
+              <div style="font-weight:700;font-size:1rem;margin-bottom:.25rem">{p.name}</div>
+              <div style="font-size:.875rem;color:#666;margin-bottom:.5rem">{p.desc}</div>
+              <div style="display:flex;flex-wrap:wrap;gap:.375rem">
+                {p.tech.map(t => <span style="font-family:'JetBrains Mono',monospace;font-size:.75rem;background:#fff;border:1px solid #E5E5E5;border-radius:6px;padding:.125rem .5rem;color:#555">{t}</span>)}
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:flex-end;gap:.375rem">
+              {p.stars && <span style="font-family:'JetBrains Mono',monospace;font-size:.8125rem;color:#FF6600">★ {p.stars}</span>}
+              {p.link && <a href="https://github.com" style="font-size:.8125rem;color:#0A0A0A;font-weight:600;text-decoration:none;background:#fff;border:1px solid #E5E5E5;padding:.375rem .875rem;border-radius:8px">GitHub →</a>}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- GitHub Stats Panel -->
+    <section style="padding:4rem 1.5rem 5rem;max-width:1200px;margin-inline:auto">
+      <div style="background:#0A0A0A;border-radius:24px;padding:3rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center">
+        <div>
+          <p style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#FF6600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem">GitHub Activity</p>
+          <h2 style="font-size:1.75rem;font-weight:700;color:#fff;margin:0 0 2rem;letter-spacing:-.03em">Open Source Impact</h2>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            {[
+              {v:'80+',l:'Public Repos'},
+              {v:'4k+',l:'GitHub Stars'},
+              {v:'150+',l:'Pull Requests'},
+              {v:'500+',l:'Contributions/yr'},
+            ].map(s => (
+              <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:1.25rem;text-align:center">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:1.5rem;font-weight:700;color:#FF6600">{s.v}</div>
+                <div style="font-size:.8125rem;color:rgba(255,255,255,.5);margin-top:.25rem">{s.l}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div>
+          <p style="font-family:'JetBrains Mono',monospace;font-size:.8125rem;color:rgba(255,255,255,.4);margin-bottom:1rem">// Contribution heatmap (2024)</p>
+          <div style="display:grid;grid-template-columns:repeat(26,1fr);gap:2px">
+            {Array.from({length:364}).map((_, i) => {
+              const v = Math.random();
+              const bg = v < 0.5 ? 'rgba(255,255,255,.05)' : v < 0.7 ? 'rgba(255,102,0,.3)' : v < 0.85 ? 'rgba(255,102,0,.6)' : '#FF6600';
+              return <div style={`width:100%;padding-bottom:100%;background:${bg};border-radius:2px`}></div>;
+            })}
+          </div>
+          <div style="display:flex;align-items:center;gap:.75rem;margin-top:1rem">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:rgba(255,255,255,.4)">Less</span>
+            {['rgba(255,255,255,.05)','rgba(255,102,0,.3)','rgba(255,102,0,.6)','#FF6600'].map(c => (
+              <div style={`width:14px;height:14px;background:${c};border-radius:3px`}></div>
+            ))}
+            <span style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:rgba(255,255,255,.4)">More</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background:#fff;border-top:1px solid #E5E5E5;padding:3rem 1.5rem">
+    <div style="max-width:1200px;margin-inline:auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem">
+      <div style="font-weight:700;color:#0A0A0A">Alex Chen</div>
+      <div style="font-size:.875rem;color:#999">© 2025 Alex Chen.</div>
+    </div>
+  </footer>
+
+  <style>
+    @media (max-width:767px) {
+      main div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns:1fr !important; }
+      main div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns:1fr !important; }
+      main div[style*="grid-template-columns:80px 1fr auto"] { grid-template-columns:1fr !important; }
+    }
+  </style>
+</BaseLayout>

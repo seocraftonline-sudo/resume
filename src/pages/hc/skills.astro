@@ -1,0 +1,213 @@
+---
+import BaseLayout from '../../layouts/Base.astro';
+import HCNav from '../../components/HCNav.astro';
+---
+<BaseLayout title="Skills & Expertise — Michael Rivera" theme="hc">
+  <link rel="stylesheet" href="/styles/rv.css" slot="head" />
+  <HCNav active="skills" />
+
+  <style>
+    *{box-sizing:border-box}
+    body{background:#0F172A;color:#F8FAFC;font-family:'Inter',sans-serif;overflow-x:hidden}
+    .glass-card{background:rgba(255,255,255,.03);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.05);border-radius:24px}
+    .section-pad{padding:6rem 1.5rem}
+    .container{max-width:1280px;margin-inline:auto}
+    .serif{font-family:'Playfair Display',serif}
+    .skill-bar-bg{height:6px;background:rgba(255,255,255,.06);border-radius:9999px;overflow:hidden}
+    .skill-bar-fill{height:100%;background:linear-gradient(90deg,#4ADE80,#22c55e);border-radius:9999px;transition:width 1s ease}
+    @media(max-width:767px){
+      .competencies-grid{grid-template-columns:1fr!important}
+      .modalities-grid{grid-template-columns:1fr!important}
+      .section-pad{padding:4rem 1.25rem}
+    }
+  </style>
+
+  <main style="padding-top:5rem">
+
+    <!-- Hero -->
+    <section style="padding:6rem 1.5rem 4rem;background:linear-gradient(180deg,rgba(26,54,38,.9) 0%,rgba(15,23,42,1) 100%)">
+      <div class="container" style="text-align:center;max-width:720px">
+        <div style="display:inline-flex;align-items:center;gap:.5rem;padding:.375rem 1rem;border-radius:9999px;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);font-size:.8125rem;color:#94A3B8;margin-bottom:1.5rem">
+          <span style="width:6px;height:6px;border-radius:50%;background:#4ADE80;display:inline-block"></span>
+          Competencies &amp; Frameworks
+        </div>
+        <h1 class="serif" style="font-size:clamp(2rem,4vw,3.5rem);font-weight:700;color:#F8FAFC;line-height:1.2;margin-bottom:1.25rem">Skills &amp; Expertise</h1>
+        <p style="color:#94A3B8;font-size:1.0625rem;line-height:1.75">The tools, frameworks, and human capacities I bring to every coaching relationship.</p>
+      </div>
+    </section>
+
+    <!-- Core Coaching Competencies -->
+    <section class="section-pad" style="background:#0F172A">
+      <div class="container">
+        <div style="margin-bottom:3.5rem">
+          <h2 class="serif" style="font-size:clamp(1.75rem,3vw,2.5rem);font-weight:700;color:#F8FAFC;margin-bottom:.75rem">Core Coaching Competencies</h2>
+          <p style="color:#94A3B8;max-width:560px;line-height:1.7">ICF core competencies I've honed over thousands of hours of practice.</p>
+        </div>
+        <div class="competencies-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;max-width:900px">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem">
+              <span style="font-size:.9375rem;color:rgba(248,250,252,.85);font-weight:500">Active Listening</span>
+              <span style="font-size:.8125rem;color:#4ADE80">Expert</span>
+            </div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:97%"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem">
+              <span style="font-size:.9375rem;color:rgba(248,250,252,.85);font-weight:500">Powerful Questioning</span>
+              <span style="font-size:.8125rem;color:#4ADE80">Expert</span>
+            </div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:95%"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem">
+              <span style="font-size:.9375rem;color:rgba(248,250,252,.85);font-weight:500">Creating Safety</span>
+              <span style="font-size:.8125rem;color:#4ADE80">Expert</span>
+            </div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:96%"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem">
+              <span style="font-size:.9375rem;color:rgba(248,250,252,.85);font-weight:500">Goal Setting &amp; Accountability</span>
+              <span style="font-size:.8125rem;color:#4ADE80">Advanced</span>
+            </div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:90%"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem">
+              <span style="font-size:.9375rem;color:rgba(248,250,252,.85);font-weight:500">Facilitating Awareness</span>
+              <span style="font-size:.8125rem;color:#4ADE80">Expert</span>
+            </div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:94%"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem">
+              <span style="font-size:.9375rem;color:rgba(248,250,252,.85);font-weight:500">Maintaining Boundaries</span>
+              <span style="font-size:.8125rem;color:#4ADE80">Advanced</span>
+            </div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:92%"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modalities & Frameworks -->
+    <section class="section-pad" style="background:rgba(26,54,38,.15);border-top:1px solid rgba(255,255,255,.05)">
+      <div class="container">
+        <div style="margin-bottom:3.5rem">
+          <h2 class="serif" style="font-size:clamp(1.75rem,3vw,2.5rem);font-weight:700;color:#F8FAFC;margin-bottom:.75rem">Modalities &amp; Frameworks</h2>
+          <p style="color:#94A3B8;max-width:560px;line-height:1.7">The evidence-based approaches I draw on, integrated naturally rather than applied rigidly.</p>
+        </div>
+        <div class="modalities-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem">
+          <div class="glass-card" style="padding:1.75rem;background:#1A3626;border-color:rgba(74,222,128,.15)">
+            <div style="font-size:1.75rem;margin-bottom:.75rem">🌿</div>
+            <h3 class="serif" style="font-size:1.1rem;font-weight:700;color:#F8FAFC;margin-bottom:.5rem">Acceptance &amp; Commitment Therapy</h3>
+            <p style="font-size:.8125rem;color:#94A3B8;line-height:1.65">Expanding psychological flexibility — the ability to take action aligned with your values even when discomfort is present.</p>
+          </div>
+          <div class="glass-card" style="padding:1.75rem">
+            <div style="font-size:1.75rem;margin-bottom:.75rem">🧘</div>
+            <h3 class="serif" style="font-size:1.1rem;font-weight:700;color:#F8FAFC;margin-bottom:.5rem">Somatic Coaching</h3>
+            <p style="font-size:.8125rem;color:#94A3B8;line-height:1.65">Listening to the body's wisdom. Working with physical sensations, posture, and breath as data for transformation.</p>
+          </div>
+          <div class="glass-card" style="padding:1.75rem">
+            <div style="font-size:1.75rem;margin-bottom:.75rem">📖</div>
+            <h3 class="serif" style="font-size:1.1rem;font-weight:700;color:#F8FAFC;margin-bottom:.5rem">Narrative Therapy</h3>
+            <p style="font-size:.8125rem;color:#94A3B8;line-height:1.65">Separating the person from the problem and re-authoring limiting stories into ones that create agency and possibility.</p>
+          </div>
+          <div class="glass-card" style="padding:1.75rem">
+            <div style="font-size:1.75rem;margin-bottom:.75rem">🔆</div>
+            <h3 class="serif" style="font-size:1.1rem;font-weight:700;color:#F8FAFC;margin-bottom:.5rem">Positive Psychology</h3>
+            <p style="font-size:.8125rem;color:#94A3B8;line-height:1.65">Strengths-based approaches to wellbeing, resilience, and flourishing — PERMA model as a practical framework.</p>
+          </div>
+          <div class="glass-card" style="padding:1.75rem">
+            <div style="font-size:1.75rem;margin-bottom:.75rem">🔗</div>
+            <h3 class="serif" style="font-size:1.1rem;font-weight:700;color:#F8FAFC;margin-bottom:.5rem">Attachment Theory</h3>
+            <p style="font-size:.8125rem;color:#94A3B8;line-height:1.65">Understanding how early relationship patterns shape present-day behavior in work and in love — and how to interrupt unhelpful cycles.</p>
+          </div>
+          <div class="glass-card" style="padding:1.75rem">
+            <div style="font-size:1.75rem;margin-bottom:.75rem">🔄</div>
+            <h3 class="serif" style="font-size:1.1rem;font-weight:700;color:#F8FAFC;margin-bottom:.5rem">Internal Family Systems</h3>
+            <p style="font-size:.8125rem;color:#94A3B8;line-height:1.65">Working with the different "parts" of oneself — the inner critic, the protector, the exile — to create internal harmony and cohesion.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Soft Skills Narrative -->
+    <section class="section-pad" style="background:#0F172A;border-top:1px solid rgba(255,255,255,.05)">
+      <div class="container">
+        <div style="max-width:800px;margin-inline:auto">
+          <h2 class="serif" style="font-size:clamp(1.75rem,3vw,2.5rem);font-weight:700;color:#F8FAFC;margin-bottom:1rem">The Human Side of This Work</h2>
+          <p style="color:#94A3B8;font-size:1.0625rem;line-height:1.8;margin-bottom:2rem">
+            Frameworks are useful scaffolding. But what actually makes coaching work is something harder to quantify: the quality of presence you bring, the courage to name what's unspoken, and the steadiness to sit with someone in uncertainty without rushing toward resolution.
+          </p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:2rem">
+            <div class="glass-card" style="padding:1.25rem;text-align:center">
+              <div class="serif" style="font-size:1.05rem;font-weight:700;color:#F8FAFC;margin-bottom:.35rem">Radical Presence</div>
+              <p style="font-size:.8125rem;color:#94A3B8">Full attention, no agenda</p>
+            </div>
+            <div class="glass-card" style="padding:1.25rem;text-align:center;background:#1A3626;border-color:rgba(74,222,128,.15)">
+              <div class="serif" style="font-size:1.05rem;font-weight:700;color:#F8FAFC;margin-bottom:.35rem">Earned Directness</div>
+              <p style="font-size:.8125rem;color:#94A3B8">Truth with care</p>
+            </div>
+            <div class="glass-card" style="padding:1.25rem;text-align:center">
+              <div class="serif" style="font-size:1.05rem;font-weight:700;color:#F8FAFC;margin-bottom:.35rem">Comfortable with Mess</div>
+              <p style="font-size:.8125rem;color:#94A3B8">No false tidiness</p>
+            </div>
+            <div class="glass-card" style="padding:1.25rem;text-align:center">
+              <div class="serif" style="font-size:1.05rem;font-weight:700;color:#F8FAFC;margin-bottom:.35rem">Patient Pacing</div>
+              <p style="font-size:.8125rem;color:#94A3B8">Following your rhythm</p>
+            </div>
+          </div>
+          <p style="color:#94A3B8;font-size:1rem;line-height:1.8;font-style:italic;border-left:2px solid rgba(74,222,128,.3);padding-left:1.25rem">
+            "Good coaching isn't about having better answers. It's about asking questions that the client couldn't ask themselves."
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Continuous Learning -->
+    <section class="section-pad" style="background:rgba(26,54,38,.2);border-top:1px solid rgba(255,255,255,.05)">
+      <div class="container">
+        <div style="text-align:center;max-width:640px;margin-inline:auto;margin-bottom:3rem">
+          <h2 class="serif" style="font-size:clamp(1.75rem,3vw,2.5rem);font-weight:700;color:#F8FAFC;margin-bottom:.75rem">Always Learning</h2>
+          <p style="color:#94A3B8;line-height:1.7">The moment I think I've arrived is the moment I become less useful to my clients. Here's what I'm currently exploring.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;max-width:900px;margin-inline:auto">
+          <div class="glass-card" style="padding:1.75rem;display:flex;gap:1rem;align-items:start">
+            <div style="flex-shrink:0;width:40px;height:40px;border-radius:10px;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.15);display:flex;align-items:center;justify-content:center;font-size:1rem">📚</div>
+            <div>
+              <div style="font-size:.9rem;font-weight:600;color:#F8FAFC;margin-bottom:.25rem">Currently Reading</div>
+              <div style="font-size:.8125rem;color:#94A3B8">"The Polyvagal Theory in Therapy" — Dana, D.</div>
+            </div>
+          </div>
+          <div class="glass-card" style="padding:1.75rem;display:flex;gap:1rem;align-items:start">
+            <div style="flex-shrink:0;width:40px;height:40px;border-radius:10px;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.15);display:flex;align-items:center;justify-content:center;font-size:1rem">🎓</div>
+            <div>
+              <div style="font-size:.9rem;font-weight:600;color:#F8FAFC;margin-bottom:.25rem">Current Training</div>
+              <div style="font-size:.8125rem;color:#94A3B8">EMDR Foundations (2025)</div>
+            </div>
+          </div>
+          <div class="glass-card" style="padding:1.75rem;display:flex;gap:1rem;align-items:start">
+            <div style="flex-shrink:0;width:40px;height:40px;border-radius:10px;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.15);display:flex;align-items:center;justify-content:center;font-size:1rem">🧠</div>
+            <div>
+              <div style="font-size:.9rem;font-weight:600;color:#F8FAFC;margin-bottom:.25rem">Exploring</div>
+              <div style="font-size:.8125rem;color:#94A3B8">Neuroscience of habit formation &amp; identity shift</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="padding:3rem 1.5rem;background:rgba(0,0,0,.3);border-top:1px solid rgba(255,255,255,.05)">
+      <div class="container" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem">
+        <div style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:#F8FAFC;display:flex;align-items:center;gap:.35rem">Michael <span style="color:#4ADE80;font-size:.8rem">✦</span></div>
+        <div style="display:flex;gap:1.5rem">
+          <a href="#" style="color:#94A3B8"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" style="color:#94A3B8"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+        <p style="font-size:.8125rem;color:#94A3B8">© 2025 Michael Rivera. All rights reserved.</p>
+      </div>
+    </footer>
+  </main>
+</BaseLayout>

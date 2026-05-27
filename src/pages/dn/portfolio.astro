@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../../layouts/Base.astro';
+import DNNav from '../../components/DNNav.astro';
+
+const projects = [
+  {id:1,cat:'Web App',title:'NexusAPI Gateway',desc:'High-throughput API gateway handling 50M+ daily requests with Redis caching and auto-scaling.',tech:['Node.js','AWS Lambda','Redis','TypeScript'],img:'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800',stars:'1.2k',featured:true},
+  {id:2,cat:'Web App',title:'Pulse Analytics Dashboard',desc:'Real-time analytics platform with WebSocket-powered live updates and D3.js visualizations.',tech:['React','TypeScript','D3.js','WebSocket'],img:'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800',stars:'',featured:false},
+  {id:3,cat:'OSS',title:'DevFlow CLI',desc:'Developer workflow automation tool. 2.4k GitHub stars, used by 10k+ developers worldwide.',tech:['Python','Click','YAML','Docker'],img:'https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=800',stars:'2.4k',featured:false},
+  {id:4,cat:'API',title:'AuthShield SDK',desc:'Drop-in authentication SDK with OAuth2, JWT rotation, and session management for Node/Python.',tech:['Node.js','Python','JWT','OAuth2'],img:'https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=800',stars:'890',featured:false},
+  {id:5,cat:'Mobile',title:'StandUp — Daily Scrum App',desc:'React Native app for async standup updates. Integrations with Slack and GitHub activity feed.',tech:['React Native','Expo','Slack API','GitHub API'],img:'https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=800',stars:'',featured:false},
+  {id:6,cat:'Web App',title:'Ledgr Fintech Dashboard',desc:'Institutional-grade financial dashboard with multi-currency ledger, CSV exports, and audit logs.',tech:['Next.js','Prisma','PostgreSQL','Stripe'],img:'https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=800',stars:'',featured:false},
+  {id:7,cat:'OSS',title:'ts-validator',desc:'Lightweight runtime schema validator for TypeScript with zero dependencies and Zod-like API.',tech:['TypeScript','Jest','Rollup'],img:'https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?auto=compress&cs=tinysrgb&w=800',stars:'340',featured:false},
+  {id:8,cat:'API',title:'Webhook Relay Service',desc:'Reliable webhook delivery with retries, HMAC verification, and a replay dashboard.',tech:['Go','PostgreSQL','Redis','Docker'],img:'https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=800',stars:'',featured:false},
+];
+---
+<BaseLayout title="Portfolio — Alex Chen" theme="dn">
+  <link rel="stylesheet" href="/styles/rv.css" slot="head" />
+  <DNNav active="portfolio" />
+
+  <main style="padding-top:5rem;background:#fff;color:#0A0A0A;font-family:'Inter',sans-serif">
+
+    <!-- Hero -->
+    <section style="padding:4rem 1.5rem 3rem;max-width:1200px;margin-inline:auto">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#FF6600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.5rem">Work</p>
+      <h1 style="font-size:clamp(2rem,5vw,3.5rem);font-weight:800;letter-spacing:-.04em;margin:0 0 1rem">Portfolio</h1>
+      <p style="font-size:1.125rem;color:#555;max-width:600px;line-height:1.7;margin:0">A curated selection of projects spanning web apps, APIs, open-source tools, and mobile apps — built over 5 years of full-stack engineering.</p>
+    </section>
+
+    <!-- Featured Project -->
+    <section style="padding:0 1.5rem 4rem;max-width:1200px;margin-inline:auto">
+      <div style="background:#0A0A0A;border-radius:24px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr">
+        <img src={projects[0].img} alt={projects[0].title} style="width:100%;height:100%;object-fit:cover;min-height:320px;display:block" />
+        <div style="padding:3rem;display:flex;flex-direction:column;justify-content:center">
+          <div style="display:flex;gap:.75rem;margin-bottom:1.5rem;flex-wrap:wrap">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:.75rem;background:#FF6600;color:#fff;border-radius:6px;padding:.25rem .625rem">Featured</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:.75rem;background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);border-radius:6px;padding:.25rem .625rem">{projects[0].cat}</span>
+          </div>
+          <h2 style="font-size:2rem;font-weight:700;color:#fff;margin:0 0 1rem;letter-spacing:-.03em">{projects[0].title}</h2>
+          <p style="color:rgba(255,255,255,.6);line-height:1.65;margin:0 0 1.5rem;font-size:.9375rem">{projects[0].desc}</p>
+          <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem">
+            {projects[0].tech.map(t => (
+              <span style="font-family:'JetBrains Mono',monospace;font-size:.75rem;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);border-radius:6px;padding:.25rem .625rem">{t}</span>
+            ))}
+          </div>
+          <div style="display:flex;gap:1rem">
+            <a href="/dn/projects/" style="background:#FF6600;color:#fff;font-size:.875rem;font-weight:600;padding:.75rem 1.5rem;border-radius:9999px;text-decoration:none">Case Study</a>
+            <a href="https://github.com" style="background:rgba(255,255,255,.1);color:#fff;font-size:.875rem;font-weight:600;padding:.75rem 1.5rem;border-radius:9999px;text-decoration:none">GitHub ★ {projects[0].stars}</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filter Pills -->
+    <section style="padding:0 1.5rem 2rem;max-width:1200px;margin-inline:auto">
+      <div style="display:flex;gap:.625rem;flex-wrap:wrap">
+        {['All','Web App','Mobile','API','OSS'].map(cat => (
+          <button style={`font-family:'JetBrains Mono',monospace;font-size:.8125rem;padding:.5rem 1.25rem;border-radius:9999px;border:1px solid ${cat==='All'?'#FF6600':'#E5E5E5'};background:${cat==='All'?'#FF6600':'#fff'};color:${cat==='All'?'#fff':'#555'};cursor:pointer;transition:all .2s`} data-filter={cat}>{cat}</button>
+        ))}
+      </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section style="padding:0 1.5rem 5rem;max-width:1200px;margin-inline:auto">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem">
+        {projects.slice(1).map(p => (
+          <article style="background:#fff;border:1px solid #E5E5E5;border-radius:20px;overflow:hidden;transition:box-shadow .2s,transform .2s" data-cat={p.cat}>
+            <div style="position:relative">
+              <img src={p.img} alt={p.title} style="width:100%;height:200px;object-fit:cover;display:block" />
+              <span style="position:absolute;top:.75rem;right:.75rem;font-family:'JetBrains Mono',monospace;font-size:.7rem;background:rgba(0,0,0,.7);color:#fff;border-radius:6px;padding:.25rem .625rem">{p.cat}</span>
+            </div>
+            <div style="padding:1.5rem">
+              <h3 style="font-size:1.125rem;font-weight:700;margin:0 0 .5rem;letter-spacing:-.02em">{p.title}</h3>
+              <p style="font-size:.875rem;color:#666;line-height:1.6;margin:0 0 1rem">{p.desc}</p>
+              <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.25rem">
+                {p.tech.map(t => (
+                  <span style="font-family:'JetBrains Mono',monospace;font-size:.75rem;background:#F5F5F5;color:#555;border-radius:6px;padding:.25rem .5rem">{t}</span>
+                ))}
+              </div>
+              <div style="display:flex;align-items:center;gap:1rem">
+                <a href="/dn/projects/" style="font-size:.875rem;color:#FF6600;font-weight:600;text-decoration:none">View →</a>
+                {p.stars && <span style="font-family:'JetBrains Mono',monospace;font-size:.8125rem;color:#999">★ {p.stars}</span>}
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <footer style="background:#fff;border-top:1px solid #E5E5E5;padding:3rem 1.5rem">
+    <div style="max-width:1200px;margin-inline:auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem">
+      <div style="font-weight:700;color:#0A0A0A">Alex Chen</div>
+      <div style="font-size:.875rem;color:#999">© 2025 Alex Chen.</div>
+    </div>
+  </footer>
+
+  <script>
+    const btns = document.querySelectorAll('[data-filter]');
+    const cards = document.querySelectorAll('[data-cat]');
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = (btn as HTMLElement).dataset.filter;
+        btns.forEach(b => {
+          const el = b as HTMLElement;
+          el.style.background = '#fff'; el.style.color = '#555'; el.style.borderColor = '#E5E5E5';
+        });
+        (btn as HTMLElement).style.background = '#FF6600';
+        (btn as HTMLElement).style.color = '#fff';
+        (btn as HTMLElement).style.borderColor = '#FF6600';
+        cards.forEach(card => {
+          const el = card as HTMLElement;
+          if (filter === 'All' || el.dataset.cat === filter) { el.style.display = 'block'; }
+          else { el.style.display = 'none'; }
+        });
+      });
+    });
+  </script>
+</BaseLayout>

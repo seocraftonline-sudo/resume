@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../../layouts/Base.astro';
+import CDNav from '../../components/CDNav.astro';
+---
+
+<BaseLayout title="Testimonials — Wil B" theme="cd">
+  <link rel="stylesheet" href="/styles/rv.css" slot="head" />
+  <CDNav active="testimonials" />
+
+  <main style="padding-top:5rem;background:#fff;color:#1a1a1a;font-family:'Inter',sans-serif">
+
+    <!-- Page Header -->
+    <section style="border-bottom:1px solid #e7e7e7;padding:4rem 1.5rem 3rem">
+      <div style="max-width:1440px;margin-inline:auto">
+        <p style="font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b0b0b0;margin-bottom:.75rem">Insights / Testimonials</p>
+        <h1 style="font-size:clamp(2.5rem,6vw,5rem);font-weight:900;letter-spacing:-.04em;line-height:1.0;margin:0;color:#1a1a1a">What Clients Say.</h1>
+      </div>
+    </section>
+
+    <!-- Featured Quote Block -->
+    <section style="max-width:1440px;margin-inline:auto;padding:4rem 1.5rem 0">
+      <div style="background:#1a1a1a;padding:4rem 3.5rem;position:relative;overflow:hidden">
+        <div style="position:absolute;top:0;right:0;width:50%;height:100%;background-image:radial-gradient(circle,rgba(255,255,255,.04) 1px,transparent 1px);background-size:24px 24px"></div>
+        <div style="position:relative;z-index:1;max-width:900px">
+          <svg width="48" height="38" viewBox="0 0 48 38" fill="none" style="margin-bottom:2.5rem"><path d="M0 38V24.1c0-5.6 1.3-10.6 3.8-15C6.3 4.7 10.3 1.3 16 0l2.8 4.4C14.6 5.9 11.7 8.5 10.5 12c-.9 2.5-1 5 0 7.7h9.7v18.3H0zm27.5 0V24.1c0-5.6 1.3-10.6 3.8-15 2.5-4.4 6.5-7.8 12.2-9.1l2.8 4.4c-4.4 1.5-7.3 4.1-8.5 7.6-.9 2.5-1 5 0 7.7h9.7v18.3H27.5z" fill="rgba(255,255,255,.12)"/></svg>
+          <blockquote style="font-size:clamp(1.25rem,2.5vw,1.75rem);font-weight:300;color:#fff;line-height:1.65;margin:0 0 2.5rem;font-style:italic">"Wil doesn't just design interfaces — he engineers trust. His ability to take complex technical concepts and distill them into beautiful, intuitive experiences was absolutely instrumental in our Series B fundraise. The Meridian brand went from forgettable to category-defining."</blockquote>
+          <div style="display:flex;align-items:center;gap:1.25rem">
+            <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Sarah Jenkins" style="width:3.5rem;height:3.5rem;border-radius:50%;object-fit:cover;filter:grayscale(100%)" />
+            <div>
+              <div style="font-weight:800;color:#fff;font-size:.9375rem;letter-spacing:-.01em">Sarah Jenkins</div>
+              <div style="color:rgba(255,255,255,.5);font-size:.8125rem;margin-top:.25rem">Founder & CEO, Tabs Finance</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial Cards Grid -->
+    <section style="max-width:1440px;margin-inline:auto;padding:4rem 1.5rem">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem">
+
+        {[
+          {
+            quote:"Working with Wil is unlike any creative engagement I've experienced. He asks better questions than most consultants I've paid five times more, and then he executes flawlessly.",
+            name:'Marcus Obi',
+            title:'Co-Founder, Rogo AI',
+            img:'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=800'
+          },
+          {
+            quote:'The Nexus rebrand was the largest creative undertaking our company has ever done. Wil led it with calm authority and genuine vision. The results exceeded every metric we set.',
+            name:'Rachel Dawson',
+            title:'CMO, Nexus Technologies',
+            img:'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=800'
+          },
+          {
+            quote:"I've hired a lot of designers. Wil is the first one who made me genuinely reconsider assumptions I'd held about our brand for five years. That kind of challenge is rare and invaluable.",
+            name:'Tom Hartley',
+            title:'Founder, Coder',
+            img:'https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=800'
+          },
+          {
+            quote:'What separates Wil from other creatives is that he thinks commercially. The Vanta annual report won a D&AD pencil, but it also generated three direct enterprise inquiries. That dual impact is rare.',
+            name:'Priya Shah',
+            title:'VP Marketing, Vanta',
+            img:'https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=800'
+          }
+        ].map(({quote, name, title, img}) => (
+          <div style="background:#fff;border:1px solid #e7e7e7;padding:2.5rem;transition:transform .3s ease,box-shadow .3s ease" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 30px -6px rgba(0,0,0,.1)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+            <svg width="28" height="22" viewBox="0 0 28 22" fill="none" style="margin-bottom:1.5rem"><path d="M0 22V14c0-3.2.7-6.1 2.2-8.7C3.7 2.7 6 .7 9.3 0l1.6 2.5C8.5 3.4 6.9 4.7 6.2 6.9c-.5 1.5-.6 2.9 0 4.5h5.6v10.6H0zm16.3 0V14c0-3.2.7-6.1 2.2-8.7C19.9 2.7 22.2.7 25.5 0l1.6 2.5c-2.5.9-4.2 2.2-4.8 4.4-.5 1.5-.6 2.9 0 4.5h5.7v10.6H16.3z" fill="#e7e7e7"/></svg>
+            <blockquote style="font-size:.9375rem;color:#1a1a1a;line-height:1.7;font-weight:300;margin:0 0 2rem;font-style:italic">"{quote}"</blockquote>
+            <div style="display:flex;align-items:center;gap:.875rem;padding-top:1.25rem;border-top:1px solid #e7e7e7">
+              <img src={img} alt={name} style="width:2.5rem;height:2.5rem;border-radius:50%;object-fit:cover;filter:grayscale(100%)" />
+              <div>
+                <div style="font-weight:800;color:#1a1a1a;font-size:.875rem;letter-spacing:-.01em">{name}</div>
+                <div style="color:#b0b0b0;font-size:.75rem;margin-top:.2rem">{title}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+
+      </div>
+    </section>
+
+    <!-- Client Logos -->
+    <section style="background:#f6f6f6;border-top:1px solid #e7e7e7;border-bottom:1px solid #e7e7e7;padding:4rem 1.5rem">
+      <div style="max-width:1440px;margin-inline:auto">
+        <p style="font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b0b0b0;margin-bottom:2rem;text-align:center">Trusted by teams at</p>
+        <div style="display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;align-items:center">
+          {['Meridian','Rogo AI','Coder','Nexus','Vanta','Tabs Finance','Apex','Stride'].map(co => (
+            <div style="padding:.875rem 2rem;background:#fff;border:1px solid #e7e7e7;font-size:.875rem;font-weight:800;color:#b0b0b0;letter-spacing:.05em;text-transform:uppercase;transition:color .2s ease,border-color .2s ease" onmouseenter="this.style.color='#1a1a1a';this.style.borderColor='#1a1a1a'" onmouseleave="this.style.color='#b0b0b0';this.style.borderColor='#e7e7e7'">{co}</div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="max-width:1440px;margin-inline:auto;padding:5rem 1.5rem;text-align:center">
+      <h2 style="font-size:clamp(1.75rem,3.5vw,2.5rem);font-weight:900;letter-spacing:-.03em;color:#1a1a1a;margin:0 0 1rem">Ready to add your story?</h2>
+      <p style="font-size:1.0625rem;color:#6d6d6d;max-width:480px;margin-inline:auto;line-height:1.6;font-weight:300;margin-bottom:2.5rem">I take on a limited number of projects each quarter. Let's talk about yours.</p>
+      <a href="/cd/contact/" style="display:inline-flex;align-items:center;gap:.625rem;padding:.875rem 2rem;background:#1a1a1a;color:#fff;font-size:.9375rem;font-weight:700;border-radius:999px;text-decoration:none;transition:transform .2s ease,box-shadow .2s ease" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 25px -5px rgba(0,0,0,.25)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">Start a Conversation →</a>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer style="background:#1a1a1a;padding:3rem 1.5rem">
+    <div style="max-width:1440px;margin-inline:auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem">
+      <div style="color:rgba(255,255,255,.5);font-size:.875rem">© 2025 Wil B. All rights reserved.</div>
+      <div style="display:flex;align-items:center;gap:1.5rem">
+        <a href="#" style="color:rgba(255,255,255,.6);font-size:.875rem;font-weight:500;text-decoration:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='rgba(255,255,255,.6)'">GitHub</a>
+        <a href="#" style="color:rgba(255,255,255,.6);font-size:.875rem;font-weight:500;text-decoration:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='rgba(255,255,255,.6)'">LinkedIn</a>
+        <a href="#" style="color:rgba(255,255,255,.6);font-size:.875rem;font-weight:500;text-decoration:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='rgba(255,255,255,.6)'">Instagram</a>
+        <a href="#" style="color:rgba(255,255,255,.6);font-size:.875rem;font-weight:500;text-decoration:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='rgba(255,255,255,.6)'">Twitter</a>
+      </div>
+    </div>
+  </footer>
+</BaseLayout>

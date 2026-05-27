@@ -1,0 +1,264 @@
+---
+import BaseLayout from '../../layouts/Base.astro';
+import HCNav from '../../components/HCNav.astro';
+---
+<BaseLayout title="About Michael Rivera — Life & Career Coach" theme="hc">
+  <link rel="stylesheet" href="/styles/rv.css" slot="head" />
+  <HCNav active="about" />
+
+  <style>
+    *{box-sizing:border-box}
+    body{background:#0F172A;color:#F8FAFC;font-family:'Inter',sans-serif;overflow-x:hidden}
+    .glass-card{background:rgba(255,255,255,.03);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.05);border-radius:24px}
+    .section-pad{padding:6rem 1.5rem}
+    .container{max-width:1280px;margin-inline:auto}
+    .serif{font-family:'Playfair Display',serif}
+    .accent{color:#4ADE80}
+    .muted{color:#94A3B8}
+    .btn-green{display:inline-flex;align-items:center;gap:.5rem;background:#4ADE80;color:#0F172A;font-weight:600;font-size:.9375rem;padding:.875rem 2rem;border-radius:9999px;text-decoration:none;transition:box-shadow .2s ease}
+    .btn-green:hover{box-shadow:0 0 24px rgba(74,222,128,.4)}
+    @media(max-width:767px){
+      .hero-inner{flex-direction:column!important}
+      .values-grid{grid-template-columns:1fr!important}
+      .gallery-grid{grid-template-columns:1fr!important}
+      .section-pad{padding:4rem 1.25rem}
+    }
+  </style>
+
+  <main style="padding-top:5rem">
+
+    <!-- Hero -->
+    <section style="padding:6rem 1.5rem 4rem;background:linear-gradient(180deg,rgba(26,54,38,.9) 0%,rgba(15,23,42,1) 100%);position:relative;overflow:hidden">
+      <div style="position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:rgba(26,54,38,.4);border-radius:50%;filter:blur(100px);pointer-events:none"></div>
+      <div class="container">
+        <div class="hero-inner" style="display:flex;align-items:center;gap:4rem">
+          <div style="flex:1">
+            <div style="display:inline-flex;align-items:center;gap:.5rem;padding:.375rem 1rem;border-radius:9999px;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);font-size:.8125rem;color:#94A3B8;margin-bottom:1.5rem">
+              <span style="width:6px;height:6px;border-radius:50%;background:#4ADE80;display:inline-block"></span>
+              The story behind the work
+            </div>
+            <h1 class="serif" style="font-size:clamp(2.25rem,4.5vw,3.75rem);font-weight:700;line-height:1.15;margin-bottom:1.5rem;color:#F8FAFC">
+              More than just<br/><em style="color:#4ADE80;font-style:italic">a coach.</em>
+            </h1>
+            <p style="font-size:1.0625rem;color:#94A3B8;line-height:1.75;margin-bottom:1.25rem;max-width:560px">
+              If we were grabbing coffee right now, I wouldn't start by listing my credentials. I'd ask what's keeping you up at night — because that's where the real work begins.
+            </p>
+            <p style="font-size:1.0625rem;color:#94A3B8;line-height:1.75;margin-bottom:1.25rem;max-width:560px">
+              I've walked through my own transitions — a career that looked perfect on paper but felt hollow inside, relationships that needed honest recalibration, a search for meaning that nobody around me seemed to be having. That journey is what brought me here.
+            </p>
+            <p class="serif" style="font-size:1.25rem;font-style:italic;color:rgba(248,250,252,.85);max-width:480px">
+              "Human connection is the medium through which all change happens."
+            </p>
+            <div style="margin-top:1.5rem;font-size:.875rem;color:#94A3B8">— Michael</div>
+          </div>
+          <div style="flex:0 0 400px;position:relative">
+            <div style="border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 24px 64px rgba(0,0,0,.4)">
+              <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Michael Rivera" style="width:100%;height:520px;object-fit:cover;display:block" />
+            </div>
+            <div class="glass-card" style="position:absolute;bottom:-1rem;right:-1rem;padding:1rem 1.25rem;border-radius:16px;border:1px solid rgba(74,222,128,.2)">
+              <div style="font-size:.75rem;color:#94A3B8">Based in</div>
+              <div style="font-size:.875rem;color:#F8FAFC;font-weight:600">Austin, Texas</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Journey Timeline -->
+    <section class="section-pad" style="background:#0F172A;border-top:1px solid rgba(255,255,255,.05)">
+      <div class="container">
+        <div style="text-align:center;max-width:640px;margin-inline:auto;margin-bottom:4rem">
+          <h2 class="serif" style="font-size:clamp(1.75rem,3vw,2.75rem);font-weight:700;color:#F8FAFC;margin-bottom:1rem">My Journey So Far</h2>
+          <p style="color:#94A3B8;line-height:1.7">Not just a list of titles — the defining moments that shaped how I show up for my clients today.</p>
+        </div>
+        <div style="max-width:760px;margin-inline:auto;position:relative">
+          <div style="position:absolute;left:20px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,rgba(74,222,128,.3),transparent)"></div>
+          <!-- Item 1 -->
+          <div style="display:flex;gap:2rem;margin-bottom:3rem;position:relative">
+            <div style="flex-shrink:0;width:40px;height:40px;border-radius:50%;background:#1A3626;border:2px solid #4ADE80;display:flex;align-items:center;justify-content:center;z-index:1">
+              <div style="width:8px;height:8px;border-radius:50%;background:#4ADE80"></div>
+            </div>
+            <div class="glass-card" style="flex:1;padding:1.75rem">
+              <span style="display:inline-block;padding:.25rem .75rem;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);border-radius:9999px;font-size:.75rem;color:#4ADE80;margin-bottom:.75rem">2015</span>
+              <h3 class="serif" style="font-size:1.2rem;font-weight:700;color:#F8FAFC;margin-bottom:.5rem">The Crossroads</h3>
+              <p style="font-size:.875rem;color:#94A3B8;line-height:1.65">Left a senior marketing role at a Fortune 500 company. On paper, it was crazy. Internally, it was overdue. I began exploring psychology and coaching — not as a career plan, but as a survival strategy.</p>
+            </div>
+          </div>
+          <!-- Item 2 -->
+          <div style="display:flex;gap:2rem;margin-bottom:3rem;position:relative">
+            <div style="flex-shrink:0;width:40px;height:40px;border-radius:50%;background:#1A3626;border:2px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;z-index:1">
+              <div style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.3)"></div>
+            </div>
+            <div class="glass-card" style="flex:1;padding:1.75rem">
+              <span style="display:inline-block;padding:.25rem .75rem;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);border-radius:9999px;font-size:.75rem;color:#4ADE80;margin-bottom:.75rem">2017</span>
+              <h3 class="serif" style="font-size:1.2rem;font-weight:700;color:#F8FAFC;margin-bottom:.5rem">Deep Roots in Psychology</h3>
+              <p style="font-size:.875rem;color:#94A3B8;line-height:1.65">Earned my ICF certification and began training in somatic coaching and Acceptance & Commitment Therapy. Discovered that the body knows things the mind takes years to catch up with.</p>
+            </div>
+          </div>
+          <!-- Item 3 -->
+          <div style="display:flex;gap:2rem;margin-bottom:3rem;position:relative">
+            <div style="flex-shrink:0;width:40px;height:40px;border-radius:50%;background:#1A3626;border:2px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;z-index:1">
+              <div style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.3)"></div>
+            </div>
+            <div class="glass-card" style="flex:1;padding:1.75rem">
+              <span style="display:inline-block;padding:.25rem .75rem;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);border-radius:9999px;font-size:.75rem;color:#4ADE80;margin-bottom:.75rem">2019</span>
+              <h3 class="serif" style="font-size:1.2rem;font-weight:700;color:#F8FAFC;margin-bottom:.5rem">First 50 Clients</h3>
+              <p style="font-size:.875rem;color:#94A3B8;line-height:1.65">Reached a milestone that humbled me. Every person who trusted me with their story taught me more about the human condition than any book or training ever could.</p>
+            </div>
+          </div>
+          <!-- Item 4 -->
+          <div style="display:flex;gap:2rem;position:relative">
+            <div style="flex-shrink:0;width:40px;height:40px;border-radius:50%;background:#1A3626;border:2px solid #4ADE80;display:flex;align-items:center;justify-content:center;z-index:1">
+              <div style="width:8px;height:8px;border-radius:50%;background:#4ADE80"></div>
+            </div>
+            <div class="glass-card" style="flex:1;padding:1.75rem;border-color:rgba(74,222,128,.15);background:#1A3626">
+              <span style="display:inline-block;padding:.25rem .75rem;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);border-radius:9999px;font-size:.75rem;color:#4ADE80;margin-bottom:.75rem">2021 — Present</span>
+              <h3 class="serif" style="font-size:1.2rem;font-weight:700;color:#F8FAFC;margin-bottom:.5rem">Full-Time Coaching Practice</h3>
+              <p style="font-size:.875rem;color:#94A3B8;line-height:1.65">Built a thriving practice serving 200+ clients across career transitions, life purpose, and relationship navigation. Launched the "Roots & Direction" group program that now has alumni in 12 countries.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="section-pad" style="background:linear-gradient(180deg,rgba(26,54,38,.3) 0%,rgba(15,23,42,1) 100%);position:relative;overflow:hidden">
+      <div style="position:absolute;top:0;right:-100px;width:500px;height:500px;background:rgba(26,54,38,.3);border-radius:50%;filter:blur(80px);pointer-events:none"></div>
+      <div class="container" style="position:relative;z-index:1">
+        <div style="display:flex;align-items:start;gap:4rem;flex-wrap:wrap">
+          <div style="flex:0 0 320px">
+            <h2 class="serif" style="font-size:clamp(1.75rem,3vw,2.5rem);font-weight:700;color:#F8FAFC;margin-bottom:1rem">What I believe in.</h2>
+            <p style="color:#94A3B8;line-height:1.7">These aren't affirmations on a poster. These are the convictions that shape every session, every relationship, every decision I make.</p>
+          </div>
+          <div class="values-grid" style="flex:1;display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;min-width:280px">
+            <div class="glass-card" style="padding:2rem">
+              <div style="width:44px;height:44px;border-radius:12px;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.15);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+              <h3 class="serif" style="font-size:1.15rem;font-weight:700;color:#F8FAFC;margin-bottom:.6rem">Empathy over Efficiency</h3>
+              <p style="font-size:.8125rem;color:#94A3B8;line-height:1.65">Speed isn't the goal. Being truly heard is transformative on its own. I slow down so you can catch up to yourself.</p>
+            </div>
+            <div class="glass-card" style="padding:2rem">
+              <div style="width:44px;height:44px;border-radius:12px;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.15);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <h3 class="serif" style="font-size:1.15rem;font-weight:700;color:#F8FAFC;margin-bottom:.6rem">Safety is Sacred</h3>
+              <p style="font-size:.8125rem;color:#94A3B8;line-height:1.65">Nothing real can happen in an unsafe environment. I take radical responsibility for holding a space where you can be honest without consequence.</p>
+            </div>
+            <div class="glass-card" style="padding:2rem">
+              <div style="width:44px;height:44px;border-radius:12px;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.15);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+              </div>
+              <h3 class="serif" style="font-size:1.15rem;font-weight:700;color:#F8FAFC;margin-bottom:.6rem">Progress, Not Perfection</h3>
+              <p style="font-size:.8125rem;color:#94A3B8;line-height:1.65">Transformation is messy, nonlinear, and occasionally two steps back. I celebrate the attempts, not just the outcomes.</p>
+            </div>
+            <div class="glass-card" style="padding:2rem">
+              <div style="width:44px;height:44px;border-radius:12px;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.15);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="1.8"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+              </div>
+              <h3 class="serif" style="font-size:1.15rem;font-weight:700;color:#F8FAFC;margin-bottom:.6rem">Whole Person Approach</h3>
+              <p style="font-size:.8125rem;color:#94A3B8;line-height:1.65">Career and life are not separate categories. I work with you as an integrated human being, not a problem to be optimized.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section class="section-pad" style="background:#0F172A;border-top:1px solid rgba(255,255,255,.05)">
+      <div class="container">
+        <h2 class="serif" style="font-size:clamp(1.75rem,3vw,2.5rem);font-weight:700;color:#F8FAFC;margin-bottom:3rem;text-align:center">Education &amp; Credentials</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem;max-width:960px;margin-inline:auto">
+          <div class="glass-card" style="padding:1.75rem;display:flex;gap:1rem;align-items:start">
+            <div style="flex-shrink:0;width:40px;height:40px;border-radius:10px;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.15);display:flex;align-items:center;justify-content:center">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <div>
+              <div style="font-size:.875rem;font-weight:600;color:#F8FAFC;margin-bottom:.25rem">M.A. Counseling Psychology</div>
+              <div style="font-size:.8125rem;color:#94A3B8">University of Texas at Austin, 2016</div>
+            </div>
+          </div>
+          <div class="glass-card" style="padding:1.75rem;display:flex;gap:1rem;align-items:start">
+            <div style="flex-shrink:0;width:40px;height:40px;border-radius:10px;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.15);display:flex;align-items:center;justify-content:center">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <div style="font-size:.875rem;font-weight:600;color:#F8FAFC;margin-bottom:.25rem">ICF Professional Certified Coach (PCC)</div>
+              <div style="font-size:.8125rem;color:#94A3B8">International Coaching Federation, 2018</div>
+            </div>
+          </div>
+          <div class="glass-card" style="padding:1.75rem;display:flex;gap:1rem;align-items:start">
+            <div style="flex-shrink:0;width:40px;height:40px;border-radius:10px;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.15);display:flex;align-items:center;justify-content:center">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="1.8"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div>
+              <div style="font-size:.875rem;font-weight:600;color:#F8FAFC;margin-bottom:.25rem">Acceptance & Commitment Therapy (ACT)</div>
+              <div style="font-size:.8125rem;color:#94A3B8">Association for Contextual Behavioral Science, 2019</div>
+            </div>
+          </div>
+          <div class="glass-card" style="padding:1.75rem;display:flex;gap:1rem;align-items:start">
+            <div style="flex-shrink:0;width:40px;height:40px;border-radius:10px;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.15);display:flex;align-items:center;justify-content:center">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="1.8"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 8v4M12 16h.01"/></svg>
+            </div>
+            <div>
+              <div style="font-size:.875rem;font-weight:600;color:#F8FAFC;margin-bottom:.25rem">Somatic Coaching Certification</div>
+              <div style="font-size:.8125rem;color:#94A3B8">Strozzi Institute, 2020</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section class="section-pad" style="background:rgba(26,54,38,.15);border-top:1px solid rgba(255,255,255,.05)">
+      <div class="container">
+        <div style="text-align:center;margin-bottom:3rem">
+          <h2 class="serif" style="font-size:clamp(1.75rem,3vw,2.5rem);font-weight:700;color:#F8FAFC;margin-bottom:.75rem">Beyond the Sessions</h2>
+          <p style="color:#94A3B8;max-width:480px;margin-inline:auto;line-height:1.7">Because a person is more than their practice. What keeps me grounded and inspired outside the coaching room.</p>
+        </div>
+        <div class="gallery-grid" style="display:grid;grid-template-columns:7fr 5fr;gap:1.25rem;height:400px">
+          <div style="border-radius:24px;overflow:hidden;position:relative;group">
+            <img src="https://images.pexels.com/photos/1125850/pexels-photo-1125850.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Michael in nature" style="width:100%;height:100%;object-fit:cover" />
+            <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.6) 0%,transparent 50%);display:flex;align-items:end;padding:2rem">
+              <p style="color:#F8FAFC;font-size:.875rem">Finding perspective on weekend hikes. Mandatory.</p>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:1.25rem">
+            <div style="flex:1;border-radius:24px;overflow:hidden">
+              <img src="https://images.pexels.com/photos/4144179/pexels-photo-4144179.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Reading" style="width:100%;height:100%;object-fit:cover" />
+            </div>
+            <div class="glass-card" style="flex:1;padding:1.5rem;display:flex;flex-direction:column;justify-content:center">
+              <div class="serif" style="color:#4ADE80;margin-bottom:.5rem;font-size:.9375rem">Currently Reading</div>
+              <p style="color:rgba(248,250,252,.7);font-size:.8125rem;font-style:italic">"The Body Keeps the Score" — van der Kolk</p>
+              <div class="serif" style="color:#4ADE80;margin-top:1rem;margin-bottom:.5rem;font-size:.9375rem">Listening To</div>
+              <p style="color:rgba(248,250,252,.7);font-size:.8125rem">Ambient jazz and long-form podcasts on human connection</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="padding:5rem 1.5rem;background:linear-gradient(135deg,#1A3626 0%,#0F2318 100%);text-align:center">
+      <div class="container" style="max-width:680px">
+        <h2 class="serif" style="font-size:clamp(1.75rem,3.5vw,2.75rem);font-weight:700;color:#F8FAFC;margin-bottom:1.25rem">Let's Begin Something Real</h2>
+        <p style="color:#94A3B8;line-height:1.7;margin-bottom:2.5rem">Whether you're curious, ready, or somewhere in between — the first call is just a conversation.</p>
+        <a href="/hc/contact/" class="btn-green">Get in Touch</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="padding:3rem 1.5rem;background:rgba(0,0,0,.3);border-top:1px solid rgba(255,255,255,.05)">
+      <div class="container" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem">
+        <div class="serif" style="font-size:1.25rem;font-weight:700;color:#F8FAFC;display:flex;align-items:center;gap:.35rem">
+          Michael <span style="color:#4ADE80;font-size:.8rem">✦</span>
+        </div>
+        <div style="display:flex;gap:1.5rem">
+          <a href="#" style="color:#94A3B8"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" style="color:#94A3B8"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+        <p style="font-size:.8125rem;color:#94A3B8">© 2025 Michael Rivera. All rights reserved.</p>
+      </div>
+    </footer>
+  </main>
+</BaseLayout>

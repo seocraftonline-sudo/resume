@@ -1,0 +1,222 @@
+---
+import BaseLayout from '../../layouts/Base.astro';
+import HCNav from '../../components/HCNav.astro';
+---
+<BaseLayout title="Contact — Michael Rivera" theme="hc">
+  <link rel="stylesheet" href="/styles/rv.css" slot="head" />
+  <HCNav active="contact" />
+
+  <style>
+    *{box-sizing:border-box}
+    body{background:#0F172A;color:#F8FAFC;font-family:'Inter',sans-serif;overflow-x:hidden}
+    .glass-card{background:rgba(255,255,255,.03);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.05);border-radius:24px}
+    .section-pad{padding:6rem 1.5rem}
+    .container{max-width:1280px;margin-inline:auto}
+    .serif{font-family:'Playfair Display',serif}
+    .form-input{width:100%;padding:.875rem 1.25rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;color:#F8FAFC;font-family:'Inter',sans-serif;font-size:.9375rem;outline:none;transition:border-color .2s ease}
+    .form-input:focus{border-color:rgba(74,222,128,.4)}
+    .form-input::placeholder{color:#94A3B8}
+    .form-label{display:block;font-size:.875rem;font-weight:500;color:rgba(248,250,252,.8);margin-bottom:.5rem}
+    select.form-input option{background:#1A3626;color:#F8FAFC}
+    .btn-green{display:inline-flex;align-items:center;gap:.5rem;background:#4ADE80;color:#0F172A;font-weight:600;font-size:.9375rem;padding:.875rem 2rem;border-radius:9999px;text-decoration:none;transition:box-shadow .2s ease;border:none;cursor:pointer;font-family:'Inter',sans-serif;width:100%;justify-content:center}
+    .btn-green:hover{box-shadow:0 0 24px rgba(74,222,128,.4)}
+    @media(max-width:767px){
+      .contact-inner{flex-direction:column!important;gap:3rem!important}
+      .section-pad{padding:4rem 1.25rem}
+    }
+  </style>
+
+  <main style="padding-top:5rem">
+
+    <!-- Hero -->
+    <section style="padding:6rem 1.5rem 4rem;background:linear-gradient(180deg,rgba(26,54,38,.9) 0%,rgba(15,23,42,1) 100%)">
+      <div class="container" style="text-align:center;max-width:720px">
+        <div style="display:inline-flex;align-items:center;gap:.5rem;padding:.375rem 1rem;border-radius:9999px;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);font-size:.8125rem;color:#94A3B8;margin-bottom:1.5rem">
+          <span style="width:6px;height:6px;border-radius:50%;background:#4ADE80;display:inline-block;animation:pulse 2s infinite"></span>
+          Currently taking new clients
+        </div>
+        <h1 class="serif" style="font-size:clamp(2rem,4vw,3.5rem);font-weight:700;color:#F8FAFC;line-height:1.2;margin-bottom:1.25rem">Let's Begin Your Journey</h1>
+        <p style="color:#94A3B8;font-size:1.0625rem;line-height:1.75">The first conversation is free, low-pressure, and usually pretty memorable. Tell me a little about where you are. I'll be honest about whether I can help.</p>
+      </div>
+    </section>
+
+    <!-- Main Contact Section -->
+    <section class="section-pad" style="background:#0F172A">
+      <div class="container">
+        <div class="contact-inner" style="display:flex;gap:4rem;align-items:start">
+
+          <!-- Left: Info + Social + Discovery CTA -->
+          <div style="flex:0 0 360px;display:flex;flex-direction:column;gap:2rem">
+
+            <!-- Contact Details -->
+            <div class="glass-card" style="padding:2rem;background:#1A3626;border-color:rgba(74,222,128,.15)">
+              <h3 class="serif" style="font-size:1.15rem;font-weight:700;color:#F8FAFC;margin-bottom:1.5rem">Get in Touch</h3>
+              <div style="display:flex;flex-direction:column;gap:1.25rem">
+                <div style="display:flex;align-items:center;gap:.875rem">
+                  <div style="flex-shrink:0;width:40px;height:40px;border-radius:10px;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.15);display:flex;align-items:center;justify-content:center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  </div>
+                  <div>
+                    <div style="font-size:.75rem;color:#94A3B8;margin-bottom:.15rem">Email</div>
+                    <a href="mailto:michael@michaelrivera.co" style="font-size:.9rem;color:#F8FAFC;text-decoration:none">michael@michaelrivera.co</a>
+                  </div>
+                </div>
+                <div style="display:flex;align-items:center;gap:.875rem">
+                  <div style="flex-shrink:0;width:40px;height:40px;border-radius:10px;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.15);display:flex;align-items:center;justify-content:center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  </div>
+                  <div>
+                    <div style="font-size:.75rem;color:#94A3B8;margin-bottom:.15rem">Phone / WhatsApp</div>
+                    <a href="tel:+15125550192" style="font-size:.9rem;color:#F8FAFC;text-decoration:none">+1 (512) 555-0192</a>
+                  </div>
+                </div>
+                <div style="display:flex;align-items:center;gap:.875rem">
+                  <div style="flex-shrink:0;width:40px;height:40px;border-radius:10px;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.15);display:flex;align-items:center;justify-content:center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  </div>
+                  <div>
+                    <div style="font-size:.75rem;color:#94A3B8;margin-bottom:.15rem">Location</div>
+                    <div style="font-size:.9rem;color:#F8FAFC">Austin, TX (Virtual Worldwide)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="glass-card" style="padding:1.75rem">
+              <h3 style="font-size:.9375rem;font-weight:600;color:#F8FAFC;margin-bottom:1.25rem">Connect on Social</h3>
+              <div style="display:flex;flex-direction:column;gap:.75rem">
+                <a href="#" style="display:flex;align-items:center;gap:.75rem;color:rgba(248,250,252,.7);text-decoration:none;font-size:.875rem;transition:color .2s ease">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                  @michaelrivera_coach
+                </a>
+                <a href="#" style="display:flex;align-items:center;gap:.75rem;color:rgba(248,250,252,.7);text-decoration:none;font-size:.875rem">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                  linkedin.com/in/michaelrivera
+                </a>
+                <a href="#" style="display:flex;align-items:center;gap:.75rem;color:rgba(248,250,252,.7);text-decoration:none;font-size:.875rem">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+                  @michael.rivera.coach
+                </a>
+              </div>
+            </div>
+
+            <!-- Discovery Call Card -->
+            <div class="glass-card" style="padding:2rem;background:linear-gradient(135deg,rgba(26,54,38,.8),rgba(26,54,38,.4));border-color:rgba(74,222,128,.2);text-align:center">
+              <div style="width:52px;height:52px;border-radius:50%;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.2);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+              </div>
+              <h3 class="serif" style="font-size:1.1rem;font-weight:700;color:#F8FAFC;margin-bottom:.5rem">Free Discovery Call</h3>
+              <p style="font-size:.8125rem;color:#94A3B8;line-height:1.65;margin-bottom:1.25rem">45 minutes. No pitch. Just a real conversation about what's possible.</p>
+              <a href="https://calendly.com" target="_blank" rel="noopener" style="display:block;padding:.75rem;background:#4ADE80;color:#0F172A;font-weight:600;border-radius:9999px;text-decoration:none;font-size:.875rem;text-align:center">
+                Book on Calendly
+              </a>
+              <p style="font-size:.75rem;color:#94A3B8;margin-top:.75rem">Usually available within 5 business days</p>
+            </div>
+          </div>
+
+          <!-- Right: Intake Form -->
+          <div style="flex:1">
+            <div class="glass-card" style="padding:2.5rem">
+              <h2 class="serif" style="font-size:1.5rem;font-weight:700;color:#F8FAFC;margin-bottom:.5rem">Tell Me About You</h2>
+              <p style="color:#94A3B8;font-size:.875rem;line-height:1.65;margin-bottom:2rem">The more context you give me, the better our first conversation will be. Everything is confidential.</p>
+
+              <form style="display:flex;flex-direction:column;gap:1.5rem">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem">
+                  <div>
+                    <label class="form-label">First Name *</label>
+                    <input type="text" class="form-input" placeholder="Your first name" />
+                  </div>
+                  <div>
+                    <label class="form-label">Last Name *</label>
+                    <input type="text" class="form-input" placeholder="Your last name" />
+                  </div>
+                </div>
+
+                <div>
+                  <label class="form-label">Email Address *</label>
+                  <input type="email" class="form-input" placeholder="your@email.com" />
+                </div>
+
+                <div>
+                  <label class="form-label">Primary Area of Focus *</label>
+                  <select class="form-input">
+                    <option value="">Select one...</option>
+                    <option>Career Transition or Change</option>
+                    <option>Finding Purpose / Direction</option>
+                    <option>Work-Life Balance / Burnout</option>
+                    <option>Relationships &amp; Communication</option>
+                    <option>Major Life Transition (divorce, loss, etc.)</option>
+                    <option>Leadership / Personal Growth</option>
+                    <option>Something Else</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="form-label">How did you find me?</label>
+                  <select class="form-input">
+                    <option value="">Select one...</option>
+                    <option>Referral from a friend or client</option>
+                    <option>Google / web search</option>
+                    <option>LinkedIn</option>
+                    <option>Podcast or article</option>
+                    <option>Instagram or social media</option>
+                    <option>TEDx talk</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="form-label">What's bringing you here right now?</label>
+                  <textarea class="form-input" rows="5" placeholder="Share as much or as little as you'd like. What's the thing you keep coming back to? What would you most want to change?" style="resize:vertical;min-height:120px"></textarea>
+                </div>
+
+                <div>
+                  <label class="form-label">Preferred contact time (optional)</label>
+                  <input type="text" class="form-input" placeholder="e.g. Weekday mornings, after 5pm EST..." />
+                </div>
+
+                <div style="display:flex;align-items:start;gap:.75rem">
+                  <input type="checkbox" id="hc-consent" style="margin-top:3px;accent-color:#4ADE80;width:16px;height:16px;flex-shrink:0" />
+                  <label for="hc-consent" style="font-size:.8125rem;color:#94A3B8;line-height:1.6">I understand that this form is not a substitute for therapeutic services, and that information shared will remain confidential.</label>
+                </div>
+
+                <button type="submit" class="btn-green" style="font-size:1rem;padding:1rem">
+                  Send My Message
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+
+                <p style="font-size:.8125rem;color:#94A3B8;text-align:center;line-height:1.6">I read every message personally and typically respond within 24–48 hours.</p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reassurance section -->
+    <section style="padding:4rem 1.5rem;background:rgba(26,54,38,.15);border-top:1px solid rgba(255,255,255,.05)">
+      <div class="container" style="max-width:840px;text-align:center">
+        <h2 class="serif" style="font-size:1.5rem;font-weight:700;color:#F8FAFC;margin-bottom:1rem">A note on reaching out</h2>
+        <p style="color:#94A3B8;line-height:1.8;font-size:1rem;max-width:640px;margin-inline:auto">
+          If you're feeling hesitant about sending this form — that hesitation is worth noticing. It usually means this matters to you. And things that matter to you are exactly what we work with. You don't need to have it all figured out before you reach out. That's what the conversation is for.
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="padding:3rem 1.5rem;background:rgba(0,0,0,.3);border-top:1px solid rgba(255,255,255,.05)">
+      <div class="container" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem">
+        <div style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:#F8FAFC;display:flex;align-items:center;gap:.35rem">Michael <span style="color:#4ADE80;font-size:.8rem">✦</span></div>
+        <div style="display:flex;gap:1.5rem">
+          <a href="#" style="color:#94A3B8"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" style="color:#94A3B8"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" style="color:#94A3B8"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+        <p style="font-size:.8125rem;color:#94A3B8">© 2025 Michael Rivera. All rights reserved.</p>
+      </div>
+    </footer>
+  </main>
+
+  <style is:global>@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}</style>
+</BaseLayout>

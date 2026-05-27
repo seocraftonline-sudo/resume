@@ -1,0 +1,200 @@
+---
+import BaseLayout from '../../layouts/Base.astro';
+import PPNav from '../../components/PPNav.astro';
+---
+<BaseLayout title="Portfolio — Edward James" theme="pp">
+  <link rel="stylesheet" href="/styles/rv.css" slot="head" />
+  <PPNav active="portfolio" />
+  <main style="padding-top:5rem;background:#F9FAFB;min-height:100vh;font-family:'Inter',sans-serif">
+
+    <div style="max-width:1280px;margin-inline:auto;padding:4rem 1.5rem;display:flex;flex-direction:column;gap:3.5rem">
+
+      <!-- Page Header -->
+      <div style="text-align:center;max-width:44rem;margin-inline:auto">
+        <h1 style="font-size:clamp(2.25rem,4vw,3.25rem);font-weight:700;color:#111827;letter-spacing:-.03em;margin:0 0 1rem">Portfolio of Engagements</h1>
+        <p style="font-size:1.0625rem;color:#4B5563;line-height:1.7;margin:0">A curated selection of high-stakes advisory engagements demonstrating transformational outcomes across industries.</p>
+      </div>
+
+      <!-- Filter Bar -->
+      <div style="display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center" id="pp-filter-bar">
+        <button class="pp-filter active" data-filter="all" style="padding:.625rem 1.375rem;border-radius:9999px;font-size:.875rem;font-weight:600;border:1px solid #111827;background:#111827;color:#fff;cursor:pointer;transition:all .2s ease;font-family:'Inter',sans-serif">All</button>
+        <button class="pp-filter" data-filter="turnaround" style="padding:.625rem 1.375rem;border-radius:9999px;font-size:.875rem;font-weight:600;border:1px solid #E5E7EB;background:#fff;color:#4B5563;cursor:pointer;transition:all .2s ease;font-family:'Inter',sans-serif">Turnaround</button>
+        <button class="pp-filter" data-filter="growth" style="padding:.625rem 1.375rem;border-radius:9999px;font-size:.875rem;font-weight:600;border:1px solid #E5E7EB;background:#fff;color:#4B5563;cursor:pointer;transition:all .2s ease;font-family:'Inter',sans-serif">Growth</button>
+        <button class="pp-filter" data-filter="ma" style="padding:.625rem 1.375rem;border-radius:9999px;font-size:.875rem;font-weight:600;border:1px solid #E5E7EB;background:#fff;color:#4B5563;cursor:pointer;transition:all .2s ease;font-family:'Inter',sans-serif">M&amp;A</button>
+        <button class="pp-filter" data-filter="strategy" style="padding:.625rem 1.375rem;border-radius:9999px;font-size:.875rem;font-weight:600;border:1px solid #E5E7EB;background:#fff;color:#4B5563;cursor:pointer;transition:all .2s ease;font-family:'Inter',sans-serif">Strategy</button>
+      </div>
+
+      <!-- Case Study Grid -->
+      <div class="pp-portfolio-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem" id="pp-portfolio-grid">
+
+        <div class="pp-card" data-category="ma" style="background:#fff;border-radius:1.5rem;border:1px solid #E5E7EB;box-shadow:0 4px 20px rgba(0,0,0,.05);overflow:hidden">
+          <div style="width:100%;aspect-ratio:16/9;overflow:hidden;background:#F3F4F6">
+            <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Global Bank Restructuring" style="width:100%;height:100%;object-fit:cover" />
+          </div>
+          <div style="padding:1.75rem">
+            <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem">
+              <span style="font-size:.6875rem;font-weight:600;color:#4F46E5;background:rgba(79,70,229,.08);padding:.25rem .75rem;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em">M&amp;A</span>
+              <span style="font-size:.6875rem;font-weight:600;color:#4B5563;background:#F3F4F6;padding:.25rem .75rem;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em">Financial Services</span>
+            </div>
+            <h3 style="font-size:1.125rem;font-weight:700;color:#111827;margin:0 0 .625rem">Global Bank Post-Merger Integration</h3>
+            <p style="font-size:.875rem;color:#4B5563;line-height:1.65;margin:0 0 1.25rem">Two Tier-1 financial institutions merged in a $22B deal required complete operational consolidation across 14 countries and 28,000 employees.</p>
+            <div style="padding-top:1rem;border-top:1px solid #F3F4F6">
+              <div style="font-size:.75rem;color:#6B7280;text-transform:uppercase;letter-spacing:.06em;font-weight:600;margin-bottom:.25rem">Outcome</div>
+              <div style="font-size:1.125rem;font-weight:700;color:#111827">$400M annual synergies achieved</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pp-card" data-category="growth" style="background:#fff;border-radius:1.5rem;border:1px solid #E5E7EB;box-shadow:0 4px 20px rgba(0,0,0,.05);overflow:hidden">
+          <div style="width:100%;aspect-ratio:16/9;overflow:hidden;background:#F3F4F6">
+            <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800" alt="SaaS Scale-up" style="width:100%;height:100%;object-fit:cover" />
+          </div>
+          <div style="padding:1.75rem">
+            <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem">
+              <span style="font-size:.6875rem;font-weight:600;color:#4F46E5;background:rgba(79,70,229,.08);padding:.25rem .75rem;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em">Growth</span>
+              <span style="font-size:.6875rem;font-weight:600;color:#4B5563;background:#F3F4F6;padding:.25rem .75rem;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em">Technology</span>
+            </div>
+            <h3 style="font-size:1.125rem;font-weight:700;color:#111827;margin:0 0 .625rem">Enterprise SaaS European Expansion</h3>
+            <p style="font-size:.875rem;color:#4B5563;line-height:1.65;margin:0 0 1.25rem">Series C enterprise software firm needed a structured go-to-market strategy to enter five European markets simultaneously while maintaining existing US growth trajectory.</p>
+            <div style="padding-top:1rem;border-top:1px solid #F3F4F6">
+              <div style="font-size:.75rem;color:#6B7280;text-transform:uppercase;letter-spacing:.06em;font-weight:600;margin-bottom:.25rem">Outcome</div>
+              <div style="font-size:1.125rem;font-weight:700;color:#111827">300% YoY revenue growth</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pp-card" data-category="turnaround" style="background:#fff;border-radius:1.5rem;border:1px solid #E5E7EB;box-shadow:0 4px 20px rgba(0,0,0,.05);overflow:hidden">
+          <div style="width:100%;aspect-ratio:16/9;overflow:hidden;background:#F3F4F6">
+            <img src="https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Retail Turnaround" style="width:100%;height:100%;object-fit:cover" />
+          </div>
+          <div style="padding:1.75rem">
+            <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem">
+              <span style="font-size:.6875rem;font-weight:600;color:#4F46E5;background:rgba(79,70,229,.08);padding:.25rem .75rem;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em">Turnaround</span>
+              <span style="font-size:.6875rem;font-weight:600;color:#4B5563;background:#F3F4F6;padding:.25rem .75rem;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em">Retail</span>
+            </div>
+            <h3 style="font-size:1.125rem;font-weight:700;color:#111827;margin:0 0 .625rem">Global Luxury Retail Restructuring</h3>
+            <p style="font-size:.875rem;color:#4B5563;line-height:1.65;margin:0 0 1.25rem">A heritage luxury brand facing declining market share and aging store footprint required structural intervention to restore brand equity and operational profitability.</p>
+            <div style="padding-top:1rem;border-top:1px solid #F3F4F6">
+              <div style="font-size:.75rem;color:#6B7280;text-transform:uppercase;letter-spacing:.06em;font-weight:600;margin-bottom:.25rem">Outcome</div>
+              <div style="font-size:1.125rem;font-weight:700;color:#111827">EBITDA restored to 18% margin</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pp-card" data-category="strategy" style="background:#fff;border-radius:1.5rem;border:1px solid #E5E7EB;box-shadow:0 4px 20px rgba(0,0,0,.05);overflow:hidden">
+          <div style="width:100%;aspect-ratio:16/9;overflow:hidden;background:#F3F4F6">
+            <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Energy Transformation" style="width:100%;height:100%;object-fit:cover" />
+          </div>
+          <div style="padding:1.75rem">
+            <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem">
+              <span style="font-size:.6875rem;font-weight:600;color:#4F46E5;background:rgba(79,70,229,.08);padding:.25rem .75rem;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em">Strategy</span>
+              <span style="font-size:.6875rem;font-weight:600;color:#4B5563;background:#F3F4F6;padding:.25rem .75rem;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em">Energy</span>
+            </div>
+            <h3 style="font-size:1.125rem;font-weight:700;color:#111827;margin:0 0 .625rem">Energy Utility Digital Transformation</h3>
+            <p style="font-size:.875rem;color:#4B5563;line-height:1.65;margin:0 0 1.25rem">A major European utility facing regulatory pressure and operational fragmentation needed a coherent digital transformation roadmap aligned to ESG commitments and shareholder expectations.</p>
+            <div style="padding-top:1rem;border-top:1px solid #F3F4F6">
+              <div style="font-size:.75rem;color:#6B7280;text-transform:uppercase;letter-spacing:.06em;font-weight:600;margin-bottom:.25rem">Outcome</div>
+              <div style="font-size:1.125rem;font-weight:700;color:#111827">€800M cost base reduction</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pp-card" data-category="ma" style="background:#fff;border-radius:1.5rem;border:1px solid #E5E7EB;box-shadow:0 4px 20px rgba(0,0,0,.05);overflow:hidden">
+          <div style="width:100%;aspect-ratio:16/9;overflow:hidden;background:#F3F4F6">
+            <img src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Logistics Acquisition" style="width:100%;height:100%;object-fit:cover" />
+          </div>
+          <div style="padding:1.75rem">
+            <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem">
+              <span style="font-size:.6875rem;font-weight:600;color:#4F46E5;background:rgba(79,70,229,.08);padding:.25rem .75rem;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em">M&amp;A</span>
+              <span style="font-size:.6875rem;font-weight:600;color:#4B5563;background:#F3F4F6;padding:.25rem .75rem;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em">Logistics</span>
+            </div>
+            <h3 style="font-size:1.125rem;font-weight:700;color:#111827;margin:0 0 .625rem">European Logistics Conglomerate PMI</h3>
+            <p style="font-size:.875rem;color:#4B5563;line-height:1.65;margin:0 0 1.25rem">A €12B cross-border acquisition in pan-European logistics required full post-merger integration across three legacy systems and six national regulatory environments.</p>
+            <div style="padding-top:1rem;border-top:1px solid #F3F4F6">
+              <div style="font-size:.75rem;color:#6B7280;text-transform:uppercase;letter-spacing:.06em;font-weight:600;margin-bottom:.25rem">Outcome</div>
+              <div style="font-size:1.125rem;font-weight:700;color:#111827">Integration complete 4 months early</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pp-card" data-category="growth" style="background:#fff;border-radius:1.5rem;border:1px solid #E5E7EB;box-shadow:0 4px 20px rgba(0,0,0,.05);overflow:hidden">
+          <div style="width:100%;aspect-ratio:16/9;overflow:hidden;background:#F3F4F6">
+            <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800" alt="FinTech Scale" style="width:100%;height:100%;object-fit:cover" />
+          </div>
+          <div style="padding:1.75rem">
+            <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem">
+              <span style="font-size:.6875rem;font-weight:600;color:#4F46E5;background:rgba(79,70,229,.08);padding:.25rem .75rem;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em">Growth</span>
+              <span style="font-size:.6875rem;font-weight:600;color:#4B5563;background:#F3F4F6;padding:.25rem .75rem;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em">FinTech</span>
+            </div>
+            <h3 style="font-size:1.125rem;font-weight:700;color:#111827;margin:0 0 .625rem">FinTech IPO Readiness Program</h3>
+            <p style="font-size:.875rem;color:#4B5563;line-height:1.65;margin:0 0 1.25rem">A high-growth payments firm targeting a $4B public market debut required board restructuring, governance formalization, and investor narrative development.</p>
+            <div style="padding-top:1rem;border-top:1px solid #F3F4F6">
+              <div style="font-size:.75rem;color:#6B7280;text-transform:uppercase;letter-spacing:.06em;font-weight:600;margin-bottom:.25rem">Outcome</div>
+              <div style="font-size:1.125rem;font-weight:700;color:#111827">$4.2B IPO valuation achieved</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer style="background:#fff;border-top:1px solid #E5E7EB;padding:3rem 1.5rem;font-family:'Inter',sans-serif">
+    <div style="max-width:1280px;margin-inline:auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem">
+      <div style="display:flex;align-items:center;gap:.625rem">
+        <div style="width:2rem;height:2rem;background:#111827;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.6875rem;font-weight:700">EJ</div>
+        <span style="font-size:.9375rem;font-weight:600;color:#111827">Edward James</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:2rem;flex-wrap:wrap">
+        <span style="font-size:.875rem;color:#6B7280">&copy; 2025 Edward James.</span>
+        <div style="display:flex;gap:1rem">
+          <a href="https://linkedin.com" target="_blank" rel="noopener" style="color:#6B7280;text-decoration:none" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener" style="color:#6B7280;text-decoration:none" aria-label="Twitter">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    @media (max-width: 767px) {
+      .pp-portfolio-grid { grid-template-columns: 1fr !important; }
+    }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .pp-portfolio-grid { grid-template-columns: repeat(2,1fr) !important; }
+    }
+  </style>
+
+  <script>
+    const filters = document.querySelectorAll('.pp-filter');
+    const cards = document.querySelectorAll('.pp-card');
+    filters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filters.forEach(b => {
+          const el = b as HTMLElement;
+          el.style.background = '#fff';
+          el.style.color = '#4B5563';
+          el.style.borderColor = '#E5E7EB';
+        });
+        const el = btn as HTMLElement;
+        el.style.background = '#111827';
+        el.style.color = '#fff';
+        el.style.borderColor = '#111827';
+        const filter = btn.getAttribute('data-filter');
+        cards.forEach(card => {
+          const c = card as HTMLElement;
+          if (filter === 'all' || c.dataset.category === filter) {
+            c.style.display = 'block';
+          } else {
+            c.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</BaseLayout>

@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../../layouts/Base.astro';
+import DNNav from '../../components/DNNav.astro';
+---
+<BaseLayout title="Resume — Alex Chen" theme="dn">
+  <link rel="stylesheet" href="/styles/rv.css" slot="head" />
+  <DNNav active="resume" />
+
+  <main style="padding-top:5rem;background:#fff;color:#0A0A0A;font-family:'Inter',sans-serif">
+
+    <!-- Header -->
+    <section style="padding:4rem 1.5rem 3rem;max-width:1200px;margin-inline:auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;border-bottom:1px solid #E5E5E5">
+      <div>
+        <p style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#FF6600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.5rem">Resume</p>
+        <h1 style="font-size:clamp(2rem,4vw,3rem);font-weight:800;letter-spacing:-.04em;margin:0 0 .5rem">Alex Chen</h1>
+        <p style="font-size:1.125rem;color:#555;margin:0">Full-Stack Developer & Tech Lead · San Francisco, CA</p>
+      </div>
+      <a href="#" download style="display:inline-flex;align-items:center;gap:.625rem;background:#0A0A0A;color:#fff;font-size:.9375rem;font-weight:600;padding:.875rem 1.75rem;border-radius:12px;text-decoration:none">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download PDF
+      </a>
+    </section>
+
+    <div style="max-width:1200px;margin-inline:auto;padding:3rem 1.5rem;display:grid;grid-template-columns:1fr 380px;gap:4rem;align-items:start">
+
+      <!-- Left Column: Experience + Education -->
+      <div>
+        <!-- Work Experience -->
+        <section style="margin-bottom:3.5rem">
+          <div style="display:flex;align-items:center;gap:1rem;margin-bottom:2rem">
+            <h2 style="font-size:1.25rem;font-weight:700;margin:0">Work Experience</h2>
+            <div style="flex:1;height:1px;background:#E5E5E5"></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:2.5rem">
+            {[
+              {period:'Mar 2022 – Present',role:'Tech Lead / Senior Engineer',company:'VeritasCloud',location:'San Francisco, CA',desc:'Lead a distributed team of 6 engineers building cloud-native data infrastructure products. Architect migration from monolith to microservices. Reduced deployment time by 70% via automated CI/CD.',tech:['TypeScript','React','Node.js','AWS','Terraform','Kubernetes']},
+              {period:'Jan 2020 – Feb 2022',role:'Full-Stack Engineer',company:'Axiom Labs',location:'Remote',desc:'Built the core product 0→1: real-time collaboration features with WebSockets, GraphQL API, React frontend. Led engineering as sole senior dev, scaling from 0 to 50k MAU in 18 months.',tech:['React','GraphQL','Node.js','PostgreSQL','Redis','AWS']},
+              {period:'Jun 2019 – Dec 2019',role:'Backend Developer',company:'Streamline.io',location:'New York, NY',desc:'Node.js microservices and PostgreSQL optimization. Reduced average API response time from 800ms to 120ms through query optimization and Redis caching strategies.',tech:['Node.js','PostgreSQL','Redis','Docker']},
+            ].map(job => (
+              <div style="border-left:2px solid #E5E5E5;padding-left:1.5rem;position:relative">
+                <div style="position:absolute;left:-.375rem;top:.25rem;width:.625rem;height:.625rem;border-radius:50%;background:#FF6600"></div>
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:.5rem;margin-bottom:.25rem">
+                  <h3 style="font-size:1.125rem;font-weight:700;margin:0">{job.role}</h3>
+                  <span style="font-family:'JetBrains Mono',monospace;font-size:.8125rem;color:#999">{job.period}</span>
+                </div>
+                <div style="font-size:.9375rem;color:#FF6600;font-weight:600;margin-bottom:.625rem">{job.company} · <span style="color:#999;font-weight:400">{job.location}</span></div>
+                <p style="font-size:.9375rem;color:#555;line-height:1.7;margin:0 0 1rem">{job.desc}</p>
+                <div style="display:flex;flex-wrap:wrap;gap:.375rem">
+                  {job.tech.map(t => <span style="font-family:'JetBrains Mono',monospace;font-size:.75rem;background:#F5F5F5;border:1px solid #E5E5E5;border-radius:6px;padding:.2rem .6rem;color:#555">{t}</span>)}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <!-- Education -->
+        <section>
+          <div style="display:flex;align-items:center;gap:1rem;margin-bottom:2rem">
+            <h2 style="font-size:1.25rem;font-weight:700;margin:0">Education</h2>
+            <div style="flex:1;height:1px;background:#E5E5E5"></div>
+          </div>
+          <div style="border-left:2px solid #E5E5E5;padding-left:1.5rem;position:relative">
+            <div style="position:absolute;left:-.375rem;top:.25rem;width:.625rem;height:.625rem;border-radius:50%;background:#0A0A0A"></div>
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:.5rem">
+              <h3 style="font-size:1.125rem;font-weight:700;margin:0">B.S. Computer Science</h3>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:.8125rem;color:#999">2015 – 2019</span>
+            </div>
+            <div style="font-size:.9375rem;color:#FF6600;font-weight:600;margin:.25rem 0 .5rem">UC Berkeley · Berkeley, CA</div>
+            <p style="font-size:.9375rem;color:#555;margin:0">Focus areas: Distributed Systems, Database Systems, Algorithms. Senior project: real-time collaborative document editor (precursor to Google Docs-style apps).</p>
+          </div>
+        </section>
+      </div>
+
+      <!-- Right Column: Skills + Certs -->
+      <div>
+        <!-- Skills Matrix -->
+        <section style="margin-bottom:2.5rem;background:#F5F5F5;border-radius:20px;padding:2rem">
+          <h2 style="font-size:1.125rem;font-weight:700;margin:0 0 1.5rem">Skills Matrix</h2>
+          <div style="display:flex;flex-direction:column;gap:1rem">
+            {[
+              {skill:'TypeScript / JavaScript',level:95},
+              {skill:'React / Next.js',level:92},
+              {skill:'Node.js / Express',level:90},
+              {skill:'PostgreSQL / SQL',level:85},
+              {skill:'AWS (Lambda, RDS, S3)',level:82},
+              {skill:'Python',level:75},
+              {skill:'Docker / Kubernetes',level:70},
+              {skill:'Go',level:55},
+            ].map(s => (
+              <div>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.375rem">
+                  <span style="font-size:.875rem;font-weight:500">{s.skill}</span>
+                  <span style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#999">{s.level}%</span>
+                </div>
+                <div style="height:6px;background:#E5E5E5;border-radius:3px;overflow:hidden">
+                  <div style={`height:100%;width:${s.level}%;background:#FF6600;border-radius:3px`}></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <!-- Certifications -->
+        <section style="margin-bottom:2.5rem">
+          <h2 style="font-size:1.125rem;font-weight:700;margin:0 0 1.25rem">Certifications</h2>
+          <div style="display:flex;flex-direction:column;gap:.875rem">
+            {[
+              {name:'AWS Certified Solutions Architect',level:'Associate',year:'2023'},
+              {name:'AWS Certified Developer',level:'Associate',year:'2022'},
+              {name:'Certified Kubernetes Application Developer',level:'CKAD',year:'2023'},
+            ].map(cert => (
+              <div style="display:flex;gap:1rem;align-items:center;padding:1rem;background:#F5F5F5;border-radius:12px">
+                <div style="width:2.5rem;height:2.5rem;background:#FF6600;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 15l-2 5h-1l-1.5-5.5"/><polyline points="12 15 14 20 15 20 16.5 14.5"/><circle cx="12" cy="8" r="6"/></svg>
+                </div>
+                <div style="min-width:0">
+                  <div style="font-size:.875rem;font-weight:700;margin-bottom:.125rem">{cert.name}</div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#999">{cert.level} · {cert.year}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <!-- Contact / Links -->
+        <section style="background:#0A0A0A;border-radius:20px;padding:1.75rem">
+          <h2 style="font-size:1rem;font-weight:700;color:#fff;margin:0 0 1.25rem">Links</h2>
+          <div style="display:flex;flex-direction:column;gap:.75rem">
+            {[
+              {label:'hello@alexchen.dev',href:'mailto:hello@alexchen.dev'},
+              {label:'github.com/alexchen',href:'https://github.com'},
+              {label:'linkedin.com/in/alexchen',href:'https://linkedin.com'},
+            ].map(link => (
+              <a href={link.href} style="font-family:'JetBrains Mono',monospace;font-size:.8125rem;color:rgba(255,255,255,.7);text-decoration:none;display:flex;align-items:center;gap:.5rem">
+                <span style="color:#FF6600">&gt;</span> {link.label}
+              </a>
+            ))}
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer style="background:#fff;border-top:1px solid #E5E5E5;padding:3rem 1.5rem">
+    <div style="max-width:1200px;margin-inline:auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem">
+      <div style="font-weight:700;color:#0A0A0A">Alex Chen</div>
+      <div style="font-size:.875rem;color:#999">© 2025 Alex Chen.</div>
+    </div>
+  </footer>
+
+  <style>
+    @media (max-width:767px) {
+      main > div[style*="grid-template-columns:1fr 380px"] { grid-template-columns:1fr !important; }
+    }
+  </style>
+</BaseLayout>

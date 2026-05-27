@@ -1,0 +1,410 @@
+---
+import BaseLayout from '../../layouts/Base.astro';
+import HCNav from '../../components/HCNav.astro';
+---
+<BaseLayout title="Services — Michael Rivera, Life & Career Coach" theme="hc">
+  <link rel="stylesheet" href="/styles/rv.css" slot="head" />
+  <HCNav active="services" />
+
+  <style>
+    *{box-sizing:border-box}
+    body{background:#0F172A;color:#F8FAFC;font-family:'Inter',sans-serif;overflow-x:hidden}
+    .glass-card{background:rgba(255,255,255,.03);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.05);border-radius:24px}
+    .section-pad{padding:6rem 1.5rem}
+    .container{max-width:1280px;margin-inline:auto}
+    .serif{font-family:'Playfair Display',serif}
+    .btn-green{display:inline-flex;align-items:center;gap:.5rem;background:#4ADE80;color:#0F172A;font-weight:600;font-size:.9375rem;padding:.875rem 2rem;border-radius:9999px;text-decoration:none;transition:box-shadow .2s ease}
+    .btn-green:hover{box-shadow:0 0 24px rgba(74,222,128,.4)}
+    .faq-item{border-bottom:1px solid rgba(255,255,255,.06);overflow:hidden}
+    .faq-btn{width:100%;padding:1.25rem 0;display:flex;justify-content:space-between;align-items:center;background:none;border:none;cursor:pointer;text-align:left;font-family:'Inter',sans-serif;color:#F8FAFC;font-size:.9375rem;font-weight:500}
+    .faq-body{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease}
+    .faq-body.open{max-height:200px;padding-bottom:1.25rem}
+    @media(max-width:767px){
+      .services-list > div{flex-direction:column!important}
+      .pricing-grid{grid-template-columns:1fr!important}
+      .section-pad{padding:4rem 1.25rem}
+    }
+  </style>
+
+  <main style="padding-top:5rem">
+
+    <!-- Hero -->
+    <section style="padding:6rem 1.5rem 4rem;background:linear-gradient(180deg,rgba(26,54,38,.95) 0%,rgba(15,23,42,1) 100%);position:relative;overflow:hidden">
+      <div style="position:absolute;bottom:-200px;left:-200px;width:600px;height:600px;background:rgba(26,54,38,.3);border-radius:50%;filter:blur(100px);pointer-events:none"></div>
+      <div class="container" style="position:relative;z-index:1">
+        <div style="max-width:700px">
+          <div style="display:inline-flex;align-items:center;gap:.5rem;padding:.375rem 1rem;border-radius:9999px;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);font-size:.8125rem;color:#94A3B8;margin-bottom:1.5rem">
+            <span style="width:6px;height:6px;border-radius:50%;background:#4ADE80;display:inline-block;animation:pulse 2s infinite"></span>
+            How We Work Together
+          </div>
+          <h1 class="serif" style="font-size:clamp(2.25rem,4.5vw,3.75rem);font-weight:700;line-height:1.15;margin-bottom:1.5rem;color:#F8FAFC">
+            Partnership,<br/><em style="color:#4ADE80;font-style:italic">Not Just Sessions.</em>
+          </h1>
+          <p style="font-size:1.125rem;color:#94A3B8;line-height:1.75;max-width:560px;margin-bottom:2rem">
+            I don't hand you a framework and send you home. I walk alongside you — in 1-on-1 sessions, group programs, and workshops — until the insights become lived reality.
+          </p>
+          <a href="/hc/contact/" class="btn-green">Explore Working Together</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Offerings -->
+    <section class="section-pad" style="background:#0F172A">
+      <div class="container">
+        <div style="text-align:center;margin-bottom:4rem">
+          <h2 class="serif" style="font-size:clamp(1.75rem,3vw,2.75rem);font-weight:700;color:#F8FAFC;margin-bottom:.75rem">Core Offerings</h2>
+          <div style="width:60px;height:2px;background:#4ADE80;margin:0 auto"></div>
+        </div>
+        <div class="services-list" style="display:flex;flex-direction:column;gap:2rem">
+
+          <!-- Service 1 -->
+          <div class="glass-card" style="overflow:hidden;display:flex;border:1px solid rgba(255,255,255,.08)">
+            <div style="flex:0 0 340px;background:#1A3626;padding:2.5rem;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid rgba(255,255,255,.06)">
+              <div>
+                <div style="width:56px;height:56px;border-radius:14px;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.2);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                </div>
+                <h3 class="serif" style="font-size:1.5rem;font-weight:700;color:#F8FAFC;margin-bottom:.75rem">1-on-1 Coaching</h3>
+                <p style="font-size:.875rem;color:#94A3B8;line-height:1.7;margin-bottom:1.5rem">Deep, personalized work tailored to your unique situation, pace, and goals. The most direct path to lasting change.</p>
+              </div>
+              <div>
+                <div style="display:flex;align-items:center;gap:.5rem;font-size:.875rem;color:rgba(248,250,252,.75);margin-bottom:.5rem">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  Sessions: 50 or 90 min
+                </div>
+                <div style="display:flex;align-items:center;gap:.5rem;font-size:.875rem;color:rgba(248,250,252,.75)">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2"><path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+                  Starting at $250/session
+                </div>
+              </div>
+            </div>
+            <div style="flex:1;padding:2.5rem">
+              <h4 class="serif" style="font-size:1rem;font-style:italic;color:rgba(248,250,252,.8);margin-bottom:.75rem">Best suited for:</h4>
+              <p style="font-size:.875rem;color:#94A3B8;line-height:1.7;margin-bottom:2rem">People navigating major life or career transitions, processing grief or loss, or ready for deep personal work that goes beyond surface-level advice.</p>
+              <h4 class="serif" style="font-size:1rem;font-style:italic;color:rgba(248,250,252,.8);margin-bottom:1rem">What you get:</h4>
+              <ul style="list-style:none;padding:0;margin-bottom:2rem;display:flex;flex-direction:column;gap:.75rem">
+                <li style="display:flex;align-items:start;gap:.75rem;font-size:.875rem;color:rgba(248,250,252,.8)">
+                  <span style="flex-shrink:0;width:20px;height:20px;border-radius:50%;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.25);display:flex;align-items:center;justify-content:center;margin-top:.1rem">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  Bi-weekly or weekly sessions (you choose)
+                </li>
+                <li style="display:flex;align-items:start;gap:.75rem;font-size:.875rem;color:rgba(248,250,252,.8)">
+                  <span style="flex-shrink:0;width:20px;height:20px;border-radius:50%;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.25);display:flex;align-items:center;justify-content:center;margin-top:.1rem">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  Email/WhatsApp support between sessions
+                </li>
+                <li style="display:flex;align-items:start;gap:.75rem;font-size:.875rem;color:rgba(248,250,252,.8)">
+                  <span style="flex-shrink:0;width:20px;height:20px;border-radius:50%;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.25);display:flex;align-items:center;justify-content:center;margin-top:.1rem">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  Personalized tools, exercises, and resources
+                </li>
+              </ul>
+              <a href="/hc/contact/" style="display:inline-flex;align-items:center;gap:.5rem;padding:.625rem 1.5rem;border-radius:9999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);color:#F8FAFC;font-size:.8125rem;font-weight:500;text-decoration:none;transition:background .2s ease">
+                Book a discovery call <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="glass-card" style="overflow:hidden;display:flex;border:1px solid rgba(255,255,255,.08)">
+            <div style="flex:0 0 340px;background:#1A3626;padding:2.5rem;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid rgba(255,255,255,.06)">
+              <div>
+                <div style="width:56px;height:56px;border-radius:14px;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.2);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <h3 class="serif" style="font-size:1.5rem;font-weight:700;color:#F8FAFC;margin-bottom:.75rem">Group Programs</h3>
+                <p style="font-size:.875rem;color:#94A3B8;line-height:1.7;margin-bottom:1.5rem">Cohort-based transformation where shared vulnerability accelerates growth in ways that solo work simply cannot.</p>
+              </div>
+              <div>
+                <div style="display:flex;align-items:center;gap:.5rem;font-size:.875rem;color:rgba(248,250,252,.75);margin-bottom:.5rem">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  8–12 weeks, cohort of 8–12
+                </div>
+                <div style="display:flex;align-items:center;gap:.5rem;font-size:.875rem;color:rgba(248,250,252,.75)">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2"><path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/></svg>
+                  Starting at $1,500/program
+                </div>
+              </div>
+            </div>
+            <div style="flex:1;padding:2.5rem">
+              <h4 class="serif" style="font-size:1rem;font-style:italic;color:rgba(248,250,252,.8);margin-bottom:.75rem">Best suited for:</h4>
+              <p style="font-size:.875rem;color:#94A3B8;line-height:1.7;margin-bottom:2rem">People who thrive in community, want accountability partners, and value hearing their own struggles reflected in others' experiences.</p>
+              <h4 class="serif" style="font-size:1rem;font-style:italic;color:rgba(248,250,252,.8);margin-bottom:1rem">What you get:</h4>
+              <ul style="list-style:none;padding:0;margin-bottom:2rem;display:flex;flex-direction:column;gap:.75rem">
+                <li style="display:flex;align-items:start;gap:.75rem;font-size:.875rem;color:rgba(248,250,252,.8)">
+                  <span style="flex-shrink:0;width:20px;height:20px;border-radius:50%;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.25);display:flex;align-items:center;justify-content:center;margin-top:.1rem"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  Weekly group sessions + 2 private calls
+                </li>
+                <li style="display:flex;align-items:start;gap:.75rem;font-size:.875rem;color:rgba(248,250,252,.8)">
+                  <span style="flex-shrink:0;width:20px;height:20px;border-radius:50%;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.25);display:flex;align-items:center;justify-content:center;margin-top:.1rem"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  Private community channel
+                </li>
+                <li style="display:flex;align-items:start;gap:.75rem;font-size:.875rem;color:rgba(248,250,252,.8)">
+                  <span style="flex-shrink:0;width:20px;height:20px;border-radius:50%;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.25);display:flex;align-items:center;justify-content:center;margin-top:.1rem"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  Lifetime alumni access
+                </li>
+              </ul>
+              <a href="/hc/projects/" style="display:inline-flex;align-items:center;gap:.5rem;padding:.625rem 1.5rem;border-radius:9999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);color:#F8FAFC;font-size:.8125rem;font-weight:500;text-decoration:none">
+                View current programs <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="glass-card" style="overflow:hidden;display:flex;border:1px solid rgba(255,255,255,.08)">
+            <div style="flex:0 0 340px;background:#1A3626;padding:2.5rem;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid rgba(255,255,255,.06)">
+              <div>
+                <div style="width:56px;height:56px;border-radius:14px;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.2);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                </div>
+                <h3 class="serif" style="font-size:1.5rem;font-weight:700;color:#F8FAFC;margin-bottom:.75rem">Workshops</h3>
+                <p style="font-size:.875rem;color:#94A3B8;line-height:1.7;margin-bottom:1.5rem">Focused half-day and full-day intensives for teams, communities, and organizations investing in human development.</p>
+              </div>
+              <div>
+                <div style="display:flex;align-items:center;gap:.5rem;font-size:.875rem;color:rgba(248,250,252,.75);margin-bottom:.5rem">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  Half-day or full-day format
+                </div>
+                <div style="display:flex;align-items:center;gap:.5rem;font-size:.875rem;color:rgba(248,250,252,.75)">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2"><path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/></svg>
+                  Custom pricing, from $2,500
+                </div>
+              </div>
+            </div>
+            <div style="flex:1;padding:2.5rem">
+              <h4 class="serif" style="font-size:1rem;font-style:italic;color:rgba(248,250,252,.8);margin-bottom:.75rem">Best suited for:</h4>
+              <p style="font-size:.875rem;color:#94A3B8;line-height:1.7;margin-bottom:2rem">Companies wanting to invest in team wellbeing, communication, and culture. Also available as public ticketed events.</p>
+              <h4 class="serif" style="font-size:1rem;font-style:italic;color:rgba(248,250,252,.8);margin-bottom:1rem">Popular topics:</h4>
+              <ul style="list-style:none;padding:0;margin-bottom:2rem;display:flex;flex-direction:column;gap:.75rem">
+                <li style="display:flex;align-items:start;gap:.75rem;font-size:.875rem;color:rgba(248,250,252,.8)">
+                  <span style="flex-shrink:0;width:20px;height:20px;border-radius:50%;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.25);display:flex;align-items:center;justify-content:center;margin-top:.1rem"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  Navigating Change Without Losing Yourself
+                </li>
+                <li style="display:flex;align-items:start;gap:.75rem;font-size:.875rem;color:rgba(248,250,252,.8)">
+                  <span style="flex-shrink:0;width:20px;height:20px;border-radius:50%;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.25);display:flex;align-items:center;justify-content:center;margin-top:.1rem"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  Authentic Leadership in High-Pressure Environments
+                </li>
+                <li style="display:flex;align-items:start;gap:.75rem;font-size:.875rem;color:rgba(248,250,252,.8)">
+                  <span style="flex-shrink:0;width:20px;height:20px;border-radius:50%;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.25);display:flex;align-items:center;justify-content:center;margin-top:.1rem"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  Burnout Recovery &amp; Sustainable Wellbeing
+                </li>
+              </ul>
+              <a href="/hc/contact/" style="display:inline-flex;align-items:center;gap:.5rem;padding:.625rem 1.5rem;border-radius:9999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);color:#F8FAFC;font-size:.8125rem;font-weight:500;text-decoration:none">
+                Inquire about workshops <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section-pad" style="background:rgba(26,54,38,.15);border-top:1px solid rgba(255,255,255,.05)">
+      <div class="container">
+        <div style="text-align:center;max-width:640px;margin-inline:auto;margin-bottom:4rem">
+          <h2 class="serif" style="font-size:clamp(1.75rem,3vw,2.5rem);font-weight:700;color:#F8FAFC;margin-bottom:1rem">How We Work Together</h2>
+          <p style="color:#94A3B8;line-height:1.7">A transparent look at the journey from first hello to lasting transformation.</p>
+        </div>
+        <div style="max-width:700px;margin-inline:auto;position:relative">
+          <div style="position:absolute;left:27px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,rgba(74,222,128,.5),rgba(74,222,128,.1),transparent)"></div>
+          <div style="display:flex;flex-direction:column;gap:2.5rem">
+            <div style="display:flex;gap:2rem;align-items:start">
+              <div style="flex-shrink:0;width:56px;height:56px;border-radius:50%;background:#1A3626;border:2px solid #4ADE80;display:flex;align-items:center;justify-content:center;z-index:1;box-shadow:0 0 16px rgba(74,222,128,.2)">
+                <span class="serif" style="font-size:1.1rem;color:#4ADE80;font-weight:700">1</span>
+              </div>
+              <div class="glass-card" style="flex:1;padding:1.75rem">
+                <h3 class="serif" style="font-size:1.15rem;font-weight:700;color:#F8FAFC;margin-bottom:.5rem">The Discovery Call</h3>
+                <p style="font-size:.875rem;color:#94A3B8;line-height:1.65">A 45-minute conversation — no agenda, no pitch. I want to hear where you are and what you're reaching toward. We'll both know if it's a fit.</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:2rem;align-items:start">
+              <div style="flex-shrink:0;width:56px;height:56px;border-radius:50%;background:#1A3626;border:2px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;z-index:1">
+                <span class="serif" style="font-size:1.1rem;color:rgba(255,255,255,.5);font-weight:700">2</span>
+              </div>
+              <div class="glass-card" style="flex:1;padding:1.75rem">
+                <h3 class="serif" style="font-size:1.15rem;font-weight:700;color:#F8FAFC;margin-bottom:.5rem">Intake &amp; Intention</h3>
+                <p style="font-size:.875rem;color:#94A3B8;line-height:1.65">We go deep on your history, your patterns, and what you genuinely want. This foundation shapes everything that follows.</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:2rem;align-items:start">
+              <div style="flex-shrink:0;width:56px;height:56px;border-radius:50%;background:#1A3626;border:2px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;z-index:1">
+                <span class="serif" style="font-size:1.1rem;color:rgba(255,255,255,.5);font-weight:700">3</span>
+              </div>
+              <div class="glass-card" style="flex:1;padding:1.75rem">
+                <h3 class="serif" style="font-size:1.15rem;font-weight:700;color:#F8FAFC;margin-bottom:.5rem">The Work</h3>
+                <p style="font-size:.875rem;color:#94A3B8;line-height:1.65">Regular sessions, honest conversations, experiments in real life. It's iterative, nonlinear, and often surprising. I meet you wherever you are.</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:2rem;align-items:start">
+              <div style="flex-shrink:0;width:56px;height:56px;border-radius:50%;background:#1A3626;border:2px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;z-index:1">
+                <span class="serif" style="font-size:1.1rem;color:rgba(255,255,255,.5);font-weight:700">4</span>
+              </div>
+              <div class="glass-card" style="flex:1;padding:1.75rem">
+                <h3 class="serif" style="font-size:1.15rem;font-weight:700;color:#F8FAFC;margin-bottom:.5rem">Integration &amp; Forward</h3>
+                <p style="font-size:.875rem;color:#94A3B8;line-height:1.65">We close meaningfully — reviewing growth, anchoring your new self, and planning what comes next. This is a beginning, not an end.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section-pad" style="background:#0F172A;border-top:1px solid rgba(255,255,255,.05)">
+      <div class="container">
+        <div style="text-align:center;margin-bottom:3.5rem">
+          <h2 class="serif" style="font-size:clamp(1.75rem,3vw,2.5rem);font-weight:700;color:#F8FAFC;margin-bottom:.75rem">Investment Packages</h2>
+          <p style="color:#94A3B8;max-width:520px;margin-inline:auto;line-height:1.7">Flexible options to meet you where you are financially and in terms of commitment.</p>
+        </div>
+        <div class="pricing-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:960px;margin-inline:auto">
+          <!-- Tier 1 -->
+          <div class="glass-card" style="padding:2rem;display:flex;flex-direction:column">
+            <div style="margin-bottom:1.5rem">
+              <h3 class="serif" style="font-size:1.25rem;font-weight:700;color:#F8FAFC;margin-bottom:.5rem">Starter</h3>
+              <p style="font-size:.8125rem;color:#94A3B8">Single session or short exploration.</p>
+            </div>
+            <div style="margin-bottom:1.5rem">
+              <span class="serif" style="font-size:2.25rem;font-weight:700;color:#F8FAFC">$250</span>
+              <span style="font-size:.875rem;color:#94A3B8"> / session</span>
+            </div>
+            <ul style="list-style:none;padding:0;margin-bottom:2rem;display:flex;flex-direction:column;gap:.6rem;flex:1">
+              <li style="display:flex;align-items:center;gap:.6rem;font-size:.8125rem;color:rgba(248,250,252,.75)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 50-min coaching session</li>
+              <li style="display:flex;align-items:center;gap:.6rem;font-size:.8125rem;color:rgba(248,250,252,.75)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Session notes + resources</li>
+              <li style="display:flex;align-items:center;gap:.6rem;font-size:.8125rem;color:rgba(248,250,252,.75)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 48hr email follow-up</li>
+            </ul>
+            <a href="/hc/contact/" style="display:block;text-align:center;padding:.875rem;border-radius:9999px;border:1px solid rgba(255,255,255,.15);color:#F8FAFC;font-weight:500;font-size:.875rem;text-decoration:none;transition:background .2s ease">Book a Session</a>
+          </div>
+          <!-- Tier 2 (featured) -->
+          <div class="glass-card" style="padding:2rem;display:flex;flex-direction:column;background:#1A3626;border-color:rgba(74,222,128,.25);box-shadow:0 0 32px rgba(74,222,128,.06);position:relative">
+            <div style="position:absolute;top:1.25rem;right:1.25rem;padding:.2rem .75rem;background:rgba(74,222,128,.15);border:1px solid rgba(74,222,128,.3);border-radius:9999px;font-size:.7rem;color:#4ADE80;font-weight:600">Most Popular</div>
+            <div style="margin-bottom:1.5rem">
+              <h3 class="serif" style="font-size:1.25rem;font-weight:700;color:#F8FAFC;margin-bottom:.5rem">Deep Dive</h3>
+              <p style="font-size:.8125rem;color:#94A3B8">6-session journey for real progress.</p>
+            </div>
+            <div style="margin-bottom:1.5rem">
+              <span class="serif" style="font-size:2.25rem;font-weight:700;color:#F8FAFC">$1,350</span>
+              <span style="font-size:.875rem;color:#94A3B8"> / 6 sessions</span>
+            </div>
+            <ul style="list-style:none;padding:0;margin-bottom:2rem;display:flex;flex-direction:column;gap:.6rem;flex:1">
+              <li style="display:flex;align-items:center;gap:.6rem;font-size:.8125rem;color:rgba(248,250,252,.75)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 6 × 60-min sessions</li>
+              <li style="display:flex;align-items:center;gap:.6rem;font-size:.8125rem;color:rgba(248,250,252,.75)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> WhatsApp support access</li>
+              <li style="display:flex;align-items:center;gap:.6rem;font-size:.8125rem;color:rgba(248,250,252,.75)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Personalized framework doc</li>
+              <li style="display:flex;align-items:center;gap:.6rem;font-size:.8125rem;color:rgba(248,250,252,.75)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 30-min integration call at end</li>
+            </ul>
+            <a href="/hc/contact/" style="display:block;text-align:center;padding:.875rem;border-radius:9999px;background:#4ADE80;color:#0F172A;font-weight:600;font-size:.875rem;text-decoration:none;box-shadow:0 0 20px rgba(74,222,128,.2)">Get Started</a>
+          </div>
+          <!-- Tier 3 -->
+          <div class="glass-card" style="padding:2rem;display:flex;flex-direction:column">
+            <div style="margin-bottom:1.5rem">
+              <h3 class="serif" style="font-size:1.25rem;font-weight:700;color:#F8FAFC;margin-bottom:.5rem">Transformation</h3>
+              <p style="font-size:.8125rem;color:#94A3B8">3-month immersive for deep change.</p>
+            </div>
+            <div style="margin-bottom:1.5rem">
+              <span class="serif" style="font-size:2.25rem;font-weight:700;color:#F8FAFC">$3,200</span>
+              <span style="font-size:.875rem;color:#94A3B8"> / 3 months</span>
+            </div>
+            <ul style="list-style:none;padding:0;margin-bottom:2rem;display:flex;flex-direction:column;gap:.6rem;flex:1">
+              <li style="display:flex;align-items:center;gap:.6rem;font-size:.8125rem;color:rgba(248,250,252,.75)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Bi-weekly 90-min sessions</li>
+              <li style="display:flex;align-items:center;gap:.6rem;font-size:.8125rem;color:rgba(248,250,252,.75)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Priority WhatsApp access</li>
+              <li style="display:flex;align-items:center;gap:.6rem;font-size:.8125rem;color:rgba(248,250,252,.75)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Audio check-ins between calls</li>
+              <li style="display:flex;align-items:center;gap:.6rem;font-size:.8125rem;color:rgba(248,250,252,.75)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Full transition roadmap</li>
+            </ul>
+            <a href="/hc/contact/" style="display:block;text-align:center;padding:.875rem;border-radius:9999px;border:1px solid rgba(255,255,255,.15);color:#F8FAFC;font-weight:500;font-size:.875rem;text-decoration:none">Apply Now</a>
+          </div>
+        </div>
+        <p style="text-align:center;font-size:.8125rem;color:#94A3B8;margin-top:2rem">Sliding scale available for those facing financial hardship. Ask me about it.</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-pad" style="background:rgba(26,54,38,.15);border-top:1px solid rgba(255,255,255,.05)">
+      <div class="container" style="max-width:760px">
+        <div style="text-align:center;margin-bottom:3rem">
+          <h2 class="serif" style="font-size:clamp(1.75rem,3vw,2.5rem);font-weight:700;color:#F8FAFC;margin-bottom:.75rem">Common Questions</h2>
+          <p style="color:#94A3B8;font-style:italic" class="serif">Things people usually ask before we begin.</p>
+        </div>
+        <div id="hc-faq">
+          <div class="faq-item">
+            <button class="faq-btn" data-faq="0">
+              <span>What's the difference between coaching and therapy?</span>
+              <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;transition:transform .2s ease"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-body" id="faq-body-0">
+              <p style="font-size:.875rem;color:#94A3B8;line-height:1.7">Therapy focuses on healing the past; coaching focuses on building the future. That said, I bring a therapeutic sensitivity to my coaching — I don't compartmentalize your emotions. If deeper therapeutic work is needed, I'll say so and can refer you.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn" data-faq="1">
+              <span>How do I know if coaching is right for me right now?</span>
+              <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;transition:transform .2s ease"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-body" id="faq-body-1">
+              <p style="font-size:.875rem;color:#94A3B8;line-height:1.7">If you feel stuck, restless, or like you're living someone else's life — coaching is probably a good fit. The discovery call is the real test. If we talk and you feel more alive, more seen, and more curious about possibilities? That's your answer.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn" data-faq="2">
+              <span>Do sessions happen online or in person?</span>
+              <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;transition:transform .2s ease"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-body" id="faq-body-2">
+              <p style="font-size:.875rem;color:#94A3B8;line-height:1.7">Most sessions are virtual (Zoom). I serve clients across North America, Europe, and Australia. If you're in Austin, TX, in-person sessions are available on request.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn" data-faq="3">
+              <span>What if I start and it's not working for me?</span>
+              <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;transition:transform .2s ease"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-body" id="faq-body-3">
+              <p style="font-size:.875rem;color:#94A3B8;line-height:1.7">You tell me. Openly, directly. I'd rather recalibrate our approach together than have you quietly check out. If after 3 sessions we're not connecting, I'll help you find someone better suited to you — no hard feelings, ever.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="padding:5rem 1.5rem;background:linear-gradient(135deg,#1A3626 0%,#0F2318 100%);text-align:center">
+      <div class="container" style="max-width:680px">
+        <h2 class="serif" style="font-size:clamp(1.75rem,3.5vw,2.75rem);font-weight:700;color:#F8FAFC;margin-bottom:1.25rem">Ready to Start the Conversation?</h2>
+        <p style="color:#94A3B8;line-height:1.7;margin-bottom:2.5rem">No pressure, no pitch. Just a genuine conversation about what's possible.</p>
+        <a href="/hc/contact/" class="btn-green">Schedule Your Free Call</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="padding:3rem 1.5rem;background:rgba(0,0,0,.3);border-top:1px solid rgba(255,255,255,.05)">
+      <div class="container" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem">
+        <div style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:#F8FAFC;display:flex;align-items:center;gap:.35rem">Michael <span style="color:#4ADE80;font-size:.8rem">✦</span></div>
+        <div style="display:flex;gap:1.5rem">
+          <a href="#" style="color:#94A3B8"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" style="color:#94A3B8"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+        <p style="font-size:.8125rem;color:#94A3B8">© 2025 Michael Rivera. All rights reserved.</p>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    const faqBtns = document.querySelectorAll('[data-faq]');
+    faqBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const idx = (btn as HTMLElement).dataset.faq;
+        const body = document.getElementById(`faq-body-${idx}`);
+        const arrow = btn.querySelector('.faq-arrow') as HTMLElement;
+        const isOpen = body?.classList.contains('open');
+        document.querySelectorAll('.faq-body').forEach(b => b.classList.remove('open'));
+        document.querySelectorAll('.faq-arrow').forEach(a => (a as HTMLElement).style.transform = '');
+        if (!isOpen && body) {
+          body.classList.add('open');
+          if (arrow) arrow.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+  </script>
+  <style is:global>@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}</style>
+</BaseLayout>

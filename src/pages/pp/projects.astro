@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../../layouts/Base.astro';
+import PPNav from '../../components/PPNav.astro';
+---
+<BaseLayout title="Projects — Edward James" theme="pp">
+  <link rel="stylesheet" href="/styles/rv.css" slot="head" />
+  <PPNav active="projects" />
+  <main style="padding-top:5rem;background:#F9FAFB;min-height:100vh;font-family:'Inter',sans-serif">
+
+    <div style="max-width:1280px;margin-inline:auto;padding:4rem 1.5rem;display:flex;flex-direction:column;gap:4rem">
+
+      <!-- Page Header -->
+      <div>
+        <h1 style="font-size:clamp(2.25rem,4vw,3.25rem);font-weight:700;color:#111827;letter-spacing:-.03em;margin:0 0 1rem">Engagements &amp; Projects</h1>
+        <p style="font-size:1.0625rem;color:#4B5563;line-height:1.7;margin:0;max-width:42rem">Detailed records of strategic advisory engagements across industries, including methodology, scope, and measurable results.</p>
+      </div>
+
+      <!-- Featured Engagement -->
+      <section>
+        <div style="font-size:.75rem;font-weight:600;color:#4B5563;text-transform:uppercase;letter-spacing:.08em;margin-bottom:1.25rem">Featured Engagement</div>
+        <div style="background:#fff;border-radius:2rem;border:1px solid #E5E7EB;box-shadow:0 4px 20px rgba(0,0,0,.05);overflow:hidden">
+          <div class="pp-featured-grid" style="display:grid;grid-template-columns:1fr 1.2fr">
+            <div style="aspect-ratio:4/3;overflow:hidden;background:#F3F4F6">
+              <img src="https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=800" alt="European Logistics PMI" style="width:100%;height:100%;object-fit:cover" />
+            </div>
+            <div style="padding:3rem">
+              <div style="display:flex;gap:.5rem;margin-bottom:1.5rem">
+                <span style="font-size:.6875rem;font-weight:600;color:#4F46E5;background:rgba(79,70,229,.08);padding:.25rem .875rem;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em">M&amp;A Integration</span>
+                <span style="font-size:.6875rem;font-weight:600;color:#4B5563;background:#F3F4F6;padding:.25rem .875rem;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em">Logistics</span>
+              </div>
+              <h2 style="font-size:1.75rem;font-weight:700;color:#111827;margin:0 0 1rem;line-height:1.3">European Logistics Conglomerate — Post-Merger Integration</h2>
+              <p style="font-size:.9375rem;color:#4B5563;line-height:1.75;margin:0 0 1.75rem">A €12B cross-border merger of three European logistics firms created a 26,000-person organization spanning six national regulatory jurisdictions. The integration faced cultural friction across French, German, and Dutch management structures, three legacy ERP systems, and conflicting incentive frameworks. Edward was engaged as Principal Integration Advisor to lead the 18-month consolidation program.</p>
+              <div class="pp-feat-stats" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:1.75rem">
+                <div style="background:#F9FAFB;padding:1.125rem;border-radius:.875rem;border:1px solid #E5E7EB">
+                  <div style="font-size:1.25rem;font-weight:700;color:#111827">€12B</div>
+                  <div style="font-size:.75rem;color:#6B7280;font-weight:500;margin-top:.25rem">Transaction Value</div>
+                </div>
+                <div style="background:#F9FAFB;padding:1.125rem;border-radius:.875rem;border:1px solid #E5E7EB">
+                  <div style="font-size:1.25rem;font-weight:700;color:#111827">18 mo</div>
+                  <div style="font-size:.75rem;color:#6B7280;font-weight:500;margin-top:.25rem">Engagement</div>
+                </div>
+                <div style="background:#F9FAFB;padding:1.125rem;border-radius:.875rem;border:1px solid #E5E7EB">
+                  <div style="font-size:1.25rem;font-weight:700;color:#111827">4 mo early</div>
+                  <div style="font-size:.75rem;color:#6B7280;font-weight:500;margin-top:.25rem">Ahead of Schedule</div>
+                </div>
+              </div>
+              <a href="/pp/contact/" style="display:inline-block;padding:.875rem 2rem;background:#111827;color:#fff;border-radius:9999px;font-size:.875rem;font-weight:600;text-decoration:none">Discuss a Similar Engagement</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Engagement Archive -->
+      <section>
+        <h2 style="font-size:1.625rem;font-weight:700;color:#111827;margin:0 0 2rem;letter-spacing:-.02em">Engagement Archive</h2>
+        <div style="display:flex;flex-direction:column;gap:1rem">
+
+          <div style="background:#fff;padding:1.75rem;border-radius:1.25rem;border:1px solid #E5E7EB;box-shadow:0 4px 20px rgba(0,0,0,.05);display:flex;align-items:flex-start;justify-content:space-between;gap:2rem;flex-wrap:wrap">
+            <div style="flex:1;min-width:200px">
+              <div style="display:flex;gap:.5rem;margin-bottom:.75rem;flex-wrap:wrap">
+                <span style="font-size:.6875rem;font-weight:600;color:#4F46E5;background:rgba(79,70,229,.08);padding:.2rem .625rem;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em">Growth</span>
+                <span style="font-size:.6875rem;font-weight:600;color:#4B5563;background:#F3F4F6;padding:.2rem .625rem;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em">Technology</span>
+              </div>
+              <h3 style="font-size:1.0625rem;font-weight:700;color:#111827;margin:0 0 .375rem">Atlas Capital — Board Restructuring Pre-IPO</h3>
+              <p style="font-size:.875rem;color:#4B5563;margin:0">Restructured the governance framework and board composition for a $900M FinTech ahead of public market debut.</p>
+            </div>
+            <div style="text-align:right;flex-shrink:0">
+              <div style="font-size:.75rem;color:#6B7280;font-weight:600;text-transform:uppercase;letter-spacing:.06em">Outcome</div>
+              <div style="font-size:1.0625rem;font-weight:700;color:#111827">$4.2B valuation at IPO</div>
+              <div style="font-size:.8125rem;color:#9CA3AF;margin-top:.25rem">2023</div>
+            </div>
+          </div>
+
+          <div style="background:#fff;padding:1.75rem;border-radius:1.25rem;border:1px solid #E5E7EB;box-shadow:0 4px 20px rgba(0,0,0,.05);display:flex;align-items:flex-start;justify-content:space-between;gap:2rem;flex-wrap:wrap">
+            <div style="flex:1;min-width:200px">
+              <div style="display:flex;gap:.5rem;margin-bottom:.75rem;flex-wrap:wrap">
+                <span style="font-size:.6875rem;font-weight:600;color:#4F46E5;background:rgba(79,70,229,.08);padding:.2rem .625rem;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em">Turnaround</span>
+                <span style="font-size:.6875rem;font-weight:600;color:#4B5563;background:#F3F4F6;padding:.2rem .625rem;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em">Healthcare</span>
+              </div>
+              <h3 style="font-size:1.0625rem;font-weight:700;color:#111827;margin:0 0 .375rem">Meridian Health — Operational Turnaround</h3>
+              <p style="font-size:.875rem;color:#4B5563;margin:0">Led 14-month operational restructuring of a hospital network facing regulatory challenges and declining patient satisfaction metrics.</p>
+            </div>
+            <div style="text-align:right;flex-shrink:0">
+              <div style="font-size:.75rem;color:#6B7280;font-weight:600;text-transform:uppercase;letter-spacing:.06em">Outcome</div>
+              <div style="font-size:1.0625rem;font-weight:700;color:#111827">28% cost reduction</div>
+              <div style="font-size:.8125rem;color:#9CA3AF;margin-top:.25rem">2022</div>
+            </div>
+          </div>
+
+          <div style="background:#fff;padding:1.75rem;border-radius:1.25rem;border:1px solid #E5E7EB;box-shadow:0 4px 20px rgba(0,0,0,.05);display:flex;align-items:flex-start;justify-content:space-between;gap:2rem;flex-wrap:wrap">
+            <div style="flex:1;min-width:200px">
+              <div style="display:flex;gap:.5rem;margin-bottom:.75rem;flex-wrap:wrap">
+                <span style="font-size:.6875rem;font-weight:600;color:#4F46E5;background:rgba(79,70,229,.08);padding:.2rem .625rem;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em">Strategy</span>
+                <span style="font-size:.6875rem;font-weight:600;color:#4B5563;background:#F3F4F6;padding:.2rem .625rem;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em">Energy</span>
+              </div>
+              <h3 style="font-size:1.0625rem;font-weight:700;color:#111827;margin:0 0 .375rem">EuroGrid — Digital Transformation Roadmap</h3>
+              <p style="font-size:.875rem;color:#4B5563;margin:0">Developed and oversaw execution of 5-year digital transformation strategy for a €40B European energy utility.</p>
+            </div>
+            <div style="text-align:right;flex-shrink:0">
+              <div style="font-size:.75rem;color:#6B7280;font-weight:600;text-transform:uppercase;letter-spacing:.06em">Outcome</div>
+              <div style="font-size:1.0625rem;font-weight:700;color:#111827">€800M cost base reduction</div>
+              <div style="font-size:.8125rem;color:#9CA3AF;margin-top:.25rem">2021</div>
+            </div>
+          </div>
+
+          <div style="background:#fff;padding:1.75rem;border-radius:1.25rem;border:1px solid #E5E7EB;box-shadow:0 4px 20px rgba(0,0,0,.05);display:flex;align-items:flex-start;justify-content:space-between;gap:2rem;flex-wrap:wrap">
+            <div style="flex:1;min-width:200px">
+              <div style="display:flex;gap:.5rem;margin-bottom:.75rem;flex-wrap:wrap">
+                <span style="font-size:.6875rem;font-weight:600;color:#4F46E5;background:rgba(79,70,229,.08);padding:.2rem .625rem;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em">M&amp;A</span>
+                <span style="font-size:.6875rem;font-weight:600;color:#4B5563;background:#F3F4F6;padding:.2rem .625rem;border-radius:9999px;text-transform:uppercase;letter-spacing:.05em">Financial Services</span>
+              </div>
+              <h3 style="font-size:1.0625rem;font-weight:700;color:#111827;margin:0 0 .375rem">Whitmore Bank — M&amp;A Integration Leadership</h3>
+              <p style="font-size:.875rem;color:#4B5563;margin:0">Post-merger integration of two major retail banking institutions following a $22B deal, consolidating operations across 14 countries.</p>
+            </div>
+            <div style="text-align:right;flex-shrink:0">
+              <div style="font-size:.75rem;color:#6B7280;font-weight:600;text-transform:uppercase;letter-spacing:.06em">Outcome</div>
+              <div style="font-size:1.0625rem;font-weight:700;color:#111827">$400M annual synergies</div>
+              <div style="font-size:.8125rem;color:#9CA3AF;margin-top:.25rem">2019</div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Methodology -->
+      <section style="background:#111827;border-radius:2rem;padding:3.5rem;color:#fff">
+        <h2 style="font-size:1.625rem;font-weight:700;color:#fff;margin:0 0 .75rem">Engagement Methodology</h2>
+        <p style="font-size:1rem;color:#9CA3AF;line-height:1.65;margin:0 0 2.5rem;max-width:40rem">Every engagement follows a structured, four-phase methodology designed to deliver clarity, accountability, and measurable outcomes.</p>
+        <div class="pp-method-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem">
+          <div style="background:rgba(255,255,255,.06);padding:1.5rem;border-radius:1rem;border:1px solid rgba(255,255,255,.1)">
+            <div style="font-size:.6875rem;font-weight:700;color:#4F46E5;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem">Phase 01</div>
+            <h3 style="font-size:1rem;font-weight:700;color:#fff;margin:0 0 .625rem">Diagnostic</h3>
+            <p style="font-size:.875rem;color:#9CA3AF;line-height:1.6;margin:0">Confidential assessment of organizational structure, leadership gaps, and root-cause challenges.</p>
+          </div>
+          <div style="background:rgba(255,255,255,.06);padding:1.5rem;border-radius:1rem;border:1px solid rgba(255,255,255,.1)">
+            <div style="font-size:.6875rem;font-weight:700;color:#4F46E5;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem">Phase 02</div>
+            <h3 style="font-size:1rem;font-weight:700;color:#fff;margin:0 0 .625rem">Architecture</h3>
+            <p style="font-size:.875rem;color:#9CA3AF;line-height:1.6;margin:0">Precise scope definition, deliverable mapping, stakeholder alignment, and commercial structuring.</p>
+          </div>
+          <div style="background:rgba(255,255,255,.06);padding:1.5rem;border-radius:1rem;border:1px solid rgba(255,255,255,.1)">
+            <div style="font-size:.6875rem;font-weight:700;color:#4F46E5;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem">Phase 03</div>
+            <h3 style="font-size:1rem;font-weight:700;color:#fff;margin:0 0 .625rem">Execution</h3>
+            <p style="font-size:.875rem;color:#9CA3AF;line-height:1.6;margin:0">Active implementation with rigorous oversight, adaptive decision-making, and regular progress reporting.</p>
+          </div>
+          <div style="background:rgba(255,255,255,.06);padding:1.5rem;border-radius:1rem;border:1px solid rgba(255,255,255,.1)">
+            <div style="font-size:.6875rem;font-weight:700;color:#4F46E5;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem">Phase 04</div>
+            <h3 style="font-size:1rem;font-weight:700;color:#fff;margin:0 0 .625rem">Institutionalization</h3>
+            <p style="font-size:.875rem;color:#9CA3AF;line-height:1.6;margin:0">Embedding frameworks into organizational DNA, training continuity, and establishing long-term KPI measurement.</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer style="background:#fff;border-top:1px solid #E5E7EB;padding:3rem 1.5rem;font-family:'Inter',sans-serif">
+    <div style="max-width:1280px;margin-inline:auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem">
+      <div style="display:flex;align-items:center;gap:.625rem">
+        <div style="width:2rem;height:2rem;background:#111827;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.6875rem;font-weight:700">EJ</div>
+        <span style="font-size:.9375rem;font-weight:600;color:#111827">Edward James</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:2rem;flex-wrap:wrap">
+        <span style="font-size:.875rem;color:#6B7280">&copy; 2025 Edward James.</span>
+        <div style="display:flex;gap:1rem">
+          <a href="https://linkedin.com" target="_blank" rel="noopener" style="color:#6B7280;text-decoration:none" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener" style="color:#6B7280;text-decoration:none" aria-label="Twitter">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    @media (max-width: 767px) {
+      .pp-featured-grid { grid-template-columns: 1fr !important; }
+      .pp-feat-stats { grid-template-columns: repeat(3,1fr) !important; }
+      .pp-method-grid { grid-template-columns: 1fr !important; }
+    }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .pp-method-grid { grid-template-columns: repeat(2,1fr) !important; }
+    }
+  </style>
+</BaseLayout>

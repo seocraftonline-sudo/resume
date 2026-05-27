@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../../layouts/Base.astro';
+import DNNav from '../../components/DNNav.astro';
+
+const categories = [
+  {
+    name: 'Frontend',
+    icon: '🖥️',
+    skills: [
+      {name:'React',level:'Expert',bar:95},
+      {name:'Next.js',level:'Expert',bar:92},
+      {name:'TypeScript',level:'Expert',bar:95},
+      {name:'CSS / Tailwind',level:'Advanced',bar:88},
+      {name:'Vue.js',level:'Intermediate',bar:65},
+    ]
+  },
+  {
+    name: 'Backend',
+    icon: '⚙️',
+    skills: [
+      {name:'Node.js',level:'Expert',bar:90},
+      {name:'Python / FastAPI',level:'Advanced',bar:78},
+      {name:'GraphQL',level:'Advanced',bar:82},
+      {name:'REST API Design',level:'Expert',bar:93},
+      {name:'Go',level:'Intermediate',bar:55},
+    ]
+  },
+  {
+    name: 'Data & Storage',
+    icon: '🗄️',
+    skills: [
+      {name:'PostgreSQL',level:'Advanced',bar:85},
+      {name:'Redis',level:'Advanced',bar:80},
+      {name:'MongoDB',level:'Intermediate',bar:68},
+      {name:'Prisma ORM',level:'Advanced',bar:85},
+      {name:'ElasticSearch',level:'Intermediate',bar:60},
+    ]
+  },
+  {
+    name: 'DevOps & Cloud',
+    icon: '☁️',
+    skills: [
+      {name:'AWS',level:'Advanced',bar:82},
+      {name:'Docker',level:'Advanced',bar:85},
+      {name:'Kubernetes',level:'Intermediate',bar:70},
+      {name:'Terraform',level:'Intermediate',bar:65},
+      {name:'GitHub Actions',level:'Advanced',bar:88},
+    ]
+  },
+];
+---
+<BaseLayout title="Skills — Alex Chen" theme="dn">
+  <link rel="stylesheet" href="/styles/rv.css" slot="head" />
+  <DNNav active="skills" />
+
+  <main style="padding-top:5rem;background:#fff;color:#0A0A0A;font-family:'Inter',sans-serif">
+
+    <!-- Hero -->
+    <section style="padding:4rem 1.5rem 3rem;max-width:1200px;margin-inline:auto">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#FF6600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.5rem">Capabilities</p>
+      <h1 style="font-size:clamp(2rem,5vw,3.5rem);font-weight:800;letter-spacing:-.04em;margin:0 0 1rem">Skills & Expertise</h1>
+      <p style="font-size:1.125rem;color:#555;max-width:600px;line-height:1.7;margin:0">A full-stack toolkit refined over 5 years building production systems — from interactive frontends to distributed backend services.</p>
+    </section>
+
+    <!-- Skills by Category -->
+    <section style="padding:0 1.5rem 5rem;max-width:1200px;margin-inline:auto">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem">
+        {categories.map(cat => (
+          <div style="background:#F5F5F5;border-radius:20px;padding:2rem;border:1px solid #E5E5E5">
+            <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.75rem">
+              <span style="font-size:1.5rem">{cat.icon}</span>
+              <h2 style="font-size:1.125rem;font-weight:700;margin:0">{cat.name}</h2>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:1.25rem">
+              {cat.skills.map(s => (
+                <div>
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.375rem">
+                    <span style="font-size:.9rem;font-weight:600">{s.name}</span>
+                    <span style={`font-family:'JetBrains Mono',monospace;font-size:.7rem;padding:.2rem .6rem;border-radius:6px;background:${s.level==='Expert'?'#FFF0E6':s.level==='Advanced'?'#F0F0F0':'#fff'};color:${s.level==='Expert'?'#FF6600':s.level==='Advanced'?'#555':'#999'};border:1px solid ${s.level==='Expert'?'rgba(255,102,0,.2)':'#E5E5E5'}`}>{s.level}</span>
+                  </div>
+                  <div style="height:5px;background:#E5E5E5;border-radius:3px;overflow:hidden">
+                    <div style={`height:100%;width:${s.bar}%;background:${s.level==='Expert'?'#FF6600':s.level==='Advanced'?'#0A0A0A':'#999'};border-radius:3px`}></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Tech Logos Grid -->
+    <section style="background:#0A0A0A;padding:4rem 1.5rem">
+      <div style="max-width:1200px;margin-inline:auto">
+        <p style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#FF6600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem;text-align:center">Tech I work with daily</p>
+        <h2 style="font-size:2rem;font-weight:700;color:#fff;text-align:center;letter-spacing:-.03em;margin:0 0 3rem">The Stack</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:1rem">
+          {['React','Next.js','TypeScript','Node.js','Python','PostgreSQL','Redis','MongoDB','AWS','Docker','K8s','GraphQL','REST','Prisma','Terraform','Git','GitHub Actions','Jest','Vite','Tailwind'].map(tech => (
+            <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:1.25rem .75rem;text-align:center">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:.8125rem;color:rgba(255,255,255,.8);font-weight:500">{tech}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Soft Skills -->
+    <section style="padding:5rem 1.5rem;max-width:1200px;margin-inline:auto">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#FF6600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem">Beyond the code</p>
+      <h2 style="font-size:2rem;font-weight:700;letter-spacing:-.03em;margin:0 0 2.5rem">Soft Skills</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem">
+        {[
+          {icon:'🎯',title:'Systems Thinking',desc:'I see the whole before the parts. Architecture decisions are made with the full system lifecycle in mind.'},
+          {icon:'💬',title:'Technical Communication',desc:"I write clear RFCs, run productive code reviews, and can explain distributed systems concepts to non-engineers."},
+          {icon:'⚡',title:'Ownership Mentality',desc:'I treat every problem as my problem. No hand-waving. If I ship it, I monitor it, maintain it, and take responsibility for it.'},
+          {icon:'🧑‍🏫',title:'Mentorship',desc:"Currently mentoring 2 junior developers. I measure my success by how much faster my team grows, not just how fast I ship."},
+          {icon:'🔍',title:'First-Principles Thinking',desc:'I question assumptions. When faced with a complex problem, I decompose it to fundamentals before reaching for familiar solutions.'},
+          {icon:'🔄',title:'Adaptability',desc:'5 years spanning startups to scale-ups. I adjust my process to the team size, codebase maturity, and business stage.'},
+        ].map(s => (
+          <div style="padding:1.75rem;border:1px solid #E5E5E5;border-radius:18px;background:#fff">
+            <div style="font-size:1.75rem;margin-bottom:.875rem">{s.icon}</div>
+            <h3 style="font-size:1.0625rem;font-weight:700;margin:0 0 .5rem">{s.title}</h3>
+            <p style="font-size:.875rem;color:#666;line-height:1.65;margin:0">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <footer style="background:#fff;border-top:1px solid #E5E5E5;padding:3rem 1.5rem">
+    <div style="max-width:1200px;margin-inline:auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem">
+      <div style="font-weight:700;color:#0A0A0A">Alex Chen</div>
+      <div style="font-size:.875rem;color:#999">© 2025 Alex Chen.</div>
+    </div>
+  </footer>
+</BaseLayout>

@@ -1,0 +1,215 @@
+---
+import BaseLayout from '../../layouts/Base.astro';
+import HCNav from '../../components/HCNav.astro';
+---
+<BaseLayout title="Client Testimonials — Michael Rivera" theme="hc">
+  <link rel="stylesheet" href="/styles/rv.css" slot="head" />
+  <HCNav active="testimonials" />
+
+  <style>
+    *{box-sizing:border-box}
+    body{background:#0F172A;color:#F8FAFC;font-family:'Inter',sans-serif;overflow-x:hidden}
+    .glass-card{background:rgba(255,255,255,.03);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.05);border-radius:24px}
+    .section-pad{padding:6rem 1.5rem}
+    .container{max-width:1280px;margin-inline:auto}
+    .serif{font-family:'Playfair Display',serif}
+    .btn-green{display:inline-flex;align-items:center;gap:.5rem;background:#4ADE80;color:#0F172A;font-weight:600;font-size:.9375rem;padding:.875rem 2rem;border-radius:9999px;text-decoration:none;transition:box-shadow .2s ease}
+    .btn-green:hover{box-shadow:0 0 24px rgba(74,222,128,.4)}
+    @media(max-width:767px){
+      .testi-grid{grid-template-columns:1fr!important}
+      .metrics-grid{grid-template-columns:1fr 1fr!important}
+      .section-pad{padding:4rem 1.25rem}
+    }
+  </style>
+
+  <main style="padding-top:5rem">
+
+    <!-- Hero -->
+    <section style="padding:6rem 1.5rem 4rem;background:linear-gradient(180deg,rgba(26,54,38,.9) 0%,rgba(15,23,42,1) 100%)">
+      <div class="container" style="text-align:center;max-width:720px">
+        <div style="display:inline-flex;align-items:center;gap:.5rem;padding:.375rem 1rem;border-radius:9999px;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);font-size:.8125rem;color:#94A3B8;margin-bottom:1.5rem">
+          <span style="width:6px;height:6px;border-radius:50%;background:#4ADE80;display:inline-block"></span>
+          Real Voices, Real Change
+        </div>
+        <h1 class="serif" style="font-size:clamp(2rem,4vw,3.5rem);font-weight:700;color:#F8FAFC;line-height:1.2;margin-bottom:1.25rem">Stories of Transformation</h1>
+        <p style="color:#94A3B8;font-size:1.0625rem;line-height:1.75">Every quote here represents a moment of courage — theirs for doing the work, and mine for holding the space. I share these with gratitude and permission.</p>
+      </div>
+    </section>
+
+    <!-- Featured Large Quote -->
+    <section class="section-pad" style="background:#0F172A">
+      <div class="container" style="max-width:900px">
+        <div class="glass-card" style="padding:3.5rem;background:linear-gradient(135deg,#1A3626 0%,rgba(26,54,38,.6) 100%);border-color:rgba(74,222,128,.2);text-align:center">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="#4ADE80" style="margin-bottom:2rem;opacity:.6"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+          <blockquote class="serif" style="font-size:clamp(1.25rem,2.5vw,1.75rem);font-style:italic;color:#F8FAFC;line-height:1.65;margin-bottom:2.5rem">
+            "I came to Michael convinced my only problem was finding the right job title. Twelve sessions later, I understood that the real question was: who am I when no one is watching? That question has changed everything — my work, my marriage, how I parent my kids. There isn't a number I can put on that."
+          </blockquote>
+          <div style="display:flex;align-items:center;justify-content:center;gap:1rem">
+            <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Client" style="width:56px;height:56px;border-radius:50%;object-fit:cover;border:2px solid rgba(74,222,128,.3)" />
+            <div style="text-align:left">
+              <div style="font-weight:600;color:#F8FAFC">James T.</div>
+              <div style="font-size:.8125rem;color:#94A3B8">VP of Engineering → Founder, 2024</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Grid -->
+    <section class="section-pad" style="background:rgba(26,54,38,.1);border-top:1px solid rgba(255,255,255,.05)">
+      <div class="container">
+        <div style="margin-bottom:3rem">
+          <h2 class="serif" style="font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;color:#F8FAFC;margin-bottom:.5rem">More Voices</h2>
+          <p style="color:#94A3B8">From across industries, ages, and types of transition.</p>
+        </div>
+        <div class="testi-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem">
+
+          <div class="glass-card" style="padding:2rem">
+            <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem">
+              <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Sarah M." style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid rgba(74,222,128,.2)" />
+              <div>
+                <div style="font-weight:600;color:#F8FAFC;font-size:.9375rem">Sarah M.</div>
+                <div style="font-size:.8125rem;color:#94A3B8">Attorney → In-House Counsel, 2024</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:2px;margin-bottom:1rem">
+              {[1,2,3,4,5].map(() => <span style="color:#4ADE80;font-size:1rem">★</span>)}
+            </div>
+            <blockquote style="font-size:.875rem;color:#94A3B8;line-height:1.7;font-style:italic">
+              "Working with Michael was the turning point I needed. He helped me see that I wasn't stuck — I was just between chapters. Six months later, I'm in a role I love and finally feel like myself again."
+            </blockquote>
+          </div>
+
+          <div class="glass-card" style="padding:2rem">
+            <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem">
+              <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=800" alt="David K." style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid rgba(74,222,128,.2)" />
+              <div>
+                <div style="font-weight:600;color:#F8FAFC;font-size:.9375rem">David K.</div>
+                <div style="font-size:.8125rem;color:#94A3B8">Entrepreneur, Post-Exit, 2023</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:2px;margin-bottom:1rem">
+              {[1,2,3,4,5].map(() => <span style="color:#4ADE80;font-size:1rem">★</span>)}
+            </div>
+            <blockquote style="font-size:.875rem;color:#94A3B8;line-height:1.7;font-style:italic">
+              "I thought I was coming to figure out my next business. I left figuring out my next life. I had no idea how much I had been using 'strategy' to avoid actually feeling anything."
+            </blockquote>
+          </div>
+
+          <div class="glass-card" style="padding:2rem">
+            <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem">
+              <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Maya T." style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid rgba(74,222,128,.2)" />
+              <div>
+                <div style="font-weight:600;color:#F8FAFC;font-size:.9375rem">Maya T.</div>
+                <div style="font-size:.8125rem;color:#94A3B8">Teacher, Life Transition, 2023</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:2px;margin-bottom:1rem">
+              {[1,2,3,4,5].map(() => <span style="color:#4ADE80;font-size:1rem">★</span>)}
+            </div>
+            <blockquote style="font-size:.875rem;color:#94A3B8;line-height:1.7;font-style:italic">
+              "I came in thinking I needed to survive. Michael helped me realize I could actually thrive. Being witnessed in my grief without being rushed through it — I didn't know how much I needed that."
+            </blockquote>
+          </div>
+
+          <div class="glass-card" style="padding:2rem">
+            <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem">
+              <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Ryan L." style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid rgba(74,222,128,.2)" />
+              <div>
+                <div style="font-weight:600;color:#F8FAFC;font-size:.9375rem">Ryan L.</div>
+                <div style="font-size:.8125rem;color:#94A3B8">Software Engineer, Relationship Work, 2024</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:2px;margin-bottom:1rem">
+              {[1,2,3,4,5].map(() => <span style="color:#4ADE80;font-size:1rem">★</span>)}
+            </div>
+            <blockquote style="font-size:.875rem;color:#94A3B8;line-height:1.7;font-style:italic">
+              "The patterns were never about the other person. That was the hard truth — and the most liberating one. I came in thinking I needed communication tips. I left with self-knowledge."
+            </blockquote>
+          </div>
+
+          <div class="glass-card" style="padding:2rem">
+            <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem">
+              <img src="https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Amanda W." style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid rgba(74,222,128,.2)" />
+              <div>
+                <div style="font-weight:600;color:#F8FAFC;font-size:.9375rem">Amanda W.</div>
+                <div style="font-size:.8125rem;color:#94A3B8">Designer → Studio Founder, 2024</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:2px;margin-bottom:1rem">
+              {[1,2,3,4,5].map(() => <span style="color:#4ADE80;font-size:1rem">★</span>)}
+            </div>
+            <blockquote style="font-size:.875rem;color:#94A3B8;line-height:1.7;font-style:italic">
+              "Michael helped me see that the fear wasn't a stop sign. It was proof I actually cared about this. Six months after our work together, I launched my studio and booked out my first quarter."
+            </blockquote>
+          </div>
+
+          <div class="glass-card" style="padding:2rem">
+            <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem">
+              <img src="https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Chris N." style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid rgba(74,222,128,.2)" />
+              <div>
+                <div style="font-weight:600;color:#F8FAFC;font-size:.9375rem">Chris N.</div>
+                <div style="font-size:.8125rem;color:#94A3B8">Executive, Leadership Coaching, 2023</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:2px;margin-bottom:1rem">
+              {[1,2,3,4,5].map(() => <span style="color:#4ADE80;font-size:1rem">★</span>)}
+            </div>
+            <blockquote style="font-size:.875rem;color:#94A3B8;line-height:1.7;font-style:italic">
+              "I've worked with executive coaches before. Michael is different. He isn't interested in optimizing you. He's interested in you becoming more fully yourself. For a leader, that's everything."
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact Metrics -->
+    <section class="section-pad" style="background:#1A3626;background:linear-gradient(135deg,#1A3626 0%,rgba(26,54,38,.5) 100%);border-top:1px solid rgba(255,255,255,.05)">
+      <div class="container" style="max-width:900px">
+        <div style="text-align:center;margin-bottom:3.5rem">
+          <h2 class="serif" style="font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;color:#F8FAFC;margin-bottom:.75rem">The Numbers</h2>
+          <p style="color:#94A3B8;max-width:480px;margin-inline:auto;line-height:1.7">Every number is a person. Every percentage is a story. Here's what the data looks like when human change is the goal.</p>
+        </div>
+        <div class="metrics-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem">
+          <div style="text-align:center">
+            <div class="serif" style="font-size:3rem;font-weight:700;color:#4ADE80;line-height:1">200+</div>
+            <div style="font-size:.875rem;color:#94A3B8;margin-top:.5rem">Clients Coached</div>
+          </div>
+          <div style="text-align:center">
+            <div class="serif" style="font-size:3rem;font-weight:700;color:#4ADE80;line-height:1">95%</div>
+            <div style="font-size:.875rem;color:#94A3B8;margin-top:.5rem">Would Recommend</div>
+          </div>
+          <div style="text-align:center">
+            <div class="serif" style="font-size:3rem;font-weight:700;color:#4ADE80;line-height:1">4.9</div>
+            <div style="font-size:.875rem;color:#94A3B8;margin-top:.5rem">Avg. Session Rating</div>
+          </div>
+          <div style="text-align:center">
+            <div class="serif" style="font-size:3rem;font-weight:700;color:#4ADE80;line-height:1">80%</div>
+            <div style="font-size:.875rem;color:#94A3B8;margin-top:.5rem">Return for More Work</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="padding:5rem 1.5rem;background:#0F172A;text-align:center;border-top:1px solid rgba(255,255,255,.05)">
+      <div class="container" style="max-width:680px">
+        <h2 class="serif" style="font-size:clamp(1.75rem,3.5vw,2.75rem);font-weight:700;color:#F8FAFC;margin-bottom:1.25rem">Your Story Starts With a Conversation</h2>
+        <p style="color:#94A3B8;line-height:1.7;margin-bottom:2.5rem">No forms, no algorithms. Just two people talking about what's possible. Free discovery call, no obligation.</p>
+        <a href="/hc/contact/" class="btn-green">Book Your Free Call</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="padding:3rem 1.5rem;background:rgba(0,0,0,.3);border-top:1px solid rgba(255,255,255,.05)">
+      <div class="container" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem">
+        <div style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:#F8FAFC;display:flex;align-items:center;gap:.35rem">Michael <span style="color:#4ADE80;font-size:.8rem">✦</span></div>
+        <div style="display:flex;gap:1.5rem">
+          <a href="#" style="color:#94A3B8"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" style="color:#94A3B8"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+        <p style="font-size:.8125rem;color:#94A3B8">© 2025 Michael Rivera. All rights reserved.</p>
+      </div>
+    </footer>
+  </main>
+</BaseLayout>

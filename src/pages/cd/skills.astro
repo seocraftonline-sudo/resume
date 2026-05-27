@@ -1,0 +1,192 @@
+---
+import BaseLayout from '../../layouts/Base.astro';
+import CDNav from '../../components/CDNav.astro';
+---
+
+<BaseLayout title="Skills — Wil B" theme="cd">
+  <link rel="stylesheet" href="/styles/rv.css" slot="head" />
+  <CDNav active="skills" />
+
+  <main style="padding-top:5rem;background:#fff;color:#1a1a1a;font-family:'Inter',sans-serif">
+
+    <!-- Page Header -->
+    <section style="border-bottom:1px solid #e7e7e7;padding:4rem 1.5rem 3rem">
+      <div style="max-width:1440px;margin-inline:auto">
+        <p style="font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b0b0b0;margin-bottom:.75rem">About / Skills</p>
+        <h1 style="font-size:clamp(2.5rem,6vw,5rem);font-weight:900;letter-spacing:-.04em;line-height:1.0;margin:0;color:#1a1a1a">Competencies.</h1>
+      </div>
+    </section>
+
+    <!-- Competency Areas with Skill Bars -->
+    <section style="max-width:1440px;margin-inline:auto;padding:5rem 1.5rem">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:3rem">
+
+        <!-- Design -->
+        <div>
+          <h2 style="font-size:1.125rem;font-weight:900;color:#1a1a1a;letter-spacing:-.03em;margin:0 0 2rem;display:flex;align-items:center;gap:.75rem">
+            <span style="display:inline-block;width:2rem;height:2rem;background:#1a1a1a;flex-shrink:0"></span>
+            Design
+          </h2>
+          <div style="display:flex;flex-direction:column;gap:1.25rem">
+            {[
+              {skill:'Brand Identity', pct:97},
+              {skill:'UI/UX Design', pct:94},
+              {skill:'Motion Design', pct:88},
+              {skill:'Typography', pct:96},
+              {skill:'Art Direction', pct:93},
+              {skill:'Print Design', pct:85}
+            ].map(({skill, pct}) => (
+              <div>
+                <div style="display:flex;justify-content:space-between;margin-bottom:.5rem">
+                  <span style="font-size:.875rem;font-weight:600;color:#1a1a1a">{skill}</span>
+                  <span style="font-size:.75rem;font-family:monospace;color:#b0b0b0">{pct}%</span>
+                </div>
+                <div style="height:3px;background:#e7e7e7;position:relative">
+                  <div style={`height:100%;background:#1a1a1a;width:${pct}%`}></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Technology -->
+        <div>
+          <h2 style="font-size:1.125rem;font-weight:900;color:#1a1a1a;letter-spacing:-.03em;margin:0 0 2rem;display:flex;align-items:center;gap:.75rem">
+            <span style="display:inline-block;width:2rem;height:2rem;background:#b0b0b0;flex-shrink:0"></span>
+            Technology
+          </h2>
+          <div style="display:flex;flex-direction:column;gap:1.25rem">
+            {[
+              {skill:'React / Next.js', pct:90},
+              {skill:'TypeScript', pct:85},
+              {skill:'Three.js / WebGL', pct:78},
+              {skill:'Framer Motion', pct:88},
+              {skill:'CSS / Animation', pct:95},
+              {skill:'Node.js', pct:72}
+            ].map(({skill, pct}) => (
+              <div>
+                <div style="display:flex;justify-content:space-between;margin-bottom:.5rem">
+                  <span style="font-size:.875rem;font-weight:600;color:#1a1a1a">{skill}</span>
+                  <span style="font-size:.75rem;font-family:monospace;color:#b0b0b0">{pct}%</span>
+                </div>
+                <div style="height:3px;background:#e7e7e7;position:relative">
+                  <div style={`height:100%;background:#b0b0b0;width:${pct}%`}></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Strategy -->
+        <div>
+          <h2 style="font-size:1.125rem;font-weight:900;color:#1a1a1a;letter-spacing:-.03em;margin:0 0 2rem;display:flex;align-items:center;gap:.75rem">
+            <span style="display:inline-block;width:2rem;height:2rem;background:#1a1a1a;flex-shrink:0"></span>
+            Strategy
+          </h2>
+          <div style="display:flex;flex-direction:column;gap:1.25rem">
+            {[
+              {skill:'Brand Strategy', pct:95},
+              {skill:'Product Roadmapping', pct:87},
+              {skill:'Go-to-Market', pct:82},
+              {skill:'Creative Leadership', pct:92},
+              {skill:'Client Relations', pct:94},
+              {skill:'Workshop Facilitation', pct:80}
+            ].map(({skill, pct}) => (
+              <div>
+                <div style="display:flex;justify-content:space-between;margin-bottom:.5rem">
+                  <span style="font-size:.875rem;font-weight:600;color:#1a1a1a">{skill}</span>
+                  <span style="font-size:.75rem;font-family:monospace;color:#b0b0b0">{pct}%</span>
+                </div>
+                <div style="height:3px;background:#e7e7e7;position:relative">
+                  <div style={`height:100%;background:#1a1a1a;width:${pct}%`}></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Tool Categories Grid -->
+    <section style="background:#f6f6f6;border-top:1px solid #e7e7e7;border-bottom:1px solid #e7e7e7;padding:5rem 1.5rem">
+      <div style="max-width:1440px;margin-inline:auto">
+        <p style="font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b0b0b0;margin-bottom:.5rem">Tools & Software</p>
+        <h2 style="font-size:clamp(1.75rem,3.5vw,2.5rem);font-weight:900;letter-spacing:-.03em;color:#1a1a1a;margin:0 0 3rem">My toolkit.</h2>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem">
+
+          <div style="background:#fff;border:1px solid #e7e7e7;padding:2rem">
+            <h4 style="font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#b0b0b0;margin:0 0 1.25rem">Design Tools</h4>
+            <div style="display:flex;flex-wrap:wrap;gap:.5rem">
+              {['Figma','Adobe CC','Sketch','Spline 3D','ProtoPie','Principle'].map(t => (
+                <span style="font-size:.8125rem;font-weight:600;color:#1a1a1a;background:#f6f6f6;border:1px solid #e7e7e7;padding:.375rem .875rem">{t}</span>
+              ))}
+            </div>
+          </div>
+
+          <div style="background:#fff;border:1px solid #e7e7e7;padding:2rem">
+            <h4 style="font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#b0b0b0;margin:0 0 1.25rem">Development</h4>
+            <div style="display:flex;flex-wrap:wrap;gap:.5rem">
+              {['VS Code','Git / GitHub','Vercel','Astro','Tailwind CSS','Storybook'].map(t => (
+                <span style="font-size:.8125rem;font-weight:600;color:#1a1a1a;background:#f6f6f6;border:1px solid #e7e7e7;padding:.375rem .875rem">{t}</span>
+              ))}
+            </div>
+          </div>
+
+          <div style="background:#fff;border:1px solid #e7e7e7;padding:2rem">
+            <h4 style="font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#b0b0b0;margin:0 0 1.25rem">Motion & 3D</h4>
+            <div style="display:flex;flex-wrap:wrap;gap:.5rem">
+              {['After Effects','Cinema 4D','Lottie','GSAP','Rive','Framer'].map(t => (
+                <span style="font-size:.8125rem;font-weight:600;color:#1a1a1a;background:#f6f6f6;border:1px solid #e7e7e7;padding:.375rem .875rem">{t}</span>
+              ))}
+            </div>
+          </div>
+
+          <div style="background:#fff;border:1px solid #e7e7e7;padding:2rem">
+            <h4 style="font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#b0b0b0;margin:0 0 1.25rem">Productivity</h4>
+            <div style="display:flex;flex-wrap:wrap;gap:.5rem">
+              {['Notion','Linear','Slack','Loom','Miro','Jira'].map(t => (
+                <span style="font-size:.8125rem;font-weight:600;color:#1a1a1a;background:#f6f6f6;border:1px solid #e7e7e7;padding:.375rem .875rem">{t}</span>
+              ))}
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Tag Cloud / All Skills -->
+    <section style="max-width:1440px;margin-inline:auto;padding:5rem 1.5rem">
+      <p style="font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b0b0b0;margin-bottom:.5rem">All Skills</p>
+      <h2 style="font-size:clamp(1.75rem,3.5vw,2.5rem);font-weight:900;letter-spacing:-.03em;color:#1a1a1a;margin:0 0 2.5rem">The full picture.</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:.75rem">
+        {[
+          'Brand Identity','Visual Design','Motion Design','UI Design','UX Research',
+          'Typography','Art Direction','Creative Direction','Design Systems',
+          'React','TypeScript','Next.js','Astro','Three.js','WebGL','GSAP',
+          'CSS Animation','Framer Motion','Figma','After Effects','Cinema 4D',
+          'Brand Strategy','Product Strategy','Creative Leadership','Workshop Design',
+          'Stakeholder Management','Team Building','Mentorship','Public Speaking',
+          'Print Design','Editorial Design','Packaging','Photography Direction'
+        ].map(skill => (
+          <span style="font-size:.875rem;font-weight:600;color:#1a1a1a;border:1.5px solid #e7e7e7;padding:.4375rem 1rem;transition:border-color .2s ease,background .2s ease;cursor:default" onmouseenter="this.style.borderColor='#1a1a1a';this.style.background='#f6f6f6'" onmouseleave="this.style.borderColor='#e7e7e7';this.style.background=''">{skill}</span>
+        ))}
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer style="background:#1a1a1a;padding:3rem 1.5rem">
+    <div style="max-width:1440px;margin-inline:auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem">
+      <div style="color:rgba(255,255,255,.5);font-size:.875rem">© 2025 Wil B. All rights reserved.</div>
+      <div style="display:flex;align-items:center;gap:1.5rem">
+        <a href="#" style="color:rgba(255,255,255,.6);font-size:.875rem;font-weight:500;text-decoration:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='rgba(255,255,255,.6)'">GitHub</a>
+        <a href="#" style="color:rgba(255,255,255,.6);font-size:.875rem;font-weight:500;text-decoration:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='rgba(255,255,255,.6)'">LinkedIn</a>
+        <a href="#" style="color:rgba(255,255,255,.6);font-size:.875rem;font-weight:500;text-decoration:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='rgba(255,255,255,.6)'">Instagram</a>
+        <a href="#" style="color:rgba(255,255,255,.6);font-size:.875rem;font-weight:500;text-decoration:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='rgba(255,255,255,.6)'">Twitter</a>
+      </div>
+    </div>
+  </footer>
+</BaseLayout>

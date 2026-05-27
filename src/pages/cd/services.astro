@@ -1,0 +1,291 @@
+---
+import BaseLayout from '../../layouts/Base.astro';
+import CDNav from '../../components/CDNav.astro';
+---
+
+<BaseLayout title="Services — Wil B" theme="cd">
+  <link rel="stylesheet" href="/styles/rv.css" slot="head" />
+  <CDNav active="services" />
+
+  <main style="padding-top:5rem;background:#fff;color:#1a1a1a;font-family:'Inter',sans-serif">
+
+    <!-- Page Header -->
+    <section style="border-bottom:1px solid #e7e7e7;padding:4rem 1.5rem 3rem">
+      <div style="max-width:1440px;margin-inline:auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end">
+        <div>
+          <p style="font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b0b0b0;margin-bottom:.75rem">Services</p>
+          <h1 style="font-size:clamp(2.5rem,6vw,5rem);font-weight:900;letter-spacing:-.04em;line-height:1.0;margin:0;color:#1a1a1a">What I Offer.</h1>
+        </div>
+        <p style="font-size:1.0625rem;color:#6d6d6d;line-height:1.7;font-weight:300;margin:0">I don't sell hours — I sell transformations. My work bridges the gap between ambitious vision and tangible reality, creating digital experiences that demand attention.</p>
+      </div>
+    </section>
+
+    <!-- 3 Service Blocks -->
+    <section style="max-width:1440px;margin-inline:auto;padding:5rem 1.5rem">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem">
+
+        <div style="background:#fff;border:1px solid #e7e7e7;padding:2.5rem;transition:transform .3s ease,box-shadow .3s ease;position:relative;overflow:hidden" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 30px -6px rgba(0,0,0,.1)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+          <div style="font-size:5rem;font-weight:900;color:rgba(26,26,26,.04);position:absolute;top:-1.5rem;right:1.5rem;line-height:1;pointer-events:none;letter-spacing:-.05em">01</div>
+          <div style="width:2.5rem;height:2.5rem;background:#1a1a1a;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+          <h3 style="font-size:1.25rem;font-weight:800;color:#1a1a1a;letter-spacing:-.03em;margin:0 0 1rem">Brand Identity Systems</h3>
+          <p style="font-size:.9375rem;color:#6d6d6d;line-height:1.65;font-weight:300;margin:0 0 1.5rem">Cohesive, memorable visual languages that communicate your core philosophy across every touchpoint without saying a word.</p>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.625rem">
+            <li style="display:flex;align-items:start;gap:.75rem;font-size:.875rem;color:#1a1a1a">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b0b0b0" stroke-width="2.5" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg>
+              Logo & Mark Development
+            </li>
+            <li style="display:flex;align-items:start;gap:.75rem;font-size:.875rem;color:#1a1a1a">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b0b0b0" stroke-width="2.5" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg>
+              Typography & Color Architecture
+            </li>
+            <li style="display:flex;align-items:start;gap:.75rem;font-size:.875rem;color:#1a1a1a">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b0b0b0" stroke-width="2.5" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg>
+              Comprehensive Brand Guidelines
+            </li>
+          </ul>
+          <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid #e7e7e7;display:flex;align-items:center;justify-content:space-between">
+            <div>
+              <span style="font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#b0b0b0;display:block;margin-bottom:.25rem">Timeline</span>
+              <span style="font-size:.875rem;font-weight:700;color:#1a1a1a">6–8 Weeks</span>
+            </div>
+            <a href="/cd/contact/" style="width:2.5rem;height:2.5rem;border:1.5px solid #1a1a1a;display:flex;align-items:center;justify-content:center;text-decoration:none;color:#1a1a1a;transition:background .2s ease,color .2s ease" onmouseenter="this.style.background='#1a1a1a';this.style.color='#fff'" onmouseleave="this.style.background='';this.style.color='#1a1a1a'">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div style="background:#fff;border:1px solid #e7e7e7;padding:2.5rem;transition:transform .3s ease,box-shadow .3s ease;position:relative;overflow:hidden" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 30px -6px rgba(0,0,0,.1)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+          <div style="font-size:5rem;font-weight:900;color:rgba(26,26,26,.04);position:absolute;top:-1.5rem;right:1.5rem;line-height:1;pointer-events:none;letter-spacing:-.05em">02</div>
+          <div style="width:2.5rem;height:2.5rem;background:#1a1a1a;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <h3 style="font-size:1.25rem;font-weight:800;color:#1a1a1a;letter-spacing:-.03em;margin:0 0 1rem">Immersive Web Experiences</h3>
+          <p style="font-size:.9375rem;color:#6d6d6d;line-height:1.65;font-weight:300;margin:0 0 1.5rem">High-performance digital platforms that break conventions while maintaining flawless usability and obsessive attention to conversion.</p>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.625rem">
+            <li style="display:flex;align-items:start;gap:.75rem;font-size:.875rem;color:#1a1a1a">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b0b0b0" stroke-width="2.5" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg>
+              UX/UI Design Systems
+            </li>
+            <li style="display:flex;align-items:start;gap:.75rem;font-size:.875rem;color:#1a1a1a">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b0b0b0" stroke-width="2.5" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg>
+              Creative Frontend Development
+            </li>
+            <li style="display:flex;align-items:start;gap:.75rem;font-size:.875rem;color:#1a1a1a">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b0b0b0" stroke-width="2.5" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg>
+              Motion & Interaction Design
+            </li>
+          </ul>
+          <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid #e7e7e7;display:flex;align-items:center;justify-content:space-between">
+            <div>
+              <span style="font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#b0b0b0;display:block;margin-bottom:.25rem">Timeline</span>
+              <span style="font-size:.875rem;font-weight:700;color:#1a1a1a">8–12 Weeks</span>
+            </div>
+            <a href="/cd/contact/" style="width:2.5rem;height:2.5rem;border:1.5px solid #1a1a1a;display:flex;align-items:center;justify-content:center;text-decoration:none;color:#1a1a1a;transition:background .2s ease,color .2s ease" onmouseenter="this.style.background='#1a1a1a';this.style.color='#fff'" onmouseleave="this.style.background='';this.style.color='#1a1a1a'">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div style="background:#fff;border:1px solid #e7e7e7;padding:2.5rem;transition:transform .3s ease,box-shadow .3s ease;position:relative;overflow:hidden" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 30px -6px rgba(0,0,0,.1)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+          <div style="font-size:5rem;font-weight:900;color:rgba(26,26,26,.04);position:absolute;top:-1.5rem;right:1.5rem;line-height:1;pointer-events:none;letter-spacing:-.05em">03</div>
+          <div style="width:2.5rem;height:2.5rem;background:#1a1a1a;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <h3 style="font-size:1.25rem;font-weight:800;color:#1a1a1a;letter-spacing:-.03em;margin:0 0 1rem">Digital Strategy & Positioning</h3>
+          <p style="font-size:.9375rem;color:#6d6d6d;line-height:1.65;font-weight:300;margin:0 0 1.5rem">Architecting the foundation of your digital presence. Defining who you are, who you serve, and how you win in a crowded marketplace.</p>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.625rem">
+            <li style="display:flex;align-items:start;gap:.75rem;font-size:.875rem;color:#1a1a1a">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b0b0b0" stroke-width="2.5" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg>
+              Audience Segmentation
+            </li>
+            <li style="display:flex;align-items:start;gap:.75rem;font-size:.875rem;color:#1a1a1a">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b0b0b0" stroke-width="2.5" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg>
+              Competitive Landscape Analysis
+            </li>
+            <li style="display:flex;align-items:start;gap:.75rem;font-size:.875rem;color:#1a1a1a">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b0b0b0" stroke-width="2.5" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg>
+              Go-to-Market Roadmapping
+            </li>
+          </ul>
+          <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid #e7e7e7;display:flex;align-items:center;justify-content:space-between">
+            <div>
+              <span style="font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#b0b0b0;display:block;margin-bottom:.25rem">Timeline</span>
+              <span style="font-size:.875rem;font-weight:700;color:#1a1a1a">4–6 Weeks</span>
+            </div>
+            <a href="/cd/contact/" style="width:2.5rem;height:2.5rem;border:1.5px solid #1a1a1a;display:flex;align-items:center;justify-content:center;text-decoration:none;color:#1a1a1a;transition:background .2s ease,color .2s ease" onmouseenter="this.style.background='#1a1a1a';this.style.color='#fff'" onmouseleave="this.style.background='';this.style.color='#1a1a1a'">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Steps -->
+    <section style="background:#f6f6f6;border-top:1px solid #e7e7e7;border-bottom:1px solid #e7e7e7;padding:5rem 1.5rem">
+      <div style="max-width:1440px;margin-inline:auto">
+        <p style="font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b0b0b0;margin-bottom:.5rem">How I Work</p>
+        <h2 style="font-size:clamp(1.75rem,3.5vw,2.5rem);font-weight:900;letter-spacing:-.03em;color:#1a1a1a;margin:0 0 3rem">The methodology.</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0;border:1px solid #e7e7e7">
+          <div style="padding:2.5rem;background:#fff;border-right:1px solid #e7e7e7">
+            <div style="font-size:3rem;font-weight:900;color:#e7e7e7;line-height:1;margin-bottom:1.25rem;letter-spacing:-.04em">01</div>
+            <h3 style="font-size:1rem;font-weight:800;color:#1a1a1a;letter-spacing:-.02em;margin:0 0 .75rem">Discovery & Audit</h3>
+            <p style="font-size:.875rem;color:#6d6d6d;line-height:1.6;font-weight:300;margin:0">Deep interviews, data analysis, and ecosystem teardown to understand the real constraints and opportunities.</p>
+          </div>
+          <div style="padding:2.5rem;background:#fff;border-right:1px solid #e7e7e7">
+            <div style="font-size:3rem;font-weight:900;color:#e7e7e7;line-height:1;margin-bottom:1.25rem;letter-spacing:-.04em">02</div>
+            <h3 style="font-size:1rem;font-weight:800;color:#1a1a1a;letter-spacing:-.02em;margin:0 0 .75rem">Strategic Framework</h3>
+            <p style="font-size:.875rem;color:#6d6d6d;line-height:1.6;font-weight:300;margin:0">Translating insights into a concrete plan. Architecture, visual direction, and technical stack defined.</p>
+          </div>
+          <div style="padding:2.5rem;background:#fff;border-right:1px solid #e7e7e7">
+            <div style="font-size:3rem;font-weight:900;color:#e7e7e7;line-height:1;margin-bottom:1.25rem;letter-spacing:-.04em">03</div>
+            <h3 style="font-size:1rem;font-weight:800;color:#1a1a1a;letter-spacing:-.02em;margin:0 0 .75rem">Creative Execution</h3>
+            <p style="font-size:.875rem;color:#6d6d6d;line-height:1.6;font-weight:300;margin:0">Iterative design and development cycles — pushing boundaries until it feels inevitable.</p>
+          </div>
+          <div style="padding:2.5rem;background:#fff">
+            <div style="font-size:3rem;font-weight:900;color:#e7e7e7;line-height:1;margin-bottom:1.25rem;letter-spacing:-.04em">04</div>
+            <h3 style="font-size:1rem;font-weight:800;color:#1a1a1a;letter-spacing:-.02em;margin:0 0 .75rem">Deploy & Evolve</h3>
+            <p style="font-size:.875rem;color:#6d6d6d;line-height:1.6;font-weight:300;margin:0">Launch is the beginning. Monitor, optimize, and scale based on real-world interaction and data.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section style="max-width:1440px;margin-inline:auto;padding:5rem 1.5rem">
+      <p style="font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b0b0b0;margin-bottom:.5rem">Investment</p>
+      <h2 style="font-size:clamp(1.75rem,3.5vw,2.5rem);font-weight:900;letter-spacing:-.03em;color:#1a1a1a;margin:0 0 3rem">Transparent pricing.</h2>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem">
+        <!-- Tier 1 -->
+        <div style="background:#fff;border:1px solid #e7e7e7;padding:2.5rem;transition:transform .3s ease,box-shadow .3s ease" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 30px -6px rgba(0,0,0,.1)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+          <h3 style="font-size:.875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#b0b0b0;margin:0 0 .5rem">The Catalyst</h3>
+          <div style="font-size:2.5rem;font-weight:900;letter-spacing:-.04em;color:#1a1a1a;margin-bottom:1.5rem;line-height:1">$15,000<span style="font-size:1rem;font-weight:400;color:#b0b0b0"> starting at</span></div>
+          <ul style="list-style:none;padding:0;margin:0 0 2rem;display:flex;flex-direction:column;gap:.75rem">
+            <li style="font-size:.875rem;color:#6d6d6d;display:flex;gap:.75rem;align-items:start"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2.5" style="flex-shrink:0;margin-top:2px"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Brand Identity Refresh</li>
+            <li style="font-size:.875rem;color:#6d6d6d;display:flex;gap:.75rem;align-items:start"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2.5" style="flex-shrink:0;margin-top:2px"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Core Web Experience (5 pages)</li>
+            <li style="font-size:.875rem;color:#6d6d6d;display:flex;gap:.75rem;align-items:start"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2.5" style="flex-shrink:0;margin-top:2px"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>1 Month Post-Launch Support</li>
+          </ul>
+          <a href="/cd/contact/" style="display:block;width:100%;text-align:center;padding:.875rem;border:1.5px solid #1a1a1a;color:#1a1a1a;font-weight:700;font-size:.875rem;text-decoration:none;transition:background .2s ease,color .2s ease" onmouseenter="this.style.background='#1a1a1a';this.style.color='#fff'" onmouseleave="this.style.background='';this.style.color='#1a1a1a'">Enquire About Catalyst</a>
+        </div>
+
+        <!-- Tier 2 - recommended -->
+        <div style="background:#1a1a1a;padding:2.5rem;transition:transform .3s ease,box-shadow .3s ease;position:relative" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 30px -6px rgba(0,0,0,.3)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+          <div style="position:absolute;top:0;right:0;background:#fff;color:#1a1a1a;font-size:.625rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:.375rem .875rem">Recommended</div>
+          <h3 style="font-size:.875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);margin:0 0 .5rem">The Disruption</h3>
+          <div style="font-size:2.5rem;font-weight:900;letter-spacing:-.04em;color:#fff;margin-bottom:1.5rem;line-height:1">$35,000<span style="font-size:1rem;font-weight:400;color:rgba(255,255,255,.4)"> starting at</span></div>
+          <ul style="list-style:none;padding:0;margin:0 0 2rem;display:flex;flex-direction:column;gap:.75rem">
+            <li style="font-size:.875rem;color:rgba(255,255,255,.7);display:flex;gap:.75rem;align-items:start"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2.5" style="flex-shrink:0;margin-top:2px"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Full Brand Architecture & Strategy</li>
+            <li style="font-size:.875rem;color:rgba(255,255,255,.7);display:flex;gap:.75rem;align-items:start"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2.5" style="flex-shrink:0;margin-top:2px"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Custom Immersive Web Platform</li>
+            <li style="font-size:.875rem;color:rgba(255,255,255,.7);display:flex;gap:.75rem;align-items:start"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2.5" style="flex-shrink:0;margin-top:2px"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>3 Months Iterative Optimization</li>
+          </ul>
+          <a href="/cd/contact/" style="display:block;width:100%;text-align:center;padding:.875rem;background:#fff;color:#1a1a1a;font-weight:700;font-size:.875rem;text-decoration:none;transition:background .2s ease" onmouseenter="this.style.background='#e7e7e7'" onmouseleave="this.style.background='#fff'">Enquire About Disruption</a>
+        </div>
+
+        <!-- Tier 3 -->
+        <div style="background:#fff;border:1px solid #e7e7e7;padding:2.5rem;transition:transform .3s ease,box-shadow .3s ease" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 30px -6px rgba(0,0,0,.1)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+          <h3 style="font-size:.875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#b0b0b0;margin:0 0 .5rem">The Partnership</h3>
+          <div style="font-size:2.5rem;font-weight:900;letter-spacing:-.04em;color:#1a1a1a;margin-bottom:1.5rem;line-height:1">Custom<span style="font-size:1rem;font-weight:400;color:#b0b0b0"> scoped</span></div>
+          <ul style="list-style:none;padding:0;margin:0 0 2rem;display:flex;flex-direction:column;gap:.75rem">
+            <li style="font-size:.875rem;color:#6d6d6d;display:flex;gap:.75rem;align-items:start"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2.5" style="flex-shrink:0;margin-top:2px"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Ongoing Creative Director Retainer</li>
+            <li style="font-size:.875rem;color:#6d6d6d;display:flex;gap:.75rem;align-items:start"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2.5" style="flex-shrink:0;margin-top:2px"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Advisory & Team Leadership</li>
+            <li style="font-size:.875rem;color:#6d6d6d;display:flex;gap:.75rem;align-items:start"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2.5" style="flex-shrink:0;margin-top:2px"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Fully Tailored Scope</li>
+          </ul>
+          <a href="/cd/contact/" style="display:block;width:100%;text-align:center;padding:.875rem;border:1.5px solid #1a1a1a;color:#1a1a1a;font-weight:700;font-size:.875rem;text-decoration:none;transition:background .2s ease,color .2s ease" onmouseenter="this.style.background='#1a1a1a';this.style.color='#fff'" onmouseleave="this.style.background='';this.style.color='#1a1a1a'">Discuss Partnership</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section style="background:#f6f6f6;border-top:1px solid #e7e7e7;padding:5rem 1.5rem">
+      <div style="max-width:1440px;margin-inline:auto;display:grid;grid-template-columns:1fr 2fr;gap:4rem;align-items:start">
+        <div>
+          <p style="font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b0b0b0;margin-bottom:.5rem">FAQ</p>
+          <h2 style="font-size:clamp(1.5rem,3vw,2rem);font-weight:900;letter-spacing:-.03em;color:#1a1a1a;margin:0 0 1rem">Common questions.</h2>
+          <p style="font-size:.9375rem;color:#6d6d6d;line-height:1.6;font-weight:300;margin:0 0 1.5rem">Still have questions? I'm happy to talk through your specific situation.</p>
+          <a href="/cd/contact/" style="font-size:.875rem;font-weight:700;color:#1a1a1a;text-decoration:none;border-bottom:1.5px solid #1a1a1a;padding-bottom:2px">Get in Touch →</a>
+        </div>
+        <div id="cd-faq" style="display:flex;flex-direction:column;gap:.75rem">
+
+          <div class="cd-faq-item" style="background:#fff;border:1px solid #e7e7e7;overflow:hidden">
+            <button class="cd-faq-q" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;background:none;border:none;cursor:pointer;text-align:left;font-family:'Inter',sans-serif">
+              <span style="font-size:.9375rem;font-weight:700;color:#1a1a1a">What is your typical availability for new projects?</span>
+              <svg class="cd-faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b0b0b0" stroke-width="2.5" style="flex-shrink:0;transition:transform .3s ease"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="cd-faq-a" style="max-height:0;overflow:hidden;transition:max-height .4s ease">
+              <p style="padding:0 1.5rem 1.25rem;font-size:.9375rem;color:#6d6d6d;line-height:1.6;font-weight:300;margin:0">I typically book engagements 1–2 months in advance to ensure dedicated focus. Expedited timelines can be accommodated for smaller scopes or urgent strategic consultations.</p>
+            </div>
+          </div>
+
+          <div class="cd-faq-item" style="background:#fff;border:1px solid #e7e7e7;overflow:hidden">
+            <button class="cd-faq-q" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;background:none;border:none;cursor:pointer;text-align:left;font-family:'Inter',sans-serif">
+              <span style="font-size:.9375rem;font-weight:700;color:#1a1a1a">Do you work with in-house development teams?</span>
+              <svg class="cd-faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b0b0b0" stroke-width="2.5" style="flex-shrink:0;transition:transform .3s ease"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="cd-faq-a" style="max-height:0;overflow:hidden;transition:max-height .4s ease">
+              <p style="padding:0 1.5rem 1.25rem;font-size:.9375rem;color:#6d6d6d;line-height:1.6;font-weight:300;margin:0">Yes — I frequently operate as creative director alongside existing internal teams, providing architectural vision, design systems, and technical oversight while your team handles implementation.</p>
+            </div>
+          </div>
+
+          <div class="cd-faq-item" style="background:#fff;border:1px solid #e7e7e7;overflow:hidden">
+            <button class="cd-faq-q" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;background:none;border:none;cursor:pointer;text-align:left;font-family:'Inter',sans-serif">
+              <span style="font-size:.9375rem;font-weight:700;color:#1a1a1a">How are revisions handled during the creative process?</span>
+              <svg class="cd-faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b0b0b0" stroke-width="2.5" style="flex-shrink:0;transition:transform .3s ease"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="cd-faq-a" style="max-height:0;overflow:hidden;transition:max-height .4s ease">
+              <p style="padding:0 1.5rem 1.25rem;font-size:.9375rem;color:#6d6d6d;line-height:1.6;font-weight:300;margin:0">The process is highly collaborative — there are rarely big reveals. We align on strategy first, then move through iterative phases with built-in feedback loops. Package terms define structured revision rounds.</p>
+            </div>
+          </div>
+
+          <div class="cd-faq-item" style="background:#fff;border:1px solid #e7e7e7;overflow:hidden">
+            <button class="cd-faq-q" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;background:none;border:none;cursor:pointer;text-align:left;font-family:'Inter',sans-serif">
+              <span style="font-size:.9375rem;font-weight:700;color:#1a1a1a">What kind of clients do you work best with?</span>
+              <svg class="cd-faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b0b0b0" stroke-width="2.5" style="flex-shrink:0;transition:transform .3s ease"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="cd-faq-a" style="max-height:0;overflow:hidden;transition:max-height .4s ease">
+              <p style="padding:0 1.5rem 1.25rem;font-size:.9375rem;color:#6d6d6d;line-height:1.6;font-weight:300;margin:0">Ambitious founders who understand that safe is the riskiest option. VC-backed startups, enterprise companies going through transformation, and brands that want to be impossible to ignore.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer style="background:#1a1a1a;padding:3rem 1.5rem">
+    <div style="max-width:1440px;margin-inline:auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem">
+      <div style="color:rgba(255,255,255,.5);font-size:.875rem">© 2025 Wil B. All rights reserved.</div>
+      <div style="display:flex;align-items:center;gap:1.5rem">
+        <a href="#" style="color:rgba(255,255,255,.6);font-size:.875rem;font-weight:500;text-decoration:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='rgba(255,255,255,.6)'">GitHub</a>
+        <a href="#" style="color:rgba(255,255,255,.6);font-size:.875rem;font-weight:500;text-decoration:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='rgba(255,255,255,.6)'">LinkedIn</a>
+        <a href="#" style="color:rgba(255,255,255,.6);font-size:.875rem;font-weight:500;text-decoration:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='rgba(255,255,255,.6)'">Instagram</a>
+        <a href="#" style="color:rgba(255,255,255,.6);font-size:.875rem;font-weight:500;text-decoration:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='rgba(255,255,255,.6)'">Twitter</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.cd-faq-item').forEach(item => {
+      const btn = item.querySelector('.cd-faq-q') as HTMLElement;
+      const ans = item.querySelector('.cd-faq-a') as HTMLElement;
+      const icon = item.querySelector('.cd-faq-icon') as HTMLElement;
+      let open = false;
+      btn.addEventListener('click', () => {
+        open = !open;
+        ans.style.maxHeight = open ? ans.scrollHeight + 'px' : '0';
+        icon.style.transform = open ? 'rotate(45deg)' : 'rotate(0)';
+        icon.style.stroke = open ? '#1a1a1a' : '#b0b0b0';
+      });
+    });
+  </script>
+
+  <style>
+    @media (max-width:767px) {
+      main section[style*="grid-template-columns:1fr 2fr"] { grid-template-columns:1fr !important; }
+      main section[style*="grid-template-columns:1fr 1fr"] { grid-template-columns:1fr !important; }
+    }
+  </style>
+</BaseLayout>

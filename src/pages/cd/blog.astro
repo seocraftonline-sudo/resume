@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../../layouts/Base.astro';
+import CDNav from '../../components/CDNav.astro';
+---
+
+<BaseLayout title="Blog — Wil B" theme="cd">
+  <link rel="stylesheet" href="/styles/rv.css" slot="head" />
+  <CDNav active="blog" />
+
+  <main style="padding-top:5rem;background:#fff;color:#1a1a1a;font-family:'Inter',sans-serif">
+
+    <!-- Page Header -->
+    <section style="border-bottom:1px solid #e7e7e7;padding:4rem 1.5rem 3rem">
+      <div style="max-width:1440px;margin-inline:auto">
+        <p style="font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b0b0b0;margin-bottom:.75rem">Insights / Blog</p>
+        <h1 style="font-size:clamp(2.5rem,6vw,5rem);font-weight:900;letter-spacing:-.04em;line-height:1.0;margin:0;color:#1a1a1a">Engineering the Everyday.</h1>
+      </div>
+    </section>
+
+    <!-- Featured Post -->
+    <section style="max-width:1440px;margin-inline:auto;padding:4rem 1.5rem 0">
+      <p style="font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b0b0b0;margin-bottom:1.5rem">Featured</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;background:#fff;border:1px solid #e7e7e7;padding:0;overflow:hidden;cursor:pointer;transition:box-shadow .3s ease" onmouseenter="this.style.boxShadow='0 12px 40px -8px rgba(0,0,0,.12)'" onmouseleave="this.style.boxShadow=''">
+        <div style="overflow:hidden">
+          <img src="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Featured post" style="width:100%;height:100%;object-fit:cover;min-height:340px;transition:transform .5s ease" onmouseenter="this.style.transform='scale(1.03)'" onmouseleave="this.style.transform=''" />
+        </div>
+        <div style="padding:2.5rem 2.5rem 2.5rem 0;display:flex;flex-direction:column;justify-content:center">
+          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem">
+            <span style="font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:#1a1a1a;padding:.3rem .75rem">Design</span>
+            <span style="font-size:.6875rem;font-family:monospace;color:#b0b0b0">Dec 21, 2025</span>
+          </div>
+          <h2 style="font-size:clamp(1.25rem,2.5vw,1.75rem);font-weight:900;color:#1a1a1a;letter-spacing:-.03em;line-height:1.25;margin:0 0 1rem">A Plex-powered, Netflix-inspired screensaver.</h2>
+          <p style="font-size:.9375rem;color:#6d6d6d;line-height:1.7;font-weight:300;margin:0 0 1.5rem">Building a custom Apple TV screensaver using React Native and the Plex API — a deep dive into bridging consumer media APIs with ambient display design.</p>
+          <a href="#" style="display:inline-flex;align-items:center;gap:.5rem;font-size:.875rem;font-weight:700;color:#1a1a1a;text-decoration:none;border-bottom:1.5px solid #1a1a1a;padding-bottom:2px;align-self:flex-start">Read Article <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Post Grid -->
+    <section style="max-width:1440px;margin-inline:auto;padding:4rem 1.5rem">
+      <p style="font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b0b0b0;margin-bottom:1.5rem">Recent Posts</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem">
+
+        {[
+          {
+            img:'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800',
+            cat:'Strategy', date:'Oct 27, 2025',
+            title:'Why safe is the riskiest brand choice you can make.',
+            desc:'The counterintuitive case for bold, opinionated brand identities in markets where everyone is playing it safe.'
+          },
+          {
+            img:'https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=800',
+            cat:'Technology', date:'Sep 14, 2025',
+            title:'Effortless lawn care with AI mapping.',
+            desc:'Redesigning the interface for autonomous mowers to focus on hands-off reliability and trust-building.'
+          },
+          {
+            img:'https://images.pexels.com/photos/3153198/pexels-photo-3153198.jpeg?auto=compress&cs=tinysrgb&w=800',
+            cat:'Design', date:'Aug 5, 2025',
+            title:'The type hierarchy that changed how I think about hierarchy.',
+            desc:"Scale, weight, spacing — a breakdown of the typographic principles I return to on every project."
+          },
+          {
+            img:'https://images.pexels.com/photos/3184416/pexels-photo-3184416.jpeg?auto=compress&cs=tinysrgb&w=800',
+            cat:'Technical', date:'Jun 18, 2025',
+            title:'Building a real-time design token system with CSS custom properties.',
+            desc:'How to architect a design system that lets product teams make sweeping brand updates without touching component code.'
+          },
+          {
+            img:'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800',
+            cat:'Strategy', date:'Apr 30, 2025',
+            title:'The brief is not the problem.',
+            desc:"Why the real creative challenge is always the thing the client didn't say — and how to uncover it."
+          },
+          {
+            img:'https://images.pexels.com/photos/1194420/pexels-photo-1194420.jpeg?auto=compress&cs=tinysrgb&w=800',
+            cat:'Design', date:'Mar 3, 2025',
+            title:'Motion vocabulary: 12 animation principles I actually use.',
+            desc:'Distilling years of motion design into the dozen principles that account for 90% of meaningful UI animation.'
+          }
+        ].map(({img, cat, date, title, desc}) => (
+          <a href="#" style="display:block;background:#fff;border:1px solid #e7e7e7;text-decoration:none;overflow:hidden;cursor:pointer;transition:transform .3s ease,box-shadow .3s ease" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 25px -5px rgba(0,0,0,.1)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+            <div style="aspect-ratio:16/9;overflow:hidden">
+              <img src={img} alt={title} style="width:100%;height:100%;object-fit:cover;transition:transform .5s ease" />
+            </div>
+            <div style="padding:1.5rem">
+              <div style="display:flex;align-items:center;gap:.625rem;margin-bottom:.875rem">
+                <span style="font-size:.625rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#b0b0b0;background:#f6f6f6;border:1px solid #e7e7e7;padding:.25rem .625rem">{cat}</span>
+                <span style="font-size:.625rem;font-family:monospace;color:#b0b0b0">{date}</span>
+              </div>
+              <h3 style="font-size:1rem;font-weight:800;color:#1a1a1a;letter-spacing:-.02em;line-height:1.3;margin:0 0 .625rem">{title}</h3>
+              <p style="font-size:.875rem;color:#6d6d6d;line-height:1.6;font-weight:300;margin:0">{desc}</p>
+            </div>
+          </a>
+        ))}
+
+      </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section style="background:#1a1a1a;padding:5rem 1.5rem">
+      <div style="max-width:640px;margin-inline:auto;text-align:center">
+        <p style="font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:1rem">Newsletter</p>
+        <h2 style="font-size:clamp(1.5rem,3vw,2.25rem);font-weight:900;letter-spacing:-.03em;color:#fff;margin:0 0 1rem;line-height:1.2">Ideas worth subscribing to.</h2>
+        <p style="font-size:1rem;color:rgba(255,255,255,.6);line-height:1.6;font-weight:300;margin:0 0 2.5rem">Monthly dispatches on design, technology, and the intersections between. No fluff, no filler — just the good stuff.</p>
+        <form style="display:flex;gap:.75rem;max-width:460px;margin-inline:auto;flex-wrap:wrap" onsubmit="event.preventDefault()">
+          <input type="email" placeholder="your@email.com" style="flex:1;min-width:200px;padding:.875rem 1.25rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;font-size:.9375rem;font-family:'Inter',sans-serif;outline:none;transition:border-color .2s ease" onfocus="this.style.borderColor='rgba(255,255,255,.4)'" onblur="this.style.borderColor='rgba(255,255,255,.15)'" />
+          <button type="submit" style="padding:.875rem 1.75rem;background:#fff;color:#1a1a1a;font-size:.875rem;font-weight:700;border:none;cursor:pointer;transition:background .2s ease;white-space:nowrap;font-family:'Inter',sans-serif" onmouseenter="this.style.background='#e7e7e7'" onmouseleave="this.style.background='#fff'">Subscribe →</button>
+        </form>
+        <p style="font-size:.75rem;color:rgba(255,255,255,.35);margin-top:1rem">No spam. Unsubscribe at any time.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer style="background:#1a1a1a;padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,.1)">
+    <div style="max-width:1440px;margin-inline:auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem">
+      <div style="color:rgba(255,255,255,.5);font-size:.875rem">© 2025 Wil B. All rights reserved.</div>
+      <div style="display:flex;align-items:center;gap:1.5rem">
+        <a href="#" style="color:rgba(255,255,255,.6);font-size:.875rem;font-weight:500;text-decoration:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='rgba(255,255,255,.6)'">GitHub</a>
+        <a href="#" style="color:rgba(255,255,255,.6);font-size:.875rem;font-weight:500;text-decoration:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='rgba(255,255,255,.6)'">LinkedIn</a>
+        <a href="#" style="color:rgba(255,255,255,.6);font-size:.875rem;font-weight:500;text-decoration:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='rgba(255,255,255,.6)'">Instagram</a>
+        <a href="#" style="color:rgba(255,255,255,.6);font-size:.875rem;font-weight:500;text-decoration:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='rgba(255,255,255,.6)'">Twitter</a>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    @media (max-width:767px) {
+      main section div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns:1fr !important; }
+      main section div[style*="grid-template-columns:1fr 1fr"] img { min-height:220px !important; }
+    }
+  </style>
+</BaseLayout>

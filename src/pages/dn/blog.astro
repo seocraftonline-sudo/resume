@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../../layouts/Base.astro';
+import DNNav from '../../components/DNNav.astro';
+
+const posts = [
+  {
+    featured: true,
+    tag: 'Tutorial',
+    title: 'Building a Type-Safe API with tRPC and Next.js 14',
+    excerpt: 'End-to-end type safety without code generation. Learn how tRPC eliminates the REST/GraphQL boilerplate while keeping your full stack in sync automatically.',
+    date: 'May 14, 2025',
+    readTime: '8 min',
+    img: 'https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?auto=compress&cs=tinysrgb&w=800',
+  },
+  {tag:'Deep Dive',title:'Why I Migrated from REST to GraphQL (and Partially Back)',excerpt:'The grass is always greener. Here is what I learned after 18 months of GraphQL in production.',date:'Apr 28, 2025',readTime:'12 min',img:'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800'},
+  {tag:'Tutorial',title:'Zero to Prod: Shipping a SaaS in 30 Days with Next.js',excerpt:'The exact stack, tools, and decisions I made to go from idea to paying customers in a single month.',date:'Mar 15, 2025',readTime:'15 min',img:'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800'},
+  {tag:'Opinion',title:'The Hidden Cost of Over-Engineering',excerpt:'A case for boring technology and why the most impressive systems are often the simplest ones.',date:'Mar 10, 2025',readTime:'5 min',img:'https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=800'},
+  {tag:'Deep Dive',title:'Optimizing PostgreSQL Queries for High-Traffic Web Apps',excerpt:'The query patterns that destroyed our database at 10k users — and how we fixed them.',date:'Feb 22, 2025',readTime:'10 min',img:'https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=800'},
+  {tag:'Tutorial',title:'Understanding the React Compiler: A Practical Guide',excerpt:'React\'s new compiler eliminates manual memoization. Here\'s what it does, how it works, and when it falls short.',date:'Feb 3, 2025',readTime:'9 min',img:'https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=800'},
+  {tag:'Opinion',title:'Stop Writing Custom Authentication — Use a Service',excerpt:'Rolling your own auth in 2025 is a liability. The real cost of custom auth versus Auth.js or Clerk.',date:'Jan 18, 2025',readTime:'6 min',img:'https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=800'},
+  {tag:'Deep Dive',title:'Kubernetes Is Probably Too Much For You',excerpt:'When managed container services outperform a full K8s cluster — and how to make the right call for your scale.',date:'Jan 5, 2025',readTime:'8 min',img:'https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=800'},
+];
+
+const tagColors: Record<string, {bg:string;text:string}> = {
+  Tutorial: {bg:'#FFF0E6',text:'#FF6600'},
+  'Deep Dive': {bg:'#E6F0FF',text:'#1E66F5'},
+  Opinion: {bg:'#F0F0F0',text:'#555'},
+};
+---
+<BaseLayout title="Blog — Alex Chen" theme="dn">
+  <link rel="stylesheet" href="/styles/rv.css" slot="head" />
+  <DNNav active="blog" />
+
+  <main style="padding-top:5rem;background:#fff;color:#0A0A0A;font-family:'Inter',sans-serif">
+
+    <!-- Hero -->
+    <section style="padding:4rem 1.5rem 3rem;max-width:1200px;margin-inline:auto">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#FF6600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.5rem">Writing</p>
+      <h1 style="font-size:clamp(2rem,5vw,3.5rem);font-weight:800;letter-spacing:-.04em;margin:0 0 1rem">The Blog</h1>
+      <p style="font-size:1.125rem;color:#555;max-width:600px;line-height:1.7;margin:0">Technical deep dives, tutorials, and opinions on full-stack development, architecture, and the developer tooling ecosystem.</p>
+    </section>
+
+    <!-- Featured Post -->
+    <section style="padding:0 1.5rem 4rem;max-width:1200px;margin-inline:auto">
+      <a href="#" style="text-decoration:none;display:grid;grid-template-columns:1fr 1fr;border-radius:24px;overflow:hidden;border:1px solid #E5E5E5;background:#F5F5F5">
+        <img src={posts[0].img} alt={posts[0].title} style="width:100%;height:100%;object-fit:cover;min-height:320px;display:block" />
+        <div style="padding:3rem;display:flex;flex-direction:column;justify-content:center">
+          <div style="display:flex;gap:.75rem;margin-bottom:1.25rem;flex-wrap:wrap">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:.75rem;background:#FF6600;color:#fff;border-radius:6px;padding:.25rem .625rem">Featured</span>
+            <span style={`font-family:'JetBrains Mono',monospace;font-size:.75rem;background:${tagColors[posts[0].tag]?.bg||'#F0F0F0'};color:${tagColors[posts[0].tag]?.text||'#555'};border-radius:6px;padding:.25rem .625rem`}>{posts[0].tag}</span>
+          </div>
+          <h2 style="font-size:1.75rem;font-weight:700;color:#0A0A0A;margin:0 0 .875rem;letter-spacing:-.03em;line-height:1.25">{posts[0].title}</h2>
+          <p style="font-size:.9375rem;color:#555;line-height:1.7;margin:0 0 1.5rem">{posts[0].excerpt}</p>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:.8125rem;color:#999">{posts[0].date} · {posts[0].readTime} read</div>
+        </div>
+      </a>
+    </section>
+
+    <!-- Filter Pills -->
+    <section style="padding:0 1.5rem 2rem;max-width:1200px;margin-inline:auto">
+      <div style="display:flex;gap:.625rem;flex-wrap:wrap">
+        {['All','Tutorial','Deep Dive','Opinion'].map(tag => (
+          <button style={`font-family:'JetBrains Mono',monospace;font-size:.8125rem;padding:.5rem 1.25rem;border-radius:9999px;border:1px solid ${tag==='All'?'#FF6600':'#E5E5E5'};background:${tag==='All'?'#FF6600':'#fff'};color:${tag==='All'?'#fff':'#555'};cursor:pointer`} data-btag={tag}>{tag}</button>
+        ))}
+      </div>
+    </section>
+
+    <!-- Post Grid -->
+    <section style="padding:0 1.5rem 5rem;max-width:1200px;margin-inline:auto">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem">
+        {posts.slice(1).map(post => (
+          <a href="#" style="text-decoration:none;display:block;background:#fff;border:1px solid #E5E5E5;border-radius:20px;overflow:hidden;transition:border-color .2s" data-ptag={post.tag}>
+            <img src={post.img} alt={post.title} style="width:100%;height:180px;object-fit:cover;display:block" />
+            <div style="padding:1.5rem">
+              <div style="display:flex;align-items:center;gap:.625rem;margin-bottom:.875rem">
+                <span style={`font-family:'JetBrains Mono',monospace;font-size:.75rem;background:${tagColors[post.tag]?.bg||'#F0F0F0'};color:${tagColors[post.tag]?.text||'#555'};border-radius:6px;padding:.2rem .6rem`}>{post.tag}</span>
+                <span style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#999">{post.readTime} read</span>
+              </div>
+              <h3 style="font-size:1.0625rem;font-weight:700;color:#0A0A0A;margin:0 0 .5rem;line-height:1.35">{post.title}</h3>
+              <p style="font-size:.875rem;color:#666;line-height:1.6;margin:0 0 1rem">{post.excerpt}</p>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:.8rem;color:#999">{post.date}</div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section style="background:#0A0A0A;padding:4rem 1.5rem">
+      <div style="max-width:600px;margin-inline:auto;text-align:center">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#FF6600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem">Subscribe</div>
+        <h2 style="font-size:2rem;font-weight:700;color:#fff;letter-spacing:-.03em;margin:0 0 1rem">Get new posts in your inbox</h2>
+        <p style="color:rgba(255,255,255,.55);margin:0 0 2rem;line-height:1.65">Technical articles on full-stack development, architecture patterns, and developer tooling. No spam, unsubscribe anytime.</p>
+        <form style="display:flex;gap:.75rem;flex-wrap:wrap" onsubmit="return false">
+          <input type="email" placeholder="you@example.com" style="flex:1;min-width:220px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:.875rem 1.25rem;color:#fff;font-family:'Inter',sans-serif;font-size:.9375rem;outline:none" />
+          <button type="submit" style="background:#FF6600;color:#fff;font-weight:600;padding:.875rem 1.75rem;border-radius:12px;border:none;cursor:pointer;font-size:.9375rem;white-space:nowrap">Subscribe →</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background:#fff;border-top:1px solid #E5E5E5;padding:3rem 1.5rem">
+    <div style="max-width:1200px;margin-inline:auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem">
+      <div style="font-weight:700;color:#0A0A0A">Alex Chen</div>
+      <div style="font-size:.875rem;color:#999">© 2025 Alex Chen.</div>
+    </div>
+  </footer>
+
+  <script>
+    const btns = document.querySelectorAll('[data-btag]');
+    const cards = document.querySelectorAll('[data-ptag]');
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = (btn as HTMLElement).dataset.btag;
+        btns.forEach(b => {
+          const el = b as HTMLElement;
+          el.style.background = '#fff'; el.style.color = '#555'; el.style.borderColor = '#E5E5E5';
+        });
+        (btn as HTMLElement).style.background = '#FF6600';
+        (btn as HTMLElement).style.color = '#fff';
+        (btn as HTMLElement).style.borderColor = '#FF6600';
+        cards.forEach(card => {
+          const el = card as HTMLElement;
+          if (filter === 'All' || el.dataset.ptag === filter) { el.style.display = 'block'; }
+          else { el.style.display = 'none'; }
+        });
+      });
+    });
+  </script>
+</BaseLayout>

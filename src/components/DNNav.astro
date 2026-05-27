@@ -1,0 +1,172 @@
+---
+export interface Props {
+  active?: string;
+}
+const { active = '' } = Astro.props;
+
+const isActive = (page: string) => active === page;
+const isActiveGroup = (...pages: string[]) => pages.includes(active);
+---
+
+<header id="dn-header" style="position:fixed;top:1.5rem;left:0;right:0;z-index:50;display:flex;justify-content:center;padding-inline:1rem;pointer-events:none">
+  <nav id="dn-nav" style="pointer-events:auto;background:rgba(10,10,10,.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:32px;padding:.5rem;display:flex;align-items:center;gap:2rem;box-shadow:0 25px 50px -12px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.1)">
+
+    <!-- Logo -->
+    <a href="/dn/" style="width:2.5rem;height:2.5rem;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-left:.25rem;text-decoration:none">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+      </svg>
+    </a>
+
+    <!-- Desktop Nav -->
+    <div id="dn-desk-nav" style="display:flex;align-items:center;gap:1.5rem">
+
+      <!-- Work dropdown -->
+      <div class="dn-dd" style="position:relative">
+        <button class="dn-dd-btn" style={`display:flex;align-items:center;gap:.3rem;font-size:.875rem;font-weight:500;color:${isActiveGroup('portfolio','projects') ? '#fff' : 'rgba(255,255,255,.7)'};${isActiveGroup('portfolio','projects') ? 'border-bottom:2px solid #FF6600;padding-bottom:2px;' : ''}background:none;border:none;cursor:pointer;transition:color .2s ease;font-family:'Inter',sans-serif;padding:0`}>
+          Work
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="dn-dd-arrow" style="transition:transform .2s ease;margin-top:1px"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="dn-dd-menu" style="position:absolute;top:100%;left:50%;transform:translateX(-50%);min-width:180px;padding-top:.75rem;opacity:0;pointer-events:none;transition:opacity .2s cubic-bezier(.4,0,.2,1);transform-origin:top center">
+          <div style="background:#1a1a1a;border:1px solid rgba(255,255,255,.1);border-radius:16px;box-shadow:0 8px 32px -8px rgba(0,0,0,.5);padding:.5rem">
+            <a href="/dn/portfolio/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:rgba(255,255,255,.7);transition:all .15s ease" class="dn-dd-item">Portfolio</a>
+            <a href="/dn/projects/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:rgba(255,255,255,.7);transition:all .15s ease" class="dn-dd-item">Projects</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Expertise (Services) -->
+      <a href="/dn/services/" style={`font-size:.875rem;font-weight:500;color:${isActive('services') ? '#fff' : 'rgba(255,255,255,.7)'};${isActive('services') ? 'border-bottom:2px solid #FF6600;padding-bottom:2px;' : ''}text-decoration:none;transition:color .2s ease`}>Expertise</a>
+
+      <!-- Writing dropdown -->
+      <div class="dn-dd" style="position:relative">
+        <button class="dn-dd-btn" style={`display:flex;align-items:center;gap:.3rem;font-size:.875rem;font-weight:500;color:${isActiveGroup('blog','publications') ? '#fff' : 'rgba(255,255,255,.7)'};${isActiveGroup('blog','publications') ? 'border-bottom:2px solid #FF6600;padding-bottom:2px;' : ''}background:none;border:none;cursor:pointer;transition:color .2s ease;font-family:'Inter',sans-serif;padding:0`}>
+          Writing
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="dn-dd-arrow" style="transition:transform .2s ease;margin-top:1px"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="dn-dd-menu" style="position:absolute;top:100%;left:50%;transform:translateX(-50%);min-width:180px;padding-top:.75rem;opacity:0;pointer-events:none;transition:opacity .2s cubic-bezier(.4,0,.2,1);transform-origin:top center">
+          <div style="background:#1a1a1a;border:1px solid rgba(255,255,255,.1);border-radius:16px;box-shadow:0 8px 32px -8px rgba(0,0,0,.5);padding:.5rem">
+            <a href="/dn/blog/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:rgba(255,255,255,.7);transition:all .15s ease" class="dn-dd-item">Blog</a>
+            <a href="/dn/publications/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:rgba(255,255,255,.7);transition:all .15s ease" class="dn-dd-item">Publications</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- About dropdown -->
+      <div class="dn-dd" style="position:relative">
+        <button class="dn-dd-btn" style={`display:flex;align-items:center;gap:.3rem;font-size:.875rem;font-weight:500;color:${isActiveGroup('about','resume','skills') ? '#fff' : 'rgba(255,255,255,.7)'};${isActiveGroup('about','resume','skills') ? 'border-bottom:2px solid #FF6600;padding-bottom:2px;' : ''}background:none;border:none;cursor:pointer;transition:color .2s ease;font-family:'Inter',sans-serif;padding:0`}>
+          About
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="dn-dd-arrow" style="transition:transform .2s ease;margin-top:1px"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="dn-dd-menu" style="position:absolute;top:100%;left:50%;transform:translateX(-50%);min-width:180px;padding-top:.75rem;opacity:0;pointer-events:none;transition:opacity .2s cubic-bezier(.4,0,.2,1);transform-origin:top center">
+          <div style="background:#1a1a1a;border:1px solid rgba(255,255,255,.1);border-radius:16px;box-shadow:0 8px 32px -8px rgba(0,0,0,.5);padding:.5rem">
+            <a href="/dn/about/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:rgba(255,255,255,.7);transition:all .15s ease" class="dn-dd-item">About Me</a>
+            <a href="/dn/resume/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:rgba(255,255,255,.7);transition:all .15s ease" class="dn-dd-item">Resume</a>
+            <a href="/dn/skills/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:rgba(255,255,255,.7);transition:all .15s ease" class="dn-dd-item">Skills</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <a href="/dn/contact/" style={`font-size:.875rem;font-weight:500;color:${isActive('contact') ? '#fff' : 'rgba(255,255,255,.7)'};${isActive('contact') ? 'border-bottom:2px solid #FF6600;padding-bottom:2px;' : ''}text-decoration:none;transition:color .2s ease`}>Contact</a>
+    </div>
+
+    <!-- Right: CTA + Mobile Toggle -->
+    <div style="display:flex;align-items:center;gap:.75rem">
+      <a href="/dn/contact/" style="background:#FF6600;color:#fff;font-size:.875rem;font-weight:600;padding:.625rem 1.5rem;border-radius:9999px;text-decoration:none;transition:all .3s ease;box-shadow:0 4px 14px rgba(255,102,0,.39);white-space:nowrap">Let's Talk</a>
+      <!-- Mobile hamburger -->
+      <button id="dn-mob-toggle" aria-label="Menu" style="display:none;padding:.5rem;background:none;border:none;color:rgba(255,255,255,.8);cursor:pointer">
+        <svg id="dn-menu-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg id="dn-close-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="dn-mob-menu" style="display:none;position:absolute;top:calc(100% + .5rem);left:1rem;right:1rem;background:rgba(10,10,10,.98);backdrop-filter:blur(12px);border-radius:24px;border:1px solid rgba(255,255,255,.1);padding:1rem 1.5rem 1.5rem;flex-direction:column;box-shadow:0 25px 50px rgba(0,0,0,.5)">
+    <a href="/dn/" style="padding:.75rem 0;font-size:.9375rem;color:rgba(255,255,255,.9);border-bottom:1px solid rgba(255,255,255,.08);text-decoration:none;display:block">Home</a>
+    <div style="padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.08)">
+      <span style="font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.4);display:block;margin-bottom:.5rem">Work</span>
+      <div style="display:flex;gap:1.5rem;padding-left:.5rem">
+        <a href="/dn/portfolio/" style="font-size:.875rem;color:rgba(255,255,255,.7);text-decoration:none">Portfolio</a>
+        <a href="/dn/projects/" style="font-size:.875rem;color:rgba(255,255,255,.7);text-decoration:none">Projects</a>
+      </div>
+    </div>
+    <a href="/dn/services/" style="padding:.75rem 0;font-size:.9375rem;color:rgba(255,255,255,.9);border-bottom:1px solid rgba(255,255,255,.08);text-decoration:none;display:block">Expertise</a>
+    <div style="padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.08)">
+      <span style="font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.4);display:block;margin-bottom:.5rem">Writing</span>
+      <div style="display:flex;gap:1.5rem;padding-left:.5rem">
+        <a href="/dn/blog/" style="font-size:.875rem;color:rgba(255,255,255,.7);text-decoration:none">Blog</a>
+        <a href="/dn/publications/" style="font-size:.875rem;color:rgba(255,255,255,.7);text-decoration:none">Publications</a>
+      </div>
+    </div>
+    <div style="padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.08)">
+      <span style="font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.4);display:block;margin-bottom:.5rem">About</span>
+      <div style="display:flex;gap:1.5rem;padding-left:.5rem">
+        <a href="/dn/about/" style="font-size:.875rem;color:rgba(255,255,255,.7);text-decoration:none">About Me</a>
+        <a href="/dn/resume/" style="font-size:.875rem;color:rgba(255,255,255,.7);text-decoration:none">Resume</a>
+        <a href="/dn/skills/" style="font-size:.875rem;color:rgba(255,255,255,.7);text-decoration:none">Skills</a>
+      </div>
+    </div>
+    <a href="/dn/contact/" style="padding:.75rem 0;font-size:.9375rem;color:rgba(255,255,255,.9);text-decoration:none;display:block">Contact</a>
+    <a href="/dn/contact/" style="margin-top:1rem;background:#FF6600;color:#fff;font-size:.875rem;font-weight:600;padding:.75rem 1.5rem;border-radius:9999px;text-decoration:none;text-align:center;display:block">Let's Talk</a>
+  </div>
+</header>
+
+<script>
+  // Dropdown logic — hover-based with padding-top gap bridging
+  document.querySelectorAll('.dn-dd').forEach(dd => {
+    const btn = dd.querySelector('.dn-dd-btn') as HTMLElement;
+    const menu = dd.querySelector('.dn-dd-menu') as HTMLElement;
+    const arrow = dd.querySelector('.dn-dd-arrow') as HTMLElement;
+    let open = false;
+    const show = () => {
+      menu.style.opacity = '1';
+      menu.style.pointerEvents = 'auto';
+      arrow.style.transform = 'rotate(180deg)';
+      open = true;
+    };
+    const hide = () => {
+      menu.style.opacity = '0';
+      menu.style.pointerEvents = 'none';
+      arrow.style.transform = 'rotate(0)';
+      open = false;
+    };
+    dd.addEventListener('mouseenter', show);
+    dd.addEventListener('mouseleave', hide);
+    btn.addEventListener('click', () => open ? hide() : show());
+  });
+
+  // Dropdown item hover
+  document.querySelectorAll('.dn-dd-item').forEach(item => {
+    const el = item as HTMLElement;
+    el.addEventListener('mouseenter', () => { el.style.background = 'rgba(255,255,255,.08)'; el.style.color = '#fff'; });
+    el.addEventListener('mouseleave', () => { el.style.background = ''; el.style.color = 'rgba(255,255,255,.7)'; });
+  });
+
+  // Mobile toggle
+  const toggle = document.getElementById('dn-mob-toggle') as HTMLElement;
+  const mobMenu = document.getElementById('dn-mob-menu') as HTMLElement;
+  const menuIcon = document.getElementById('dn-menu-icon') as HTMLElement;
+  const closeIcon = document.getElementById('dn-close-icon') as HTMLElement;
+  let mobOpen = false;
+  if (toggle && mobMenu) {
+    toggle.addEventListener('click', () => {
+      mobOpen = !mobOpen;
+      mobMenu.style.display = mobOpen ? 'flex' : 'none';
+      menuIcon.style.display = mobOpen ? 'none' : 'block';
+      closeIcon.style.display = mobOpen ? 'block' : 'none';
+    });
+  }
+
+  // Responsive check
+  const check = () => {
+    const mob = window.innerWidth < 768;
+    const desk = document.getElementById('dn-desk-nav') as HTMLElement;
+    if (desk) desk.style.display = mob ? 'none' : 'flex';
+    if (toggle) toggle.style.display = mob ? 'flex' : 'none';
+    if (!mob && mobMenu) { mobMenu.style.display = 'none'; mobOpen = false; menuIcon.style.display = 'block'; closeIcon.style.display = 'none'; }
+  };
+  check();
+  window.addEventListener('resize', check);
+</script>

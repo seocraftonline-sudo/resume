@@ -1,0 +1,171 @@
+---
+import BaseLayout from '../../layouts/Base.astro';
+import DNNav from '../../components/DNNav.astro';
+---
+<BaseLayout title="Services — Alex Chen" theme="dn">
+  <link rel="stylesheet" href="/styles/rv.css" slot="head" />
+  <DNNav active="services" />
+
+  <main style="padding-top:5rem;background:#fff;color:#0A0A0A;font-family:'Inter',sans-serif">
+
+    <!-- Hero -->
+    <section style="padding:4rem 1.5rem 4rem;text-align:center;border-bottom:1px solid #E5E5E5">
+      <div style="max-width:800px;margin-inline:auto">
+        <p style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#FF6600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem">Expertise</p>
+        <h1 style="font-size:clamp(2.5rem,6vw,5rem);font-weight:800;letter-spacing:-.05em;line-height:.9;text-transform:uppercase;margin:0 0 2rem">Engineering<br/>Outcomes.</h1>
+        <div style="background:#F5F5F5;border:1px solid #E5E5E5;border-radius:24px;padding:2rem">
+          <p style="font-size:1.125rem;color:#555;line-height:1.7;margin:0 0 1.5rem">I translate complex business requirements into scalable, performant digital infrastructure. My services are designed for teams that need to move fast without compromising on technical excellence.</p>
+          <a href="/dn/contact/" style="background:#0A0A0A;color:#fff;font-size:.9375rem;font-weight:600;padding:.875rem 2rem;border-radius:9999px;text-decoration:none;display:inline-block">Explore Capabilities ↓</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section style="padding:5rem 1.5rem;max-width:1200px;margin-inline:auto">
+      <h2 style="font-size:2rem;font-weight:700;letter-spacing:-.03em;margin:0 0 .5rem">Core Capabilities</h2>
+      <p style="font-size:1rem;color:#666;margin:0 0 3rem">Specialised engagements focused on delivering measurable technical and business value.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(480px,1fr));gap:1.5rem">
+
+        {[
+          {badge:'Architecture',title:'Full-Stack Development',desc:'End-to-end application development from DB schema to deployed frontend. I own the entire stack — React/Next.js, Node.js APIs, PostgreSQL, and AWS infrastructure.',suited:'Startups launching MVPs or teams needing senior hands-on engineering.',deliverables:['Production-ready codebase','CI/CD pipeline setup','Documentation & handoff'],time:'4-12 Weeks',price:'From $25k'},
+          {badge:'Optimization',title:'Performance Engineering',desc:'Deep-dive analysis and remediation of application bottlenecks. I identify and fix slow load times, poor Core Web Vitals, and expensive database queries that hurt user retention.',suited:'Apps suffering from poor Lighthouse scores or high churn due to latency.',deliverables:['Comprehensive performance audit','Code splitting & caching implementation','Custom monitoring dashboard setup'],time:'1-3 Weeks',price:'From $8k'},
+          {badge:'Design',title:'API Design & Documentation',desc:'Design-first RESTful and GraphQL API development with OpenAPI specs, versioning strategies, rate limiting, and developer-friendly documentation.',suited:'Teams launching a public API or products integrating with third-party services.',deliverables:['OpenAPI / AsyncAPI specification','SDK scaffolding (TypeScript, Python)','API reference documentation'],time:'2-4 Weeks',price:'From $12k'},
+          {badge:'Advisory',title:'Tech Consulting & Code Review',desc:'Architecture audits, technology stack evaluations, and senior-level code reviews. I bring outside perspective to complex technical decisions and engineering team processes.',suited:'CTOs, VPs of Engineering, or founders facing critical architectural decisions.',deliverables:['Architecture review report','Risk & recommendation matrix','Executive summary presentation'],time:'1-2 Weeks',price:'From $5k'},
+        ].map((s, i) => (
+          <div style={`border-radius:24px;padding:2.5rem;border:1px solid ${i===0?'#FF6600':'#E5E5E5'};background:${i===0?'#fff':'#fff'};position:relative;overflow:hidden`}>
+            <div style={`position:absolute;top:0;right:0;width:200px;height:200px;border-radius:50%;background:${i===0?'rgba(255,102,0,.05)':'rgba(0,0,0,.02)'};transform:translate(30%,-30%)`}></div>
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1.5rem">
+              <div style={`width:3.5rem;height:3.5rem;border-radius:14px;background:${i===0?'#0A0A0A':'#F5F5F5'};display:flex;align-items:center;justify-content:center`}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={i===0?'#fff':'#0A0A0A'} stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+              <span style={`font-family:'JetBrains Mono',monospace;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:.25rem .75rem;border-radius:6px;background:${i===0?'rgba(255,102,0,.12)':'#F5F5F5'};color:${i===0?'#FF6600':'#666'}`}>{s.badge}</span>
+            </div>
+            <h3 style="font-size:1.625rem;font-weight:700;letter-spacing:-.03em;margin:0 0 .75rem">{s.title}</h3>
+            <p style="font-size:.9375rem;color:#555;line-height:1.7;margin:0 0 1.5rem">{s.desc}</p>
+            <div style="margin-bottom:1rem">
+              <p style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#999;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem">Best Suited For</p>
+              <p style="font-size:.875rem;color:#0A0A0A;font-weight:500;margin:0">{s.suited}</p>
+            </div>
+            <div style="margin-bottom:1.5rem">
+              <p style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#999;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.75rem">Typical Deliverables</p>
+              <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.5rem">
+                {s.deliverables.map(d => (
+                  <li style="font-family:'JetBrains Mono',monospace;font-size:.8125rem;color:#555;padding-left:1.25rem;position:relative">
+                    <span style="position:absolute;left:0;color:#FF6600">&gt;</span>{d}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div style="display:flex;gap:1.5rem;padding-top:1.25rem;border-top:1px solid #E5E5E5;margin-bottom:1.5rem">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:.8125rem;color:#666">⏱ {s.time}</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:.8125rem;color:#666">💰 {s.price}</span>
+            </div>
+            <a href="/dn/contact/" style={`display:inline-flex;align-items:center;gap:.5rem;font-size:.875rem;font-weight:600;padding:.75rem 1.5rem;border-radius:9999px;text-decoration:none;background:${i===0?'#0A0A0A':'#F5F5F5'};color:${i===0?'#fff':'#0A0A0A'};border:1px solid ${i===0?'#0A0A0A':'#E5E5E5'}`}>Get in Touch →</a>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Process Steps -->
+    <section style="background:#0A0A0A;padding:5rem 1.5rem">
+      <div style="max-width:1200px;margin-inline:auto">
+        <div style="text-align:center;margin-bottom:3.5rem">
+          <p style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#FF6600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.5rem">How it works</p>
+          <h2 style="font-size:2rem;font-weight:700;color:#fff;letter-spacing:-.03em;margin:0">Engagement Methodology</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;position:relative">
+          {[
+            {n:'01',t:'Discovery & Scope',d:'Align on business objectives, tech constraints, and define success metrics before writing a line of code.'},
+            {n:'02',t:'Architecture Proposal',d:'Technical specifications, architecture diagrams, and a phased implementation roadmap.'},
+            {n:'03',t:'Execution Sprints',d:'Iterative development cycles with weekly syncs, CI/CD, and transparent progress tracking.'},
+            {n:'04',t:'Handoff & Support',d:'Comprehensive documentation, team knowledge transfer sessions, and optional retained advisory.'},
+          ].map((step, i) => (
+            <div style={`background:rgba(255,255,255,.05);border:1px solid ${i===2?'#FF6600':'rgba(255,255,255,.1)'};border-radius:20px;padding:2rem`}>
+              <div style={`width:2.5rem;height:2.5rem;border-radius:50%;background:${i===2?'#FF6600':'rgba(255,255,255,.1)'};display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:.875rem;color:${i===2?'#fff':'rgba(255,255,255,.6)'};margin-bottom:1.25rem`}>{step.n}</div>
+              <h3 style="font-size:1.0625rem;font-weight:700;color:#fff;margin:0 0 .625rem">{step.t}</h3>
+              <p style="font-size:.875rem;color:rgba(255,255,255,.5);line-height:1.65;margin:0">{step.d}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Engagement Options + FAQ -->
+    <section style="padding:5rem 1.5rem;max-width:1200px;margin-inline:auto;display:grid;grid-template-columns:5fr 7fr;gap:4rem">
+      <div>
+        <h2 style="font-size:1.75rem;font-weight:700;margin:0 0 1rem;letter-spacing:-.03em">Retained Advisory</h2>
+        <p style="font-size:.9375rem;color:#666;line-height:1.65;margin:0 0 2rem">For teams needing ongoing architectural guidance and senior engineering perspective without a full-time hire.</p>
+        <div style="display:flex;flex-direction:column;gap:1.25rem">
+          <div style="border:1px solid #E5E5E5;border-radius:20px;padding:1.75rem;background:#F5F5F5">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem">
+              <h3 style="font-size:1.125rem;font-weight:700;margin:0">Technical Advisor</h3>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:1.125rem;font-weight:700">$4k<span style="font-size:.8rem;font-weight:400;color:#666">/mo</span></span>
+            </div>
+            <ul style="list-style:none;margin:0 0 1.25rem;padding:0;display:flex;flex-direction:column;gap:.5rem">
+              {['Weekly 1hr Strategic Sync','Architecture Review (Async)','Private Slack Channel Access'].map(i => (
+                <li style="font-family:'JetBrains Mono',monospace;font-size:.8125rem;color:#555;padding-left:1.25rem;position:relative"><span style="position:absolute;left:0;color:#FF6600">&gt;</span>{i}</li>
+              ))}
+            </ul>
+            <a href="/dn/contact/" style="display:block;text-align:center;background:#fff;border:1px solid #E5E5E5;color:#0A0A0A;font-size:.875rem;font-weight:600;padding:.75rem;border-radius:12px;text-decoration:none">Enquire</a>
+          </div>
+          <div style="border:2px solid #0A0A0A;border-radius:20px;padding:1.75rem;background:#fff">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.25rem">
+              <div>
+                <h3 style="font-size:1.125rem;font-weight:700;margin:0 0 .25rem">Fractional Architect</h3>
+                <span style="font-family:'JetBrains Mono',monospace;font-size:.7rem;background:#0A0A0A;color:#fff;padding:.2rem .6rem;border-radius:4px;text-transform:uppercase">Most Popular</span>
+              </div>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:1.125rem;font-weight:700">$9k<span style="font-size:.8rem;font-weight:400;color:#666">/mo</span></span>
+            </div>
+            <ul style="list-style:none;margin:1rem 0 1.25rem;padding:0;display:flex;flex-direction:column;gap:.5rem">
+              {['10 Hours Dedicated Weekly','Direct Code & PR Reviews','Team Mentorship Sessions','Vendor Evaluation Support'].map(i => (
+                <li style="font-family:'JetBrains Mono',monospace;font-size:.8125rem;color:#555;padding-left:1.25rem;position:relative"><span style="position:absolute;left:0;color:#FF6600">&gt;</span>{i}</li>
+              ))}
+            </ul>
+            <a href="/dn/contact/" style="display:block;text-align:center;background:#0A0A0A;color:#fff;font-size:.875rem;font-weight:600;padding:.75rem;border-radius:12px;text-decoration:none">Enquire</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h2 style="font-size:1.75rem;font-weight:700;margin:0 0 2rem;letter-spacing:-.03em">Common Inquiries</h2>
+        <div style="display:flex;flex-direction:column;gap:.75rem">
+          {[
+            {q:'What is your typical availability?',a:'I book project-based work 4-6 weeks in advance. Advisory retainers have limited slots to ensure high responsiveness. Contact me to check current availability.'},
+            {q:'Do you work with in-house engineering teams?',a:"Yes, the majority of my engagements augment existing in-house teams. I focus heavily on knowledge transfer and upskilling rather than creating dependency."},
+            {q:'Are you open to full-time roles?',a:"I'm operating strictly as an independent consultant. However, I do take on interim leadership roles (3-6 months) to help establish technical direction while you hire a permanent lead."},
+            {q:'What stack do you specialize in?',a:'My deepest expertise is in the JavaScript/TypeScript ecosystem (React, Next.js, Node.js), cloud-native AWS infrastructure, and PostgreSQL/Redis data layers.'},
+          ].map(faq => (
+            <details style="border:1px solid #E5E5E5;border-radius:16px;overflow:hidden;background:#fff">
+              <summary style="padding:1.25rem 1.5rem;cursor:pointer;font-weight:700;font-size:.9375rem;list-style:none;display:flex;justify-content:space-between;align-items:center">
+                {faq.q}
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF6600" stroke-width="2.5" style="flex-shrink:0;margin-left:1rem"><polyline points="6 9 12 15 18 9"/></svg>
+              </summary>
+              <div style="padding:.5rem 1.5rem 1.25rem;color:#555;font-size:.9375rem;line-height:1.7">{faq.a}</div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="background:#FF6600;padding:4rem 1.5rem;text-align:center">
+      <h2 style="font-size:2.5rem;font-weight:800;color:#fff;letter-spacing:-.04em;margin:0 0 1rem">Ready to build something exceptional?</h2>
+      <p style="font-size:1.125rem;color:rgba(255,255,255,.85);margin:0 0 2rem">Currently accepting new projects for Q3 2025.</p>
+      <a href="/dn/contact/" style="background:#fff;color:#FF6600;font-size:1rem;font-weight:700;padding:1rem 2.5rem;border-radius:9999px;text-decoration:none">Start a Conversation</a>
+    </section>
+  </main>
+
+  <footer style="background:#fff;border-top:1px solid #E5E5E5;padding:3rem 1.5rem">
+    <div style="max-width:1200px;margin-inline:auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem">
+      <div style="font-weight:700;color:#0A0A0A">Alex Chen</div>
+      <div style="font-size:.875rem;color:#999">© 2025 Alex Chen.</div>
+    </div>
+  </footer>
+
+  <style>
+    @media (max-width:767px) {
+      main section[style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns:1fr 1fr !important; }
+      main section[style*="grid-template-columns:5fr 7fr"] { grid-template-columns:1fr !important; }
+      main section[style*="grid-template-columns:repeat(auto-fit,minmax(480px"] { grid-template-columns:1fr !important; }
+    }
+  </style>
+</BaseLayout>

@@ -1,0 +1,206 @@
+---
+import BaseLayout from '../../layouts/Base.astro';
+import CDNav from '../../components/CDNav.astro';
+---
+
+<BaseLayout title="Portfolio — Wil B" theme="cd">
+  <link rel="stylesheet" href="/styles/rv.css" slot="head" />
+  <CDNav active="portfolio" />
+
+  <main style="padding-top:5rem;background:#fff;color:#1a1a1a;font-family:'Inter',sans-serif">
+
+    <!-- Page Header -->
+    <section style="border-bottom:1px solid #e7e7e7;padding:4rem 1.5rem 3rem">
+      <div style="max-width:1440px;margin-inline:auto;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1.5rem">
+        <div>
+          <p style="font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b0b0b0;margin-bottom:.75rem">Work</p>
+          <h1 style="font-size:clamp(2.5rem,6vw,5rem);font-weight:900;letter-spacing:-.04em;line-height:1.0;margin:0;color:#1a1a1a">Selected Work.</h1>
+        </div>
+        <p style="font-size:1.0625rem;color:#6d6d6d;max-width:400px;line-height:1.6;font-weight:300;margin:0">Startups to category leaders — brand identity, digital, motion, and print.</p>
+      </div>
+    </section>
+
+    <!-- Filter Pills -->
+    <section style="border-bottom:1px solid #e7e7e7;padding:1.25rem 1.5rem;background:#f6f6f6;position:sticky;top:5rem;z-index:10">
+      <div style="max-width:1440px;margin-inline:auto;display:flex;gap:.75rem;flex-wrap:wrap">
+        <button class="cd-filter active" data-filter="all" style="padding:.5rem 1.25rem;font-size:.8125rem;font-weight:700;border-radius:999px;border:1.5px solid #1a1a1a;background:#1a1a1a;color:#fff;cursor:pointer;transition:all .2s ease;letter-spacing:.02em">All</button>
+        <button class="cd-filter" data-filter="branding" style="padding:.5rem 1.25rem;font-size:.8125rem;font-weight:700;border-radius:999px;border:1.5px solid #e7e7e7;background:#fff;color:#b0b0b0;cursor:pointer;transition:all .2s ease;letter-spacing:.02em">Branding</button>
+        <button class="cd-filter" data-filter="digital" style="padding:.5rem 1.25rem;font-size:.8125rem;font-weight:700;border-radius:999px;border:1.5px solid #e7e7e7;background:#fff;color:#b0b0b0;cursor:pointer;transition:all .2s ease;letter-spacing:.02em">Digital</button>
+        <button class="cd-filter" data-filter="motion" style="padding:.5rem 1.25rem;font-size:.8125rem;font-weight:700;border-radius:999px;border:1.5px solid #e7e7e7;background:#fff;color:#b0b0b0;cursor:pointer;transition:all .2s ease;letter-spacing:.02em">Motion</button>
+        <button class="cd-filter" data-filter="print" style="padding:.5rem 1.25rem;font-size:.8125rem;font-weight:700;border-radius:999px;border:1.5px solid #e7e7e7;background:#fff;color:#b0b0b0;cursor:pointer;transition:all .2s ease;letter-spacing:.02em">Print</button>
+      </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section style="max-width:1440px;margin-inline:auto;padding:4rem 1.5rem">
+      <div id="cd-portfolio-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem">
+
+        <!-- Branding -->
+        <div class="cd-project" data-category="branding" style="position:relative;background:#fff;border:1px solid #e7e7e7;overflow:hidden;cursor:pointer;transition:transform .3s ease,box-shadow .3s ease" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 30px -6px rgba(0,0,0,.12)';this.querySelector('.cd-proj-overlay').style.opacity='1'" onmouseleave="this.style.transform='';this.style.boxShadow='';this.querySelector('.cd-proj-overlay').style.opacity='0'">
+          <div style="aspect-ratio:4/3;overflow:hidden">
+            <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Meridian Fintech" style="width:100%;height:100%;object-fit:cover;transition:transform .6s ease" />
+          </div>
+          <div class="cd-proj-overlay" style="position:absolute;inset:0;background:rgba(26,26,26,.88);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:.75rem;opacity:0;transition:opacity .3s ease">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <span style="color:#fff;font-size:.8125rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase">View Project</span>
+          </div>
+          <div style="padding:1.25rem">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem">
+              <span style="font-size:.6875rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b0b0b0;background:#f6f6f6;padding:.25rem .75rem">Branding</span>
+              <span style="font-size:.6875rem;font-family:monospace;color:#b0b0b0">2025</span>
+            </div>
+            <h3 style="font-size:1.0625rem;font-weight:800;color:#1a1a1a;letter-spacing:-.02em;margin:0">Meridian Fintech</h3>
+          </div>
+        </div>
+
+        <!-- Digital -->
+        <div class="cd-project" data-category="digital" style="position:relative;background:#fff;border:1px solid #e7e7e7;overflow:hidden;cursor:pointer;transition:transform .3s ease,box-shadow .3s ease" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 30px -6px rgba(0,0,0,.12)';this.querySelector('.cd-proj-overlay').style.opacity='1'" onmouseleave="this.style.transform='';this.style.boxShadow='';this.querySelector('.cd-proj-overlay').style.opacity='0'">
+          <div style="aspect-ratio:4/3;overflow:hidden">
+            <img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Coder Platform" style="width:100%;height:100%;object-fit:cover;transition:transform .6s ease" />
+          </div>
+          <div class="cd-proj-overlay" style="position:absolute;inset:0;background:rgba(26,26,26,.88);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:.75rem;opacity:0;transition:opacity .3s ease">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <span style="color:#fff;font-size:.8125rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase">View Project</span>
+          </div>
+          <div style="padding:1.25rem">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem">
+              <span style="font-size:.6875rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b0b0b0;background:#f6f6f6;padding:.25rem .75rem">Digital</span>
+              <span style="font-size:.6875rem;font-family:monospace;color:#b0b0b0">2025</span>
+            </div>
+            <h3 style="font-size:1.0625rem;font-weight:800;color:#1a1a1a;letter-spacing:-.02em;margin:0">Coder Platform</h3>
+          </div>
+        </div>
+
+        <!-- Motion — double wide -->
+        <div class="cd-project" data-category="motion" style="position:relative;background:#fff;border:1px solid #e7e7e7;overflow:hidden;cursor:pointer;transition:transform .3s ease,box-shadow .3s ease;grid-column:span 2" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 30px -6px rgba(0,0,0,.12)';this.querySelector('.cd-proj-overlay').style.opacity='1'" onmouseleave="this.style.transform='';this.style.boxShadow='';this.querySelector('.cd-proj-overlay').style.opacity='0'">
+          <div style="aspect-ratio:16/7;overflow:hidden">
+            <img src="https://images.pexels.com/photos/3153198/pexels-photo-3153198.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Apex Motion Reel" style="width:100%;height:100%;object-fit:cover;transition:transform .6s ease" />
+          </div>
+          <div class="cd-proj-overlay" style="position:absolute;inset:0;background:rgba(26,26,26,.88);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:.75rem;opacity:0;transition:opacity .3s ease">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <span style="color:#fff;font-size:.8125rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase">View Project</span>
+          </div>
+          <div style="padding:1.25rem">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem">
+              <span style="font-size:.6875rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b0b0b0;background:#f6f6f6;padding:.25rem .75rem">Motion</span>
+              <span style="font-size:.6875rem;font-family:monospace;color:#b0b0b0">2024</span>
+            </div>
+            <h3 style="font-size:1.0625rem;font-weight:800;color:#1a1a1a;letter-spacing:-.02em;margin:0">Apex Motion Reel — Product Trailer</h3>
+          </div>
+        </div>
+
+        <!-- Print -->
+        <div class="cd-project" data-category="print" style="position:relative;background:#fff;border:1px solid #e7e7e7;overflow:hidden;cursor:pointer;transition:transform .3s ease,box-shadow .3s ease" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 30px -6px rgba(0,0,0,.12)';this.querySelector('.cd-proj-overlay').style.opacity='1'" onmouseleave="this.style.transform='';this.style.boxShadow='';this.querySelector('.cd-proj-overlay').style.opacity='0'">
+          <div style="aspect-ratio:4/3;overflow:hidden">
+            <img src="https://images.pexels.com/photos/1194420/pexels-photo-1194420.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Vanta Print Campaign" style="width:100%;height:100%;object-fit:cover;transition:transform .6s ease" />
+          </div>
+          <div class="cd-proj-overlay" style="position:absolute;inset:0;background:rgba(26,26,26,.88);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:.75rem;opacity:0;transition:opacity .3s ease">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <span style="color:#fff;font-size:.8125rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase">View Project</span>
+          </div>
+          <div style="padding:1.25rem">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem">
+              <span style="font-size:.6875rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b0b0b0;background:#f6f6f6;padding:.25rem .75rem">Print</span>
+              <span style="font-size:.6875rem;font-family:monospace;color:#b0b0b0">2024</span>
+            </div>
+            <h3 style="font-size:1.0625rem;font-weight:800;color:#1a1a1a;letter-spacing:-.02em;margin:0">Vanta Annual Report</h3>
+          </div>
+        </div>
+
+        <!-- Branding 2 -->
+        <div class="cd-project" data-category="branding" style="position:relative;background:#fff;border:1px solid #e7e7e7;overflow:hidden;cursor:pointer;transition:transform .3s ease,box-shadow .3s ease" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 30px -6px rgba(0,0,0,.12)';this.querySelector('.cd-proj-overlay').style.opacity='1'" onmouseleave="this.style.transform='';this.style.boxShadow='';this.querySelector('.cd-proj-overlay').style.opacity='0'">
+          <div style="aspect-ratio:4/3;overflow:hidden">
+            <img src="https://images.pexels.com/photos/3184416/pexels-photo-3184416.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Rogo AI" style="width:100%;height:100%;object-fit:cover;transition:transform .6s ease" />
+          </div>
+          <div class="cd-proj-overlay" style="position:absolute;inset:0;background:rgba(26,26,26,.88);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:.75rem;opacity:0;transition:opacity .3s ease">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <span style="color:#fff;font-size:.8125rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase">View Project</span>
+          </div>
+          <div style="padding:1.25rem">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem">
+              <span style="font-size:.6875rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b0b0b0;background:#f6f6f6;padding:.25rem .75rem">Branding</span>
+              <span style="font-size:.6875rem;font-family:monospace;color:#b0b0b0">2024</span>
+            </div>
+            <h3 style="font-size:1.0625rem;font-weight:800;color:#1a1a1a;letter-spacing:-.02em;margin:0">Rogo — AI for Wall Street</h3>
+          </div>
+        </div>
+
+        <!-- Digital 2 -->
+        <div class="cd-project" data-category="digital" style="position:relative;background:#fff;border:1px solid #e7e7e7;overflow:hidden;cursor:pointer;transition:transform .3s ease,box-shadow .3s ease" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 30px -6px rgba(0,0,0,.12)';this.querySelector('.cd-proj-overlay').style.opacity='1'" onmouseleave="this.style.transform='';this.style.boxShadow='';this.querySelector('.cd-proj-overlay').style.opacity='0'">
+          <div style="aspect-ratio:4/3;overflow:hidden">
+            <img src="https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Tabs Finance App" style="width:100%;height:100%;object-fit:cover;transition:transform .6s ease" />
+          </div>
+          <div class="cd-proj-overlay" style="position:absolute;inset:0;background:rgba(26,26,26,.88);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:.75rem;opacity:0;transition:opacity .3s ease">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <span style="color:#fff;font-size:.8125rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase">View Project</span>
+          </div>
+          <div style="padding:1.25rem">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem">
+              <span style="font-size:.6875rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b0b0b0;background:#f6f6f6;padding:.25rem .75rem">Digital</span>
+              <span style="font-size:.6875rem;font-family:monospace;color:#b0b0b0">2023</span>
+            </div>
+            <h3 style="font-size:1.0625rem;font-weight:800;color:#1a1a1a;letter-spacing:-.02em;margin:0">Tabs Finance App</h3>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer style="background:#1a1a1a;padding:3rem 1.5rem">
+    <div style="max-width:1440px;margin-inline:auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem">
+      <div style="color:rgba(255,255,255,.5);font-size:.875rem">© 2025 Wil B. All rights reserved.</div>
+      <div style="display:flex;align-items:center;gap:1.5rem">
+        <a href="#" style="color:rgba(255,255,255,.6);font-size:.875rem;font-weight:500;text-decoration:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='rgba(255,255,255,.6)'">GitHub</a>
+        <a href="#" style="color:rgba(255,255,255,.6);font-size:.875rem;font-weight:500;text-decoration:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='rgba(255,255,255,.6)'">LinkedIn</a>
+        <a href="#" style="color:rgba(255,255,255,.6);font-size:.875rem;font-weight:500;text-decoration:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='rgba(255,255,255,.6)'">Instagram</a>
+        <a href="#" style="color:rgba(255,255,255,.6);font-size:.875rem;font-weight:500;text-decoration:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='rgba(255,255,255,.6)'">Twitter</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Filter logic
+    const filters = document.querySelectorAll('.cd-filter');
+    const projects = document.querySelectorAll('.cd-project');
+    filters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = (btn as HTMLElement).dataset.filter;
+        filters.forEach(b => {
+          const el = b as HTMLElement;
+          el.style.background = '#fff';
+          el.style.color = '#b0b0b0';
+          el.style.borderColor = '#e7e7e7';
+        });
+        const active = btn as HTMLElement;
+        active.style.background = '#1a1a1a';
+        active.style.color = '#fff';
+        active.style.borderColor = '#1a1a1a';
+        projects.forEach(p => {
+          const el = p as HTMLElement;
+          const cat = el.dataset.category;
+          el.style.display = (filter === 'all' || cat === filter) ? '' : 'none';
+        });
+      });
+    });
+    // Fix span masonry on small screens
+    const mq = () => {
+      const grid = document.getElementById('cd-portfolio-grid') as HTMLElement;
+      if (window.innerWidth < 700) {
+        document.querySelectorAll('.cd-project[style*="grid-column"]').forEach(el => {
+          (el as HTMLElement).style.gridColumn = '';
+        });
+      }
+    };
+    mq();
+    window.addEventListener('resize', mq);
+  </script>
+
+  <style>
+    @media (max-width:767px) {
+      .cd-project[style*="grid-column:span 2"] { grid-column: span 1 !important; }
+    }
+  </style>
+</BaseLayout>
