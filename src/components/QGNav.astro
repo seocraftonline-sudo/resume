@@ -23,9 +23,11 @@ const isActive = (page: string) => active === page;
           Work
           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="qg-dd-arrow" style="transition:transform .2s ease;margin-top:1px"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="qg-dd-menu" style="position:absolute;top:calc(100% + .75rem);left:50%;transform:translateX(-50%);min-width:180px;background:#fff;border:1px solid #E5E7EB;border-radius:16px;box-shadow:0 8px 32px -8px rgba(0,0,0,.12);padding:.5rem;opacity:0;pointer-events:none;transition:all .2s cubic-bezier(.4,0,.2,1);transform-origin:top center">
-          <a href="/qg/portfolio/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:#6B7280;transition:all .15s ease" class="qg-dd-item">Portfolio</a>
-          <a href="/qg/projects/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:#6B7280;transition:all .15s ease" class="qg-dd-item">Projects</a>
+        <div class="qg-dd-menu" style="position:absolute;top:100%;left:50%;transform:translateX(-50%);min-width:180px;padding-top:.75rem;opacity:0;pointer-events:none;transition:opacity .2s cubic-bezier(.4,0,.2,1),transform .2s cubic-bezier(.4,0,.2,1);transform-origin:top center">
+          <div style="background:#fff;border:1px solid #E5E7EB;border-radius:16px;box-shadow:0 8px 32px -8px rgba(0,0,0,.12);padding:.5rem">
+            <a href="/qg/portfolio/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:#6B7280;transition:all .15s ease" class="qg-dd-item">Portfolio</a>
+            <a href="/qg/projects/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:#6B7280;transition:all .15s ease" class="qg-dd-item">Projects</a>
+          </div>
         </div>
       </div>
 
@@ -35,10 +37,12 @@ const isActive = (page: string) => active === page;
           About
           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="qg-dd-arrow" style="transition:transform .2s ease;margin-top:1px"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="qg-dd-menu" style="position:absolute;top:calc(100% + .75rem);left:50%;transform:translateX(-50%);min-width:180px;background:#fff;border:1px solid #E5E7EB;border-radius:16px;box-shadow:0 8px 32px -8px rgba(0,0,0,.12);padding:.5rem;opacity:0;pointer-events:none;transition:all .2s cubic-bezier(.4,0,.2,1);transform-origin:top center">
-          <a href="/qg/about/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:#6B7280;transition:all .15s ease" class="qg-dd-item">About Me</a>
-          <a href="/qg/resume/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:#6B7280;transition:all .15s ease" class="qg-dd-item">Resume</a>
-          <a href="/qg/skills/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:#6B7280;transition:all .15s ease" class="qg-dd-item">Skills</a>
+        <div class="qg-dd-menu" style="position:absolute;top:100%;left:50%;transform:translateX(-50%);min-width:180px;padding-top:.75rem;opacity:0;pointer-events:none;transition:opacity .2s cubic-bezier(.4,0,.2,1),transform .2s cubic-bezier(.4,0,.2,1);transform-origin:top center">
+          <div style="background:#fff;border:1px solid #E5E7EB;border-radius:16px;box-shadow:0 8px 32px -8px rgba(0,0,0,.12);padding:.5rem">
+            <a href="/qg/about/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:#6B7280;transition:all .15s ease" class="qg-dd-item">About Me</a>
+            <a href="/qg/resume/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:#6B7280;transition:all .15s ease" class="qg-dd-item">Resume</a>
+            <a href="/qg/skills/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:#6B7280;transition:all .15s ease" class="qg-dd-item">Skills</a>
+          </div>
         </div>
       </div>
 
@@ -51,10 +55,12 @@ const isActive = (page: string) => active === page;
           Insights
           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="qg-dd-arrow" style="transition:transform .2s ease;margin-top:1px"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="qg-dd-menu" style="position:absolute;top:calc(100% + .75rem);left:50%;transform:translateX(-50%);min-width:180px;background:#fff;border:1px solid #E5E7EB;border-radius:16px;box-shadow:0 8px 32px -8px rgba(0,0,0,.12);padding:.5rem;opacity:0;pointer-events:none;transition:all .2s cubic-bezier(.4,0,.2,1);transform-origin:top center">
-          <a href="/qg/blog/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:#6B7280;transition:all .15s ease" class="qg-dd-item">Blog</a>
-          <a href="/qg/publications/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:#6B7280;transition:all .15s ease" class="qg-dd-item">Publications</a>
-          <a href="/qg/testimonials/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:#6B7280;transition:all .15s ease" class="qg-dd-item">Testimonials</a>
+        <div class="qg-dd-menu" style="position:absolute;top:100%;left:50%;transform:translateX(-50%);min-width:180px;padding-top:.75rem;opacity:0;pointer-events:none;transition:opacity .2s cubic-bezier(.4,0,.2,1),transform .2s cubic-bezier(.4,0,.2,1);transform-origin:top center">
+          <div style="background:#fff;border:1px solid #E5E7EB;border-radius:16px;box-shadow:0 8px 32px -8px rgba(0,0,0,.12);padding:.5rem">
+            <a href="/qg/blog/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:#6B7280;transition:all .15s ease" class="qg-dd-item">Blog</a>
+            <a href="/qg/publications/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:#6B7280;transition:all .15s ease" class="qg-dd-item">Publications</a>
+            <a href="/qg/testimonials/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:#6B7280;transition:all .15s ease" class="qg-dd-item">Testimonials</a>
+          </div>
         </div>
       </div>
 
