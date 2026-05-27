@@ -1,0 +1,36 @@
+---
+export interface Props {
+  title: string;
+  theme: 'qg' | 'cd' | 'pp' | 'dn' | 'hc';
+  description?: string;
+}
+const { title, theme, description = 'Resume Vault — Professional Portfolio' } = Astro.props;
+
+const fontUrls: Record<string, string> = {
+  qg: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap',
+  cd: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap',
+  pp: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap',
+  dn: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap',
+  hc: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap',
+};
+---
+<!doctype html>
+<html lang="en" data-theme={theme}>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <title>{title}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href={fontUrls[theme]} />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" /></noscript>
+  <slot name="head" />
+</head>
+<body>
+  <slot />
+  <script src="/rv.js" defer></script>
+  <slot name="scripts" />
+</body>
+</html>
