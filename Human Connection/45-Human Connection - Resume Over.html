@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Personal Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>window.FontAwesomeConfig = { autoReplaceSvg: "nest"};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        primary: '#1A3626', // Deep green from reference
+                        accent: '#4ADE80', // Lighter green accent
+                        surface: '#112218', // Darker green for cards
+                        textMain: '#F8FAFC',
+                        textMuted: '#94A3B8'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { margin: 0; padding: 0; background-color: #0F172A; color: #F8FAFC; overflow-x: hidden; }
+        .hero-bg {
+            background: linear-gradient(180deg, rgba(26,54,38,0.9) 0%, rgba(15,23,42,1) 100%),
+                        repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(255,255,255,0.03) 40px, rgba(255,255,255,0.03) 80px);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .timeline-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #4ADE80;
+            position: absolute;
+            left: -6px;
+            top: 6px;
+            box-shadow: 0 0 0 4px rgba(17, 34, 24, 1);
+        }
+        .timeline-line {
+            position: absolute;
+            left: 0;
+            top: 24px;
+            bottom: -24px;
+            width: 1px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-accent selection:text-primary m-0 p-0">
+
+    <!-- Navigation (Preserved exactly from context) -->
+    <nav id="header" class="fixed w-full top-0 z-50 glass-card border-b-0 py-4 px-6 md:px-12 flex justify-between items-center transition-all duration-300">
+        <a href="#" class="text-2xl font-serif tracking-wide flex items-center gap-2">
+            Michael <span class="text-accent text-sm">✦</span>
+        </a>
+        <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-textMuted">
+            <a href="#" class="hover:text-white transition-colors">Home</a>
+            <a href="#about" class="hover:text-white transition-colors">About Me</a>
+            <a href="#services" class="hover:text-white transition-colors">My Services</a>
+            <a href="#portfolio" class="text-white hover:text-accent transition-colors border-b border-accent pb-1">Resume</a>
+        </div>
+        <a href="mailto:hello@example.com" class="hidden md:flex items-center gap-2 text-sm text-textMuted hover:text-white transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            hello@example.com
+        </a>
+        <button class="md:hidden text-white focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+    </nav>
+
+    <!-- Resume Header & Summary -->
+    <section id="resume_header" class="pt-40 pb-20 relative hero-bg">
+        <div class="container mx-auto px-6 md:px-12 max-w-[1000px] relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
+                <div>
+                    <h1 class="text-5xl md:text-6xl font-serif mb-4">Professional Record</h1>
+                    <p class="text-xl text-textMuted font-serif italic">The formal history of my work and education.</p>
+                </div>
+                <a href="#" class="inline-flex items-center gap-3 px-6 py-3 bg-accent text-primary font-medium rounded-full hover:bg-white transition-colors group">
+                    <i class="fa-solid fa-file-pdf"></i>
+                    <span>Download PDF</span>
+                    <i class="fa-solid fa-arrow-down group-hover:translate-y-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <div class="glass-card p-8 md:p-10 rounded-[24px] border-l-4 border-l-accent">
+                <h2 class="text-sm font-bold tracking-widest text-textMuted uppercase mb-4">Professional Summary</h2>
+                <p class="text-lg leading-relaxed text-textMain/90">
+                    With over 8 years of experience in product design and user research, I specialize in transforming complex systemic problems into intuitive, human-centered solutions. My background spans early-stage startups to enterprise healthcare, consistently delivering designs that balance empathetic user experiences with measurable business outcomes. I am driven by a core belief that clarity is kindness, and that the best products are built through deep collaboration and a genuine understanding of human behavior.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <section id="resume_content" class="py-12 bg-[#0F172A]">
+        <div class="container mx-auto px-6 md:px-12 max-w-[1000px]">
+            
+            <!-- Work Experience -->
+            <div id="experience" class="mb-24">
+                <div class="flex items-center gap-4 mb-12">
+                    <h2 class="text-3xl font-serif">Work Experience</h2>
+                    <div class="flex-grow h-px bg-white/10"></div>
+                </div>
+
+                <div class="space-y-12">
+                    <!-- Job 1 -->
+                    <div class="relative pl-8">
+                        <div class="timeline-line"></div>
+                        <div class="timeline-dot"></div>
+                        
+                        <div class="flex flex-col md:flex-row justify-between items-start mb-4 gap-2">
+                            <div>
+                                <h3 class="text-2xl font-medium text-white">Independent Product Design Consultant</h3>
+                                <div class="text-accent font-serif italic text-lg">Self-Employed · Global (Remote)</div>
+                            </div>
+                            <div class="px-4 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-textMuted whitespace-nowrap">
+                                2022 — Present
+                            </div>
+                        </div>
+                        
+                        <p class="text-textMuted mb-6 leading-relaxed">
+                            Partnering directly with founders of early-stage startups in the wellness, education, and SaaS sectors to establish foundational design systems, conduct generative user research, and lead end-to-end product design from 0 to 1.
+                        </p>
+                        
+                        <ul class="space-y-3 text-textMain/80 list-none">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-accent mt-1 text-sm"></i>
+                                <span>Led the redesign of a core SaaS platform for a Series A startup, resulting in a 40% reduction in onboarding drop-off and a 25% increase in daily active users.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-accent mt-1 text-sm"></i>
+                                <span>Established and documented comprehensive design systems for 3 different organizations, reducing engineering implementation time by an estimated 30%.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-accent mt-1 text-sm"></i>
+                                <span>Facilitated over 50 user interview sessions to validate product direction, pivoting one client away from a costly feature build toward a more impactful core offering.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Job 2 -->
+                    <div class="relative pl-8">
+                        <div class="timeline-line"></div>
+                        <div class="timeline-dot bg-white/40"></div>
+                        
+                        <div class="flex flex-col md:flex-row justify-between items-start mb-4 gap-2">
+                            <div>
+                                <h3 class="text-2xl font-medium text-white">Lead Product Designer</h3>
+                                <div class="text-accent font-serif italic text-lg">HealthTech Innovations · San Francisco, CA</div>
+                            </div>
+                            <div class="px-4 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-textMuted whitespace-nowrap">
+                                2019 — 2022
+                            </div>
+                        </div>
+                        
+                        <p class="text-textMuted mb-6 leading-relaxed">
+                            Managed a team of 4 designers overseeing the patient-facing portal and internal clinical tools. Championed accessibility standards and cross-functional collaboration between engineering, product, and clinical teams.
+                        </p>
+                        
+                        <ul class="space-y-3 text-textMain/80 list-none">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-accent mt-1 text-sm opacity-60"></i>
+                                <span>Spearheaded a complete UX overhaul of the patient portal used by over 100,000 active users, improving critical task completion rates by 65%.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-accent mt-1 text-sm opacity-60"></i>
+                                <span>Mentored junior designers and established a weekly design critique culture that improved overall output quality and team cohesion.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Two Column Section: Education & Skills -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-24">
+                
+                <!-- Education & Certifications -->
+                <div id="education">
+                    <div class="flex items-center gap-4 mb-10">
+                        <h2 class="text-3xl font-serif">Education</h2>
+                        <div class="flex-grow h-px bg-white/10"></div>
+                    </div>
+
+                    <div class="space-y-8">
+                        <div class="glass-card p-6 rounded-[16px] hover:bg-white/5 transition-colors border-l-2 border-l-accent">
+                            <h3 class="text-xl font-medium mb-1">Bachelor of Fine Arts in Graphic Design</h3>
+                            <div class="text-textMuted text-sm mb-3">Rhode Island School of Design (RISD)</div>
+                            <div class="inline-block px-3 py-1 rounded-full bg-white/5 text-xs text-textMuted mb-3">2012 — 2016</div>
+                            <p class="text-sm text-textMain/70">Graduated with Honors. Focus on typography, systemic design, and human-computer interaction.</p>
+                        </div>
+
+                        <div class="glass-card p-6 rounded-[16px] hover:bg-white/5 transition-colors">
+                            <h3 class="text-xl font-medium mb-1">Certified Usability Analyst (CUA)</h3>
+                            <div class="text-textMuted text-sm mb-3">Human Factors International</div>
+                            <div class="inline-block px-3 py-1 rounded-full bg-white/5 text-xs text-textMuted">Obtained 2018</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills & Languages -->
+                <div id="skills">
+                    <div class="flex items-center gap-4 mb-10">
+                        <h2 class="text-3xl font-serif">Expertise</h2>
+                        <div class="flex-grow h-px bg-white/10"></div>
+                    </div>
+
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-sm font-bold tracking-widest text-textMuted uppercase mb-4">Core Competencies</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-4 py-2 rounded-full bg-surface border border-white/10 text-sm">User Research</span>
+                                <span class="px-4 py-2 rounded-full bg-surface border border-white/10 text-sm">Interaction Design</span>
+                                <span class="px-4 py-2 rounded-full bg-surface border border-white/10 text-sm">Design Systems</span>
+                                <span class="px-4 py-2 rounded-full bg-surface border border-white/10 text-sm">Prototyping</span>
+                                <span class="px-4 py-2 rounded-full bg-surface border border-white/10 text-sm">Information Architecture</span>
+                                <span class="px-4 py-2 rounded-full bg-surface border border-white/10 text-sm">Accessibility (WCAG)</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-sm font-bold tracking-widest text-textMuted uppercase mb-4">Tools</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-4 py-2 rounded-[8px] bg-white/5 text-sm">Figma</span>
+                                <span class="px-4 py-2 rounded-[8px] bg-white/5 text-sm">Framer</span>
+                                <span class="px-4 py-2 rounded-[8px] bg-white/5 text-sm">Webflow</span>
+                                <span class="px-4 py-2 rounded-[8px] bg-white/5 text-sm">HTML/CSS</span>
+                                <span class="px-4 py-2 rounded-[8px] bg-white/5 text-sm">Notion</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-sm font-bold tracking-widest text-textMuted uppercase mb-4">Languages</h3>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-white">English</span>
+                                    <span class="text-textMuted text-sm">Native</span>
+                                </div>
+                                <div class="w-full h-1 bg-white/10 rounded-full overflow-hidden">
+                                    <div class="h-full bg-accent w-full"></div>
+                                </div>
+                                
+                                <div class="flex justify-between items-center mt-4">
+                                    <span class="text-white">Spanish</span>
+                                    <span class="text-textMuted text-sm">Conversational</span>
+                                </div>
+                                <div class="w-full h-1 bg-white/10 rounded-full overflow-hidden">
+                                    <div class="h-full bg-accent/50 w-[60%]"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Volunteer Work -->
+            <div id="volunteer" class="mb-24">
+                <div class="flex items-center gap-4 mb-10">
+                    <h2 class="text-3xl font-serif">Community Involvement</h2>
+                    <div class="flex-grow h-px bg-white/10"></div>
+                </div>
+                
+                <div class="glass-card p-8 rounded-[24px] flex flex-col md:flex-row gap-8 items-start">
+                    <div class="w-16 h-16 rounded-full bg-surface border border-white/10 flex items-center justify-center text-accent shrink-0">
+                        <i class="fa-solid fa-hands-holding-circle text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-medium mb-1">Design Mentor</h3>
+                        <div class="text-textMuted text-sm mb-3">ADPList · 2021 — Present</div>
+                        <p class="text-textMain/80 leading-relaxed text-sm">
+                            Providing free mentorship sessions to junior designers breaking into the industry. Focusing on portfolio reviews, interview preparation, and navigating imposter syndrome. Conducted over 100 hours of 1:1 mentorship to date.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer (Preserved exactly from context) -->
+    <footer id="footer" class="py-12 border-t border-white/5 bg-black/20">
+        <div class="container mx-auto px-6 md:px-12 max-w-[1440px] flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-2xl font-serif tracking-wide flex items-center gap-2">
+                Michael <span class="text-accent text-sm">✦</span>
+            </div>
+            <div class="flex gap-6 text-textMuted">
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-dribbble text-xl"></i></a>
+            </div>
+            <p class="text-sm text-textMuted">© 2023 Michael Design. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

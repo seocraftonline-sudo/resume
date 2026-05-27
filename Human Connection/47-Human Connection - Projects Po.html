@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Personal Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>window.FontAwesomeConfig = { autoReplaceSvg: "nest"};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        primary: '#1A3626', 
+                        accent: '#4ADE80', 
+                        surface: '#112218', 
+                        textMain: '#F8FAFC',
+                        textMuted: '#94A3B8'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { margin: 0; padding: 0; background-color: #0F172A; color: #F8FAFC; overflow-x: hidden; }
+        .hero-bg {
+            background: linear-gradient(180deg, rgba(26,54,38,0.9) 0%, rgba(15,23,42,1) 100%),
+                        repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(255,255,255,0.03) 40px, rgba(255,255,255,0.03) 80px);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        /* Modal Styles */
+        .modal-overlay {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(12px);
+        }
+        
+        /* Custom Scrollbar for Modal */
+        .modal-content::-webkit-scrollbar {
+            width: 8px;
+        }
+        .modal-content::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 4px;
+        }
+        .modal-content::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+        .modal-content::-webkit-scrollbar-thumb:hover {
+            background: rgba(74, 222, 128, 0.5);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-accent selection:text-primary m-0 p-0">
+
+    <!-- Navigation (Preserved exactly from context) -->
+    <nav id="header" class="fixed w-full top-0 z-50 glass-card border-b-0 py-4 px-6 md:px-12 flex justify-between items-center transition-all duration-300">
+        <a href="#" class="text-2xl font-serif tracking-wide flex items-center gap-2">
+            Michael <span class="text-accent text-sm">✦</span>
+        </a>
+        <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-textMuted">
+            <a href="#" class="hover:text-white transition-colors">Home</a>
+            <a href="#about" class="hover:text-white transition-colors">About Me</a>
+            <a href="#services" class="hover:text-white transition-colors">My Services</a>
+            <a href="#portfolio" class="text-white hover:text-accent transition-colors border-b border-accent pb-1">Portfolio</a>
+        </div>
+        <a href="mailto:hello@example.com" class="hidden md:flex items-center gap-2 text-sm text-textMuted hover:text-white transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            hello@example.com
+        </a>
+        <button class="md:hidden text-white focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+    </nav>
+
+    <!-- Projects Introduction Hero -->
+    <section id="projects_intro" class="pt-40 pb-16 relative hero-bg min-h-[40vh] flex items-center">
+        <div class="container mx-auto px-6 md:px-12 max-w-[1000px] relative z-10 text-center">
+            <h1 class="text-5xl md:text-7xl font-serif mb-6 leading-tight text-white">Deep Dives & <br/><span class="text-accent italic">Explorations</span></h1>
+            <p class="text-xl md:text-2xl text-textMuted font-serif italic max-w-3xl mx-auto leading-relaxed mb-12">
+                Beyond the polished surface. This space is dedicated to the messy middle—the personal initiatives, experimental concepts, and detailed case studies that reveal how I think, problem-solve, and connect with the work on a human level.
+            </p>
+        </div>
+    </section>
+
+    <!-- Featured Project Spotlight -->
+    <section id="featured_project" class="py-12 bg-[#0F172A]">
+        <div class="container mx-auto px-6 md:px-12 max-w-[1440px]">
+            <div class="glass-card rounded-[24px] overflow-hidden border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                    <!-- Image Side -->
+                    <div class="h-[500px] lg:h-auto relative bg-surface border-r border-white/10">
+                        <img class="w-full h-full object-cover opacity-90" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/ba0a6acdce-4a03aec229f7e5c95079.png" alt="Candid, warm photography of a designer" />
+                        <div class="absolute inset-0 bg-gradient-to-r from-transparent to-[#0F172A]/50 lg:to-[#0F172A] hidden lg:block"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0F172A] to-transparent lg:hidden"></div>
+                        
+                        <!-- Floating Badge -->
+                        <div class="absolute top-8 left-8 px-4 py-2 rounded-full bg-[#0F172A]/80 backdrop-blur-md border border-white/10 text-sm text-white font-medium flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                            Featured Initiative
+                        </div>
+                    </div>
+                    
+                    <!-- Content Side -->
+                    <div class="p-10 lg:p-16 flex flex-col justify-center bg-[#0F172A]">
+                        <div class="flex items-center gap-4 mb-6 text-sm text-textMuted">
+                            <span class="px-3 py-1 rounded-full bg-accent/10 text-accent border border-accent/20">Research</span>
+                            <span>2023 - Present</span>
+                        </div>
+                        
+                        <h2 class="text-4xl lg:text-5xl font-serif text-white mb-6 leading-tight hover:text-accent transition-colors cursor-pointer">The Empathy Engine: Redesigning Feedback Loops</h2>
+                        
+                        <div class="space-y-6 mb-10 text-lg text-textMuted leading-relaxed">
+                            <p>
+                                <strong class="text-white font-medium">The Challenge:</strong> How do we build digital feedback systems that don't feel like interrogation? Traditional surveys yield low response rates because they lack human warmth.
+                            </p>
+                            <p>
+                                <strong class="text-white font-medium">The Approach:</strong> I initiated a personal research project to map out conversational UI patterns that mimic active listening, replacing static forms with dynamic, empathetic micro-interactions.
+                            </p>
+                        </div>
+                        
+                        <div class="flex flex-wrap items-center gap-4">
+                            <button class="px-8 py-4 rounded-full bg-accent text-primary font-medium text-lg transition-all shadow-[0_0_20px_rgba(74,222,128,0.2)] hover:shadow-[0_0_30px_rgba(74,222,128,0.4)] flex items-center gap-3" onclick="document.getElementById('project_detail_modal').classList.remove('hidden')">
+                                Read Full Case Study <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic Project Grid (Reference Style Table/List) -->
+    <section id="project_grid" class="py-16 bg-[#0F172A]">
+        <div class="container mx-auto px-6 md:px-12 max-w-[1440px]">
+            
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+                <h3 class="text-2xl font-serif text-white">All Projects & Initiatives</h3>
+                
+                <!-- Filters mimicking reference -->
+                <div class="flex flex-wrap items-center gap-3">
+                    <button class="px-4 py-2 rounded-[8px] bg-white/5 border border-white/10 text-textMuted hover:text-white hover:bg-white/10 font-medium text-sm transition-all flex items-center gap-2">
+                        Status: All <i class="fa-solid fa-xmark text-xs ml-1 opacity-50"></i>
+                    </button>
+                    <button class="px-4 py-2 rounded-[8px] bg-white/5 border border-white/10 text-textMuted hover:text-white hover:bg-white/10 font-medium text-sm transition-all flex items-center gap-2">
+                        Year: All <i class="fa-solid fa-chevron-down text-xs ml-1 opacity-50"></i>
+                    </button>
+                    <div class="h-6 w-px bg-white/10 mx-2"></div>
+                    <div class="relative">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 transform -translate-y-1/2 text-textMuted text-sm"></i>
+                        <input type="text" placeholder="Search projects..." class="pl-9 pr-4 py-2 rounded-[8px] bg-white/5 border border-white/10 text-white placeholder-textMuted/50 text-sm focus:outline-none focus:border-accent/50 w-full md:w-64">
+                    </div>
+                </div>
+            </div>
+
+            <!-- List Container (Reference Style) -->
+            <div class="glass-card rounded-[16px] border border-white/10 overflow-hidden">
+                <!-- Header Row -->
+                <div class="grid grid-cols-12 gap-4 p-4 border-b border-white/10 text-xs font-medium text-textMuted uppercase tracking-wider bg-white/5">
+                    <div class="col-span-5 md:col-span-4 pl-4 flex items-center gap-2">Project Name <i class="fa-solid fa-arrow-down text-[10px]"></i></div>
+                    <div class="col-span-3 hidden md:block">Focus Area</div>
+                    <div class="col-span-2 hidden lg:block">Timeline</div>
+                    <div class="col-span-4 md:col-span-3 lg:col-span-2">Status</div>
+                    <div class="col-span-3 md:col-span-2 text-right pr-4">Action</div>
+                </div>
+
+                <!-- List Items -->
+                <div class="divide-y divide-white/5">
+                    
+                    <!-- Item 1 -->
+                    <div class="grid grid-cols-12 gap-4 p-4 items-center hover:bg-white/5 transition-colors group">
+                        <div class="col-span-5 md:col-span-4 pl-4 flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-[8px] bg-surface border border-white/10 overflow-hidden flex-shrink-0 flex items-center justify-center">
+                                <i class="fa-solid fa-leaf text-accent text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-medium text-white group-hover:text-accent transition-colors">Mindful Onboarding</h4>
+                                <p class="text-xs text-textMuted truncate max-w-[150px] md:max-w-[200px]">Reducing anxiety in initial app setups</p>
+                            </div>
+                        </div>
+                        <div class="col-span-3 hidden md:flex items-center">
+                            <span class="text-sm text-textMuted">UX Psychology</span>
+                        </div>
+                        <div class="col-span-2 hidden lg:flex items-center">
+                            <span class="text-sm text-textMuted">2023 (8 wks)</span>
+                        </div>
+                        <div class="col-span-4 md:col-span-3 lg:col-span-2 flex items-center">
+                            <span class="px-2.5 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-medium flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-accent"></span> Completed
+                            </span>
+                        </div>
+                        <div class="col-span-3 md:col-span-2 flex items-center justify-end pr-4">
+                            <button class="text-textMuted hover:text-white transition-colors p-2" onclick="document.getElementById('project_detail_modal').classList.remove('hidden')">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="grid grid-cols-12 gap-4 p-4 items-center hover:bg-white/5 transition-colors group">
+                        <div class="col-span-5 md:col-span-4 pl-4 flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-[8px] bg-surface border border-white/10 overflow-hidden flex-shrink-0 flex items-center justify-center">
+                                <i class="fa-solid fa-layer-group text-blue-400 text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-medium text-white group-hover:text-blue-400 transition-colors">Design System Audit</h4>
+                                <p class="text-xs text-textMuted truncate max-w-[150px] md:max-w-[200px]">Accessibility review of 40+ components</p>
+                            </div>
+                        </div>
+                        <div class="col-span-3 hidden md:flex items-center">
+                            <span class="text-sm text-textMuted">Accessibility (a11y)</span>
+                        </div>
+                        <div class="col-span-2 hidden lg:flex items-center">
+                            <span class="text-sm text-textMuted">2023 (Ongoing)</span>
+                        </div>
+                        <div class="col-span-4 md:col-span-3 lg:col-span-2 flex items-center">
+                            <span class="px-2.5 py-1 rounded-full bg-blue-400/10 border border-blue-400/20 text-blue-400 text-xs font-medium flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span> In Progress
+                            </span>
+                        </div>
+                        <div class="col-span-3 md:col-span-2 flex items-center justify-end pr-4">
+                            <button class="text-textMuted hover:text-white transition-colors p-2">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="grid grid-cols-12 gap-4 p-4 items-center hover:bg-white/5 transition-colors group">
+                        <div class="col-span-5 md:col-span-4 pl-4 flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-[8px] bg-surface border border-white/10 overflow-hidden flex-shrink-0 flex items-center justify-center">
+                                <i class="fa-solid fa-heart-pulse text-pink-400 text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-medium text-white group-hover:text-pink-400 transition-colors">Therapy Portal Concept</h4>
+                                <p class="text-xs text-textMuted truncate max-w-[150px] md:max-w-[200px]">Reimagining patient-therapist digital touchpoints</p>
+                            </div>
+                        </div>
+                        <div class="col-span-3 hidden md:flex items-center">
+                            <span class="text-sm text-textMuted">Product Concept</span>
+                        </div>
+                        <div class="col-span-2 hidden lg:flex items-center">
+                            <span class="text-sm text-textMuted">2022</span>
+                        </div>
+                        <div class="col-span-4 md:col-span-3 lg:col-span-2 flex items-center">
+                            <span class="px-2.5 py-1 rounded-full bg-amber-400/10 border border-amber-400/20 text-amber-400 text-xs font-medium flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> Archived
+                            </span>
+                        </div>
+                        <div class="col-span-3 md:col-span-2 flex items-center justify-end pr-4">
+                            <button class="text-textMuted hover:text-white transition-colors p-2">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="grid grid-cols-12 gap-4 p-4 items-center hover:bg-white/5 transition-colors group">
+                        <div class="col-span-5 md:col-span-4 pl-4 flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-[8px] bg-surface border border-white/10 overflow-hidden flex-shrink-0 flex items-center justify-center">
+                                <i class="fa-solid fa-code text-purple-400 text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-medium text-white group-hover:text-purple-400 transition-colors">Open Source UI Kit</h4>
+                                <p class="text-xs text-textMuted truncate max-w-[150px] md:max-w-[200px]">A Tailwind-based library for mental health startups</p>
+                            </div>
+                        </div>
+                        <div class="col-span-3 hidden md:flex items-center">
+                            <span class="text-sm text-textMuted">Development / OSS</span>
+                        </div>
+                        <div class="col-span-2 hidden lg:flex items-center">
+                            <span class="text-sm text-textMuted">2023</span>
+                        </div>
+                        <div class="col-span-4 md:col-span-3 lg:col-span-2 flex items-center">
+                            <span class="px-2.5 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-medium flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-accent"></span> Completed
+                            </span>
+                        </div>
+                        <div class="col-span-3 md:col-span-2 flex items-center justify-end pr-4">
+                            <button class="text-textMuted hover:text-white transition-colors p-2">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <!-- Pagination Footer -->
+                <div class="p-4 border-t border-white/10 flex justify-between items-center bg-white/5">
+                    <div class="flex gap-2">
+                        <button class="px-3 py-1.5 rounded-[6px] bg-surface border border-white/10 text-textMuted hover:text-white text-xs font-medium transition-colors">Previous</button>
+                        <button class="px-3 py-1.5 rounded-[6px] bg-surface border border-white/10 text-textMuted hover:text-white text-xs font-medium transition-colors">Next</button>
+                    </div>
+                    <div class="text-xs text-textMuted">Page 1 of 3</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Project Detail Modal (Full Story) -->
+    <div id="project_detail_modal" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 modal-overlay transition-opacity" onclick="document.getElementById('project_detail_modal').classList.add('hidden')"></div>
+        
+        <div class="absolute inset-y-0 right-0 w-full md:w-[800px] lg:w-[900px] bg-[#0F172A] shadow-[-20px_0_50px_rgba(0,0,0,0.5)] transform transition-transform duration-500 flex flex-col border-l border-white/10">
+            
+            <!-- Modal Header -->
+            <div class="px-8 py-6 border-b border-white/5 flex justify-between items-center bg-[#0F172A]/90 backdrop-blur-md sticky top-0 z-10">
+                <div class="flex items-center gap-4">
+                    <span class="px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-medium border border-accent/20 flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span> Research Initiative</span>
+                </div>
+                <button onclick="document.getElementById('project_detail_modal').classList.add('hidden')" class="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-textMuted hover:text-white transition-colors">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Modal Content (Scrollable) -->
+            <div class="flex-1 overflow-y-auto modal-content p-8 md:p-12">
+                
+                <h2 class="text-4xl md:text-5xl font-serif text-white mb-6">The Empathy Engine</h2>
+                <p class="text-xl text-textMuted leading-relaxed mb-12 font-serif italic">
+                    A deep dive into redesigning digital feedback loops to feel less like data extraction and more like a genuine conversation.
+                </p>
+
+                <!-- Story Section: The Origin -->
+                <div class="mb-16">
+                    <div class="flex items-center gap-4 mb-6">
+                        <h3 class="text-2xl font-serif text-white">The Spark</h3>
+                        <div class="flex-grow h-px bg-white/10"></div>
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-8 items-start">
+                        <div class="w-full md:w-2/3 text-lg text-textMain/80 leading-relaxed space-y-4">
+                            <p>
+                                It started with a personal frustration. After a difficult customer service experience, I was emailed a sterile, 10-point scale survey. The company didn't want to hear my story; they wanted a metric to feed their dashboard.
+                            </p>
+                            <p>
+                                I realized that in our rush to measure user sentiment, we've stripped away the humanity of asking someone, "How was your experience?" This initiated a 3-month personal exploration into conversational UI and emotional design.
+                            </p>
+                        </div>
+                        <div class="w-full md:w-1/3">
+                            <div class="glass-card p-6 rounded-[16px] border border-white/5 border-l-4 border-l-accent">
+                                <i class="fa-solid fa-quote-left text-2xl text-white/10 mb-3"></i>
+                                <p class="text-sm font-serif italic text-white mb-2">"Data extraction feels cold. Conversation feels warm. How do we bridge the gap at scale?"</p>
+                                <span class="text-xs text-textMuted">— Project Journal, Day 1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Break -->
+                <div class="rounded-[24px] overflow-hidden mb-16 border border-white/5 shadow-lg relative h-64 md:h-96">
+                    <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/22cb7c725d-8067f988520e1d94557e.png" alt="A side-by-side visual comparison. On the left, a cold, clinical, standard 1-10 survey form. On the right, a warm, conversational, chat-bubble interface with soft colors and human-like microcopy. High contrast between sterile and empathetic design." />
+                </div>
+
+                <!-- Process & Execution -->
+                <div class="mb-16">
+                    <div class="flex items-center gap-4 mb-6">
+                        <h3 class="text-2xl font-serif text-white">The Process</h3>
+                        <div class="flex-grow h-px bg-white/10"></div>
+                    </div>
+                    <p class="text-textMain/80 leading-relaxed text-lg mb-8">
+                        I began by analyzing transcripts of actual human-to-human feedback sessions (like a manager talking to an employee). I extracted the cadence: an open question, active listening (acknowledgment), a specific follow-up, and gratitude.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                        <div class="bg-surface p-6 rounded-[16px] border border-white/5">
+                            <div class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent mb-4">1</div>
+                            <h4 class="text-white font-medium mb-2">Deconstruct</h4>
+                            <p class="text-sm text-textMuted">Breaking down human empathy into conversational turns.</p>
+                        </div>
+                        <div class="bg-surface p-6 rounded-[16px] border border-white/5">
+                            <div class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent mb-4">2</div>
+                            <h4 class="text-white font-medium mb-2">Prototype</h4>
+                            <p class="text-sm text-textMuted">Building interactive Figma prototypes using variable logic to simulate conversation.</p>
+                        </div>
+                        <div class="bg-surface p-6 rounded-[16px] border border-white/5">
+                            <div class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent mb-4">3</div>
+                            <h4 class="text-white font-medium mb-2">Test</h4>
+                            <p class="text-sm text-textMuted">A/B testing the conversational flow against a traditional form with 50 users.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Outcomes & Lessons -->
+                <div class="mb-16">
+                    <div class="flex items-center gap-4 mb-6">
+                        <h3 class="text-2xl font-serif text-white">Lessons Learned</h3>
+                        <div class="flex-grow h-px bg-white/10"></div>
+                    </div>
+                    <div class="glass-card p-8 rounded-[24px]">
+                        <ul class="space-y-6 text-textMain/80 list-none">
+                            <li class="flex items-start gap-4">
+                                <div class="mt-1 w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 text-accent"><i class="fa-solid fa-lightbulb text-xs"></i></div>
+                                <div>
+                                    <strong class="text-white block mb-1">Pacing matters more than length.</strong>
+                                    <span>Users were willing to answer MORE questions if they were delivered one at a time in a conversational cadence, rather than presented as a massive block of inputs.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="mt-1 w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 text-accent"><i class="fa-solid fa-lightbulb text-xs"></i></div>
+                                <div>
+                                    <strong class="text-white block mb-1">Micro-acknowledgments build trust.</strong>
+                                    <span>Simply having the UI say "That sounds frustrating" before asking the next question increased qualitative feedback length by 40%.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Skills & Tools Footer (Required Section) -->
+                <div class="mt-16 pt-8 border-t border-white/10">
+                    <h4 class="text-sm font-bold text-textMuted uppercase tracking-widest mb-6">Methodologies & Tools Applied</h4>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 rounded-[8px] bg-surface border border-white/5 text-sm text-textMain">Conversational UI Design</span>
+                        <span class="px-4 py-2 rounded-[8px] bg-surface border border-white/5 text-sm text-textMain">Qualitative User Research</span>
+                        <span class="px-4 py-2 rounded-[8px] bg-surface border border-white/5 text-sm text-textMain">Figma Advanced Prototyping</span>
+                        <span class="px-4 py-2 rounded-[8px] bg-surface border border-white/5 text-sm text-textMain">Behavioral Psychology</span>
+                        <span class="px-4 py-2 rounded-[8px] bg-surface border border-white/5 text-sm text-textMain">A/B Testing</span>
+                        <span class="px-4 py-2 rounded-[8px] bg-surface border border-white/5 text-sm text-textMain">Copywriting</span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer (Preserved exactly from context) -->
+    <footer id="footer" class="py-12 border-t border-white/5 bg-black/20 mt-12">
+        <div class="container mx-auto px-6 md:px-12 max-w-[1440px] flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-2xl font-serif tracking-wide flex items-center gap-2">
+                Michael <span class="text-accent text-sm">✦</span>
+            </div>
+            <div class="flex gap-6 text-textMuted">
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-dribbble text-xl"></i></a>
+            </div>
+            <p class="text-sm text-textMuted">© 2023 Michael Design. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

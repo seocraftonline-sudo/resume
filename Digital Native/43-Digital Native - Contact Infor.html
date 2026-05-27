@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Alex Mercer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.plot.ly/plotly-3.1.1.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            orange: '#FF6600',
+                            dark: '#0A0A0A',
+                            light: '#F5F5F5',
+                            border: '#E5E5E5'
+                        }
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF;
+            color: #0A0A0A;
+            -webkit-font-smoothing: antialiased;
+        }
+        ::-webkit-scrollbar { display: none; }
+        
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .noise-bg {
+            position: relative;
+        }
+        .noise-bg::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .input-glass {
+            background: #F5F5F5;
+            border: 1px solid #E5E5E5;
+            transition: all 0.3s ease;
+        }
+        .input-glass:focus {
+            outline: none;
+            border-color: #FF6600;
+            box-shadow: 0 0 0 4px rgba(255, 102, 0, 0.1);
+            background: #FFFFFF;
+        }
+        
+        .social-link-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .social-link-hover:hover {
+            transform: translateY(-4px);
+            border-color: #FF6600;
+            color: #FF6600;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans selection:bg-brand-orange selection:text-white m-0 p-0">
+
+    <header id="header" class="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
+        <nav class="glass-nav pointer-events-auto rounded-[32px] px-2 py-2 flex items-center gap-8 shadow-2xl border border-white/10">
+            <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center shrink-0 ml-1">
+                <i class="fa-solid fa-layer-group text-brand-dark text-lg"></i>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-6 text-sm font-medium text-white/80">
+                <a href="#" class="hover:text-white transition-colors">Work</a>
+                <a href="#" class="hover:text-white transition-colors">Expertise</a>
+                <a href="#" class="hover:text-white transition-colors">Writing</a>
+                <a href="#" class="hover:text-white transition-colors">Testimonials</a>
+                <a href="#" class="hover:text-white transition-colors">About</a>
+                <a href="#" class="text-white transition-colors font-bold border-b-2 border-brand-orange pb-0.5">Contact</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <a href="#" class="bg-brand-orange hover:bg-[#e65c00] text-white text-sm font-semibold px-6 py-2.5 rounded-full transition-all duration-300 shadow-[0_4px_14px_0_rgba(255,102,0,0.39)] hover:shadow-[0_6px_20px_rgba(255,102,0,0.23)]">
+                    Let's Talk
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow flex flex-col pt-32">
+        
+        <!-- Hero Section -->
+        <section id="contact-hero" class="relative w-full px-4 md:px-8 pt-16 pb-12 flex flex-col items-center text-center z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F5F5F5] border border-[#E5E5E5] mb-8">
+                <span class="w-2 h-2 rounded-full bg-[#10B981] animate-pulse"></span>
+                <span class="text-xs font-mono font-bold text-gray-600 uppercase tracking-wide">Available for new projects</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl lg:text-[90px] font-extrabold tracking-tight text-brand-dark max-w-5xl leading-[0.9] mb-8 uppercase font-sans" style="letter-spacing: -0.05em;">
+                Initiate<br/>Connection.
+            </h1>
+            
+            <div class="max-w-3xl mx-auto text-center space-y-4 text-lg md:text-xl text-gray-800 leading-relaxed font-sans p-8 glass-card rounded-[32px]">
+                <p class="font-medium">
+                    Whether you're looking to scale your infrastructure, architect a new system, or just want to discuss the future of digital product development. I'm based in London (GMT) and typically respond within 24 hours.
+                </p>
+            </div>
+        </section>
+
+        <div class="relative w-full noise-bg py-16 px-4 md:px-8 bg-[#F8F1EC] flex-grow">
+            <div class="max-w-[1440px] mx-auto relative z-10">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12">
+                    
+                    <!-- Form Column -->
+                    <div class="lg:col-span-7">
+                        <div class="glass-card rounded-[32px] p-8 md:p-12 border border-gray-200 bg-white">
+                            <h2 class="text-2xl font-bold text-brand-dark mb-8">Send a Message</h2>
+                            
+                            <form class="space-y-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="space-y-2">
+                                        <label for="name" class="block text-sm font-bold text-brand-dark">Full Name</label>
+                                        <input type="text" id="name" class="w-full input-glass rounded-[16px] px-6 py-4 text-brand-dark placeholder-gray-400 font-medium" placeholder="Jane Doe">
+                                    </div>
+                                    <div class="space-y-2">
+                                        <label for="email" class="block text-sm font-bold text-brand-dark">Email Address</label>
+                                        <input type="email" id="email" class="w-full input-glass rounded-[16px] px-6 py-4 text-brand-dark placeholder-gray-400 font-medium" placeholder="jane@example.com">
+                                    </div>
+                                </div>
+                                
+                                <div class="space-y-2">
+                                    <label for="company" class="block text-sm font-bold text-brand-dark">Company <span class="text-gray-400 font-normal">(Optional)</span></label>
+                                    <input type="text" id="company" class="w-full input-glass rounded-[16px] px-6 py-4 text-brand-dark placeholder-gray-400 font-medium" placeholder="Organization Name">
+                                </div>
+                                
+                                <div class="space-y-2">
+                                    <label for="subject" class="block text-sm font-bold text-brand-dark">Nature of Enquiry</label>
+                                    <div class="relative">
+                                        <select id="subject" class="w-full input-glass rounded-[16px] px-6 py-4 text-brand-dark font-medium appearance-none cursor-pointer">
+                                            <option>Project Consultation</option>
+                                            <option>Technical Advisory</option>
+                                            <option>Speaking Engagement</option>
+                                            <option>General Inquiry</option>
+                                        </select>
+                                        <i class="fa-solid fa-chevron-down absolute right-6 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="space-y-2">
+                                    <label for="message" class="block text-sm font-bold text-brand-dark">Message</label>
+                                    <textarea id="message" rows="5" class="w-full input-glass rounded-[16px] px-6 py-4 text-brand-dark placeholder-gray-400 font-medium resize-none" placeholder="Tell me about your project or infrastructure needs..."></textarea>
+                                </div>
+                                
+                                <button type="button" class="w-full bg-brand-dark hover:bg-black text-white font-bold py-4 px-8 rounded-[16px] transition-colors flex items-center justify-center gap-3">
+                                    <span>Transmit Message</span>
+                                    <i class="fa-solid fa-paper-plane text-brand-orange"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <!-- Sidebar Column -->
+                    <div class="lg:col-span-5 space-y-8">
+                        
+                        <!-- Direct Contact -->
+                        <div class="glass-card rounded-[32px] p-8 border border-gray-200 bg-white">
+                            <h3 class="text-xs font-mono font-bold text-gray-500 uppercase tracking-widest mb-6">Direct Channels</h3>
+                            
+                            <div class="space-y-4">
+                                <a href="mailto:hello@alexmercer.dev" class="flex items-center gap-4 p-4 rounded-[16px] bg-[#F5F5F5] hover:bg-[#E5E5E5] transition-colors group">
+                                    <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm text-brand-dark group-hover:text-brand-orange transition-colors">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs font-mono text-gray-500 mb-1">Email</div>
+                                        <div class="font-bold text-brand-dark">hello@alexmercer.dev</div>
+                                    </div>
+                                </a>
+                                
+                                <div class="flex items-center gap-4 p-4 rounded-[16px] bg-[#F5F5F5]">
+                                    <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm text-brand-dark">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs font-mono text-gray-500 mb-1">Location / Timezone</div>
+                                        <div class="font-bold text-brand-dark">London, UK (GMT/BST)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Social Grid -->
+                        <div class="glass-card rounded-[32px] p-8 border border-gray-200 bg-white">
+                            <h3 class="text-xs font-mono font-bold text-gray-500 uppercase tracking-widest mb-6">Digital Presence</h3>
+                            
+                            <div class="grid grid-cols-2 gap-4">
+                                <a href="#" class="social-link-hover flex flex-col items-center justify-center p-6 rounded-[24px] bg-[#F5F5F5] border border-transparent text-brand-dark">
+                                    <i class="fa-brands fa-github text-3xl mb-3"></i>
+                                    <span class="font-mono text-sm font-bold">GitHub</span>
+                                </a>
+                                <a href="#" class="social-link-hover flex flex-col items-center justify-center p-6 rounded-[24px] bg-[#F5F5F5] border border-transparent text-brand-dark">
+                                    <i class="fa-brands fa-linkedin text-3xl mb-3 text-[#0A66C2]"></i>
+                                    <span class="font-mono text-sm font-bold">LinkedIn</span>
+                                </a>
+                                <a href="#" class="social-link-hover flex flex-col items-center justify-center p-6 rounded-[24px] bg-[#F5F5F5] border border-transparent text-brand-dark">
+                                    <i class="fa-brands fa-twitter text-3xl mb-3"></i>
+                                    <span class="font-mono text-sm font-bold">Twitter/X</span>
+                                </a>
+                                <a href="#" class="social-link-hover flex flex-col items-center justify-center p-6 rounded-[24px] bg-[#F5F5F5] border border-transparent text-brand-dark">
+                                    <i class="fa-brands fa-dribbble text-3xl mb-3 text-[#EA4C89]"></i>
+                                    <span class="font-mono text-sm font-bold">Dribbble</span>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Booking Widget Placeholder -->
+                        <div class="glass-card rounded-[32px] p-8 border border-gray-200 bg-brand-dark text-white relative overflow-hidden">
+                            <div class="absolute inset-0 bg-black/40 z-10"></div>
+                            <div class="relative z-20 flex flex-col h-full">
+                                <h3 class="text-xl font-bold mb-2">Schedule a Discovery Call</h3>
+                                <p class="text-gray-400 text-sm mb-6">Skip the email back-and-forth and book 30 minutes directly on my calendar.</p>
+                                
+                                <button class="mt-auto bg-brand-orange hover:bg-[#e65c00] text-white font-bold py-3 px-6 rounded-full transition-colors flex items-center justify-center gap-2">
+                                    <i class="fa-regular fa-calendar"></i>
+                                    <span>Open Calendar</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer" class="bg-black py-12 px-4 border-t border-white/10 mt-auto">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-2 text-white font-bold text-xl">
+                <i class="fa-solid fa-layer-group text-brand-orange"></i> Alex Mercer
+            </div>
+            
+            <div class="flex gap-6">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-github text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-dribbble text-xl"></i></a>
+            </div>
+            
+            <div class="text-gray-500 text-sm">
+                &copy; 2024 Alex Mercer. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

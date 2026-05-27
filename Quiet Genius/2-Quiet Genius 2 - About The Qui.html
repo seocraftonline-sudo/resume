@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - The Quiet Genius</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        surface: '#F9FAFB',
+                        surfaceHover: '#F3F4F6',
+                        card: '#FFFFFF',
+                        textPrimary: '#111827',
+                        textSecondary: '#6B7280',
+                        accent: '#111827',
+                        accentHover: '#374151',
+                        border: '#E5E7EB',
+                        glass: 'rgba(255, 255, 255, 0.7)',
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'inner-soft': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.02)',
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { margin: 0; padding: 0; background-color: #F9FAFB; -webkit-font-smoothing: antialiased; }
+        ::-webkit-scrollbar { display: none; }
+        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3); }
+    </style>
+</head>
+<body class="text-textPrimary font-sans bg-surface min-h-screen flex flex-col relative overflow-x-hidden">
+
+    <!-- Decorative Background Elements -->
+    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-gradient-radial from-indigo-50/40 to-transparent opacity-60 blur-3xl"></div>
+        <div class="absolute bottom-[-10%] right-[-5%] w-[50%] h-[50%] rounded-full bg-gradient-radial from-purple-50/40 to-transparent opacity-60 blur-3xl"></div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header id="header" class="fixed top-0 w-full z-50 transition-all duration-300 bg-surface/80 backdrop-blur-md border-b border-border/50">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+            <a href="#" class="text-xl font-serif font-semibold tracking-tight text-textPrimary">A. Law</a>
+            
+            <nav class="hidden md:flex items-center space-x-10">
+                <a href="#" class="text-sm font-medium text-textSecondary hover:text-textPrimary transition-colors">Home</a>
+                <a href="#" class="text-sm font-medium text-textSecondary hover:text-textPrimary transition-colors">Work</a>
+                <a href="#" class="text-sm font-medium text-textPrimary border-b-2 border-textPrimary pb-1">About</a>
+                <a href="#" class="text-sm font-medium text-textSecondary hover:text-textPrimary transition-colors">Insights</a>
+            </nav>
+
+            <div class="flex items-center space-x-6">
+                <a href="#" class="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-card shadow-soft hover:shadow-md transition-all text-textPrimary">
+                    <i class="fa-solid fa-envelope text-sm"></i>
+                </a>
+                <button class="md:hidden text-textPrimary p-2">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow z-10 pt-32 pb-24 max-w-[1440px] mx-auto w-full px-6 lg:px-12 flex flex-col space-y-32">
+
+        <!-- Personal Introduction Hero -->
+        <section id="about-hero" class="flex flex-col lg:flex-row items-center justify-between gap-16 min-h-[60vh]">
+            <div class="w-full lg:w-1/2 flex flex-col space-y-8 relative">
+                <div class="space-y-4">
+                    <h1 class="text-5xl lg:text-7xl font-serif font-medium leading-tight tracking-tight text-textPrimary">
+                        Quietly shaping the future of digital interaction.
+                    </h1>
+                </div>
+                
+                <div class="space-y-6 text-base lg:text-lg text-textSecondary max-w-xl leading-relaxed font-light">
+                    <p>
+                        I believe that the best design is felt before it is seen. My journey into architecture wasn't about building structures, but about understanding how humans move through space—both physical and digital.
+                    </p>
+                    <p>
+                        Beyond the pixels and strategy, I am driven by a singular pursuit: clarity. In a world increasingly defined by noise and digital clutter, I find profound satisfaction in stripping away the unnecessary to reveal the essential truth of a product.
+                    </p>
+                </div>
+            </div>
+
+            <div class="w-full lg:w-1/2 flex justify-center lg:justify-end relative">
+                <div class="relative w-[320px] h-[400px] lg:w-[480px] lg:h-[600px] rounded-[40px] overflow-hidden shadow-2xl">
+                    <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/e0a068ab6a-d2066951f68c691ca7a1.png" alt="Editorial portrait of a sophisticated designer in a minimal studio space, soft natural light, high-end fashion aesthetic, quiet confidence, neutral tones" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-surface/40 to-transparent"></div>
+                </div>
+                <div class="absolute -bottom-8 -left-8 w-48 h-48 bg-white/40 backdrop-blur-2xl rounded-full blur-2xl z-[-1]"></div>
+            </div>
+        </section>
+
+        <!-- Professional Journey -->
+        <section id="professional-journey" class="flex flex-col space-y-16">
+            <div class="flex flex-col md:flex-row justify-between items-end border-b border-border/60 pb-8 gap-6">
+                <div class="space-y-2">
+                    <h2 class="text-3xl font-serif text-textPrimary">The Journey</h2>
+                    <p class="text-textSecondary text-sm">A narrative of progression.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div class="space-y-8">
+                    <h3 class="text-2xl font-serif text-textPrimary">From Architecture to Interfaces</h3>
+                    <p class="text-textSecondary leading-relaxed">
+                        My career didn't start behind a screen. It started in physical spaces, studying architectural design. I learned early on that a beautiful building is useless if people don't intuitively know how to navigate it. That fundamental truth—that form must follow human behavior—became the cornerstone of my transition into digital design.
+                    </p>
+                    <p class="text-textSecondary leading-relaxed">
+                        Over the past decade, I've applied those same architectural principles to complex digital ecosystems. Whether it's redefining wealth management platforms or crafting narrative-driven e-commerce experiences, the goal remains the same: build structures that empower rather than overwhelm.
+                    </p>
+                </div>
+                
+                <div class="space-y-8">
+                    <div class="glass-card p-8 rounded-[24px] shadow-soft flex flex-col space-y-4">
+                        <span class="text-xs text-textSecondary uppercase tracking-widest">2018 — Present</span>
+                        <h4 class="text-xl font-medium text-textPrimary">Independent Design Director</h4>
+                        <p class="text-sm text-textSecondary leading-relaxed">
+                            Partnering selectively with founders and product teams to architect high-stakes digital experiences. Focusing on fintech, luxury heritage brands, and complex SaaS platforms.
+                        </p>
+                    </div>
+                    <div class="glass-card p-8 rounded-[24px] shadow-soft flex flex-col space-y-4">
+                        <span class="text-xs text-textSecondary uppercase tracking-widest">2014 — 2018</span>
+                        <h4 class="text-xl font-medium text-textPrimary">Lead Designer, Studio O/N</h4>
+                        <p class="text-sm text-textSecondary leading-relaxed">
+                            Led the digital transformation practice, translating physical brand equity into robust, systemic digital languages for global lifestyle brands.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Values & Philosophy -->
+        <section id="core-values" class="bg-card rounded-[40px] p-12 lg:p-24 shadow-soft relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-radial from-surface/50 to-transparent opacity-50 blur-3xl rounded-full"></div>
+            
+            <div class="relative z-10 flex flex-col space-y-16">
+                <div class="text-center space-y-4 max-w-2xl mx-auto">
+                    <h2 class="text-3xl font-serif text-textPrimary">Core Philosophy</h2>
+                    <p class="text-textSecondary text-sm">The principles I never compromise on.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+                    <div class="flex flex-col space-y-4 text-center md:text-left">
+                        <span class="text-4xl font-serif text-border">01</span>
+                        <h3 class="text-xl font-medium text-textPrimary">Restraint is Power</h3>
+                        <p class="text-sm text-textSecondary leading-relaxed">
+                            Every element added to a screen is a tax on the user's cognitive load. I design by subtraction, ensuring only what is absolutely necessary remains.
+                        </p>
+                    </div>
+                    <div class="flex flex-col space-y-4 text-center md:text-left">
+                        <span class="text-4xl font-serif text-border">02</span>
+                        <h3 class="text-xl font-medium text-textPrimary">Systemic Thinking</h3>
+                        <p class="text-sm text-textSecondary leading-relaxed">
+                            Beautiful screens are fragile. Robust systems are scalable. I build design languages that anticipate growth and maintain integrity across every touchpoint.
+                        </p>
+                    </div>
+                    <div class="flex flex-col space-y-4 text-center md:text-left">
+                        <span class="text-4xl font-serif text-border">03</span>
+                        <h3 class="text-xl font-medium text-textPrimary">Quiet Confidence</h3>
+                        <p class="text-sm text-textSecondary leading-relaxed">
+                            True luxury and high-end utility don't need to shout. The best designs communicate trust and capability through meticulous attention to typography, spacing, and subtle motion.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Photo Gallery -->
+        <section id="photo-gallery" class="flex flex-col space-y-12">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                <div class="md:col-span-8 h-[400px] lg:h-[600px] rounded-[32px] overflow-hidden bg-card shadow-soft relative group">
+                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/c50d333462-30d6ba568f4ca547de74.png" alt="Cinematic wide shot of a designer presenting a minimalist interface to a small team in a sunlit, high-end architectural studio, muted tones" />
+                    <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="md:col-span-4 flex flex-col gap-6">
+                    <div class="h-[188px] lg:h-[288px] rounded-[32px] overflow-hidden bg-card shadow-soft relative group">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/ee0f0c38b1-e894cf595d4ab420442a.png" alt="Close up detail shot of hands sketching precise wireframes on a clean desk, architectural tools, soft lighting" />
+                    </div>
+                    <div class="h-[188px] lg:h-[288px] rounded-[32px] overflow-hidden bg-card shadow-soft relative group">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/98f8a64b21-f2b3644f506306e77fa8.png" alt="Portrait of the designer in deep focus at a clean workspace, minimal environment, quiet intensity" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Achievements & Milestones -->
+        <section id="achievements" class="flex flex-col space-y-16">
+            <div class="flex flex-col md:flex-row justify-between items-end border-b border-border/60 pb-8 gap-6">
+                <div class="space-y-2">
+                    <h2 class="text-3xl font-serif text-textPrimary">Milestones</h2>
+                    <p class="text-textSecondary text-sm">Significant moments of impact.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glass-card p-8 lg:p-10 rounded-[24px] shadow-soft flex flex-col space-y-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-medium text-textPrimary">Awwwards Site of the Year Nominee</h3>
+                        <span class="text-xs text-textSecondary uppercase tracking-wider">2022</span>
+                    </div>
+                    <p class="text-sm text-textSecondary leading-relaxed">
+                        Recognized for the architectural redesign of Maison Archive, setting a new standard for narrative-driven luxury e-commerce experiences.
+                    </p>
+                </div>
+
+                <div class="glass-card p-8 lg:p-10 rounded-[24px] shadow-soft flex flex-col space-y-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-medium text-textPrimary">Lumina Wealth Platform Launch</h3>
+                        <span class="text-xs text-textSecondary uppercase tracking-wider">2021</span>
+                    </div>
+                    <p class="text-sm text-textSecondary leading-relaxed">
+                        Led the end-to-end product design for a private banking platform that successfully managed over $1B in assets within its first six months.
+                    </p>
+                </div>
+
+                <div class="glass-card p-8 lg:p-10 rounded-[24px] shadow-soft flex flex-col space-y-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-medium text-textPrimary">Guest Lecturer, RISD</h3>
+                        <span class="text-xs text-textSecondary uppercase tracking-wider">2020</span>
+                    </div>
+                    <p class="text-sm text-textSecondary leading-relaxed">
+                        Invited to speak on "The Architecture of Silence in UI," discussing the psychological impact of negative space in digital interfaces.
+                    </p>
+                </div>
+
+                <div class="glass-card p-8 lg:p-10 rounded-[24px] shadow-soft flex flex-col space-y-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-medium text-textPrimary">Global Design System Deployment</h3>
+                        <span class="text-xs text-textSecondary uppercase tracking-wider">2019</span>
+                    </div>
+                    <p class="text-sm text-textSecondary leading-relaxed">
+                        Architected and deployed a unified design system across 14 international markets for a major enterprise client, reducing time-to-market by 40%.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Personal Interests -->
+        <section id="personal-interests" class="flex flex-col md:flex-row items-center gap-16">
+            <div class="w-full md:w-1/3">
+                <div class="w-full h-[400px] rounded-[32px] overflow-hidden bg-card shadow-soft relative">
+                    <img class="w-full h-full object-cover grayscale opacity-80" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/bb8a761584-bc1e1da43eaaa4c11545.png" alt="Minimalist black and white photography of brutalist architecture, sharp lines, deep shadows" />
+                </div>
+            </div>
+            <div class="w-full md:w-2/3 space-y-6">
+                <h2 class="text-3xl font-serif text-textPrimary">Beyond the Screen</h2>
+                <p class="text-textSecondary leading-relaxed text-lg font-light">
+                    When I am not designing digital systems, I am usually exploring physical ones. I spend my weekends photographing brutalist architecture, studying mid-century furniture design, and slowly curating a collection of rare design monographs. I find that studying how things are built in the physical world profoundly influences how I build them in the digital one.
+                </p>
+            </div>
+        </section>
+
+        <!-- Current Focus & CTA Footer -->
+        <section id="current-focus" class="mt-12 mb-12">
+            <div class="w-full bg-accent text-white rounded-[32px] p-12 lg:p-20 flex flex-col items-center text-center space-y-8 shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-white/5 blur-3xl rounded-full pointer-events-none"></div>
+                
+                <div class="space-y-6 max-w-2xl relative z-10">
+                    <span class="text-xs text-gray-400 uppercase tracking-widest">Current Focus</span>
+                    <h2 class="text-4xl lg:text-5xl font-serif font-medium leading-tight">Exploring the intersection of AI and quiet interfaces.</h2>
+                    <p class="text-gray-400 text-base lg:text-lg font-light">
+                        I am currently deep-diving into how artificial intelligence can make interfaces even more invisible. I'm accepting select advisory roles and design partnerships for Q4 2023.
+                    </p>
+                </div>
+                
+                <a href="mailto:hello@example.com" class="relative z-10 px-10 py-5 bg-white text-accent rounded-[24px] font-medium text-sm hover:bg-gray-100 transition-all shadow-lg flex items-center gap-3 mt-4">
+                    Start a Conversation <i class="fa-solid fa-envelope text-xs"></i>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Simple Footer -->
+    <footer id="footer" class="border-t border-border/50 bg-surface py-8 mt-auto">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-xs text-textSecondary">© 2023 Alex Law. All rights reserved.</p>
+            <div class="flex space-x-6">
+                <a href="#" class="text-textSecondary hover:text-textPrimary transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="text-textSecondary hover:text-textPrimary transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="text-textSecondary hover:text-textPrimary transition-colors"><i class="fa-brands fa-dribbble"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

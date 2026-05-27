@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills and Expertise - The Quiet Genius</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        surface: '#F9FAFB',
+                        surfaceHover: '#F3F4F6',
+                        card: '#FFFFFF',
+                        textPrimary: '#111827',
+                        textSecondary: '#6B7280',
+                        accent: '#111827',
+                        accentHover: '#374151',
+                        border: '#E5E7EB',
+                        glass: 'rgba(255, 255, 255, 0.7)',
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'inner-soft': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.02)',
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { margin: 0; padding: 0; background-color: #F9FAFB; -webkit-font-smoothing: antialiased; }
+        ::-webkit-scrollbar { display: none; }
+        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3); }
+        
+        /* Modal Transitions */
+        .modal-enter { opacity: 0; transform: scale(0.98) translateY(10px); }
+        .modal-enter-active { opacity: 1; transform: scale(1) translateY(0); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .modal-exit { opacity: 1; transform: scale(1) translateY(0); }
+        .modal-exit-active { opacity: 0; transform: scale(0.98) translateY(10px); transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+    </style>
+</head>
+<body class="text-textPrimary font-sans bg-surface min-h-screen flex flex-col relative overflow-x-hidden">
+
+    <!-- Decorative Background Elements -->
+    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-gradient-radial from-indigo-50/40 to-transparent opacity-60 blur-3xl"></div>
+        <div class="absolute bottom-[-10%] right-[-5%] w-[50%] h-[50%] rounded-full bg-gradient-radial from-purple-50/40 to-transparent opacity-60 blur-3xl"></div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header id="header" class="fixed top-0 w-full z-50 transition-all duration-300 bg-surface/80 backdrop-blur-md border-b border-border/50">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+            <a href="#" class="text-xl font-serif font-semibold tracking-tight text-textPrimary">A. Law</a>
+            
+            <nav class="hidden md:flex items-center space-x-10">
+                <a href="#" class="text-sm font-medium text-textSecondary hover:text-textPrimary transition-colors">Home</a>
+                <a href="#" class="text-sm font-medium text-textSecondary hover:text-textPrimary transition-colors">Work</a>
+                <a href="#" class="text-sm font-medium text-textSecondary hover:text-textPrimary transition-colors">Services</a>
+                <a href="#" class="text-sm font-medium text-textSecondary hover:text-textPrimary transition-colors">About</a>
+                <a href="#" class="text-sm font-medium text-textPrimary border-b-2 border-textPrimary pb-1">Resume</a>
+                <a href="#" class="text-sm font-medium text-textSecondary hover:text-textPrimary transition-colors">Insights</a>
+            </nav>
+
+            <div class="flex items-center space-x-6">
+                <a href="#" class="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-card shadow-soft hover:shadow-md transition-all text-textPrimary">
+                    <i class="fa-solid fa-envelope text-sm"></i>
+                </a>
+                <button class="md:hidden text-textPrimary p-2">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow z-10 pt-32 pb-24 max-w-[1440px] mx-auto w-full px-6 lg:px-12 flex flex-col space-y-32">
+
+        <!-- Skills Introduction Section -->
+        <section id="skills-intro" class="flex flex-col md:flex-row gap-12 lg:gap-24 items-start">
+            <div class="max-w-2xl space-y-8 flex-1">
+                <h1 class="text-6xl lg:text-7xl font-serif font-medium leading-tight tracking-tight text-textPrimary">
+                    Capabilities & Expertise
+                </h1>
+            </div>
+            <div class="max-w-xl flex-1 pt-4">
+                <p class="text-xl text-textSecondary font-light leading-relaxed">
+                    A deliberate intersection of systems thinking, visual rigor, and technical literacy. This combination enables me to bridge the gap between abstract strategic goals and concrete, highly functional product interfaces that development teams can actually build.
+                </p>
+            </div>
+        </section>
+
+        <!-- Core Competencies -->
+        <section id="core-competencies" class="flex flex-col space-y-16">
+            <div class="flex items-center space-x-4">
+                <h2 class="text-xs font-medium text-textSecondary uppercase tracking-widest border border-border/50 px-3 py-1 rounded-full">Core Competencies</h2>
+                <div class="h-px bg-border flex-grow max-w-xs"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Competency 1 -->
+                <div class="bg-card rounded-[24px] border border-border/60 shadow-soft p-10 flex flex-col h-full hover:border-textPrimary/20 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-surfaceHover flex items-center justify-center text-textPrimary mb-6 border border-border/50 shadow-inner-soft">
+                        <i class="fa-solid fa-sitemap text-lg"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif text-textPrimary mb-4">Systems Architecture</h3>
+                    <p class="text-sm text-textSecondary font-light leading-relaxed">
+                        Designing scalable, token-driven design systems that act as the single source of truth across product ecosystems. I focus on creating semantic structures that align design intent with engineering realities.
+                    </p>
+                </div>
+
+                <!-- Competency 2 -->
+                <div class="bg-card rounded-[24px] border border-border/60 shadow-soft p-10 flex flex-col h-full hover:border-textPrimary/20 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-surfaceHover flex items-center justify-center text-textPrimary mb-6 border border-border/50 shadow-inner-soft">
+                        <i class="fa-solid fa-eye text-lg"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif text-textPrimary mb-4">Interaction Design</h3>
+                    <p class="text-sm text-textSecondary font-light leading-relaxed">
+                        Crafting micro-interactions and macro user flows that reduce cognitive load. My approach relies on established mental models while introducing subtle, delightful moments of friction-free utility.
+                    </p>
+                </div>
+
+                <!-- Competency 3 -->
+                <div class="bg-card rounded-[24px] border border-border/60 shadow-soft p-10 flex flex-col h-full hover:border-textPrimary/20 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-surfaceHover flex items-center justify-center text-textPrimary mb-6 border border-border/50 shadow-inner-soft">
+                        <i class="fa-solid fa-chess-board text-lg"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif text-textPrimary mb-4">Product Strategy</h3>
+                    <p class="text-sm text-textSecondary font-light leading-relaxed">
+                        Translating ambiguous business objectives into clear product roadmaps. I excel at prioritizing features based on user value and technical feasibility, ensuring design efforts drive measurable impact.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills Matrix -->
+        <section id="technical-skills" class="flex flex-col space-y-16">
+            <div class="flex items-center space-x-4">
+                <h2 class="text-xs font-medium text-textSecondary uppercase tracking-widest border border-border/50 px-3 py-1 rounded-full">Technical Arsenal</h2>
+                <div class="h-px bg-border flex-grow max-w-xs"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Category 1 -->
+                <div class="space-y-6 bg-card rounded-[24px] border border-border/60 shadow-soft p-10">
+                    <h3 class="text-xl font-serif text-textPrimary border-b border-border/40 pb-4">Design & Prototyping</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-surfaceHover border border-border/50 rounded-full text-sm text-textPrimary font-medium">Figma (Expert)</span>
+                        <span class="px-4 py-2 bg-surfaceHover border border-border/50 rounded-full text-sm text-textPrimary font-medium">Framer</span>
+                        <span class="px-4 py-2 bg-surfaceHover border border-border/50 rounded-full text-sm text-textPrimary font-medium">Principle</span>
+                        <span class="px-4 py-2 bg-surfaceHover border border-border/50 rounded-full text-sm text-textPrimary font-medium">Sketch</span>
+                        <span class="px-4 py-2 bg-surfaceHover border border-border/50 rounded-full text-sm text-textPrimary font-medium">Adobe Creative Suite</span>
+                    </div>
+                </div>
+
+                <!-- Category 2 -->
+                <div class="space-y-6 bg-card rounded-[24px] border border-border/60 shadow-soft p-10">
+                    <h3 class="text-xl font-serif text-textPrimary border-b border-border/40 pb-4">Frontend & Code</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-surfaceHover border border-border/50 rounded-full text-sm text-textPrimary font-medium">HTML/CSS</span>
+                        <span class="px-4 py-2 bg-surfaceHover border border-border/50 rounded-full text-sm text-textPrimary font-medium">Tailwind CSS</span>
+                        <span class="px-4 py-2 bg-surfaceHover border border-border/50 rounded-full text-sm text-textSecondary font-medium">React (Working Knowledge)</span>
+                        <span class="px-4 py-2 bg-surfaceHover border border-border/50 rounded-full text-sm text-textSecondary font-medium">JavaScript (Basic)</span>
+                        <span class="px-4 py-2 bg-surfaceHover border border-border/50 rounded-full text-sm text-textPrimary font-medium">Git / Version Control</span>
+                    </div>
+                </div>
+
+                <!-- Category 3 -->
+                <div class="space-y-6 bg-card rounded-[24px] border border-border/60 shadow-soft p-10">
+                    <h3 class="text-xl font-serif text-textPrimary border-b border-border/40 pb-4">Research & Data</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-surfaceHover border border-border/50 rounded-full text-sm text-textPrimary font-medium">User Testing</span>
+                        <span class="px-4 py-2 bg-surfaceHover border border-border/50 rounded-full text-sm text-textPrimary font-medium">Mixpanel</span>
+                        <span class="px-4 py-2 bg-surfaceHover border border-border/50 rounded-full text-sm text-textPrimary font-medium">Google Analytics</span>
+                        <span class="px-4 py-2 bg-surfaceHover border border-border/50 rounded-full text-sm text-textPrimary font-medium">Dovetail</span>
+                        <span class="px-4 py-2 bg-surfaceHover border border-border/50 rounded-full text-sm text-textSecondary font-medium">SQL (Basic)</span>
+                    </div>
+                </div>
+
+                <!-- Category 4 -->
+                <div class="space-y-6 bg-card rounded-[24px] border border-border/60 shadow-soft p-10">
+                    <h3 class="text-xl font-serif text-textPrimary border-b border-border/40 pb-4">Methodologies</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-surfaceHover border border-border/50 rounded-full text-sm text-textPrimary font-medium">Agile / Scrum</span>
+                        <span class="px-4 py-2 bg-surfaceHover border border-border/50 rounded-full text-sm text-textPrimary font-medium">Design Thinking</span>
+                        <span class="px-4 py-2 bg-surfaceHover border border-border/50 rounded-full text-sm text-textPrimary font-medium">Jobs To Be Done (JTBD)</span>
+                        <span class="px-4 py-2 bg-surfaceHover border border-border/50 rounded-full text-sm text-textPrimary font-medium">Atomic Design</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Soft Skills & Industry Knowledge -->
+        <section id="soft-skills-industry" class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            
+            <!-- Soft Skills -->
+            <div class="flex flex-col space-y-10">
+                <div class="flex items-center space-x-4">
+                    <h2 class="text-xs font-medium text-textSecondary uppercase tracking-widest border border-border/50 px-3 py-1 rounded-full">Professional Qualities</h2>
+                    <div class="h-px bg-border flex-grow max-w-xs"></div>
+                </div>
+
+                <div class="space-y-8">
+                    <!-- Skill 1 -->
+                    <div class="border-l-2 border-border/60 pl-6 hover:border-textPrimary/40 transition-colors">
+                        <h4 class="text-lg font-medium text-textPrimary mb-2">Cross-functional Leadership</h4>
+                        <p class="text-sm text-textSecondary font-light leading-relaxed">
+                            Successfully aligned 4 distinct engineering pods around a unified design system, reducing redundant front-end code by 30% over six months.
+                        </p>
+                    </div>
+                    <!-- Skill 2 -->
+                    <div class="border-l-2 border-border/60 pl-6 hover:border-textPrimary/40 transition-colors">
+                        <h4 class="text-lg font-medium text-textPrimary mb-2">Stakeholder Management</h4>
+                        <p class="text-sm text-textSecondary font-light leading-relaxed">
+                            Routinely present design rationale to C-suite executives, framing UX decisions in the context of business metrics (LTV, CAC, Retention).
+                        </p>
+                    </div>
+                    <!-- Skill 3 -->
+                    <div class="border-l-2 border-border/60 pl-6 hover:border-textPrimary/40 transition-colors">
+                        <h4 class="text-lg font-medium text-textPrimary mb-2">Mentorship & Team Building</h4>
+                        <p class="text-sm text-textSecondary font-light leading-relaxed">
+                            Grew a design team from 2 to 8, establishing hiring rubrics, onboarding processes, and weekly critique rituals that elevated the team's output quality.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Industry Knowledge -->
+            <div class="flex flex-col space-y-10">
+                <div class="flex items-center space-x-4">
+                    <h2 class="text-xs font-medium text-textSecondary uppercase tracking-widest border border-border/50 px-3 py-1 rounded-full">Domain Expertise</h2>
+                    <div class="h-px bg-border flex-grow max-w-xs"></div>
+                </div>
+
+                <div class="bg-card rounded-[24px] border border-border/60 shadow-soft p-10 h-full">
+                    <ul class="space-y-6">
+                        <li class="flex items-start">
+                            <span class="w-1.5 h-1.5 rounded-full bg-textPrimary mt-2 mr-4 flex-shrink-0"></span>
+                            <div>
+                                <h4 class="text-base font-medium text-textPrimary">B2B SaaS (Enterprise)</h4>
+                                <p class="text-sm text-textSecondary font-light mt-1">Deep experience designing complex data tables, permissions models, and multi-tenant architectures.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-1.5 h-1.5 rounded-full bg-textPrimary mt-2 mr-4 flex-shrink-0"></span>
+                            <div>
+                                <h4 class="text-base font-medium text-textPrimary">FinTech & Wealth Management</h4>
+                                <p class="text-sm text-textSecondary font-light mt-1">Navigating regulatory constraints while simplifying complex financial data visualization.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-1.5 h-1.5 rounded-full bg-textPrimary mt-2 mr-4 flex-shrink-0"></span>
+                            <div>
+                                <h4 class="text-base font-medium text-textPrimary">Healthcare Technology</h4>
+                                <p class="text-sm text-textSecondary font-light mt-1">Understanding HIPAA compliance impacts on UX and designing for clinical workflows.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Currently Learning & Timeline -->
+        <section id="development" class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            
+            <!-- Currently Learning -->
+            <div class="lg:col-span-1 flex flex-col space-y-8">
+                <div class="flex items-center space-x-4">
+                    <h2 class="text-xs font-medium text-textSecondary uppercase tracking-widest border border-border/50 px-3 py-1 rounded-full">Currently Exploring</h2>
+                </div>
+                
+                <div class="bg-card rounded-[24px] border border-border/60 shadow-soft p-8 h-full">
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-base font-medium text-textPrimary mb-2">Generative AI in UX Workflows</h4>
+                            <p class="text-sm text-textSecondary font-light leading-relaxed">
+                                Exploring how LLMs can accelerate qualitative research synthesis and generate initial copy variations for A/B testing.
+                            </p>
+                        </div>
+                        <div class="h-px bg-border/40 w-full"></div>
+                        <div>
+                            <h4 class="text-base font-medium text-textPrimary mb-2">Advanced Framer Physics</h4>
+                            <p class="text-sm text-textSecondary font-light leading-relaxed">
+                                Moving beyond basic transitions to create complex, physics-based interactions that feel organic and tactile.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="lg:col-span-2 flex flex-col space-y-8">
+                <div class="flex items-center space-x-4">
+                    <h2 class="text-xs font-medium text-textSecondary uppercase tracking-widest border border-border/50 px-3 py-1 rounded-full">Skill Evolution</h2>
+                    <div class="h-px bg-border flex-grow"></div>
+                </div>
+
+                <div class="bg-card rounded-[24px] border border-border/60 shadow-soft p-10">
+                    <div class="relative border-l border-border/60 ml-4 space-y-10 pb-4">
+                        
+                        <!-- Timeline Item 1 -->
+                        <div class="relative pl-8">
+                            <div class="absolute w-3 h-3 bg-card border-2 border-textPrimary rounded-full -left-[6.5px] top-1.5"></div>
+                            <div class="text-xs font-medium text-textSecondary tracking-widest uppercase mb-1">Present Focus</div>
+                            <h4 class="text-lg font-serif text-textPrimary mb-2">Strategic Architecture & Leadership</h4>
+                            <p class="text-sm text-textSecondary font-light leading-relaxed max-w-xl">
+                                Transitioned from pure execution to defining the systems that enable execution. Focus on organizational design maturity, cross-functional alignment, and scaling design operations.
+                            </p>
+                        </div>
+
+                        <!-- Timeline Item 2 -->
+                        <div class="relative pl-8">
+                            <div class="absolute w-3 h-3 bg-surfaceHover border-2 border-border rounded-full -left-[6.5px] top-1.5"></div>
+                            <div class="text-xs font-medium text-textSecondary tracking-widest uppercase mb-1">2019 - 2022</div>
+                            <h4 class="text-lg font-serif text-textPrimary mb-2">Systems & Interaction Mastery</h4>
+                            <p class="text-sm text-textSecondary font-light leading-relaxed max-w-xl">
+                                Deep dive into atomic design principles. Built three major enterprise design systems from scratch. Mastered high-fidelity prototyping to communicate complex interactions.
+                            </p>
+                        </div>
+
+                        <!-- Timeline Item 3 -->
+                        <div class="relative pl-8">
+                            <div class="absolute w-3 h-3 bg-surfaceHover border-2 border-border rounded-full -left-[6.5px] top-1.5"></div>
+                            <div class="text-xs font-medium text-textSecondary tracking-widest uppercase mb-1">2015 - 2018</div>
+                            <h4 class="text-lg font-serif text-textPrimary mb-2">Visual Foundation & Frontend Basics</h4>
+                            <p class="text-sm text-textSecondary font-light leading-relaxed max-w-xl">
+                                Established rigorous typographic and spatial discipline. Learned HTML/CSS to better understand the medium and communicate effectively with engineering teams.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Simple Footer -->
+    <footer id="footer" class="border-t border-border/50 bg-surface py-8 mt-auto">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-xs text-textSecondary">© 2023 Alex Law. All rights reserved.</p>
+            <div class="flex space-x-6">
+                <a href="#" class="text-textSecondary hover:text-textPrimary transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="text-textSecondary hover:text-textPrimary transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="text-textSecondary hover:text-textPrimary transition-colors"><i class="fa-brands fa-dribbble"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

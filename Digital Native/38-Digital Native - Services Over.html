@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Alex Mercer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            orange: '#FF6600',
+                            dark: '#0A0A0A',
+                            light: '#F5F5F5',
+                            border: '#E5E5E5'
+                        }
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF;
+            color: #0A0A0A;
+            -webkit-font-smoothing: antialiased;
+        }
+        ::-webkit-scrollbar { display: none; }
+        
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .noise-bg {
+            position: relative;
+        }
+        .noise-bg::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .terminal-line {
+            position: relative;
+            padding-left: 2rem;
+        }
+        .terminal-line::before {
+            content: ">";
+            position: absolute;
+            left: 0;
+            color: #FF6600;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .hide-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans selection:bg-brand-orange selection:text-white m-0 p-0">
+
+    <!-- Navigation -->
+    <header id="header" class="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
+        <nav class="glass-nav pointer-events-auto rounded-[32px] px-2 py-2 flex items-center gap-8 shadow-2xl border border-white/10">
+            <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center shrink-0 ml-1">
+                <i class="fa-solid fa-layer-group text-brand-dark text-lg"></i>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-6 text-sm font-medium text-white/80">
+                <a href="#" class="hover:text-white transition-colors">Work</a>
+                <a href="#" class="text-white transition-colors font-bold border-b-2 border-brand-orange pb-0.5">Expertise</a>
+                <a href="#" class="hover:text-white transition-colors">Writing</a>
+                <a href="#" class="hover:text-white transition-colors">About</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <a href="#" class="bg-brand-orange hover:bg-[#e65c00] text-white text-sm font-semibold px-6 py-2.5 rounded-full transition-all duration-300 shadow-[0_4px_14px_0_rgba(255,102,0,0.39)] hover:shadow-[0_6px_20px_rgba(255,102,0,0.23)]">
+                    Let's Talk
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow flex flex-col pt-32">
+        
+        <!-- Services Hero -->
+        <section id="services-hero" class="relative w-full px-4 md:px-8 pt-16 pb-24 flex flex-col items-center text-center z-10 border-b border-gray-200">
+            <h1 class="text-5xl md:text-7xl lg:text-[90px] font-extrabold tracking-tight text-brand-dark max-w-5xl leading-[0.9] mb-8 uppercase font-sans" style="letter-spacing: -0.05em;">
+                Engineering<br/>Outcomes.
+            </h1>
+            
+            <div class="max-w-3xl mx-auto text-center space-y-4 text-lg md:text-xl text-gray-800 leading-relaxed font-sans p-8 glass-card rounded-[32px]">
+                <p class="font-medium">
+                    I translate complex business requirements into scalable, performant digital infrastructure. My services are designed for teams that need to move fast without compromising on technical excellence or user experience.
+                </p>
+                <div class="pt-6">
+                    <a href="#services-grid" class="inline-flex items-center gap-2 bg-brand-dark hover:bg-black text-white text-sm font-semibold px-8 py-3 rounded-full transition-all duration-300 shadow-md">
+                        Explore Capabilities <i class="fa-solid fa-arrow-down"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Content Area -->
+        <div class="relative w-full noise-bg py-24 px-4 md:px-8 bg-[#F8F1EC]">
+            <div class="max-w-[1440px] mx-auto relative z-10">
+
+                <!-- Services Grid -->
+                <section id="services-grid" class="mb-32">
+                    <div class="mb-12">
+                        <h2 class="text-3xl md:text-4xl font-bold text-brand-dark font-sans tracking-tight mb-4">Core Capabilities</h2>
+                        <p class="text-gray-600 max-w-2xl font-medium">Specialised engagements focused on delivering measurable technical and business value.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        
+                        <!-- Service Card 1 -->
+                        <div class="glass-card rounded-[32px] p-8 md:p-12 border border-gray-200 hover:border-brand-orange/50 transition-all duration-300 shadow-lg group flex flex-col h-full relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-64 h-64 bg-brand-orange/5 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2 group-hover:bg-brand-orange/10 transition-colors duration-500"></div>
+                            
+                            <div class="flex items-start justify-between mb-8">
+                                <div class="w-16 h-16 bg-brand-dark text-white rounded-2xl flex items-center justify-center text-2xl shadow-md">
+                                    <i class="fa-solid fa-network-wired"></i>
+                                </div>
+                                <span class="px-3 py-1.5 bg-brand-orange/10 text-brand-orange text-xs font-mono font-bold rounded uppercase tracking-wider">Architecture</span>
+                            </div>
+                            
+                            <h3 class="text-3xl font-extrabold text-brand-dark mb-4 tracking-tight">System Architecture Design</h3>
+                            <p class="text-lg text-gray-700 leading-relaxed font-medium mb-8 flex-grow">
+                                Comprehensive blueprinting for new applications or modernization of legacy systems. I design scalable, resilient architectures that align with your team's capabilities and business goals.
+                            </p>
+                            
+                            <div class="space-y-6 mb-10">
+                                <div>
+                                    <h4 class="text-xs font-mono font-bold text-gray-500 uppercase tracking-widest mb-2">Best Suited For</h4>
+                                    <p class="text-sm text-brand-dark font-medium">Startups scaling beyond MVP, or enterprises migrating to microservices.</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-mono font-bold text-gray-500 uppercase tracking-widest mb-2">Typical Deliverables</h4>
+                                    <ul class="space-y-2 font-mono text-sm text-gray-600">
+                                        <li class="terminal-line">Technical Specification Documents</li>
+                                        <li class="terminal-line">Component & Data Flow Diagrams</li>
+                                        <li class="terminal-line">Technology Stack Recommendations</li>
+                                    </ul>
+                                </div>
+                                <div class="flex items-center gap-4 pt-4 border-t border-gray-200/60">
+                                    <div class="text-sm font-mono text-gray-500"><i class="fa-regular fa-clock text-brand-orange"></i> 2-4 Weeks</div>
+                                    <div class="text-sm font-mono text-gray-500"><i class="fa-solid fa-tag text-brand-orange"></i> From $15k</div>
+                                </div>
+                            </div>
+                            
+                            <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-brand-dark hover:bg-black text-white text-sm font-semibold px-6 py-3.5 rounded-full transition-all duration-300 w-full md:w-auto">
+                                Discuss Architecture <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+
+                        <!-- Service Card 2 -->
+                        <div class="glass-card rounded-[32px] p-8 md:p-12 border border-gray-200 hover:border-brand-orange/50 transition-all duration-300 shadow-lg group flex flex-col h-full relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2 group-hover:bg-blue-500/10 transition-colors duration-500"></div>
+                            
+                            <div class="flex items-start justify-between mb-8">
+                                <div class="w-16 h-16 bg-white border border-gray-200 text-brand-dark rounded-2xl flex items-center justify-center text-2xl shadow-sm">
+                                    <i class="fa-solid fa-gauge-high"></i>
+                                </div>
+                                <span class="px-3 py-1.5 bg-gray-200 text-gray-700 text-xs font-mono font-bold rounded uppercase tracking-wider">Optimization</span>
+                            </div>
+                            
+                            <h3 class="text-3xl font-extrabold text-brand-dark mb-4 tracking-tight">Performance Engineering</h3>
+                            <p class="text-lg text-gray-700 leading-relaxed font-medium mb-8 flex-grow">
+                                Deep-dive analysis and remediation of application bottlenecks. I identify and resolve issues causing slow load times, poor interaction metrics, or excessive infrastructure costs.
+                            </p>
+                            
+                            <div class="space-y-6 mb-10">
+                                <div>
+                                    <h4 class="text-xs font-mono font-bold text-gray-500 uppercase tracking-widest mb-2">Best Suited For</h4>
+                                    <p class="text-sm text-brand-dark font-medium">Applications suffering from poor Core Web Vitals or high churn due to latency.</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-mono font-bold text-gray-500 uppercase tracking-widest mb-2">Typical Deliverables</h4>
+                                    <ul class="space-y-2 font-mono text-sm text-gray-600">
+                                        <li class="terminal-line">Comprehensive Performance Audit</li>
+                                        <li class="terminal-line">Implementation of Code-Splitting & Caching</li>
+                                        <li class="terminal-line">Custom Monitoring Dashboard Setup</li>
+                                    </ul>
+                                </div>
+                                <div class="flex items-center gap-4 pt-4 border-t border-gray-200/60">
+                                    <div class="text-sm font-mono text-gray-500"><i class="fa-regular fa-clock text-brand-orange"></i> 1-2 Weeks</div>
+                                    <div class="text-sm font-mono text-gray-500"><i class="fa-solid fa-tag text-brand-orange"></i> From $8k</div>
+                                </div>
+                            </div>
+                            
+                            <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-white border border-gray-200 hover:border-brand-dark text-brand-dark text-sm font-semibold px-6 py-3.5 rounded-full transition-all duration-300 w-full md:w-auto shadow-sm hover:shadow-md">
+                                Request Audit <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </section>
+
+                <hr class="border-gray-300 my-24">
+
+                <!-- Process Methodology -->
+                <section id="process-methodology" class="mb-32">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold text-brand-dark font-sans tracking-tight mb-4">Engagement Methodology</h2>
+                        <p class="text-gray-600 max-w-2xl mx-auto font-medium">A transparent, structured approach to delivering technical solutions without the typical agency overhead.</p>
+                    </div>
+
+                    <div class="relative">
+                        <!-- Connecting Line -->
+                        <div class="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-200 -translate-y-1/2 z-0"></div>
+
+                        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 relative z-10">
+                            
+                            <!-- Step 1 -->
+                            <div class="glass-card rounded-[24px] p-8 border border-gray-200 shadow-sm relative">
+                                <div class="w-12 h-12 bg-brand-dark text-white rounded-full flex items-center justify-center font-mono font-bold text-lg mb-6 shadow-md mx-auto lg:mx-0 border-4 border-[#F8F1EC]">
+                                    01
+                                </div>
+                                <h4 class="text-xl font-bold text-brand-dark mb-3 text-center lg:text-left">Discovery & Scope</h4>
+                                <p class="text-sm text-gray-600 font-medium text-center lg:text-left">
+                                    We align on business objectives, technical constraints, and define clear success metrics before any code is written.
+                                </p>
+                            </div>
+
+                            <!-- Step 2 -->
+                            <div class="glass-card rounded-[24px] p-8 border border-gray-200 shadow-sm relative">
+                                <div class="w-12 h-12 bg-white border border-gray-200 text-brand-dark rounded-full flex items-center justify-center font-mono font-bold text-lg mb-6 shadow-sm mx-auto lg:mx-0 border-4 border-[#F8F1EC]">
+                                    02
+                                </div>
+                                <h4 class="text-xl font-bold text-brand-dark mb-3 text-center lg:text-left">Architecture Proposal</h4>
+                                <p class="text-sm text-gray-600 font-medium text-center lg:text-left">
+                                    Delivery of technical specifications, architecture diagrams, and a phased implementation roadmap.
+                                </p>
+                            </div>
+
+                            <!-- Step 3 -->
+                            <div class="glass-card rounded-[24px] p-8 border border-brand-orange shadow-md relative">
+                                <div class="w-12 h-12 bg-brand-orange text-white rounded-full flex items-center justify-center font-mono font-bold text-lg mb-6 shadow-[0_4px_14px_0_rgba(255,102,0,0.39)] mx-auto lg:mx-0 border-4 border-[#F8F1EC]">
+                                    03
+                                </div>
+                                <h4 class="text-xl font-bold text-brand-dark mb-3 text-center lg:text-left">Execution Sprints</h4>
+                                <p class="text-sm text-gray-600 font-medium text-center lg:text-left">
+                                    Iterative development cycles with weekly syncs, continuous integration, and transparent progress tracking.
+                                </p>
+                            </div>
+
+                            <!-- Step 4 -->
+                            <div class="glass-card rounded-[24px] p-8 border border-gray-200 shadow-sm relative">
+                                <div class="w-12 h-12 bg-white border border-gray-200 text-brand-dark rounded-full flex items-center justify-center font-mono font-bold text-lg mb-6 shadow-sm mx-auto lg:mx-0 border-4 border-[#F8F1EC]">
+                                    04
+                                </div>
+                                <h4 class="text-xl font-bold text-brand-dark mb-3 text-center lg:text-left">Handoff & Support</h4>
+                                <p class="text-sm text-gray-600 font-medium text-center lg:text-left">
+                                    Comprehensive documentation, team knowledge transfer sessions, and optional retained advisory support.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+                <hr class="border-gray-300 my-24">
+
+                <!-- Packages & FAQ Split Section -->
+                <section id="packages-faq" class="mb-24">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+                        
+                        <!-- Advisory Packages -->
+                        <div class="lg:col-span-5">
+                            <h2 class="text-3xl font-bold text-brand-dark font-sans tracking-tight mb-8">Retained Advisory</h2>
+                            <p class="text-gray-600 font-medium mb-8">For teams that need ongoing architectural guidance and senior engineering perspective without the commitment of a full-time hire.</p>
+                            
+                            <div class="space-y-6">
+                                <!-- Package 1 -->
+                                <div class="glass-card rounded-[24px] p-8 border border-gray-200 shadow-sm">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <h3 class="text-xl font-bold text-brand-dark">Technical Advisor</h3>
+                                        <span class="text-lg font-mono font-bold text-brand-dark">$4k<span class="text-sm text-gray-500 font-normal">/mo</span></span>
+                                    </div>
+                                    <ul class="space-y-3 font-mono text-sm text-gray-600 mb-6">
+                                        <li class="terminal-line">Weekly 1hr Strategic Sync</li>
+                                        <li class="terminal-line">Architecture Review (Async)</li>
+                                        <li class="terminal-line">Private Slack Channel Access</li>
+                                    </ul>
+                                    <a href="#" class="block w-full text-center bg-white border border-gray-200 hover:border-brand-dark text-brand-dark text-sm font-semibold px-6 py-3 rounded-full transition-all duration-300">Enquire</a>
+                                </div>
+
+                                <!-- Package 2 -->
+                                <div class="glass-card rounded-[24px] p-8 border border-brand-dark shadow-md bg-white/40">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <div>
+                                            <h3 class="text-xl font-bold text-brand-dark">Fractional Architect</h3>
+                                            <span class="inline-block mt-1 px-2 py-0.5 bg-brand-dark text-white text-[10px] font-mono font-bold rounded uppercase tracking-wider">Most Popular</span>
+                                        </div>
+                                        <span class="text-lg font-mono font-bold text-brand-dark">$9k<span class="text-sm text-gray-500 font-normal">/mo</span></span>
+                                    </div>
+                                    <ul class="space-y-3 font-mono text-sm text-gray-600 mb-6">
+                                        <li class="terminal-line">10 Hours Dedicated Weekly</li>
+                                        <li class="terminal-line">Direct Code & PR Reviews</li>
+                                        <li class="terminal-line">Team Mentorship Sessions</li>
+                                        <li class="terminal-line">Vendor Evaluation Support</li>
+                                    </ul>
+                                    <a href="#" class="block w-full text-center bg-brand-dark hover:bg-black text-white text-sm font-semibold px-6 py-3 rounded-full transition-all duration-300">Enquire</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ -->
+                        <div class="lg:col-span-7">
+                            <h2 class="text-3xl font-bold text-brand-dark font-sans tracking-tight mb-8">Common Inquiries</h2>
+                            
+                            <div class="space-y-4">
+                                <!-- FAQ Item 1 -->
+                                <div class="glass-card rounded-[16px] border border-gray-200 overflow-hidden">
+                                    <details class="group" open>
+                                        <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-brand-dark">
+                                            <span>What is your typical availability?</span>
+                                            <span class="transition group-open:rotate-180">
+                                                <i class="fa-solid fa-chevron-down text-brand-orange"></i>
+                                            </span>
+                                        </summary>
+                                        <div class="text-gray-600 font-medium px-6 pb-6 pt-0">
+                                            I typically book project-based work 4-6 weeks in advance. For advisory retainers, I maintain limited slots to ensure high responsiveness for existing clients. Contact me to check current quarter availability.
+                                        </div>
+                                    </details>
+                                </div>
+
+                                <!-- FAQ Item 2 -->
+                                <div class="glass-card rounded-[16px] border border-gray-200 overflow-hidden">
+                                    <details class="group">
+                                        <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-brand-dark">
+                                            <span>Do you work with in-house engineering teams?</span>
+                                            <span class="transition group-open:rotate-180">
+                                                <i class="fa-solid fa-chevron-down text-brand-orange"></i>
+                                            </span>
+                                        </summary>
+                                        <div class="text-gray-600 font-medium px-6 pb-6 pt-0">
+                                            Yes, the majority of my engagements involve augmenting or guiding existing in-house teams. I focus heavily on knowledge transfer and upskilling your current engineers rather than creating dependency.
+                                        </div>
+                                    </details>
+                                </div>
+
+                                <!-- FAQ Item 3 -->
+                                <div class="glass-card rounded-[16px] border border-gray-200 overflow-hidden">
+                                    <details class="group">
+                                        <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-brand-dark">
+                                            <span>Are you open to full-time roles?</span>
+                                            <span class="transition group-open:rotate-180">
+                                                <i class="fa-solid fa-chevron-down text-brand-orange"></i>
+                                            </span>
+                                        </summary>
+                                        <div class="text-gray-600 font-medium px-6 pb-6 pt-0">
+                                            I am currently operating strictly as an independent consultant and am not seeking full-time employment. However, I often take on interim leadership roles (3-6 months) to help establish technical direction while you hire a permanent lead.
+                                        </div>
+                                    </details>
+                                </div>
+                                
+                                <!-- FAQ Item 4 -->
+                                <div class="glass-card rounded-[16px] border border-gray-200 overflow-hidden">
+                                    <details class="group">
+                                        <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-brand-dark">
+                                            <span>What stack do you specialize in?</span>
+                                            <span class="transition group-open:rotate-180">
+                                                <i class="fa-solid fa-chevron-down text-brand-orange"></i>
+                                            </span>
+                                        </summary>
+                                        <div class="text-gray-600 font-medium px-6 pb-6 pt-0">
+                                            While I am framework-agnostic at an architectural level, my deepest expertise lies in the JavaScript/TypeScript ecosystem (React, Next.js, Node.js), cloud-native infrastructure (AWS, GCP), and high-performance WebGL rendering.
+                                        </div>
+                                    </details>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <section id="contact" class="bg-brand-dark py-24 px-4 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">Ready to build something exceptional?</h2>
+                <p class="text-xl text-gray-400 mb-10">I'm currently accepting new projects for Q3. Let's discuss how we can elevate your digital product.</p>
+                <a href="#" class="inline-flex items-center justify-center bg-brand-orange hover:bg-[#e65c00] text-white text-lg font-semibold px-10 py-4 rounded-full transition-all duration-300 shadow-[0_4px_14px_0_rgba(255,102,0,0.39)] hover:shadow-[0_6px_20px_rgba(255,102,0,0.23)]">
+                    Start a Conversation
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-black py-12 px-4 border-t border-white/10">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-2 text-white font-bold text-xl">
+                <i class="fa-solid fa-layer-group text-brand-orange"></i> Alex Mercer
+            </div>
+            
+            <div class="flex gap-6">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-github text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-dribbble text-xl"></i></a>
+            </div>
+            
+            <div class="text-gray-500 text-sm">
+                &copy; 2024 Alex Mercer. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

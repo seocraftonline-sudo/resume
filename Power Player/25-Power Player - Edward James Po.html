@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Edward James</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        surface: '#F9FAFB',
+                        card: '#F3F4F6',
+                        primary: '#111827',
+                        secondary: '#4B5563',
+                        accent: '#4F46E5',
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px rgba(0, 0, 0, 0.05)',
+                        'glow': '0 0 20px rgba(79, 70, 229, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #F9FAFB;
+            color: #111827;
+            -webkit-font-smoothing: antialiased;
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        
+        /* Modal Styles */
+        .modal-open { overflow: hidden; }
+        .modal-overlay {
+            background-color: rgba(17, 24, 39, 0.95);
+            backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+<body class="m-0 p-0 bg-surface min-h-screen flex flex-col font-sans">
+
+    <!-- Navigation (Preserved from Context) -->
+    <nav id="header" class="w-full bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">
+                    EJ
+                </div>
+                <span class="font-semibold text-lg tracking-tight">Edward James</span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-secondary">
+                <a href="#" class="hover:text-primary transition-colors">Home</a>
+                <a href="#" class="hover:text-primary transition-colors">About</a>
+                <a href="#" class="hover:text-primary transition-colors">Expertise</a>
+                <a href="#" class="text-primary font-bold transition-colors border-b-2 border-primary pb-1">Portfolio</a>
+                <a href="#" class="hover:text-primary transition-colors">Insights</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <button class="hidden md:flex px-5 py-2.5 bg-primary text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors shadow-soft">
+                    Contact Me
+                </button>
+                <button class="md:hidden w-10 h-10 flex items-center justify-center bg-card rounded-full text-primary">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-1 w-full flex flex-col">
+
+        <!-- Portfolio Introduction Section -->
+        <section id="portfolio-intro" class="w-full max-w-7xl mx-auto px-6 py-20 md:py-32 flex flex-col gap-8 border-b border-gray-200">
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-primary font-serif max-w-4xl">
+                Select Engagements & Strategic Outcomes.
+            </h1>
+            <p class="text-xl md:text-2xl text-secondary font-medium max-w-3xl leading-relaxed mt-4">
+                A curated selection of high-stakes transformations, M&A integrations, and board-level advisory projects. These engagements represent complex challenges resolved through structural discipline and strategic clarity across global markets.
+            </p>
+        </section>
+
+        <!-- Filter System -->
+        <section id="portfolio-filters" class="w-full max-w-7xl mx-auto px-6 py-8 sticky top-20 z-40 bg-surface/95 backdrop-blur-sm border-b border-gray-100">
+            <div class="flex flex-wrap items-center gap-4">
+                <button class="px-6 py-2.5 bg-primary text-white text-sm font-semibold rounded-full shadow-soft transition-all">
+                    All Engagements
+                </button>
+                <button class="px-6 py-2.5 bg-white border border-gray-200 text-secondary hover:border-gray-400 hover:text-primary text-sm font-medium rounded-full transition-all">
+                    M&A Integration
+                </button>
+                <button class="px-6 py-2.5 bg-white border border-gray-200 text-secondary hover:border-gray-400 hover:text-primary text-sm font-medium rounded-full transition-all">
+                    Board Advisory
+                </button>
+                <button class="px-6 py-2.5 bg-white border border-gray-200 text-secondary hover:border-gray-400 hover:text-primary text-sm font-medium rounded-full transition-all">
+                    Risk Mitigation
+                </button>
+                <button class="px-6 py-2.5 bg-white border border-gray-200 text-secondary hover:border-gray-400 hover:text-primary text-sm font-medium rounded-full transition-all">
+                    Enterprise Restructuring
+                </button>
+            </div>
+        </section>
+
+        <!-- Portfolio Grid -->
+        <section id="portfolio-grid" class="w-full max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
+            
+            <!-- Project Item 1 -->
+            <div class="group cursor-pointer flex flex-col gap-6" onclick="openProjectModal('project-1')">
+                <div class="w-full aspect-[4/3] bg-card rounded-xl overflow-hidden relative shadow-soft transition-all duration-500 group-hover:shadow-xl group-hover:-translate-y-1">
+                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/60543b7369-bf405c8e3253ae870a7b.png" alt="A professional, high-contrast black and white architectural photograph of a modern corporate boardroom or sleek glass skyscraper reflecting authority and structure, minimalist style" />
+                    <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300"></div>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold text-secondary uppercase tracking-wider">M&A Integration • 2023</span>
+                        <i class="fa-solid fa-arrow-right text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 -translate-x-2 group-hover:translate-x-0"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary font-serif">Project Apex: European Logistics Consolidation</h3>
+                    <p class="text-secondary text-lg">Orchestrated the €12B post-merger integration of three disparate supply chain networks, achieving full operational synergy 4 months ahead of schedule.</p>
+                </div>
+            </div>
+
+            <!-- Project Item 2 -->
+            <div class="group cursor-pointer flex flex-col gap-6 md:mt-16" onclick="openProjectModal('project-1')">
+                <div class="w-full aspect-[4/3] bg-card rounded-xl overflow-hidden relative shadow-soft transition-all duration-500 group-hover:shadow-xl group-hover:-translate-y-1">
+                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/9094ef234d-f97b39ce8c30cd684d1a.png" alt="Abstract, sophisticated visualization of data nodes or network connections in deep charcoal and subtle silver tones, representing risk management and global networks" />
+                    <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300"></div>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold text-secondary uppercase tracking-wider">Risk Mitigation • 2021</span>
+                        <i class="fa-solid fa-arrow-right text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 -translate-x-2 group-hover:translate-x-0"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary font-serif">The Resilience Protocol Deployment</h3>
+                    <p class="text-secondary text-lg">Designed and implemented a proprietary early-warning risk identification framework across a global Tier-1 banking institution.</p>
+                </div>
+            </div>
+
+            <!-- Project Item 3 -->
+            <div class="group cursor-pointer flex flex-col gap-6" onclick="openProjectModal('project-1')">
+                <div class="w-full aspect-[4/3] bg-card rounded-xl overflow-hidden relative shadow-soft transition-all duration-500 group-hover:shadow-xl group-hover:-translate-y-1">
+                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/8c6d5ebe33-f11542a80f27c796676b.png" alt="A sharp, macro photography shot of a luxury fountain pen resting on dense financial documents or strategic blueprints, conveying executive decision making" />
+                    <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300"></div>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold text-secondary uppercase tracking-wider">Board Advisory • 2024</span>
+                        <i class="fa-solid fa-arrow-right text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 -translate-x-2 group-hover:translate-x-0"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary font-serif">Governance Restructuring for Tech IPO</h3>
+                    <p class="text-secondary text-lg">Advised the founding board of a $4B Enterprise SaaS firm on structural governance shifts required for public market readiness.</p>
+                </div>
+            </div>
+
+            <!-- Project Item 4 -->
+            <div class="group cursor-pointer flex flex-col gap-6 md:mt-16" onclick="openProjectModal('project-1')">
+                <div class="w-full aspect-[4/3] bg-card rounded-xl overflow-hidden relative shadow-soft transition-all duration-500 group-hover:shadow-xl group-hover:-translate-y-1">
+                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/431b1bde9f-29944e6dc24a0ae8b8a0.png" alt="Minimalist, high-end abstract geometry featuring stark contrasting light and shadow on solid concrete or marble surfaces, representing structural integrity" />
+                    <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300"></div>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold text-secondary uppercase tracking-wider">Enterprise Restructuring • 2020</span>
+                        <i class="fa-solid fa-arrow-right text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 -translate-x-2 group-hover:translate-x-0"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary font-serif">Global Equities Division Turnaround</h3>
+                    <p class="text-secondary text-lg">Led a cross-functional task force to restructure operations, improving efficiency by 18% during a period of intense market contraction.</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Client Credibility Section -->
+        <section id="client-credibility" class="w-full bg-white border-y border-gray-200 py-24 mt-12">
+            <div class="max-w-7xl mx-auto px-6 flex flex-col gap-16">
+                <div class="flex flex-col md:flex-row justify-between items-end gap-8 border-b border-gray-200 pb-8">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary tracking-tight font-serif">Trusted by Industry Leaders</h2>
+                    <p class="text-lg text-secondary max-w-md text-right">Advising organizations that shape global markets across finance, technology, and logistics.</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-x-12 gap-y-16 items-center opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+                    <div class="flex justify-center">
+                        <img class="h-12 w-auto object-contain" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/f01ed673a8-c563b0954b18abace04c.png" alt="Minimalist, authoritative corporate logo typography for a global investment bank, black text, clean lines" />
+                    </div>
+                    <div class="flex justify-center">
+                        <img class="h-10 w-auto object-contain" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/ad6374f33b-046f146c102a6b26a5a5.png" alt="Sleek, modern corporate logo for an enterprise SaaS technology company, sharp geometry, black text" />
+                    </div>
+                    <div class="flex justify-center">
+                        <img class="h-14 w-auto object-contain" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/e0f991a4f9-a91e74d412836682c1a5.png" alt="Classic, heritage corporate logo for a European logistics conglomerate, serif typography, black text" />
+                    </div>
+                    <div class="flex justify-center">
+                        <img class="h-10 w-auto object-contain" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/0788fa69e4-acee09326462da8543b2.png" alt="Sophisticated corporate logo for a global strategy consulting firm, minimalist design, black text" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Project Detail Modal Overlay (Hidden by default) -->
+    <div id="project-modal" class="fixed inset-0 z-[100] hidden flex-col">
+        <div class="absolute inset-0 modal-overlay opacity-0 transition-opacity duration-300" id="modal-bg"></div>
+        
+        <div class="relative w-full h-full flex flex-col bg-surface overflow-y-auto translate-y-full transition-transform duration-500" id="modal-content">
+            
+            <!-- Modal Header Sticky -->
+            <div class="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-gray-200 px-6 py-4 flex justify-between items-center">
+                <span class="font-bold text-primary tracking-tight">Project Detail View</span>
+                <button onclick="closeProjectModal()" class="w-10 h-10 flex items-center justify-center bg-card rounded-full text-primary hover:bg-gray-200 transition-colors">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Modal Content Body -->
+            <div class="w-full max-w-5xl mx-auto px-6 py-16 md:py-24 flex flex-col gap-16">
+                
+                <!-- Project Header -->
+                <div class="flex flex-col gap-6">
+                    <div class="flex items-center gap-4">
+                        <span class="px-3 py-1 bg-primary text-white text-xs font-bold uppercase tracking-wider rounded-full">M&A Integration</span>
+                        <span class="text-sm font-bold text-secondary uppercase tracking-wider">2023</span>
+                    </div>
+                    <h2 class="text-5xl md:text-6xl font-bold text-primary font-serif leading-tight">Project Apex: European Logistics Consolidation</h2>
+                    
+                    <div class="flex flex-wrap gap-8 mt-6 pt-6 border-t border-gray-200">
+                        <div class="flex flex-col gap-1">
+                            <span class="text-xs font-bold text-secondary uppercase tracking-wider">Client</span>
+                            <span class="text-lg font-semibold text-primary">Confidential €12B Conglomerate</span>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <span class="text-xs font-bold text-secondary uppercase tracking-wider">Role</span>
+                            <span class="text-lg font-semibold text-primary">Lead Integration Strategist</span>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <span class="text-xs font-bold text-secondary uppercase tracking-wider">Outcome</span>
+                            <span class="text-lg font-semibold text-primary">Full synergy 4 months early</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image -->
+                <div class="w-full aspect-[21/9] bg-card rounded-xl overflow-hidden shadow-soft">
+                    <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/b09099a22e-3690cff82e1ba52f34e0.png" alt="Wide, cinematic shot of a modern corporate boardroom table with documents, low key lighting, conveying serious executive strategy" />
+                </div>
+
+                <!-- Content Columns -->
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+                    
+                    <!-- Left Col: The Story -->
+                    <div class="md:col-span-8 flex flex-col gap-12">
+                        <div class="flex flex-col gap-4">
+                            <h3 class="text-2xl font-bold text-primary border-b border-gray-200 pb-4">The Challenge</h3>
+                            <p class="text-lg text-secondary leading-relaxed">
+                                Following the acquisition of three distinct regional logistics providers, the parent conglomerate faced severe cultural resistance and operational redundancy. The disparate IT systems, conflicting management hierarchies, and overlapping service routes threatened to erode the projected $400M in annual synergies. The board required an immediate, disciplined intervention to align operations without disrupting ongoing client service levels.
+                            </p>
+                        </div>
+                        
+                        <div class="flex flex-col gap-4">
+                            <h3 class="text-2xl font-bold text-primary border-b border-gray-200 pb-4">The Process</h3>
+                            <p class="text-lg text-secondary leading-relaxed">
+                                I deployed a strict, 100-day integration framework focusing on structural clarity over consensus. First, we established a centralized Integration Management Office (IMO) with definitive decision rights. Second, we mapped all critical operational fault lines using proprietary risk-assessment models. Finally, we executed a phased cultural alignment program that replaced legacy titles with a unified, capability-based hierarchy, ensuring key talent retention through transparent communication and clear performance mandates.
+                            </p>
+                        </div>
+
+                        <div class="w-full aspect-[16/9] bg-card rounded-xl overflow-hidden shadow-soft my-4">
+                            <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/4bb66d174f-5f2de4a080f5f875696e.png" alt="Detail shot of hands reviewing complex financial or operational charts on a sleek tablet, professional corporate setting" />
+                        </div>
+                        
+                        <div class="flex flex-col gap-4">
+                            <h3 class="text-2xl font-bold text-primary border-b border-gray-200 pb-4">The Result</h3>
+                            <p class="text-lg text-secondary leading-relaxed">
+                                The structural overhaul bypassed typical post-merger stagnation. By enforcing rigorous operational discipline, we eliminated redundant routing systems and consolidated regional management layers. The integration achieved full operational synergy four months ahead of the board's aggressive timeline, capturing $450M in actualized savings in the first year while maintaining a 98% retention rate among identified critical personnel.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right Col: Data & Tools -->
+                    <div class="md:col-span-4 flex flex-col gap-8">
+                        <div class="p-8 bg-card rounded-xl border border-gray-200 flex flex-col gap-6">
+                            <h4 class="text-sm font-bold text-primary uppercase tracking-wider border-b border-gray-300 pb-3">Key Metrics</h4>
+                            
+                            <div class="flex flex-col gap-1">
+                                <span class="text-4xl font-bold text-primary font-serif">$450M</span>
+                                <span class="text-sm font-medium text-secondary">Annualized Synergies Captured</span>
+                            </div>
+                            
+                            <div class="flex flex-col gap-1">
+                                <span class="text-4xl font-bold text-primary font-serif">-4 Mo.</span>
+                                <span class="text-sm font-medium text-secondary">Timeline Acceleration</span>
+                            </div>
+                            
+                            <div class="flex flex-col gap-1">
+                                <span class="text-4xl font-bold text-primary font-serif">98%</span>
+                                <span class="text-sm font-medium text-secondary">Key Talent Retention Rate</span>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col gap-4">
+                            <h4 class="text-sm font-bold text-primary uppercase tracking-wider border-b border-gray-200 pb-3">Competencies Deployed</h4>
+                            <ul class="flex flex-col gap-3 text-secondary text-sm font-medium">
+                                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accent"></i> IMO Establishment</li>
+                                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accent"></i> Cultural Alignment Framework</li>
+                                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accent"></i> Redundancy Mapping</li>
+                                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accent"></i> Executive Communication</li>
+                                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accent"></i> Change Management</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer (Preserved from Context) -->
+    <footer id="footer" class="w-full bg-white border-t border-gray-100 py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">
+                    EJ
+                </div>
+                <span class="font-semibold text-primary">Edward James</span>
+            </div>
+            
+            <div class="flex items-center gap-6 text-sm text-secondary">
+                <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+                <span>&copy; 2026 Edward James. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function openProjectModal(id) {
+            const modal = document.getElementById('project-modal');
+            const bg = document.getElementById('modal-bg');
+            const content = document.getElementById('modal-content');
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.classList.add('modal-open');
+            
+            // Trigger animation
+            setTimeout(() => {
+                bg.classList.remove('opacity-0');
+                bg.classList.add('opacity-100');
+                content.classList.remove('translate-y-full');
+                content.classList.add('translate-y-0');
+            }, 10);
+        }
+
+        function closeProjectModal() {
+            const modal = document.getElementById('project-modal');
+            const bg = document.getElementById('modal-bg');
+            const content = document.getElementById('modal-content');
+            
+            // Reverse animation
+            bg.classList.remove('opacity-100');
+            bg.classList.add('opacity-0');
+            content.classList.remove('translate-y-0');
+            content.classList.add('translate-y-full');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.classList.remove('modal-open');
+            }, 500);
+        }
+    </script>
+</body>
+</html>

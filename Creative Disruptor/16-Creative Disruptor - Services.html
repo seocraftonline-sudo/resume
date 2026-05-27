@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Will Beeching</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f6f6f6',
+                            100: '#e7e7e7',
+                            200: '#d1d1d1',
+                            300: '#b0b0b0',
+                            400: '#888888',
+                            500: '#6d6d6d',
+                            600: '#5d5d5d',
+                            700: '#4f4f4f',
+                            800: '#454545',
+                            900: '#3d3d3d',
+                            950: '#1a1a1a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f6f6f6;
+            color: #1a1a1a;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+        ::-webkit-scrollbar { display: none; }
+        
+        .disruptive-text {
+            font-family: 'Times New Roman', Times, serif;
+            letter-spacing: -0.05em;
+            line-height: 0.9;
+        }
+        .mono-label {
+            font-family: monospace;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .bento-card {
+            background-color: #ffffff;
+            border: 1px solid #e7e7e7;
+            border-radius: 24px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .bento-card:hover {
+            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.1);
+            border-color: #d1d1d1;
+            transform: translateY(-8px);
+        }
+
+        .service-card {
+            background-color: #ffffff;
+            border: 1px solid #e7e7e7;
+            border-radius: 12px;
+            padding: 2.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card:hover {
+            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.08);
+            border-color: #d1d1d1;
+            transform: translateY(-4px);
+        }
+
+        .process-number {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 12rem;
+            line-height: 0.8;
+            color: rgba(26, 26, 26, 0.03);
+            position: absolute;
+            top: -2rem;
+            left: -2rem;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .accordion-item.active .accordion-content {
+            max-height: 500px;
+        }
+        .accordion-icon {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .accordion-item.active .accordion-icon {
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body class="m-0 p-0 font-sans selection:bg-brand-950 selection:text-white bg-brand-50">
+
+    <!-- Header / Nav -->
+    <header id="header" class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 22H22L12 2Z" fill="black"/>
+                    <path d="M12 8L6 20H18L12 8Z" fill="white"/>
+                </svg>
+                <span class="font-semibold text-lg tracking-tight">WB.</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#" class="text-sm font-medium text-brand-500 hover:text-brand-950 transition-colors">Work</a>
+                <a href="#" class="text-sm font-medium text-brand-500 hover:text-brand-950 transition-colors">About</a>
+                <a href="#" class="text-sm font-medium text-brand-950 hover:text-brand-500 transition-colors">Services</a>
+                <a href="#" class="text-sm font-medium text-brand-500 hover:text-brand-950 transition-colors">Blog</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <span class="text-xs font-mono text-brand-400 hidden lg:block">LON 12:33 ☀️</span>
+                <a href="#contact" class="px-5 py-2.5 bg-brand-950 text-white text-sm font-medium rounded-full hover:bg-brand-800 transition-colors">Let's Talk</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="pt-32 lg:pt-48 pb-24">
+        
+        <!-- Services Introduction -->
+        <section id="services_intro" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-32 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-12">
+                <div class="max-w-5xl">
+                    <h1 class="disruptive-text text-6xl md:text-8xl lg:text-[120px] text-brand-950 uppercase mix-blend-multiply mb-12 relative z-10">
+                        Capabilities <br>
+                        <span class="ml-12 md:ml-32 text-brand-500">& Outcomes</span>
+                        <div class="absolute -z-10 top-1/2 right-1/4 w-96 h-96 bg-brand-200 rounded-full blur-[100px] opacity-40"></div>
+                    </h1>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
+                        <div class="md:col-span-4 pt-4">
+                            <span class="mono-label text-brand-500 block mb-4">The Premise</span>
+                            <div class="w-12 h-px bg-brand-300 mb-8"></div>
+                        </div>
+                        <div class="md:col-span-8">
+                            <p class="text-2xl md:text-3xl font-light leading-tight text-brand-950 mb-8">
+                                I don't sell hours, I sell transformations. My work bridges the gap between ambitious vision and tangible reality, creating digital experiences that demand attention and drive definitive action.
+                            </p>
+                            <p class="text-lg text-brand-600 leading-relaxed font-light max-w-2xl">
+                                Whether you're launching a new venture, repositioning an established brand, or seeking to disrupt a stagnant market, the methodologies applied here are designed to cut through the noise and deliver measurable impact.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Individual Service Listings Grid -->
+        <section id="service_offerings" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-40">
+            <div class="mb-16">
+                <h2 class="disruptive-text text-5xl text-brand-950 uppercase mb-4">Core Disciplines</h2>
+                <div class="w-full h-px bg-brand-200"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Service 1 -->
+                <div class="service-card group">
+                    <div class="w-12 h-12 rounded-full bg-brand-50 flex items-center justify-center mb-8 border border-brand-100 group-hover:bg-brand-950 group-hover:border-brand-950 transition-colors">
+                        <i class="fa-solid fa-layer-group text-brand-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-brand-950 mb-4">Digital Strategy & Positioning</h3>
+                    <p class="text-brand-600 font-light leading-relaxed mb-8 min-h-[100px]">
+                        Architecting the foundation of your digital presence. We define who you are, who you serve, and how you win in a crowded marketplace.
+                    </p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-sm text-brand-400 mt-1"></i>
+                            <span class="text-sm text-brand-800">Audience Segmentation</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-sm text-brand-400 mt-1"></i>
+                            <span class="text-sm text-brand-800">Competitive Landscape Analysis</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-sm text-brand-400 mt-1"></i>
+                            <span class="text-sm text-brand-800">Go-to-Market Roadmapping</span>
+                        </div>
+                    </div>
+                    <div class="pt-6 border-t border-brand-100 flex items-center justify-between">
+                        <div>
+                            <span class="mono-label text-brand-400 block mb-1">Timeline</span>
+                            <span class="text-sm font-medium text-brand-950">4-6 Weeks</span>
+                        </div>
+                        <button class="w-10 h-10 rounded-full border border-brand-200 flex items-center justify-center group-hover:bg-brand-950 group-hover:border-brand-950 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card group">
+                    <div class="w-12 h-12 rounded-full bg-brand-50 flex items-center justify-center mb-8 border border-brand-100 group-hover:bg-brand-950 group-hover:border-brand-950 transition-colors">
+                        <i class="fa-solid fa-pen-nib text-brand-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-brand-950 mb-4">Brand Identity Systems</h3>
+                    <p class="text-brand-600 font-light leading-relaxed mb-8 min-h-[100px]">
+                        Creating cohesive, memorable visual languages that communicate your core philosophy across every touchpoint without saying a word.
+                    </p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-sm text-brand-400 mt-1"></i>
+                            <span class="text-sm text-brand-800">Logo & Mark Development</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-sm text-brand-400 mt-1"></i>
+                            <span class="text-sm text-brand-800">Typography & Color Architecture</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-sm text-brand-400 mt-1"></i>
+                            <span class="text-sm text-brand-800">Comprehensive Brand Guidelines</span>
+                        </div>
+                    </div>
+                    <div class="pt-6 border-t border-brand-100 flex items-center justify-between">
+                        <div>
+                            <span class="mono-label text-brand-400 block mb-1">Timeline</span>
+                            <span class="text-sm font-medium text-brand-950">6-8 Weeks</span>
+                        </div>
+                        <button class="w-10 h-10 rounded-full border border-brand-200 flex items-center justify-center group-hover:bg-brand-950 group-hover:border-brand-950 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card group">
+                    <div class="w-12 h-12 rounded-full bg-brand-50 flex items-center justify-center mb-8 border border-brand-100 group-hover:bg-brand-950 group-hover:border-brand-950 transition-colors">
+                        <i class="fa-solid fa-desktop text-brand-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-brand-950 mb-4">Immersive Web Experiences</h3>
+                    <p class="text-brand-600 font-light leading-relaxed mb-8 min-h-[100px]">
+                        Designing and developing high-performance digital platforms that break conventions while maintaining flawless usability and conversion focus.
+                    </p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-sm text-brand-400 mt-1"></i>
+                            <span class="text-sm text-brand-800">UX/UI Design Systems</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-sm text-brand-400 mt-1"></i>
+                            <span class="text-sm text-brand-800">Creative Frontend Development</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-sm text-brand-400 mt-1"></i>
+                            <span class="text-sm text-brand-800">Motion & Interaction Design</span>
+                        </div>
+                    </div>
+                    <div class="pt-6 border-t border-brand-100 flex items-center justify-between">
+                        <div>
+                            <span class="mono-label text-brand-400 block mb-1">Timeline</span>
+                            <span class="text-sm font-medium text-brand-950">8-12 Weeks</span>
+                        </div>
+                        <button class="w-10 h-10 rounded-full border border-brand-200 flex items-center justify-center group-hover:bg-brand-950 group-hover:border-brand-950 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Disrupted Process Walkthrough -->
+        <section id="process_overview" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-40">
+            <div class="flex flex-col md:flex-row justify-between items-start mb-20 gap-8">
+                <h2 class="disruptive-text text-6xl text-brand-950 uppercase max-w-2xl">The Methodology</h2>
+                <p class="text-lg text-brand-600 font-light max-w-md">
+                    A non-linear approach to problem-solving. We don't follow templates; we follow the requirements of the challenge.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24">
+                <!-- Step 1 -->
+                <div class="relative p-8 bg-white border border-brand-100 rounded-3xl overflow-hidden group hover:border-brand-300 transition-colors md:mt-0">
+                    <div class="process-number">01</div>
+                    <div class="relative z-10">
+                        <h3 class="text-3xl font-serif text-brand-950 mb-4">Discovery & Audit</h3>
+                        <p class="text-brand-600 font-light leading-relaxed mb-6">
+                            Before we build, we excavate. This phase involves deep interviews, data analysis, and tearing down your current ecosystem to understand the true constraints and opportunities.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-brand-50 text-xs font-mono text-brand-600 rounded">Stakeholder Interviews</span>
+                            <span class="px-3 py-1 bg-brand-50 text-xs font-mono text-brand-600 rounded">Technical Audit</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative p-8 bg-white border border-brand-100 rounded-3xl overflow-hidden group hover:border-brand-300 transition-colors md:mt-24">
+                    <div class="process-number">02</div>
+                    <div class="relative z-10">
+                        <h3 class="text-3xl font-serif text-brand-950 mb-4">Strategic Framework</h3>
+                        <p class="text-brand-600 font-light leading-relaxed mb-6">
+                            Translating insights into a concrete plan of attack. We define the architecture, the visual direction, and the technical stack required to execute the vision flawlessly.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-brand-50 text-xs font-mono text-brand-600 rounded">Wireframing</span>
+                            <span class="px-3 py-1 bg-brand-50 text-xs font-mono text-brand-600 rounded">Moodboards</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative p-8 bg-white border border-brand-100 rounded-3xl overflow-hidden group hover:border-brand-300 transition-colors md:-mt-12">
+                    <div class="process-number">03</div>
+                    <div class="relative z-10">
+                        <h3 class="text-3xl font-serif text-brand-950 mb-4">Creative Execution</h3>
+                        <p class="text-brand-600 font-light leading-relaxed mb-6">
+                            Where strategy becomes tangible. Iterative design and development cycles where we push boundaries, test assumptions, and refine the details until it feels inevitable.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-brand-50 text-xs font-mono text-brand-600 rounded">UI/UX Design</span>
+                            <span class="px-3 py-1 bg-brand-50 text-xs font-mono text-brand-600 rounded">Prototyping</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="relative p-8 bg-white border border-brand-100 rounded-3xl overflow-hidden group hover:border-brand-300 transition-colors md:mt-12">
+                    <div class="process-number">04</div>
+                    <div class="relative z-10">
+                        <h3 class="text-3xl font-serif text-brand-950 mb-4">Deployment & Evolution</h3>
+                        <p class="text-brand-600 font-light leading-relaxed mb-6">
+                            Launch is not the end; it's the beginning of the feedback loop. We monitor, optimize, and scale the solution based on real-world interaction and data.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-brand-50 text-xs font-mono text-brand-600 rounded">QA Testing</span>
+                            <span class="px-3 py-1 bg-brand-50 text-xs font-mono text-brand-600 rounded">Analytics Setup</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Packages & Investment -->
+        <section id="investment_packages" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-40">
+            <div class="bg-brand-950 rounded-[40px] p-8 md:p-16 lg:p-24 text-white relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-800 rounded-full blur-[120px] opacity-20 -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+                
+                <div class="relative z-10 mb-16">
+                    <h2 class="disruptive-text text-5xl md:text-7xl uppercase mb-6">Investment</h2>
+                    <p class="text-xl text-brand-300 font-light max-w-2xl">
+                        Transparent pricing for serious engagements. We offer structured packages designed to deliver specific outcomes based on your current scale and ambition.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Package 1 -->
+                    <div class="bg-brand-900 border border-brand-800 rounded-3xl p-8 md:p-10 hover:border-brand-600 transition-colors">
+                        <div class="flex justify-between items-start mb-8">
+                            <div>
+                                <h3 class="text-2xl font-medium mb-2">The Catalyst</h3>
+                                <p class="text-brand-400 font-light text-sm">For emerging brands needing a strong foundation.</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-sm text-brand-400 mb-1">Starting at</div>
+                                <div class="text-3xl font-serif">$15,000</div>
+                            </div>
+                        </div>
+                        <div class="space-y-4 mb-10">
+                            <div class="flex items-center gap-3 border-b border-brand-800 pb-4">
+                                <i class="fa-solid fa-plus text-xs text-brand-500"></i>
+                                <span class="text-brand-200 font-light">Brand Identity Refresh</span>
+                            </div>
+                            <div class="flex items-center gap-3 border-b border-brand-800 pb-4">
+                                <i class="fa-solid fa-plus text-xs text-brand-500"></i>
+                                <span class="text-brand-200 font-light">Core Web Experience (Up to 5 Pages)</span>
+                            </div>
+                            <div class="flex items-center gap-3 border-b border-brand-800 pb-4">
+                                <i class="fa-solid fa-plus text-xs text-brand-500"></i>
+                                <span class="text-brand-200 font-light">Basic CMS Integration</span>
+                            </div>
+                            <div class="flex items-center gap-3 pb-4">
+                                <i class="fa-solid fa-plus text-xs text-brand-500"></i>
+                                <span class="text-brand-200 font-light">1 Month Post-Launch Support</span>
+                            </div>
+                        </div>
+                        <button class="w-full py-4 bg-white text-brand-950 rounded-xl font-medium hover:bg-brand-100 transition-colors">
+                            Enquire About Catalyst
+                        </button>
+                    </div>
+
+                    <!-- Package 2 -->
+                    <div class="bg-brand-900 border border-brand-800 rounded-3xl p-8 md:p-10 hover:border-brand-600 transition-colors relative overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-brand-500 text-white text-xs font-mono py-1 px-4 rounded-bl-xl">RECOMMENDED</div>
+                        <div class="flex justify-between items-start mb-8">
+                            <div>
+                                <h3 class="text-2xl font-medium mb-2">The Disruption</h3>
+                                <p class="text-brand-400 font-light text-sm">Comprehensive digital transformation.</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-sm text-brand-400 mb-1">Starting at</div>
+                                <div class="text-3xl font-serif">$35,000</div>
+                            </div>
+                        </div>
+                        <div class="space-y-4 mb-10">
+                            <div class="flex items-center gap-3 border-b border-brand-800 pb-4">
+                                <i class="fa-solid fa-plus text-xs text-brand-500"></i>
+                                <span class="text-brand-200 font-light">Full Brand Architecture & Strategy</span>
+                            </div>
+                            <div class="flex items-center gap-3 border-b border-brand-800 pb-4">
+                                <i class="fa-solid fa-plus text-xs text-brand-500"></i>
+                                <span class="text-brand-200 font-light">Custom Immersive Web Platform</span>
+                            </div>
+                            <div class="flex items-center gap-3 border-b border-brand-800 pb-4">
+                                <i class="fa-solid fa-plus text-xs text-brand-500"></i>
+                                <span class="text-brand-200 font-light">Advanced Motion & Interaction Design</span>
+                            </div>
+                            <div class="flex items-center gap-3 pb-4">
+                                <i class="fa-solid fa-plus text-xs text-brand-500"></i>
+                                <span class="text-brand-200 font-light">3 Months Iterative Optimization</span>
+                            </div>
+                        </div>
+                        <button class="w-full py-4 bg-brand-950 text-white border border-brand-700 rounded-xl font-medium hover:bg-brand-800 transition-colors">
+                            Enquire About Disruption
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Accordion -->
+        <section id="faq_section" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-40">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+                <div class="lg:col-span-4">
+                    <h2 class="disruptive-text text-5xl text-brand-950 uppercase mb-6">Clarifications</h2>
+                    <p class="text-lg text-brand-600 font-light mb-8">
+                        Common inquiries regarding the process, expectations, and logistics of engagement.
+                    </p>
+                    <a href="#contact" class="inline-flex items-center gap-3 text-brand-950 font-medium group">
+                        <span>Still have questions?</span>
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                    </a>
+                </div>
+                
+                <div class="lg:col-span-8 space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="accordion-item bg-white border border-brand-200 rounded-2xl overflow-hidden cursor-pointer" onclick="this.classList.toggle('active')">
+                        <div class="p-6 md:p-8 flex justify-between items-center bg-white hover:bg-brand-50 transition-colors">
+                            <h4 class="text-xl font-medium text-brand-950 pr-8">What is your typical availability for new projects?</h4>
+                            <div class="w-8 h-8 rounded-full border border-brand-200 flex items-center justify-center shrink-0 accordion-icon">
+                                <i class="fa-solid fa-plus text-brand-500 text-sm"></i>
+                            </div>
+                        </div>
+                        <div class="accordion-content bg-brand-50/50">
+                            <div class="p-6 md:p-8 pt-0 text-brand-700 font-light leading-relaxed">
+                                I typically book engagements 1-2 months in advance to ensure dedicated focus on current clients. However, for rapid strategic consultations or urgent disruptive campaigns, expedited timelines can occasionally be accommodated depending on the scope.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="accordion-item bg-white border border-brand-200 rounded-2xl overflow-hidden cursor-pointer" onclick="this.classList.toggle('active')">
+                        <div class="p-6 md:p-8 flex justify-between items-center bg-white hover:bg-brand-50 transition-colors">
+                            <h4 class="text-xl font-medium text-brand-950 pr-8">Do you work with in-house development teams?</h4>
+                            <div class="w-8 h-8 rounded-full border border-brand-200 flex items-center justify-center shrink-0 accordion-icon">
+                                <i class="fa-solid fa-plus text-brand-500 text-sm"></i>
+                            </div>
+                        </div>
+                        <div class="accordion-content bg-brand-50/50">
+                            <div class="p-6 md:p-8 pt-0 text-brand-700 font-light leading-relaxed">
+                                Yes. While I offer full-stack execution, I frequently operate as a strategic creative director alongside existing internal teams. In these scenarios, I provide the architectural vision, design systems, and technical oversight while your team handles implementation.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="accordion-item bg-white border border-brand-200 rounded-2xl overflow-hidden cursor-pointer" onclick="this.classList.toggle('active')">
+                        <div class="p-6 md:p-8 flex justify-between items-center bg-white hover:bg-brand-50 transition-colors">
+                            <h4 class="text-xl font-medium text-brand-950 pr-8">How are revisions handled during the creative process?</h4>
+                            <div class="w-8 h-8 rounded-full border border-brand-200 flex items-center justify-center shrink-0 accordion-icon">
+                                <i class="fa-solid fa-plus text-brand-500 text-sm"></i>
+                            </div>
+                        </div>
+                        <div class="accordion-content bg-brand-50/50">
+                            <div class="p-6 md:p-8 pt-0 text-brand-700 font-light leading-relaxed">
+                                The process is highly collaborative, meaning there are rarely "big reveals" that require massive revisions. We align on strategy first, then move through iterative phases with built-in feedback loops. Specific package terms define the exact number of structured revision rounds.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section id="cta_section" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-12">
+            <div class="bg-brand-100 rounded-3xl p-12 md:p-24 text-center relative overflow-hidden">
+                <div class="relative z-10 max-w-3xl mx-auto">
+                    <h2 class="disruptive-text text-6xl md:text-8xl text-brand-950 uppercase mb-8">Initiate <br>Dialogue</h2>
+                    <p class="text-xl text-brand-700 font-light mb-12">
+                        Ready to disrupt the standard? Let's discuss your specific challenge and explore if there's a mutual fit for collaboration.
+                    </p>
+                    <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 bg-brand-950 text-white text-lg font-medium rounded-full hover:bg-brand-800 transition-all hover:scale-105">
+                        Schedule a Consultation
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-white border-t border-gray-100 py-12 mt-auto">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-sm text-brand-500">
+                &copy; 2026 Will Beeching. All Rights Reserved.
+            </div>
+            <div class="flex items-center gap-6 text-sm font-medium">
+                <a href="#" class="text-brand-950 hover:text-brand-500 transition-colors">GitHub</a>
+                <a href="#" class="text-brand-950 hover:text-brand-500 transition-colors">LinkedIn</a>
+                <a href="#" class="text-brand-950 hover:text-brand-500 transition-colors">Instagram</a>
+                <a href="#" class="text-brand-950 hover:text-brand-500 transition-colors">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

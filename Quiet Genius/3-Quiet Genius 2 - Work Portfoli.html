@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work - The Quiet Genius</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        surface: '#F9FAFB',
+                        surfaceHover: '#F3F4F6',
+                        card: '#FFFFFF',
+                        textPrimary: '#111827',
+                        textSecondary: '#6B7280',
+                        accent: '#111827',
+                        accentHover: '#374151',
+                        border: '#E5E7EB',
+                        glass: 'rgba(255, 255, 255, 0.7)',
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'inner-soft': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.02)',
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { margin: 0; padding: 0; background-color: #F9FAFB; -webkit-font-smoothing: antialiased; }
+        ::-webkit-scrollbar { display: none; }
+        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3); }
+        
+        /* Modal Transitions */
+        .modal-enter { opacity: 0; transform: scale(0.98) translateY(10px); }
+        .modal-enter-active { opacity: 1; transform: scale(1) translateY(0); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .modal-exit { opacity: 1; transform: scale(1) translateY(0); }
+        .modal-exit-active { opacity: 0; transform: scale(0.98) translateY(10px); transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+    </style>
+</head>
+<body class="text-textPrimary font-sans bg-surface min-h-screen flex flex-col relative overflow-x-hidden">
+
+    <!-- Decorative Background Elements -->
+    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-gradient-radial from-indigo-50/40 to-transparent opacity-60 blur-3xl"></div>
+        <div class="absolute bottom-[-10%] right-[-5%] w-[50%] h-[50%] rounded-full bg-gradient-radial from-purple-50/40 to-transparent opacity-60 blur-3xl"></div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header id="header" class="fixed top-0 w-full z-50 transition-all duration-300 bg-surface/80 backdrop-blur-md border-b border-border/50">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+            <a href="#" class="text-xl font-serif font-semibold tracking-tight text-textPrimary">A. Law</a>
+            
+            <nav class="hidden md:flex items-center space-x-10">
+                <a href="#" class="text-sm font-medium text-textSecondary hover:text-textPrimary transition-colors">Home</a>
+                <a href="#" class="text-sm font-medium text-textPrimary border-b-2 border-textPrimary pb-1">Work</a>
+                <a href="#" class="text-sm font-medium text-textSecondary hover:text-textPrimary transition-colors">About</a>
+                <a href="#" class="text-sm font-medium text-textSecondary hover:text-textPrimary transition-colors">Resume</a>
+                <a href="#" class="text-sm font-medium text-textSecondary hover:text-textPrimary transition-colors">Insights</a>
+            </nav>
+
+            <div class="flex items-center space-x-6">
+                <a href="#" class="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-card shadow-soft hover:shadow-md transition-all text-textPrimary">
+                    <i class="fa-solid fa-envelope text-sm"></i>
+                </a>
+                <button class="md:hidden text-textPrimary p-2">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow z-10 pt-32 pb-24 max-w-[1440px] mx-auto w-full px-6 lg:px-12 flex flex-col space-y-24">
+
+        <!-- Portfolio Introduction Section -->
+        <section id="portfolio-intro" class="flex flex-col space-y-8 border-b border-border/60 pb-12">
+            <div class="max-w-3xl space-y-6">
+                <h1 class="text-5xl lg:text-6xl font-serif font-medium leading-tight tracking-tight text-textPrimary">
+                    Selected Works
+                </h1>
+                <p class="text-xl text-textSecondary font-light leading-relaxed max-w-2xl">
+                    An archive of digital systems and spatial interfaces. This collection spans complex fintech platforms, luxury e-commerce, and enterprise design systems, unified by a pursuit of clarity and quiet sophistication.
+                </p>
+            </div>
+        </section>
+
+        <!-- Filter System -->
+        <section id="filter-system" class="flex flex-col space-y-6">
+            <div class="flex flex-wrap gap-3">
+                <button class="px-6 py-2.5 bg-accent text-white rounded-full text-sm font-medium transition-all shadow-md">All Works</button>
+                <button class="px-6 py-2.5 bg-card text-textSecondary hover:text-textPrimary rounded-full text-sm font-medium border border-border/50 hover:border-border transition-all shadow-sm">Fintech & Finance</button>
+                <button class="px-6 py-2.5 bg-card text-textSecondary hover:text-textPrimary rounded-full text-sm font-medium border border-border/50 hover:border-border transition-all shadow-sm">Luxury & Heritage</button>
+                <button class="px-6 py-2.5 bg-card text-textSecondary hover:text-textPrimary rounded-full text-sm font-medium border border-border/50 hover:border-border transition-all shadow-sm">Design Systems</button>
+                <button class="px-6 py-2.5 bg-card text-textSecondary hover:text-textPrimary rounded-full text-sm font-medium border border-border/50 hover:border-border transition-all shadow-sm">Spatial & Architecture</button>
+            </div>
+        </section>
+
+        <!-- Portfolio Grid -->
+        <section id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+            
+            <!-- Project 1 -->
+            <div class="group cursor-pointer flex flex-col space-y-6" onclick="openModal('project-modal-1')">
+                <div class="relative w-full aspect-[4/3] rounded-[24px] overflow-hidden bg-surfaceHover border border-border/50 shadow-soft">
+                    <img class="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/3d3cde2b06-86def12d2e2c2f5f135f.png" alt="Minimalist, high-end dashboard interface for a wealth management platform, light mode, elegant typography, subtle charts, editorial style, photorealistic UI mockup" />
+                    <div class="absolute inset-0 bg-accent/0 group-hover:bg-accent/5 transition-colors duration-500"></div>
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-2xl font-serif text-textPrimary group-hover:text-textSecondary transition-colors">Lumina Wealth</h3>
+                        <span class="text-xs text-textSecondary uppercase tracking-widest border border-border/50 px-3 py-1 rounded-full">Fintech</span>
+                    </div>
+                    <p class="text-sm text-textSecondary">Architecting a unified asset management platform managing over $1B in AUM.</p>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="group cursor-pointer flex flex-col space-y-6" onclick="openModal('project-modal-1')">
+                <div class="relative w-full aspect-[4/3] rounded-[24px] overflow-hidden bg-surfaceHover border border-border/50 shadow-soft">
+                    <img class="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/9ef40506f5-9554183fdc3a13ff21a8.png" alt="Luxury fashion e-commerce website design, editorial layout, large high-quality imagery, minimalist typography, light elegant aesthetic, photorealistic UI mockup" />
+                    <div class="absolute inset-0 bg-accent/0 group-hover:bg-accent/5 transition-colors duration-500"></div>
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-2xl font-serif text-textPrimary group-hover:text-textSecondary transition-colors">Maison Archive</h3>
+                        <span class="text-xs text-textSecondary uppercase tracking-widest border border-border/50 px-3 py-1 rounded-full">Luxury</span>
+                    </div>
+                    <p class="text-sm text-textSecondary">Digital rebranding and editorial e-commerce platform for a heritage fashion house.</p>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="group cursor-pointer flex flex-col space-y-6" onclick="openModal('project-modal-1')">
+                <div class="relative w-full aspect-[4/3] rounded-[24px] overflow-hidden bg-surfaceHover border border-border/50 shadow-soft">
+                    <img class="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/ee79482dd3-eb983835cc044e23a9a6.png" alt="Comprehensive design system documentation, component library, minimalist, clean layout, typography scales, color palettes, photorealistic UI mockup" />
+                    <div class="absolute inset-0 bg-accent/0 group-hover:bg-accent/5 transition-colors duration-500"></div>
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-2xl font-serif text-textPrimary group-hover:text-textSecondary transition-colors">Nexus System</h3>
+                        <span class="text-xs text-textSecondary uppercase tracking-widest border border-border/50 px-3 py-1 rounded-full">Systems</span>
+                    </div>
+                    <p class="text-sm text-textSecondary">A scalable, multi-brand design language for a global enterprise software suite.</p>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="group cursor-pointer flex flex-col space-y-6" onclick="openModal('project-modal-1')">
+                <div class="relative w-full aspect-[4/3] rounded-[24px] overflow-hidden bg-surfaceHover border border-border/50 shadow-soft">
+                    <img class="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/bc12f8183f-b0c03dd39cfef4b72ac5.png" alt="Architectural visualization app, clean interface, spatial navigation, 3d models, elegant white space, photorealistic UI mockup" />
+                    <div class="absolute inset-0 bg-accent/0 group-hover:bg-accent/5 transition-colors duration-500"></div>
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-2xl font-serif text-textPrimary group-hover:text-textSecondary transition-colors">Aura Spaces</h3>
+                        <span class="text-xs text-textSecondary uppercase tracking-widest border border-border/50 px-3 py-1 rounded-full">Spatial</span>
+                    </div>
+                    <p class="text-sm text-textSecondary">Translating physical wayfinding principles into a digital spatial navigation tool.</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Client Logos Section -->
+        <section id="client-logos" class="flex flex-col space-y-12 border-t border-border/60 pt-16">
+            <div class="text-center space-y-2">
+                <h3 class="text-sm font-medium text-textSecondary uppercase tracking-widest">Trusted By</h3>
+            </div>
+            <div class="flex flex-wrap justify-center items-center gap-12 lg:gap-24 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                <i class="fa-brands fa-stripe text-4xl text-textPrimary"></i>
+                <i class="fa-brands fa-airbnb text-4xl text-textPrimary"></i>
+                <i class="fa-brands fa-figma text-4xl text-textPrimary"></i>
+                <i class="fa-brands fa-spotify text-4xl text-textPrimary"></i>
+                <i class="fa-brands fa-apple text-4xl text-textPrimary"></i>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Simple Footer -->
+    <footer id="footer" class="border-t border-border/50 bg-surface py-8 mt-auto">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-xs text-textSecondary">© 2023 Alex Law. All rights reserved.</p>
+            <div class="flex space-x-6">
+                <a href="#" class="text-textSecondary hover:text-textPrimary transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="text-textSecondary hover:text-textPrimary transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="text-textSecondary hover:text-textPrimary transition-colors"><i class="fa-brands fa-dribbble"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Individual Project Detail Modal (Hidden by default) -->
+    <div id="project-modal-1" class="fixed inset-0 z-[100] hidden">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-surface/95 backdrop-blur-md transition-opacity duration-300" onclick="closeModal('project-modal-1')"></div>
+        
+        <!-- Modal Content -->
+        <div class="absolute inset-0 overflow-y-auto">
+            <div class="min-h-screen px-4 py-12 flex items-center justify-center">
+                <div class="relative w-full max-w-5xl bg-card rounded-[32px] shadow-2xl border border-border/50 overflow-hidden transform transition-all">
+                    
+                    <!-- Close Button -->
+                    <button onclick="closeModal('project-modal-1')" class="absolute top-6 right-6 w-12 h-12 bg-surface rounded-full flex items-center justify-center text-textPrimary hover:bg-surfaceHover transition-colors z-10 shadow-sm border border-border/50">
+                        <i class="fa-solid fa-xmark text-lg"></i>
+                    </button>
+
+                    <!-- Modal Body -->
+                    <div class="flex flex-col">
+                        <!-- Hero Image -->
+                        <div class="w-full h-[400px] lg:h-[500px] relative bg-surfaceHover">
+                            <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/3d3cde2b06-7a7ac68bc1e26e7c409d.png" alt="Minimalist, high-end dashboard interface for a wealth management platform, light mode, elegant typography, subtle charts, editorial style, photorealistic UI mockup" />
+                        </div>
+
+                        <!-- Content Area -->
+                        <div class="p-8 lg:p-16 flex flex-col space-y-16">
+                            
+                            <!-- Header Info -->
+                            <div class="flex flex-col lg:flex-row justify-between items-start gap-8 border-b border-border/60 pb-12">
+                                <div class="space-y-4 max-w-2xl">
+                                    <h2 class="text-4xl lg:text-5xl font-serif font-medium text-textPrimary">Lumina Wealth</h2>
+                                    <p class="text-lg text-textSecondary font-light leading-relaxed">
+                                        Architecting a unified asset management platform managing over $1B in AUM. A complete reimagining of how high-net-worth individuals interact with complex financial data.
+                                    </p>
+                                </div>
+                                <div class="flex flex-col space-y-6 shrink-0 min-w-[200px]">
+                                    <div class="space-y-1">
+                                        <h4 class="text-xs font-medium text-textPrimary uppercase tracking-widest">Client</h4>
+                                        <p class="text-sm text-textSecondary">Lumina Financial Group</p>
+                                    </div>
+                                    <div class="space-y-1">
+                                        <h4 class="text-xs font-medium text-textPrimary uppercase tracking-widest">Year</h4>
+                                        <p class="text-sm text-textSecondary">2023</p>
+                                    </div>
+                                    <div class="space-y-1">
+                                        <h4 class="text-xs font-medium text-textPrimary uppercase tracking-widest">Role</h4>
+                                        <p class="text-sm text-textSecondary">Lead Product Designer</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Structured Details -->
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                                <div class="space-y-6">
+                                    <h3 class="text-2xl font-serif text-textPrimary">The Challenge</h3>
+                                    <p class="text-textSecondary leading-relaxed text-sm">
+                                        Traditional wealth management platforms are notoriously dense, prioritizing data volume over cognitive clarity. Lumina needed a system that could handle immense complexity without overwhelming the user. The goal was to create an interface that felt as tailored and precise as the financial advice they provide.
+                                    </p>
+                                </div>
+                                <div class="space-y-6">
+                                    <h3 class="text-2xl font-serif text-textPrimary">The Process</h3>
+                                    <p class="text-textSecondary leading-relaxed text-sm">
+                                        We began by stripping away layers of legacy data visualization, focusing instead on progressive disclosure. By implementing a 'quiet design' framework, we ensured that primary metrics commanded attention while secondary data remained accessible but unobtrusive. Extensive prototyping and user testing refined the micro-interactions.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Secondary Imagery -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div class="w-full aspect-square rounded-[24px] overflow-hidden bg-surfaceHover border border-border/50">
+                                    <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/cda7c164cc-eb62e1dab2487aebe8f9.png" alt="Close up detail of a minimalist financial chart, light mode, elegant data visualization, soft shadows, high fidelity UI" />
+                                </div>
+                                <div class="w-full aspect-square rounded-[24px] overflow-hidden bg-surfaceHover border border-border/50">
+                                    <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/43c013eb83-275600a048092574943b.png" alt="Mobile app version of a luxury wealth management dashboard, clean white interface, sophisticated typography, photorealistic mockup" />
+                                </div>
+                            </div>
+
+                            <!-- Results -->
+                            <div class="glass-card p-12 rounded-[24px] shadow-soft space-y-8 bg-surface">
+                                <h3 class="text-2xl font-serif text-textPrimary text-center">The Outcome</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                                    <div class="space-y-2">
+                                        <p class="text-4xl font-serif text-textPrimary">$1B+</p>
+                                        <p class="text-xs text-textSecondary uppercase tracking-widest">Assets Onboarded</p>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <p class="text-4xl font-serif text-textPrimary">40%</p>
+                                        <p class="text-xs text-textSecondary uppercase tracking-widest">Increase in Engagement</p>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <p class="text-4xl font-serif text-textPrimary">Zero</p>
+                                        <p class="text-xs text-textSecondary uppercase tracking-widest">Support Tickets on Launch</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            
+            // Trigger reflow for transition
+            void modal.offsetWidth;
+            
+            const content = modal.querySelector('.max-w-5xl');
+            content.classList.add('modal-enter-active');
+            content.classList.remove('modal-enter');
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            const content = modal.querySelector('.max-w-5xl');
+            
+            content.classList.add('modal-exit-active');
+            content.classList.remove('modal-enter-active');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                content.classList.remove('modal-exit-active');
+                document.body.style.overflow = ''; // Restore scrolling
+            }, 300);
+        }
+    </script>
+</body>
+</html>

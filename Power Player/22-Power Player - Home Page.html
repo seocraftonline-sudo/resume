@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        surface: '#F9FAFB',
+                        card: '#F3F4F6',
+                        primary: '#111827',
+                        secondary: '#4B5563',
+                        accent: '#4F46E5',
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px rgba(0, 0, 0, 0.05)',
+                        'glow': '0 0 20px rgba(79, 70, 229, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #F9FAFB;
+            color: #111827;
+            -webkit-font-smoothing: antialiased;
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="m-0 p-0 bg-surface min-h-screen flex flex-col font-sans">
+
+    <!-- Navigation -->
+    <nav id="header" class="w-full bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">
+                    EJ
+                </div>
+                <span class="font-semibold text-lg tracking-tight">Edward James</span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-secondary">
+                <a href="#" class="text-primary hover:text-accent transition-colors">Home</a>
+                <a href="#" class="hover:text-primary transition-colors">About</a>
+                <a href="#" class="hover:text-primary transition-colors">Expertise</a>
+                <a href="#" class="hover:text-primary transition-colors">Portfolio</a>
+                <a href="#" class="hover:text-primary transition-colors">Insights</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <button class="hidden md:flex px-5 py-2.5 bg-primary text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors shadow-soft">
+                    Contact Me
+                </button>
+                <button class="md:hidden w-10 h-10 flex items-center justify-center bg-card rounded-full text-primary">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-1 w-full max-w-7xl mx-auto px-6 py-12 flex flex-col gap-24">
+
+        <!-- Hero Section -->
+        <section id="hero" class="w-full flex flex-col lg:flex-row items-center gap-16 min-h-[600px]">
+            <div class="w-full lg:w-1/2 flex flex-col items-start gap-8">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-card rounded-full text-xs font-semibold text-secondary uppercase tracking-wider">
+                    <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                    Available for Consulting
+                </div>
+                
+                <h1 class="text-5xl lg:text-7xl font-bold leading-tight tracking-tight text-primary">
+                    Edward James.
+                    <span class="block text-gray-400 mt-2">Strategic Advisor & Board Member.</span>
+                </h1>
+                
+                <p class="text-lg text-secondary leading-relaxed max-w-xl">
+                    I guide executive teams through complex market transitions and scale enterprise operations. With over two decades of experience advising Fortune 500 companies, I deliver clarity where there is chaos.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mt-4">
+                    <button class="w-full sm:w-auto px-8 py-4 bg-primary text-white rounded-full font-medium shadow-soft hover:bg-gray-800 transition-all flex items-center justify-center gap-2">
+                        View Portfolio <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </button>
+                    <button class="w-full sm:w-auto px-8 py-4 bg-card text-primary rounded-full font-medium hover:bg-gray-200 transition-all">
+                        Get in Touch
+                    </button>
+                </div>
+            </div>
+            
+            <div class="w-full lg:w-1/2 relative">
+                <div class="absolute inset-0 bg-gradient-to-tr from-accent/20 to-transparent rounded-[2rem] blur-3xl -z-10 transform translate-x-8 translate-y-8"></div>
+                <div class="w-full aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl relative bg-card">
+                    <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/d87921b2f3-a49b092eefe82b0fb272.png" alt="Professional corporate portrait of a distinguished male executive in his 50s, wearing a sharp dark suit, standing in a modern glass office, cinematic lighting, confident expression" />
+                    
+                    <!-- Floating Badge -->
+                    <div class="absolute bottom-8 left-8 right-8 bg-white/90 backdrop-blur-md p-6 rounded-2xl shadow-soft flex items-center justify-between border border-white/20">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center text-accent">
+                                <i class="fa-solid fa-award text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-secondary font-medium uppercase tracking-wider">Current Role</p>
+                                <p class="text-sm font-bold text-primary">Senior Partner, Nexus Group</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Snapshot -->
+        <section id="snapshot" class="w-full grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="bg-white p-8 rounded-[1.5rem] shadow-soft border border-gray-100 flex flex-col items-center justify-center text-center gap-2 hover:shadow-glow transition-shadow cursor-default">
+                <span class="text-4xl font-bold text-primary">24+</span>
+                <span class="text-sm text-secondary font-medium uppercase tracking-wide">Years Experience</span>
+            </div>
+            <div class="bg-white p-8 rounded-[1.5rem] shadow-soft border border-gray-100 flex flex-col items-center justify-center text-center gap-2 hover:shadow-glow transition-shadow cursor-default">
+                <span class="text-4xl font-bold text-primary">$2B+</span>
+                <span class="text-sm text-secondary font-medium uppercase tracking-wide">Value Generated</span>
+            </div>
+            <div class="bg-white p-8 rounded-[1.5rem] shadow-soft border border-gray-100 flex flex-col items-center justify-center text-center gap-2 hover:shadow-glow transition-shadow cursor-default">
+                <span class="text-4xl font-bold text-primary">150+</span>
+                <span class="text-sm text-secondary font-medium uppercase tracking-wide">Enterprise Clients</span>
+            </div>
+            <div class="bg-white p-8 rounded-[1.5rem] shadow-soft border border-gray-100 flex flex-col items-center justify-center text-center gap-2 hover:shadow-glow transition-shadow cursor-default">
+                <span class="text-4xl font-bold text-primary">12</span>
+                <span class="text-sm text-secondary font-medium uppercase tracking-wide">Board Seats</span>
+            </div>
+        </section>
+
+        <!-- What I Do -->
+        <section id="expertise" class="w-full flex flex-col gap-12">
+            <div class="flex flex-col gap-4 max-w-2xl">
+                <h2 class="text-3xl font-bold text-primary tracking-tight">Core Expertise</h2>
+                <p class="text-secondary text-lg">Specialized domains where I deliver measurable impact for organizations operating at scale.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white p-8 rounded-[1.5rem] shadow-soft border border-gray-100 flex flex-col gap-6 group hover:border-gray-200 transition-colors">
+                    <div class="w-14 h-14 bg-card rounded-2xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-chart-line text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-primary mb-3">Strategic Scaling</h3>
+                        <p class="text-secondary leading-relaxed">Developing and executing comprehensive growth frameworks for mid-to-large cap enterprises entering new markets.</p>
+                    </div>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="bg-white p-8 rounded-[1.5rem] shadow-soft border border-gray-100 flex flex-col gap-6 group hover:border-gray-200 transition-colors">
+                    <div class="w-14 h-14 bg-card rounded-2xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-users-gear text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-primary mb-3">Organizational Restructuring</h3>
+                        <p class="text-secondary leading-relaxed">Optimizing executive leadership teams and operational hierarchies to maximize efficiency and shareholder value.</p>
+                    </div>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="bg-white p-8 rounded-[1.5rem] shadow-soft border border-gray-100 flex flex-col gap-6 group hover:border-gray-200 transition-colors">
+                    <div class="w-14 h-14 bg-card rounded-2xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-handshake-angle text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-primary mb-3">M&A Advisory</h3>
+                        <p class="text-secondary leading-relaxed">End-to-end guidance through complex mergers and acquisitions, from due diligence to post-merger integration.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Work Preview -->
+        <section id="work" class="w-full flex flex-col gap-12">
+            <div class="flex items-end justify-between">
+                <div class="flex flex-col gap-4 max-w-2xl">
+                    <h2 class="text-3xl font-bold text-primary tracking-tight">Featured Engagements</h2>
+                    <p class="text-secondary text-lg">Selected case studies demonstrating strategic execution and outcome delivery.</p>
+                </div>
+                <button class="hidden md:flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-colors">
+                    View All Projects <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="group cursor-pointer flex flex-col gap-6">
+                    <div class="w-full aspect-[16/10] rounded-[1.5rem] overflow-hidden bg-card relative shadow-soft">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/1f6c255e69-975a10261bc5f261af12.png" alt="Abstract corporate architecture, modern glass building facade, minimalist, blue and grey tones" />
+                        <div class="absolute top-4 left-4 px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-full text-xs font-bold text-primary tracking-wide">
+                            Financial Services
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-primary mb-2 group-hover:text-accent transition-colors">Global Bank Restructuring</h3>
+                        <p class="text-secondary leading-relaxed">Led the post-merger integration of two Tier-1 financial institutions, resulting in $400M annual operational synergies.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="group cursor-pointer flex flex-col gap-6">
+                    <div class="w-full aspect-[16/10] rounded-[1.5rem] overflow-hidden bg-card relative shadow-soft">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/e38ac0b1cb-1d64dd23d3674728de23.png" alt="High tech server room, clean abstract technology background, dark blue and white lighting" />
+                        <div class="absolute top-4 left-4 px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-full text-xs font-bold text-primary tracking-wide">
+                            Technology
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-primary mb-2 group-hover:text-accent transition-colors">SaaS Scale-up Strategy</h3>
+                        <p class="text-secondary leading-relaxed">Developed the European market entry strategy for a Series C enterprise software company, achieving 300% YoY growth.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="md:hidden w-full py-4 bg-card text-primary rounded-full font-medium text-sm flex items-center justify-center gap-2">
+                View All Projects <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </section>
+
+        <!-- CTA Banner -->
+        <section id="cta" class="w-full bg-primary rounded-[2rem] p-12 md:p-20 flex flex-col items-center text-center gap-8 relative overflow-hidden shadow-2xl mt-12 mb-12">
+            <!-- Background decorative elements -->
+            <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+            <div class="absolute bottom-0 left-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+            
+            <div class="relative z-10 flex flex-col items-center gap-6 max-w-3xl">
+                <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight">Ready to elevate your organization's trajectory?</h2>
+                <p class="text-gray-400 text-lg md:text-xl leading-relaxed">
+                    I am currently accepting select advisory roles and board positions for Q3 2026. Let's discuss how we can align strategy with execution.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 mt-4 w-full sm:w-auto">
+                    <button class="px-8 py-4 bg-white text-primary rounded-full font-bold shadow-lg hover:bg-gray-100 transition-colors w-full sm:w-auto">
+                        Schedule a Consultation
+                    </button>
+                    <button class="px-8 py-4 bg-white/10 text-white rounded-full font-medium hover:bg-white/20 backdrop-blur-sm transition-colors w-full sm:w-auto border border-white/10">
+                        Connect on LinkedIn
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="w-full bg-white border-t border-gray-100 py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">
+                    EJ
+                </div>
+                <span class="font-semibold text-primary">Edward James</span>
+            </div>
+            
+            <div class="flex items-center gap-6 text-sm text-secondary">
+                <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+                <span>&copy; 2026 Edward James. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

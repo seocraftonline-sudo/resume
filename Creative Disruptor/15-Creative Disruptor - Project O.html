@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Will Beeching</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f6f6f6',
+                            100: '#e7e7e7',
+                            200: '#d1d1d1',
+                            300: '#b0b0b0',
+                            400: '#888888',
+                            500: '#6d6d6d',
+                            600: '#5d5d5d',
+                            700: '#4f4f4f',
+                            800: '#454545',
+                            900: '#3d3d3d',
+                            950: '#1a1a1a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f6f6f6;
+            color: #1a1a1a;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+        ::-webkit-scrollbar { display: none; }
+        
+        .disruptive-text {
+            font-family: 'Times New Roman', Times, serif;
+            letter-spacing: -0.05em;
+            line-height: 0.9;
+        }
+        .mono-label {
+            font-family: monospace;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .bento-card {
+            background-color: #ffffff;
+            border: 1px solid #e7e7e7;
+            border-radius: 24px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .bento-card:hover {
+            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.1);
+            border-color: #d1d1d1;
+            transform: translateY(-8px);
+        }
+
+        /* Detail View Overlay */
+        #project-detail-overlay {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        #project-detail-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .detail-content {
+            transform: translateY(100%);
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        #project-detail-overlay.active .detail-content {
+            transform: translateY(0);
+        }
+        
+        .table-row-hover:hover {
+            background-color: rgba(246, 246, 246, 0.8);
+        }
+        
+        .status-pill {
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .status-ongoing { background-color: #EBF5FF; color: #1E40AF; border: 1px solid #BFDBFE; }
+        .status-completed { background-color: #F0FDF4; color: #166534; border: 1px solid #BBF7D0; }
+        .status-archived { background-color: #F3F4F6; color: #374151; border: 1px solid #E5E7EB; }
+    </style>
+</head>
+<body class="m-0 p-0 font-sans selection:bg-brand-950 selection:text-white bg-brand-50">
+
+    <!-- Header / Nav -->
+    <header id="header" class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 22H22L12 2Z" fill="black"/>
+                    <path d="M12 8L6 20H18L12 8Z" fill="white"/>
+                </svg>
+                <span class="font-semibold text-lg tracking-tight">WB.</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#" class="text-sm font-medium text-brand-950 hover:text-brand-500 transition-colors">Work</a>
+                <a href="#" class="text-sm font-medium text-brand-500 hover:text-brand-950 transition-colors">About</a>
+                <a href="#" class="text-sm font-medium text-brand-500 hover:text-brand-950 transition-colors">Services</a>
+                <a href="#" class="text-sm font-medium text-brand-500 hover:text-brand-950 transition-colors">Blog</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <span class="text-xs font-mono text-brand-400 hidden lg:block">LON 12:33 ☀️</span>
+                <a href="#contact" class="px-5 py-2.5 bg-brand-950 text-white text-sm font-medium rounded-full hover:bg-brand-800 transition-colors">Let's Talk</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="pt-32 lg:pt-48 pb-24">
+        
+        <!-- Projects Introduction -->
+        <section id="projects_intro" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-20 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
+                <div class="max-w-4xl">
+                    <h1 class="disruptive-text text-6xl md:text-8xl lg:text-[110px] text-brand-950 uppercase mix-blend-multiply mb-8 relative">
+                        Deep <br>
+                        <span class="ml-12 md:ml-24">Dives</span>
+                        <div class="absolute -z-10 top-1/2 left-1/4 w-64 h-64 bg-brand-200 rounded-full blur-3xl opacity-50"></div>
+                    </h1>
+                    <p class="text-xl md:text-2xl font-light leading-relaxed text-brand-800 max-w-2xl">
+                        A repository of specific initiatives, experiments, personal projects, and case studies. This is where the thinking behind the making is documented.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Project Hero -->
+        <section id="featured_project" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-32">
+            <div class="bento-card p-0 group cursor-pointer" onclick="openDetailView()">
+                <div class="grid grid-cols-1 lg:grid-cols-2">
+                    <div class="p-12 lg:p-16 flex flex-col justify-between bg-white">
+                        <div>
+                            <div class="flex items-center gap-4 mb-8">
+                                <span class="status-pill status-ongoing">
+                                    <span class="w-2 h-2 rounded-full bg-blue-600"></span>
+                                    Ongoing
+                                </span>
+                                <span class="mono-label text-brand-500">2025 - Present</span>
+                            </div>
+                            <h2 class="disruptive-text text-5xl md:text-6xl text-brand-950 uppercase mb-6">Project <br>Synthesis</h2>
+                            <p class="text-lg text-brand-700 leading-relaxed font-light mb-8">
+                                An experimental framework exploring the intersection of generative AI and spatial computing interfaces. The challenge was to create a cohesive design language that adapts dynamically to user context without losing structural integrity.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-2 mb-8">
+                                <span class="px-3 py-1 bg-brand-50 text-brand-700 text-xs font-mono uppercase rounded-md border border-brand-100">WebGL</span>
+                                <span class="px-3 py-1 bg-brand-50 text-brand-700 text-xs font-mono uppercase rounded-md border border-brand-100">React Three Fiber</span>
+                                <span class="px-3 py-1 bg-brand-50 text-brand-700 text-xs font-mono uppercase rounded-md border border-brand-100">LLM Integration</span>
+                            </div>
+                            <button class="flex items-center gap-3 text-brand-950 font-medium group-hover:gap-5 transition-all">
+                                <span>Read Full Case Study</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="h-[400px] lg:h-auto relative overflow-hidden bg-brand-900">
+                        <img class="w-full h-full object-cover opacity-80 mix-blend-luminosity transition-transform duration-700 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/73c814ef31-d98d22f83c15d3ec95b0.png" alt="Abstract spatial computing interface with glowing elements" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Cards Grid (Table Format inspired by references) -->
+        <section id="project_database" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-32">
+            <div class="mb-8 flex justify-between items-end">
+                <h3 class="disruptive-text text-4xl text-brand-950 uppercase">Project Database</h3>
+                <div class="flex gap-4">
+                    <button class="px-4 py-2 bg-white border border-brand-200 rounded-lg text-sm font-medium hover:bg-brand-50 flex items-center gap-2">
+                        <i class="fa-solid fa-filter text-brand-500"></i> Filter
+                    </button>
+                    <button class="px-4 py-2 bg-white border border-brand-200 rounded-lg text-sm font-medium hover:bg-brand-50 flex items-center gap-2">
+                        <i class="fa-solid fa-sort text-brand-500"></i> Sort
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white border border-brand-200 rounded-2xl overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="border-b border-brand-200 bg-brand-50/50 text-brand-500 text-sm">
+                                <th class="p-4 font-medium min-w-[300px]">Project Name</th>
+                                <th class="p-4 font-medium min-w-[150px]">Status</th>
+                                <th class="p-4 font-medium min-w-[150px]">Year</th>
+                                <th class="p-4 font-medium min-w-[300px]">Technologies</th>
+                                <th class="p-4 font-medium text-right">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-brand-800">
+                            <!-- Row 1 -->
+                            <tr class="border-b border-brand-100 table-row-hover cursor-pointer transition-colors" onclick="openDetailView()">
+                                <td class="p-4">
+                                    <div class="font-medium text-brand-950">Aura Banking App</div>
+                                    <div class="text-sm text-brand-500 mt-1">Spatial Banking Experience Redesign</div>
+                                </td>
+                                <td class="p-4">
+                                    <span class="status-pill status-completed">
+                                        <span class="w-2 h-2 rounded-full bg-green-600"></span> Completed
+                                    </span>
+                                </td>
+                                <td class="p-4 mono-label">2024</td>
+                                <td class="p-4">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-2 py-1 bg-brand-50 text-xs rounded border border-brand-100">SwiftUI</span>
+                                        <span class="px-2 py-1 bg-brand-50 text-xs rounded border border-brand-100">Figma</span>
+                                    </div>
+                                </td>
+                                <td class="p-4 text-right">
+                                    <button class="text-brand-950 hover:text-brand-500"><i class="fa-solid fa-arrow-right"></i></button>
+                                </td>
+                            </tr>
+                            <!-- Row 2 -->
+                            <tr class="border-b border-brand-100 table-row-hover cursor-pointer transition-colors" onclick="openDetailView()">
+                                <td class="p-4">
+                                    <div class="font-medium text-brand-950">Maison Headless</div>
+                                    <div class="text-sm text-brand-500 mt-1">E-commerce Architecture</div>
+                                </td>
+                                <td class="p-4">
+                                    <span class="status-pill status-completed">
+                                        <span class="w-2 h-2 rounded-full bg-green-600"></span> Completed
+                                    </span>
+                                </td>
+                                <td class="p-4 mono-label">2023</td>
+                                <td class="p-4">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-2 py-1 bg-brand-50 text-xs rounded border border-brand-100">Next.js</span>
+                                        <span class="px-2 py-1 bg-brand-50 text-xs rounded border border-brand-100">Shopify</span>
+                                    </div>
+                                </td>
+                                <td class="p-4 text-right">
+                                    <button class="text-brand-950 hover:text-brand-500"><i class="fa-solid fa-arrow-right"></i></button>
+                                </td>
+                            </tr>
+                            <!-- Row 3 -->
+                            <tr class="border-b border-brand-100 table-row-hover cursor-pointer transition-colors" onclick="openDetailView()">
+                                <td class="p-4">
+                                    <div class="font-medium text-brand-950">Nexus Alpha Terminal</div>
+                                    <div class="text-sm text-brand-500 mt-1">Predictive Analytics Platform</div>
+                                </td>
+                                <td class="p-4">
+                                    <span class="status-pill status-archived">
+                                        <span class="w-2 h-2 rounded-full bg-gray-500"></span> Archived
+                                    </span>
+                                </td>
+                                <td class="p-4 mono-label">2022</td>
+                                <td class="p-4">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-2 py-1 bg-brand-50 text-xs rounded border border-brand-100">React</span>
+                                        <span class="px-2 py-1 bg-brand-50 text-xs rounded border border-brand-100">D3.js</span>
+                                    </div>
+                                </td>
+                                <td class="p-4 text-right">
+                                    <button class="text-brand-950 hover:text-brand-500"><i class="fa-solid fa-arrow-right"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-white border-t border-gray-100 py-12">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-sm text-brand-500">
+                &copy; 2026 Will Beeching. All Rights Reserved.
+            </div>
+            <div class="flex items-center gap-6 text-sm font-medium">
+                <a href="#" class="text-brand-950 hover:text-brand-500 transition-colors">GitHub</a>
+                <a href="#" class="text-brand-950 hover:text-brand-500 transition-colors">LinkedIn</a>
+                <a href="#" class="text-brand-950 hover:text-brand-500 transition-colors">Instagram</a>
+                <a href="#" class="text-brand-950 hover:text-brand-500 transition-colors">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Detailed Project View Overlay -->
+    <div id="project-detail-overlay" class="fixed inset-0 z-[100] flex items-end sm:items-center justify-center sm:p-6 lg:p-12">
+        <div class="absolute inset-0 bg-brand-950/40 backdrop-blur-md cursor-pointer" onclick="closeDetailView()"></div>
+        
+        <div class="detail-content relative w-full h-[90vh] sm:h-full max-w-[1200px] bg-brand-50 rounded-t-3xl sm:rounded-3xl shadow-2xl overflow-y-auto flex flex-col">
+            
+            <!-- Sticky Header -->
+            <div class="sticky top-0 z-10 flex justify-between items-center p-6 lg:p-8 bg-brand-50/90 backdrop-blur-md border-b border-brand-200">
+                <div>
+                    <h2 class="disruptive-text text-3xl text-brand-950 uppercase">Project Synthesis</h2>
+                    <span class="mono-label text-brand-500">Generative Spatial UI</span>
+                </div>
+                <button onclick="closeDetailView()" class="w-12 h-12 rounded-full bg-white border border-brand-200 flex items-center justify-center hover:bg-brand-100 transition-colors">
+                    <i class="fa-solid fa-xmark text-brand-950"></i>
+                </button>
+            </div>
+
+            <div class="p-6 lg:p-12 flex-1">
+                <!-- Hero Image -->
+                <div class="w-full aspect-[21/9] rounded-2xl overflow-hidden mb-12 bg-brand-900">
+                     <img class="w-full h-full object-cover mix-blend-luminosity opacity-80" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/73c814ef31-d98d22f83c15d3ec95b0.png" alt="Detailed view of spatial UI" />
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    
+                    <!-- Meta Column -->
+                    <div class="lg:col-span-4 space-y-8">
+                        <div class="bento-card p-6 bg-white">
+                            <h4 class="mono-label text-brand-400 mb-2">Initiative</h4>
+                            <p class="text-lg font-medium text-brand-950">Internal R&D</p>
+                        </div>
+                        <div class="bento-card p-6 bg-white">
+                            <h4 class="mono-label text-brand-400 mb-2">Collaborators</h4>
+                            <p class="text-lg font-medium text-brand-950">Nova Tech Lab</p>
+                        </div>
+                        <div class="bento-card p-6 bg-white">
+                            <h4 class="mono-label text-brand-400 mb-4">Live Links</h4>
+                            <a href="#" class="text-brand-950 hover:text-brand-500 underline underline-offset-4 decoration-brand-300">View Prototype</a>
+                        </div>
+                    </div>
+
+                    <!-- Content Column -->
+                    <div class="lg:col-span-8 space-y-12">
+                        <div>
+                            <h3 class="disruptive-text text-4xl text-brand-950 uppercase mb-6">The Opportunity</h3>
+                            <p class="text-lg text-brand-800 leading-relaxed font-light">
+                                As spatial computing becomes more prevalent, traditional 2D UI paradigms are failing. This project was initiated to explore how generative AI could assemble user interfaces on the fly in a 3D environment, adapting to the user's physical context and immediate intent.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 class="disruptive-text text-4xl text-brand-950 uppercase mb-6">The Approach</h3>
+                            <p class="text-lg text-brand-800 leading-relaxed font-light mb-8">
+                                Instead of designing static screens, I designed a system of rules and atomic components. The AI acts as the layout engine, pulling from this design system to construct interfaces in real-time. The visual language relies heavily on glassmorphism and depth to establish hierarchy in Z-space.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 class="disruptive-text text-4xl text-brand-950 uppercase mb-6">Outcomes & Learnings</h3>
+                            <p class="text-lg text-brand-800 leading-relaxed font-light mb-8">
+                                The prototype successfully demonstrated that AI-driven layout engines can reduce cognitive load by only presenting necessary controls. However, establishing predictable interaction patterns remains a challenge when the UI is highly fluid.
+                            </p>
+                        </div>
+                        
+                        <!-- Skills Matrix -->
+                        <div class="border-t border-brand-200 pt-12">
+                            <h3 class="mono-label text-brand-500 mb-6">Skills & Methodology Matrix</h3>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                <div class="p-4 bg-white border border-brand-100 rounded-xl">
+                                    <div class="text-sm font-medium text-brand-950 mb-1">WebGL</div>
+                                    <div class="text-xs text-brand-500">Rendering Engine</div>
+                                </div>
+                                <div class="p-4 bg-white border border-brand-100 rounded-xl">
+                                    <div class="text-sm font-medium text-brand-950 mb-1">React Three Fiber</div>
+                                    <div class="text-xs text-brand-500">Framework</div>
+                                </div>
+                                <div class="p-4 bg-white border border-brand-100 rounded-xl">
+                                    <div class="text-sm font-medium text-brand-950 mb-1">System Design</div>
+                                    <div class="text-xs text-brand-500">Methodology</div>
+                                </div>
+                                <div class="p-4 bg-white border border-brand-100 rounded-xl">
+                                    <div class="text-sm font-medium text-brand-950 mb-1">Prompt Eng</div>
+                                    <div class="text-xs text-brand-500">AI Integration</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openDetailView() {
+            document.getElementById('project-detail-overlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDetailView() {
+            document.getElementById('project-detail-overlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    </script>
+</body>
+</html>

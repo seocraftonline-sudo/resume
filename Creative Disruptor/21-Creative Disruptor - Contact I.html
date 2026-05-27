@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Will Beeching</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f6f6f6',
+                            100: '#e7e7e7',
+                            200: '#d1d1d1',
+                            300: '#b0b0b0',
+                            400: '#888888',
+                            500: '#6d6d6d',
+                            600: '#5d5d5d',
+                            700: '#4f4f4f',
+                            800: '#454545',
+                            900: '#3d3d3d',
+                            950: '#1a1a1a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f6f6f6;
+            color: #1a1a1a;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+        ::-webkit-scrollbar { display: none; }
+        
+        .disruptive-text {
+            font-family: 'Times New Roman', Times, serif;
+            letter-spacing: -0.05em;
+            line-height: 0.9;
+        }
+        .mono-label {
+            font-family: monospace;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .bento-card {
+            background-color: #ffffff;
+            border: 1px solid #e7e7e7;
+            border-radius: 24px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .bento-card:hover {
+            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.1);
+            border-color: #d1d1d1;
+            transform: translateY(-8px);
+        }
+
+        .service-card {
+            background-color: #ffffff;
+            border: 1px solid #e7e7e7;
+            border-radius: 12px;
+            padding: 2.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card:hover {
+            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.08);
+            border-color: #d1d1d1;
+            transform: translateY(-4px);
+        }
+
+        .process-number {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 12rem;
+            line-height: 0.8;
+            color: rgba(26, 26, 26, 0.03);
+            position: absolute;
+            top: -2rem;
+            left: -2rem;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Custom Input Styles referencing the image */
+        .custom-input-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        .custom-input-label {
+            position: absolute;
+            top: -0.5rem;
+            left: 1rem;
+            background-color: #ffffff;
+            padding: 0 0.5rem;
+            font-size: 0.75rem;
+            color: #888888;
+            z-index: 10;
+        }
+        .custom-input {
+            width: 100%;
+            background-color: #ffffff;
+            border: 1px solid #e7e7e7;
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            font-size: 0.875rem;
+            color: #1a1a1a;
+            transition: all 0.2s ease;
+            outline: none;
+        }
+        .custom-input:focus {
+            border-color: #1a1a1a;
+            box-shadow: 0 0 0 1px #1a1a1a;
+        }
+        .custom-textarea {
+            width: 100%;
+            background-color: #ffffff;
+            border: 1px solid #e7e7e7;
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            font-size: 0.875rem;
+            color: #1a1a1a;
+            transition: all 0.2s ease;
+            outline: none;
+            min-height: 120px;
+            resize: vertical;
+        }
+        .custom-textarea:focus {
+            border-color: #1a1a1a;
+            box-shadow: 0 0 0 1px #1a1a1a;
+        }
+    </style>
+</head>
+<body class="m-0 p-0 font-sans selection:bg-brand-950 selection:text-white bg-brand-50">
+
+    <!-- Header / Nav -->
+    <header id="header" class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 22H22L12 2Z" fill="black"/>
+                    <path d="M12 8L6 20H18L12 8Z" fill="white"/>
+                </svg>
+                <span class="font-semibold text-lg tracking-tight">WB.</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#" class="text-sm font-medium text-brand-500 hover:text-brand-950 transition-colors">Work</a>
+                <a href="#" class="text-sm font-medium text-brand-500 hover:text-brand-950 transition-colors">About</a>
+                <a href="#" class="text-sm font-medium text-brand-500 hover:text-brand-950 transition-colors">Services</a>
+                <a href="#" class="text-sm font-medium text-brand-500 hover:text-brand-950 transition-colors">Blog</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <span class="text-xs font-mono text-brand-400 hidden lg:block">LON 12:33 ☀️</span>
+                <a href="#contact" class="px-5 py-2.5 bg-brand-950 text-white text-sm font-medium rounded-full hover:bg-brand-800 transition-colors border border-transparent">Let's Talk</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="pt-32 lg:pt-48 pb-24 relative">
+        
+        <!-- Abstract Background Elements referencing the prior screen -->
+        <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-200 rounded-full blur-[150px] opacity-20 -translate-y-1/4 translate-x-1/4 pointer-events-none -z-10"></div>
+        <div class="absolute top-[40%] left-0 w-[600px] h-[600px] bg-brand-300 rounded-full blur-[150px] opacity-10 -translate-y-1/2 -translate-x-1/4 pointer-events-none -z-10"></div>
+
+        <!-- Contact Hero Split Layout -->
+        <section id="contact_hero" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-32 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
+                
+                <!-- Left Column: Warm Intro & Disruptive Text -->
+                <div class="lg:col-span-6 relative">
+                    <div class="process-number">TALK</div>
+                    <h1 class="disruptive-text text-6xl md:text-8xl lg:text-[110px] text-brand-950 uppercase mix-blend-multiply mb-8 relative z-10">
+                        Let's <br>
+                        <span class="ml-12 md:ml-24 text-brand-500">Connect</span>
+                    </h1>
+                    
+                    <p class="text-xl md:text-2xl font-light leading-relaxed text-brand-950 mb-12 max-w-lg">
+                        I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. 
+                        Let's build something unexpected.
+                    </p>
+
+                    <!-- Connections Hub & Availability (Integrated) -->
+                    <div class="flex flex-col gap-6">
+                        <!-- Availability Status -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center flex-shrink-0 mt-1">
+                                <div class="w-3 h-3 bg-[#10b981] rounded-full animate-pulse"></div>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-medium text-brand-950">Currently Available</h3>
+                                <p class="text-sm text-brand-600 font-light mt-1">Accepting new projects for Q4 2026. Open to full-time leadership roles and strategic consulting.</p>
+                            </div>
+                        </div>
+
+                        <!-- Response Time -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fa-regular fa-clock text-brand-950 text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-medium text-brand-950">Response Time</h3>
+                                <p class="text-sm text-brand-600 font-light mt-1">I aim to reply to all inquiries within 24-48 hours. No ghosting, just honest conversations.</p>
+                            </div>
+                        </div>
+
+                        <!-- Direct Contact Blocks referencing image bottom cards -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+                            <div class="service-card p-6 !rounded-[16px]">
+                                <h4 class="text-sm font-medium text-brand-950 mb-2">Direct Email</h4>
+                                <p class="text-xs text-brand-500 font-light mb-4">Prefer your own client?</p>
+                                <a href="mailto:hello@willbeeching.com" class="text-sm font-medium text-brand-950 flex items-center gap-2 hover:text-brand-500 transition-colors">
+                                    <i class="fa-regular fa-envelope"></i> hello@willbeeching.com
+                                </a>
+                            </div>
+                            <div class="service-card p-6 !rounded-[16px]">
+                                <h4 class="text-sm font-medium text-brand-950 mb-2">Location</h4>
+                                <p class="text-xs text-brand-500 font-light mb-4">Based in London, UK</p>
+                                <span class="text-sm font-medium text-brand-950 flex items-center gap-2">
+                                    <i class="fa-solid fa-globe"></i> GMT / BST Timezone
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Form (Referencing image form card) -->
+                <div class="lg:col-span-6 relative z-20">
+                    <div class="bg-white rounded-[24px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-brand-100 p-8 md:p-10 relative overflow-hidden">
+                        <!-- Subtle decorative background inside form card -->
+                        <div class="absolute top-0 right-0 w-[300px] h-[300px] bg-brand-50 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+                        
+                        <h2 class="text-2xl font-medium text-brand-950 mb-8 relative z-10">Send a message</h2>
+                        
+                        <form class="relative z-10">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
+                                <!-- First Name -->
+                                <div class="custom-input-group">
+                                    <label class="custom-input-label">First name</label>
+                                    <input type="text" class="custom-input" placeholder="Johaness Mark" />
+                                </div>
+                                <!-- Last Name -->
+                                <div class="custom-input-group">
+                                    <label class="custom-input-label">Last name</label>
+                                    <input type="text" class="custom-input" placeholder="Parker" />
+                                </div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="custom-input-group mt-2">
+                                <label class="custom-input-label">Email address</label>
+                                <input type="email" class="custom-input" placeholder="contact.uixmk@gmail.com" />
+                            </div>
+
+                            <!-- Subject/Nature of Enquiry (Adding based on brief, matching style) -->
+                            <div class="custom-input-group mt-2">
+                                <label class="custom-input-label">Subject</label>
+                                <input type="text" class="custom-input" placeholder="Project Inquiry / Collaboration" />
+                            </div>
+
+                            <!-- Company (Optional) -->
+                            <div class="custom-input-group mt-2">
+                                <label class="custom-input-label">Company website (Optional)</label>
+                                <input type="text" class="custom-input" placeholder="meostudio.agency" />
+                            </div>
+
+                            <!-- Message -->
+                            <div class="custom-input-group mt-2">
+                                <label class="custom-input-label">Your message</label>
+                                <textarea class="custom-textarea" placeholder="Tell us more about your project..."></textarea>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="button" class="w-full py-4 bg-brand-950 text-white font-medium rounded-lg hover:bg-brand-800 transition-colors mt-4 text-sm">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- Social Hub & Booking Section -->
+        <section id="social_booking_hub" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-32">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+                
+                <!-- Social Links -->
+                <div>
+                    <div class="mb-10">
+                        <h2 class="mono-label text-brand-500 mb-4">Digital Footprint</h2>
+                        <h3 class="disruptive-text text-4xl text-brand-950 uppercase">Other <br>Platforms</h3>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                        <a href="#" class="bento-card !p-6 flex flex-col items-center justify-center text-center gap-3 group">
+                            <i class="fa-brands fa-linkedin text-3xl text-brand-400 group-hover:text-brand-950 transition-colors"></i>
+                            <span class="text-sm font-medium text-brand-950">LinkedIn</span>
+                        </a>
+                        <a href="#" class="bento-card !p-6 flex flex-col items-center justify-center text-center gap-3 group">
+                            <i class="fa-brands fa-github text-3xl text-brand-400 group-hover:text-brand-950 transition-colors"></i>
+                            <span class="text-sm font-medium text-brand-950">GitHub</span>
+                        </a>
+                        <a href="#" class="bento-card !p-6 flex flex-col items-center justify-center text-center gap-3 group">
+                            <i class="fa-brands fa-behance text-3xl text-brand-400 group-hover:text-brand-950 transition-colors"></i>
+                            <span class="text-sm font-medium text-brand-950">Behance</span>
+                        </a>
+                        <a href="#" class="bento-card !p-6 flex flex-col items-center justify-center text-center gap-3 group">
+                            <i class="fa-brands fa-instagram text-3xl text-brand-400 group-hover:text-brand-950 transition-colors"></i>
+                            <span class="text-sm font-medium text-brand-950">Instagram</span>
+                        </a>
+                        <a href="#" class="bento-card !p-6 flex flex-col items-center justify-center text-center gap-3 group">
+                            <i class="fa-brands fa-twitter text-3xl text-brand-400 group-hover:text-brand-950 transition-colors"></i>
+                            <span class="text-sm font-medium text-brand-950">X / Twitter</span>
+                        </a>
+                        <a href="#" class="bento-card !p-6 flex flex-col items-center justify-center text-center gap-3 group">
+                            <i class="fa-brands fa-youtube text-3xl text-brand-400 group-hover:text-brand-950 transition-colors"></i>
+                            <span class="text-sm font-medium text-brand-950">YouTube</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Optional Booking Integration -->
+                <div>
+                    <div class="mb-10">
+                        <h2 class="mono-label text-brand-500 mb-4">Direct Action</h2>
+                        <h3 class="disruptive-text text-4xl text-brand-950 uppercase">Skip The <br>Inbox</h3>
+                    </div>
+                    
+                    <div class="service-card !p-8 bg-brand-950 text-white border-brand-900 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-brand-800 rounded-full blur-[60px] opacity-50 -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+                        
+                        <div class="relative z-10">
+                            <div class="w-16 h-16 rounded-full bg-brand-800 flex items-center justify-center mb-6">
+                                <i class="fa-regular fa-calendar-check text-2xl text-white"></i>
+                            </div>
+                            <h4 class="text-2xl font-medium text-white mb-4">Book a Consultation</h4>
+                            <p class="text-brand-300 font-light text-sm mb-8 max-w-md">
+                                Ready to dive straight into details? Schedule a 30-minute discovery call directly on my calendar. We'll discuss your goals and see if we're a good fit.
+                            </p>
+                            
+                            <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 mb-8">
+                                <div class="flex items-center justify-between mb-4">
+                                    <span class="text-sm font-medium text-white">Next available slot:</span>
+                                    <span class="text-sm font-mono text-brand-300">Tomorrow, 2:00 PM GMT</span>
+                                </div>
+                                <div class="w-full h-px bg-white/10 mb-4"></div>
+                                <div class="flex items-center gap-3 text-sm text-brand-300">
+                                    <i class="fa-solid fa-video"></i> Video Call (Google Meet)
+                                </div>
+                            </div>
+                            
+                            <button class="px-6 py-3 bg-white text-brand-950 text-sm font-medium rounded-full hover:bg-brand-100 transition-colors w-full sm:w-auto flex items-center justify-center gap-2">
+                                Open Calendar <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-white border-t border-gray-100 py-12 mt-auto">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-sm text-brand-500">
+                &copy; 2026 Will Beeching. All Rights Reserved.
+            </div>
+            <div class="flex items-center gap-6 text-sm font-medium">
+                <a href="#" class="text-brand-950 hover:text-brand-500 transition-colors">GitHub</a>
+                <a href="#" class="text-brand-950 hover:text-brand-500 transition-colors">LinkedIn</a>
+                <a href="#" class="text-brand-950 hover:text-brand-500 transition-colors">Instagram</a>
+                <a href="#" class="text-brand-950 hover:text-brand-500 transition-colors">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

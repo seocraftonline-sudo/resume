@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Alex Mercer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            orange: '#FF6600',
+                            dark: '#0A0A0A',
+                            light: '#F5F5F5',
+                            border: '#E5E5E5'
+                        }
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF;
+            color: #0A0A0A;
+            -webkit-font-smoothing: antialiased;
+        }
+        ::-webkit-scrollbar { display: none; }
+        
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .noise-bg {
+            position: relative;
+        }
+        .noise-bg::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .list-item-hover:hover .hover-orange {
+            color: #FF6600;
+        }
+        
+        .list-item-hover:hover .hover-border {
+            border-color: #FF6600;
+        }
+
+        .post-card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .post-card-hover:hover {
+            transform: translateY(-4px);
+            border-color: #FF6600;
+        }
+        .post-card-hover:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans selection:bg-brand-orange selection:text-white m-0 p-0">
+
+    <header id="header" class="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
+        <nav class="glass-nav pointer-events-auto rounded-[32px] px-2 py-2 flex items-center gap-8 shadow-2xl border border-white/10">
+            <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center shrink-0 ml-1">
+                <i class="fa-solid fa-layer-group text-brand-dark text-lg"></i>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-6 text-sm font-medium text-white/80">
+                <a href="#" class="hover:text-white transition-colors">Work</a>
+                <a href="#" class="hover:text-white transition-colors">Expertise</a>
+                <a href="#" class="text-white transition-colors font-bold border-b-2 border-brand-orange pb-0.5">Writing</a>
+                <a href="#" class="hover:text-white transition-colors">About</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <a href="#" class="bg-brand-orange hover:bg-[#e65c00] text-white text-sm font-semibold px-6 py-2.5 rounded-full transition-all duration-300 shadow-[0_4px_14px_0_rgba(255,102,0,0.39)] hover:shadow-[0_6px_20px_rgba(255,102,0,0.23)]">
+                    Let's Talk
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow flex flex-col pt-32">
+        
+        <section id="blog-hero" class="relative w-full px-4 md:px-8 pt-16 pb-12 flex flex-col items-center text-center z-10">
+            <h1 class="text-5xl md:text-7xl lg:text-[90px] font-extrabold tracking-tight text-brand-dark max-w-5xl leading-[0.9] mb-8 uppercase font-sans" style="letter-spacing: -0.05em;">
+                Engineering<br/>Thoughts.
+            </h1>
+            
+            <div class="max-w-3xl mx-auto text-center space-y-4 text-lg md:text-xl text-gray-800 leading-relaxed font-sans p-8 glass-card rounded-[32px]">
+                <p class="font-medium">
+                    A technical journal exploring distributed systems, architecture patterns, and the realities of scaling software. New essays published bi-weekly on building resilient infrastructure.
+                </p>
+            </div>
+        </section>
+
+        <div class="relative w-full noise-bg py-16 px-4 md:px-8 bg-[#F8F1EC]">
+            <div class="max-w-[1440px] mx-auto relative z-10">
+
+                <!-- Featured Post -->
+                <section id="featured-post" class="mb-24">
+                    <div class="mb-8">
+                        <h2 class="text-xs font-mono font-bold text-gray-500 uppercase tracking-widest mb-4">Latest Essay</h2>
+                    </div>
+                    
+                    <a href="#" class="group block relative rounded-[32px] overflow-hidden bg-brand-dark border border-gray-200">
+                        <div class="absolute inset-0 bg-black/40 z-10 group-hover:bg-black/30 transition-colors duration-500"></div>
+                        <div class="h-[500px] w-full overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/8af4f6edbc-3f0fb58fd088db661894.png" alt="abstract data visualization complex network graph dark theme high contrast orange accents" />
+                        </div>
+                        
+                        <div class="absolute bottom-0 left-0 right-0 p-8 md:p-12 z-20 flex flex-col md:flex-row md:items-end justify-between gap-8 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
+                            <div class="max-w-2xl">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <span class="bg-brand-orange text-white text-xs font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-full">System Architecture</span>
+                                    <span class="text-gray-300 text-sm font-mono">Oct 24, 2023 • 12 min read</span>
+                                </div>
+                                <h3 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight group-hover:text-brand-orange transition-colors">
+                                    The Fallacy of Infinite Scale: When Microservices Become a Monolith
+                                </h3>
+                                <p class="text-gray-300 text-lg font-medium leading-relaxed hidden md:block">
+                                    Why distributing your monolith doesn't automatically solve scaling problems. An analysis of network latency, distributed transactions, and the operational tax of complex mesh architectures.
+                                </p>
+                            </div>
+                            
+                            <div class="shrink-0">
+                                <span class="inline-flex items-center justify-center bg-white text-brand-dark text-sm font-bold px-6 py-3 rounded-full group-hover:bg-brand-orange group-hover:text-white transition-all duration-300">
+                                    Read Essay <i class="fa-solid fa-arrow-right ml-2"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </section>
+
+                <hr class="border-gray-300 my-16">
+
+                <!-- Filter & Grid -->
+                <section id="post-grid" class="mb-32">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6">
+                        <h2 class="text-3xl md:text-4xl font-bold text-brand-dark font-sans tracking-tight">Archive</h2>
+                        
+                        <div class="flex flex-wrap gap-2">
+                            <button class="bg-brand-dark text-white text-sm font-mono font-bold px-4 py-2 rounded-full border border-brand-dark">All</button>
+                            <button class="bg-white text-gray-600 hover:text-brand-dark text-sm font-mono font-bold px-4 py-2 rounded-full border border-gray-200 hover:border-gray-400 transition-colors">Architecture</button>
+                            <button class="bg-white text-gray-600 hover:text-brand-dark text-sm font-mono font-bold px-4 py-2 rounded-full border border-gray-200 hover:border-gray-400 transition-colors">Performance</button>
+                            <button class="bg-white text-gray-600 hover:text-brand-dark text-sm font-mono font-bold px-4 py-2 rounded-full border border-gray-200 hover:border-gray-400 transition-colors">Engineering Culture</button>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Card 1 -->
+                        <a href="#" class="glass-card rounded-[24px] overflow-hidden border border-gray-200 post-card-hover group flex flex-col h-full bg-white">
+                            <div class="h-48 overflow-hidden relative border-b border-gray-100">
+                                <img class="w-full h-full object-cover transition-transform duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/0403905409-af395634678d7b4f9726.png" alt="abstract server racks led lights dark background technical feeling" />
+                                <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-brand-dark text-xs font-mono font-bold uppercase px-3 py-1 rounded-full">Performance</div>
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <div class="flex items-center gap-3 text-xs font-mono text-gray-500 mb-3">
+                                    <span>Sep 12, 2023</span>
+                                    <span>•</span>
+                                    <span>8 min read</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-brand-dark mb-3 group-hover:text-brand-orange transition-colors leading-snug">Optimizing Node.js V8 Garbage Collection for High-Throughput APIs</h3>
+                                <p class="text-sm text-gray-600 font-medium leading-relaxed mb-6 flex-grow">
+                                    Practical strategies for reducing tail latency in Node.js applications by tuning V8 memory limits and understanding allocation patterns.
+                                </p>
+                                <div class="mt-auto border-t border-gray-100 pt-4 flex justify-between items-center">
+                                    <span class="text-sm font-bold text-brand-dark">Alex Mercer</span>
+                                    <span class="text-brand-orange text-sm font-bold"><i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Card 2 -->
+                        <a href="#" class="glass-card rounded-[24px] overflow-hidden border border-gray-200 post-card-hover group flex flex-col h-full bg-white">
+                            <div class="h-48 overflow-hidden relative border-b border-gray-100">
+                                <img class="w-full h-full object-cover transition-transform duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/9852c75942-a73b13567a9218f9212b.png" alt="abstract code blocks floating dark theme technical illustration" />
+                                <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-brand-dark text-xs font-mono font-bold uppercase px-3 py-1 rounded-full">Engineering Culture</div>
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <div class="flex items-center gap-3 text-xs font-mono text-gray-500 mb-3">
+                                    <span>Aug 04, 2023</span>
+                                    <span>•</span>
+                                    <span>15 min read</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-brand-dark mb-3 group-hover:text-brand-orange transition-colors leading-snug">Why We Reverted to a Monorepo: A Case Study in Developer Velocity</h3>
+                                <p class="text-sm text-gray-600 font-medium leading-relaxed mb-6 flex-grow">
+                                    Moving from 50+ isolated repositories back to a unified codebase. The tooling, cultural shifts, and ultimate impact on our shipping cadence.
+                                </p>
+                                <div class="mt-auto border-t border-gray-100 pt-4 flex justify-between items-center">
+                                    <span class="text-sm font-bold text-brand-dark">Alex Mercer</span>
+                                    <span class="text-brand-orange text-sm font-bold"><i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Card 3 -->
+                        <a href="#" class="glass-card rounded-[24px] overflow-hidden border border-gray-200 post-card-hover group flex flex-col h-full bg-white">
+                            <div class="h-48 overflow-hidden relative border-b border-gray-100">
+                                <img class="w-full h-full object-cover transition-transform duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/738dfebed8-0c6b6124af7ed6ea4745.png" alt="abstract geometric shapes representing databases and cloud storage technical" />
+                                <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-brand-dark text-xs font-mono font-bold uppercase px-3 py-1 rounded-full">Architecture</div>
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <div class="flex items-center gap-3 text-xs font-mono text-gray-500 mb-3">
+                                    <span>Jul 18, 2023</span>
+                                    <span>•</span>
+                                    <span>10 min read</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-brand-dark mb-3 group-hover:text-brand-orange transition-colors leading-snug">Pragmatic Event Sourcing with PostgreSQL</h3>
+                                <p class="text-sm text-gray-600 font-medium leading-relaxed mb-6 flex-grow">
+                                    Implementing event sourcing patterns without the complexity of Kafka. How to use Postgres JSONB and advisory locks for reliable event stores.
+                                </p>
+                                <div class="mt-auto border-t border-gray-100 pt-4 flex justify-between items-center">
+                                    <span class="text-sm font-bold text-brand-dark">Alex Mercer</span>
+                                    <span class="text-brand-orange text-sm font-bold"><i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </a>
+                        
+                        <!-- Card 4 -->
+                        <a href="#" class="glass-card rounded-[24px] overflow-hidden border border-gray-200 post-card-hover group flex flex-col h-full bg-white">
+                            <div class="h-48 overflow-hidden relative border-b border-gray-100 bg-brand-dark flex items-center justify-center">
+                                <i class="fa-solid fa-shield-halved text-5xl text-gray-700"></i>
+                                <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-brand-dark text-xs font-mono font-bold uppercase px-3 py-1 rounded-full">Security</div>
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <div class="flex items-center gap-3 text-xs font-mono text-gray-500 mb-3">
+                                    <span>Jun 22, 2023</span>
+                                    <span>•</span>
+                                    <span>6 min read</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-brand-dark mb-3 group-hover:text-brand-orange transition-colors leading-snug">Zero-Trust Internal APIs: Beyond Perimeter Defense</h3>
+                                <p class="text-sm text-gray-600 font-medium leading-relaxed mb-6 flex-grow">
+                                    Rethinking service-to-service authentication. Implementing mutual TLS and short-lived JWTs in a Kubernetes environment.
+                                </p>
+                                <div class="mt-auto border-t border-gray-100 pt-4 flex justify-between items-center">
+                                    <span class="text-sm font-bold text-brand-dark">Alex Mercer</span>
+                                    <span class="text-brand-orange text-sm font-bold"><i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="mt-16 flex justify-center">
+                        <button class="glass-card bg-white text-brand-dark text-sm font-bold px-8 py-4 rounded-full border border-gray-200 hover:border-brand-orange hover:text-brand-orange transition-all duration-300">
+                            Load More Essays
+                        </button>
+                    </div>
+                </section>
+
+                <hr class="border-gray-300 my-24">
+
+                <!-- Newsletter -->
+                <section id="newsletter" class="mb-16">
+                    <div class="bg-brand-dark rounded-[32px] p-8 md:p-16 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12">
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-brand-orange opacity-20 blur-[100px] rounded-full pointer-events-none"></div>
+                        
+                        <div class="relative z-10 max-w-xl">
+                            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Engineering Insights, Delivered.</h2>
+                            <p class="text-gray-400 text-lg font-medium mb-6">Join 12,000+ engineers receiving bi-weekly essays on system design, performance tuning, and technical leadership. No spam, just signal.</p>
+                            
+                            <form class="flex flex-col sm:flex-row gap-3">
+                                <input type="email" placeholder="Email address..." class="flex-grow bg-white/10 border border-white/20 rounded-full px-6 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange font-mono text-sm transition-all">
+                                <button type="submit" class="bg-brand-orange hover:bg-[#e65c00] text-white font-bold px-8 py-4 rounded-full transition-all duration-300 whitespace-nowrap shadow-[0_4px_14px_0_rgba(255,102,0,0.39)]">
+                                    Subscribe <i class="fa-solid fa-paper-plane ml-2"></i>
+                                </button>
+                            </form>
+                        </div>
+                        
+                        <div class="relative z-10 hidden lg:block">
+                            <div class="w-48 h-48 border border-white/10 rounded-full flex items-center justify-center relative">
+                                <div class="absolute inset-0 border border-brand-orange/30 rounded-full animate-pulse"></div>
+                                <i class="fa-solid fa-envelope-open-text text-6xl text-brand-orange"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer id="footer" class="bg-black py-12 px-4 border-t border-white/10 mt-auto">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-2 text-white font-bold text-xl">
+                <i class="fa-solid fa-layer-group text-brand-orange"></i> Alex Mercer
+            </div>
+            
+            <div class="flex gap-6">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-github text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-dribbble text-xl"></i></a>
+            </div>
+            
+            <div class="text-gray-500 text-sm">
+                &copy; 2024 Alex Mercer. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Will Beeching</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.plot.ly/plotly-3.1.1.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f6f6f6',
+                            100: '#e7e7e7',
+                            200: '#d1d1d1',
+                            300: '#b0b0b0',
+                            400: '#888888',
+                            500: '#6d6d6d',
+                            600: '#5d5d5d',
+                            700: '#4f4f4f',
+                            800: '#454545',
+                            900: '#3d3d3d',
+                            950: '#1a1a1a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f6f6f6;
+            color: #1a1a1a;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+        ::-webkit-scrollbar { display: none; }
+        .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); }
+        
+        .disruptive-text {
+            font-family: 'Times New Roman', Times, serif;
+            letter-spacing: -0.05em;
+            line-height: 0.9;
+        }
+        .mono-label {
+            font-family: monospace;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .bento-card {
+            background-color: #ffffff;
+            border: 1px solid #e7e7e7;
+            border-radius: 24px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .bento-card:hover {
+            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.1);
+            border-color: #d1d1d1;
+            transform: translateY(-8px);
+        }
+
+        .filter-pill {
+            transition: all 0.3s ease;
+        }
+        .filter-pill.active {
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+        
+        /* Disrupted Grid Layout */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 2rem;
+            align-items: start;
+        }
+        
+        .grid-item-large { grid-column: span 12; }
+        .grid-item-medium { grid-column: span 12; }
+        .grid-item-small { grid-column: span 12; }
+        
+        @media (min-width: 768px) {
+            .grid-item-large { grid-column: span 8; }
+            .grid-item-medium { grid-column: span 6; }
+            .grid-item-small { grid-column: span 4; }
+        }
+
+        /* Detail View Overlay (Hidden by default) */
+        #project-detail-overlay {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        #project-detail-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .detail-content {
+            transform: translateY(100%);
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        #project-detail-overlay.active .detail-content {
+            transform: translateY(0);
+        }
+
+        /* Marquee Animation */
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .marquee-container {
+            display: flex;
+            width: 200%;
+            animation: marquee 20s linear infinite;
+        }
+        .marquee-container:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body class="m-0 p-0 font-sans selection:bg-brand-950 selection:text-white bg-brand-50">
+
+    <!-- Header / Nav (Copied exactly from prior HTML, active state changed) -->
+    <header id="header" class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 22H22L12 2Z" fill="black"/>
+                    <path d="M12 8L6 20H18L12 8Z" fill="white"/>
+                </svg>
+                <span class="font-semibold text-lg tracking-tight">WB.</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#" class="text-sm font-medium text-brand-950 hover:text-brand-500 transition-colors">Work</a>
+                <a href="#" class="text-sm font-medium text-brand-500 hover:text-brand-950 transition-colors">About</a>
+                <a href="#" class="text-sm font-medium text-brand-500 hover:text-brand-950 transition-colors">Services</a>
+                <a href="#" class="text-sm font-medium text-brand-500 hover:text-brand-950 transition-colors">Blog</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <span class="text-xs font-mono text-brand-400 hidden lg:block">LON 12:33 ☀️</span>
+                <a href="#contact" class="px-5 py-2.5 bg-brand-950 text-white text-sm font-medium rounded-full hover:bg-brand-800 transition-colors">Let's Talk</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="pt-32 lg:pt-48 pb-24">
+        
+        <!-- Portfolio Introduction -->
+        <section id="portfolio_intro" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-20 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
+                <div class="max-w-4xl">
+                    <h1 class="disruptive-text text-6xl md:text-8xl lg:text-[110px] text-brand-950 uppercase mix-blend-multiply mb-8 relative">
+                        Selected <br>
+                        <span class="ml-12 md:ml-24">Works</span>
+                        <div class="absolute -z-10 top-1/2 left-1/4 w-64 h-64 bg-brand-200 rounded-full blur-3xl opacity-50"></div>
+                    </h1>
+                    <p class="text-xl md:text-2xl font-light leading-relaxed text-brand-800 max-w-2xl">
+                        A curated selection of digital experiences, generative interfaces, and spatial computing projects. Exploring the intersection where rigorous design systems meet controlled disruption.
+                    </p>
+                </div>
+                
+                <!-- Filter System -->
+                <div class="w-full md:w-auto flex flex-col items-start md:items-end gap-4">
+                    <span class="mono-label text-brand-500">Filter By Discipline</span>
+                    <div class="flex flex-wrap gap-2">
+                        <button class="filter-pill active px-6 py-3 rounded-full border border-brand-200 text-sm font-medium hover:border-brand-950">All Work</button>
+                        <button class="filter-pill px-6 py-3 rounded-full border border-brand-200 text-brand-600 text-sm font-medium hover:border-brand-950 hover:text-brand-950">Generative UI</button>
+                        <button class="filter-pill px-6 py-3 rounded-full border border-brand-200 text-brand-600 text-sm font-medium hover:border-brand-950 hover:text-brand-950">Spatial</button>
+                        <button class="filter-pill px-6 py-3 rounded-full border border-brand-200 text-brand-600 text-sm font-medium hover:border-brand-950 hover:text-brand-950">Fintech</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Disrupted Portfolio Grid -->
+        <section id="portfolio_grid" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-32">
+            <div class="portfolio-grid">
+                
+                <!-- Project 1 (Large) -->
+                <div class="grid-item-large group cursor-pointer" onclick="openDetailView()">
+                    <div class="bento-card p-0 aspect-[16/9] mb-6">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/c271943d4f-3519a90330b1cdb8260c.png" alt="Abstract generative UI data visualization dashboard with dark background, glowing red and blue accents, high contrast, sleek editorial layout" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-950/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
+                            <span class="text-white mono-label border border-white/30 px-4 py-2 rounded-full backdrop-blur-sm">View Case Study</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="disruptive-text text-3xl md:text-4xl text-brand-950 uppercase mb-2">Nexus Alpha</h3>
+                            <p class="text-brand-600 text-lg">Predictive Analytics Platform Redesign</p>
+                        </div>
+                        <span class="mono-label text-brand-500">2025</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 (Small, offset) -->
+                <div class="grid-item-small group cursor-pointer mt-0 md:mt-32" onclick="openDetailView()">
+                    <div class="bento-card p-0 aspect-[4/5] mb-6">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/97d6bba528-17fcb1f9fdb93bf13c36.png" alt="Minimalist mobile banking app interface floating in 3D space, soft lighting, glassmorphism elements, clean typography" />
+                    </div>
+                    <div>
+                        <h3 class="disruptive-text text-2xl md:text-3xl text-brand-950 uppercase mb-2">Aura Bank</h3>
+                        <p class="text-brand-600">Spatial Banking Experience</p>
+                    </div>
+                </div>
+
+                <!-- Project 3 (Medium) -->
+                <div class="grid-item-medium group cursor-pointer" onclick="openDetailView()">
+                    <div class="bento-card p-0 aspect-square mb-6">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/9eef41f9ca-d92daf993b0190e41254.png" alt="High contrast editorial fashion e-commerce layout, overlapping typography, bold photography, brutalist design elements" />
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="disruptive-text text-3xl md:text-4xl text-brand-950 uppercase mb-2">Maison</h3>
+                            <p class="text-brand-600">Headless Commerce Architecture</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 (Medium, shifted down) -->
+                <div class="grid-item-medium group cursor-pointer mt-0 md:mt-24" onclick="openDetailView()">
+                    <div class="bento-card p-0 aspect-square mb-6 bg-brand-900">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 mix-blend-luminosity" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/73c814ef31-d98d22f83c15d3ec95b0.png" alt="Complex interactive webGL particle system visualization, dark mode, cinematic lighting" />
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="disruptive-text text-3xl md:text-4xl text-brand-950 uppercase mb-2">Echo Protocol</h3>
+                            <p class="text-brand-600">Brand Identity & WebGL Platform</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="mt-24 text-center">
+                <button class="inline-flex items-center gap-3 px-8 py-4 bg-transparent border border-brand-300 text-brand-950 text-sm uppercase tracking-widest font-medium rounded-full hover:border-brand-950 transition-colors group">
+                    <span>Load More Archive</span>
+                    <i class="fa-solid fa-plus group-hover:rotate-90 transition-transform duration-300"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Client Credibility Marquee -->
+        <section id="client_marquee" class="py-16 border-y border-brand-200 overflow-hidden bg-white mb-32">
+            <div class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-8">
+                <span class="mono-label text-brand-500">Selected Partners & Collaborators</span>
+            </div>
+            <div class="relative w-full overflow-hidden">
+                <div class="marquee-container flex items-center gap-16 md:gap-32 px-8">
+                    <!-- Duplicate set for seamless loop -->
+                    <div class="flex items-center gap-16 md:gap-32 min-w-max">
+                        <h4 class="disruptive-text text-4xl md:text-5xl text-brand-300 hover:text-brand-950 transition-colors cursor-default">NOVA TECH</h4>
+                        <h4 class="disruptive-text text-4xl md:text-5xl text-brand-300 hover:text-brand-950 transition-colors cursor-default">OGILVY</h4>
+                        <h4 class="disruptive-text text-4xl md:text-5xl text-brand-300 hover:text-brand-950 transition-colors cursor-default">AURA</h4>
+                        <h4 class="disruptive-text text-4xl md:text-5xl text-brand-300 hover:text-brand-950 transition-colors cursor-default">MAISON</h4>
+                        <h4 class="disruptive-text text-4xl md:text-5xl text-brand-300 hover:text-brand-950 transition-colors cursor-default">ECHO</h4>
+                    </div>
+                    <div class="flex items-center gap-16 md:gap-32 min-w-max">
+                        <h4 class="disruptive-text text-4xl md:text-5xl text-brand-300 hover:text-brand-950 transition-colors cursor-default">NOVA TECH</h4>
+                        <h4 class="disruptive-text text-4xl md:text-5xl text-brand-300 hover:text-brand-950 transition-colors cursor-default">OGILVY</h4>
+                        <h4 class="disruptive-text text-4xl md:text-5xl text-brand-300 hover:text-brand-950 transition-colors cursor-default">AURA</h4>
+                        <h4 class="disruptive-text text-4xl md:text-5xl text-brand-300 hover:text-brand-950 transition-colors cursor-default">MAISON</h4>
+                        <h4 class="disruptive-text text-4xl md:text-5xl text-brand-300 hover:text-brand-950 transition-colors cursor-default">ECHO</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer (Copied exactly from prior HTML) -->
+    <footer id="footer" class="bg-white border-t border-gray-100 py-12">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-sm text-brand-500">
+                &copy; 2026 Will Beeching. All Rights Reserved.
+            </div>
+            <div class="flex items-center gap-6 text-sm font-medium">
+                <a href="#" class="text-brand-950 hover:text-brand-500 transition-colors">GitHub</a>
+                <a href="#" class="text-brand-950 hover:text-brand-500 transition-colors">LinkedIn</a>
+                <a href="#" class="text-brand-950 hover:text-brand-500 transition-colors">Instagram</a>
+                <a href="#" class="text-brand-950 hover:text-brand-500 transition-colors">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Detailed Project View Overlay -->
+    <div id="project-detail-overlay" class="fixed inset-0 z-[100] flex items-end sm:items-center justify-center sm:p-6 lg:p-12">
+        <div class="absolute inset-0 bg-brand-950/40 backdrop-blur-md cursor-pointer" onclick="closeDetailView()"></div>
+        
+        <div class="detail-content relative w-full h-[90vh] sm:h-full max-w-[1200px] bg-brand-50 rounded-t-3xl sm:rounded-3xl shadow-2xl overflow-y-auto flex flex-col">
+            
+            <!-- Sticky Header -->
+            <div class="sticky top-0 z-10 flex justify-between items-center p-6 lg:p-8 bg-brand-50/90 backdrop-blur-md border-b border-brand-200">
+                <div>
+                    <h2 class="disruptive-text text-3xl text-brand-950 uppercase">Nexus Alpha</h2>
+                    <span class="mono-label text-brand-500">Predictive Analytics Platform</span>
+                </div>
+                <button onclick="closeDetailView()" class="w-12 h-12 rounded-full bg-white border border-brand-200 flex items-center justify-center hover:bg-brand-100 transition-colors">
+                    <i class="fa-solid fa-xmark text-brand-950"></i>
+                </button>
+            </div>
+
+            <div class="p-6 lg:p-12 flex-1">
+                <!-- Hero Image -->
+                <div class="w-full aspect-[21/9] rounded-2xl overflow-hidden mb-12">
+                     <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/504e10da2b-9749df8c809d14de77e7.png" alt="Detailed view of a complex fintech dashboard with multiple charts, dark mode, neon red accents, sleek glassmorphism panels" />
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    
+                    <!-- Meta Column -->
+                    <div class="lg:col-span-4 space-y-8">
+                        <div class="bento-card p-6 bg-white">
+                            <h4 class="mono-label text-brand-400 mb-2">Client</h4>
+                            <p class="text-lg font-medium text-brand-950">Nexus Financial Group</p>
+                        </div>
+                        <div class="bento-card p-6 bg-white">
+                            <h4 class="mono-label text-brand-400 mb-2">Role</h4>
+                            <p class="text-lg font-medium text-brand-950">Lead Product Designer</p>
+                        </div>
+                        <div class="bento-card p-6 bg-white">
+                            <h4 class="mono-label text-brand-400 mb-4">Tools & Skills</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-brand-100 text-brand-700 text-xs font-mono uppercase rounded-md">Figma</span>
+                                <span class="px-3 py-1 bg-brand-100 text-brand-700 text-xs font-mono uppercase rounded-md">React</span>
+                                <span class="px-3 py-1 bg-brand-100 text-brand-700 text-xs font-mono uppercase rounded-md">D3.js</span>
+                                <span class="px-3 py-1 bg-brand-100 text-brand-700 text-xs font-mono uppercase rounded-md">Prototyping</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content Column -->
+                    <div class="lg:col-span-8 space-y-12">
+                        <div>
+                            <h3 class="disruptive-text text-4xl text-brand-950 uppercase mb-6">The Challenge</h3>
+                            <p class="text-lg text-brand-800 leading-relaxed font-light">
+                                Nexus Financial required a complete overhaul of their legacy trading terminal. The existing system was dense, visually fatiguing, and slowed down decision-making for high-frequency traders. The challenge was to introduce a modern, generative UI system that could handle massive data density without sacrificing clarity or aesthetic refinement.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 class="disruptive-text text-4xl text-brand-950 uppercase mb-6">The Solution</h3>
+                            <p class="text-lg text-brand-800 leading-relaxed font-light mb-8">
+                                We developed a 'controlled disruption' layout model. Instead of rigid grids, we utilized floating, glassmorphic panels that adapt to user focus. Key metrics were highlighted using stark color contrast (vibrant reds against deep charcoal) to draw the eye immediately to actionable data.
+                            </p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <img class="w-full aspect-square rounded-xl object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/d25b53ba92-083c44ba45e70e0d0be0.png" alt="Close up of a specific UI component showing a red bar chart with glassmorphism background" />
+                                <img class="w-full aspect-square rounded-xl object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/5d25784ba0-167326f0f9e4d82ad9a3.png" alt="Close up of a dark mode card displaying a large monetary balance with soft glowing gradients behind it" />
+                            </div>
+                        </div>
+
+                        <!-- Results -->
+                        <div class="bento-card bg-brand-950 text-white mt-12">
+                            <h3 class="disruptive-text text-3xl uppercase mb-8">Measurable Outcomes</h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+                                <div>
+                                    <div class="text-4xl md:text-5xl font-light mb-2 text-[#F53D3F]">34%</div>
+                                    <div class="mono-label text-brand-300">Increase in trade execution speed</div>
+                                </div>
+                                <div>
+                                    <div class="text-4xl md:text-5xl font-light mb-2 text-[#F53D3F]">1.2s</div>
+                                    <div class="mono-label text-brand-300">Reduction in cognitive load time</div>
+                                </div>
+                                <div>
+                                    <div class="text-4xl md:text-5xl font-light mb-2 text-[#F53D3F]">98%</div>
+                                    <div class="mono-label text-brand-300">Positive user adoption rate</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openDetailView() {
+            document.getElementById('project-detail-overlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDetailView() {
+            document.getElementById('project-detail-overlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Filter interaction simple toggle
+        document.querySelectorAll('.filter-pill').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-pill').forEach(b => {
+                    b.classList.remove('active', 'bg-brand-950', 'text-white');
+                    b.classList.add('text-brand-600');
+                });
+                this.classList.add('active', 'bg-brand-950', 'text-white');
+                this.classList.remove('text-brand-600');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - The Quiet Genius</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        surface: '#F9FAFB',
+                        surfaceHover: '#F3F4F6',
+                        card: '#FFFFFF',
+                        textPrimary: '#111827',
+                        textSecondary: '#6B7280',
+                        accent: '#111827',
+                        accentHover: '#374151',
+                        border: '#E5E7EB',
+                        glass: 'rgba(255, 255, 255, 0.7)',
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'inner-soft': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.02)',
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { margin: 0; padding: 0; background-color: #F9FAFB; -webkit-font-smoothing: antialiased; }
+        ::-webkit-scrollbar { display: none; }
+        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3); }
+        
+        /* Modal Transitions */
+        .modal-enter { opacity: 0; transform: scale(0.98) translateY(10px); }
+        .modal-enter-active { opacity: 1; transform: scale(1) translateY(0); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .modal-exit { opacity: 1; transform: scale(1) translateY(0); }
+        .modal-exit-active { opacity: 0; transform: scale(0.98) translateY(10px); transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+    </style>
+</head>
+<body class="text-textPrimary font-sans bg-surface min-h-screen flex flex-col relative overflow-x-hidden">
+
+    <!-- Decorative Background Elements -->
+    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-gradient-radial from-indigo-50/40 to-transparent opacity-60 blur-3xl"></div>
+        <div class="absolute bottom-[-10%] right-[-5%] w-[50%] h-[50%] rounded-full bg-gradient-radial from-purple-50/40 to-transparent opacity-60 blur-3xl"></div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header id="header" class="fixed top-0 w-full z-50 transition-all duration-300 bg-surface/80 backdrop-blur-md border-b border-border/50">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+            <a href="#" class="text-xl font-serif font-semibold tracking-tight text-textPrimary">A. Law</a>
+            
+            <nav class="hidden md:flex items-center space-x-10">
+                <a href="#" class="text-sm font-medium text-textSecondary hover:text-textPrimary transition-colors">Home</a>
+                <a href="#" class="text-sm font-medium text-textSecondary hover:text-textPrimary transition-colors">Work</a>
+                <a href="#" class="text-sm font-medium text-textPrimary border-b-2 border-textPrimary pb-1">Services</a>
+                <a href="#" class="text-sm font-medium text-textSecondary hover:text-textPrimary transition-colors">About</a>
+                <a href="#" class="text-sm font-medium text-textSecondary hover:text-textPrimary transition-colors">Resume</a>
+                <a href="#" class="text-sm font-medium text-textSecondary hover:text-textPrimary transition-colors">Insights</a>
+            </nav>
+
+            <div class="flex items-center space-x-6">
+                <a href="#" class="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-card shadow-soft hover:shadow-md transition-all text-textPrimary">
+                    <i class="fa-solid fa-envelope text-sm"></i>
+                </a>
+                <button class="md:hidden text-textPrimary p-2">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow z-10 pt-32 pb-24 max-w-[1440px] mx-auto w-full px-6 lg:px-12 flex flex-col space-y-32">
+
+        <!-- Services Introduction Section -->
+        <section id="services-intro" class="flex flex-col space-y-12">
+            <div class="max-w-4xl space-y-8">
+                <h1 class="text-6xl lg:text-7xl font-serif font-medium leading-tight tracking-tight text-textPrimary">
+                    Clarity in Complexity
+                </h1>
+                <p class="text-2xl text-textSecondary font-light leading-relaxed max-w-3xl">
+                    I partner with ambitious teams to untangle complex systems and design interfaces that feel inevitable. My practice is focused on reducing cognitive load, establishing rigorous design systems, and elevating the fundamental quality of digital products.
+                </p>
+                <div class="pt-4">
+                    <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 bg-accent text-surface text-sm font-medium rounded-full hover:bg-accentHover transition-colors shadow-soft hover:shadow-md">
+                        Discuss an Engagement
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Individual Service Listings -->
+        <section id="service-listings" class="flex flex-col space-y-16">
+            <div class="flex items-center space-x-4">
+                <h2 class="text-xs font-medium text-textSecondary uppercase tracking-widest border border-border/50 px-3 py-1 rounded-full">Core Capabilities</h2>
+                <div class="h-px bg-border flex-grow max-w-xs"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Service Card 1 -->
+                <div class="group bg-card rounded-[24px] border border-border/60 shadow-soft p-10 lg:p-12 flex flex-col h-full hover:border-textPrimary/20 transition-all">
+                    <div class="w-16 h-16 rounded-2xl bg-surfaceHover flex items-center justify-center text-textPrimary mb-8 border border-border/50 shadow-inner-soft">
+                        <i class="fa-solid fa-layer-group text-xl"></i>
+                    </div>
+                    <div class="flex-grow space-y-6">
+                        <h3 class="text-3xl font-serif text-textPrimary">Design Systems Architecture</h3>
+                        <p class="text-lg text-textSecondary font-light leading-relaxed">
+                            For scaling teams drowning in design debt. I audit, restructure, and build foundational design systems that bridge the gap between design and engineering, ensuring visual consistency without sacrificing velocity.
+                        </p>
+                        <div class="space-y-4 pt-4 border-t border-border/40">
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-textSecondary uppercase tracking-widest text-xs font-medium">Timeline</span>
+                                <span class="text-textPrimary font-medium">4-8 Weeks</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-textSecondary uppercase tracking-widest text-xs font-medium">Best For</span>
+                                <span class="text-textPrimary font-medium">Series B+ / Enterprise</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-10">
+                        <a href="#" class="inline-flex items-center text-sm font-medium text-textPrimary border-b border-textPrimary pb-1 hover:text-textSecondary hover:border-textSecondary transition-colors">
+                            Enquire about Systems <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="group bg-card rounded-[24px] border border-border/60 shadow-soft p-10 lg:p-12 flex flex-col h-full hover:border-textPrimary/20 transition-all">
+                    <div class="w-16 h-16 rounded-2xl bg-surfaceHover flex items-center justify-center text-textPrimary mb-8 border border-border/50 shadow-inner-soft">
+                        <i class="fa-solid fa-chess-knight text-xl"></i>
+                    </div>
+                    <div class="flex-grow space-y-6">
+                        <h3 class="text-3xl font-serif text-textPrimary">Product Strategy & UX Audit</h3>
+                        <p class="text-lg text-textSecondary font-light leading-relaxed">
+                            A rigorous teardown of your core product flows. I identify points of cognitive friction, usability failures, and visual inconsistencies, delivering a prioritized roadmap for immediate impact and long-term architectural shifts.
+                        </p>
+                        <div class="space-y-4 pt-4 border-t border-border/40">
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-textSecondary uppercase tracking-widest text-xs font-medium">Timeline</span>
+                                <span class="text-textPrimary font-medium">2-3 Weeks</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-textSecondary uppercase tracking-widest text-xs font-medium">Best For</span>
+                                <span class="text-textPrimary font-medium">Pre-Launch / Pivoting Startups</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-10">
+                        <a href="#" class="inline-flex items-center text-sm font-medium text-textPrimary border-b border-textPrimary pb-1 hover:text-textSecondary hover:border-textSecondary transition-colors">
+                            Enquire about Audits <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Process Overview -->
+        <section id="process-overview" class="flex flex-col space-y-16">
+            <div class="flex items-center space-x-4">
+                <h2 class="text-xs font-medium text-textSecondary uppercase tracking-widest border border-border/50 px-3 py-1 rounded-full">Engagement Process</h2>
+                <div class="h-px bg-border flex-grow max-w-xs"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                <!-- Connecting Line for Desktop -->
+                <div class="hidden md:block absolute top-12 left-[10%] right-[10%] h-px bg-border/60 z-0"></div>
+
+                <!-- Step 1 -->
+                <div class="relative z-10 flex flex-col items-center text-center space-y-6">
+                    <div class="w-24 h-24 rounded-full bg-card border border-border/60 flex items-center justify-center text-2xl font-serif text-textPrimary shadow-soft">
+                        01
+                    </div>
+                    <div class="space-y-3 px-4">
+                        <h4 class="text-xl font-serif text-textPrimary">Discovery & Alignment</h4>
+                        <p class="text-sm text-textSecondary font-light leading-relaxed">
+                            We begin with a deep dive into your business objectives, technical constraints, and user needs to ensure absolute clarity before a single pixel is placed.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative z-10 flex flex-col items-center text-center space-y-6 mt-8 md:mt-0">
+                    <div class="w-24 h-24 rounded-full bg-card border border-border/60 flex items-center justify-center text-2xl font-serif text-textPrimary shadow-soft">
+                        02
+                    </div>
+                    <div class="space-y-3 px-4">
+                        <h4 class="text-xl font-serif text-textPrimary">Exploration & Architecture</h4>
+                        <p class="text-sm text-textSecondary font-light leading-relaxed">
+                            Rigorous structural planning and visual exploration. This phase defines the foundational rules, spatial logic, and typographic hierarchy of the system.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative z-10 flex flex-col items-center text-center space-y-6 mt-8 md:mt-0">
+                    <div class="w-24 h-24 rounded-full bg-card border border-border/60 flex items-center justify-center text-2xl font-serif text-textPrimary shadow-soft">
+                        03
+                    </div>
+                    <div class="space-y-3 px-4">
+                        <h4 class="text-xl font-serif text-textPrimary">Execution & Handoff</h4>
+                        <p class="text-sm text-textSecondary font-light leading-relaxed">
+                            Meticulous crafting of high-fidelity interfaces, documented thoroughly for engineering teams to ensure the final build matches the intended vision perfectly.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Packages (Tiered) -->
+        <section id="service-packages" class="flex flex-col space-y-16">
+            <div class="flex items-center space-x-4">
+                <h2 class="text-xs font-medium text-textSecondary uppercase tracking-widest border border-border/50 px-3 py-1 rounded-full">Advisory Packages</h2>
+                <div class="h-px bg-border flex-grow max-w-xs"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Tier 1 -->
+                <div class="bg-card rounded-[24px] border border-border/60 shadow-soft p-10 flex flex-col h-full">
+                    <h3 class="text-2xl font-serif text-textPrimary mb-2">Design Retainer</h3>
+                    <p class="text-sm text-textSecondary mb-8 h-10">Ongoing strategic guidance and design execution for growing teams.</p>
+                    <div class="text-3xl font-medium text-textPrimary mb-8 pb-8 border-b border-border/40">
+                        $5k <span class="text-sm text-textSecondary font-light">/month</span>
+                    </div>
+                    <ul class="space-y-4 flex-grow mb-10">
+                        <li class="flex items-start text-sm text-textSecondary"><i class="fa-solid fa-check text-textPrimary mt-1 mr-3 text-xs"></i> 20 hours dedicated capacity</li>
+                        <li class="flex items-start text-sm text-textSecondary"><i class="fa-solid fa-check text-textPrimary mt-1 mr-3 text-xs"></i> Weekly syncs & async reviews</li>
+                        <li class="flex items-start text-sm text-textSecondary"><i class="fa-solid fa-check text-textPrimary mt-1 mr-3 text-xs"></i> Direct Slack channel access</li>
+                        <li class="flex items-start text-sm text-textSecondary"><i class="fa-solid fa-check text-textPrimary mt-1 mr-3 text-xs"></i> Priority scheduling</li>
+                    </ul>
+                    <button class="w-full py-3 px-6 rounded-full border border-border/60 text-textPrimary text-sm font-medium hover:bg-surfaceHover transition-colors">Select Retainer</button>
+                </div>
+
+                <!-- Tier 2 (Highlighted) -->
+                <div class="bg-textPrimary rounded-[24px] border border-textPrimary shadow-md p-10 flex flex-col h-full relative overflow-hidden">
+                    <div class="absolute top-0 right-0 px-4 py-1 bg-surface/10 text-surface text-[10px] uppercase tracking-widest rounded-bl-lg">Most Common</div>
+                    <h3 class="text-2xl font-serif text-surface mb-2">Project Sprint</h3>
+                    <p class="text-sm text-surface/70 mb-8 h-10">Intensive, focused execution on a specific product surface or flow.</p>
+                    <div class="text-3xl font-medium text-surface mb-8 pb-8 border-b border-surface/20">
+                        $12k <span class="text-sm text-surface/70 font-light">/sprint</span>
+                    </div>
+                    <ul class="space-y-4 flex-grow mb-10">
+                        <li class="flex items-start text-sm text-surface/80"><i class="fa-solid fa-check text-surface mt-1 mr-3 text-xs"></i> 2-week intensive focus</li>
+                        <li class="flex items-start text-sm text-surface/80"><i class="fa-solid fa-check text-surface mt-1 mr-3 text-xs"></i> High-fidelity prototyping</li>
+                        <li class="flex items-start text-sm text-surface/80"><i class="fa-solid fa-check text-surface mt-1 mr-3 text-xs"></i> Comprehensive handoff docs</li>
+                        <li class="flex items-start text-sm text-surface/80"><i class="fa-solid fa-check text-surface mt-1 mr-3 text-xs"></i> 1 week post-launch support</li>
+                    </ul>
+                    <button class="w-full py-3 px-6 rounded-full bg-surface text-textPrimary text-sm font-medium hover:bg-surfaceHover transition-colors">Book Sprint</button>
+                </div>
+
+                <!-- Tier 3 -->
+                <div class="bg-card rounded-[24px] border border-border/60 shadow-soft p-10 flex flex-col h-full">
+                    <h3 class="text-2xl font-serif text-textPrimary mb-2">Fractional Head of Design</h3>
+                    <p class="text-sm text-textSecondary mb-8 h-10">Leadership, hiring, and high-level strategy for early-stage startups.</p>
+                    <div class="text-3xl font-medium text-textPrimary mb-8 pb-8 border-b border-border/40">
+                        Custom
+                    </div>
+                    <ul class="space-y-4 flex-grow mb-10">
+                        <li class="flex items-start text-sm text-textSecondary"><i class="fa-solid fa-check text-textPrimary mt-1 mr-3 text-xs"></i> Design team hiring & mentoring</li>
+                        <li class="flex items-start text-sm text-textSecondary"><i class="fa-solid fa-check text-textPrimary mt-1 mr-3 text-xs"></i> Board-level design strategy</li>
+                        <li class="flex items-start text-sm text-textSecondary"><i class="fa-solid fa-check text-textPrimary mt-1 mr-3 text-xs"></i> Process establishment</li>
+                        <li class="flex items-start text-sm text-textSecondary"><i class="fa-solid fa-check text-textPrimary mt-1 mr-3 text-xs"></i> Cross-functional alignment</li>
+                    </ul>
+                    <button class="w-full py-3 px-6 rounded-full border border-border/60 text-textPrimary text-sm font-medium hover:bg-surfaceHover transition-colors">Discuss Needs</button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="flex flex-col space-y-12">
+            <div class="flex items-center space-x-4">
+                <h2 class="text-xs font-medium text-textSecondary uppercase tracking-widest border border-border/50 px-3 py-1 rounded-full">Common Questions</h2>
+                <div class="h-px bg-border flex-grow max-w-xs"></div>
+            </div>
+
+            <div class="max-w-3xl space-y-6">
+                <!-- FAQ Item 1 -->
+                <div class="border-b border-border/60 pb-6">
+                    <h4 class="text-lg font-medium text-textPrimary mb-3">What is your typical availability?</h4>
+                    <p class="text-sm text-textSecondary font-light leading-relaxed">
+                        I typically book projects 4-6 weeks in advance. For smaller advisory roles or audits, I can sometimes accommodate within 2 weeks depending on current workload.
+                    </p>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="border-b border-border/60 pb-6">
+                    <h4 class="text-lg font-medium text-textPrimary mb-3">Do you handle implementation or just design?</h4>
+                    <p class="text-sm text-textSecondary font-light leading-relaxed">
+                        I focus strictly on product strategy, UX architecture, and high-fidelity UI design. However, I provide meticulous documentation and work closely with your engineering team to ensure perfect implementation.
+                    </p>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="border-b border-border/60 pb-6">
+                    <h4 class="text-lg font-medium text-textPrimary mb-3">How do you handle revisions?</h4>
+                    <p class="text-sm text-textSecondary font-light leading-relaxed">
+                        My process is highly collaborative, meaning there are rarely 'big reveals' that require massive revisions. We align on strategy and structure early, so visual execution is usually a smooth refinement process.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section id="contact" class="bg-card rounded-[32px] border border-border/60 shadow-soft p-12 lg:p-24 text-center flex flex-col items-center space-y-8">
+            <h2 class="text-4xl lg:text-5xl font-serif text-textPrimary">Ready to elevate your product?</h2>
+            <p class="text-lg text-textSecondary font-light max-w-2xl">
+                If you are looking for thoughtful, rigorous design partnership, let's start a conversation about your current challenges.
+            </p>
+            <a href="#" class="inline-flex items-center justify-center px-10 py-4 bg-accent text-surface text-sm font-medium rounded-full hover:bg-accentHover transition-colors shadow-soft hover:shadow-md mt-4">
+                Get in Touch
+            </a>
+        </section>
+
+    </main>
+
+    <!-- Simple Footer -->
+    <footer id="footer" class="border-t border-border/50 bg-surface py-8 mt-auto">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-xs text-textSecondary">© 2023 Alex Law. All rights reserved.</p>
+            <div class="flex space-x-6">
+                <a href="#" class="text-textSecondary hover:text-textPrimary transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="text-textSecondary hover:text-textPrimary transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="text-textSecondary hover:text-textPrimary transition-colors"><i class="fa-brands fa-dribbble"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

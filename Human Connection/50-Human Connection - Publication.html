@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications & Achievements - Personal Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>window.FontAwesomeConfig = { autoReplaceSvg: "nest"};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        primary: '#1A3626', 
+                        accent: '#4ADE80', 
+                        surface: '#112218', 
+                        textMain: '#F8FAFC',
+                        textMuted: '#94A3B8'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { margin: 0; padding: 0; background-color: #0F172A; color: #F8FAFC; overflow-x: hidden; }
+        .hero-bg {
+            background: linear-gradient(180deg, rgba(26,54,38,0.9) 0%, rgba(15,23,42,1) 100%),
+                        repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(255,255,255,0.03) 40px, rgba(255,255,255,0.03) 80px);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .hand-drawn-border {
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+        }
+        ::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="antialiased selection:bg-accent selection:text-primary m-0 p-0">
+
+    <!-- Navigation (Preserved exactly from context) -->
+    <nav id="header" class="fixed w-full top-0 z-50 glass-card border-b-0 py-4 px-6 md:px-12 flex justify-between items-center transition-all duration-300">
+        <a href="#" class="text-2xl font-serif tracking-wide flex items-center gap-2">
+            Michael <span class="text-accent text-sm">✦</span>
+        </a>
+        <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-textMuted">
+            <a href="#" class="hover:text-white transition-colors">Home</a>
+            <a href="#about" class="hover:text-white transition-colors">About Me</a>
+            <a href="#services" class="hover:text-white transition-colors">My Services</a>
+            <a href="#portfolio" class="text-white hover:text-accent transition-colors border-b border-accent pb-1">Portfolio</a>
+        </div>
+        <a href="mailto:hello@example.com" class="hidden md:flex items-center gap-2 text-sm text-textMuted hover:text-white transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            hello@example.com
+        </a>
+        <button class="md:hidden text-white focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+    </nav>
+
+    <!-- Page Introduction -->
+    <section id="achievements_intro" class="pt-40 pb-20 relative hero-bg min-h-[50vh] flex items-center">
+        <div class="container mx-auto px-6 md:px-12 max-w-[1000px] relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-textMuted mb-6 mx-auto">
+                <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                The Body of Work
+            </div>
+            <h1 class="text-5xl md:text-7xl font-serif mb-6 leading-tight text-white">
+                Publications, Certifications & <br/><span class="text-accent italic">Achievements.</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-textMuted font-serif italic leading-relaxed mb-8 max-w-3xl mx-auto">
+                A formal record of recognition, qualifications, and intellectual contributions. These milestones represent not just learning, but a commitment to sharing knowledge and upholding professional standards.
+            </p>
+        </div>
+    </section>
+
+    <!-- Featured In Marquee -->
+    <section id="featured_in" class="py-12 bg-surface/50 border-y border-white/5 overflow-hidden relative">
+        <div class="container mx-auto px-6 md:px-12 max-w-[1200px] mb-8 text-center">
+            <p class="text-sm uppercase tracking-widest text-textMuted font-medium">As Featured In</p>
+        </div>
+        <div class="flex space-x-12 animate-[marquee_30s_linear_infinite] whitespace-nowrap opacity-50 hover:opacity-100 transition-opacity duration-500">
+            <!-- Repeated logos for marquee effect -->
+            <div class="flex items-center space-x-16 px-8">
+                <span class="text-2xl font-serif font-bold text-white/70 hover:text-accent transition-colors cursor-pointer">Forbes</span>
+                <span class="text-2xl font-sans font-black tracking-tighter text-white/70 hover:text-accent transition-colors cursor-pointer">WIRED</span>
+                <span class="text-2xl font-serif italic text-white/70 hover:text-accent transition-colors cursor-pointer">The New York Times</span>
+                <span class="text-2xl font-sans font-bold text-white/70 hover:text-accent transition-colors cursor-pointer">TechCrunch</span>
+                <span class="text-2xl font-serif text-white/70 hover:text-accent transition-colors cursor-pointer">Harvard Business Review</span>
+                <span class="text-2xl font-sans font-bold tracking-widest text-white/70 hover:text-accent transition-colors cursor-pointer">FAST COMPANY</span>
+            </div>
+            <div class="flex items-center space-x-16 px-8">
+                <span class="text-2xl font-serif font-bold text-white/70 hover:text-accent transition-colors cursor-pointer">Forbes</span>
+                <span class="text-2xl font-sans font-black tracking-tighter text-white/70 hover:text-accent transition-colors cursor-pointer">WIRED</span>
+                <span class="text-2xl font-serif italic text-white/70 hover:text-accent transition-colors cursor-pointer">The New York Times</span>
+                <span class="text-2xl font-sans font-bold text-white/70 hover:text-accent transition-colors cursor-pointer">TechCrunch</span>
+                <span class="text-2xl font-serif text-white/70 hover:text-accent transition-colors cursor-pointer">Harvard Business Review</span>
+                <span class="text-2xl font-sans font-bold tracking-widest text-white/70 hover:text-accent transition-colors cursor-pointer">FAST COMPANY</span>
+            </div>
+        </div>
+        <style>
+            @keyframes marquee {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-50%); }
+            }
+        </style>
+    </section>
+
+    <!-- Publications and Written Work -->
+    <section id="publications" class="py-24 bg-[#0F172A] relative">
+        <div class="container mx-auto px-6 md:px-12 max-w-[1200px]">
+            <div class="flex flex-col md:flex-row gap-12 mb-16">
+                <div class="w-full md:w-1/4">
+                    <h2 class="text-sm uppercase tracking-widest text-textMuted font-medium pt-2 border-t border-white/10">Written Work</h2>
+                </div>
+                <div class="w-full md:w-3/4">
+                    <h3 class="text-3xl font-serif text-white mb-10">Publications & Articles</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        
+                        <!-- Publication 1 -->
+                        <div class="glass-card p-8 rounded-[24px] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)] flex flex-col h-full">
+                            <div class="text-xs text-textMuted font-mono mb-4">Published • Oct 2023 • UX Collective</div>
+                            <h4 class="text-xl font-serif text-white mb-3">The Empathy Deficit in Modern SaaS</h4>
+                            <p class="text-textMuted text-sm mb-6 flex-grow">An exploration of how hyper-optimization is stripping the human element from enterprise software, and what design leaders can do to reintroduce emotional intelligence into their products.</p>
+                            <a href="#" class="inline-flex items-center gap-2 text-accent text-sm font-medium hover:text-white transition-colors mt-auto">
+                                Read Article <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+
+                        <!-- Publication 2 -->
+                        <div class="glass-card p-8 rounded-[24px] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)] flex flex-col h-full">
+                            <div class="text-xs text-textMuted font-mono mb-4">Co-Authored • Jan 2023 • O'Reilly Media</div>
+                            <h4 class="text-xl font-serif text-white mb-3">Designing for Behavioral Change</h4>
+                            <p class="text-textMuted text-sm mb-6 flex-grow">A comprehensive guide to applying psychological principles to product design. Contributed chapters on ethical habit formation and cognitive load management.</p>
+                            <a href="#" class="inline-flex items-center gap-2 text-accent text-sm font-medium hover:text-white transition-colors mt-auto">
+                                View Book <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+
+                        <!-- Publication 3 -->
+                        <div class="glass-card p-8 rounded-[24px] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)] flex flex-col h-full">
+                            <div class="text-xs text-textMuted font-mono mb-4">Whitepaper • Nov 2022 • Design Institute</div>
+                            <h4 class="text-xl font-serif text-white mb-3">Accessibility Beyond Compliance</h4>
+                            <p class="text-textMuted text-sm mb-6 flex-grow">Research paper detailing how designing for edge cases improves the core experience for all users, backed by case studies from major tech platforms.</p>
+                            <a href="#" class="inline-flex items-center gap-2 text-accent text-sm font-medium hover:text-white transition-colors mt-auto">
+                                Download PDF <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speaking Engagements -->
+    <section id="speaking" class="py-24 bg-[#0F172A] relative border-t border-white/5">
+        <div class="container mx-auto px-6 md:px-12 max-w-[1200px]">
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="w-full md:w-1/4">
+                    <h2 class="text-sm uppercase tracking-widest text-textMuted font-medium pt-2 border-t border-white/10">Public Speaking</h2>
+                </div>
+                <div class="w-full md:w-3/4">
+                    <h3 class="text-3xl font-serif text-white mb-10">Engagements & Appearances</h3>
+                    
+                    <div class="space-y-6">
+                        <!-- Engagement 1 -->
+                        <div class="group flex flex-col md:flex-row justify-between items-start md:items-center p-6 rounded-[16px] hover:bg-white/5 transition-colors border border-transparent hover:border-white/10">
+                            <div class="mb-4 md:mb-0">
+                                <h4 class="text-lg font-serif text-white group-hover:text-accent transition-colors">Keynote: The Human-Centric AI</h4>
+                                <p class="text-textMuted text-sm mt-1">Design Leadership Summit • San Francisco, CA</p>
+                            </div>
+                            <div class="text-left md:text-right">
+                                <div class="text-sm text-textMain/80">Sept 2023</div>
+                                <div class="text-xs text-textMuted mt-1">Audience: 500+ Design Leaders</div>
+                            </div>
+                        </div>
+
+                        <!-- Engagement 2 -->
+                        <div class="group flex flex-col md:flex-row justify-between items-start md:items-center p-6 rounded-[16px] hover:bg-white/5 transition-colors border border-transparent hover:border-white/10">
+                            <div class="mb-4 md:mb-0">
+                                <h4 class="text-lg font-serif text-white group-hover:text-accent transition-colors">Panelist: Ethics in UX</h4>
+                                <p class="text-textMuted text-sm mt-1">Awwwards Conference • Amsterdam, NL</p>
+                            </div>
+                            <div class="text-left md:text-right">
+                                <div class="text-sm text-textMain/80">May 2023</div>
+                                <div class="text-xs text-textMuted mt-1">Audience: Product Designers & Devs</div>
+                            </div>
+                        </div>
+
+                        <!-- Engagement 3 -->
+                        <div class="group flex flex-col md:flex-row justify-between items-start md:items-center p-6 rounded-[16px] hover:bg-white/5 transition-colors border border-transparent hover:border-white/10">
+                            <div class="mb-4 md:mb-0">
+                                <h4 class="text-lg font-serif text-white group-hover:text-accent transition-colors">Podcast Guest: Finding the Narrative</h4>
+                                <p class="text-textMuted text-sm mt-1">UI Breakfast Podcast • Episode 245</p>
+                            </div>
+                            <div class="text-left md:text-right">
+                                <div class="text-sm text-textMain/80">Jan 2023</div>
+                                <div class="text-xs text-textMuted mt-1">Global Listenership</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications & Awards -->
+    <section id="credentials" class="py-24 bg-[#0F172A] relative border-t border-white/5">
+        <div class="container mx-auto px-6 md:px-12 max-w-[1200px]">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                
+                <!-- Certifications -->
+                <div>
+                    <h2 class="text-3xl font-serif text-white mb-8 border-b border-white/10 pb-4">Professional Certifications</h2>
+                    <div class="space-y-6">
+                        <!-- Cert 1 -->
+                        <div class="glass-card p-6 rounded-[20px] border border-white/10 flex gap-4">
+                            <div class="mt-1">
+                                <div class="w-10 h-10 rounded-full bg-surface flex items-center justify-center border border-white/10 text-accent">
+                                    <i class="fa-solid fa-certificate"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium mb-1">Certified UX Professional (CXA)</h4>
+                                <p class="text-sm text-textMuted mb-2">Human Factors International (HFI)</p>
+                                <div class="flex items-center gap-4 text-xs text-textMuted font-mono">
+                                    <span>Issued: 2021</span>
+                                    <span>ID: CXA-8924</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cert 2 -->
+                        <div class="glass-card p-6 rounded-[20px] border border-white/10 flex gap-4">
+                            <div class="mt-1">
+                                <div class="w-10 h-10 rounded-full bg-surface flex items-center justify-center border border-white/10 text-accent">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium mb-1">Web Accessibility Specialist (WAS)</h4>
+                                <p class="text-sm text-textMuted mb-2">Intl. Assoc. of Accessibility Professionals</p>
+                                <div class="flex items-center gap-4 text-xs text-textMuted font-mono">
+                                    <span>Issued: 2022</span>
+                                    <span>Valid till: 2025</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Awards -->
+                <div>
+                    <h2 class="text-3xl font-serif text-white mb-8 border-b border-white/10 pb-4">Awards & Recognition</h2>
+                    <div class="space-y-6">
+                        <!-- Award 1 -->
+                        <div class="glass-card p-6 rounded-[20px] border border-white/10 flex gap-4">
+                            <div class="mt-1">
+                                <div class="w-10 h-10 rounded-full bg-surface flex items-center justify-center border border-white/10 text-accent">
+                                    <i class="fa-solid fa-trophy"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium mb-1">Site of the Year - E-Commerce</h4>
+                                <p class="text-sm text-textMuted mb-2">Awwwards • 2023</p>
+                                <p class="text-xs text-textMain/70 leading-relaxed">Recognized for leading the UX redesign of a major retail platform, resulting in a 40% increase in conversion through empathetic checkout flows.</p>
+                            </div>
+                        </div>
+
+                        <!-- Award 2 -->
+                        <div class="glass-card p-6 rounded-[20px] border border-white/10 flex gap-4">
+                            <div class="mt-1">
+                                <div class="w-10 h-10 rounded-full bg-surface flex items-center justify-center border border-white/10 text-accent">
+                                    <i class="fa-solid fa-medal"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium mb-1">Top 50 Design Leaders</h4>
+                                <p class="text-sm text-textMuted mb-2">Design Management Institute • 2022</p>
+                                <p class="text-xs text-textMain/70 leading-relaxed">Honored for contributions to systemic design thinking and mentorship within the broader design community.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA (Preserved from context) -->
+    <section id="final_cta" class="py-24 relative overflow-hidden border-t border-white/5">
+        <div class="absolute inset-0 bg-surface"></div>
+        <div class="absolute inset-0 hero-bg opacity-50"></div>
+        
+        <div class="container mx-auto px-6 md:px-12 max-w-[800px] relative z-10 text-center">
+            <h2 class="text-4xl md:text-6xl font-serif text-white mb-6 leading-tight">Think we'd work well <br/><span class="text-accent italic">together?</span></h2>
+            <p class="text-xl text-textMuted mb-10 max-w-2xl mx-auto">
+                If these skills align with what your team needs, I'd love to hear about the problems you're trying to solve.
+            </p>
+            <a href="mailto:hello@example.com" class="inline-flex px-10 py-5 rounded-full bg-accent text-primary font-medium text-lg transition-all shadow-[0_0_30px_rgba(74,222,128,0.3)] hover:shadow-[0_0_40px_rgba(74,222,128,0.5)] items-center gap-3">
+                Start a Conversation <i class="fa-solid fa-paper-plane"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer (Preserved exactly from context) -->
+    <footer id="footer" class="py-12 border-t border-white/5 bg-black/20 mt-12">
+        <div class="container mx-auto px-6 md:px-12 max-w-[1440px] flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-2xl font-serif tracking-wide flex items-center gap-2">
+                Michael <span class="text-accent text-sm">✦</span>
+            </div>
+            <div class="flex gap-6 text-textMuted">
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-dribbble text-xl"></i></a>
+            </div>
+            <p class="text-sm text-textMuted">© 2023 Michael Design. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

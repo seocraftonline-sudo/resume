@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Personal Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>window.FontAwesomeConfig = { autoReplaceSvg: "nest"};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.plot.ly/plotly-3.1.1.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        primary: '#1A3626', 
+                        accent: '#4ADE80', 
+                        surface: '#112218', 
+                        textMain: '#F8FAFC',
+                        textMuted: '#94A3B8'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { margin: 0; padding: 0; background-color: #0F172A; color: #F8FAFC; overflow-x: hidden; }
+        .hero-bg {
+            background: linear-gradient(180deg, rgba(26,54,38,0.9) 0%, rgba(15,23,42,1) 100%),
+                        repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(255,255,255,0.03) 40px, rgba(255,255,255,0.03) 80px);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .input-field {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #F8FAFC;
+            transition: all 0.3s ease;
+        }
+        .input-field:focus {
+            border-color: #4ADE80;
+            outline: none;
+            box-shadow: 0 0 15px rgba(74, 222, 128, 0.2);
+        }
+        ::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="antialiased selection:bg-accent selection:text-primary m-0 p-0">
+
+    <!-- Navigation -->
+    <nav id="header" class="fixed w-full top-0 z-50 glass-card border-b-0 py-4 px-6 md:px-12 flex justify-between items-center transition-all duration-300">
+        <a href="#" class="text-2xl font-serif tracking-wide flex items-center gap-2 text-white">
+            Michael <span class="text-accent text-sm">✦</span>
+        </a>
+        <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-textMuted">
+            <a href="#" class="hover:text-white transition-colors">Home</a>
+            <a href="#about" class="hover:text-white transition-colors">About Me</a>
+            <a href="#services" class="hover:text-white transition-colors">My Services</a>
+            <a href="#portfolio" class="hover:text-white transition-colors">Portfolio</a>
+            <a href="#blog" class="hover:text-white transition-colors">Blog</a>
+            <a href="#testimonials" class="text-white hover:text-accent transition-colors">Testimonials</a>
+            <a href="#contact" class="text-white hover:text-accent transition-colors border-b border-accent pb-1">Contact</a>
+        </div>
+        <a href="mailto:hello@example.com" class="hidden md:flex items-center gap-2 text-sm text-textMuted hover:text-white transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            hello@example.com
+        </a>
+        <button class="md:hidden text-white focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+    </nav>
+
+    <!-- Contact Hero & Form Section -->
+    <section id="contact_hero" class="pt-32 pb-24 relative hero-bg min-h-screen flex items-center">
+        <div class="container mx-auto px-6 md:px-12 max-w-[1440px] relative z-10">
+            <div class="flex flex-col lg:flex-row gap-16 xl:gap-24 items-start">
+                
+                <!-- Left Column: Intro & Info -->
+                <div class="w-full lg:w-5/12 pt-10">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-textMuted mb-8">
+                        <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                        Currently accepting new projects
+                    </div>
+                    
+                    <h1 class="text-5xl md:text-7xl font-serif mb-8 leading-tight text-white">
+                        Let's build something <span class="text-accent italic">meaningful</span>.
+                    </h1>
+                    
+                    <div class="mb-12">
+                        <img class="w-full h-80 object-cover rounded-[32px] border border-white/10 shadow-[0_16px_48px_rgba(0,0,0,0.4)]" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/052bc06c52-b31bcb44860a9e597deb.png" alt="Warm, candid portrait of a professional creative designer in a cozy studio setting, soft natural lighting, high quality, authentic feel" />
+                    </div>
+
+                    <p class="text-xl text-textMuted font-serif italic leading-relaxed mb-10">
+                        I believe the best work comes from genuine connections. Whether you need a full redesign, a strategic pivot, or just want to bounce some ideas around over coffee, I'm here for it.
+                    </p>
+
+                    <!-- Human Availability Cluster -->
+                    <div class="glass-card p-8 rounded-[24px] border border-white/10 mb-10">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                            <div>
+                                <h4 class="text-white font-medium mb-2 flex items-center gap-2">
+                                    <i class="fa-solid fa-location-dot text-accent"></i> Location
+                                </h4>
+                                <p class="text-textMuted text-sm">London, UK (GMT)</p>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium mb-2 flex items-center gap-2">
+                                    <i class="fa-regular fa-clock text-accent"></i> Response Time
+                                </h4>
+                                <p class="text-textMuted text-sm">Usually within 24 hours</p>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <h4 class="text-white font-medium mb-2 flex items-center gap-2">
+                                    <i class="fa-solid fa-calendar-check text-accent"></i> Availability
+                                </h4>
+                                <p class="text-textMuted text-sm">Open for advisory roles and limited project engagements starting next month.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Direct Contact & Socials -->
+                    <div>
+                        <h3 class="text-lg font-medium text-white mb-4">Direct Contact</h3>
+                        <a href="mailto:hello@michaeldesign.com" class="text-2xl font-serif text-accent hover:text-white transition-colors block mb-8">hello@michaeldesign.com</a>
+                        
+                        <div class="flex gap-4">
+                            <a href="#" class="w-12 h-12 rounded-full glass-card flex items-center justify-center text-textMuted hover:text-white hover:border-accent transition-all">
+                                <i class="fa-brands fa-linkedin-in text-lg"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 rounded-full glass-card flex items-center justify-center text-textMuted hover:text-white hover:border-accent transition-all">
+                                <i class="fa-brands fa-twitter text-lg"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 rounded-full glass-card flex items-center justify-center text-textMuted hover:text-white hover:border-accent transition-all">
+                                <i class="fa-brands fa-dribbble text-lg"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 rounded-full glass-card flex items-center justify-center text-textMuted hover:text-white hover:border-accent transition-all">
+                                <i class="fa-brands fa-github text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Form & Booking -->
+                <div class="w-full lg:w-7/12">
+                    <div class="glass-card p-8 md:p-12 rounded-[32px] border border-white/10 shadow-[0_16px_48px_rgba(0,0,0,0.4)] relative overflow-hidden group mb-8">
+                        <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-50"></div>
+                        <div class="relative z-10">
+                            <h3 class="text-2xl font-serif text-white mb-8">Send a Message</h3>
+                            
+                            <form class="space-y-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-sm font-medium text-textMuted mb-2">Your Name</label>
+                                        <input type="text" class="w-full px-4 py-3 rounded-[12px] input-field" placeholder="Jane Doe">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-textMuted mb-2">Email Address</label>
+                                        <input type="email" class="w-full px-4 py-3 rounded-[12px] input-field" placeholder="jane@company.com">
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-textMuted mb-2">Company / Organization (Optional)</label>
+                                    <input type="text" class="w-full px-4 py-3 rounded-[12px] input-field" placeholder="Acme Corp">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-textMuted mb-2">Nature of Enquiry</label>
+                                    <select class="w-full px-4 py-3 rounded-[12px] input-field appearance-none">
+                                        <option value="" disabled selected>Select a topic...</option>
+                                        <option value="project">New Project</option>
+                                        <option value="consulting">Consulting / Advisory</option>
+                                        <option value="speaking">Speaking Engagement</option>
+                                        <option value="other">Just saying hi</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-textMuted mb-2">Your Message</label>
+                                    <textarea rows="5" class="w-full px-4 py-3 rounded-[12px] input-field resize-none" placeholder="Tell me a bit about what you're working on..."></textarea>
+                                </div>
+                                
+                                <button type="button" class="w-full px-8 py-4 rounded-[12px] bg-accent text-primary font-medium text-lg transition-all shadow-[0_0_20px_rgba(74,222,128,0.2)] hover:shadow-[0_0_30px_rgba(74,222,128,0.4)] flex justify-center items-center gap-2">
+                                    Send Message <i class="fa-solid fa-paper-plane text-sm"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Booking Widget Shell -->
+                    <div class="glass-card p-8 md:p-12 rounded-[32px] border border-white/10 shadow-[0_16px_48px_rgba(0,0,0,0.4)] relative overflow-hidden">
+                        <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+                            <div>
+                                <h3 class="text-xl font-serif text-white mb-2">Prefer to jump straight on a call?</h3>
+                                <p class="text-textMuted text-sm">Find a time that works for you in my calendar.</p>
+                            </div>
+                            <button class="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white font-medium hover:bg-white/10 transition-colors whitespace-nowrap">
+                                Open Calendar <i class="fa-regular fa-calendar ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="py-12 border-t border-white/5 bg-black/20">
+        <div class="container mx-auto px-6 md:px-12 max-w-[1440px] flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-2xl font-serif tracking-wide flex items-center gap-2 text-white">
+                Michael <span class="text-accent text-sm">✦</span>
+            </div>
+            <div class="flex gap-6 text-textMuted">
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-dribbble text-xl"></i></a>
+            </div>
+            <p class="text-sm text-textMuted">© 2023 Michael Design. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

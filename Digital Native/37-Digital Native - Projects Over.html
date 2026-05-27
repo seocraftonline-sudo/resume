@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Alex Mercer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.plot.ly/plotly-3.1.1.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            orange: '#FF6600',
+                            dark: '#0A0A0A',
+                            light: '#F5F5F5',
+                            border: '#E5E5E5'
+                        }
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF;
+            color: #0A0A0A;
+            -webkit-font-smoothing: antialiased;
+        }
+        ::-webkit-scrollbar { display: none; }
+        
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .noise-bg {
+            position: relative;
+        }
+        .noise-bg::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .terminal-line {
+            position: relative;
+            padding-left: 2rem;
+        }
+        .terminal-line::before {
+            content: ">";
+            position: absolute;
+            left: 0;
+            color: #FF6600;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .resume-section-title {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+        }
+
+        /* Custom scrollbar for horizontal lists */
+        .hide-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans selection:bg-brand-orange selection:text-white m-0 p-0">
+
+    <!-- Navigation (Preserved from context) -->
+    <header id="header" class="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
+        <nav class="glass-nav pointer-events-auto rounded-[32px] px-2 py-2 flex items-center gap-8 shadow-2xl border border-white/10">
+            <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center shrink-0 ml-1">
+                <i class="fa-solid fa-layer-group text-brand-dark text-lg"></i>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-6 text-sm font-medium text-white/80">
+                <a href="#" class="text-white transition-colors font-bold border-b-2 border-brand-orange pb-0.5">Work</a>
+                <a href="#" class="hover:text-white transition-colors">Expertise</a>
+                <a href="#" class="hover:text-white transition-colors">Writing</a>
+                <a href="#" class="hover:text-white transition-colors">About</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <a href="#" class="bg-brand-orange hover:bg-[#e65c00] text-white text-sm font-semibold px-6 py-2.5 rounded-full transition-all duration-300 shadow-[0_4px_14px_0_rgba(255,102,0,0.39)] hover:shadow-[0_6px_20px_rgba(255,102,0,0.23)]">
+                    Let's Talk
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow flex flex-col pt-32">
+        
+        <!-- Projects Hero / Intro -->
+        <section id="projects-hero" class="relative w-full px-4 md:px-8 pt-16 pb-12 flex flex-col items-center text-center z-10 border-b border-gray-200">
+            <h1 class="text-5xl md:text-7xl lg:text-[90px] font-extrabold tracking-tight text-brand-dark max-w-5xl leading-[0.9] mb-8 uppercase font-sans" style="letter-spacing: -0.05em;">
+                Deep<br/>Dives.
+            </h1>
+            
+            <div class="max-w-3xl mx-auto text-center space-y-4 text-lg md:text-xl text-gray-800 leading-relaxed font-sans p-8 glass-card rounded-[32px]">
+                <p class="font-medium">
+                    Beyond the polished portfolio pieces, these are the experiments, open-source contributions, and technical deep dives that define my engineering philosophy. This is where theory meets practice in complex digital environments.
+                </p>
+            </div>
+        </section>
+
+        <!-- Dynamic Content Area -->
+        <div class="relative w-full noise-bg py-16 px-4 md:px-8 bg-[#F8F1EC]">
+            <div class="max-w-[1440px] mx-auto relative z-10">
+
+                <!-- Filter System (Adapted for Projects) -->
+                <section id="projects-filters" class="mb-12">
+                    <div class="flex flex-wrap items-center justify-center gap-3 md:gap-4">
+                        <button class="px-6 py-2.5 bg-brand-dark text-white rounded-full text-sm font-mono font-bold shadow-md transition-all">All</button>
+                        <button class="px-6 py-2.5 bg-white border border-gray-200 text-brand-dark hover:border-brand-dark rounded-full text-sm font-mono font-medium shadow-sm transition-all">Open Source</button>
+                        <button class="px-6 py-2.5 bg-white border border-gray-200 text-brand-dark hover:border-brand-dark rounded-full text-sm font-mono font-medium shadow-sm transition-all">Case Studies</button>
+                        <button class="px-6 py-2.5 bg-white border border-gray-200 text-brand-dark hover:border-brand-dark rounded-full text-sm font-mono font-medium shadow-sm transition-all">Experiments</button>
+                    </div>
+                </section>
+
+                <!-- Featured Project (High Impact) -->
+                <section id="featured-project" class="mb-24">
+                    <div class="glass-card rounded-[32px] overflow-hidden border border-gray-200/80 shadow-lg group">
+                        <div class="grid grid-cols-1 lg:grid-cols-2">
+                            <div class="p-8 md:p-12 flex flex-col justify-center">
+                                <div class="flex items-center gap-2 mb-6">
+                                    <span class="px-3 py-1.5 bg-brand-orange/10 text-brand-orange text-xs font-mono font-bold rounded uppercase tracking-wider flex items-center gap-2">
+                                        <i class="fa-solid fa-star"></i> Featured
+                                    </span>
+                                    <span class="px-3 py-1.5 bg-brand-dark text-white text-xs font-mono font-bold rounded uppercase tracking-wider">Case Study</span>
+                                </div>
+                                <h2 class="text-4xl md:text-5xl font-extrabold text-brand-dark tracking-tight mb-6">The Micro-Frontend Migration</h2>
+                                <p class="text-lg text-gray-700 leading-relaxed mb-8 font-medium">
+                                    A comprehensive deep dive into dismantling a 5-year-old monolithic React application serving 2M+ DAU, and rebuilding it as a highly performant, distributed micro-frontend architecture without disrupting user workflows.
+                                </p>
+                                
+                                <div class="space-y-4 mb-8">
+                                    <div class="flex items-start gap-3">
+                                        <i class="fa-solid fa-bolt text-brand-orange mt-1"></i>
+                                        <div>
+                                            <h4 class="font-bold text-brand-dark font-sans text-sm uppercase tracking-wider">Challenge</h4>
+                                            <p class="text-sm text-gray-600">Build times exceeding 45 minutes, massive bundle sizes, and conflicting team deployments.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <i class="fa-solid fa-microchip text-brand-orange mt-1"></i>
+                                        <div>
+                                            <h4 class="font-bold text-brand-dark font-sans text-sm uppercase tracking-wider">Approach</h4>
+                                            <p class="text-sm text-gray-600">Implemented Webpack Module Federation to orchestrate 14 independent domains under a single shell.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-wrap gap-2 mb-8">
+                                    <span class="text-xs font-mono border border-gray-300 bg-white px-3 py-1.5 rounded-full text-brand-dark font-bold">Webpack 5</span>
+                                    <span class="text-xs font-mono border border-gray-300 bg-white px-3 py-1.5 rounded-full text-brand-dark font-bold">React</span>
+                                    <span class="text-xs font-mono border border-gray-300 bg-white px-3 py-1.5 rounded-full text-brand-dark font-bold">CI/CD</span>
+                                </div>
+
+                                <div>
+                                    <a href="#" class="inline-flex items-center gap-2 bg-brand-dark hover:bg-black text-white text-sm font-semibold px-6 py-3 rounded-full transition-all duration-300 shadow-md">
+                                        Read Full Case Study <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="relative h-full min-h-[400px] bg-gray-100 overflow-hidden border-l border-gray-200/80">
+                                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/dab252f8c0-623090d12b729491829d.png" alt="Abstract technical visualization of micro-frontend architecture, node connections, glowing data lines, dark theme with orange accents, highly detailed digital native style" />
+                                <div class="absolute bottom-6 right-6 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-mono font-bold text-brand-dark border border-gray-200 shadow-sm flex items-center gap-2">
+                                    <div class="w-2 h-2 rounded-full bg-green-500"></div> Completed 2023
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <hr class="border-gray-300 my-16">
+
+                <!-- Projects Grid (List View Style from Reference) -->
+                <section id="projects-grid" class="mb-24">
+                    <div class="mb-8 flex justify-between items-end">
+                        <h2 class="text-2xl font-bold text-brand-dark font-sans tracking-tight">Project Archive</h2>
+                        <div class="text-sm font-mono text-gray-500">Showing 6 items</div>
+                    </div>
+
+                    <div class="space-y-4">
+                        
+                        <!-- List Item 1 -->
+                        <div class="glass-card rounded-[16px] p-6 border border-gray-200 hover:border-brand-orange/50 transition-all duration-300 shadow-sm hover:shadow-md group flex flex-col md:flex-row gap-6 items-start md:items-center">
+                            <div class="flex-grow">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <h3 class="text-xl font-bold text-brand-dark font-sans tracking-tight group-hover:text-brand-orange transition-colors">Quantum UI Library</h3>
+                                    <span class="px-2.5 py-1 bg-green-100 text-green-700 text-[10px] font-mono font-bold rounded-full uppercase tracking-wider border border-green-200 flex items-center gap-1.5"><div class="w-1.5 h-1.5 rounded-full bg-green-500"></div> Completed</span>
+                                    <span class="text-xs font-mono text-gray-400">2022</span>
+                                </div>
+                                <p class="text-sm text-gray-600 font-medium mb-4 max-w-3xl">Architected a shared component library adopted by 14 internal product teams, focusing on accessibility (WCAG 2.1 AA) and performance.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-[10px] font-mono border border-gray-200 bg-gray-50 px-2 py-1 rounded text-gray-600 uppercase">React</span>
+                                    <span class="text-[10px] font-mono border border-gray-200 bg-gray-50 px-2 py-1 rounded text-gray-600 uppercase">Storybook</span>
+                                    <span class="text-[10px] font-mono border border-gray-200 bg-gray-50 px-2 py-1 rounded text-gray-600 uppercase">a11y</span>
+                                </div>
+                            </div>
+                            <div class="shrink-0 md:text-right">
+                                <a href="#" class="inline-flex items-center gap-2 text-sm font-bold text-brand-dark hover:text-brand-orange font-mono transition-colors">
+                                    View Details <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- List Item 2 -->
+                        <div class="glass-card rounded-[16px] p-6 border border-gray-200 hover:border-brand-orange/50 transition-all duration-300 shadow-sm hover:shadow-md group flex flex-col md:flex-row gap-6 items-start md:items-center">
+                            <div class="flex-grow">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <h3 class="text-xl font-bold text-brand-dark font-sans tracking-tight group-hover:text-brand-orange transition-colors">Immersive Data Spaces</h3>
+                                    <span class="px-2.5 py-1 bg-blue-100 text-blue-700 text-[10px] font-mono font-bold rounded-full uppercase tracking-wider border border-blue-200 flex items-center gap-1.5"><div class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></div> Ongoing</span>
+                                    <span class="text-xs font-mono text-gray-400">2023-Present</span>
+                                </div>
+                                <p class="text-sm text-gray-600 font-medium mb-4 max-w-3xl">Experimental 3D environments for visualizing complex network topologies in real-time, pushing the boundaries of browser rendering capabilities.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-[10px] font-mono border border-gray-200 bg-gray-50 px-2 py-1 rounded text-gray-600 uppercase">WebGL</span>
+                                    <span class="text-[10px] font-mono border border-gray-200 bg-gray-50 px-2 py-1 rounded text-gray-600 uppercase">Three.js</span>
+                                    <span class="text-[10px] font-mono border border-gray-200 bg-gray-50 px-2 py-1 rounded text-gray-600 uppercase">Shaders</span>
+                                </div>
+                            </div>
+                            <div class="shrink-0 md:text-right">
+                                <a href="#" class="inline-flex items-center gap-2 text-sm font-bold text-brand-dark hover:text-brand-orange font-mono transition-colors">
+                                    View Details <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- List Item 3 -->
+                        <div class="glass-card rounded-[16px] p-6 border border-gray-200 hover:border-brand-orange/50 transition-all duration-300 shadow-sm hover:shadow-md group flex flex-col md:flex-row gap-6 items-start md:items-center opacity-80">
+                            <div class="flex-grow">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <h3 class="text-xl font-bold text-brand-dark font-sans tracking-tight group-hover:text-brand-orange transition-colors">Velocity Control Plane</h3>
+                                    <span class="px-2.5 py-1 bg-gray-200 text-gray-600 text-[10px] font-mono font-bold rounded-full uppercase tracking-wider border border-gray-300 flex items-center gap-1.5"><div class="w-1.5 h-1.5 rounded-full bg-gray-400"></div> Archived</span>
+                                    <span class="text-xs font-mono text-gray-400">2020</span>
+                                </div>
+                                <p class="text-sm text-gray-600 font-medium mb-4 max-w-3xl">Led the frontend rebuild of the flagship analytics dashboard, introducing real-time sockets and reducing initial load time by 40%.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-[10px] font-mono border border-gray-200 bg-gray-50 px-2 py-1 rounded text-gray-600 uppercase">Vue.js</span>
+                                    <span class="text-[10px] font-mono border border-gray-200 bg-gray-50 px-2 py-1 rounded text-gray-600 uppercase">WebSockets</span>
+                                    <span class="text-[10px] font-mono border border-gray-200 bg-gray-50 px-2 py-1 rounded text-gray-600 uppercase">D3.js</span>
+                                </div>
+                            </div>
+                            <div class="shrink-0 md:text-right">
+                                <a href="#" class="inline-flex items-center gap-2 text-sm font-bold text-brand-dark hover:text-brand-orange font-mono transition-colors">
+                                    View Details <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <hr class="border-gray-300 my-16">
+
+                <!-- Project Detail Page Preview (As requested in prompt for "Project Detail Pages") -->
+                <section id="project-detail-preview" class="mb-24">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold text-brand-dark font-sans tracking-tight mb-4">Inside the Process</h2>
+                        <p class="text-gray-600 max-w-2xl mx-auto font-medium">A look at how a project detail page breaks down the problem, approach, and execution.</p>
+                    </div>
+
+                    <div class="glass-card rounded-[32px] p-8 md:p-12 border border-gray-200/80 shadow-lg relative overflow-hidden">
+                        <!-- Abstract decorative elements -->
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-brand-orange/5 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2"></div>
+                        
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                            <!-- Sidebar Meta -->
+                            <div class="lg:col-span-3 space-y-8 border-r border-gray-200/60 pr-8">
+                                <div>
+                                    <h4 class="text-xs font-mono font-bold text-gray-400 uppercase tracking-widest mb-3">Context</h4>
+                                    <p class="text-sm font-bold text-brand-dark">Personal Research</p>
+                                    <p class="text-sm text-gray-500 mt-1">Q4 2023</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-mono font-bold text-gray-400 uppercase tracking-widest mb-3">Collaborators</h4>
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-gray-200 overflow-hidden border border-gray-300">
+                                            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-4.jpg" class="w-full h-full object-cover" alt="Collaborator">
+                                        </div>
+                                        <p class="text-sm font-bold text-brand-dark">Solo Project</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-mono font-bold text-gray-400 uppercase tracking-widest mb-3">Links</h4>
+                                    <div class="space-y-2">
+                                        <a href="#" class="block text-sm font-mono text-brand-dark hover:text-brand-orange transition-colors"><i class="fa-brands fa-github w-5"></i> Repository</a>
+                                        <a href="#" class="block text-sm font-mono text-brand-dark hover:text-brand-orange transition-colors"><i class="fa-solid fa-link w-5"></i> Live Demo</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Main Content Narrative -->
+                            <div class="lg:col-span-9 space-y-12">
+                                <div>
+                                    <h3 class="text-2xl font-bold text-brand-dark mb-4 font-sans tracking-tight">The Problem Space</h3>
+                                    <p class="text-lg text-gray-700 leading-relaxed font-medium">
+                                        Traditional state management in React often leads to prop drilling or overly complex context structures when dealing with highly dynamic, deeply nested 3D scenes. I wanted to explore if a signals-based approach could provide more deterministic updates for WebGL rendering cycles.
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <h3 class="text-2xl font-bold text-brand-dark mb-4 font-sans tracking-tight">Research & Approach</h3>
+                                    <p class="text-lg text-gray-700 leading-relaxed font-medium mb-6">
+                                        I built a prototype using Preact Signals integrated into a React Three Fiber setup. The goal was to bypass React's reconciliation phase entirely for high-frequency updates (like camera position or object rotation).
+                                    </p>
+                                    <div class="bg-[#0A0A0A] rounded-[16px] p-6 font-mono text-sm text-gray-300 overflow-x-auto border border-gray-800 shadow-inner">
+                                        <div class="flex gap-2 mb-4">
+                                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                        </div>
+                                        <pre><code><span class="text-brand-orange">import</span> { useSignal } <span class="text-brand-orange">from</span> '@preact/signals-react';
+<span class="text-brand-orange">import</span> { useFrame } <span class="text-brand-orange">from</span> '@react-three/fiber';
+
+<span class="text-blue-400">const</span> <span class="text-yellow-200">RotatingCube</span> = () => {
+  <span class="text-blue-400">const</span> rotation = <span class="text-yellow-200">useSignal</span>(0);
+  
+  <span class="text-gray-500">// Bypasses React render phase</span>
+  <span class="text-yellow-200">useFrame</span>(() => {
+    rotation.value += 0.01;
+  });
+
+  <span class="text-brand-orange">return</span> (
+    &lt;mesh rotation-y={rotation}&gt;
+      &lt;boxGeometry /&gt;
+      &lt;meshStandardMaterial color="#FF6600" /&gt;
+    &lt;/mesh&gt;
+  );
+};</code></pre>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h3 class="text-2xl font-bold text-brand-dark mb-4 font-sans tracking-tight">Outcomes & Lessons</h3>
+                                    <p class="text-lg text-gray-700 leading-relaxed font-medium mb-4">
+                                        The signals approach resulted in a consistent 60fps even with 10,000+ independently updating meshes, where standard React state caused severe frame drops due to reconciliation overhead.
+                                    </p>
+                                    <ul class="space-y-2 font-mono text-sm text-gray-600">
+                                        <li class="terminal-line">Achieved O(1) update complexity for deeply nested 3D objects.</li>
+                                        <li class="terminal-line">Reduced memory allocation during render loops by 40%.</li>
+                                        <li class="terminal-line">Identified edge cases with React DevTools integration.</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Skills & Tools (Bottom of detail page requirement) -->
+                                <div class="pt-8 border-t border-gray-200/60">
+                                    <h4 class="text-xs font-mono font-bold text-gray-400 uppercase tracking-widest mb-4">Methodology & Stack</h4>
+                                    <div class="flex flex-wrap gap-3">
+                                        <span class="px-4 py-2 bg-white border border-brand-dark/20 text-brand-dark text-xs font-mono font-bold rounded shadow-sm">React Three Fiber</span>
+                                        <span class="px-4 py-2 bg-white border border-brand-dark/20 text-brand-dark text-xs font-mono font-bold rounded shadow-sm">Preact Signals</span>
+                                        <span class="px-4 py-2 bg-white border border-brand-dark/20 text-brand-dark text-xs font-mono font-bold rounded shadow-sm">Performance Profiling</span>
+                                        <span class="px-4 py-2 bg-white border border-brand-dark/20 text-brand-dark text-xs font-mono font-bold rounded shadow-sm">WebGL</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- CTA Section (Preserved styling from context) -->
+        <section id="cta" class="bg-brand-dark py-24 px-4 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">Ready to build something exceptional?</h2>
+                <p class="text-xl text-gray-400 mb-10">I'm currently accepting new projects for Q3. Let's discuss how we can elevate your digital product.</p>
+                <a href="#contact" class="inline-flex items-center justify-center bg-brand-orange hover:bg-[#e65c00] text-white text-lg font-semibold px-10 py-4 rounded-full transition-all duration-300 shadow-[0_4px_14px_0_rgba(255,102,0,0.39)] hover:shadow-[0_6px_20px_rgba(255,102,0,0.23)]">
+                    Start a Conversation
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer (Preserved from context) -->
+    <footer id="footer" class="bg-black py-12 px-4 border-t border-white/10">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-2 text-white font-bold text-xl">
+                <i class="fa-solid fa-layer-group text-brand-orange"></i> Alex Mercer
+            </div>
+            
+            <div class="flex gap-6">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-github text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-dribbble text-xl"></i></a>
+            </div>
+            
+            <div class="text-gray-500 text-sm">
+                &copy; 2024 Alex Mercer. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>window.FontAwesomeConfig = { autoReplaceSvg: "nest"};</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Personal Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        primary: '#1A3626',
+                        accent: '#4ADE80',
+                        surface: '#112218',
+                        textMain: '#F8FAFC',
+                        textMuted: '#94A3B8'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { margin: 0; padding: 0; background-color: #0F172A; color: #F8FAFC; overflow-x: hidden; }
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(26,54,38,0.95) 0%, rgba(15,23,42,1) 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #4ADE80 0%, #22D3EE 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-accent selection:text-primary">
+
+    <!-- Navigation -->
+    <nav id="header" class="fixed w-full top-0 z-50 glass-card py-5 px-8 md:px-16 transition-all duration-300">
+        <div class="max-w-[1440px] mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-serif tracking-wide flex items-center gap-2">
+                <span class="text-accent">●</span> Michael
+            </a>
+            <div class="hidden md:flex items-center space-x-10 text-sm font-medium">
+                <a href="#" class="text-white hover:text-accent transition-colors">Home</a>
+                <a href="#about" class="text-textMuted hover:text-white transition-colors">About</a>
+                <a href="#services" class="text-textMuted hover:text-white transition-colors">Services</a>
+                <a href="#portfolio" class="text-textMuted hover:text-white transition-colors">Work</a>
+                <a href="#contact" class="px-5 py-2.5 bg-accent text-primary font-medium rounded-lg hover:bg-white transition-colors">Let's Talk</a>
+            </div>
+            <button class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero_introduction" class="relative h-[900px] flex items-center justify-center pt-20 hero-bg overflow-hidden">
+        <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg=='); background-size: 60px 60px;"></div>
+        
+        <div class="container mx-auto px-8 md:px-16 relative z-10 max-w-[1440px]">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Content -->
+                <div class="lg:col-span-7 space-y-8">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 glass-card rounded-full text-sm">
+                        <span class="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
+                        <span class="text-textMuted">Available for new projects</span>
+                    </div>
+                    
+                    <h1 class="text-5xl md:text-7xl font-serif leading-tight">
+                        I'm <span class="gradient-text">Michael</span>,<br/>
+                        a product designer<br/>
+                        crafting experiences<br/>
+                        that matter.
+                    </h1>
+                    
+                    <p class="text-xl text-textMuted leading-relaxed max-w-xl">
+                        I specialize in translating complex human problems into elegant, intuitive digital experiences rooted in empathy and deep user understanding.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row items-start gap-4 pt-4">
+                        <a href="#contact" class="px-8 py-4 bg-accent text-primary font-semibold rounded-xl hover:bg-white transition-all hover:shadow-lg hover:shadow-accent/20 flex items-center gap-2">
+                            Schedule a Call
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
+                        <a href="#portfolio" class="px-8 py-4 border-2 border-white/20 text-white font-semibold rounded-xl hover:bg-white/10 transition-all">
+                            View Portfolio
+                        </a>
+                    </div>
+
+                    <div class="flex items-center gap-8 pt-4">
+                        <div class="flex -space-x-3">
+                            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-1.jpg" class="w-10 h-10 rounded-full border-2 border-primary" alt="Client">
+                            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" class="w-10 h-10 rounded-full border-2 border-primary" alt="Client">
+                            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-3.jpg" class="w-10 h-10 rounded-full border-2 border-primary" alt="Client">
+                            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg" class="w-10 h-10 rounded-full border-2 border-primary" alt="Client">
+                        </div>
+                        <div>
+                            <div class="flex gap-1 text-accent mb-1">
+                                <i class="fas fa-star text-xs"></i>
+                                <i class="fas fa-star text-xs"></i>
+                                <i class="fas fa-star text-xs"></i>
+                                <i class="fas fa-star text-xs"></i>
+                                <i class="fas fa-star text-xs"></i>
+                            </div>
+                            <p class="text-sm text-textMuted">Trusted by 45+ clients worldwide</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Image -->
+                <div class="lg:col-span-5 flex justify-center lg:justify-end">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-gradient-to-br from-accent/20 to-blue-500/20 rounded-[40px] blur-2xl"></div>
+                        <div class="relative w-80 h-96 rounded-[40px] overflow-hidden border-4 border-white/10">
+                            <img class="w-full h-full object-cover object-center" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/e8e6a1640c-ed90ab21f121d5289328.png" alt="professional portrait of a product designer" />
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 glass-card rounded-2xl flex flex-col items-center justify-center p-4">
+                            <div class="text-3xl font-bold text-accent">8+</div>
+                            <div class="text-xs text-textMuted text-center">Years of Experience</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Snapshot Section -->
+    <section id="achievement_stats" class="py-24 border-b border-white/5">
+        <div class="container mx-auto px-8 md:px-16 max-w-[1440px]">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center lg:text-left space-y-3">
+                    <div class="text-6xl font-serif gradient-text">45</div>
+                    <p class="text-textMuted font-medium">Happy Clients</p>
+                </div>
+                <div class="text-center lg:text-left space-y-3">
+                    <div class="text-6xl font-serif gradient-text">120+</div>
+                    <p class="text-textMuted font-medium">Projects Delivered</p>
+                </div>
+                <div class="text-center lg:text-left space-y-3">
+                    <div class="text-6xl font-serif gradient-text">12</div>
+                    <p class="text-textMuted font-medium">Design Awards</p>
+                </div>
+                <div class="text-center lg:text-left space-y-3">
+                    <div class="text-6xl font-serif gradient-text">98%</div>
+                    <p class="text-textMuted font-medium">Client Satisfaction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What I Do Section -->
+    <section id="expertise_grid" class="py-32 relative">
+        <div class="container mx-auto px-8 md:px-16 max-w-[1440px]">
+            <div class="text-center mb-20 max-w-3xl mx-auto">
+                <h2 class="text-5xl md:text-6xl font-serif mb-6">How I can help you</h2>
+                <p class="text-xl text-textMuted">I bring a holistic approach to design, ensuring every touchpoint feels intentional, beautiful, and deeply human.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-card p-10 rounded-3xl card-hover group">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-laptop-code text-3xl text-accent"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif mb-4">Product Design</h3>
+                    <p class="text-textMuted leading-relaxed">End-to-end digital product creation from research and wireframing to high-fidelity prototyping and development handoff.</p>
+                </div>
+
+                <div class="glass-card p-10 rounded-3xl card-hover group">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500/20 to-blue-500/5 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-chart-line text-3xl text-blue-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif mb-4">UX Strategy</h3>
+                    <p class="text-textMuted leading-relaxed">Aligning business goals with user needs through strategic roadmaps that prioritize impact and foster engagement.</p>
+                </div>
+
+                <div class="glass-card p-10 rounded-3xl card-hover group">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-500/5 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-layer-group text-3xl text-purple-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif mb-4">Design Systems</h3>
+                    <p class="text-textMuted leading-relaxed">Building scalable component libraries that ensure consistency and accelerate development cycles across teams.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Work Preview -->
+    <section id="portfolio_preview" class="py-32 bg-surface/30 border-y border-white/5">
+        <div class="container mx-auto px-8 md:px-16 max-w-[1440px]">
+            <div class="flex flex-col lg:flex-row justify-between items-end mb-16 gap-8">
+                <div>
+                    <h2 class="text-5xl md:text-6xl font-serif mb-4">Selected Work</h2>
+                    <p class="text-xl text-textMuted max-w-2xl">A glimpse into recent projects where I helped teams build better products and experiences.</p>
+                </div>
+                <a href="#portfolio" class="flex items-center gap-3 px-6 py-3 border-2 border-accent text-accent hover:bg-accent hover:text-primary transition-all rounded-xl font-medium">
+                    View All Projects
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <div class="group cursor-pointer">
+                    <div class="relative h-[450px] rounded-3xl overflow-hidden mb-6 bg-surface">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/31219d36dc-0cf2127acbdb26f45202.png" alt="modern fintech dashboard interface design" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <div class="absolute bottom-8 left-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="inline-block px-4 py-2 bg-accent text-primary text-sm font-medium rounded-lg mb-3">Featured</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-3xl font-serif mb-2 group-hover:text-accent transition-colors">Fintech Dashboard</h3>
+                            <p class="text-textMuted text-lg">UX Research & Product Design</p>
+                        </div>
+                        <div class="w-12 h-12 rounded-full border-2 border-white/20 flex items-center justify-center group-hover:bg-accent group-hover:border-accent group-hover:text-primary transition-all">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group cursor-pointer lg:mt-20">
+                    <div class="relative h-[450px] rounded-3xl overflow-hidden mb-6 bg-surface">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/685b308a50-5dbf0dfe19ae5ea1de8a.png" alt="mobile mental health app interface" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <div class="absolute bottom-8 left-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="inline-block px-4 py-2 bg-blue-500 text-white text-sm font-medium rounded-lg mb-3">Mobile App</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-3xl font-serif mb-2 group-hover:text-accent transition-colors">Mindful App</h3>
+                            <p class="text-textMuted text-lg">End-to-end Mobile Design</p>
+                        </div>
+                        <div class="w-12 h-12 rounded-full border-2 border-white/20 flex items-center justify-center group-hover:bg-accent group-hover:border-accent group-hover:text-primary transition-all">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial & Blog Section -->
+    <section id="blog_testimonial_fusion" class="py-32">
+        <div class="container mx-auto px-8 md:px-16 max-w-[1440px]">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                
+                <div class="glass-card rounded-3xl p-12">
+                    <div class="flex gap-2 text-accent mb-8">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="text-3xl md:text-4xl font-serif leading-snug mb-10">
+                        "Michael didn't just redesign our platform; he fundamentally changed how we understand our users. His ability to blend empathy with rigorous design strategy is rare."
+                    </h3>
+                    <div class="flex items-center gap-5">
+                        <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-6.jpg" alt="Client" class="w-16 h-16 rounded-full object-cover border-2 border-accent/20">
+                        <div>
+                            <p class="font-semibold text-lg">Sarah Jenkins</p>
+                            <p class="text-textMuted">VP of Product, TechFlow</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="flex justify-between items-center mb-10">
+                        <h3 class="text-4xl font-serif">Latest Insights</h3>
+                        <a href="#blog" class="text-accent hover:text-white transition-colors flex items-center gap-2">
+                            View all <i class="fas fa-arrow-right text-sm"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="space-y-8">
+                        <a href="#" class="block group glass-card p-8 rounded-2xl hover:bg-white/5 transition-all">
+                            <p class="text-sm text-accent mb-3">Oct 12, 2023 • 5 min read</p>
+                            <h4 class="text-2xl font-serif mb-3 group-hover:text-accent transition-colors">The Human Element in B2B SaaS Design</h4>
+                            <p class="text-textMuted leading-relaxed">Why enterprise software doesn't have to feel cold, and how injecting personality increases adoption rates.</p>
+                        </a>
+
+                        <a href="#" class="block group glass-card p-8 rounded-2xl hover:bg-white/5 transition-all">
+                            <p class="text-sm text-accent mb-3">Sep 28, 2023 • 7 min read</p>
+                            <h4 class="text-2xl font-serif mb-3 group-hover:text-accent transition-colors">Stop Designing for the 'Ideal' User</h4>
+                            <p class="text-textMuted leading-relaxed">Designing for edge cases and emotional states often leads to a more robust and compassionate product.</p>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Banner -->
+    <section id="cta_banner" class="py-32">
+        <div class="container mx-auto px-8 md:px-16 max-w-[1200px]">
+            <div class="relative rounded-[40px] overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-accent/20 via-primary to-surface"></div>
+                <div class="relative z-10 p-16 md:p-24 text-center">
+                    <h2 class="text-5xl md:text-7xl font-serif mb-8 leading-tight">
+                        Let's build something<br/>
+                        <span class="gradient-text">meaningful together</span>
+                    </h2>
+                    <p class="text-xl text-textMuted mb-12 max-w-3xl mx-auto leading-relaxed">
+                        Whether you need a complete product overhaul or just someone to bounce ideas off of, I'm always open to a conversation. No pressure, just coffee and ideas.
+                    </p>
+                    <a href="#contact" class="inline-flex items-center gap-3 px-10 py-5 bg-white text-primary font-bold rounded-2xl hover:bg-accent transition-all text-lg shadow-xl hover:shadow-2xl hover:shadow-accent/20">
+                        Get in Touch
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="py-16 border-t border-white/5 bg-black/20">
+        <div class="container mx-auto px-8 md:px-16 max-w-[1440px]">
+            <div class="flex flex-col lg:flex-row justify-between items-center gap-8 mb-12">
+                <div>
+                    <div class="text-3xl font-serif mb-3 flex items-center gap-2">
+                        <span class="text-accent">●</span> Michael
+                    </div>
+                    <p class="text-textMuted">Product Designer & UX Strategist</p>
+                </div>
+                <div class="flex gap-6">
+                    <a href="#" class="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:bg-accent hover:text-primary transition-all">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:bg-accent hover:text-primary transition-all">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:bg-accent hover:text-primary transition-all">
+                        <i class="fab fa-dribbble text-xl"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:bg-accent hover:text-primary transition-all">
+                        <i class="fab fa-behance text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-textMuted">
+                <p>© 2023 Michael Design Studio. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

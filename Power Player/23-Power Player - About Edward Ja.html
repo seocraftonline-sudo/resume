@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Edward James</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        surface: '#F9FAFB',
+                        card: '#F3F4F6',
+                        primary: '#111827',
+                        secondary: '#4B5563',
+                        accent: '#4F46E5',
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px rgba(0, 0, 0, 0.05)',
+                        'glow': '0 0 20px rgba(79, 70, 229, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #F9FAFB;
+            color: #111827;
+            -webkit-font-smoothing: antialiased;
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="m-0 p-0 bg-surface min-h-screen flex flex-col font-sans">
+
+    <!-- Navigation -->
+    <nav id="header" class="w-full bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">
+                    EJ
+                </div>
+                <span class="font-semibold text-lg tracking-tight">Edward James</span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-secondary">
+                <a href="#" class="hover:text-primary transition-colors">Home</a>
+                <a href="#" class="text-accent transition-colors">About</a>
+                <a href="#" class="hover:text-primary transition-colors">Expertise</a>
+                <a href="#" class="hover:text-primary transition-colors">Portfolio</a>
+                <a href="#" class="hover:text-primary transition-colors">Insights</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <button class="hidden md:flex px-5 py-2.5 bg-primary text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors shadow-soft">
+                    Contact Me
+                </button>
+                <button class="md:hidden w-10 h-10 flex items-center justify-center bg-card rounded-full text-primary">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-1 w-full max-w-7xl mx-auto px-6 py-16 md:py-24 flex flex-col gap-32">
+
+        <!-- Personal Introduction Hero -->
+        <section id="bio-hero" class="w-full flex flex-col lg:flex-row items-center gap-16 min-h-[700px]">
+            <div class="w-full lg:w-1/2 flex flex-col items-start gap-8">
+                <h1 class="text-5xl lg:text-7xl font-bold leading-tight tracking-tight text-primary">
+                    Beyond the <br>
+                    <span class="font-serif italic text-secondary">Boardroom.</span>
+                </h1>
+                
+                <div class="flex flex-col gap-6">
+                    <p class="text-xl text-primary font-medium leading-relaxed max-w-xl">
+                        I believe that true authority isn't about having the loudest voice in the room. It's about having the clarity to see what others miss, and the discipline to execute when others hesitate.
+                    </p>
+                    <p class="text-lg text-secondary leading-relaxed max-w-xl">
+                        For over two decades, I've navigated the complex intersections of global finance, corporate strategy, and organizational psychology. My approach is rooted in a simple truth: businesses don't transform; the people within them do. I partner with executives not just to restructure their operations, but to recalibrate their vision.
+                    </p>
+                    <p class="text-lg text-secondary leading-relaxed max-w-xl">
+                        When you strip away the corporate jargon and the complex models, what remains is trust, decisiveness, and an unwavering commitment to outcomes. That is what I bring to every engagement.
+                    </p>
+                </div>
+                
+                <div class="flex items-center gap-6 mt-4">
+                    <div class="flex flex-col">
+                        <span class="text-3xl font-bold text-primary">London</span>
+                        <span class="text-sm font-medium text-secondary uppercase tracking-wider">Based In</span>
+                    </div>
+                    <div class="w-px h-12 bg-gray-200"></div>
+                    <div class="flex flex-col">
+                        <span class="text-3xl font-bold text-primary">Global</span>
+                        <span class="text-sm font-medium text-secondary uppercase tracking-wider">Operating</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="w-full lg:w-1/2 relative h-[600px] lg:h-[800px]">
+                <div class="absolute inset-0 bg-gradient-to-tr from-accent/10 to-transparent rounded-[2rem] blur-3xl -z-10 transform translate-x-8 translate-y-8"></div>
+                <div class="w-full h-full rounded-[2rem] overflow-hidden shadow-2xl relative bg-card">
+                    <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/8ce6757572-059c23843d390fd2df97.png" alt="Professional portrait of a distinguished male executive in his 50s, wearing a sharp dark suit, sitting in a high-end modern office chair, natural lighting, thoughtful expression, cinematic depth of field" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Journey -->
+        <section id="journey" class="w-full flex flex-col gap-16">
+            <div class="flex flex-col gap-4 max-w-3xl">
+                <h2 class="text-4xl font-bold text-primary tracking-tight">The Journey</h2>
+                <p class="text-secondary text-xl">A narrative of strategic evolution, from early foundational roles to shaping global enterprise architecture.</p>
+            </div>
+            
+            <div class="flex flex-col gap-8 relative border-l border-gray-200 ml-4 md:ml-8 pl-8 md:pl-16">
+                <!-- Journey Item 1 -->
+                <div class="relative flex flex-col gap-4 bg-white p-10 rounded-[2rem] shadow-soft border border-gray-100 group hover:border-gray-300 transition-colors">
+                    <div class="absolute -left-[33px] md:-left-[65px] top-12 w-4 h-4 rounded-full bg-white border-4 border-primary group-hover:border-accent transition-colors"></div>
+                    
+                    <div class="flex items-center justify-between border-b border-gray-100 pb-6 mb-2">
+                        <h3 class="text-2xl font-bold text-primary">The Foundation: Risk & Reality</h3>
+                        <span class="text-sm font-semibold text-secondary px-4 py-2 bg-card rounded-full">1998 — 2005</span>
+                    </div>
+                    
+                    <p class="text-lg text-secondary leading-relaxed">
+                        My career began in the trenches of risk management at a Tier-1 investment bank during a period of unprecedented market volatility. It was here I learned that models are only as good as the assumptions behind them. I quickly transitioned from analyzing risk to advising on structural resilience, learning to identify the invisible fault lines in large organizations before they fractured.
+                    </p>
+                </div>
+
+                <!-- Journey Item 2 -->
+                <div class="relative flex flex-col gap-4 bg-white p-10 rounded-[2rem] shadow-soft border border-gray-100 group hover:border-gray-300 transition-colors">
+                    <div class="absolute -left-[33px] md:-left-[65px] top-12 w-4 h-4 rounded-full bg-white border-4 border-primary group-hover:border-accent transition-colors"></div>
+                    
+                    <div class="flex items-center justify-between border-b border-gray-100 pb-6 mb-2">
+                        <h3 class="text-2xl font-bold text-primary">The Pivot: Strategic Scaling</h3>
+                        <span class="text-sm font-semibold text-secondary px-4 py-2 bg-card rounded-full">2006 — 2015</span>
+                    </div>
+                    
+                    <p class="text-lg text-secondary leading-relaxed">
+                        Recognizing that true value creation happens at the intersection of strategy and execution, I moved into management consulting, eventually leading the M&A integration practice at a global firm. During this decade, I oversaw the post-merger integration of over $40B in assets. The core lesson? Culture eats strategy for breakfast, but operational dysfunction eats them both. I developed proprietary frameworks for aligning disparate corporate cultures while maintaining operational momentum.
+                    </p>
+                </div>
+
+                <!-- Journey Item 3 -->
+                <div class="relative flex flex-col gap-4 bg-white p-10 rounded-[2rem] shadow-soft border border-gray-100 group hover:border-gray-300 transition-colors">
+                    <div class="absolute -left-[33px] md:-left-[65px] top-12 w-4 h-4 rounded-full bg-white border-4 border-primary group-hover:border-accent transition-colors"></div>
+                    
+                    <div class="flex items-center justify-between border-b border-gray-100 pb-6 mb-2">
+                        <h3 class="text-2xl font-bold text-primary">The Present: Boardroom Advisory</h3>
+                        <span class="text-sm font-semibold text-secondary px-4 py-2 bg-card rounded-full">2016 — Present</span>
+                    </div>
+                    
+                    <p class="text-lg text-secondary leading-relaxed">
+                        Today, I operate exclusively at the board and C-suite level. I established Nexus Group to provide unfiltered, high-stakes advisory without the overhead of traditional consulting models. My current focus is guiding legacy institutions through digital transformation and advising high-growth tech firms on sustainable enterprise scaling. I sit on the boards of three publicly traded companies, providing governance and strategic oversight.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Values & Philosophy -->
+        <section id="values" class="w-full flex flex-col gap-16">
+            <div class="flex flex-col gap-4 max-w-3xl text-center mx-auto">
+                <h2 class="text-4xl font-bold text-primary tracking-tight">Core Philosophy</h2>
+                <p class="text-secondary text-xl">The non-negotiable principles that dictate how I operate, advise, and lead.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Value 1 -->
+                <div class="bg-white p-10 rounded-[2rem] shadow-soft border border-gray-100 flex flex-col gap-6 h-full">
+                    <div class="w-16 h-16 bg-card rounded-2xl flex items-center justify-center text-primary">
+                        <i class="fa-solid fa-scale-balanced text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary">Unvarnished Truth</h3>
+                    <p class="text-secondary text-lg leading-relaxed">
+                        I am not hired to validate existing opinions. I am hired to identify blind spots and articulate the realities that internal teams are often too compromised to voice. Candor is my primary currency.
+                    </p>
+                </div>
+                
+                <!-- Value 2 -->
+                <div class="bg-white p-10 rounded-[2rem] shadow-soft border border-gray-100 flex flex-col gap-6 h-full">
+                    <div class="w-16 h-16 bg-card rounded-2xl flex items-center justify-center text-primary">
+                        <i class="fa-solid fa-chess-knight text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary">Execution Over Ideation</h3>
+                    <p class="text-secondary text-lg leading-relaxed">
+                        A brilliant strategy that cannot be executed is a failed strategy. Every framework I design is pressure-tested against the operational realities and cultural constraints of the organization.
+                    </p>
+                </div>
+                
+                <!-- Value 3 -->
+                <div class="bg-white p-10 rounded-[2rem] shadow-soft border border-gray-100 flex flex-col gap-6 h-full">
+                    <div class="w-16 h-16 bg-card rounded-2xl flex items-center justify-center text-primary">
+                        <i class="fa-solid fa-shield-halved text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary">Long-Term Viability</h3>
+                    <p class="text-secondary text-lg leading-relaxed">
+                        I refuse to optimize for short-term optics at the expense of long-term structural integrity. My recommendations are built to withstand market cycles, not just the next quarterly earnings call.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Photo Gallery -->
+        <section id="gallery" class="w-full flex flex-col gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[600px]">
+                <div class="md:col-span-8 rounded-[2rem] overflow-hidden bg-card shadow-soft h-[400px] md:h-full group">
+                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/6d5e2661a0-e84be0eeeb30a5c7e02c.png" alt="High quality corporate photography, executive leading a boardroom meeting, pointing at a strategy presentation, professional lighting, deep focus" />
+                </div>
+                <div class="md:col-span-4 flex flex-col gap-6 h-full">
+                    <div class="rounded-[2rem] overflow-hidden bg-card shadow-soft h-[300px] md:h-[calc(50%-12px)] group">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/99b37bd91d-bbbfa785938dec39f7a6.png" alt="Candid professional shot, executive speaking at an industry conference podium, dark background, spotlighting, authoritative posture" />
+                    </div>
+                    <div class="rounded-[2rem] overflow-hidden bg-card shadow-soft h-[300px] md:h-[calc(50%-12px)] group">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/6f5080fef3-9b66bb61ff1730eefde7.png" alt="Over the shoulder shot, executive reviewing documents in a high-rise office overlooking the city, modern architecture, serious tone" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Personal Interests -->
+        <section id="interests" class="w-full bg-primary rounded-[2rem] p-12 md:p-20 flex flex-col lg:flex-row items-center gap-16 relative overflow-hidden shadow-2xl text-white">
+            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/noise-pattern-with-subtle-cross-lines.png')] opacity-10 mix-blend-overlay"></div>
+            <div class="w-full lg:w-1/2 relative z-10 flex flex-col gap-8">
+                <h2 class="text-4xl font-bold tracking-tight">Beyond the Brief</h2>
+                <p class="text-gray-300 text-lg leading-relaxed">
+                    The discipline required in the boardroom is cultivated outside of it. When I am not advising clients, my focus shifts to pursuits that demand equal parts strategic foresight and endurance.
+                </p>
+                <div class="flex flex-col gap-6 mt-4">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 mt-1">
+                            <i class="fa-solid fa-sailboat text-sm"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">Competitive Sailing</h4>
+                            <p class="text-gray-400">Navigating complex variables under pressure. I compete in offshore regattas, where team dynamics and rapid decision-making are paramount.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 mt-1">
+                            <i class="fa-solid fa-book-open text-sm"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">Historical Biographies</h4>
+                            <p class="text-gray-400">Studying the leadership failures and triumphs of the past century. Human nature rarely changes, even as technology does.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full lg:w-1/2 relative z-10">
+                <div class="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-[2rem]">
+                    <h3 class="text-2xl font-bold mb-6">Philanthropic Focus</h3>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        I serve on the board of the Global Education Initiative, focusing on systemic reforms in STEM education across emerging markets. We believe that talent is equally distributed globally, but opportunity is not.
+                    </p>
+                    <a href="#" class="inline-flex items-center gap-2 text-accent font-semibold hover:text-white transition-colors">
+                        Learn about GEI <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Current Focus & Achievements Footer -->
+        <section id="current-focus" class="w-full flex flex-col lg:flex-row gap-12 lg:gap-24 pb-12">
+            <div class="w-full lg:w-1/2 flex flex-col gap-8">
+                <h2 class="text-3xl font-bold text-primary tracking-tight border-b border-gray-200 pb-4">Key Milestones</h2>
+                
+                <div class="flex flex-col gap-6">
+                    <div class="flex gap-6 items-start group cursor-default">
+                        <div class="w-12 h-12 bg-card rounded-xl flex items-center justify-center text-primary font-bold group-hover:bg-primary group-hover:text-white transition-colors">
+                            '24
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-lg font-bold text-primary">Appointed to TechCorp Board</h4>
+                            <p class="text-secondary mt-1">Guiding the transition from private to public markets during a complex regulatory environment.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-6 items-start group cursor-default">
+                        <div class="w-12 h-12 bg-card rounded-xl flex items-center justify-center text-primary font-bold group-hover:bg-primary group-hover:text-white transition-colors">
+                            '21
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-lg font-bold text-primary">Published "The Resilience Protocol"</h4>
+                            <p class="text-secondary mt-1">A comprehensive framework for organizational risk management adopted by 50+ Fortune 500 companies.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-6 items-start group cursor-default">
+                        <div class="w-12 h-12 bg-card rounded-xl flex items-center justify-center text-primary font-bold group-hover:bg-primary group-hover:text-white transition-colors">
+                            '18
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-lg font-bold text-primary">Founded Nexus Group</h4>
+                            <p class="text-secondary mt-1">Established an independent advisory firm dedicated to high-stakes M&A integration and restructuring.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="w-full lg:w-1/2 flex flex-col gap-8">
+                <h2 class="text-3xl font-bold text-primary tracking-tight border-b border-gray-200 pb-4">Current Focus: Q3 2026</h2>
+                
+                <div class="bg-white p-8 rounded-[2rem] shadow-soft border border-gray-100 flex flex-col gap-6">
+                    <div class="flex items-center gap-3">
+                        <span class="relative flex h-3 w-3">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                        </span>
+                        <span class="text-sm font-semibold text-secondary uppercase tracking-wider">Actively Engaging</span>
+                    </div>
+                    
+                    <p class="text-lg text-primary font-medium leading-relaxed">
+                        I am currently structuring the post-merger integration for a major European logistics conglomerate, while advising two early-stage AI infrastructure firms on governance scaling.
+                    </p>
+                    
+                    <div class="bg-card p-6 rounded-xl mt-2">
+                        <h4 class="font-semibold text-primary mb-2">Open To:</h4>
+                        <ul class="text-secondary space-y-2">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent text-sm"></i> Independent Board Director roles (FinTech/SaaS)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent text-sm"></i> Confidential M&A Advisory</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent text-sm"></i> Keynote speaking on organizational resilience</li>
+                        </ul>
+                    </div>
+                    
+                    <button class="w-full py-4 bg-primary text-white rounded-full font-bold shadow-soft hover:bg-gray-800 transition-colors mt-2">
+                        Discuss an Opportunity
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="w-full bg-white border-t border-gray-100 py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">
+                    EJ
+                </div>
+                <span class="font-semibold text-primary">Edward James</span>
+            </div>
+            
+            <div class="flex items-center gap-6 text-sm text-secondary">
+                <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+                <span>&copy; 2026 Edward James. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

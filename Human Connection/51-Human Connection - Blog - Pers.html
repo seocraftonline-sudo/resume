@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Personal Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>window.FontAwesomeConfig = { autoReplaceSvg: "nest"};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        primary: '#1A3626', 
+                        accent: '#4ADE80', 
+                        surface: '#112218', 
+                        textMain: '#F8FAFC',
+                        textMuted: '#94A3B8'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { margin: 0; padding: 0; background-color: #0F172A; color: #F8FAFC; overflow-x: hidden; }
+        .hero-bg {
+            background: linear-gradient(180deg, rgba(26,54,38,0.9) 0%, rgba(15,23,42,1) 100%),
+                        repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(255,255,255,0.03) 40px, rgba(255,255,255,0.03) 80px);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .hand-drawn-border {
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+        }
+        ::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="antialiased selection:bg-accent selection:text-primary m-0 p-0">
+
+    <!-- Navigation (Preserved exactly from context) -->
+    <nav id="header" class="fixed w-full top-0 z-50 glass-card border-b-0 py-4 px-6 md:px-12 flex justify-between items-center transition-all duration-300">
+        <a href="#" class="text-2xl font-serif tracking-wide flex items-center gap-2">
+            Michael <span class="text-accent text-sm">✦</span>
+        </a>
+        <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-textMuted">
+            <a href="#" class="hover:text-white transition-colors">Home</a>
+            <a href="#about" class="hover:text-white transition-colors">About Me</a>
+            <a href="#services" class="hover:text-white transition-colors">My Services</a>
+            <a href="#portfolio" class="hover:text-white transition-colors">Portfolio</a>
+            <a href="#blog" class="text-white hover:text-accent transition-colors border-b border-accent pb-1">Blog</a>
+        </div>
+        <a href="mailto:hello@example.com" class="hidden md:flex items-center gap-2 text-sm text-textMuted hover:text-white transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            hello@example.com
+        </a>
+        <button class="md:hidden text-white focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+    </nav>
+
+    <!-- Blog Introduction & Featured Post Hero -->
+    <section id="blog_hero" class="pt-40 pb-20 relative hero-bg min-h-[80vh] flex items-center border-b border-white/5">
+        <div class="container mx-auto px-6 md:px-12 max-w-[1200px] relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Intro Text -->
+                <div>
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-textMuted mb-6">
+                        <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                        Thoughts & Perspectives
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-serif mb-6 leading-tight text-white">
+                        Notes on <span class="text-accent italic">Design,</span><br/> Tech & Humanity.
+                    </h1>
+                    <p class="text-xl text-textMuted font-serif italic leading-relaxed mb-8 max-w-xl">
+                        A space where I share ongoing expertise, explore industry developments, and document the journey of building meaningful products. New thoughts published every other Tuesday.
+                    </p>
+                    
+                    <!-- Newsletter Quick Subscribe -->
+                    <div class="glass-card p-2 rounded-full flex items-center max-w-md border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
+                        <input type="email" placeholder="Drop your email for updates..." class="bg-transparent border-none outline-none text-white px-4 py-2 w-full text-sm placeholder:text-textMuted/70">
+                        <button class="bg-white/10 hover:bg-accent hover:text-primary text-white px-6 py-2 rounded-full text-sm font-medium transition-all">Subscribe</button>
+                    </div>
+                </div>
+
+                <!-- Featured Post -->
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-accent/20 to-primary/20 rounded-[32px] blur-xl opacity-50 group-hover:opacity-100 transition duration-1000"></div>
+                    <div class="glass-card p-2 rounded-[32px] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)] relative overflow-hidden">
+                        <div class="h-64 md:h-80 w-full rounded-[24px] overflow-hidden relative mb-6">
+                            <img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/35cdf529e0-cc48b6f7cefe23fed59b.png" alt="Candid, warm, personal photography of a designer or consultant working thoughtfully at a desk with natural light, warm tones, high quality, soft focus background" />
+                            <div class="absolute top-4 left-4 inline-flex px-3 py-1 rounded-full bg-surface/80 backdrop-blur-md border border-white/10 text-xs text-white font-medium">
+                                Featured
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6">
+                            <div class="flex items-center gap-4 text-xs text-textMuted font-mono mb-4">
+                                <span>Oct 24, 2023</span>
+                                <span>•</span>
+                                <span>7 min read</span>
+                                <span>•</span>
+                                <span class="text-accent">Design Leadership</span>
+                            </div>
+                            <h2 class="text-3xl font-serif text-white mb-4 group-hover:text-accent transition-colors">The Empathy Deficit in Modern SaaS</h2>
+                            <p class="text-textMuted text-sm mb-6 line-clamp-2">An exploration of how hyper-optimization is stripping the human element from enterprise software, and what design leaders can do to reintroduce emotional intelligence into their products.</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <img class="w-8 h-8 rounded-full border border-white/10 object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/76b40dc433-f9edd408a8f704f7723c.png" alt="Warm, approachable headshot of a creative professional, warm lighting, soft background" />
+                                    <span class="text-sm text-white font-medium">Michael D.</span>
+                                </div>
+                                <a href="#" class="inline-flex items-center gap-2 text-accent text-sm font-medium hover:text-white transition-colors">
+                                    Read Article <i class="fa-solid fa-arrow-right text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Filter -->
+    <section id="blog_filters" class="py-12 bg-[#0F172A] border-b border-white/5 sticky top-20 z-40 glass-card">
+        <div class="container mx-auto px-6 md:px-12 max-w-[1200px]">
+            <div class="flex flex-wrap items-center justify-center gap-3">
+                <button class="px-6 py-2 rounded-full bg-white/10 border border-white/20 text-white text-sm font-medium hover:bg-white/20 transition-colors">All Posts</button>
+                <button class="px-6 py-2 rounded-full bg-transparent border border-white/10 text-textMuted text-sm font-medium hover:bg-white/5 hover:text-white transition-colors">Design Leadership</button>
+                <button class="px-6 py-2 rounded-full bg-transparent border border-white/10 text-textMuted text-sm font-medium hover:bg-white/5 hover:text-white transition-colors">Product Strategy</button>
+                <button class="px-6 py-2 rounded-full bg-transparent border border-white/10 text-textMuted text-sm font-medium hover:bg-white/5 hover:text-white transition-colors">Human Connection</button>
+                <button class="px-6 py-2 rounded-full bg-transparent border border-white/10 text-textMuted text-sm font-medium hover:bg-white/5 hover:text-white transition-colors">Case Studies</button>
+                <button class="px-6 py-2 rounded-full bg-transparent border border-white/10 text-textMuted text-sm font-medium hover:bg-white/5 hover:text-white transition-colors">Personal Updates</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Post Grid -->
+    <section id="blog_grid" class="py-24 bg-[#0F172A] relative">
+        <div class="container mx-auto px-6 md:px-12 max-w-[1200px]">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Post 1 -->
+                <article class="glass-card p-4 rounded-[24px] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)] flex flex-col h-full group hover:-translate-y-1 transition-transform duration-300">
+                    <div class="h-48 w-full rounded-[16px] overflow-hidden mb-6 relative">
+                        <img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/9e7caca0dd-04e729dd0ca6f9fea658.png" alt="Abstract warm, organic shapes and textures, soft terracotta and cream colors, representing human connection" />
+                        <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-surface/80 backdrop-blur-md border border-white/10 text-[10px] uppercase tracking-wider text-textMuted font-medium">
+                            Human Connection
+                        </div>
+                    </div>
+                    <div class="flex-grow flex flex-col px-2">
+                        <div class="flex items-center gap-3 text-xs text-textMuted font-mono mb-3">
+                            <span>Sep 12, 2023</span>
+                            <span>•</span>
+                            <span>5 min read</span>
+                        </div>
+                        <h3 class="text-xl font-serif text-white mb-3 group-hover:text-accent transition-colors leading-snug">Why Polished Portfolios Are Costing You Clients</h3>
+                        <p class="text-textMuted text-sm mb-6 flex-grow line-clamp-3">In a world full of perfectly optimized case studies, showing the messy middle of your process is the fastest way to build trust with potential partners.</p>
+                        <div class="flex items-center justify-between mt-auto pt-4 border-t border-white/5">
+                            <span class="text-sm text-textMuted">Michael D.</span>
+                            <a href="#" class="inline-flex items-center gap-2 text-accent text-sm font-medium hover:text-white transition-colors">
+                                Read More <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 2 -->
+                <article class="glass-card p-4 rounded-[24px] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)] flex flex-col h-full group hover:-translate-y-1 transition-transform duration-300">
+                    <div class="h-48 w-full rounded-[16px] overflow-hidden mb-6 relative">
+                        <img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/7c9d2f1db2-d82c04a84cff4a12ea69.png" alt="Close up of a hand writing in a moleskine notebook with a nice pen, warm moody lighting, candid feel" />
+                        <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-surface/80 backdrop-blur-md border border-white/10 text-[10px] uppercase tracking-wider text-textMuted font-medium">
+                            Product Strategy
+                        </div>
+                    </div>
+                    <div class="flex-grow flex flex-col px-2">
+                        <div class="flex items-center gap-3 text-xs text-textMuted font-mono mb-3">
+                            <span>Aug 28, 2023</span>
+                            <span>•</span>
+                            <span>8 min read</span>
+                        </div>
+                        <h3 class="text-xl font-serif text-white mb-3 group-hover:text-accent transition-colors leading-snug">Designing for Behavioral Change</h3>
+                        <p class="text-textMuted text-sm mb-6 flex-grow line-clamp-3">A practical look at how to apply psychological principles to product design without crossing the line into dark patterns or manipulation.</p>
+                        <div class="flex items-center justify-between mt-auto pt-4 border-t border-white/5">
+                            <span class="text-sm text-textMuted">Michael D.</span>
+                            <a href="#" class="inline-flex items-center gap-2 text-accent text-sm font-medium hover:text-white transition-colors">
+                                Read More <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 3 -->
+                <article class="glass-card p-4 rounded-[24px] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)] flex flex-col h-full group hover:-translate-y-1 transition-transform duration-300">
+                    <div class="h-48 w-full rounded-[16px] overflow-hidden mb-6 relative">
+                        <img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/c21a629c89-106752f548bbf1d4448b.png" alt="Two people having a coffee and a deep conversation, blurred background, warm inviting atmosphere, candid" />
+                        <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-surface/80 backdrop-blur-md border border-white/10 text-[10px] uppercase tracking-wider text-textMuted font-medium">
+                            Personal Updates
+                        </div>
+                    </div>
+                    <div class="flex-grow flex flex-col px-2">
+                        <div class="flex items-center gap-3 text-xs text-textMuted font-mono mb-3">
+                            <span>Jul 15, 2023</span>
+                            <span>•</span>
+                            <span>4 min read</span>
+                        </div>
+                        <h3 class="text-xl font-serif text-white mb-3 group-hover:text-accent transition-colors leading-snug">The Value of the Unscalable Coffee Chat</h3>
+                        <p class="text-textMuted text-sm mb-6 flex-grow line-clamp-3">Why I still spend 3 hours a week having random virtual coffees with strangers, and how it's been the best investment for my career.</p>
+                        <div class="flex items-center justify-between mt-auto pt-4 border-t border-white/5">
+                            <span class="text-sm text-textMuted">Michael D.</span>
+                            <a href="#" class="inline-flex items-center gap-2 text-accent text-sm font-medium hover:text-white transition-colors">
+                                Read More <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                 <!-- Post 4 -->
+                 <article class="glass-card p-4 rounded-[24px] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)] flex flex-col h-full group hover:-translate-y-1 transition-transform duration-300">
+                    <div class="h-48 w-full rounded-[16px] overflow-hidden mb-6 relative bg-surface/50 flex items-center justify-center">
+                        <div class="text-4xl text-white/20 font-serif italic">"Design is how it works."</div>
+                        <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-surface/80 backdrop-blur-md border border-white/10 text-[10px] uppercase tracking-wider text-textMuted font-medium">
+                            Design Leadership
+                        </div>
+                    </div>
+                    <div class="flex-grow flex flex-col px-2">
+                        <div class="flex items-center gap-3 text-xs text-textMuted font-mono mb-3">
+                            <span>Jun 02, 2023</span>
+                            <span>•</span>
+                            <span>6 min read</span>
+                        </div>
+                        <h3 class="text-xl font-serif text-white mb-3 group-hover:text-accent transition-colors leading-snug">Building Systems That Don't Stifle Creativity</h3>
+                        <p class="text-textMuted text-sm mb-6 flex-grow line-clamp-3">Design systems are meant to free up mental bandwidth for complex problems, not turn designers into assembly line workers.</p>
+                        <div class="flex items-center justify-between mt-auto pt-4 border-t border-white/5">
+                            <span class="text-sm text-textMuted">Michael D.</span>
+                            <a href="#" class="inline-flex items-center gap-2 text-accent text-sm font-medium hover:text-white transition-colors">
+                                Read More <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 5 -->
+                <article class="glass-card p-4 rounded-[24px] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)] flex flex-col h-full group hover:-translate-y-1 transition-transform duration-300">
+                    <div class="h-48 w-full rounded-[16px] overflow-hidden mb-6 relative">
+                        <img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/3cc9ad9279-184a7dfc70f43370b9d0.png" alt="A messy desk with wireframes, post-it notes, and sketches, showing the real design process, warm tones" />
+                        <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-surface/80 backdrop-blur-md border border-white/10 text-[10px] uppercase tracking-wider text-textMuted font-medium">
+                            Case Studies
+                        </div>
+                    </div>
+                    <div class="flex-grow flex flex-col px-2">
+                        <div class="flex items-center gap-3 text-xs text-textMuted font-mono mb-3">
+                            <span>May 18, 2023</span>
+                            <span>•</span>
+                            <span>10 min read</span>
+                        </div>
+                        <h3 class="text-xl font-serif text-white mb-3 group-hover:text-accent transition-colors leading-snug">Redesigning the Checkout Flow for Empathy</h3>
+                        <p class="text-textMuted text-sm mb-6 flex-grow line-clamp-3">A deep dive into how we increased conversion by 40% not by adding urgency timers, but by reducing anxiety and providing clear support paths.</p>
+                        <div class="flex items-center justify-between mt-auto pt-4 border-t border-white/5">
+                            <span class="text-sm text-textMuted">Michael D.</span>
+                            <a href="#" class="inline-flex items-center gap-2 text-accent text-sm font-medium hover:text-white transition-colors">
+                                Read More <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 6 -->
+                <article class="glass-card p-4 rounded-[24px] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)] flex flex-col h-full group hover:-translate-y-1 transition-transform duration-300">
+                    <div class="h-48 w-full rounded-[16px] overflow-hidden mb-6 relative">
+                        <img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/e0c348561f-a40767597a5b6a6c3a89.png" alt="Minimalist aesthetic setup, natural light, warm and soft, focusing on an open book or tablet" />
+                        <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-surface/80 backdrop-blur-md border border-white/10 text-[10px] uppercase tracking-wider text-textMuted font-medium">
+                            Product Strategy
+                        </div>
+                    </div>
+                    <div class="flex-grow flex flex-col px-2">
+                        <div class="flex items-center gap-3 text-xs text-textMuted font-mono mb-3">
+                            <span>Apr 05, 2023</span>
+                            <span>•</span>
+                            <span>6 min read</span>
+                        </div>
+                        <h3 class="text-xl font-serif text-white mb-3 group-hover:text-accent transition-colors leading-snug">Accessibility Beyond Compliance</h3>
+                        <p class="text-textMuted text-sm mb-6 flex-grow line-clamp-3">Designing for edge cases isn't just about meeting legal requirements; it fundamentally improves the core experience for every single user.</p>
+                        <div class="flex items-center justify-between mt-auto pt-4 border-t border-white/5">
+                            <span class="text-sm text-textMuted">Michael D.</span>
+                            <a href="#" class="inline-flex items-center gap-2 text-accent text-sm font-medium hover:text-white transition-colors">
+                                Read More <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Pagination/Load More -->
+            <div class="mt-16 flex justify-center">
+                <button class="px-8 py-3 rounded-full bg-surface border border-white/10 text-white font-medium hover:bg-white/5 hover:border-white/20 transition-all shadow-[0_4px_12px_rgba(0,0,0,0.2)] flex items-center gap-3">
+                    Load More Articles <i class="fa-solid fa-rotate-right text-sm"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup Banner -->
+    <section id="newsletter_banner" class="py-24 relative overflow-hidden border-y border-white/5 bg-[#0F172A]">
+        <div class="absolute inset-0 hero-bg opacity-30"></div>
+        <div class="container mx-auto px-6 md:px-12 max-w-[1000px] relative z-10">
+            <div class="glass-card p-10 md:p-16 rounded-[32px] border border-white/10 shadow-[0_16px_48px_rgba(0,0,0,0.4)] text-center relative overflow-hidden">
+                <!-- Decorative elements -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl -ml-20 -mb-20"></div>
+                
+                <div class="relative z-10">
+                    <div class="w-16 h-16 mx-auto bg-surface border border-white/10 rounded-full flex items-center justify-center text-accent text-2xl mb-6 shadow-[0_4px_16px_rgba(0,0,0,0.2)]">
+                        <i class="fa-regular fa-envelope-open"></i>
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-serif text-white mb-6">Let's keep the <span class="text-accent italic">conversation</span> going.</h2>
+                    <p class="text-textMuted text-lg mb-10 max-w-2xl mx-auto">
+                        Join 5,000+ others who receive my bi-weekly notes on design, technology, and building human-centric products. No spam, just thoughtful perspectives.
+                    </p>
+                    
+                    <form class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+                        <input type="email" placeholder="Your best email address..." class="flex-grow bg-surface/50 border border-white/10 rounded-full px-6 py-4 text-white placeholder:text-textMuted focus:outline-none focus:border-accent/50 transition-colors shadow-inner">
+                        <button type="button" class="px-8 py-4 rounded-full bg-accent text-primary font-medium text-lg transition-all shadow-[0_0_20px_rgba(74,222,128,0.2)] hover:shadow-[0_0_30px_rgba(74,222,128,0.4)] whitespace-nowrap">
+                            Subscribe
+                        </button>
+                    </form>
+                    <p class="text-xs text-textMuted/60 mt-4">Unsubscribe at any time. I respect your inbox.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Preserved exactly from context) -->
+    <footer id="footer" class="py-12 border-t border-white/5 bg-black/20">
+        <div class="container mx-auto px-6 md:px-12 max-w-[1440px] flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-2xl font-serif tracking-wide flex items-center gap-2">
+                Michael <span class="text-accent text-sm">✦</span>
+            </div>
+            <div class="flex gap-6 text-textMuted">
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-dribbble text-xl"></i></a>
+            </div>
+            <p class="text-sm text-textMuted">© 2023 Michael Design. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

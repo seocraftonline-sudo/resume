@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - The Quiet Genius</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        surface: '#F9FAFB',
+                        surfaceHover: '#F3F4F6',
+                        card: '#FFFFFF',
+                        textPrimary: '#111827',
+                        textSecondary: '#6B7280',
+                        accent: '#111827',
+                        accentHover: '#374151',
+                        border: '#E5E7EB',
+                        glass: 'rgba(255, 255, 255, 0.7)',
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'inner-soft': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.02)',
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { margin: 0; padding: 0; background-color: #F9FAFB; -webkit-font-smoothing: antialiased; }
+        ::-webkit-scrollbar { display: none; }
+        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3); }
+    </style>
+</head>
+<body class="text-textPrimary font-sans bg-surface min-h-screen flex flex-col relative overflow-x-hidden">
+
+    <!-- Decorative Background Elements -->
+    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-gradient-radial from-indigo-50/40 to-transparent opacity-60 blur-3xl"></div>
+        <div class="absolute bottom-[-10%] right-[-5%] w-[50%] h-[50%] rounded-full bg-gradient-radial from-purple-50/40 to-transparent opacity-60 blur-3xl"></div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header id="header" class="fixed top-0 w-full z-50 transition-all duration-300 bg-surface/80 backdrop-blur-md border-b border-border/50">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+            <a href="#" class="text-xl font-serif font-semibold tracking-tight text-textPrimary">A. Law</a>
+            
+            <nav class="hidden md:flex items-center space-x-10">
+                <a href="#" class="text-sm font-medium text-textSecondary hover:text-textPrimary transition-colors">Home</a>
+                <a href="#" class="text-sm font-medium text-textSecondary hover:text-textPrimary transition-colors">Work</a>
+                <a href="#" class="text-sm font-medium text-textSecondary hover:text-textPrimary transition-colors">About</a>
+                <a href="#" class="text-sm font-medium text-textPrimary border-b-2 border-textPrimary pb-1">Resume</a>
+                <a href="#" class="text-sm font-medium text-textSecondary hover:text-textPrimary transition-colors">Insights</a>
+            </nav>
+
+            <div class="flex items-center space-x-6">
+                <a href="#" class="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-card shadow-soft hover:shadow-md transition-all text-textPrimary">
+                    <i class="fa-solid fa-envelope text-sm"></i>
+                </a>
+                <button class="md:hidden text-textPrimary p-2">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow z-10 pt-32 pb-24 max-w-[1440px] mx-auto w-full px-6 lg:px-12 flex flex-col space-y-24">
+
+        <!-- Resume Header & Download CTA -->
+        <section id="resume-header" class="flex flex-col space-y-8 border-b border-border/60 pb-12">
+            <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8">
+                <div class="space-y-4 max-w-3xl">
+                    <h1 class="text-5xl lg:text-6xl font-serif font-medium leading-tight tracking-tight text-textPrimary">
+                        Curriculum Vitae
+                    </h1>
+                    <p class="text-lg text-textSecondary font-light leading-relaxed max-w-2xl">
+                        A detailed record of my professional journey, focusing on architectural system design, high-stakes digital experiences, and the pursuit of clarity in complex ecosystems. With over a decade of experience bridging physical principles and digital interfaces.
+                    </p>
+                </div>
+                
+                <a href="#" class="px-8 py-4 bg-accent text-white rounded-[24px] font-medium text-sm hover:bg-accentHover transition-all shadow-lg flex items-center gap-3 whitespace-nowrap shrink-0">
+                    <i class="fa-solid fa-download"></i> Download PDF
+                </a>
+            </div>
+        </section>
+
+        <div class="flex flex-col lg:flex-row gap-16 lg:gap-24">
+            
+            <!-- Left Column: Main Timeline (Experience & Education) -->
+            <div class="w-full lg:w-2/3 flex flex-col space-y-24">
+                
+                <!-- Work Experience Section -->
+                <section id="work-experience" class="flex flex-col space-y-12">
+                    <div class="space-y-2">
+                        <h2 class="text-2xl font-serif text-textPrimary">Professional Experience</h2>
+                    </div>
+
+                    <div class="space-y-12">
+                        <!-- Experience 1 -->
+                        <div class="glass-card p-8 rounded-[24px] shadow-soft flex flex-col space-y-6 relative overflow-hidden group">
+                            <div class="flex flex-col md:flex-row justify-between items-start gap-4">
+                                <div>
+                                    <h3 class="text-xl font-medium text-textPrimary">Independent Design Director</h3>
+                                    <p class="text-textSecondary text-sm mt-1">Self-Employed • Global (Remote)</p>
+                                </div>
+                                <span class="text-xs text-textSecondary uppercase tracking-widest px-3 py-1 bg-surface rounded-full border border-border/50">2018 — Present</span>
+                            </div>
+                            
+                            <p class="text-sm text-textSecondary leading-relaxed">
+                                Partnering selectively with founders and product teams to architect high-stakes digital experiences. Focusing on fintech, luxury heritage brands, and complex SaaS platforms.
+                            </p>
+                            
+                            <ul class="space-y-3 text-sm text-textSecondary leading-relaxed list-disc list-inside marker:text-border">
+                                <li>Architected the end-to-end product design for Lumina Wealth, managing over <strong class="text-textPrimary font-medium">$1B in assets</strong> within six months of launch.</li>
+                                <li>Redesigned Maison Archive's luxury e-commerce platform, resulting in a <strong class="text-textPrimary font-medium">45% increase</strong> in average order value and an Awwwards nomination.</li>
+                                <li>Developed scalable design systems for 3 enterprise clients, reducing their engineering handoff friction by <strong class="text-textPrimary font-medium">approx. 40%</strong>.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Experience 2 -->
+                        <div class="glass-card p-8 rounded-[24px] shadow-soft flex flex-col space-y-6">
+                            <div class="flex flex-col md:flex-row justify-between items-start gap-4">
+                                <div>
+                                    <h3 class="text-xl font-medium text-textPrimary">Lead Designer</h3>
+                                    <p class="text-textSecondary text-sm mt-1">Studio O/N • London, UK</p>
+                                </div>
+                                <span class="text-xs text-textSecondary uppercase tracking-widest px-3 py-1 bg-surface rounded-full border border-border/50">2014 — 2018</span>
+                            </div>
+                            
+                            <p class="text-sm text-textSecondary leading-relaxed">
+                                Led the digital transformation practice, translating physical brand equity into robust, systemic digital languages for global lifestyle brands.
+                            </p>
+                            
+                            <ul class="space-y-3 text-sm text-textSecondary leading-relaxed list-disc list-inside marker:text-border">
+                                <li>Managed a team of 4 product designers, establishing the studio's first formalised UX research practice.</li>
+                                <li>Directed the digital rebranding of a major European hospitality group across 14 international markets.</li>
+                                <li>Pioneered a 'quiet design' framework that became the studio's signature methodology for high-end client work.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Experience 3 -->
+                        <div class="glass-card p-8 rounded-[24px] shadow-soft flex flex-col space-y-6">
+                            <div class="flex flex-col md:flex-row justify-between items-start gap-4">
+                                <div>
+                                    <h3 class="text-xl font-medium text-textPrimary">Architectural Designer</h3>
+                                    <p class="text-textSecondary text-sm mt-1">Foster & Partners • London, UK</p>
+                                </div>
+                                <span class="text-xs text-textSecondary uppercase tracking-widest px-3 py-1 bg-surface rounded-full border border-border/50">2011 — 2014</span>
+                            </div>
+                            
+                            <p class="text-sm text-textSecondary leading-relaxed">
+                                Began career in physical spaces, focusing on spatial navigation and human-centric commercial environments before transitioning to digital systems.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Education Section -->
+                <section id="education" class="flex flex-col space-y-12">
+                    <div class="space-y-2">
+                        <h2 class="text-2xl font-serif text-textPrimary">Education</h2>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="glass-card p-6 rounded-[24px] shadow-soft flex flex-col md:flex-row justify-between items-start gap-4">
+                            <div>
+                                <h3 class="text-base font-medium text-textPrimary">Master of Architecture (M.Arch)</h3>
+                                <p class="text-textSecondary text-sm mt-1">University College London (UCL) • Bartlett School of Architecture</p>
+                            </div>
+                            <span class="text-xs text-textSecondary uppercase tracking-widest">2009 — 2011</span>
+                        </div>
+
+                        <div class="glass-card p-6 rounded-[24px] shadow-soft flex flex-col md:flex-row justify-between items-start gap-4">
+                            <div>
+                                <h3 class="text-base font-medium text-textPrimary">Bachelor of Arts in Architecture</h3>
+                                <p class="text-textSecondary text-sm mt-1">University of Cambridge</p>
+                            </div>
+                            <span class="text-xs text-textSecondary uppercase tracking-widest">2006 — 2009</span>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Right Column: Skills, Certs, Extras -->
+            <div class="w-full lg:w-1/3 flex flex-col space-y-16">
+                
+                <!-- Skills Section -->
+                <section id="skills" class="flex flex-col space-y-8">
+                    <div class="space-y-2 border-b border-border/60 pb-4">
+                        <h2 class="text-xl font-serif text-textPrimary">Core Competencies</h2>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="space-y-3">
+                            <h3 class="text-sm font-medium text-textPrimary uppercase tracking-wider">Design & Strategy</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-4 py-2 bg-card rounded-full text-xs text-textSecondary border border-border/50 shadow-sm">Design Systems</span>
+                                <span class="px-4 py-2 bg-card rounded-full text-xs text-textSecondary border border-border/50 shadow-sm">Information Architecture</span>
+                                <span class="px-4 py-2 bg-card rounded-full text-xs text-textSecondary border border-border/50 shadow-sm">Interaction Design</span>
+                                <span class="px-4 py-2 bg-card rounded-full text-xs text-textSecondary border border-border/50 shadow-sm">User Research</span>
+                                <span class="px-4 py-2 bg-card rounded-full text-xs text-textSecondary border border-border/50 shadow-sm">Product Strategy</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3">
+                            <h3 class="text-sm font-medium text-textPrimary uppercase tracking-wider">Tools</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-4 py-2 bg-card rounded-full text-xs text-textSecondary border border-border/50 shadow-sm">Figma</span>
+                                <span class="px-4 py-2 bg-card rounded-full text-xs text-textSecondary border border-border/50 shadow-sm">Framer</span>
+                                <span class="px-4 py-2 bg-card rounded-full text-xs text-textSecondary border border-border/50 shadow-sm">Principle</span>
+                                <span class="px-4 py-2 bg-card rounded-full text-xs text-textSecondary border border-border/50 shadow-sm">Webflow</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Certifications -->
+                <section id="certifications" class="flex flex-col space-y-8">
+                    <div class="space-y-2 border-b border-border/60 pb-4">
+                        <h2 class="text-xl font-serif text-textPrimary">Certifications</h2>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex flex-col space-y-1">
+                            <h3 class="text-sm font-medium text-textPrimary">Human-Computer Interaction</h3>
+                            <p class="text-xs text-textSecondary">Nielsen Norman Group • 2017</p>
+                        </div>
+                        <div class="flex flex-col space-y-1">
+                            <h3 class="text-sm font-medium text-textPrimary">Advanced Prototyping</h3>
+                            <p class="text-xs text-textSecondary">Design+Code • 2019</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Languages -->
+                <section id="languages" class="flex flex-col space-y-8">
+                    <div class="space-y-2 border-b border-border/60 pb-4">
+                        <h2 class="text-xl font-serif text-textPrimary">Languages</h2>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-sm font-medium text-textPrimary">English</h3>
+                            <span class="text-xs text-textSecondary">Native</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-sm font-medium text-textPrimary">French</h3>
+                            <span class="text-xs text-textSecondary">Professional Working</span>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Volunteer -->
+                <section id="volunteer" class="flex flex-col space-y-8">
+                    <div class="space-y-2 border-b border-border/60 pb-4">
+                        <h2 class="text-xl font-serif text-textPrimary">Community</h2>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex flex-col space-y-2">
+                            <h3 class="text-sm font-medium text-textPrimary">Design Mentor</h3>
+                            <p class="text-xs text-textSecondary leading-relaxed">ADPList • 2020 — Present</p>
+                            <p class="text-xs text-textSecondary leading-relaxed">Providing portfolio reviews and career guidance for emerging designers transitioning from architecture and industrial design.</p>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Simple Footer -->
+    <footer id="footer" class="border-t border-border/50 bg-surface py-8 mt-auto">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-xs text-textSecondary">© 2023 Alex Law. All rights reserved.</p>
+            <div class="flex space-x-6">
+                <a href="#" class="text-textSecondary hover:text-textPrimary transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="text-textSecondary hover:text-textPrimary transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="text-textSecondary hover:text-textPrimary transition-colors"><i class="fa-brands fa-dribbble"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

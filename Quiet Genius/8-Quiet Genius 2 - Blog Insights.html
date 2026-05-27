@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - The Quiet Genius</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        surface: '#F9FAFB',
+                        surfaceHover: '#F3F4F6',
+                        card: '#FFFFFF',
+                        textPrimary: '#111827',
+                        textSecondary: '#6B7280',
+                        accent: '#111827',
+                        accentHover: '#374151',
+                        border: '#E5E7EB',
+                        glass: 'rgba(255, 255, 255, 0.7)',
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'inner-soft': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.02)',
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { margin: 0; padding: 0; background-color: #F9FAFB; -webkit-font-smoothing: antialiased; }
+        ::-webkit-scrollbar { display: none; }
+        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3); }
+    </style>
+</head>
+<body class="text-textPrimary font-sans bg-surface min-h-screen flex flex-col relative overflow-x-hidden">
+
+    <!-- Decorative Background Elements -->
+    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-gradient-radial from-indigo-50/40 to-transparent opacity-60 blur-3xl"></div>
+        <div class="absolute bottom-[-10%] right-[-5%] w-[50%] h-[50%] rounded-full bg-gradient-radial from-purple-50/40 to-transparent opacity-60 blur-3xl"></div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header id="header" class="fixed top-0 w-full z-50 transition-all duration-300 bg-surface/80 backdrop-blur-md border-b border-border/50">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+            <a href="#" class="text-xl font-serif font-semibold tracking-tight text-textPrimary">A. Law</a>
+            
+            <nav class="hidden md:flex items-center space-x-10">
+                <a href="#" class="text-sm font-medium text-textSecondary hover:text-textPrimary transition-colors">Home</a>
+                <a href="#" class="text-sm font-medium text-textSecondary hover:text-textPrimary transition-colors">Work</a>
+                <a href="#" class="text-sm font-medium text-textSecondary hover:text-textPrimary transition-colors">Services</a>
+                <a href="#" class="text-sm font-medium text-textSecondary hover:text-textPrimary transition-colors">About</a>
+                <a href="#" class="text-sm font-medium text-textPrimary border-b-2 border-textPrimary pb-1">Insights</a>
+            </nav>
+
+            <div class="flex items-center space-x-6">
+                <a href="#" class="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-card shadow-soft hover:shadow-md transition-all text-textPrimary">
+                    <i class="fa-solid fa-envelope text-sm"></i>
+                </a>
+                <button class="md:hidden text-textPrimary p-2">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow z-10 pt-32 pb-24 max-w-[1440px] mx-auto w-full px-6 lg:px-12 flex flex-col space-y-32">
+
+        <!-- Blog Introduction Section -->
+        <section id="blog-intro" class="flex flex-col md:flex-row gap-12 lg:gap-24 items-start">
+            <div class="max-w-2xl space-y-8 flex-1">
+                <h1 class="text-6xl lg:text-7xl font-serif font-medium leading-tight tracking-tight text-textPrimary">
+                    Quiet Genius Journal
+                </h1>
+            </div>
+            <div class="max-w-xl flex-1 pt-4 space-y-6">
+                <p class="text-xl text-textSecondary font-light leading-relaxed">
+                    Observations on design, architecture, and the intentional creation of digital spaces. Published bi-weekly to share ongoing expertise and industry perspectives.
+                </p>
+                <div class="flex items-center space-x-4">
+                    <div class="flex -space-x-3">
+                        <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-1.jpg" alt="Subscriber" class="w-8 h-8 rounded-full border-2 border-surface object-cover">
+                        <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" alt="Subscriber" class="w-8 h-8 rounded-full border-2 border-surface object-cover">
+                        <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-3.jpg" alt="Subscriber" class="w-8 h-8 rounded-full border-2 border-surface object-cover">
+                    </div>
+                    <span class="text-sm text-textSecondary font-light">Join 10,000+ readers</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Post Section -->
+        <section id="featured-post" class="flex flex-col space-y-8">
+            <div class="flex items-center space-x-4">
+                <h2 class="text-xs font-medium text-textSecondary uppercase tracking-widest border border-border/50 px-3 py-1 rounded-full">Featured</h2>
+                <div class="h-px bg-border flex-grow"></div>
+            </div>
+
+            <div class="group relative bg-card rounded-[24px] border border-border/60 shadow-soft overflow-hidden flex flex-col lg:flex-row hover:border-textPrimary/20 transition-all duration-500">
+                <div class="lg:w-3/5 h-[400px] lg:h-[600px] overflow-hidden relative">
+                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/fab18eed52-3dc92e21fae8087c428a.png" alt="Minimalist architectural interior with soft diffuse lighting, clean lines, and a sense of calm silence, high end editorial photography style" />
+                </div>
+                <div class="lg:w-2/5 p-10 lg:p-16 flex flex-col justify-center space-y-8 bg-card">
+                    <div class="flex items-center space-x-3 text-xs font-medium text-textSecondary uppercase tracking-wider">
+                        <span>Design Philosophy</span>
+                        <span class="w-1 h-1 rounded-full bg-border"></span>
+                        <span>12 Min Read</span>
+                    </div>
+                    <h3 class="text-4xl lg:text-5xl font-serif text-textPrimary leading-tight group-hover:text-textSecondary transition-colors duration-300">
+                        The Power of Intentional Silence in Digital Spaces
+                    </h3>
+                    <p class="text-base text-textSecondary font-light leading-relaxed">
+                        In an era of relentless notification and cognitive overload, designing for silence is no longer an aesthetic choice, but a functional imperative. Exploring how subtractive design principles create spaces where users can finally breathe.
+                    </p>
+                    <div class="flex items-center justify-between pt-6 border-t border-border/50">
+                        <div class="flex items-center space-x-4">
+                            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-4.jpg" alt="Alex Law" class="w-10 h-10 rounded-full object-cover">
+                            <div>
+                                <p class="text-sm font-medium text-textPrimary">Alex Law</p>
+                                <p class="text-xs text-textSecondary">Oct 15, 2023</p>
+                            </div>
+                        </div>
+                        <a href="#" class="inline-flex items-center justify-center w-12 h-12 rounded-full border border-border/50 text-textPrimary hover:bg-surfaceHover transition-colors flex-shrink-0">
+                            <i class="fa-solid fa-arrow-right -rotate-45"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter & Grid Layout -->
+        <section id="blog-grid" class="flex flex-col space-y-12">
+            
+            <!-- Category Filters -->
+            <div class="flex flex-wrap items-center gap-4 pb-4 border-b border-border/50">
+                <button class="px-5 py-2.5 rounded-full bg-textPrimary text-surface text-sm font-medium transition-colors">All Insights</button>
+                <button class="px-5 py-2.5 rounded-full border border-border/60 text-textSecondary hover:text-textPrimary hover:border-textPrimary/40 bg-card text-sm font-medium transition-all">Architecture</button>
+                <button class="px-5 py-2.5 rounded-full border border-border/60 text-textSecondary hover:text-textPrimary hover:border-textPrimary/40 bg-card text-sm font-medium transition-all">Systems Design</button>
+                <button class="px-5 py-2.5 rounded-full border border-border/60 text-textSecondary hover:text-textPrimary hover:border-textPrimary/40 bg-card text-sm font-medium transition-all">Leadership</button>
+                <button class="px-5 py-2.5 rounded-full border border-border/60 text-textSecondary hover:text-textPrimary hover:border-textPrimary/40 bg-card text-sm font-medium transition-all">Typography</button>
+            </div>
+
+            <!-- Posts Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+                
+                <!-- Post Card 1 -->
+                <article class="group flex flex-col space-y-6">
+                    <div class="w-full h-[300px] rounded-[24px] overflow-hidden border border-border/60 shadow-soft relative">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/d10ad969f2-c06bdcf8bed5609fe128.png" alt="Abstract minimalist composition with subtle shadows and geometric shapes, muted monochrome palette" />
+                    </div>
+                    <div class="space-y-4 flex-grow">
+                        <div class="flex items-center space-x-3 text-xs font-medium text-textSecondary uppercase tracking-wider">
+                            <span>Systems Design</span>
+                            <span class="w-1 h-1 rounded-full bg-border"></span>
+                            <span>Sep 28, 2023</span>
+                        </div>
+                        <h3 class="text-2xl font-serif text-textPrimary group-hover:text-textSecondary transition-colors leading-snug">
+                            Tokens as Language: Building Semantic Bridges
+                        </h3>
+                        <p class="text-sm text-textSecondary font-light leading-relaxed line-clamp-3">
+                            When we treat design tokens merely as variables, we miss their true potential as a shared vocabulary between design and engineering. A methodology for semantic alignment.
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4">
+                        <span class="text-xs text-textSecondary">8 Min Read</span>
+                        <a href="#" class="text-sm font-medium text-textPrimary hover:text-textSecondary transition-colors">Read Article <i class="fa-solid fa-arrow-right ml-1 text-xs -rotate-45"></i></a>
+                    </div>
+                </article>
+
+                <!-- Post Card 2 -->
+                <article class="group flex flex-col space-y-6">
+                    <div class="w-full h-[300px] rounded-[24px] overflow-hidden border border-border/60 shadow-soft relative">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/9a6333ecc3-6b5add99c4716dc5c02b.png" alt="Close up of high quality paper texture with elegant serif typography specimen, soft lighting" />
+                    </div>
+                    <div class="space-y-4 flex-grow">
+                        <div class="flex items-center space-x-3 text-xs font-medium text-textSecondary uppercase tracking-wider">
+                            <span>Typography</span>
+                            <span class="w-1 h-1 rounded-full bg-border"></span>
+                            <span>Sep 12, 2023</span>
+                        </div>
+                        <h3 class="text-2xl font-serif text-textPrimary group-hover:text-textSecondary transition-colors leading-snug">
+                            The Invisible Weight of Serif Typography
+                        </h3>
+                        <p class="text-sm text-textSecondary font-light leading-relaxed line-clamp-3">
+                            Analyzing how specific serif classifications carry historical weight that subconsciously influences user trust and perceived authority in digital interfaces.
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4">
+                        <span class="text-xs text-textSecondary">6 Min Read</span>
+                        <a href="#" class="text-sm font-medium text-textPrimary hover:text-textSecondary transition-colors">Read Article <i class="fa-solid fa-arrow-right ml-1 text-xs -rotate-45"></i></a>
+                    </div>
+                </article>
+
+                <!-- Post Card 3 -->
+                <article class="group flex flex-col space-y-6">
+                    <div class="w-full h-[300px] rounded-[24px] overflow-hidden border border-border/60 shadow-soft relative">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/00b1a6bb88-04f82473e0889dce61e8.png" alt="Minimalist office desk setup with subtle morning light, highly curated and tidy, architectural feel" />
+                    </div>
+                    <div class="space-y-4 flex-grow">
+                        <div class="flex items-center space-x-3 text-xs font-medium text-textSecondary uppercase tracking-wider">
+                            <span>Leadership</span>
+                            <span class="w-1 h-1 rounded-full bg-border"></span>
+                            <span>Aug 30, 2023</span>
+                        </div>
+                        <h3 class="text-2xl font-serif text-textPrimary group-hover:text-textSecondary transition-colors leading-snug">
+                            Leading Through Subtraction
+                        </h3>
+                        <p class="text-sm text-textSecondary font-light leading-relaxed line-clamp-3">
+                            Why the most effective design leaders focus more on removing institutional friction than adding new processes. Strategies for preserving creative energy.
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4">
+                        <span class="text-xs text-textSecondary">10 Min Read</span>
+                        <a href="#" class="text-sm font-medium text-textPrimary hover:text-textSecondary transition-colors">Read Article <i class="fa-solid fa-arrow-right ml-1 text-xs -rotate-45"></i></a>
+                    </div>
+                </article>
+
+            </div>
+            
+            <!-- Load More -->
+            <div class="flex justify-center pt-8">
+                <button class="px-8 py-3 rounded-full border border-border/60 text-textPrimary hover:bg-surfaceHover transition-colors font-medium text-sm shadow-soft">
+                    Load More Articles
+                </button>
+            </div>
+        </section>
+
+        <!-- Newsletter Signup Banner -->
+        <section id="newsletter" class="bg-card rounded-[24px] border border-border/60 shadow-soft p-12 lg:p-20 relative overflow-hidden">
+            <div class="absolute top-[-20%] right-[-10%] w-[40%] h-[140%] rounded-full bg-gradient-radial from-indigo-50/30 to-transparent opacity-60 blur-3xl pointer-events-none"></div>
+            
+            <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
+                <div class="max-w-xl space-y-6">
+                    <h3 class="text-4xl font-serif text-textPrimary leading-tight">Curated thoughts, delivered quietly.</h3>
+                    <p class="text-base text-textSecondary font-light leading-relaxed">
+                        Join an exclusive list of designers, architects, and founders receiving bi-weekly essays on intentional design and digital craftsmanship. No noise, just signal.
+                    </p>
+                </div>
+                
+                <div class="w-full lg:w-auto flex-shrink-0">
+                    <form class="flex flex-col sm:flex-row gap-4 w-full max-w-md">
+                        <input type="email" placeholder="Email address" class="flex-grow px-6 py-4 rounded-full bg-surface border border-border/60 focus:outline-none focus:border-textPrimary/40 text-sm transition-colors text-textPrimary placeholder-textSecondary" required>
+                        <button type="submit" class="px-8 py-4 rounded-full bg-textPrimary text-surface font-medium text-sm hover:bg-accentHover transition-colors whitespace-nowrap shadow-soft">
+                            Subscribe
+                        </button>
+                    </form>
+                    <p class="text-xs text-textSecondary mt-4 lg:text-right">Unsubscribe at any time.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Simple Footer -->
+    <footer id="footer" class="border-t border-border/50 bg-surface py-8 mt-auto z-10 relative">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-xs text-textSecondary">© 2023 Alex Law. All rights reserved.</p>
+            <div class="flex space-x-6">
+                <a href="#" class="text-textSecondary hover:text-textPrimary transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="text-textSecondary hover:text-textPrimary transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="text-textSecondary hover:text-textPrimary transition-colors"><i class="fa-brands fa-dribbble"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

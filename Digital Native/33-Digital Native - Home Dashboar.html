@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            orange: '#FF6600',
+                            dark: '#0A0A0A',
+                            light: '#F5F5F5',
+                            border: '#E5E5E5'
+                        }
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                        'hero-pattern': "url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop')"
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF;
+            color: #0A0A0A;
+            -webkit-font-smoothing: antialiased;
+        }
+        ::-webkit-scrollbar { display: none; }
+        
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .noise-bg {
+            position: relative;
+        }
+        .noise-bg::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans selection:bg-brand-orange selection:text-white">
+
+    <!-- Navigation -->
+    <header id="header" class="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
+        <nav class="glass-nav pointer-events-auto rounded-[32px] px-2 py-2 flex items-center gap-8 shadow-2xl border border-white/10">
+            <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center shrink-0 ml-1">
+                <i class="fa-solid fa-layer-group text-brand-dark text-lg"></i>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-6 text-sm font-medium text-white/80">
+                <a href="#" class="hover:text-white transition-colors">Work</a>
+                <a href="#" class="hover:text-white transition-colors">Expertise</a>
+                <a href="#" class="hover:text-white transition-colors">Writing</a>
+                <a href="#" class="hover:text-white transition-colors">About</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <a href="#" class="bg-brand-orange hover:bg-[#e65c00] text-white text-sm font-semibold px-6 py-2.5 rounded-full transition-all duration-300 shadow-[0_4px_14px_0_rgba(255,102,0,0.39)] hover:shadow-[0_6px_20px_rgba(255,102,0,0.23)]">
+                    Let's Talk
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow flex flex-col pt-32">
+        <!-- Hero Section -->
+        <section id="hero" class="relative w-full px-4 md:px-8 pt-16 pb-24 flex flex-col items-center text-center z-10">
+            <div class="w-24 h-24 rounded-full overflow-hidden mb-8 border-4 border-white shadow-xl">
+                <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-3.jpg" alt="Profile" class="w-full h-full object-cover">
+            </div>
+            
+            <h2 class="text-sm font-bold tracking-widest text-brand-orange uppercase mb-4">Alex Mercer</h2>
+            <h1 class="text-5xl md:text-7xl lg:text-[80px] font-extrabold tracking-tight text-brand-dark max-w-4xl leading-[1.05] mb-6">
+                Building digital <br class="hidden md:block"> interfaces that scale.
+            </h1>
+            
+            <p class="text-lg md:text-xl text-gray-500 max-w-2xl mb-10 leading-relaxed">
+                I specialize in crafting high-performance, user-centric digital experiences. Bridging the gap between complex engineering and intuitive design.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center gap-4">
+                <a href="#work" class="bg-brand-light hover:bg-gray-200 text-brand-dark text-base font-semibold px-8 py-3.5 rounded-full transition-colors w-full sm:w-auto">
+                    View Portfolio
+                </a>
+                <a href="#contact" class="bg-brand-orange hover:bg-[#e65c00] text-white text-base font-semibold px-8 py-3.5 rounded-full transition-all duration-300 shadow-[0_4px_14px_0_rgba(255,102,0,0.39)] w-full sm:w-auto">
+                    Get in Touch
+                </a>
+            </div>
+        </section>
+
+        <!-- Dynamic Background Wrapper for Content -->
+        <div class="relative w-full bg-gradient-to-br from-[#c9643b] via-[#a34b2f] to-[#123533] noise-bg pt-24 pb-32 px-4 md:px-8">
+            
+            <div class="max-w-7xl mx-auto space-y-24 relative z-10">
+                
+                <!-- Quick Snapshot -->
+                <section id="snapshot" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                    <div class="glass-card rounded-2xl p-6 md:p-8 text-center hover:-translate-y-1 transition-transform duration-300">
+                        <div class="text-4xl md:text-5xl font-bold text-brand-dark mb-2">10+</div>
+                        <div class="text-sm font-medium text-gray-600 uppercase tracking-wide">Years Exp.</div>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6 md:p-8 text-center hover:-translate-y-1 transition-transform duration-300">
+                        <div class="text-4xl md:text-5xl font-bold text-brand-dark mb-2">45</div>
+                        <div class="text-sm font-medium text-gray-600 uppercase tracking-wide">Products Shipped</div>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6 md:p-8 text-center hover:-translate-y-1 transition-transform duration-300">
+                        <div class="text-4xl md:text-5xl font-bold text-brand-dark mb-2">2M+</div>
+                        <div class="text-sm font-medium text-gray-600 uppercase tracking-wide">Users Reached</div>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6 md:p-8 text-center hover:-translate-y-1 transition-transform duration-300">
+                        <div class="text-4xl md:text-5xl font-bold text-brand-dark mb-2">99%</div>
+                        <div class="text-sm font-medium text-gray-600 uppercase tracking-wide">Client Success</div>
+                    </div>
+                </section>
+
+                <!-- What I Do -->
+                <section id="expertise" class="glass-card rounded-[32px] p-8 md:p-16">
+                    <div class="mb-12">
+                        <h3 class="text-sm font-bold tracking-widest text-brand-orange uppercase mb-3">Core Expertise</h3>
+                        <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">Engineering the interface.</h2>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-white/50 rounded-2xl p-6 border border-white/40 hover:bg-white/80 transition-colors">
+                            <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm mb-6">
+                                <i class="fa-solid fa-code text-xl text-brand-dark"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-brand-dark mb-3">Frontend Architecture</h4>
+                            <p class="text-gray-600 leading-relaxed">Designing scalable component systems and state management solutions for complex web applications.</p>
+                        </div>
+                        
+                        <div class="bg-white/50 rounded-2xl p-6 border border-white/40 hover:bg-white/80 transition-colors">
+                            <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm mb-6">
+                                <i class="fa-solid fa-wand-magic-sparkles text-xl text-brand-dark"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-brand-dark mb-3">Interaction Design</h4>
+                            <p class="text-gray-600 leading-relaxed">Crafting fluid micro-interactions and animations that elevate the user experience from functional to delightful.</p>
+                        </div>
+
+                        <div class="bg-white/50 rounded-2xl p-6 border border-white/40 hover:bg-white/80 transition-colors">
+                            <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm mb-6">
+                                <i class="fa-solid fa-chart-line text-xl text-brand-dark"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-brand-dark mb-3">Performance Opt.</h4>
+                            <p class="text-gray-600 leading-relaxed">Auditing and optimizing core web vitals, ensuring interfaces load instantly and run at 60fps.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Featured Work -->
+                <section id="work" class="space-y-8">
+                    <div class="flex items-end justify-between mb-8">
+                        <div>
+                            <h3 class="text-sm font-bold tracking-widest text-white/80 uppercase mb-3">Selected Projects</h3>
+                            <h2 class="text-3xl md:text-4xl font-bold text-white">Featured Work</h2>
+                        </div>
+                        <a href="#" class="hidden md:inline-flex items-center gap-2 text-white font-medium hover:text-white/80 transition-colors">
+                            View all projects <i class="fa-solid fa-arrow-right text-sm"></i>
+                        </a>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Project Card 1 -->
+                        <div class="group relative bg-white rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                            <div class="h-64 bg-gray-100 overflow-hidden relative">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="Dashboard UI" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                            </div>
+                            <div class="p-8">
+                                <div class="flex gap-2 mb-4">
+                                    <span class="px-3 py-1 bg-gray-100 text-xs font-semibold rounded-full text-gray-600">Fintech</span>
+                                    <span class="px-3 py-1 bg-gray-100 text-xs font-semibold rounded-full text-gray-600">React</span>
+                                </div>
+                                <h4 class="text-2xl font-bold text-brand-dark mb-2">Nexus Banking Platform</h4>
+                                <p class="text-gray-500 mb-6 line-clamp-2">A complete redesign of the core banking interface, focusing on transaction speed and clear data visualization.</p>
+                                <a href="#" class="inline-flex items-center gap-2 text-brand-orange font-semibold hover:gap-3 transition-all">
+                                    Case Study <i class="fa-solid fa-arrow-right text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Project Card 2 -->
+                        <div class="group relative bg-white rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                            <div class="h-64 bg-gray-100 overflow-hidden relative">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" alt="Analytics Platform" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                            </div>
+                            <div class="p-8">
+                                <div class="flex gap-2 mb-4">
+                                    <span class="px-3 py-1 bg-gray-100 text-xs font-semibold rounded-full text-gray-600">SaaS</span>
+                                    <span class="px-3 py-1 bg-gray-100 text-xs font-semibold rounded-full text-gray-600">Vue.js</span>
+                                </div>
+                                <h4 class="text-2xl font-bold text-brand-dark mb-2">Pulse Analytics</h4>
+                                <p class="text-gray-500 mb-6 line-clamp-2">Built a high-performance marketing dashboard capable of rendering millions of data points in real-time.</p>
+                                <a href="#" class="inline-flex items-center gap-2 text-brand-orange font-semibold hover:gap-3 transition-all">
+                                    Case Study <i class="fa-solid fa-arrow-right text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Testimonial -->
+                <section id="testimonial" class="glass-card rounded-[32px] p-8 md:p-16 text-center max-w-4xl mx-auto">
+                    <div class="text-brand-orange mb-6">
+                        <i class="fa-solid fa-quote-left text-4xl opacity-50"></i>
+                    </div>
+                    <p class="text-2xl md:text-3xl font-medium text-brand-dark leading-tight mb-8">
+                        "Alex doesn't just write code; he engineers experiences. The level of polish and technical sophistication he brought to our platform transformed how our users interact with our product."
+                    </p>
+                    <div class="flex items-center justify-center gap-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden">
+                            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-4.jpg" alt="Sarah Chen" class="w-full h-full object-cover">
+                        </div>
+                        <div class="text-left">
+                            <div class="font-bold text-brand-dark">Sarah Chen</div>
+                            <div class="text-sm text-gray-600">VP of Product, TechFlow Inc.</div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <section id="cta" class="bg-brand-dark py-24 px-4 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">Ready to build something exceptional?</h2>
+                <p class="text-xl text-gray-400 mb-10">I'm currently accepting new projects for Q3. Let's discuss how we can elevate your digital product.</p>
+                <a href="#contact" class="inline-flex items-center justify-center bg-brand-orange hover:bg-[#e65c00] text-white text-lg font-semibold px-10 py-4 rounded-full transition-all duration-300 shadow-[0_4px_14px_0_rgba(255,102,0,0.39)] hover:shadow-[0_6px_20px_rgba(255,102,0,0.23)]">
+                    Start a Conversation
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="footer" class="bg-black py-12 px-4 border-t border-white/10">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-2 text-white font-bold text-xl">
+                <i class="fa-solid fa-layer-group text-brand-orange"></i> Alex Mercer
+            </div>
+            
+            <div class="flex gap-6">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-github text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-dribbble text-xl"></i></a>
+            </div>
+            
+            <div class="text-gray-500 text-sm">
+                &copy; 2024 Alex Mercer. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

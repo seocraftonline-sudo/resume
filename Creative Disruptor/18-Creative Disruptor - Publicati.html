@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications & Achievements - Will Beeching</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f6f6f6',
+                            100: '#e7e7e7',
+                            200: '#d1d1d1',
+                            300: '#b0b0b0',
+                            400: '#888888',
+                            500: '#6d6d6d',
+                            600: '#5d5d5d',
+                            700: '#4f4f4f',
+                            800: '#454545',
+                            900: '#3d3d3d',
+                            950: '#1a1a1a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f6f6f6;
+            color: #1a1a1a;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+        ::-webkit-scrollbar { display: none; }
+        
+        .disruptive-text {
+            font-family: 'Times New Roman', Times, serif;
+            letter-spacing: -0.05em;
+            line-height: 0.9;
+        }
+        .mono-label {
+            font-family: monospace;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .bento-card {
+            background-color: #ffffff;
+            border: 1px solid #e7e7e7;
+            border-radius: 24px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .bento-card:hover {
+            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.1);
+            border-color: #d1d1d1;
+            transform: translateY(-8px);
+        }
+
+        .service-card {
+            background-color: #ffffff;
+            border: 1px solid #e7e7e7;
+            border-radius: 12px;
+            padding: 2.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card:hover {
+            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.08);
+            border-color: #d1d1d1;
+            transform: translateY(-4px);
+        }
+
+        .process-number {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 12rem;
+            line-height: 0.8;
+            color: rgba(26, 26, 26, 0.03);
+            position: absolute;
+            top: -2rem;
+            left: -2rem;
+            z-index: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="m-0 p-0 font-sans selection:bg-brand-950 selection:text-white bg-brand-50">
+
+    <!-- Header / Nav -->
+    <header id="header" class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 22H22L12 2Z" fill="black"/>
+                    <path d="M12 8L6 20H18L12 8Z" fill="white"/>
+                </svg>
+                <span class="font-semibold text-lg tracking-tight">WB.</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#" class="text-sm font-medium text-brand-500 hover:text-brand-950 transition-colors">Work</a>
+                <a href="#" class="text-sm font-medium text-brand-950 hover:text-brand-500 transition-colors border-b-2 border-brand-950 pb-1">About</a>
+                <a href="#" class="text-sm font-medium text-brand-500 hover:text-brand-950 transition-colors">Services</a>
+                <a href="#" class="text-sm font-medium text-brand-500 hover:text-brand-950 transition-colors">Blog</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <span class="text-xs font-mono text-brand-400 hidden lg:block">LON 12:33 ☀️</span>
+                <a href="#contact" class="px-5 py-2.5 bg-brand-950 text-white text-sm font-medium rounded-full hover:bg-brand-800 transition-colors">Let's Talk</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="pt-32 lg:pt-48 pb-24">
+        
+        <!-- Introduction -->
+        <section id="achievements_intro" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-32 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-12">
+                <div class="max-w-5xl">
+                    <h1 class="disruptive-text text-6xl md:text-8xl lg:text-[120px] text-brand-950 uppercase mix-blend-multiply mb-12 relative z-10">
+                        Validation <br>
+                        <span class="ml-12 md:ml-32 text-brand-500">& Proof</span>
+                        <div class="absolute -z-10 top-1/2 right-1/4 w-96 h-96 bg-brand-200 rounded-full blur-[100px] opacity-40"></div>
+                    </h1>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
+                        <div class="md:col-span-4 pt-4">
+                            <span class="mono-label text-brand-500 block mb-4">The Record</span>
+                            <div class="w-12 h-px bg-brand-300 mb-8"></div>
+                        </div>
+                        <div class="md:col-span-8">
+                            <p class="text-2xl md:text-3xl font-light leading-tight text-brand-950 mb-8">
+                                Claims without evidence are merely opinions. This is the formal record of recognition, intellectual contributions, and external validation that substantiates the work.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured In -->
+        <section id="featured_in" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-40">
+            <div class="mb-12">
+                <h2 class="mono-label text-brand-500 mb-4">Featured In</h2>
+                <div class="w-full h-px bg-brand-200"></div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                <div class="flex justify-center p-6 bg-white rounded-2xl border border-brand-100 hover:border-brand-300 hover:-translate-y-2 transition-all duration-300">
+                    <span class="font-serif text-2xl font-bold text-brand-950">WIRED</span>
+                </div>
+                <div class="flex justify-center p-6 bg-white rounded-2xl border border-brand-100 hover:border-brand-300 hover:-translate-y-2 transition-all duration-300">
+                    <span class="font-sans text-xl font-black tracking-tighter text-brand-950">FAST<br>COMPANY</span>
+                </div>
+                <div class="flex justify-center p-6 bg-white rounded-2xl border border-brand-100 hover:border-brand-300 hover:-translate-y-2 transition-all duration-300">
+                    <span class="font-serif text-2xl italic font-bold text-brand-950">Vogue</span>
+                </div>
+                <div class="flex justify-center p-6 bg-white rounded-2xl border border-brand-100 hover:border-brand-300 hover:-translate-y-2 transition-all duration-300">
+                    <span class="font-sans text-2xl font-bold tracking-widest text-brand-950">FORBES</span>
+                </div>
+                <div class="flex justify-center p-6 bg-white rounded-2xl border border-brand-100 hover:border-brand-300 hover:-translate-y-2 transition-all duration-300">
+                    <span class="font-serif text-2xl text-brand-950">The Times</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications & Written Work -->
+        <section id="publications" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-40 relative">
+            <div class="process-number">PUB</div>
+            <div class="mb-16 relative z-10">
+                <h2 class="disruptive-text text-5xl text-brand-950 uppercase mb-4">Publications</h2>
+                <div class="w-full h-px bg-brand-200"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 relative z-10">
+                <!-- Publication 1 -->
+                <div class="service-card group">
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="mono-label text-brand-500">UX Collective • Oct 2025</span>
+                        <a href="#" class="w-10 h-10 rounded-full border border-brand-200 flex items-center justify-center group-hover:bg-brand-950 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-arrow-right -rotate-45"></i>
+                        </a>
+                    </div>
+                    <h3 class="text-2xl font-serif text-brand-950 mb-4">The End of the Grid: Asymmetrical Design Systems</h3>
+                    <p class="text-brand-600 font-light leading-relaxed mb-6">
+                        An exploration into how breaking the traditional 12-column grid can lead to more engaging, editorial-style digital experiences without sacrificing accessibility or responsive behavior.
+                    </p>
+                </div>
+
+                <!-- Publication 2 -->
+                <div class="service-card group lg:mt-16">
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="mono-label text-brand-500">Smashing Magazine • Mar 2025</span>
+                        <a href="#" class="w-10 h-10 rounded-full border border-brand-200 flex items-center justify-center group-hover:bg-brand-950 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-arrow-right -rotate-45"></i>
+                        </a>
+                    </div>
+                    <h3 class="text-2xl font-serif text-brand-950 mb-4">Kinetic Typography in Modern Web Architecture</h3>
+                    <p class="text-brand-600 font-light leading-relaxed mb-6">
+                        A technical deep-dive into implementing performant, scroll-linked typography animations using WebGL and custom shaders to reduce main-thread blocking.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Speaking Engagements -->
+        <section id="speaking" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-40">
+            <div class="mb-16">
+                <h2 class="disruptive-text text-5xl text-brand-950 uppercase mb-4">Speaking & Panels</h2>
+                <div class="w-full h-px bg-brand-200"></div>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Event 1 -->
+                <div class="bg-white border border-brand-100 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 hover:border-brand-300 hover:shadow-lg transition-all duration-300">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-4 mb-3">
+                            <span class="px-3 py-1 bg-brand-950 text-white text-xs font-mono rounded">Keynote</span>
+                            <span class="text-sm font-mono text-brand-500">Awwwards Conference, Amsterdam</span>
+                        </div>
+                        <h3 class="text-xl font-medium text-brand-950 mb-2">Designing for the Void: Negative Space as a Narrative Tool</h3>
+                        <p class="text-brand-600 font-light text-sm">Audience: 1,200+ Creative Directors and Frontend Developers</p>
+                    </div>
+                    <div class="text-right shrink-0">
+                        <div class="text-lg font-serif text-brand-950">Feb 2026</div>
+                    </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="bg-white border border-brand-100 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 hover:border-brand-300 hover:shadow-lg transition-all duration-300">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-4 mb-3">
+                            <span class="px-3 py-1 bg-brand-100 text-brand-950 text-xs font-mono rounded">Panelist</span>
+                            <span class="text-sm font-mono text-brand-500">Design Matters, Copenhagen</span>
+                        </div>
+                        <h3 class="text-xl font-medium text-brand-950 mb-2">The Intersection of Brand Strategy and WebGL</h3>
+                        <p class="text-brand-600 font-light text-sm">Audience: 800+ Digital Strategists and Designers</p>
+                    </div>
+                    <div class="text-right shrink-0">
+                        <div class="text-lg font-serif text-brand-950">Sep 2025</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications & Awards Split -->
+        <section id="credentials_awards" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-40">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Certifications -->
+                <div>
+                    <h2 class="disruptive-text text-4xl text-brand-950 uppercase mb-8">Certifications</h2>
+                    <div class="space-y-6">
+                        <div class="bento-card p-6 flex gap-6 items-start">
+                            <div class="w-16 h-16 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-certificate text-2xl text-brand-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-brand-950 mb-1">Nielsen Norman Group UX Certification</h4>
+                                <p class="text-sm text-brand-500 font-mono mb-3">ID: NN/g-847291 • Issued: 2024</p>
+                                <p class="text-sm text-brand-600 font-light">Specialty in Interaction Design and Information Architecture.</p>
+                            </div>
+                        </div>
+                        <div class="bento-card p-6 flex gap-6 items-start">
+                            <div class="w-16 h-16 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center shrink-0">
+                                <i class="fa-brands fa-aws text-2xl text-brand-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-brand-950 mb-1">AWS Certified Cloud Practitioner</h4>
+                                <p class="text-sm text-brand-500 font-mono mb-3">ID: AWS-10293 • Issued: 2023</p>
+                                <p class="text-sm text-brand-600 font-light">Foundational understanding of cloud architecture to support complex web deployments.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Awards -->
+                <div>
+                    <h2 class="disruptive-text text-4xl text-brand-950 uppercase mb-8">Awards</h2>
+                    <div class="space-y-6">
+                        <div class="bento-card p-6 relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-brand-100 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
+                            <div class="flex justify-between items-start mb-4 relative z-10">
+                                <h4 class="text-lg font-medium text-brand-950">Site of the Month</h4>
+                                <span class="font-serif text-brand-500">2025</span>
+                            </div>
+                            <p class="text-sm font-mono text-brand-500 mb-3 relative z-10">Awwwards</p>
+                            <p class="text-sm text-brand-600 font-light relative z-10">Awarded for the experiential redesign of the 'Kinetix' luxury automotive platform, scoring 9.2 in Design and 9.4 in Creativity.</p>
+                        </div>
+                        <div class="bento-card p-6 relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-brand-100 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
+                            <div class="flex justify-between items-start mb-4 relative z-10">
+                                <h4 class="text-lg font-medium text-brand-950">Best Digital Innovation</h4>
+                                <span class="font-serif text-brand-500">2024</span>
+                            </div>
+                            <p class="text-sm font-mono text-brand-500 mb-3 relative z-10">Webby Awards</p>
+                            <p class="text-sm text-brand-600 font-light relative z-10">Recognized for developing a novel WebGL interface for a fintech startup that simplified complex data visualization.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section id="cta_section" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-12">
+            <div class="bg-brand-950 text-white rounded-3xl p-12 md:p-24 text-center relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-800 rounded-full blur-[120px] opacity-30 -translate-y-1/2 translate-x-1/3"></div>
+                <div class="relative z-10 max-w-3xl mx-auto">
+                    <h2 class="disruptive-text text-6xl md:text-8xl uppercase mb-8">Require <br>Validation?</h2>
+                    <p class="text-xl text-brand-300 font-light mb-12">
+                        The record speaks for itself. If you need a partner with proven capability to disrupt your market, we should talk.
+                    </p>
+                    <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 bg-white text-brand-950 text-lg font-medium rounded-full hover:bg-brand-100 transition-all hover:scale-105">
+                        Initiate Contact
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-white border-t border-gray-100 py-12 mt-auto">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-sm text-brand-500">
+                &copy; 2026 Will Beeching. All Rights Reserved.
+            </div>
+            <div class="flex items-center gap-6 text-sm font-medium">
+                <a href="#" class="text-brand-950 hover:text-brand-500 transition-colors">GitHub</a>
+                <a href="#" class="text-brand-950 hover:text-brand-500 transition-colors">LinkedIn</a>
+                <a href="#" class="text-brand-950 hover:text-brand-500 transition-colors">Instagram</a>
+                <a href="#" class="text-brand-950 hover:text-brand-500 transition-colors">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

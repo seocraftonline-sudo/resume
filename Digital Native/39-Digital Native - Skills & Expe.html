@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills & Expertise - Alex Mercer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            orange: '#FF6600',
+                            dark: '#0A0A0A',
+                            light: '#F5F5F5',
+                            border: '#E5E5E5'
+                        }
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF;
+            color: #0A0A0A;
+            -webkit-font-smoothing: antialiased;
+        }
+        ::-webkit-scrollbar { display: none; }
+        
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .noise-bg {
+            position: relative;
+        }
+        .noise-bg::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .terminal-line {
+            position: relative;
+            padding-left: 2rem;
+        }
+        .terminal-line::before {
+            content: ">";
+            position: absolute;
+            left: 0;
+            color: #FF6600;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .hide-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .timeline-node::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #FF6600;
+            box-shadow: 0 0 10px rgba(255,102,0,0.5);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans selection:bg-brand-orange selection:text-white m-0 p-0">
+
+    <header id="header" class="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
+        <nav class="glass-nav pointer-events-auto rounded-[32px] px-2 py-2 flex items-center gap-8 shadow-2xl border border-white/10">
+            <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center shrink-0 ml-1">
+                <i class="fa-solid fa-layer-group text-brand-dark text-lg"></i>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-6 text-sm font-medium text-white/80">
+                <a href="#" class="hover:text-white transition-colors">Work</a>
+                <a href="#" class="text-white transition-colors font-bold border-b-2 border-brand-orange pb-0.5">Expertise</a>
+                <a href="#" class="hover:text-white transition-colors">Writing</a>
+                <a href="#" class="hover:text-white transition-colors">About</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <a href="#" class="bg-brand-orange hover:bg-[#e65c00] text-white text-sm font-semibold px-6 py-2.5 rounded-full transition-all duration-300 shadow-[0_4px_14px_0_rgba(255,102,0,0.39)] hover:shadow-[0_6px_20px_rgba(255,102,0,0.23)]">
+                    Let's Talk
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow flex flex-col pt-32">
+        
+        <section id="expertise-hero" class="relative w-full px-4 md:px-8 pt-16 pb-24 flex flex-col items-center text-center z-10 border-b border-gray-200">
+            <h1 class="text-5xl md:text-7xl lg:text-[90px] font-extrabold tracking-tight text-brand-dark max-w-5xl leading-[0.9] mb-8 uppercase font-sans" style="letter-spacing: -0.05em;">
+                Technical<br/>Capabilities.
+            </h1>
+            
+            <div class="max-w-3xl mx-auto text-center space-y-4 text-lg md:text-xl text-gray-800 leading-relaxed font-sans p-8 glass-card rounded-[32px]">
+                <p class="font-medium">
+                    A deep dive into my technical arsenal. I combine low-level systems understanding with modern framework expertise to build resilient, high-performance digital infrastructure. This isn't just a list of tools; it's a methodology for solving complex engineering problems.
+                </p>
+            </div>
+        </section>
+
+        <div class="relative w-full noise-bg py-24 px-4 md:px-8 bg-[#F8F1EC]">
+            <div class="max-w-[1440px] mx-auto relative z-10">
+
+                <section id="core-competencies" class="mb-32">
+                    <div class="mb-12">
+                        <h2 class="text-3xl md:text-4xl font-bold text-brand-dark font-sans tracking-tight mb-4">Core Competencies</h2>
+                        <p class="text-gray-600 max-w-2xl font-medium">The foundational pillars of my technical practice. These are the areas where I deliver outsized value.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="glass-card rounded-[24px] p-8 border border-gray-200 hover:border-brand-orange/50 transition-all duration-300 shadow-sm group">
+                            <div class="w-12 h-12 bg-brand-dark text-white rounded-xl flex items-center justify-center text-xl mb-6">
+                                <i class="fa-solid fa-server"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">Distributed Systems</h3>
+                            <p class="text-sm text-gray-600 font-medium leading-relaxed">
+                                Designing and implementing scalable microservices architectures. Deep expertise in eventual consistency, message brokers (Kafka, RabbitMQ), and designing for failure in cloud-native environments.
+                            </p>
+                        </div>
+
+                        <div class="glass-card rounded-[24px] p-8 border border-gray-200 hover:border-brand-orange/50 transition-all duration-300 shadow-sm group">
+                            <div class="w-12 h-12 bg-brand-dark text-white rounded-xl flex items-center justify-center text-xl mb-6">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">Performance Engineering</h3>
+                            <p class="text-sm text-gray-600 font-medium leading-relaxed">
+                                Relentless optimization from the database query layer to the client bundle. Profiling memory leaks, reducing TTFB, and implementing complex caching strategies using Redis and CDN edge computing.
+                            </p>
+                        </div>
+
+                        <div class="glass-card rounded-[24px] p-8 border border-gray-200 hover:border-brand-orange/50 transition-all duration-300 shadow-sm group">
+                            <div class="w-12 h-12 bg-brand-dark text-white rounded-xl flex items-center justify-center text-xl mb-6">
+                                <i class="fa-solid fa-database"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">Data Engineering</h3>
+                            <p class="text-sm text-gray-600 font-medium leading-relaxed">
+                                Building robust ETL pipelines and designing complex schemas for both relational (PostgreSQL) and NoSQL (MongoDB, DynamoDB) databases. Experience with high-throughput event sourcing.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <hr class="border-gray-300 my-24">
+
+                <section id="technical-skills" class="mb-32">
+                    <div class="mb-12">
+                        <h2 class="text-3xl md:text-4xl font-bold text-brand-dark font-sans tracking-tight mb-4">Technical Stack</h2>
+                        <p class="text-gray-600 max-w-2xl font-medium">Tools and frameworks I use to build production-grade systems.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                        <div class="glass-card rounded-[32px] p-8 border border-gray-200">
+                            <h3 class="text-lg font-mono font-bold text-brand-dark uppercase tracking-widest mb-6 border-b border-gray-200 pb-4">Languages & Frameworks</h3>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="px-4 py-2 bg-white border border-gray-200 text-brand-dark text-sm font-medium rounded-full shadow-sm hover:border-brand-orange transition-colors">TypeScript</span>
+                                <span class="px-4 py-2 bg-white border border-gray-200 text-brand-dark text-sm font-medium rounded-full shadow-sm hover:border-brand-orange transition-colors">Node.js</span>
+                                <span class="px-4 py-2 bg-white border border-gray-200 text-brand-dark text-sm font-medium rounded-full shadow-sm hover:border-brand-orange transition-colors">React / Next.js</span>
+                                <span class="px-4 py-2 bg-white border border-gray-200 text-brand-dark text-sm font-medium rounded-full shadow-sm hover:border-brand-orange transition-colors">Go</span>
+                                <span class="px-4 py-2 bg-white border border-gray-200 text-brand-dark text-sm font-medium rounded-full shadow-sm hover:border-brand-orange transition-colors">Python</span>
+                                <span class="px-4 py-2 bg-white border border-gray-200 text-brand-dark text-sm font-medium rounded-full shadow-sm hover:border-brand-orange transition-colors">GraphQL</span>
+                                <span class="px-4 py-2 bg-white border border-gray-200 text-brand-dark text-sm font-medium rounded-full shadow-sm hover:border-brand-orange transition-colors">tRPC</span>
+                            </div>
+                        </div>
+
+                        <div class="glass-card rounded-[32px] p-8 border border-gray-200">
+                            <h3 class="text-lg font-mono font-bold text-brand-dark uppercase tracking-widest mb-6 border-b border-gray-200 pb-4">Infrastructure & Data</h3>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="px-4 py-2 bg-white border border-gray-200 text-brand-dark text-sm font-medium rounded-full shadow-sm hover:border-brand-orange transition-colors">AWS (EKS, Lambda, RDS)</span>
+                                <span class="px-4 py-2 bg-white border border-gray-200 text-brand-dark text-sm font-medium rounded-full shadow-sm hover:border-brand-orange transition-colors">Docker / Kubernetes</span>
+                                <span class="px-4 py-2 bg-white border border-gray-200 text-brand-dark text-sm font-medium rounded-full shadow-sm hover:border-brand-orange transition-colors">PostgreSQL</span>
+                                <span class="px-4 py-2 bg-white border border-gray-200 text-brand-dark text-sm font-medium rounded-full shadow-sm hover:border-brand-orange transition-colors">Redis</span>
+                                <span class="px-4 py-2 bg-white border border-gray-200 text-brand-dark text-sm font-medium rounded-full shadow-sm hover:border-brand-orange transition-colors">Kafka</span>
+                                <span class="px-4 py-2 bg-white border border-gray-200 text-brand-dark text-sm font-medium rounded-full shadow-sm hover:border-brand-orange transition-colors">Terraform</span>
+                                <span class="px-4 py-2 bg-white border border-gray-200 text-brand-dark text-sm font-medium rounded-full shadow-sm hover:border-brand-orange transition-colors">Datadog</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <hr class="border-gray-300 my-24">
+
+                <section id="soft-skills" class="mb-32">
+                    <div class="mb-12">
+                        <h2 class="text-3xl md:text-4xl font-bold text-brand-dark font-sans tracking-tight mb-4">Professional Qualities</h2>
+                        <p class="text-gray-600 max-w-2xl font-medium">Technical execution requires human alignment. How I operate within teams.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="glass-card rounded-[24px] p-8 border border-gray-200">
+                            <h4 class="text-lg font-bold text-brand-dark mb-2">Technical Communication</h4>
+                            <p class="text-sm text-gray-600 font-medium">Translating complex architectural trade-offs into business impact for non-technical stakeholders. Demonstrated by leading cross-functional architecture reviews.</p>
+                        </div>
+                        <div class="glass-card rounded-[24px] p-8 border border-gray-200">
+                            <h4 class="text-lg font-bold text-brand-dark mb-2">Engineering Mentorship</h4>
+                            <p class="text-sm text-gray-600 font-medium">Elevating team velocity through pair programming and establishing rigorous PR review standards. Have leveled up junior devs to mid-level engineers.</p>
+                        </div>
+                        <div class="glass-card rounded-[24px] p-8 border border-gray-200">
+                            <h4 class="text-lg font-bold text-brand-dark mb-2">Pragmatic Problem Solving</h4>
+                            <p class="text-sm text-gray-600 font-medium">Choosing boring, proven technology over hype when building core business logic. Demonstrated by migrating a failing microservices cluster back to a robust monolith.</p>
+                        </div>
+                        <div class="glass-card rounded-[24px] p-8 border border-gray-200">
+                            <h4 class="text-lg font-bold text-brand-dark mb-2">Stakeholder Management</h4>
+                            <p class="text-sm text-gray-600 font-medium">Managing expectations on delivery timelines while maintaining high engineering standards. Regular syncs translating sprint velocity into product roadmaps.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <hr class="border-gray-300 my-24">
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-32">
+                    <section id="industry-knowledge">
+                        <h2 class="text-3xl font-bold text-brand-dark font-sans tracking-tight mb-8">Industry Domains</h2>
+                        <div class="space-y-4">
+                            <div class="glass-card rounded-[16px] p-6 border border-gray-200 flex items-center justify-between">
+                                <span class="font-bold text-brand-dark">FinTech & Payments</span>
+                                <i class="fa-solid fa-credit-card text-brand-orange"></i>
+                            </div>
+                            <div class="glass-card rounded-[16px] p-6 border border-gray-200 flex items-center justify-between">
+                                <span class="font-bold text-brand-dark">SaaS / B2B Enterprise</span>
+                                <i class="fa-solid fa-building text-brand-orange"></i>
+                            </div>
+                            <div class="glass-card rounded-[16px] p-6 border border-gray-200 flex items-center justify-between">
+                                <span class="font-bold text-brand-dark">Logistics & Supply Chain</span>
+                                <i class="fa-solid fa-truck text-brand-orange"></i>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="currently-learning">
+                        <h2 class="text-3xl font-bold text-brand-dark font-sans tracking-tight mb-8">Currently Exploring</h2>
+                        <div class="glass-card rounded-[32px] p-8 border border-brand-orange shadow-md h-full bg-white/50">
+                            <div class="w-12 h-12 bg-brand-orange text-white rounded-xl flex items-center justify-center text-xl mb-6 shadow-[0_4px_14px_0_rgba(255,102,0,0.39)]">
+                                <i class="fa-solid fa-microchip"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-dark mb-4">LLM Integration Architecture</h3>
+                            <p class="text-gray-700 font-medium leading-relaxed mb-6">
+                                Diving deep into vector databases (Pinecone, Weaviate) and building robust, production-ready RAG (Retrieval-Augmented Generation) pipelines. Exploring how to deploy deterministic systems around probabilistic models.
+                            </p>
+                            <span class="inline-block px-3 py-1 bg-brand-dark text-white text-xs font-mono font-bold rounded uppercase tracking-wider">Active R&D</span>
+                        </div>
+                    </section>
+                </div>
+
+                <hr class="border-gray-300 my-24">
+
+                <section id="timeline" class="mb-24 max-w-3xl mx-auto">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold text-brand-dark font-sans tracking-tight mb-4">Development Timeline</h2>
+                        <p class="text-gray-600 font-medium">The evolution of my technical focus over the years.</p>
+                    </div>
+
+                    <div class="relative border-l-2 border-gray-200 ml-4 md:ml-0 md:pl-8 space-y-12">
+                        <div class="relative timeline-node pl-8 md:pl-0">
+                            <span class="text-xs font-mono font-bold text-brand-orange uppercase tracking-widest block mb-1">Present</span>
+                            <h4 class="text-lg font-bold text-brand-dark mb-2">Systems Architecture & AI Integration</h4>
+                            <p class="text-sm text-gray-600 font-medium">Focusing on high-level system design, mentoring teams, and exploring production-grade LLM implementations.</p>
+                        </div>
+                        <div class="relative timeline-node pl-8 md:pl-0">
+                            <span class="text-xs font-mono font-bold text-gray-500 uppercase tracking-widest block mb-1">2021 - 2023</span>
+                            <h4 class="text-lg font-bold text-brand-dark mb-2">Cloud-Native & Distributed Systems</h4>
+                            <p class="text-sm text-gray-600 font-medium">Deep dive into Kubernetes, event-driven architectures, and building scalable microservices in Go and Node.js.</p>
+                        </div>
+                        <div class="relative timeline-node pl-8 md:pl-0">
+                            <span class="text-xs font-mono font-bold text-gray-500 uppercase tracking-widest block mb-1">2018 - 2021</span>
+                            <h4 class="text-lg font-bold text-brand-dark mb-2">Full-Stack TypeScript Ecosystem</h4>
+                            <p class="text-sm text-gray-600 font-medium">Mastering React, state management, and building robust APIs with Express/NestJS. Transitioning to full TypeScript.</p>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <section id="contact" class="bg-brand-dark py-24 px-4 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">Need this expertise on your team?</h2>
+                <p class="text-xl text-gray-400 mb-10">Let's discuss your technical challenges and architectural needs.</p>
+                <a href="#" class="inline-flex items-center justify-center bg-brand-orange hover:bg-[#e65c00] text-white text-lg font-semibold px-10 py-4 rounded-full transition-all duration-300 shadow-[0_4px_14px_0_rgba(255,102,0,0.39)] hover:shadow-[0_6px_20px_rgba(255,102,0,0.23)]">
+                    Start a Conversation
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="footer" class="bg-black py-12 px-4 border-t border-white/10">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-2 text-white font-bold text-xl">
+                <i class="fa-solid fa-layer-group text-brand-orange"></i> Alex Mercer
+            </div>
+            
+            <div class="flex gap-6">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-github text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-dribbble text-xl"></i></a>
+            </div>
+            
+            <div class="text-gray-500 text-sm">
+                &copy; 2024 Alex Mercer. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

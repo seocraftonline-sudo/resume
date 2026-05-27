@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Edward James</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        surface: '#F9FAFB',
+                        card: '#F3F4F6',
+                        primary: '#111827',
+                        secondary: '#4B5563',
+                        accent: '#4F46E5',
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px rgba(0, 0, 0, 0.05)',
+                        'glow': '0 0 20px rgba(79, 70, 229, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #F9FAFB;
+            color: #111827;
+            -webkit-font-smoothing: antialiased;
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="m-0 p-0 bg-surface min-h-screen flex flex-col font-sans">
+
+    <!-- Navigation (Preserved from Context) -->
+    <nav id="header" class="w-full bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">
+                    EJ
+                </div>
+                <span class="font-semibold text-lg tracking-tight">Edward James</span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-secondary">
+                <a href="#" class="hover:text-primary transition-colors">Home</a>
+                <a href="#" class="hover:text-primary transition-colors">About</a>
+                <a href="#" class="text-primary font-bold transition-colors border-b-2 border-primary pb-1">Expertise</a>
+                <a href="#" class="hover:text-primary transition-colors">Portfolio</a>
+                <a href="#" class="hover:text-primary transition-colors">Insights</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <button class="hidden md:flex px-5 py-2.5 bg-primary text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors shadow-soft">
+                    Contact Me
+                </button>
+                <button class="md:hidden w-10 h-10 flex items-center justify-center bg-card rounded-full text-primary">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-1 w-full flex flex-col pb-24">
+
+        <!-- Services Hero -->
+        <section id="services-hero" class="w-full max-w-7xl mx-auto px-6 py-20 md:py-32 flex flex-col items-center text-center gap-6">
+            <span class="px-4 py-1.5 bg-white border border-gray-200 text-secondary text-sm font-medium rounded-full shadow-soft">
+                Strategic Expertise
+            </span>
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-primary font-serif max-w-4xl leading-tight">
+                Architecting <span class="text-secondary">Enterprise Resilience</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-secondary font-medium max-w-3xl leading-relaxed mt-4">
+                Delivering structural interventions and executive oversight to organizations navigating complex transitions, regulatory shifts, and high-stakes scaling.
+            </p>
+            <div class="flex flex-wrap items-center justify-center gap-4 mt-8">
+                <button class="px-8 py-4 bg-primary text-white text-base font-semibold rounded-full hover:bg-gray-800 transition-colors shadow-soft">
+                    Discuss an Engagement
+                </button>
+                <button class="px-8 py-4 bg-white border border-gray-200 text-primary text-base font-semibold rounded-full hover:bg-gray-50 transition-colors shadow-soft flex items-center gap-2">
+                    View Process <i class="fa-solid fa-arrow-down text-sm"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Service Offerings Grid -->
+        <section id="service-offerings" class="w-full max-w-7xl mx-auto px-6 py-16 flex flex-col gap-12">
+            <div class="text-center mb-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary font-serif mb-4">Core Competencies</h2>
+                <p class="text-lg text-secondary max-w-2xl mx-auto">Focused methodologies designed for board-level impact and institutional longevity.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Service 1 -->
+                <div class="bg-white rounded-2xl shadow-soft border border-gray-200 p-10 flex flex-col h-full">
+                    <div class="w-12 h-12 bg-card rounded-xl flex items-center justify-center text-primary mb-8 border border-gray-100">
+                        <i class="fa-solid fa-chess-knight text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary font-serif mb-4">Board Governance Structuring</h3>
+                    <p class="text-secondary text-base mb-8 leading-relaxed">
+                        Establishing public-market ready governance frameworks for pre-IPO entities and restructuring legacy boards for modern compliance demands.
+                    </p>
+                    
+                    <div class="bg-surface rounded-xl p-6 mb-8 border border-gray-100 flex-grow">
+                        <h4 class="text-sm font-bold text-primary uppercase tracking-wider mb-4">Key Deliverables</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3 text-sm text-secondary">
+                                <i class="fa-solid fa-check text-primary mt-1"></i>
+                                <span>Committee charter development & implementation</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-secondary">
+                                <i class="fa-solid fa-check text-primary mt-1"></i>
+                                <span>Executive oversight protocols</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-secondary">
+                                <i class="fa-solid fa-check text-primary mt-1"></i>
+                                <span>Regulatory compliance alignment audits</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="flex items-center justify-between border-t border-gray-100 pt-6 mt-auto">
+                        <div class="flex flex-col">
+                            <span class="text-xs text-secondary uppercase tracking-wider font-bold">Typical Duration</span>
+                            <span class="text-primary font-medium">3-6 Months</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center gap-2 text-primary font-bold hover:text-accent transition-colors">
+                            Enquire <i class="fa-solid fa-arrow-right text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-2xl shadow-soft border border-gray-200 p-10 flex flex-col h-full">
+                    <div class="w-12 h-12 bg-card rounded-xl flex items-center justify-center text-primary mb-8 border border-gray-100">
+                        <i class="fa-solid fa-network-wired text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary font-serif mb-4">Risk Architecture & Mitigation</h3>
+                    <p class="text-secondary text-base mb-8 leading-relaxed">
+                        Comprehensive overhauls of enterprise risk frameworks, integrating predictive modeling to preempt systemic failures across global operations.
+                    </p>
+                    
+                    <div class="bg-surface rounded-xl p-6 mb-8 border border-gray-100 flex-grow">
+                        <h4 class="text-sm font-bold text-primary uppercase tracking-wider mb-4">Key Deliverables</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3 text-sm text-secondary">
+                                <i class="fa-solid fa-check text-primary mt-1"></i>
+                                <span>Supply chain vulnerability mapping</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-secondary">
+                                <i class="fa-solid fa-check text-primary mt-1"></i>
+                                <span>Crisis response protocol design</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-secondary">
+                                <i class="fa-solid fa-check text-primary mt-1"></i>
+                                <span>Multi-jurisdiction regulatory mapping</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="flex items-center justify-between border-t border-gray-100 pt-6 mt-auto">
+                        <div class="flex flex-col">
+                            <span class="text-xs text-secondary uppercase tracking-wider font-bold">Typical Duration</span>
+                            <span class="text-primary font-medium">6-12 Months</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center gap-2 text-primary font-bold hover:text-accent transition-colors">
+                            Enquire <i class="fa-solid fa-arrow-right text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white rounded-2xl shadow-soft border border-gray-200 p-10 flex flex-col h-full">
+                    <div class="w-12 h-12 bg-card rounded-xl flex items-center justify-center text-primary mb-8 border border-gray-100">
+                        <i class="fa-solid fa-people-arrows text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary font-serif mb-4">Post-Merger Integration</h3>
+                    <p class="text-secondary text-base mb-8 leading-relaxed">
+                        Strategic alignment of conflicting management hierarchies, cultural frameworks, and incentive structures following major acquisitions.
+                    </p>
+                    
+                    <div class="bg-surface rounded-xl p-6 mb-8 border border-gray-100 flex-grow">
+                        <h4 class="text-sm font-bold text-primary uppercase tracking-wider mb-4">Key Deliverables</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3 text-sm text-secondary">
+                                <i class="fa-solid fa-check text-primary mt-1"></i>
+                                <span>Executive leadership consolidation plans</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-secondary">
+                                <i class="fa-solid fa-check text-primary mt-1"></i>
+                                <span>Cultural friction point analysis</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-secondary">
+                                <i class="fa-solid fa-check text-primary mt-1"></i>
+                                <span>Unified KPI & incentive restructuring</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="flex items-center justify-between border-t border-gray-100 pt-6 mt-auto">
+                        <div class="flex flex-col">
+                            <span class="text-xs text-secondary uppercase tracking-wider font-bold">Typical Duration</span>
+                            <span class="text-primary font-medium">9-18 Months</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center gap-2 text-primary font-bold hover:text-accent transition-colors">
+                            Enquire <i class="fa-solid fa-arrow-right text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white rounded-2xl shadow-soft border border-gray-200 p-10 flex flex-col h-full">
+                    <div class="w-12 h-12 bg-card rounded-xl flex items-center justify-center text-primary mb-8 border border-gray-100">
+                        <i class="fa-solid fa-chart-line text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary font-serif mb-4">Executive Advisory Retainer</h3>
+                    <p class="text-secondary text-base mb-8 leading-relaxed">
+                        Ongoing strategic counsel for C-suite executives and board chairs, providing an external, objective lens on critical corporate decisions.
+                    </p>
+                    
+                    <div class="bg-surface rounded-xl p-6 mb-8 border border-gray-100 flex-grow">
+                        <h4 class="text-sm font-bold text-primary uppercase tracking-wider mb-4">Engagement Model</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3 text-sm text-secondary">
+                                <i class="fa-solid fa-check text-primary mt-1"></i>
+                                <span>Monthly strategy sessions</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-secondary">
+                                <i class="fa-solid fa-check text-primary mt-1"></i>
+                                <span>On-call crisis counsel</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-secondary">
+                                <i class="fa-solid fa-check text-primary mt-1"></i>
+                                <span>Quarterly board presentation reviews</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="flex items-center justify-between border-t border-gray-100 pt-6 mt-auto">
+                        <div class="flex flex-col">
+                            <span class="text-xs text-secondary uppercase tracking-wider font-bold">Availability</span>
+                            <span class="text-primary font-medium">Limited Capacity</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center gap-2 text-primary font-bold hover:text-accent transition-colors">
+                            Enquire <i class="fa-solid fa-arrow-right text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Engagement Process -->
+        <section id="engagement-process" class="w-full bg-white border-y border-gray-200 py-24 my-12">
+            <div class="max-w-5xl mx-auto px-6 flex flex-col gap-16">
+                <div class="text-center">
+                    <span class="px-4 py-1.5 bg-surface border border-gray-200 text-secondary text-sm font-medium rounded-full shadow-soft mb-6 inline-block">
+                        Methodology
+                    </span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-primary font-serif mb-4">The Engagement Process</h2>
+                    <p class="text-lg text-secondary max-w-2xl mx-auto">A disciplined, structured approach to defining scope, executing strategy, and measuring impact.</p>
+                </div>
+
+                <div class="flex flex-col gap-12 relative">
+                    <!-- Connecting Line -->
+                    <div class="absolute left-[27px] top-8 bottom-8 w-px bg-gray-200 hidden md:block"></div>
+
+                    <!-- Step 1 -->
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-12 relative z-10">
+                        <div class="w-14 h-14 rounded-xl bg-primary text-white flex items-center justify-center font-serif text-xl font-bold shadow-soft flex-shrink-0">
+                            01
+                        </div>
+                        <div class="flex flex-col gap-4 pt-2">
+                            <h3 class="text-2xl font-bold text-primary font-serif">Initial Diagnostics & Alignment</h3>
+                            <p class="text-secondary text-lg leading-relaxed max-w-3xl">
+                                We begin with a confidential briefing to understand the macro-level challenges. This phase involves reviewing existing documentation, identifying structural friction points, and determining if there is mutual fit for an engagement.
+                            </p>
+                            <div class="bg-surface p-6 rounded-xl border border-gray-100 mt-2">
+                                <h4 class="text-sm font-bold text-primary mb-2">Output</h4>
+                                <p class="text-sm text-secondary">A preliminary diagnostic report outlining the core issues and proposed strategic direction.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-12 relative z-10">
+                        <div class="w-14 h-14 rounded-xl bg-primary text-white flex items-center justify-center font-serif text-xl font-bold shadow-soft flex-shrink-0">
+                            02
+                        </div>
+                        <div class="flex flex-col gap-4 pt-2">
+                            <h3 class="text-2xl font-bold text-primary font-serif">Scope & Architecture Design</h3>
+                            <p class="text-secondary text-lg leading-relaxed max-w-3xl">
+                                Once aligned, we architect the specific interventions required. This involves defining precise deliverables, establishing timelines, mapping stakeholder involvement, and formalizing the commercial terms of the engagement.
+                            </p>
+                            <div class="bg-surface p-6 rounded-xl border border-gray-100 mt-2">
+                                <h4 class="text-sm font-bold text-primary mb-2">Output</h4>
+                                <p class="text-sm text-secondary">A comprehensive Statement of Work (SOW) detailing the engagement architecture.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-12 relative z-10">
+                        <div class="w-14 h-14 rounded-xl bg-primary text-white flex items-center justify-center font-serif text-xl font-bold shadow-soft flex-shrink-0">
+                            03
+                        </div>
+                        <div class="flex flex-col gap-4 pt-2">
+                            <h3 class="text-2xl font-bold text-primary font-serif">Execution & Integration</h3>
+                            <p class="text-secondary text-lg leading-relaxed max-w-3xl">
+                                The active phase of the engagement. We implement the agreed structural changes, working directly with the board or C-suite. This phase is characterized by rigorous oversight, regular progress reporting, and adaptive problem-solving.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-12 relative z-10">
+                        <div class="w-14 h-14 rounded-xl bg-primary text-white flex items-center justify-center font-serif text-xl font-bold shadow-soft flex-shrink-0">
+                            04
+                        </div>
+                        <div class="flex flex-col gap-4 pt-2">
+                            <h3 class="text-2xl font-bold text-primary font-serif">Handoff & Institutionalization</h3>
+                            <p class="text-secondary text-lg leading-relaxed max-w-3xl">
+                                Strategies are only valuable if they endure. The final phase focuses on embedding the new frameworks into the organization's DNA, training internal teams for continuity, and establishing long-term measurement metrics.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="w-full max-w-4xl mx-auto px-6 py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary font-serif mb-4">Engagement Parameters</h2>
+                <p class="text-lg text-secondary">Common queries regarding scope, availability, and operational mechanics.</p>
+            </div>
+
+            <div class="flex flex-col gap-4">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-xl border border-gray-200 p-6 shadow-soft">
+                    <h3 class="text-lg font-bold text-primary mb-3">What size organizations do you typically advise?</h3>
+                    <p class="text-secondary leading-relaxed">
+                        Engagements are typically focused on mid-market to enterprise-level organizations (revenues of $50M - $1B+), pre-IPO tech firms, and established financial institutions where structural complexity requires specialized oversight.
+                    </p>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-xl border border-gray-200 p-6 shadow-soft">
+                    <h3 class="text-lg font-bold text-primary mb-3">Do you work with internal teams or independently?</h3>
+                    <p class="text-secondary leading-relaxed">
+                        I operate primarily at the board and C-suite level but interface closely with internal execution teams (legal, finance, operations) to ensure strategic directives are practically implementable and culturally aligned.
+                    </p>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-xl border border-gray-200 p-6 shadow-soft">
+                    <h3 class="text-lg font-bold text-primary mb-3">How is your availability structured?</h3>
+                    <p class="text-secondary leading-relaxed">
+                        To ensure absolute focus and quality of execution, I limit active project engagements to three concurrent clients. Advisory retainers are capped separately. Please enquire regarding current Q3/Q4 availability.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section id="final-cta" class="w-full max-w-5xl mx-auto px-6 py-24 text-center">
+            <div class="bg-primary rounded-3xl p-12 md:p-20 relative overflow-hidden shadow-glow">
+                <!-- Decorative background elements -->
+                <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+                    <div class="absolute top-[-20%] right-[-10%] w-[50%] h-[150%] bg-gradient-to-l from-white to-transparent transform rotate-12"></div>
+                </div>
+                
+                <div class="relative z-10 flex flex-col items-center gap-8">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white font-serif max-w-2xl leading-tight">
+                        Initiate a Strategic Dialogue.
+                    </h2>
+                    <p class="text-xl text-gray-300 max-w-xl">
+                        Schedule a confidential preliminary consultation to discuss your organization's structural challenges and potential engagement scope.
+                    </p>
+                    <a href="#" class="mt-4 px-10 py-5 bg-white text-primary text-lg font-bold rounded-full hover:bg-gray-100 transition-colors shadow-soft">
+                        Contact Executive Office
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer (Preserved from Context) -->
+    <footer id="footer" class="w-full bg-white border-t border-gray-100 py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">
+                    EJ
+                </div>
+                <span class="font-semibold text-primary">Edward James</span>
+            </div>
+            
+            <div class="flex items-center gap-6 text-sm text-secondary">
+                <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+                <span>&copy; 2026 Edward James. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

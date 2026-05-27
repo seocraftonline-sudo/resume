@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials - Will Beeching</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.plot.ly/plotly-3.1.1.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f6f6f6',
+                            100: '#e7e7e7',
+                            200: '#d1d1d1',
+                            300: '#b0b0b0',
+                            400: '#888888',
+                            500: '#6d6d6d',
+                            600: '#5d5d5d',
+                            700: '#4f4f4f',
+                            800: '#454545',
+                            900: '#3d3d3d',
+                            950: '#1a1a1a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f6f6f6;
+            color: #1a1a1a;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+        ::-webkit-scrollbar { display: none; }
+        
+        .disruptive-text {
+            font-family: 'Times New Roman', Times, serif;
+            letter-spacing: -0.05em;
+            line-height: 0.9;
+        }
+        .mono-label {
+            font-family: monospace;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .bento-card {
+            background-color: #ffffff;
+            border: 1px solid #e7e7e7;
+            border-radius: 24px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .bento-card:hover {
+            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.1);
+            border-color: #d1d1d1;
+            transform: translateY(-8px);
+        }
+
+        .service-card {
+            background-color: #ffffff;
+            border: 1px solid #e7e7e7;
+            border-radius: 12px;
+            padding: 2.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card:hover {
+            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.08);
+            border-color: #d1d1d1;
+            transform: translateY(-4px);
+        }
+
+        .process-number {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 12rem;
+            line-height: 0.8;
+            color: rgba(26, 26, 26, 0.03);
+            position: absolute;
+            top: -2rem;
+            left: -2rem;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="m-0 p-0 font-sans selection:bg-brand-950 selection:text-white bg-brand-50">
+
+    <!-- Header / Nav -->
+    <header id="header" class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 22H22L12 2Z" fill="black"/>
+                    <path d="M12 8L6 20H18L12 8Z" fill="white"/>
+                </svg>
+                <span class="font-semibold text-lg tracking-tight">WB.</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#" class="text-sm font-medium text-brand-500 hover:text-brand-950 transition-colors">Work</a>
+                <a href="#" class="text-sm font-medium text-brand-950 hover:text-brand-500 transition-colors border-b-2 border-brand-950 pb-1">About</a>
+                <a href="#" class="text-sm font-medium text-brand-500 hover:text-brand-950 transition-colors">Services</a>
+                <a href="#" class="text-sm font-medium text-brand-500 hover:text-brand-950 transition-colors">Blog</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <span class="text-xs font-mono text-brand-400 hidden lg:block">LON 12:33 ☀️</span>
+                <a href="#contact" class="px-5 py-2.5 bg-brand-950 text-white text-sm font-medium rounded-full hover:bg-brand-800 transition-colors">Let's Talk</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="pt-32 lg:pt-48 pb-24">
+        
+        <!-- Intro Section -->
+        <section id="testimonials_intro" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-32 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-12">
+                <div class="max-w-5xl relative">
+                    <div class="process-number">TRST</div>
+                    <h1 class="disruptive-text text-6xl md:text-8xl lg:text-[120px] text-brand-950 uppercase mix-blend-multiply mb-12 relative z-10">
+                        Words & <br>
+                        <span class="ml-12 md:ml-32 text-brand-500">Reputation</span>
+                    </h1>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
+                        <div class="md:col-span-4 pt-4">
+                            <span class="mono-label text-brand-500 block mb-4">Social Proof</span>
+                            <div class="w-12 h-px bg-brand-300 mb-8"></div>
+                        </div>
+                        <div class="md:col-span-8">
+                            <p class="text-2xl md:text-3xl font-light leading-tight text-brand-950 mb-8">
+                                I don't believe in empty promises. The work speaks for itself, but the people I've collaborated with tell the real story of what it's like to build together.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Testimonial Hero -->
+        <section id="featured_testimonial" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-40">
+            <div class="relative w-full rounded-[32px] overflow-hidden bg-brand-950 p-8 md:p-16 flex flex-col md:flex-row items-center gap-12">
+                <div class="absolute inset-0 z-0">
+                    <img class="w-full h-full object-cover opacity-20 mix-blend-overlay" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/817d7c8348-69a339cd3fb250975235.png" alt="Abstract dark architectural texture, geometric patterns, high contrast, subtle light streaks" />
+                    <div class="absolute inset-0 bg-gradient-to-r from-brand-950 via-brand-950/80 to-transparent"></div>
+                </div>
+                
+                <div class="relative z-10 w-full md:w-2/3">
+                    <div class="mb-8">
+                        <i class="fa-solid fa-quote-left text-4xl text-brand-500 mb-6"></i>
+                        <h2 class="text-3xl md:text-5xl font-serif text-white leading-tight mb-8">
+                            "Will didn't just redesign our product; he completely rewired how we think about our user experience. The level of strategic depth he brought to the table was entirely unexpected and deeply necessary."
+                        </h2>
+                    </div>
+                    <div class="flex items-center gap-6">
+                        <div class="w-16 h-16 rounded-full overflow-hidden bg-brand-800 border-2 border-brand-700">
+                            <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-4.jpg" alt="Sarah Jenkins" />
+                        </div>
+                        <div>
+                            <p class="text-lg font-medium text-white">Sarah Jenkins</p>
+                            <p class="text-sm text-brand-400 font-mono">VP of Product, Nexus Systems</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative z-10 w-full md:w-1/3 flex justify-center md:justify-end">
+                    <div class="glass-panel p-8 rounded-2xl max-w-sm w-full backdrop-blur-xl bg-white/10 border-white/20">
+                        <div class="flex flex-col gap-6">
+                            <div>
+                                <p class="text-xs font-mono text-brand-300 mb-1">Project Scope</p>
+                                <p class="text-white font-medium">Enterprise Platform Redesign</p>
+                            </div>
+                            <div>
+                                <p class="text-xs font-mono text-brand-300 mb-1">Duration</p>
+                                <p class="text-white font-medium">8 Months</p>
+                            </div>
+                            <div>
+                                <p class="text-xs font-mono text-brand-300 mb-1">Outcome</p>
+                                <p class="text-white font-medium">240% Increase in User Engagement</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter & Grid Section -->
+        <section id="testimonials_grid" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-40">
+            <!-- Category Filter -->
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-12 gap-6 sticky top-24 z-40 bg-brand-50/90 backdrop-blur-md py-4">
+                <div>
+                    <h2 class="disruptive-text text-4xl text-brand-950 uppercase mb-2">The Archive</h2>
+                    <p class="text-brand-500 text-sm font-mono">Filter by industry</p>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <button class="px-5 py-2.5 bg-brand-950 text-white text-sm font-medium rounded-full transition-colors">All Voices</button>
+                    <button class="px-5 py-2.5 bg-white border border-brand-200 text-brand-950 text-sm font-medium rounded-full hover:border-brand-950 transition-colors">SaaS & Tech</button>
+                    <button class="px-5 py-2.5 bg-white border border-brand-200 text-brand-950 text-sm font-medium rounded-full hover:border-brand-950 transition-colors">Finance</button>
+                    <button class="px-5 py-2.5 bg-white border border-brand-200 text-brand-950 text-sm font-medium rounded-full hover:border-brand-950 transition-colors">E-Commerce</button>
+                    <button class="px-5 py-2.5 bg-white border border-brand-200 text-brand-950 text-sm font-medium rounded-full hover:border-brand-950 transition-colors">Agencies</button>
+                </div>
+            </div>
+
+            <!-- Grid (Masonry Style) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+                
+                <!-- Column 1 -->
+                <div class="flex flex-col gap-8">
+                    <div class="service-card p-8 group">
+                        <i class="fa-solid fa-quote-left text-2xl text-brand-300 mb-4"></i>
+                        <p class="text-brand-950 font-light text-lg mb-8 leading-relaxed">
+                            "A rare talent who bridges the gap between pure aesthetic brilliance and hard-nosed commercial reality. The brand identity he crafted for us didn't just look good; it actively solved our positioning problem in a crowded market."
+                        </p>
+                        <div class="flex items-center gap-4 pt-6 border-t border-brand-100">
+                            <div class="w-12 h-12 rounded-full overflow-hidden bg-brand-200">
+                                <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" alt="Marcus Chen" />
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-brand-950">Marcus Chen</p>
+                                <p class="text-xs text-brand-500 font-mono">Founder, Vertex Capital</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-card p-8 group bg-brand-950 text-white border-brand-900">
+                        <i class="fa-solid fa-quote-left text-2xl text-brand-600 mb-4"></i>
+                        <p class="text-white font-light text-lg mb-8 leading-relaxed">
+                            "Working with Will is an exercise in having your assumptions challenged in the best possible way. He refuses to settle for the obvious answer, pushing the creative until it's genuinely distinctive."
+                        </p>
+                        <div class="flex items-center gap-4 pt-6 border-t border-brand-800">
+                            <div class="w-12 h-12 rounded-full overflow-hidden bg-brand-800">
+                                <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-6.jpg" alt="Elena Rodriguez" />
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-white">Elena Rodriguez</p>
+                                <p class="text-xs text-brand-400 font-mono">Creative Director, Studio Blanc</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="flex flex-col gap-8 lg:mt-12">
+                    <div class="service-card p-8 group">
+                        <i class="fa-solid fa-quote-left text-2xl text-brand-300 mb-4"></i>
+                        <p class="text-brand-950 font-light text-lg mb-8 leading-relaxed">
+                            "We brought him in to fix a conversion issue. He ended up redesigning our entire onboarding flow, rewriting our core messaging, and increasing our activation rate by 45%. He is a force multiplier for any product team."
+                        </p>
+                        <div class="flex items-center gap-4 pt-6 border-t border-brand-100">
+                            <div class="w-12 h-12 rounded-full overflow-hidden bg-brand-200">
+                                <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-3.jpg" alt="David Park" />
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-brand-950">David Park</p>
+                                <p class="text-xs text-brand-500 font-mono">CPO, FlowState</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-card p-8 group">
+                        <i class="fa-solid fa-quote-left text-2xl text-brand-300 mb-4"></i>
+                        <p class="text-brand-950 font-light text-lg mb-8 leading-relaxed">
+                            "The design system he built for us is a masterclass in scalable architecture. It saved our engineering team hundreds of hours and finally brought consistency to our sprawling product suite."
+                        </p>
+                        <div class="flex items-center gap-4 pt-6 border-t border-brand-100">
+                            <div class="w-12 h-12 rounded-full overflow-hidden bg-brand-200">
+                                <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg" alt="Aisha Patel" />
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-brand-950">Aisha Patel</p>
+                                <p class="text-xs text-brand-500 font-mono">Lead Engineer, DataCore</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="flex flex-col gap-8 lg:-mt-8">
+                    <div class="service-card p-8 group">
+                        <div class="w-full h-48 mb-6 rounded-lg overflow-hidden">
+                            <img class="w-full h-full object-cover grayscale" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/1dc5594fdd-134ab1e8008e94e6d5de.png" alt="High end editorial portrait of a CEO in a modern glass office, dramatic lighting, black and white" />
+                        </div>
+                        <i class="fa-solid fa-quote-left text-2xl text-brand-300 mb-4"></i>
+                        <p class="text-brand-950 font-light text-lg mb-8 leading-relaxed">
+                            "I've hired dozens of designers over my career. Will is in the top 1%. He possesses that rare combination of high-level strategic thinking and obsessive pixel-perfect execution."
+                        </p>
+                        <div class="flex items-center gap-4 pt-6 border-t border-brand-100">
+                            <div>
+                                <p class="text-sm font-medium text-brand-950">James Thornton</p>
+                                <p class="text-xs text-brand-500 font-mono">CEO, Meridian Group</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-card p-8 group">
+                        <i class="fa-solid fa-quote-left text-2xl text-brand-300 mb-4"></i>
+                        <p class="text-brand-950 font-light text-lg mb-8 leading-relaxed">
+                            "Uncompromising on quality, ruthless with timelines, and an absolute pleasure to work with. If you have the chance to collaborate with him, take it."
+                        </p>
+                        <div class="flex items-center gap-4 pt-6 border-t border-brand-100">
+                            <div class="w-12 h-12 rounded-full overflow-hidden bg-brand-200">
+                                <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-7.jpg" alt="Chloe Bennett" />
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-brand-950">Chloe Bennett</p>
+                                <p class="text-xs text-brand-500 font-mono">Director, Ostrich Agency</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="mt-16 text-center">
+                <button class="px-8 py-3 bg-transparent border border-brand-300 text-brand-950 text-sm font-medium rounded-full hover:bg-brand-50 transition-colors">Load More Testimonials</button>
+            </div>
+        </section>
+
+        <!-- Video & LinkedIn Hybrid Section -->
+        <section id="video_linkedin_feed" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-40">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Video Endorsements -->
+                <div>
+                    <div class="mb-12">
+                        <h2 class="mono-label text-brand-500 mb-4">In Their Words</h2>
+                        <h3 class="disruptive-text text-4xl text-brand-950 uppercase">Video <br>Endorsements</h3>
+                    </div>
+                    
+                    <div class="flex flex-col gap-6">
+                        <!-- Video Card 1 -->
+                        <div class="bento-card p-4 group cursor-pointer flex flex-col sm:flex-row gap-6 items-center">
+                            <div class="w-full sm:w-48 h-32 rounded-xl overflow-hidden relative flex-shrink-0">
+                                <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/f2ac3dea25-34c62f835ecd2e35929e.png" alt="Professional speaking on a video call, modern office background, cinematic lighting" />
+                                <div class="absolute inset-0 bg-brand-950/20 group-hover:bg-transparent transition-colors flex items-center justify-center">
+                                    <div class="w-10 h-10 rounded-full bg-white/90 flex items-center justify-center backdrop-blur-sm">
+                                        <i class="fa-solid fa-play text-brand-950 text-sm ml-1"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-brand-950 mb-2">"The ROI was immediate..."</h4>
+                                <p class="text-sm text-brand-600 font-light mb-3">Watch Michael discuss the 6-month transformation of their core product architecture.</p>
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-mono text-brand-950 font-medium">Michael Chang</span>
+                                    <span class="text-xs text-brand-400">• Tech Lead</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Video Card 2 -->
+                        <div class="bento-card p-4 group cursor-pointer flex flex-col sm:flex-row gap-6 items-center">
+                            <div class="w-full sm:w-48 h-32 rounded-xl overflow-hidden relative flex-shrink-0">
+                                <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/4375af7f36-7c8fee24c0d550afce46.png" alt="Creative professional in a studio setting giving an interview, documentary style" />
+                                <div class="absolute inset-0 bg-brand-950/20 group-hover:bg-transparent transition-colors flex items-center justify-center">
+                                    <div class="w-10 h-10 rounded-full bg-white/90 flex items-center justify-center backdrop-blur-sm">
+                                        <i class="fa-solid fa-play text-brand-950 text-sm ml-1"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-brand-950 mb-2">"A completely new perspective."</h4>
+                                <p class="text-sm text-brand-600 font-light mb-3">Sarah explains how the brand strategy sessions uncovered entirely new market positioning.</p>
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-mono text-brand-950 font-medium">Sarah Jenkins</span>
+                                    <span class="text-xs text-brand-400">• CMO</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LinkedIn Feed -->
+                <div>
+                    <div class="mb-12 flex justify-between items-end">
+                        <div>
+                            <h2 class="mono-label text-[#0A66C2] mb-4 flex items-center gap-2">
+                                <i class="fa-brands fa-linkedin text-lg"></i> Verified Proof
+                            </h2>
+                            <h3 class="disruptive-text text-4xl text-brand-950 uppercase">Network <br>Recommendations</h3>
+                        </div>
+                        <a href="#" class="text-sm font-medium text-[#0A66C2] hover:underline flex items-center gap-2">
+                            View Profile <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </a>
+                    </div>
+
+                    <div class="bg-white border border-brand-100 rounded-3xl p-8 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-[#0A66C2]/5 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
+                        
+                        <div class="flex flex-col gap-8">
+                            <!-- LinkedIn Item 1 -->
+                            <div class="pb-8 border-b border-brand-100">
+                                <div class="flex items-start gap-4 mb-4">
+                                    <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-8.jpg" class="w-12 h-12 rounded-full object-cover" alt="Profile" />
+                                    <div>
+                                        <h4 class="text-brand-950 font-medium text-sm">Thomas Wright</h4>
+                                        <p class="text-brand-500 text-xs">Managing Director at Elevate Partners</p>
+                                        <p class="text-brand-400 text-xs mt-1">April 12, 2026</p>
+                                    </div>
+                                </div>
+                                <p class="text-brand-700 text-sm font-light leading-relaxed">
+                                    "Will is one of the most structurally sound designers I've worked with. He doesn't just make things look pretty; he engineers solutions that drive measurable business outcomes. Highly recommended for any complex product challenges."
+                                </p>
+                            </div>
+
+                            <!-- LinkedIn Item 2 -->
+                            <div>
+                                <div class="flex items-start gap-4 mb-4">
+                                    <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-1.jpg" class="w-12 h-12 rounded-full object-cover" alt="Profile" />
+                                    <div>
+                                        <h4 class="text-brand-950 font-medium text-sm">Jessica Lin</h4>
+                                        <p class="text-brand-500 text-xs">Senior Product Manager at TechFlow</p>
+                                        <p class="text-brand-400 text-xs mt-1">February 28, 2026</p>
+                                    </div>
+                                </div>
+                                <p class="text-brand-700 text-sm font-light leading-relaxed">
+                                    "An absolute powerhouse. Will managed to take our convoluted legacy system and turn it into an intuitive, modern platform without losing any core functionality. His ability to communicate design decisions to stakeholders is unmatched."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Results & Outcomes (Data Viz) -->
+        <section id="results_metrics" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-40">
+            <div class="mb-16 text-center max-w-3xl mx-auto">
+                <h2 class="mono-label text-brand-500 mb-4">The Impact</h2>
+                <h3 class="disruptive-text text-5xl md:text-6xl text-brand-950 uppercase mb-6">Measurable <br>Outcomes</h3>
+                <p class="text-brand-600 font-light text-lg">
+                    Design is not just about aesthetics; it's about moving the needle. Here is the concrete data behind the testimonials.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <!-- KPI 1 -->
+                <div class="service-card p-8 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 rounded-full bg-brand-50 flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-arrow-trend-up text-2xl text-brand-950"></i>
+                    </div>
+                    <h4 class="text-5xl font-serif text-brand-950 mb-2">240%</h4>
+                    <p class="text-brand-500 text-sm font-mono uppercase tracking-wider">Avg. Engagement Lift</p>
+                </div>
+                
+                <!-- KPI 2 -->
+                <div class="service-card p-8 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 rounded-full bg-brand-50 flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-stopwatch text-2xl text-brand-950"></i>
+                    </div>
+                    <h4 class="text-5xl font-serif text-brand-950 mb-2">45%</h4>
+                    <p class="text-brand-500 text-sm font-mono uppercase tracking-wider">Reduction in Onboarding Time</p>
+                </div>
+
+                <!-- KPI 3 -->
+                <div class="service-card p-8 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 rounded-full bg-brand-50 flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-bullseye text-2xl text-brand-950"></i>
+                    </div>
+                    <h4 class="text-5xl font-serif text-brand-950 mb-2">3.2x</h4>
+                    <p class="text-brand-500 text-sm font-mono uppercase tracking-wider">Increase in Conversion Rate</p>
+                </div>
+            </div>
+
+            <!-- Chart Container -->
+            <div class="bento-card p-8 md:p-12">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+                    <div>
+                        <h4 class="text-xl font-medium text-brand-950">Post-Redesign Performance Trajectory</h4>
+                        <p class="text-sm text-brand-500 mt-1">Aggregated data across 5 major enterprise projects (Months 1-6)</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 rounded-full bg-brand-950"></div>
+                            <span class="text-xs font-mono text-brand-600">User Retention</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 rounded-full bg-brand-300"></div>
+                            <span class="text-xs font-mono text-brand-600">Task Completion Speed</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="impact-chart" class="w-full h-[400px]"></div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section id="cta_section" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-24">
+            <div class="bg-brand-950 text-white rounded-[32px] p-12 md:p-24 relative overflow-hidden flex flex-col items-center text-center">
+                <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-800 rounded-full blur-[120px] opacity-30 -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
+                <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-700 rounded-full blur-[100px] opacity-20 translate-y-1/2 -translate-x-1/4 pointer-events-none"></div>
+                
+                <div class="relative z-10 max-w-3xl">
+                    <h2 class="disruptive-text text-5xl md:text-7xl uppercase mb-8">Ready to <br>Disrupt?</h2>
+                    <p class="text-brand-300 font-light text-xl mb-12 max-w-2xl mx-auto">
+                        If you're looking for safe, predictable, and boring, we aren't a fit. If you want to build something that commands attention and drives results, let's talk.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                        <a href="#" class="px-8 py-4 bg-white text-brand-950 font-medium rounded-full hover:bg-brand-100 transition-colors w-full sm:w-auto flex items-center justify-center gap-2">
+                            Start a Conversation <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#" class="px-8 py-4 bg-transparent border border-white/20 text-white font-medium rounded-full hover:bg-white/10 transition-colors w-full sm:w-auto">
+                            View Portfolio
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-white border-t border-gray-100 py-12 mt-auto">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-sm text-brand-500">
+                &copy; 2026 Will Beeching. All Rights Reserved.
+            </div>
+            <div class="flex items-center gap-6 text-sm font-medium">
+                <a href="#" class="text-brand-950 hover:text-brand-500 transition-colors">GitHub</a>
+                <a href="#" class="text-brand-950 hover:text-brand-500 transition-colors">LinkedIn</a>
+                <a href="#" class="text-brand-950 hover:text-brand-500 transition-colors">Instagram</a>
+                <a href="#" class="text-brand-950 hover:text-brand-500 transition-colors">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function initializeCharts() {
+            try {
+                const chartElement = document.getElementById('impact-chart');
+                if (!chartElement) return;
+
+                const trace1 = {
+                    x: ['Month 1', 'Month 2', 'Month 3', 'Month 4', 'Month 5', 'Month 6'],
+                    y: [100, 145, 180, 210, 230, 240],
+                    type: 'scatter',
+                    mode: 'lines',
+                    name: 'User Retention',
+                    line: {
+                        shape: 'spline',
+                        smoothing: 1.3,
+                        color: '#1a1a1a',
+                        width: 4
+                    },
+                    fill: 'tozeroy',
+                    fillcolor: 'rgba(26, 26, 26, 0.05)'
+                };
+
+                const trace2 = {
+                    x: ['Month 1', 'Month 2', 'Month 3', 'Month 4', 'Month 5', 'Month 6'],
+                    y: [100, 120, 140, 165, 185, 205],
+                    type: 'scatter',
+                    mode: 'lines',
+                    name: 'Task Speed',
+                    line: {
+                        shape: 'spline',
+                        smoothing: 1.3,
+                        color: '#b0b0b0',
+                        width: 3,
+                        dash: 'dot'
+                    }
+                };
+
+                const layout = {
+                    margin: { t: 20, r: 20, b: 40, l: 40 },
+                    plot_bgcolor: 'transparent',
+                    paper_bgcolor: 'transparent',
+                    showlegend: false,
+                    xaxis: {
+                        showgrid: false,
+                        tickfont: { color: '#888888', family: 'monospace' },
+                        linecolor: '#e7e7e7'
+                    },
+                    yaxis: {
+                        showgrid: true,
+                        gridcolor: '#e7e7e7',
+                        gridwidth: 1,
+                        tickfont: { color: '#888888', family: 'monospace' },
+                        linecolor: 'transparent',
+                        zeroline: false
+                    },
+                    hovermode: 'x unified'
+                };
+
+                const config = {
+                    responsive: true,
+                    displayModeBar: false,
+                    displaylogo: false
+                };
+
+                Plotly.newPlot('impact-chart', [trace1, trace2], layout, config);
+            } catch (e) {
+                console.error('Chart initialization failed:', e);
+            }
+        }
+
+        window.addEventListener('load', initializeCharts);
+        setTimeout(initializeCharts, 1200);
+    </script>
+</body>
+</html>

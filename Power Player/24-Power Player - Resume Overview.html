@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Edward James</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        surface: '#F9FAFB',
+                        card: '#F3F4F6',
+                        primary: '#111827',
+                        secondary: '#4B5563',
+                        accent: '#4F46E5',
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px rgba(0, 0, 0, 0.05)',
+                        'glow': '0 0 20px rgba(79, 70, 229, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #F9FAFB;
+            color: #111827;
+            -webkit-font-smoothing: antialiased;
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="m-0 p-0 bg-surface min-h-screen flex flex-col font-sans">
+
+    <!-- Navigation -->
+    <nav id="header" class="w-full bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">
+                    EJ
+                </div>
+                <span class="font-semibold text-lg tracking-tight">Edward James</span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-secondary">
+                <a href="#" class="hover:text-primary transition-colors">Home</a>
+                <a href="#" class="hover:text-primary transition-colors">About</a>
+                <a href="#" class="hover:text-primary transition-colors">Expertise</a>
+                <a href="#" class="hover:text-primary transition-colors">Portfolio</a>
+                <a href="#" class="hover:text-primary transition-colors">Insights</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <button class="hidden md:flex px-5 py-2.5 bg-primary text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors shadow-soft">
+                    Contact Me
+                </button>
+                <button class="md:hidden w-10 h-10 flex items-center justify-center bg-card rounded-full text-primary">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-1 w-full max-w-5xl mx-auto px-6 py-16 md:py-24 flex flex-col gap-24">
+
+        <!-- Header & Summary -->
+        <section id="resume-header" class="w-full flex flex-col gap-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-gray-200 pb-8">
+                <div class="flex flex-col gap-4">
+                    <h1 class="text-5xl md:text-6xl font-bold tracking-tight text-primary font-serif">Edward James</h1>
+                    <p class="text-xl text-secondary font-medium">Executive Strategy & Operations Consultant</p>
+                </div>
+                <button class="flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white text-sm font-semibold rounded-full hover:bg-gray-800 transition-colors shadow-soft w-fit">
+                    <i class="fa-solid fa-file-pdf"></i>
+                    Download PDF Resume
+                </button>
+            </div>
+            
+            <div class="max-w-3xl">
+                <p class="text-lg text-secondary leading-relaxed">
+                    A seasoned executive advisor with over 20 years of experience orchestrating enterprise-wide transformations, leading high-stakes M&A integrations, and advising boards on structural resilience. Proven track record of aligning disparate corporate cultures, mitigating multi-billion dollar risk portfolios, and driving sustainable operational scaling across global financial and technology sectors.
+                </p>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience" class="w-full flex flex-col gap-12">
+            <h2 class="text-3xl font-bold text-primary tracking-tight border-b border-gray-200 pb-4">Professional Experience</h2>
+            
+            <div class="flex flex-col gap-16">
+                <!-- Role 1 -->
+                <div class="flex flex-col md:flex-row gap-6 md:gap-12">
+                    <div class="w-full md:w-1/4 flex flex-col">
+                        <span class="text-sm font-bold text-primary uppercase tracking-wider">2016 — Present</span>
+                        <span class="text-sm text-secondary mt-1">London / Global</span>
+                    </div>
+                    <div class="w-full md:w-3/4 flex flex-col gap-4">
+                        <div class="flex flex-col">
+                            <h3 class="text-2xl font-bold text-primary">Founder & Principal Partner</h3>
+                            <span class="text-lg font-medium text-secondary">Nexus Group Advisory</span>
+                        </div>
+                        <p class="text-secondary leading-relaxed">
+                            Established and lead a boutique advisory firm providing unfiltered, high-stakes strategic counsel exclusively to C-suite executives and corporate boards navigating critical transitions.
+                        </p>
+                        <ul class="flex flex-col gap-3 mt-2 text-secondary">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-arrow-right text-accent mt-1.5 text-xs"></i>
+                                <span>Directed the post-merger integration strategy for a €12B European logistics conglomerate, achieving full operational synergy 4 months ahead of schedule.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-arrow-right text-accent mt-1.5 text-xs"></i>
+                                <span>Developed and implemented 'The Resilience Protocol', a proprietary risk management framework adopted by 50+ Fortune 500 companies.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-arrow-right text-accent mt-1.5 text-xs"></i>
+                                <span>Currently serve as an Independent Board Director for three publicly traded companies (FinTech and Enterprise SaaS), providing governance and strategic oversight.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Role 2 -->
+                <div class="flex flex-col md:flex-row gap-6 md:gap-12">
+                    <div class="w-full md:w-1/4 flex flex-col">
+                        <span class="text-sm font-bold text-primary uppercase tracking-wider">2006 — 2015</span>
+                        <span class="text-sm text-secondary mt-1">New York / London</span>
+                    </div>
+                    <div class="w-full md:w-3/4 flex flex-col gap-4">
+                        <div class="flex flex-col">
+                            <h3 class="text-2xl font-bold text-primary">Managing Director, M&A Integration</h3>
+                            <span class="text-lg font-medium text-secondary">Global Strategy Partners</span>
+                        </div>
+                        <p class="text-secondary leading-relaxed">
+                            Led the global M&A integration practice, building a team of 140 consultants and overseeing the end-to-end integration lifecycle for the firm's largest enterprise clients.
+                        </p>
+                        <ul class="flex flex-col gap-3 mt-2 text-secondary">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-arrow-right text-accent mt-1.5 text-xs"></i>
+                                <span>Oversaw the post-merger integration of over $40B in assets across 15 major transactions in the financial services and technology sectors.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-arrow-right text-accent mt-1.5 text-xs"></i>
+                                <span>Authored the firm's standardized playbook for cultural integration, reducing post-merger key talent attrition by an average of 22%.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-arrow-right text-accent mt-1.5 text-xs"></i>
+                                <span>Grew practice revenue from $15M to $85M over a 5-year period, establishing the group as the highest-margin division globally.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Role 3 -->
+                <div class="flex flex-col md:flex-row gap-6 md:gap-12">
+                    <div class="w-full md:w-1/4 flex flex-col">
+                        <span class="text-sm font-bold text-primary uppercase tracking-wider">1998 — 2005</span>
+                        <span class="text-sm text-secondary mt-1">London</span>
+                    </div>
+                    <div class="w-full md:w-3/4 flex flex-col gap-4">
+                        <div class="flex flex-col">
+                            <h3 class="text-2xl font-bold text-primary">Director, Structural Risk</h3>
+                            <span class="text-lg font-medium text-secondary">Atlas Investment Bank</span>
+                        </div>
+                        <p class="text-secondary leading-relaxed">
+                            Progressed from quantitative risk analysis to advising the executive committee on enterprise-wide structural resilience and operational fault lines.
+                        </p>
+                        <ul class="flex flex-col gap-3 mt-2 text-secondary">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-arrow-right text-accent mt-1.5 text-xs"></i>
+                                <span>Designed and deployed an early-warning risk identification system that successfully mitigated $1.2B in exposure during the 2001 market contraction.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-arrow-right text-accent mt-1.5 text-xs"></i>
+                                <span>Led a cross-functional task force to restructure the global equities division, improving operational efficiency by 18%.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Skills -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <!-- Education -->
+            <section id="education" class="flex flex-col gap-8">
+                <h2 class="text-3xl font-bold text-primary tracking-tight border-b border-gray-200 pb-4">Education</h2>
+                
+                <div class="flex flex-col gap-8">
+                    <div class="flex flex-col gap-2">
+                        <h3 class="text-xl font-bold text-primary">Master of Business Administration (MBA)</h3>
+                        <span class="font-medium text-secondary">London Business School</span>
+                        <span class="text-sm text-secondary">1996 — 1998</span>
+                        <p class="text-secondary text-sm mt-2">Specialization in Corporate Strategy and Organizational Behavior. Graduated with Distinction.</p>
+                    </div>
+                    
+                    <div class="flex flex-col gap-2">
+                        <h3 class="text-xl font-bold text-primary">Bachelor of Science in Economics</h3>
+                        <span class="font-medium text-secondary">London School of Economics (LSE)</span>
+                        <span class="text-sm text-secondary">1992 — 1995</span>
+                        <p class="text-secondary text-sm mt-2">First Class Honours.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills -->
+            <section id="skills" class="flex flex-col gap-8">
+                <h2 class="text-3xl font-bold text-primary tracking-tight border-b border-gray-200 pb-4">Core Competencies</h2>
+                
+                <div class="flex flex-col gap-6">
+                    <div class="flex flex-col gap-3">
+                        <h4 class="text-sm font-bold text-primary uppercase tracking-wider">Strategic Advisory</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-4 py-2 bg-card text-primary rounded-full text-sm font-medium border border-gray-200">Board Governance</span>
+                            <span class="px-4 py-2 bg-card text-primary rounded-full text-sm font-medium border border-gray-200">M&A Integration</span>
+                            <span class="px-4 py-2 bg-card text-primary rounded-full text-sm font-medium border border-gray-200">Enterprise Restructuring</span>
+                            <span class="px-4 py-2 bg-card text-primary rounded-full text-sm font-medium border border-gray-200">Digital Transformation Strategy</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col gap-3">
+                        <h4 class="text-sm font-bold text-primary uppercase tracking-wider">Operational Execution</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-4 py-2 bg-card text-primary rounded-full text-sm font-medium border border-gray-200">Risk Mitigation</span>
+                            <span class="px-4 py-2 bg-card text-primary rounded-full text-sm font-medium border border-gray-200">Cultural Alignment</span>
+                            <span class="px-4 py-2 bg-card text-primary rounded-full text-sm font-medium border border-gray-200">Change Management</span>
+                            <span class="px-4 py-2 bg-card text-primary rounded-full text-sm font-medium border border-gray-200">Executive Coaching</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Certifications & Community -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <!-- Certifications -->
+            <section id="certifications" class="flex flex-col gap-8">
+                <h2 class="text-3xl font-bold text-primary tracking-tight border-b border-gray-200 pb-4">Certifications</h2>
+                
+                <div class="flex flex-col gap-6">
+                    <div class="flex flex-col gap-1">
+                        <h3 class="text-lg font-bold text-primary">Certified Board Director</h3>
+                        <span class="text-sm text-secondary">Corporate Governance Institute, 2018</span>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <h3 class="text-lg font-bold text-primary">Advanced Risk Management Certification</h3>
+                        <span class="text-sm text-secondary">Global Risk Management Association, 2012</span>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <h3 class="text-lg font-bold text-primary">Executive Leadership Program</h3>
+                        <span class="text-sm text-secondary">Harvard Business School Executive Education, 2010</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Community -->
+            <section id="community" class="flex flex-col gap-8">
+                <h2 class="text-3xl font-bold text-primary tracking-tight border-b border-gray-200 pb-4">Community & Philanthropy</h2>
+                
+                <div class="flex flex-col gap-6">
+                    <div class="flex flex-col gap-2">
+                        <h3 class="text-lg font-bold text-primary">Board Member</h3>
+                        <span class="font-medium text-secondary">Global Education Initiative (GEI)</span>
+                        <span class="text-sm text-secondary">2019 — Present</span>
+                        <p class="text-secondary text-sm mt-1">Guiding systemic reforms in STEM education across emerging markets, focusing on strategic partnerships and fund allocation.</p>
+                    </div>
+                    
+                    <div class="flex flex-col gap-2">
+                        <h3 class="text-lg font-bold text-primary">Mentor</h3>
+                        <span class="font-medium text-secondary">NextGen Executive Leaders</span>
+                        <span class="text-sm text-secondary">2015 — Present</span>
+                        <p class="text-secondary text-sm mt-1">Providing pro-bono executive coaching and career strategy for high-potential leaders from underrepresented backgrounds.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="w-full bg-white border-t border-gray-100 py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">
+                    EJ
+                </div>
+                <span class="font-semibold text-primary">Edward James</span>
+            </div>
+            
+            <div class="flex items-center gap-6 text-sm text-secondary">
+                <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+                <span>&copy; 2026 Edward James. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

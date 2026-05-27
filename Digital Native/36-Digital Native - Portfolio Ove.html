@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Alex Mercer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.plot.ly/plotly-3.1.1.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            orange: '#FF6600',
+                            dark: '#0A0A0A',
+                            light: '#F5F5F5',
+                            border: '#E5E5E5'
+                        }
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF;
+            color: #0A0A0A;
+            -webkit-font-smoothing: antialiased;
+        }
+        ::-webkit-scrollbar { display: none; }
+        
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .noise-bg {
+            position: relative;
+        }
+        .noise-bg::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .terminal-line {
+            position: relative;
+            padding-left: 2rem;
+        }
+        .terminal-line::before {
+            content: ">";
+            position: absolute;
+            left: 0;
+            color: #FF6600;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .resume-section-title {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+        }
+
+        /* Custom scrollbar for horizontal lists */
+        .hide-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans selection:bg-brand-orange selection:text-white m-0 p-0">
+
+    <!-- Navigation (Preserved from context) -->
+    <header id="header" class="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
+        <nav class="glass-nav pointer-events-auto rounded-[32px] px-2 py-2 flex items-center gap-8 shadow-2xl border border-white/10">
+            <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center shrink-0 ml-1">
+                <i class="fa-solid fa-layer-group text-brand-dark text-lg"></i>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-6 text-sm font-medium text-white/80">
+                <a href="#" class="text-white transition-colors font-bold border-b-2 border-brand-orange pb-0.5">Work</a>
+                <a href="#" class="hover:text-white transition-colors">Expertise</a>
+                <a href="#" class="hover:text-white transition-colors">Writing</a>
+                <a href="#" class="hover:text-white transition-colors">About</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <a href="#" class="bg-brand-orange hover:bg-[#e65c00] text-white text-sm font-semibold px-6 py-2.5 rounded-full transition-all duration-300 shadow-[0_4px_14px_0_rgba(255,102,0,0.39)] hover:shadow-[0_6px_20px_rgba(255,102,0,0.23)]">
+                    Let's Talk
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow flex flex-col pt-32">
+        
+        <!-- Portfolio Hero -->
+        <section id="portfolio-hero" class="relative w-full px-4 md:px-8 pt-16 pb-12 flex flex-col items-center text-center z-10 border-b border-gray-200">
+            <h1 class="text-5xl md:text-7xl lg:text-[90px] font-extrabold tracking-tight text-brand-dark max-w-5xl leading-[0.9] mb-8 uppercase font-sans" style="letter-spacing: -0.05em;">
+                Selected<br/>Works.
+            </h1>
+            
+            <div class="max-w-3xl mx-auto text-center space-y-4 text-lg md:text-xl text-gray-800 leading-relaxed font-sans p-8 glass-card rounded-[32px]">
+                <p class="font-medium">
+                    A curated selection of digital environments, micro-frontend architectures, and high-performance WebGL applications. These projects represent the intersection of heavy engineering and intuitive design across fintech, enterprise SaaS, and data visualization sectors.
+                </p>
+            </div>
+        </section>
+
+        <!-- Dynamic Content Area -->
+        <div class="relative w-full noise-bg py-16 px-4 md:px-8 bg-[#F8F1EC]">
+            <div class="max-w-[1440px] mx-auto relative z-10">
+
+                <!-- Filter System -->
+                <section id="portfolio-filters" class="mb-12">
+                    <div class="flex flex-wrap items-center justify-center gap-3 md:gap-4">
+                        <button class="px-6 py-2.5 bg-brand-dark text-white rounded-full text-sm font-mono font-bold shadow-md transition-all">All Projects</button>
+                        <button class="px-6 py-2.5 bg-white border border-gray-200 text-brand-dark hover:border-brand-dark rounded-full text-sm font-mono font-medium shadow-sm transition-all">WebGL / 3D</button>
+                        <button class="px-6 py-2.5 bg-white border border-gray-200 text-brand-dark hover:border-brand-dark rounded-full text-sm font-mono font-medium shadow-sm transition-all">Micro-Frontends</button>
+                        <button class="px-6 py-2.5 bg-white border border-gray-200 text-brand-dark hover:border-brand-dark rounded-full text-sm font-mono font-medium shadow-sm transition-all">Data Viz</button>
+                        <button class="px-6 py-2.5 bg-white border border-gray-200 text-brand-dark hover:border-brand-dark rounded-full text-sm font-mono font-medium shadow-sm transition-all">Fintech</button>
+                    </div>
+                </section>
+
+                <!-- Portfolio Grid -->
+                <section id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
+                    
+                    <!-- Project Card 1 -->
+                    <div class="glass-card rounded-[24px] overflow-hidden group cursor-pointer border border-gray-200/60 hover:border-brand-orange/50 transition-all duration-300 shadow-sm hover:shadow-xl">
+                        <div class="h-64 overflow-hidden relative bg-gray-100">
+                            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/9c12ea4a5c-12f6cad20b89429e276a.png" alt="Abstract data visualization dashboard with glowing neon orange and dark elements, high tech, digital native style" />
+                            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-mono font-bold text-brand-dark border border-gray-200">2023</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-2 py-1 bg-brand-orange/10 text-brand-orange text-[10px] font-mono font-bold rounded uppercase tracking-wider">Data Viz</span>
+                                <span class="px-2 py-1 bg-gray-200 text-gray-600 text-[10px] font-mono font-bold rounded uppercase tracking-wider">WebGL</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-brand-dark mb-2 tracking-tight">Nexus Analytics Engine</h3>
+                            <p class="text-sm text-gray-600 line-clamp-2 font-medium">A high-performance WebGL charting engine capable of rendering 5M+ data points at 60fps in the browser.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="glass-card rounded-[24px] overflow-hidden group cursor-pointer border border-gray-200/60 hover:border-brand-orange/50 transition-all duration-300 shadow-sm hover:shadow-xl">
+                        <div class="h-64 overflow-hidden relative bg-gray-100">
+                            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/65323bf4dc-00020582a4c55b54af28.png" alt="Clean minimalist fintech dashboard interface, micro frontend architecture representation, modern web design" />
+                            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-mono font-bold text-brand-dark border border-gray-200">2022</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-2 py-1 bg-brand-orange/10 text-brand-orange text-[10px] font-mono font-bold rounded uppercase tracking-wider">Fintech</span>
+                                <span class="px-2 py-1 bg-gray-200 text-gray-600 text-[10px] font-mono font-bold rounded uppercase tracking-wider">Architecture</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-brand-dark mb-2 tracking-tight">Aura Global Banking</h3>
+                            <p class="text-sm text-gray-600 line-clamp-2 font-medium">Migration of a legacy monolithic application to a highly performant micro-frontend architecture serving 2M+ DAU.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="glass-card rounded-[24px] overflow-hidden group cursor-pointer border border-gray-200/60 hover:border-brand-orange/50 transition-all duration-300 shadow-sm hover:shadow-xl">
+                        <div class="h-64 overflow-hidden relative bg-gray-100">
+                            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/2a8e29b924-ba6e36ea628b02908164.png" alt="Dark mode developer terminal interface, system design concept, clean typography, code aesthetic" />
+                            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-mono font-bold text-brand-dark border border-gray-200">2021</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-2 py-1 bg-brand-orange/10 text-brand-orange text-[10px] font-mono font-bold rounded uppercase tracking-wider">System Design</span>
+                                <span class="px-2 py-1 bg-gray-200 text-gray-600 text-[10px] font-mono font-bold rounded uppercase tracking-wider">React</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-brand-dark mb-2 tracking-tight">Quantum UI Library</h3>
+                            <p class="text-sm text-gray-600 line-clamp-2 font-medium">Architected a shared component library adopted by 14 internal product teams, reducing duplicate code by 60%.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 4 -->
+                    <div class="glass-card rounded-[24px] overflow-hidden group cursor-pointer border border-gray-200/60 hover:border-brand-orange/50 transition-all duration-300 shadow-sm hover:shadow-xl">
+                        <div class="h-64 overflow-hidden relative bg-gray-100">
+                            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/493607a814-c496e9908eb72be2ee39.png" alt="Abstract 3D digital environment, webgl rendering, dark theme with orange accents, futuristic interface" />
+                            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-mono font-bold text-brand-dark border border-gray-200">2021</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-2 py-1 bg-brand-orange/10 text-brand-orange text-[10px] font-mono font-bold rounded uppercase tracking-wider">WebGL</span>
+                                <span class="px-2 py-1 bg-gray-200 text-gray-600 text-[10px] font-mono font-bold rounded uppercase tracking-wider">Three.js</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-brand-dark mb-2 tracking-tight">Immersive Data Spaces</h3>
+                            <p class="text-sm text-gray-600 line-clamp-2 font-medium">Experimental 3D environments for visualizing complex network topologies in real-time.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 5 -->
+                    <div class="glass-card rounded-[24px] overflow-hidden group cursor-pointer border border-gray-200/60 hover:border-brand-orange/50 transition-all duration-300 shadow-sm hover:shadow-xl">
+                        <div class="h-64 overflow-hidden relative bg-gray-100">
+                            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/47abccaecd-80ceea9356ade1f4c8c9.png" alt="SaaS dashboard interface, light mode, clean typography, performance metrics visualization" />
+                            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-mono font-bold text-brand-dark border border-gray-200">2020</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-2 py-1 bg-brand-orange/10 text-brand-orange text-[10px] font-mono font-bold rounded uppercase tracking-wider">Enterprise SaaS</span>
+                                <span class="px-2 py-1 bg-gray-200 text-gray-600 text-[10px] font-mono font-bold rounded uppercase tracking-wider">Performance</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-brand-dark mb-2 tracking-tight">Velocity Control Plane</h3>
+                            <p class="text-sm text-gray-600 line-clamp-2 font-medium">Led the frontend rebuild of the flagship analytics dashboard, increasing user session length by 22%.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 6 -->
+                    <div class="glass-card rounded-[24px] overflow-hidden group cursor-pointer border border-gray-200/60 hover:border-brand-orange/50 transition-all duration-300 shadow-sm hover:shadow-xl">
+                        <div class="h-64 overflow-hidden relative bg-gray-100">
+                            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/7fbdb67072-f34e52915cadcc8a3214.png" alt="Healthcare application interface, clean, accessible design, data heavy tables" />
+                            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-mono font-bold text-brand-dark border border-gray-200">2019</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-2 py-1 bg-brand-orange/10 text-brand-orange text-[10px] font-mono font-bold rounded uppercase tracking-wider">Healthcare</span>
+                                <span class="px-2 py-1 bg-gray-200 text-gray-600 text-[10px] font-mono font-bold rounded uppercase tracking-wider">a11y</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-brand-dark mb-2 tracking-tight">MedSync Portal</h3>
+                            <p class="text-sm text-gray-600 line-clamp-2 font-medium">Accessible patient portal built with strict WCAG 2.1 AA compliance and complex state management.</p>
+                        </div>
+                    </div>
+
+                </section>
+
+                <hr class="border-gray-300 my-16">
+
+                <!-- Featured Project Detail View (Expanded State / Showcase) -->
+                <section id="featured-project-detail" class="mb-24">
+                    <div class="mb-12 flex flex-col md:flex-row justify-between items-end gap-6">
+                        <div>
+                            <h2 class="text-3xl font-bold uppercase tracking-widest text-brand-dark border-b-2 border-brand-dark pb-2 inline-block mb-4">Case Study</h2>
+                            <h3 class="text-4xl md:text-5xl font-extrabold text-brand-dark tracking-tight">Nexus Analytics Engine</h3>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="#" class="px-6 py-2.5 bg-brand-dark text-white rounded-full text-sm font-mono font-bold shadow-md transition-all flex items-center gap-2">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                            </a>
+                            <a href="#" class="px-6 py-2.5 bg-white border border-gray-200 text-brand-dark hover:border-brand-dark rounded-full text-sm font-mono font-medium shadow-sm transition-all flex items-center gap-2">
+                                <i class="fa-brands fa-github"></i> Source
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-[32px] p-8 md:p-12 border border-gray-200/80 shadow-lg">
+                        
+                        <!-- Project Meta -->
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 pb-12 border-b border-gray-200">
+                            <div>
+                                <p class="text-xs font-mono font-bold text-gray-400 uppercase tracking-widest mb-2">Client</p>
+                                <p class="text-lg font-bold text-brand-dark">DataSynapse Inc.</p>
+                            </div>
+                            <div>
+                                <p class="text-xs font-mono font-bold text-gray-400 uppercase tracking-widest mb-2">Year</p>
+                                <p class="text-lg font-bold text-brand-dark font-mono">2023</p>
+                            </div>
+                            <div>
+                                <p class="text-xs font-mono font-bold text-gray-400 uppercase tracking-widest mb-2">Role</p>
+                                <p class="text-lg font-bold text-brand-dark">Lead Architect</p>
+                            </div>
+                            <div>
+                                <p class="text-xs font-mono font-bold text-gray-400 uppercase tracking-widest mb-2">Tech Stack</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-xs font-mono bg-gray-100 px-2 py-1 rounded text-gray-700">WebGL</span>
+                                    <span class="text-xs font-mono bg-gray-100 px-2 py-1 rounded text-gray-700">React</span>
+                                    <span class="text-xs font-mono bg-gray-100 px-2 py-1 rounded text-gray-700">TypeScript</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project Content -->
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+                            
+                            <!-- Narrative -->
+                            <div class="lg:col-span-2 space-y-10">
+                                <div>
+                                    <h4 class="text-xl font-bold text-brand-dark mb-4 uppercase tracking-wider font-mono">The Challenge</h4>
+                                    <p class="text-lg text-gray-700 leading-relaxed">DataSynapse's flagship product was struggling to render large datasets. Users experiencing severe browser lag when attempting to view anything over 50,000 data points. The existing SVG-based charting solutions were fundamentally incapable of scaling to the client's new requirement: real-time visualization of 5 million concurrent data points.</p>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="text-xl font-bold text-brand-dark mb-4 uppercase tracking-wider font-mono">The Solution</h4>
+                                    <p class="text-lg text-gray-700 leading-relaxed mb-4">I architected a completely custom rendering engine using WebGL, bypassing the DOM entirely for data representation. We implemented a custom shader pipeline that offloaded the heavy lifting to the GPU.</p>
+                                    <ul class="space-y-3 font-mono text-sm text-gray-600 mt-6">
+                                        <li class="terminal-line">Implemented spatial indexing (R-trees) for O(log n) tooltip interactions.</li>
+                                        <li class="terminal-line">Built a custom instanced rendering pipeline to draw millions of glyphs in a single draw call.</li>
+                                        <li class="terminal-line">Created a React reconciliation bridge to maintain declarative component syntax while managing WebGL context imperatively.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Measurable Outcomes (Chart) -->
+                            <div class="space-y-8">
+                                <div>
+                                    <h4 class="text-xl font-bold text-brand-dark mb-4 uppercase tracking-wider font-mono">Measurable Outcomes</h4>
+                                    <div class="bg-white rounded-[24px] p-6 border border-gray-200 shadow-sm">
+                                        <p class="text-sm font-mono text-gray-500 mb-4">Performance Improvement (FPS vs Data Size)</p>
+                                        <div id="performanceChart" class="w-full h-[250px]"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="bg-brand-orange/10 rounded-[16px] p-4 border border-brand-orange/20">
+                                        <p class="text-3xl font-extrabold text-brand-orange font-mono mb-1">100x</p>
+                                        <p class="text-xs font-bold text-brand-dark uppercase tracking-widest">Data Capacity</p>
+                                    </div>
+                                    <div class="bg-gray-100 rounded-[16px] p-4 border border-gray-200">
+                                        <p class="text-3xl font-extrabold text-brand-dark font-mono mb-1">60</p>
+                                        <p class="text-xs font-bold text-gray-500 uppercase tracking-widest">Stable FPS</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project Gallery -->
+                        <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="h-80 rounded-[24px] overflow-hidden border border-gray-200">
+                                <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/639178e59f-2565f5bd124b6c924b31.png" alt="Detailed view of a complex data visualization dashboard, dark theme, high density information, financial data, webgl rendering" />
+                            </div>
+                            <div class="h-80 rounded-[24px] overflow-hidden border border-gray-200">
+                                <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/34d9ddbdf5-fe208a2cf365684173bb.png" alt="Code snippet interface showing complex react and webgl integration, dark terminal theme, syntax highlighting" />
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <hr class="border-gray-300 my-16">
+
+                <!-- Client Logos / Credentials -->
+                <section id="clients" class="py-12">
+                    <div class="text-center mb-12">
+                        <h3 class="text-sm font-mono font-bold tracking-widest text-gray-400 uppercase mb-3">Trusted By</h3>
+                        <h2 class="text-2xl font-bold text-brand-dark">Engineering teams at industry-leading organizations.</h2>
+                    </div>
+                    
+                    <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                        <!-- Using FA icons as placeholder logos for a clean, tech-focused look -->
+                        <div class="flex items-center gap-3 text-2xl font-bold font-sans text-brand-dark">
+                            <i class="fa-brands fa-aws text-4xl"></i> AWS Partner
+                        </div>
+                        <div class="flex items-center gap-3 text-2xl font-bold font-sans text-brand-dark">
+                            <i class="fa-brands fa-stripe text-4xl"></i> Stripe
+                        </div>
+                        <div class="flex items-center gap-3 text-2xl font-bold font-sans text-brand-dark">
+                            <i class="fa-brands fa-hubspot text-4xl"></i> HubSpot
+                        </div>
+                        <div class="flex items-center gap-3 text-2xl font-bold font-sans text-brand-dark">
+                            <i class="fa-brands fa-figma text-4xl"></i> Figma
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- CTA Section (Preserved styling from context) -->
+        <section id="cta" class="bg-brand-dark py-24 px-4 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">Ready to build something exceptional?</h2>
+                <p class="text-xl text-gray-400 mb-10">I'm currently accepting new projects for Q3. Let's discuss how we can elevate your digital product.</p>
+                <a href="#contact" class="inline-flex items-center justify-center bg-brand-orange hover:bg-[#e65c00] text-white text-lg font-semibold px-10 py-4 rounded-full transition-all duration-300 shadow-[0_4px_14px_0_rgba(255,102,0,0.39)] hover:shadow-[0_6px_20px_rgba(255,102,0,0.23)]">
+                    Start a Conversation
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer (Preserved from context) -->
+    <footer id="footer" class="bg-black py-12 px-4 border-t border-white/10">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-2 text-white font-bold text-xl">
+                <i class="fa-solid fa-layer-group text-brand-orange"></i> Alex Mercer
+            </div>
+            
+            <div class="flex gap-6">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-github text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-dribbble text-xl"></i></a>
+            </div>
+            
+            <div class="text-gray-500 text-sm">
+                &copy; 2024 Alex Mercer. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function initializeCharts() {
+            try {
+                // Performance Chart for Case Study
+                const perfData = [
+                    {
+                        type: 'scatter',
+                        mode: 'lines',
+                        name: 'Legacy SVG',
+                        x: ['10k', '50k', '100k', '500k', '1M'],
+                        y: [45, 12, 2, 0, 0],
+                        line: { color: '#E5E5E5', width: 3, shape: 'spline' }
+                    },
+                    {
+                        type: 'scatter',
+                        mode: 'lines',
+                        name: 'New WebGL Engine',
+                        x: ['10k', '50k', '100k', '500k', '1M', '5M'],
+                        y: [60, 60, 60, 60, 60, 58],
+                        line: { color: '#FF6600', width: 3, shape: 'spline' },
+                        fill: 'tozeroy',
+                        fillcolor: 'rgba(255, 102, 0, 0.1)'
+                    }
+                ];
+
+                const perfLayout = {
+                    margin: { t: 10, r: 10, b: 30, l: 30 },
+                    plot_bgcolor: 'rgba(0,0,0,0)',
+                    paper_bgcolor: 'rgba(0,0,0,0)',
+                    showlegend: true,
+                    legend: { orientation: 'h', y: -0.2 },
+                    xaxis: {
+                        tickfont: { family: 'JetBrains Mono, monospace', size: 10, color: '#666' },
+                        showgrid: false
+                    },
+                    yaxis: {
+                        title: { text: 'FPS', font: { family: 'JetBrains Mono, monospace', size: 10, color: '#666' } },
+                        showgrid: true,
+                        gridcolor: 'rgba(0,0,0,0.05)',
+                        range: [0, 65],
+                        tickfont: { family: 'JetBrains Mono, monospace', size: 10, color: '#666' }
+                    }
+                };
+
+                if(document.getElementById('performanceChart')) {
+                    Plotly.newPlot('performanceChart', perfData, perfLayout, {responsive: true, displayModeBar: false});
+                }
+
+            } catch (error) {
+                console.error('Error initializing charts:', error);
+            }
+        }
+
+        window.addEventListener('load', initializeCharts);
+        setTimeout(initializeCharts, 1200);
+    </script>
+</body>
+</html>

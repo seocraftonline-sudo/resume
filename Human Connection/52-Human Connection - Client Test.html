@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials - Personal Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>window.FontAwesomeConfig = { autoReplaceSvg: "nest"};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.plot.ly/plotly-3.1.1.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        primary: '#1A3626', 
+                        accent: '#4ADE80', 
+                        surface: '#112218', 
+                        textMain: '#F8FAFC',
+                        textMuted: '#94A3B8'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { margin: 0; padding: 0; background-color: #0F172A; color: #F8FAFC; overflow-x: hidden; }
+        .hero-bg {
+            background: linear-gradient(180deg, rgba(26,54,38,0.9) 0%, rgba(15,23,42,1) 100%),
+                        repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(255,255,255,0.03) 40px, rgba(255,255,255,0.03) 80px);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .hand-drawn-border {
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+        }
+        ::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="antialiased selection:bg-accent selection:text-primary m-0 p-0">
+
+    <!-- Navigation -->
+    <nav id="header" class="fixed w-full top-0 z-50 glass-card border-b-0 py-4 px-6 md:px-12 flex justify-between items-center transition-all duration-300">
+        <a href="#" class="text-2xl font-serif tracking-wide flex items-center gap-2 text-white">
+            Michael <span class="text-accent text-sm">✦</span>
+        </a>
+        <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-textMuted">
+            <a href="#" class="hover:text-white transition-colors">Home</a>
+            <a href="#about" class="hover:text-white transition-colors">About Me</a>
+            <a href="#services" class="hover:text-white transition-colors">My Services</a>
+            <a href="#portfolio" class="hover:text-white transition-colors">Portfolio</a>
+            <a href="#blog" class="hover:text-white transition-colors">Blog</a>
+            <a href="#testimonials" class="text-white hover:text-accent transition-colors border-b border-accent pb-1">Testimonials</a>
+        </div>
+        <a href="mailto:hello@example.com" class="hidden md:flex items-center gap-2 text-sm text-textMuted hover:text-white transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            hello@example.com
+        </a>
+        <button class="md:hidden text-white focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+    </nav>
+
+    <!-- Introduction & Featured Endorsement -->
+    <section id="testimonials_hero" class="pt-40 pb-20 relative hero-bg min-h-[70vh] flex flex-col justify-center border-b border-white/5">
+        <div class="container mx-auto px-6 md:px-12 max-w-[1200px] relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-textMuted mb-6">
+                    <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                    Words from Partners
+                </div>
+                <h1 class="text-5xl md:text-7xl font-serif mb-6 leading-tight text-white">
+                    The <span class="text-accent italic">Human</span> Connection.
+                </h1>
+                <p class="text-xl text-textMuted font-serif italic leading-relaxed">
+                    Beyond the metrics and deliverables, the true measure of success is the relationships we build. Here are some thoughts from the incredible people I've had the privilege to work with.
+                </p>
+            </div>
+
+            <!-- Featured Testimonial -->
+            <div class="glass-card p-8 md:p-12 rounded-[32px] border border-white/10 shadow-[0_16px_48px_rgba(0,0,0,0.4)] relative overflow-hidden group">
+                <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-50"></div>
+                <div class="relative z-10 flex flex-col md:flex-row gap-8 items-center">
+                    <div class="w-full md:w-1/3 flex flex-col items-center text-center">
+                        <div class="w-32 h-32 rounded-full overflow-hidden border-2 border-accent/30 mb-4 shadow-[0_0_20px_rgba(74,222,128,0.2)]">
+                            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-4.jpg" alt="Sarah Jenkins" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-medium text-white mb-1">Sarah Jenkins</h3>
+                        <p class="text-accent text-sm mb-2">VP of Product, TechFlow</p>
+                        <div class="flex gap-1 text-accent text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <i class="fa-solid fa-quote-left text-4xl text-white/10 mb-4 block"></i>
+                        <p class="text-2xl md:text-3xl font-serif text-white leading-relaxed mb-6">
+                            "Michael doesn't just design interfaces; he designs experiences that feel fundamentally human. Working with him wasn't just a transaction, it was a partnership that completely transformed how our team approaches user empathy."
+                        </p>
+                        <a href="#" class="inline-flex items-center gap-2 text-accent text-sm font-medium hover:text-white transition-colors">
+                            Read the full case study <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Filter -->
+    <section id="testimonial_filters" class="py-8 bg-[#0F172A] border-b border-white/5 sticky top-[72px] z-40 glass-card">
+        <div class="container mx-auto px-6 md:px-12 max-w-[1200px]">
+            <div class="flex flex-wrap items-center justify-center gap-3">
+                <button class="px-6 py-2 rounded-full bg-white/10 border border-white/20 text-white text-sm font-medium hover:bg-white/20 transition-colors">All Stories</button>
+                <button class="px-6 py-2 rounded-full bg-transparent border border-white/10 text-textMuted text-sm font-medium hover:bg-white/5 hover:text-white transition-colors">Design Leadership</button>
+                <button class="px-6 py-2 rounded-full bg-transparent border border-white/10 text-textMuted text-sm font-medium hover:bg-white/5 hover:text-white transition-colors">Product Strategy</button>
+                <button class="px-6 py-2 rounded-full bg-transparent border border-white/10 text-textMuted text-sm font-medium hover:bg-white/5 hover:text-white transition-colors">Workshops & Speaking</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Grid -->
+    <section id="testimonials_grid" class="py-24 bg-[#0F172A] relative">
+        <div class="container mx-auto px-6 md:px-12 max-w-[1200px]">
+            <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+                
+                <!-- Card 1 -->
+                <div class="glass-card p-6 rounded-[24px] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)] break-inside-avoid hover:-translate-y-1 transition-transform duration-300">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-1.jpg" alt="Emma Thompson" class="w-12 h-12 rounded-full object-cover border border-white/10">
+                        <div>
+                            <h4 class="text-white font-medium text-sm">Emma Thompson</h4>
+                            <p class="text-textMuted text-xs">Founder, Bloom Agency</p>
+                        </div>
+                    </div>
+                    <p class="text-textMuted text-sm leading-relaxed mb-4">
+                        "The level of thought and care put into every detail is astounding. It felt less like hiring a consultant and more like gaining a co-founder for a few months."
+                    </p>
+                    <div class="flex gap-1 text-accent text-xs">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass-card p-6 rounded-[24px] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)] break-inside-avoid hover:-translate-y-1 transition-transform duration-300">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" alt="David Chen" class="w-12 h-12 rounded-full object-cover border border-white/10">
+                        <div>
+                            <h4 class="text-white font-medium text-sm">David Chen</h4>
+                            <p class="text-textMuted text-xs">CTO, Innovate Inc</p>
+                        </div>
+                    </div>
+                    <p class="text-textMuted text-sm leading-relaxed mb-4">
+                        "Bridging the gap between engineering constraints and human-centered design is rare. Michael does it effortlessly while keeping everyone aligned and motivated."
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-card p-6 rounded-[24px] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)] break-inside-avoid hover:-translate-y-1 transition-transform duration-300 bg-surface/30">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-accent">
+                            <i class="fa-brands fa-linkedin-in text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-medium text-sm">Marcus Johnson</h4>
+                            <p class="text-textMuted text-xs">Product Lead</p>
+                        </div>
+                    </div>
+                    <p class="text-textMuted text-sm leading-relaxed mb-4">
+                        "A masterclass in empathy-driven design. The workshops were transformative for our team culture."
+                    </p>
+                    <a href="#" class="text-xs text-accent hover:underline">Verified on LinkedIn</a>
+                </div>
+
+                 <!-- Card 4 -->
+                 <div class="glass-card p-6 rounded-[24px] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)] break-inside-avoid hover:-translate-y-1 transition-transform duration-300">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg" alt="Sophia Martinez" class="w-12 h-12 rounded-full object-cover border border-white/10">
+                        <div>
+                            <h4 class="text-white font-medium text-sm">Sophia Martinez</h4>
+                            <p class="text-textMuted text-xs">Director of UX, Global Retail</p>
+                        </div>
+                    </div>
+                    <p class="text-textMuted text-sm leading-relaxed mb-4">
+                        "We brought Michael in to solve a conversion problem, but he ended up solving a fundamental communication breakdown between our departments. The ROI was immediate and lasting."
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Stories -->
+    <section id="video_stories" class="py-24 bg-[#0F172A] border-t border-white/5 relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-primary/5"></div>
+        <div class="container mx-auto px-6 md:px-12 max-w-[1200px] relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif text-white mb-4">Conversations & <span class="text-accent italic">Reflections</span></h2>
+                <p class="text-textMuted max-w-2xl mx-auto">Hear directly from partners about our journey together.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Video 1 -->
+                <div class="glass-card rounded-[24px] overflow-hidden border border-white/10 group cursor-pointer relative">
+                    <div class="h-64 bg-surface/50 relative flex items-center justify-center">
+                        <img class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/bef06a6995-8f81e7028b7b2b54c538.png" alt="Warm, candid video thumbnail of a professional woman speaking in a well-lit office, high quality" />
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full bg-accent/90 text-primary flex items-center justify-center text-2xl pl-1 shadow-[0_0_30px_rgba(74,222,128,0.3)] transform group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-medium text-white mb-1">Rebuilding Trust Through Design</h3>
+                        <p class="text-sm text-textMuted">Elena Rodriguez, CEO at FinTech Solutions</p>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="glass-card rounded-[24px] overflow-hidden border border-white/10 group cursor-pointer relative">
+                    <div class="h-64 bg-surface/50 relative flex items-center justify-center">
+                        <img class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/bef06a6995-6a656ea8f606414e68ba.png" alt="Warm, candid video thumbnail of a creative director in a studio setting, high quality" />
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full bg-accent/90 text-primary flex items-center justify-center text-2xl pl-1 shadow-[0_0_30px_rgba(74,222,128,0.3)] transform group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-medium text-white mb-1">The Workshop Experience</h3>
+                        <p class="text-sm text-textMuted">James Wilson, Head of Design at Creative Co.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Metrics & Results -->
+    <section id="impact_metrics" class="py-24 bg-[#0F172A] border-t border-white/5">
+        <div class="container mx-auto px-6 md:px-12 max-w-[1200px]">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <div class="w-full lg:w-1/2">
+                    <h2 class="text-4xl font-serif text-white mb-6">Measurable <span class="text-accent italic">Impact</span></h2>
+                    <p class="text-textMuted mb-8 text-lg leading-relaxed">
+                        While the human connection is the foundation, the results are what sustain the partnership. Here is a snapshot of the tangible outcomes we've achieved together across various engagements.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="glass-card p-6 rounded-[24px] border border-white/10">
+                            <div class="text-3xl font-serif text-accent mb-2">40%</div>
+                            <div class="text-sm text-white font-medium mb-1">Average Conversion Lift</div>
+                            <div class="text-xs text-textMuted">Post-redesign metrics</div>
+                        </div>
+                        <div class="glass-card p-6 rounded-[24px] border border-white/10">
+                            <div class="text-3xl font-serif text-accent mb-2">12+</div>
+                            <div class="text-sm text-white font-medium mb-1">Teams Trained</div>
+                            <div class="text-xs text-textMuted">In empathy-driven design</div>
+                        </div>
+                        <div class="glass-card p-6 rounded-[24px] border border-white/10">
+                            <div class="text-3xl font-serif text-accent mb-2">85%</div>
+                            <div class="text-sm text-white font-medium mb-1">Retention Rate</div>
+                            <div class="text-xs text-textMuted">Long-term advisory clients</div>
+                        </div>
+                        <div class="glass-card p-6 rounded-[24px] border border-white/10">
+                            <div class="text-3xl font-serif text-accent mb-2">$2M+</div>
+                            <div class="text-sm text-white font-medium mb-1">Value Generated</div>
+                            <div class="text-xs text-textMuted">Through strategic pivots</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="w-full lg:w-1/2">
+                    <div class="glass-card p-6 rounded-[24px] border border-white/10 shadow-[0_16px_48px_rgba(0,0,0,0.4)]">
+                        <h3 class="text-lg font-medium text-white mb-6">Client Growth Trajectory</h3>
+                        <div id="impactChart" class="h-[300px] w-full"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section id="contact_cta" class="py-24 relative overflow-hidden border-y border-white/5 bg-[#0F172A]">
+        <div class="absolute inset-0 hero-bg opacity-30"></div>
+        <div class="container mx-auto px-6 md:px-12 max-w-[1000px] relative z-10">
+            <div class="glass-card p-10 md:p-16 rounded-[32px] border border-white/10 shadow-[0_16px_48px_rgba(0,0,0,0.4)] text-center relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl -ml-20 -mb-20"></div>
+                
+                <div class="relative z-10">
+                    <div class="w-16 h-16 mx-auto bg-surface border border-white/10 rounded-full flex items-center justify-center text-accent text-2xl mb-6 shadow-[0_4px_16px_rgba(0,0,0,0.2)]">
+                        <i class="fa-regular fa-handshake"></i>
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-serif text-white mb-6">Let's start a <span class="text-accent italic">conversation</span>.</h2>
+                    <p class="text-textMuted text-lg mb-10 max-w-2xl mx-auto">
+                        Whether you have a specific project in mind or just want to explore how we might work together, I'm always open to connecting.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <button class="px-8 py-4 rounded-full bg-accent text-primary font-medium text-lg transition-all shadow-[0_0_20px_rgba(74,222,128,0.2)] hover:shadow-[0_0_30px_rgba(74,222,128,0.4)]">
+                            Book a Coffee Chat
+                        </button>
+                        <button class="px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-medium text-lg hover:bg-white/10 transition-colors">
+                            Send an Email
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="py-12 border-t border-white/5 bg-black/20">
+        <div class="container mx-auto px-6 md:px-12 max-w-[1440px] flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-2xl font-serif tracking-wide flex items-center gap-2 text-white">
+                Michael <span class="text-accent text-sm">✦</span>
+            </div>
+            <div class="flex gap-6 text-textMuted">
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-dribbble text-xl"></i></a>
+            </div>
+            <p class="text-sm text-textMuted">© 2023 Michael Design. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function initializeCharts() {
+            try {
+                const impactData = [{
+                    x: ['Q1', 'Q2', 'Q3', 'Q4'],
+                    y: [10, 25, 45, 85],
+                    type: 'scatter',
+                    mode: 'lines',
+                    fill: 'tozeroy',
+                    line: {
+                        color: '#4ADE80',
+                        width: 3,
+                        shape: 'spline',
+                        smoothing: 1.3
+                    },
+                    fillcolor: 'rgba(74, 222, 128, 0.1)'
+                }];
+
+                const impactLayout = {
+                    margin: { t: 10, r: 10, b: 30, l: 30 },
+                    plot_bgcolor: 'transparent',
+                    paper_bgcolor: 'transparent',
+                    xaxis: {
+                        showgrid: false,
+                        color: '#94A3B8'
+                    },
+                    yaxis: {
+                        showgrid: true,
+                        gridcolor: 'rgba(255,255,255,0.05)',
+                        color: '#94A3B8'
+                    },
+                    showlegend: false
+                };
+
+                const config = { responsive: true, displayModeBar: false };
+                
+                Plotly.newPlot('impactChart', impactData, impactLayout, config);
+            } catch(e) {
+                console.error('Chart initialization failed:', e);
+            }
+        }
+
+        window.addEventListener('load', initializeCharts);
+        setTimeout(initializeCharts, 1200);
+    </script>
+</body>
+</html>

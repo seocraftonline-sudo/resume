@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Will Beeching</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.plot.ly/plotly-3.1.1.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f6f6f6',
+                            100: '#e7e7e7',
+                            200: '#d1d1d1',
+                            300: '#b0b0b0',
+                            400: '#888888',
+                            500: '#6d6d6d',
+                            600: '#5d5d5d',
+                            700: '#4f4f4f',
+                            800: '#454545',
+                            900: '#3d3d3d',
+                            950: '#1a1a1a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f6f6f6;
+            color: #1a1a1a;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        ::-webkit-scrollbar { display: none; }
+        .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); }
+        
+        .disruptive-text {
+            font-family: 'Times New Roman', Times, serif;
+            letter-spacing: -0.05em;
+            line-height: 0.9;
+        }
+        .mono-label {
+            font-family: monospace;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Resume specific styles mimicking ref grid/borders */
+        .resume-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        @media (min-width: 768px) {
+            .resume-grid {
+                grid-template-columns: 3fr 9fr;
+                gap: 4rem;
+            }
+        }
+        .timeline-item {
+            position: relative;
+            padding-bottom: 3rem;
+            border-left: 1px solid #d1d1d1;
+            padding-left: 2rem;
+            margin-left: 1rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -0.35rem;
+            top: 0.5rem;
+            width: 0.75rem;
+            height: 0.75rem;
+            background-color: #1a1a1a;
+            border-radius: 50%;
+        }
+        .timeline-item:last-child {
+            border-left-color: transparent;
+        }
+        
+        .bento-card {
+            background-color: #ffffff;
+            border: 1px solid #e7e7e7;
+            border-radius: 8px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        .bento-card:hover {
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05);
+            border-color: #d1d1d1;
+        }
+    </style>
+</head>
+<body class="m-0 p-0 font-sans selection:bg-brand-950 selection:text-white bg-brand-50">
+
+    <!-- Header / Nav (Copied exactly from prior HTML, active state changed) -->
+    <header id="header" class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 22H22L12 2Z" fill="black"/>
+                    <path d="M12 8L6 20H18L12 8Z" fill="white"/>
+                </svg>
+                <span class="font-semibold text-lg tracking-tight">WB.</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#" class="text-sm font-medium text-brand-500 hover:text-brand-950 transition-colors">Work</a>
+                <a href="#" class="text-sm font-medium text-brand-950 hover:text-brand-500 transition-colors">About</a>
+                <a href="#" class="text-sm font-medium text-brand-500 hover:text-brand-950 transition-colors">Services</a>
+                <a href="#" class="text-sm font-medium text-brand-500 hover:text-brand-950 transition-colors">Blog</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <span class="text-xs font-mono text-brand-400 hidden lg:block">LON 12:33 ☀️</span>
+                <a href="#contact" class="px-5 py-2.5 bg-brand-950 text-white text-sm font-medium rounded-full hover:bg-brand-800 transition-colors">Let's Talk</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="pt-32 lg:pt-48 pb-24">
+        
+        <!-- Professional Summary & Hero -->
+        <section id="resume_hero" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-24 relative">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
+                <div>
+                    <h1 class="disruptive-text text-6xl md:text-8xl lg:text-[100px] text-brand-950 uppercase mix-blend-multiply">
+                        Curriculum <br>
+                        Vitae
+                    </h1>
+                </div>
+                <div>
+                    <a href="#" class="inline-flex items-center gap-3 px-8 py-4 bg-brand-950 text-white text-sm uppercase tracking-widest font-medium rounded-full hover:bg-brand-800 transition-colors hover-lift group">
+                        <span>Download PDF</span>
+                        <i class="fa-solid fa-arrow-down group-hover:translate-y-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="resume-grid border-t border-brand-200 pt-16">
+                <div>
+                    <span class="mono-label text-brand-500">Professional Summary</span>
+                </div>
+                <div>
+                    <p class="text-2xl md:text-3xl lg:text-4xl font-light leading-snug text-brand-950 uppercase tracking-tight max-w-4xl">
+                        A Creative Director and Technologist with over 12 years of experience architecting digital experiences that defy convention. Specializing in the intersection of generative UI, spatial computing, and brand narrative, driving engagement metrics up by an average of 340% for enterprise clients globally.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience Timeline -->
+        <section id="work_experience" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-32">
+            <div class="resume-grid border-t border-brand-200 pt-16">
+                <div>
+                    <span class="mono-label text-brand-500">Experience</span>
+                </div>
+                <div class="max-w-4xl">
+                    
+                    <!-- Role 1 -->
+                    <div class="timeline-item group">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-baseline mb-4">
+                            <h3 class="disruptive-text text-4xl text-brand-950 uppercase">Head of Design Strategy</h3>
+                            <span class="mono-label text-brand-500 mt-2 md:mt-0">2023 — Present</span>
+                        </div>
+                        <div class="flex items-center gap-4 mb-6 text-sm uppercase tracking-wider font-medium text-brand-600">
+                            <span>Nova Tech</span>
+                            <span class="w-1 h-1 rounded-full bg-brand-300"></span>
+                            <span>New York, NY</span>
+                        </div>
+                        <p class="text-brand-800 mb-6 leading-relaxed">
+                            Leading a cross-functional team of 24 designers and technologists to redefine the flagship product suite. Implemented a "controlled disruption" design system that increased user retention by 42% in the first quarter.
+                        </p>
+                        <ul class="space-y-3 text-sm text-brand-700 list-disc list-inside">
+                            <li>Spearheaded the integration of AI-driven generative UI components, reducing time-to-market for new features by 60%.</li>
+                            <li>Directed the brand refresh, aligning visual identity with a more editorial, high-contrast aesthetic that won 3 industry awards.</li>
+                            <li>Mentored senior designers, establishing a culture of experimental prototyping before rigorous validation.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Role 2 -->
+                    <div class="timeline-item group">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-baseline mb-4">
+                            <h3 class="disruptive-text text-4xl text-brand-950 uppercase">Creative Director</h3>
+                            <span class="mono-label text-brand-500 mt-2 md:mt-0">2019 — 2023</span>
+                        </div>
+                        <div class="flex items-center gap-4 mb-6 text-sm uppercase tracking-wider font-medium text-brand-600">
+                            <span>Disrupt Studio</span>
+                            <span class="w-1 h-1 rounded-full bg-brand-300"></span>
+                            <span>London, UK</span>
+                        </div>
+                        <p class="text-brand-800 mb-6 leading-relaxed">
+                            Founded and scaled a boutique creative technology studio focusing on high-end fintech and luxury brands. Grew revenue to $4M ARR within three years through uncompromising design standards.
+                        </p>
+                        <ul class="space-y-3 text-sm text-brand-700 list-disc list-inside">
+                            <li>Delivered end-to-end digital experiences for 15+ Fortune 500 clients, achieving an average NPS score of 88.</li>
+                            <li>Architected a proprietary headless CMS framework tailored for highly animated, WebGL-heavy frontends.</li>
+                            <li>Managed P&L, client acquisition, and global talent recruitment across 4 time zones.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Role 3 -->
+                    <div class="timeline-item group">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-baseline mb-4">
+                            <h3 class="disruptive-text text-4xl text-brand-950 uppercase">Senior Interactive Designer</h3>
+                            <span class="mono-label text-brand-500 mt-2 md:mt-0">2015 — 2019</span>
+                        </div>
+                        <div class="flex items-center gap-4 mb-6 text-sm uppercase tracking-wider font-medium text-brand-600">
+                            <span>Ogilvy</span>
+                            <span class="w-1 h-1 rounded-full bg-brand-300"></span>
+                            <span>San Francisco, CA</span>
+                        </div>
+                        <p class="text-brand-800 mb-6 leading-relaxed">
+                            Transitioned from architectural design to digital interfaces, bringing spatial thinking to web environments. Lead designer on major automotive and tech accounts.
+                        </p>
+                        <ul class="space-y-3 text-sm text-brand-700 list-disc list-inside">
+                            <li>Designed the award-winning "Future Drive" immersive web platform, garnering 2M+ unique visitors in month one.</li>
+                            <li>Pioneered the agency's use of early WebXR technologies for client pitches.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Certifications -->
+        <section id="education_certs" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-32">
+            <div class="resume-grid border-t border-brand-200 pt-16">
+                <div>
+                    <span class="mono-label text-brand-500">Education</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl">
+                    
+                    <div class="bento-card">
+                        <span class="mono-label text-brand-400 block mb-4">2011 — 2015</span>
+                        <h4 class="text-xl font-medium text-brand-950 mb-2">MArch Architecture</h4>
+                        <p class="text-sm text-brand-600 uppercase tracking-wider mb-4">University College London (UCL)</p>
+                        <p class="text-sm text-brand-700">Graduated with Distinction. Thesis focused on parametric design systems and their application in temporary urban structures.</p>
+                    </div>
+
+                    <div class="bento-card">
+                        <span class="mono-label text-brand-400 block mb-4">2020</span>
+                        <h4 class="text-xl font-medium text-brand-950 mb-2">Executive Leadership</h4>
+                        <p class="text-sm text-brand-600 uppercase tracking-wider mb-4">Stanford Graduate School of Business</p>
+                        <p class="text-sm text-brand-700">Intensive program focusing on leading creative teams, strategic innovation, and managing disruptive change in tech.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills & Languages Grid -->
+        <section id="skills_languages" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-32">
+            <div class="resume-grid border-t border-brand-200 pt-16">
+                <div>
+                    <span class="mono-label text-brand-500">Capabilities</span>
+                </div>
+                <div class="max-w-4xl">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        
+                        <!-- Skill Category -->
+                        <div>
+                            <h4 class="disruptive-text text-2xl text-brand-950 uppercase mb-6 border-b border-brand-200 pb-2">Design</h4>
+                            <ul class="space-y-3 text-sm text-brand-800 uppercase tracking-wider">
+                                <li class="flex justify-between items-center"><span>Art Direction</span> <span class="text-brand-400">Expert</span></li>
+                                <li class="flex justify-between items-center"><span>UI/UX Architecture</span> <span class="text-brand-400">Expert</span></li>
+                                <li class="flex justify-between items-center"><span>Interaction Design</span> <span class="text-brand-400">Expert</span></li>
+                                <li class="flex justify-between items-center"><span>Spatial Computing</span> <span class="text-brand-400">Advanced</span></li>
+                                <li class="flex justify-between items-center"><span>Typography</span> <span class="text-brand-400">Expert</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- Skill Category -->
+                        <div>
+                            <h4 class="disruptive-text text-2xl text-brand-950 uppercase mb-6 border-b border-brand-200 pb-2">Technology</h4>
+                            <ul class="space-y-3 text-sm text-brand-800 uppercase tracking-wider">
+                                <li class="flex justify-between items-center"><span>React / Next.js</span> <span class="text-brand-400">Advanced</span></li>
+                                <li class="flex justify-between items-center"><span>WebGL / Three.js</span> <span class="text-brand-400">Advanced</span></li>
+                                <li class="flex justify-between items-center"><span>CSS / Tailwind</span> <span class="text-brand-400">Expert</span></li>
+                                <li class="flex justify-between items-center"><span>Creative Coding</span> <span class="text-brand-400">Expert</span></li>
+                                <li class="flex justify-between items-center"><span>Python</span> <span class="text-brand-400">Intermediate</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- Languages -->
+                        <div>
+                            <h4 class="disruptive-text text-2xl text-brand-950 uppercase mb-6 border-b border-brand-200 pb-2">Languages</h4>
+                            <ul class="space-y-3 text-sm text-brand-800 uppercase tracking-wider">
+                                <li class="flex justify-between items-center"><span>English</span> <span class="text-brand-400">Native</span></li>
+                                <li class="flex justify-between items-center"><span>French</span> <span class="text-brand-400">Fluent</span></li>
+                                <li class="flex justify-between items-center"><span>Japanese</span> <span class="text-brand-400">Conversational</span></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Volunteer Work / Community -->
+        <section id="community" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-32">
+            <div class="resume-grid border-t border-brand-200 pt-16">
+                <div>
+                    <span class="mono-label text-brand-500">Community</span>
+                </div>
+                <div class="max-w-4xl">
+                    <div class="bento-card">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-baseline mb-4">
+                            <h4 class="text-xl font-medium text-brand-950">Design Mentor</h4>
+                            <span class="mono-label text-brand-500 mt-2 md:mt-0">2021 — Present</span>
+                        </div>
+                        <p class="text-sm text-brand-600 uppercase tracking-wider mb-4">AIGA New York</p>
+                        <p class="text-sm text-brand-700 leading-relaxed">
+                            Providing pro-bono mentorship to underrepresented youth entering the design and technology fields. Organizing quarterly portfolio reviews and workshop sessions on creative coding.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer (Copied exactly from prior HTML) -->
+    <footer id="footer" class="bg-white border-t border-gray-100 py-12">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-sm text-brand-500">
+                &copy; 2026 Will Beeching. All Rights Reserved.
+            </div>
+            <div class="flex items-center gap-6 text-sm font-medium">
+                <a href="#" class="text-brand-950 hover:text-brand-500 transition-colors">GitHub</a>
+                <a href="#" class="text-brand-950 hover:text-brand-500 transition-colors">LinkedIn</a>
+                <a href="#" class="text-brand-950 hover:text-brand-500 transition-colors">Instagram</a>
+                <a href="#" class="text-brand-950 hover:text-brand-500 transition-colors">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

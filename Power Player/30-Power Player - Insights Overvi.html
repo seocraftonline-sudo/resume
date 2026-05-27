@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights - Edward James</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        surface: '#F9FAFB',
+                        card: '#F3F4F6',
+                        primary: '#111827',
+                        secondary: '#4B5563',
+                        accent: '#4F46E5',
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px rgba(0, 0, 0, 0.05)',
+                        'glow': '0 0 20px rgba(79, 70, 229, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #F9FAFB;
+            color: #111827;
+            -webkit-font-smoothing: antialiased;
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="m-0 p-0 bg-surface min-h-screen flex flex-col font-sans">
+
+    <!-- Navigation (Preserved from Context) -->
+    <nav id="header" class="w-full bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">
+                    EJ
+                </div>
+                <span class="font-semibold text-lg tracking-tight">Edward James</span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-secondary">
+                <a href="#" class="hover:text-primary transition-colors">Home</a>
+                <a href="#" class="hover:text-primary transition-colors">About</a>
+                <a href="#" class="hover:text-primary transition-colors">Expertise</a>
+                <a href="#" class="hover:text-primary transition-colors">Portfolio</a>
+                <a href="#" class="hover:text-primary transition-colors">Credibility</a>
+                <a href="#" class="text-primary font-bold transition-colors border-b-2 border-primary pb-1">Insights</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <button class="hidden md:flex px-5 py-2.5 bg-primary text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors shadow-soft">
+                    Contact Me
+                </button>
+                <button class="md:hidden w-10 h-10 flex items-center justify-center bg-card rounded-full text-primary">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-1 w-full flex flex-col pb-24">
+
+        <!-- Blog Introduction Hero -->
+        <section id="blog-hero" class="w-full max-w-7xl mx-auto px-6 py-20 md:py-32 flex flex-col items-center text-center gap-6 border-b border-gray-200">
+            <span class="px-4 py-1.5 bg-white border border-gray-200 text-secondary text-sm font-medium rounded-full shadow-soft tracking-wide uppercase">
+                Executive Insights
+            </span>
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-primary font-serif max-w-4xl leading-tight">
+                Strategic Perspectives on <span class="text-secondary">Risk & Governance</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-secondary font-medium max-w-3xl leading-relaxed mt-4">
+                In-depth analysis, industry commentary, and actionable strategies for board members and senior executives navigating complex organizational challenges. New insights published bi-weekly.
+            </p>
+        </section>
+
+        <!-- Main Content Layout -->
+        <div class="w-full max-w-7xl mx-auto px-6 py-16 flex flex-col gap-24">
+
+            <!-- Featured Post -->
+            <section id="featured-post" class="w-full">
+                <div class="bg-white rounded-2xl border border-gray-200 shadow-soft overflow-hidden flex flex-col lg:flex-row hover:shadow-glow transition-shadow duration-300">
+                    <div class="w-full lg:w-1/2 h-64 lg:h-auto relative overflow-hidden">
+                        <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/190a4cb596-102fb230e2ba2416bff0.png" alt="Professional boardroom meeting, high contrast, cinematic lighting, corporate setting" />
+                    </div>
+                    <div class="w-full lg:w-1/2 p-10 md:p-16 flex flex-col justify-center">
+                        <div class="flex items-center gap-4 mb-6">
+                            <span class="px-3 py-1 bg-surface border border-gray-200 text-xs font-bold text-secondary uppercase tracking-widest rounded-full">Corporate Governance</span>
+                            <span class="text-sm font-medium text-secondary">October 24, 2026</span>
+                            <span class="text-sm font-medium text-secondary flex items-center gap-1"><i class="fa-regular fa-clock text-xs"></i> 8 min read</span>
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-primary font-serif mb-6 leading-tight">
+                            The Evolution of the Audit Committee in the Age of Artificial Intelligence
+                        </h2>
+                        <p class="text-lg text-secondary leading-relaxed mb-10">
+                            As organizations rapidly integrate AI into core operations, the audit committee's mandate must expand beyond traditional financial oversight. This analysis explores the emerging frameworks required to govern algorithmic risk and data integrity at the board level.
+                        </p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold text-xs">EJ</div>
+                                <span class="font-medium text-primary text-sm">Edward James</span>
+                            </div>
+                            <a href="#" class="px-6 py-3 bg-primary text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors shadow-soft flex items-center gap-2">
+                                Read Article <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Grid & Filters -->
+            <section id="post-grid" class="w-full flex flex-col gap-12">
+                
+                <!-- Filters -->
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b border-gray-200 pb-6">
+                    <h3 class="text-2xl font-bold text-primary font-serif">Recent Publications</h3>
+                    
+                    <div class="flex flex-wrap items-center gap-3">
+                        <button class="px-4 py-2 bg-primary text-white text-sm font-medium rounded-full shadow-soft transition-colors">
+                            All Topics
+                        </button>
+                        <button class="px-4 py-2 bg-white border border-gray-200 text-secondary text-sm font-medium rounded-full hover:bg-surface transition-colors shadow-soft">
+                            Risk Management
+                        </button>
+                        <button class="px-4 py-2 bg-white border border-gray-200 text-secondary text-sm font-medium rounded-full hover:bg-surface transition-colors shadow-soft">
+                            M&A Strategy
+                        </button>
+                        <button class="px-4 py-2 bg-white border border-gray-200 text-secondary text-sm font-medium rounded-full hover:bg-surface transition-colors shadow-soft">
+                            Board Dynamics
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Card 1 -->
+                    <div class="bg-white rounded-2xl border border-gray-200 shadow-soft overflow-hidden flex flex-col h-full hover:border-gray-400 transition-colors group">
+                        <div class="h-48 overflow-hidden relative">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/bc593c5999-cd5fa00acbc046601786.png" alt="Abstract architectural lines, modern building facade, corporate structure" />
+                            <div class="absolute top-4 left-4">
+                                <span class="px-3 py-1 bg-white/90 backdrop-blur-sm text-xs font-bold text-primary uppercase tracking-widest rounded-full shadow-sm">Risk Management</span>
+                            </div>
+                        </div>
+                        <div class="p-8 flex flex-col flex-1">
+                            <div class="flex items-center gap-4 mb-4 text-sm font-medium text-secondary">
+                                <span>Sep 18, 2026</span>
+                                <span>•</span>
+                                <span class="flex items-center gap-1"><i class="fa-regular fa-clock text-xs"></i> 6 min read</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-primary font-serif mb-4 group-hover:text-accent transition-colors">Quantifying Reputational Risk in Digital Transformations</h4>
+                            <p class="text-sm text-secondary leading-relaxed mb-8 flex-1">
+                                A methodology for boards to assign tangible metrics to the intangible risks associated with large-scale digital overhaul and vendor consolidation.
+                            </p>
+                            <a href="#" class="text-sm font-bold text-primary flex items-center gap-2 mt-auto group-hover:text-accent transition-colors">
+                                Read Full Post <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-white rounded-2xl border border-gray-200 shadow-soft overflow-hidden flex flex-col h-full hover:border-gray-400 transition-colors group">
+                        <div class="h-48 overflow-hidden relative">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/fb25c00c00-ca22f67a22231607d9a2.png" alt="Two executives shaking hands, shallow depth of field, professional deal making" />
+                            <div class="absolute top-4 left-4">
+                                <span class="px-3 py-1 bg-white/90 backdrop-blur-sm text-xs font-bold text-primary uppercase tracking-widest rounded-full shadow-sm">M&A Strategy</span>
+                            </div>
+                        </div>
+                        <div class="p-8 flex flex-col flex-1">
+                            <div class="flex items-center gap-4 mb-4 text-sm font-medium text-secondary">
+                                <span>Aug 05, 2026</span>
+                                <span>•</span>
+                                <span class="flex items-center gap-1"><i class="fa-regular fa-clock text-xs"></i> 12 min read</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-primary font-serif mb-4 group-hover:text-accent transition-colors">Cultural Due Diligence: The Missing Link in M&A</h4>
+                            <p class="text-sm text-secondary leading-relaxed mb-8 flex-1">
+                                Why financial modeling alone fails to predict post-merger success, and how to structure cultural integration frameworks before the deal closes.
+                            </p>
+                            <a href="#" class="text-sm font-bold text-primary flex items-center gap-2 mt-auto group-hover:text-accent transition-colors">
+                                Read Full Post <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-white rounded-2xl border border-gray-200 shadow-soft overflow-hidden flex flex-col h-full hover:border-gray-400 transition-colors group">
+                        <div class="h-48 overflow-hidden relative">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/e05c1f535d-66be6f9fc48d44723ca5.png" alt="Empty boardroom table, focused lighting, corporate decision making environment" />
+                            <div class="absolute top-4 left-4">
+                                <span class="px-3 py-1 bg-white/90 backdrop-blur-sm text-xs font-bold text-primary uppercase tracking-widest rounded-full shadow-sm">Board Dynamics</span>
+                            </div>
+                        </div>
+                        <div class="p-8 flex flex-col flex-1">
+                            <div class="flex items-center gap-4 mb-4 text-sm font-medium text-secondary">
+                                <span>Jul 22, 2026</span>
+                                <span>•</span>
+                                <span class="flex items-center gap-1"><i class="fa-regular fa-clock text-xs"></i> 5 min read</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-primary font-serif mb-4 group-hover:text-accent transition-colors">Navigating Dissent in the Boardroom</h4>
+                            <p class="text-sm text-secondary leading-relaxed mb-8 flex-1">
+                                Strategies for chairs and lead directors to foster constructive debate while preventing factionalism during high-stakes strategic pivots.
+                            </p>
+                            <a href="#" class="text-sm font-bold text-primary flex items-center gap-2 mt-auto group-hover:text-accent transition-colors">
+                                Read Full Post <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="bg-white rounded-2xl border border-gray-200 shadow-soft overflow-hidden flex flex-col h-full hover:border-gray-400 transition-colors group">
+                        <div class="h-48 overflow-hidden relative">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/29a507dde6-3e435a68091d02b983c2.png" alt="Abstract data visualization, clean lines, professional analytics concept" />
+                            <div class="absolute top-4 left-4">
+                                <span class="px-3 py-1 bg-white/90 backdrop-blur-sm text-xs font-bold text-primary uppercase tracking-widest rounded-full shadow-sm">Risk Management</span>
+                            </div>
+                        </div>
+                        <div class="p-8 flex flex-col flex-1">
+                            <div class="flex items-center gap-4 mb-4 text-sm font-medium text-secondary">
+                                <span>Jun 14, 2026</span>
+                                <span>•</span>
+                                <span class="flex items-center gap-1"><i class="fa-regular fa-clock text-xs"></i> 9 min read</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-primary font-serif mb-4 group-hover:text-accent transition-colors">Supply Chain Resilience in a Deglobalizing World</h4>
+                            <p class="text-sm text-secondary leading-relaxed mb-8 flex-1">
+                                Redefining operational redundancy from a cost-center to a strategic asset in the face of shifting geopolitical realities.
+                            </p>
+                            <a href="#" class="text-sm font-bold text-primary flex items-center gap-2 mt-auto group-hover:text-accent transition-colors">
+                                Read Full Post <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="bg-white rounded-2xl border border-gray-200 shadow-soft overflow-hidden flex flex-col h-full hover:border-gray-400 transition-colors group">
+                        <div class="h-48 overflow-hidden relative">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/19ac23518e-764e936106ff5011ffc7.png" alt="Close up of fountain pen on formal document, signing contracts" />
+                            <div class="absolute top-4 left-4">
+                                <span class="px-3 py-1 bg-white/90 backdrop-blur-sm text-xs font-bold text-primary uppercase tracking-widest rounded-full shadow-sm">Corporate Governance</span>
+                            </div>
+                        </div>
+                        <div class="p-8 flex flex-col flex-1">
+                            <div class="flex items-center gap-4 mb-4 text-sm font-medium text-secondary">
+                                <span>May 30, 2026</span>
+                                <span>•</span>
+                                <span class="flex items-center gap-1"><i class="fa-regular fa-clock text-xs"></i> 7 min read</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-primary font-serif mb-4 group-hover:text-accent transition-colors">The CEO Succession Paradox</h4>
+                            <p class="text-sm text-secondary leading-relaxed mb-8 flex-1">
+                                Examining why boards consistently fail to prepare internal candidates, and the systemic changes required to build robust leadership pipelines.
+                            </p>
+                            <a href="#" class="text-sm font-bold text-primary flex items-center gap-2 mt-auto group-hover:text-accent transition-colors">
+                                Read Full Post <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="bg-white rounded-2xl border border-gray-200 shadow-soft overflow-hidden flex flex-col h-full hover:border-gray-400 transition-colors group">
+                        <div class="h-48 overflow-hidden relative">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/6b69c85ca5-2241dcc5d18746128d24.png" alt="Minimalist office environment, clean desk, focus and discipline concept" />
+                            <div class="absolute top-4 left-4">
+                                <span class="px-3 py-1 bg-white/90 backdrop-blur-sm text-xs font-bold text-primary uppercase tracking-widest rounded-full shadow-sm">Leadership</span>
+                            </div>
+                        </div>
+                        <div class="p-8 flex flex-col flex-1">
+                            <div class="flex items-center gap-4 mb-4 text-sm font-medium text-secondary">
+                                <span>May 12, 2026</span>
+                                <span>•</span>
+                                <span class="flex items-center gap-1"><i class="fa-regular fa-clock text-xs"></i> 4 min read</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-primary font-serif mb-4 group-hover:text-accent transition-colors">Executive Discipline in High-Growth Phases</h4>
+                            <p class="text-sm text-secondary leading-relaxed mb-8 flex-1">
+                                Maintaining operational rigor when market conditions encourage reckless expansion and capital misallocation.
+                            </p>
+                            <a href="#" class="text-sm font-bold text-primary flex items-center gap-2 mt-auto group-hover:text-accent transition-colors">
+                                Read Full Post <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <!-- Pagination -->
+                <div class="flex justify-center mt-8">
+                    <div class="flex items-center gap-2">
+                        <button class="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-secondary hover:bg-surface transition-colors shadow-soft"><i class="fa-solid fa-chevron-left text-sm"></i></button>
+                        <button class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm shadow-soft">1</button>
+                        <button class="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-secondary hover:bg-surface transition-colors shadow-soft font-medium text-sm">2</button>
+                        <button class="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-secondary hover:bg-surface transition-colors shadow-soft font-medium text-sm">3</button>
+                        <span class="text-secondary px-2">...</span>
+                        <button class="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-secondary hover:bg-surface transition-colors shadow-soft font-medium text-sm">8</button>
+                        <button class="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-secondary hover:bg-surface transition-colors shadow-soft"><i class="fa-solid fa-chevron-right text-sm"></i></button>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+
+        <!-- Newsletter Signup Banner -->
+        <section id="newsletter" class="w-full max-w-7xl mx-auto px-6 py-12 mt-12">
+            <div class="bg-primary rounded-3xl p-12 md:p-16 relative overflow-hidden shadow-glow flex flex-col lg:flex-row items-center justify-between gap-12">
+                <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+                    <div class="absolute top-[-20%] right-[-10%] w-[50%] h-[150%] bg-gradient-to-l from-white to-transparent transform rotate-12"></div>
+                </div>
+                
+                <div class="relative z-10 flex flex-col gap-4 max-w-2xl">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white font-serif leading-tight">
+                        Direct Access to Executive Insights.
+                    </h2>
+                    <p class="text-lg text-gray-300">
+                        Join 15,000+ board members and senior leaders who receive bi-weekly analysis on governance, risk architecture, and strategic execution. No noise, just signal.
+                    </p>
+                </div>
+                
+                <div class="relative z-10 w-full lg:w-auto flex-shrink-0">
+                    <form class="flex flex-col sm:flex-row gap-4 w-full max-w-md">
+                        <input type="email" placeholder="Corporate Email Address" class="w-full sm:w-72 px-6 py-4 bg-white/10 border border-white/20 rounded-full text-white placeholder-gray-400 focus:outline-none focus:border-white focus:bg-white/20 transition-all">
+                        <button type="submit" class="px-8 py-4 bg-white text-primary text-sm font-bold rounded-full hover:bg-gray-100 transition-colors shadow-soft whitespace-nowrap">
+                            Subscribe Now
+                        </button>
+                    </form>
+                    <p class="text-xs text-gray-400 mt-4 text-center sm:text-left">
+                        By subscribing, you agree to our <a href="#" class="underline hover:text-white transition-colors">Privacy Policy</a>.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer (Preserved from Context) -->
+    <footer id="footer" class="w-full bg-white border-t border-gray-100 py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">
+                    EJ
+                </div>
+                <span class="font-semibold text-primary">Edward James</span>
+            </div>
+            
+            <div class="flex items-center gap-6 text-sm text-secondary">
+                <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+                <span>&copy; 2026 Edward James. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

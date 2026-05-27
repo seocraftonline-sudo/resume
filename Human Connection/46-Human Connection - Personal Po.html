@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Personal Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>window.FontAwesomeConfig = { autoReplaceSvg: "nest"};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        primary: '#1A3626', 
+                        accent: '#4ADE80', 
+                        surface: '#112218', 
+                        textMain: '#F8FAFC',
+                        textMuted: '#94A3B8'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { margin: 0; padding: 0; background-color: #0F172A; color: #F8FAFC; overflow-x: hidden; }
+        .hero-bg {
+            background: linear-gradient(180deg, rgba(26,54,38,0.9) 0%, rgba(15,23,42,1) 100%),
+                        repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(255,255,255,0.03) 40px, rgba(255,255,255,0.03) 80px);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        /* Modal Styles */
+        .modal-overlay {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(12px);
+        }
+        
+        /* Custom Scrollbar for Modal */
+        .modal-content::-webkit-scrollbar {
+            width: 8px;
+        }
+        .modal-content::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 4px;
+        }
+        .modal-content::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+        .modal-content::-webkit-scrollbar-thumb:hover {
+            background: rgba(74, 222, 128, 0.5);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-accent selection:text-primary m-0 p-0">
+
+    <!-- Navigation (Preserved exactly from context) -->
+    <nav id="header" class="fixed w-full top-0 z-50 glass-card border-b-0 py-4 px-6 md:px-12 flex justify-between items-center transition-all duration-300">
+        <a href="#" class="text-2xl font-serif tracking-wide flex items-center gap-2">
+            Michael <span class="text-accent text-sm">✦</span>
+        </a>
+        <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-textMuted">
+            <a href="#" class="hover:text-white transition-colors">Home</a>
+            <a href="#about" class="hover:text-white transition-colors">About Me</a>
+            <a href="#services" class="hover:text-white transition-colors">My Services</a>
+            <a href="#portfolio" class="text-white hover:text-accent transition-colors border-b border-accent pb-1">Portfolio</a>
+        </div>
+        <a href="mailto:hello@example.com" class="hidden md:flex items-center gap-2 text-sm text-textMuted hover:text-white transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            hello@example.com
+        </a>
+        <button class="md:hidden text-white focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+    </nav>
+
+    <!-- Portfolio Intro Section -->
+    <section id="portfolio_intro" class="pt-40 pb-16 relative hero-bg">
+        <div class="container mx-auto px-6 md:px-12 max-w-[1200px] relative z-10 text-center">
+            <h1 class="text-5xl md:text-7xl font-serif mb-6 leading-tight">Selected Works</h1>
+            <p class="text-xl md:text-2xl text-textMuted font-serif italic max-w-3xl mx-auto leading-relaxed mb-12">
+                A curated collection of projects where human-centered design meets measurable business outcomes. Spanning healthtech, wellness, and SaaS.
+            </p>
+
+            <!-- Filter System -->
+            <div id="portfolio_filters" class="flex flex-wrap justify-center gap-3">
+                <button class="px-6 py-2.5 rounded-full bg-accent text-primary font-medium text-sm transition-all shadow-[0_0_15px_rgba(74,222,128,0.3)]">All Work</button>
+                <button class="px-6 py-2.5 rounded-full bg-white/5 border border-white/10 text-textMuted hover:text-white hover:bg-white/10 font-medium text-sm transition-all">HealthTech</button>
+                <button class="px-6 py-2.5 rounded-full bg-white/5 border border-white/10 text-textMuted hover:text-white hover:bg-white/10 font-medium text-sm transition-all">SaaS</button>
+                <button class="px-6 py-2.5 rounded-full bg-white/5 border border-white/10 text-textMuted hover:text-white hover:bg-white/10 font-medium text-sm transition-all">Wellness</button>
+                <button class="px-6 py-2.5 rounded-full bg-white/5 border border-white/10 text-textMuted hover:text-white hover:bg-white/10 font-medium text-sm transition-all">Design Systems</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic Portfolio Grid -->
+    <section id="portfolio_grid" class="py-12 bg-[#0F172A]">
+        <div class="container mx-auto px-6 md:px-12 max-w-[1440px]">
+            
+            <!-- Masonry-style Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project Card 1 (Large) -->
+                <div class="lg:col-span-2 group cursor-pointer" onclick="document.getElementById('project_modal').classList.remove('hidden')">
+                    <div class="glass-card rounded-[24px] overflow-hidden h-full flex flex-col transition-all duration-500 hover:shadow-[0_0_30px_rgba(74,222,128,0.15)] hover:border-accent/30 relative">
+                        <div class="h-80 w-full overflow-hidden relative bg-surface">
+                            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/d7cd3aca66-5de72893958668293b0a.png" alt="Candid, warm, slightly soft-focus photography of a person interacting with a wellness app on a tablet, natural lighting, genuine smile, showing human connection to technology." />
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#112218] via-transparent to-transparent opacity-80"></div>
+                            <div class="absolute top-6 left-6 px-4 py-1.5 rounded-full bg-[#0F172A]/80 backdrop-blur-md border border-white/10 text-xs text-white font-medium">Wellness</div>
+                        </div>
+                        <div class="p-8 flex-grow flex flex-col justify-between bg-gradient-to-b from-surface to-[#0F172A]">
+                            <div>
+                                <h3 class="text-3xl font-serif text-white mb-3 group-hover:text-accent transition-colors">Aura Wellness App</h3>
+                                <p class="text-textMuted text-lg leading-relaxed">Redesigning the daily habit tracking experience to feel less like a chore and more like a supportive friend.</p>
+                            </div>
+                            <div class="mt-6 flex items-center gap-4 text-sm text-textMuted border-t border-white/10 pt-4">
+                                <span>UX/UI Design</span>
+                                <span class="w-1 h-1 rounded-full bg-white/20"></span>
+                                <span>User Research</span>
+                                <span class="w-1 h-1 rounded-full bg-white/20"></span>
+                                <span>2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="group cursor-pointer">
+                    <div class="glass-card rounded-[24px] overflow-hidden h-full flex flex-col transition-all duration-500 hover:shadow-[0_0_30px_rgba(74,222,128,0.15)] hover:border-accent/30">
+                        <div class="h-64 w-full overflow-hidden relative bg-surface">
+                            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/39f0fcc95f-805ee0c8f6e76e156c5d.png" alt="Abstract, organic, fluid 3D shapes in deep greens and muted whites, representing complex data systems simplified." />
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#112218] via-transparent to-transparent opacity-80"></div>
+                            <div class="absolute top-6 left-6 px-4 py-1.5 rounded-full bg-[#0F172A]/80 backdrop-blur-md border border-white/10 text-xs text-white font-medium">HealthTech</div>
+                        </div>
+                        <div class="p-8 flex-grow flex flex-col justify-between bg-gradient-to-b from-surface to-[#0F172A]">
+                            <div>
+                                <h3 class="text-2xl font-serif text-white mb-3 group-hover:text-accent transition-colors">Patient Portal UI</h3>
+                                <p class="text-textMuted leading-relaxed">Simplifying complex medical data into accessible, reassuring interfaces for elderly patients.</p>
+                            </div>
+                            <div class="mt-6 flex items-center gap-4 text-sm text-textMuted border-t border-white/10 pt-4">
+                                <span>Design System</span>
+                                <span class="w-1 h-1 rounded-full bg-white/20"></span>
+                                <span>2022</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="group cursor-pointer">
+                    <div class="glass-card rounded-[24px] overflow-hidden h-full flex flex-col transition-all duration-500 hover:shadow-[0_0_30px_rgba(74,222,128,0.15)] hover:border-accent/30">
+                        <div class="h-64 w-full overflow-hidden relative bg-surface">
+                            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/20e6ce15e0-2dd245f9d48ebfc9c7f4.png" alt="Minimalist SaaS dashboard interface shown on a tilted laptop screen, dark mode, glowing green accent metrics." />
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#112218] via-transparent to-transparent opacity-80"></div>
+                            <div class="absolute top-6 left-6 px-4 py-1.5 rounded-full bg-[#0F172A]/80 backdrop-blur-md border border-white/10 text-xs text-white font-medium">SaaS</div>
+                        </div>
+                        <div class="p-8 flex-grow flex flex-col justify-between bg-gradient-to-b from-surface to-[#0F172A]">
+                            <div>
+                                <h3 class="text-2xl font-serif text-white mb-3 group-hover:text-accent transition-colors">Nexus Analytics</h3>
+                                <p class="text-textMuted leading-relaxed">0 to 1 product design for a B2B analytics platform focused on narrative data visualization.</p>
+                            </div>
+                            <div class="mt-6 flex items-center gap-4 text-sm text-textMuted border-t border-white/10 pt-4">
+                                <span>Product Design</span>
+                                <span class="w-1 h-1 rounded-full bg-white/20"></span>
+                                <span>2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 4 (Large) -->
+                <div class="lg:col-span-2 group cursor-pointer">
+                    <div class="glass-card rounded-[24px] overflow-hidden h-full flex flex-col transition-all duration-500 hover:shadow-[0_0_30px_rgba(74,222,128,0.15)] hover:border-accent/30">
+                        <div class="h-80 w-full overflow-hidden relative bg-surface">
+                            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/2823667c20-416a9e909c2493ee3328.png" alt="Candid shot of a diverse team collaborating over wireframes on a wooden table, warm lighting, showing the human process of design." />
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#112218] via-transparent to-transparent opacity-80"></div>
+                            <div class="absolute top-6 left-6 px-4 py-1.5 rounded-full bg-[#0F172A]/80 backdrop-blur-md border border-white/10 text-xs text-white font-medium">Design Systems</div>
+                        </div>
+                        <div class="p-8 flex-grow flex flex-col justify-between bg-gradient-to-b from-surface to-[#0F172A]">
+                            <div>
+                                <h3 class="text-3xl font-serif text-white mb-3 group-hover:text-accent transition-colors">Global Component Library</h3>
+                                <p class="text-textMuted text-lg leading-relaxed">Establishing a unified design language across 4 distinct enterprise products, reducing engineering debt by 30%.</p>
+                            </div>
+                            <div class="mt-6 flex items-center gap-4 text-sm text-textMuted border-t border-white/10 pt-4">
+                                <span>Design Ops</span>
+                                <span class="w-1 h-1 rounded-full bg-white/20"></span>
+                                <span>Figma Architecture</span>
+                                <span class="w-1 h-1 rounded-full bg-white/20"></span>
+                                <span>2021-2022</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="mt-16 flex justify-center">
+                <button class="px-8 py-3 rounded-full bg-white/5 border border-white/10 text-white hover:bg-white/10 font-medium transition-all flex items-center gap-3 group">
+                    <span>Load More Projects</span>
+                    <i class="fa-solid fa-arrow-down text-accent group-hover:translate-y-1 transition-transform"></i>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Client Logo Wall -->
+    <section id="client_logos" class="py-24 relative overflow-hidden bg-[#0F172A]">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-surface/50 via-[#0F172A] to-[#0F172A]"></div>
+        
+        <div class="container mx-auto px-6 md:px-12 max-w-[1200px] relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold tracking-widest text-textMuted uppercase mb-4">Trusted By</h2>
+                <p class="text-2xl font-serif text-white">Organizations I've partnered with</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 items-center opacity-70">
+                <!-- Logos would be SVGs, using FontAwesome as placeholders matching the dark theme -->
+                <div class="flex justify-center items-center h-16 grayscale hover:grayscale-0 hover:text-accent transition-all duration-300 cursor-pointer">
+                    <i class="fa-brands fa-aws text-4xl text-textMuted"></i>
+                </div>
+                <div class="flex justify-center items-center h-16 grayscale hover:grayscale-0 hover:text-accent transition-all duration-300 cursor-pointer">
+                    <i class="fa-brands fa-stripe text-4xl text-textMuted"></i>
+                </div>
+                <div class="flex justify-center items-center h-16 grayscale hover:grayscale-0 hover:text-accent transition-all duration-300 cursor-pointer">
+                    <i class="fa-brands fa-slack text-4xl text-textMuted"></i>
+                </div>
+                <div class="flex justify-center items-center h-16 grayscale hover:grayscale-0 hover:text-accent transition-all duration-300 cursor-pointer">
+                    <i class="fa-brands fa-figma text-4xl text-textMuted"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Detail Modal Overlay -->
+    <div id="project_modal" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 modal-overlay transition-opacity" onclick="document.getElementById('project_modal').classList.add('hidden')"></div>
+        
+        <div class="absolute inset-y-0 right-0 w-full md:w-[800px] lg:w-[900px] bg-[#0F172A] shadow-[-20px_0_50px_rgba(0,0,0,0.5)] transform transition-transform duration-500 flex flex-col border-l border-white/10">
+            
+            <!-- Modal Header -->
+            <div class="px-8 py-6 border-b border-white/5 flex justify-between items-center bg-[#0F172A]/90 backdrop-blur-md sticky top-0 z-10">
+                <div class="flex items-center gap-4">
+                    <span class="px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-medium border border-accent/20">Wellness</span>
+                    <span class="text-textMuted text-sm">2023</span>
+                </div>
+                <button onclick="document.getElementById('project_modal').classList.add('hidden')" class="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-textMuted hover:text-white transition-colors">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Modal Content (Scrollable) -->
+            <div class="flex-1 overflow-y-auto modal-content p-8 md:p-12">
+                
+                <h2 class="text-4xl md:text-5xl font-serif text-white mb-6">Aura Wellness App</h2>
+                <p class="text-xl text-textMuted leading-relaxed mb-12 font-serif italic">
+                    "How might we make daily habit tracking feel less like a chore and more like checking in with a supportive friend?"
+                </p>
+
+                <!-- Hero Image -->
+                <div class="rounded-[24px] overflow-hidden mb-16 border border-white/5 shadow-lg">
+                    <img class="w-full h-auto object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/979dbe17fa-b0891b14703f91623cf5.png" alt="High-fidelity mockup of a wellness app on a mobile phone, dark mode UI with soft green accents, showing a progress dashboard, resting on a wooden desk next to a coffee cup, warm natural lighting." />
+                </div>
+
+                <!-- Meta Data Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 p-8 rounded-[24px] bg-surface border border-white/5">
+                    <div>
+                        <h4 class="text-xs font-bold text-textMuted uppercase tracking-widest mb-2">Client</h4>
+                        <p class="text-white font-medium">Aura Health Inc.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-textMuted uppercase tracking-widest mb-2">Role</h4>
+                        <p class="text-white font-medium">Lead Product Designer</p>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-textMuted uppercase tracking-widest mb-2">Timeline</h4>
+                        <p class="text-white font-medium">4 Months</p>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-textMuted uppercase tracking-widest mb-2">Platform</h4>
+                        <p class="text-white font-medium">iOS & Android</p>
+                    </div>
+                </div>
+
+                <!-- Content Sections -->
+                <div class="space-y-16">
+                    
+                    <!-- The Challenge -->
+                    <div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <h3 class="text-2xl font-serif text-white">The Challenge</h3>
+                            <div class="flex-grow h-px bg-white/10"></div>
+                        </div>
+                        <p class="text-textMain/80 leading-relaxed text-lg mb-6">
+                            Aura had a high download rate but struggled with day-7 retention. Users reported feeling overwhelmed by the sterile, data-heavy interface. The challenge was to redesign the core tracking loop to foster emotional connection and reduce cognitive load, all without losing the robust data capabilities power users loved.
+                        </p>
+                    </div>
+
+                    <!-- The Process -->
+                    <div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <h3 class="text-2xl font-serif text-white">The Approach</h3>
+                            <div class="flex-grow h-px bg-white/10"></div>
+                        </div>
+                        <p class="text-textMain/80 leading-relaxed text-lg mb-8">
+                            I began by conducting 15 deep-dive interviews with churned users. The insight was clear: people felt guilty when they missed a day, and the app's red warning colors amplified that guilt. We shifted the design language from "punitive tracking" to "gentle encouragement."
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="rounded-[16px] overflow-hidden border border-white/5">
+                                <img class="w-full h-48 object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/3ede616c5e-26dffd2428d51e974c82.png" alt="Close up of a hand drawing wireframes in a sketchbook, messy but creative, showing the human process of early design iterations." />
+                            </div>
+                            <div class="rounded-[16px] overflow-hidden border border-white/5">
+                                <img class="w-full h-48 object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/3426195593-ff7d99abe0a225a4dace.png" alt="A digital moodboard showing color palettes transitioning from harsh reds to soft greens and warm neutrals, indicating a shift in emotional tone." />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- The Solution -->
+                    <div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <h3 class="text-2xl font-serif text-white">The Solution</h3>
+                            <div class="flex-grow h-px bg-white/10"></div>
+                        </div>
+                        <p class="text-textMain/80 leading-relaxed text-lg mb-8">
+                            The new interface utilizes organic shapes, a calming dark-green palette, and conversational microcopy. We replaced rigid streak counters with a "garden" visualization that grows even if you miss a day, provided you return.
+                        </p>
+                        
+                        <ul class="space-y-4 text-textMain/80 list-none mb-8">
+                            <li class="flex items-start gap-3 glass-card p-4 rounded-[12px]">
+                                <i class="fa-solid fa-check text-accent mt-1"></i>
+                                <span><strong>Conversational Onboarding:</strong> Replaced static forms with a chat-like interface to build immediate rapport.</span>
+                            </li>
+                            <li class="flex items-start gap-3 glass-card p-4 rounded-[12px]">
+                                <i class="fa-solid fa-check text-accent mt-1"></i>
+                                <span><strong>Fluid Micro-interactions:</strong> Added subtle, organic animations that respond softly to user touch, mimicking natural elements.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- The Results -->
+                    <div class="glass-card p-8 rounded-[24px] border-l-4 border-l-accent relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full blur-3xl -mr-10 -mt-10"></div>
+                        <h3 class="text-2xl font-serif text-white mb-6">Outcomes</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div>
+                                <div class="text-4xl font-serif text-accent mb-2">+42%</div>
+                                <div class="text-sm text-textMuted">Increase in Day-7 Retention</div>
+                            </div>
+                            <div>
+                                <div class="text-4xl font-serif text-accent mb-2">-28%</div>
+                                <div class="text-sm text-textMuted">Drop in Onboarding Abandonment</div>
+                            </div>
+                            <div>
+                                <div class="text-4xl font-serif text-accent mb-2">4.8</div>
+                                <div class="text-sm text-textMuted">App Store Rating (up from 3.9)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial -->
+                    <div class="mt-12 text-center px-8">
+                        <i class="fa-solid fa-quote-left text-3xl text-white/10 mb-4"></i>
+                        <p class="text-xl font-serif italic text-textMain/90 mb-6">
+                            "Michael didn't just redesign our screens; he completely reframed how our users emotionally connect with our product. The empathy in the design directly translated to our bottom line."
+                        </p>
+                        <div class="text-sm font-medium text-white">Sarah Jenkins</div>
+                        <div class="text-xs text-textMuted">CEO, Aura Health</div>
+                    </div>
+
+                </div>
+                
+                <!-- Next Project Navigation -->
+                <div class="mt-20 pt-8 border-t border-white/10 flex justify-between items-center">
+                    <button class="text-textMuted hover:text-white flex items-center gap-2 transition-colors text-sm font-medium">
+                        <i class="fa-solid fa-arrow-left"></i> Previous Project
+                    </button>
+                    <button class="text-white hover:text-accent flex items-center gap-2 transition-colors text-sm font-medium">
+                        Next Project <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer (Preserved exactly from context) -->
+    <footer id="footer" class="py-12 border-t border-white/5 bg-black/20">
+        <div class="container mx-auto px-6 md:px-12 max-w-[1440px] flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-2xl font-serif tracking-wide flex items-center gap-2">
+                Michael <span class="text-accent text-sm">✦</span>
+            </div>
+            <div class="flex gap-6 text-textMuted">
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-dribbble text-xl"></i></a>
+            </div>
+            <p class="text-sm text-textMuted">© 2023 Michael Design. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

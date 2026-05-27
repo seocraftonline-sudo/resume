@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications & Certifications - Alex Mercer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            orange: '#FF6600',
+                            dark: '#0A0A0A',
+                            light: '#F5F5F5',
+                            border: '#E5E5E5'
+                        }
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF;
+            color: #0A0A0A;
+            -webkit-font-smoothing: antialiased;
+        }
+        ::-webkit-scrollbar { display: none; }
+        
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .noise-bg {
+            position: relative;
+        }
+        .noise-bg::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .list-item-hover:hover .hover-orange {
+            color: #FF6600;
+        }
+        
+        .list-item-hover:hover .hover-border {
+            border-color: #FF6600;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans selection:bg-brand-orange selection:text-white m-0 p-0">
+
+    <header id="header" class="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
+        <nav class="glass-nav pointer-events-auto rounded-[32px] px-2 py-2 flex items-center gap-8 shadow-2xl border border-white/10">
+            <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center shrink-0 ml-1">
+                <i class="fa-solid fa-layer-group text-brand-dark text-lg"></i>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-6 text-sm font-medium text-white/80">
+                <a href="#" class="hover:text-white transition-colors">Work</a>
+                <a href="#" class="hover:text-white transition-colors">Expertise</a>
+                <a href="#" class="text-white transition-colors font-bold border-b-2 border-brand-orange pb-0.5">Writing</a>
+                <a href="#" class="hover:text-white transition-colors">About</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <a href="#" class="bg-brand-orange hover:bg-[#e65c00] text-white text-sm font-semibold px-6 py-2.5 rounded-full transition-all duration-300 shadow-[0_4px_14px_0_rgba(255,102,0,0.39)] hover:shadow-[0_6px_20px_rgba(255,102,0,0.23)]">
+                    Let's Talk
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow flex flex-col pt-32">
+        
+        <section id="publications-hero" class="relative w-full px-4 md:px-8 pt-16 pb-24 flex flex-col items-center text-center z-10 border-b border-gray-200">
+            <h1 class="text-5xl md:text-7xl lg:text-[90px] font-extrabold tracking-tight text-brand-dark max-w-5xl leading-[0.9] mb-8 uppercase font-sans" style="letter-spacing: -0.05em;">
+                Records of<br/>Recognition.
+            </h1>
+            
+            <div class="max-w-3xl mx-auto text-center space-y-4 text-lg md:text-xl text-gray-800 leading-relaxed font-sans p-8 glass-card rounded-[32px]">
+                <p class="font-medium">
+                    A formal log of intellectual contributions, external validation, and verifiable credentials. This section documents published research, speaking engagements, and industry certifications that validate technical depth and thought leadership.
+                </p>
+            </div>
+        </section>
+
+        <div class="relative w-full noise-bg py-24 px-4 md:px-8 bg-[#F8F1EC]">
+            <div class="max-w-[1440px] mx-auto relative z-10">
+
+                <section id="featured-in" class="mb-32">
+                    <div class="mb-12 text-center">
+                        <h2 class="text-xs font-mono font-bold text-gray-500 uppercase tracking-widest mb-4">Featured In</h2>
+                    </div>
+                    
+                    <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                        <i class="fa-brands fa-aws text-5xl"></i>
+                        <i class="fa-brands fa-docker text-5xl"></i>
+                        <i class="fa-brands fa-github text-5xl"></i>
+                        <i class="fa-brands fa-linux text-5xl"></i>
+                        <i class="fa-brands fa-medium text-5xl"></i>
+                    </div>
+                </section>
+
+                <hr class="border-gray-300 my-24">
+
+                <section id="publications" class="mb-32 max-w-4xl mx-auto">
+                    <div class="mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold text-brand-dark font-sans tracking-tight mb-4">Publications & Written Work</h2>
+                        <p class="text-gray-600 font-medium">Technical articles, whitepapers, and research contributions.</p>
+                    </div>
+
+                    <div class="space-y-12">
+                        <div class="grid grid-cols-1 md:grid-cols-[120px_1fr] gap-6 group list-item-hover cursor-pointer">
+                            <div class="text-sm font-mono font-bold text-gray-500 pt-1">2023</div>
+                            <div class="border-b border-gray-200 pb-12 hover-border transition-colors">
+                                <h3 class="text-2xl font-bold text-brand-dark mb-2 hover-orange transition-colors">Architecting for Resilience in Distributed Systems</h3>
+                                <div class="text-xs font-mono font-bold text-gray-500 uppercase tracking-widest mb-4">Published on O'Reilly Media</div>
+                                <p class="text-sm text-gray-600 font-medium leading-relaxed mb-4">
+                                    A deep dive into failure modes of microservices architectures. Discussing strategies for implementing circuit breakers, bulkheads, and fallback mechanisms using modern mesh networks.
+                                </p>
+                                <span class="text-brand-orange font-bold text-sm flex items-center gap-2">Read Article <i class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-[120px_1fr] gap-6 group list-item-hover cursor-pointer">
+                            <div class="text-sm font-mono font-bold text-gray-500 pt-1">2022</div>
+                            <div class="border-b border-gray-200 pb-12 hover-border transition-colors">
+                                <h3 class="text-2xl font-bold text-brand-dark mb-2 hover-orange transition-colors">The Pragmatic Guide to Event Sourcing</h3>
+                                <div class="text-xs font-mono font-bold text-gray-500 uppercase tracking-widest mb-4">Published on InfoQ</div>
+                                <p class="text-sm text-gray-600 font-medium leading-relaxed mb-4">
+                                    Why event sourcing isn't just for financial systems. A practical guide to implementing CQRS and event sourcing patterns in Node.js and PostgreSQL.
+                                </p>
+                                <span class="text-brand-orange font-bold text-sm flex items-center gap-2">Read Article <i class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="speaking" class="mb-32 max-w-4xl mx-auto">
+                    <div class="mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold text-brand-dark font-sans tracking-tight mb-4">Speaking & Appearances</h2>
+                        <p class="text-gray-600 font-medium">Conference talks, panels, and podcast features.</p>
+                    </div>
+
+                    <div class="space-y-12">
+                        <div class="grid grid-cols-1 md:grid-cols-[120px_1fr] gap-6 group list-item-hover cursor-pointer">
+                            <div class="text-sm font-mono font-bold text-gray-500 pt-1">2023</div>
+                            <div class="border-b border-gray-200 pb-12 hover-border transition-colors">
+                                <h3 class="text-2xl font-bold text-brand-dark mb-2 hover-orange transition-colors">Scaling Node.js to 10M Requests/Min</h3>
+                                <div class="text-xs font-mono font-bold text-gray-500 uppercase tracking-widest mb-4">NodeConf EU • Keynote</div>
+                                <p class="text-sm text-gray-600 font-medium leading-relaxed mb-4">
+                                    A post-mortem of scaling a high-throughput API gateway. Covering V8 engine optimization, memory profiling, and cluster management strategies.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-[120px_1fr] gap-6 group list-item-hover cursor-pointer">
+                            <div class="text-sm font-mono font-bold text-gray-500 pt-1">2021</div>
+                            <div class="border-b border-gray-200 pb-12 hover-border transition-colors">
+                                <h3 class="text-2xl font-bold text-brand-dark mb-2 hover-orange transition-colors">GraphQL vs REST: A Production Reality Check</h3>
+                                <div class="text-xs font-mono font-bold text-gray-500 uppercase tracking-widest mb-4">API Specifications Conference</div>
+                                <p class="text-sm text-gray-600 font-medium leading-relaxed mb-4">
+                                    Panel discussion on the operational realities of maintaining GraphQL at scale, N+1 query problems, and caching complexities.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <hr class="border-gray-300 my-24">
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-32">
+                    <section id="certifications">
+                        <h2 class="text-3xl font-bold text-brand-dark font-sans tracking-tight mb-8">Professional Certifications</h2>
+                        <div class="space-y-6">
+                            <div class="glass-card rounded-[24px] p-6 border border-gray-200">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div>
+                                        <h4 class="text-lg font-bold text-brand-dark">AWS Certified Solutions Architect</h4>
+                                        <div class="text-xs font-mono font-bold text-gray-500 uppercase tracking-widest mt-1">Amazon Web Services</div>
+                                    </div>
+                                    <i class="fa-brands fa-aws text-3xl text-brand-orange"></i>
+                                </div>
+                                <div class="text-sm text-gray-600 font-medium flex justify-between items-center">
+                                    <span>Issued: 2022 • Expires: 2025</span>
+                                    <a href="#" class="text-brand-orange hover:underline font-bold text-xs">Verify <i class="fa-solid fa-external-link-alt ml-1"></i></a>
+                                </div>
+                            </div>
+                            
+                            <div class="glass-card rounded-[24px] p-6 border border-gray-200">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div>
+                                        <h4 class="text-lg font-bold text-brand-dark">Certified Kubernetes Administrator (CKA)</h4>
+                                        <div class="text-xs font-mono font-bold text-gray-500 uppercase tracking-widest mt-1">Cloud Native Computing Foundation</div>
+                                    </div>
+                                    <i class="fa-solid fa-dharmachakra text-3xl text-brand-dark"></i>
+                                </div>
+                                <div class="text-sm text-gray-600 font-medium flex justify-between items-center">
+                                    <span>Issued: 2021 • Expires: 2024</span>
+                                    <a href="#" class="text-brand-orange hover:underline font-bold text-xs">Verify <i class="fa-solid fa-external-link-alt ml-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="awards">
+                        <h2 class="text-3xl font-bold text-brand-dark font-sans tracking-tight mb-8">Awards & Recognition</h2>
+                        <div class="space-y-6">
+                            <div class="glass-card rounded-[24px] p-6 border border-gray-200">
+                                <div class="text-sm font-mono font-bold text-brand-orange mb-2">2022</div>
+                                <h4 class="text-lg font-bold text-brand-dark mb-1">Open Source Contributor of the Year</h4>
+                                <div class="text-xs font-mono font-bold text-gray-500 uppercase tracking-widest mb-3">Node.js Foundation</div>
+                                <p class="text-sm text-gray-600 font-medium">Recognized for significant contributions to the core HTTP/2 implementation and documentation improvements.</p>
+                            </div>
+                            
+                            <div class="glass-card rounded-[24px] p-6 border border-gray-200">
+                                <div class="text-sm font-mono font-bold text-brand-orange mb-2">2020</div>
+                                <h4 class="text-lg font-bold text-brand-dark mb-1">Engineering Excellence Award</h4>
+                                <div class="text-xs font-mono font-bold text-gray-500 uppercase tracking-widest mb-3">FinTech Global</div>
+                                <p class="text-sm text-gray-600 font-medium">Awarded for architecting a zero-downtime migration strategy for a legacy payment processing system.</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+        </div>
+
+        <section id="contact" class="bg-brand-dark py-24 px-4 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">Ready to collaborate?</h2>
+                <p class="text-xl text-gray-400 mb-10">Reach out to discuss consulting, speaking opportunities, or technical advisory roles.</p>
+                <a href="#" class="inline-flex items-center justify-center bg-brand-orange hover:bg-[#e65c00] text-white text-lg font-semibold px-10 py-4 rounded-full transition-all duration-300 shadow-[0_4px_14px_0_rgba(255,102,0,0.39)] hover:shadow-[0_6px_20px_rgba(255,102,0,0.23)]">
+                    Get in Touch
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="footer" class="bg-black py-12 px-4 border-t border-white/10">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-2 text-white font-bold text-xl">
+                <i class="fa-solid fa-layer-group text-brand-orange"></i> Alex Mercer
+            </div>
+            
+            <div class="flex gap-6">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-github text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-dribbble text-xl"></i></a>
+            </div>
+            
+            <div class="text-gray-500 text-sm">
+                &copy; 2024 Alex Mercer. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

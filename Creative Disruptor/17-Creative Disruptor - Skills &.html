@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills & Expertise - Will Beeching</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.plot.ly/plotly-3.1.1.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f6f6f6',
+                            100: '#e7e7e7',
+                            200: '#d1d1d1',
+                            300: '#b0b0b0',
+                            400: '#888888',
+                            500: '#6d6d6d',
+                            600: '#5d5d5d',
+                            700: '#4f4f4f',
+                            800: '#454545',
+                            900: '#3d3d3d',
+                            950: '#1a1a1a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f6f6f6;
+            color: #1a1a1a;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+        ::-webkit-scrollbar { display: none; }
+        
+        .disruptive-text {
+            font-family: 'Times New Roman', Times, serif;
+            letter-spacing: -0.05em;
+            line-height: 0.9;
+        }
+        .mono-label {
+            font-family: monospace;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .bento-card {
+            background-color: #ffffff;
+            border: 1px solid #e7e7e7;
+            border-radius: 24px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .bento-card:hover {
+            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.1);
+            border-color: #d1d1d1;
+            transform: translateY(-8px);
+        }
+
+        .service-card {
+            background-color: #ffffff;
+            border: 1px solid #e7e7e7;
+            border-radius: 12px;
+            padding: 2.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card:hover {
+            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.08);
+            border-color: #d1d1d1;
+            transform: translateY(-4px);
+        }
+
+        .process-number {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 12rem;
+            line-height: 0.8;
+            color: rgba(26, 26, 26, 0.03);
+            position: absolute;
+            top: -2rem;
+            left: -2rem;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .accordion-item.active .accordion-content {
+            max-height: 500px;
+        }
+        .accordion-icon {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .accordion-item.active .accordion-icon {
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body class="m-0 p-0 font-sans selection:bg-brand-950 selection:text-white bg-brand-50">
+
+    <!-- Header / Nav -->
+    <header id="header" class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 22H22L12 2Z" fill="black"/>
+                    <path d="M12 8L6 20H18L12 8Z" fill="white"/>
+                </svg>
+                <span class="font-semibold text-lg tracking-tight">WB.</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#" class="text-sm font-medium text-brand-500 hover:text-brand-950 transition-colors">Work</a>
+                <a href="#" class="text-sm font-medium text-brand-950 hover:text-brand-500 transition-colors border-b-2 border-brand-950 pb-1">About</a>
+                <a href="#" class="text-sm font-medium text-brand-500 hover:text-brand-950 transition-colors">Services</a>
+                <a href="#" class="text-sm font-medium text-brand-500 hover:text-brand-950 transition-colors">Blog</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <span class="text-xs font-mono text-brand-400 hidden lg:block">LON 12:33 ☀️</span>
+                <a href="#contact" class="px-5 py-2.5 bg-brand-950 text-white text-sm font-medium rounded-full hover:bg-brand-800 transition-colors">Let's Talk</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="pt-32 lg:pt-48 pb-24">
+        
+        <!-- Skills Introduction -->
+        <section id="skills_intro" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-32 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-12">
+                <div class="max-w-5xl">
+                    <h1 class="disruptive-text text-6xl md:text-8xl lg:text-[120px] text-brand-950 uppercase mix-blend-multiply mb-12 relative z-10">
+                        Expertise <br>
+                        <span class="ml-12 md:ml-32 text-brand-500">& Arsenal</span>
+                        <div class="absolute -z-10 top-1/2 right-1/4 w-96 h-96 bg-brand-200 rounded-full blur-[100px] opacity-40"></div>
+                    </h1>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
+                        <div class="md:col-span-4 pt-4">
+                            <span class="mono-label text-brand-500 block mb-4">The Synthesis</span>
+                            <div class="w-12 h-px bg-brand-300 mb-8"></div>
+                        </div>
+                        <div class="md:col-span-8">
+                            <p class="text-2xl md:text-3xl font-light leading-tight text-brand-950 mb-8">
+                                True disruption requires a mastery of the rules before breaking them. My skill set is deliberately hybrid—bridging deep technical execution with high-level strategic vision to create experiences that defy categorization.
+                            </p>
+                            <p class="text-lg text-brand-600 leading-relaxed font-light max-w-2xl">
+                                I don't just design interfaces or write code; I architect ecosystems. The combination of creative direction, frontend engineering, and brand strategy allows me to execute complex visions without the typical friction of handoffs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Competencies -->
+        <section id="core_competencies" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-40">
+            <div class="mb-16">
+                <h2 class="disruptive-text text-5xl text-brand-950 uppercase mb-4">Core Competencies</h2>
+                <div class="w-full h-px bg-brand-200"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Competency 1 -->
+                <div class="service-card group">
+                    <div class="w-12 h-12 rounded-full bg-brand-50 flex items-center justify-center mb-8 border border-brand-100 group-hover:bg-brand-950 group-hover:border-brand-950 transition-colors">
+                        <i class="fa-solid fa-bezier-curve text-brand-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-brand-950 mb-4">Creative Direction</h3>
+                    <p class="text-brand-600 font-light leading-relaxed mb-8">
+                        Orchestrating visual languages that command attention. I specialize in developing disruptive, editorial-style aesthetics that break conventional grid systems while maintaining absolute usability. It's about creating tension, hierarchy, and moments of genuine surprise.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-brand-50 text-xs font-mono text-brand-600 rounded">Visual Identity</span>
+                        <span class="px-3 py-1 bg-brand-50 text-xs font-mono text-brand-600 rounded">Art Direction</span>
+                    </div>
+                </div>
+
+                <!-- Competency 2 -->
+                <div class="service-card group">
+                    <div class="w-12 h-12 rounded-full bg-brand-50 flex items-center justify-center mb-8 border border-brand-100 group-hover:bg-brand-950 group-hover:border-brand-950 transition-colors">
+                        <i class="fa-solid fa-code text-brand-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-brand-950 mb-4">Creative Engineering</h3>
+                    <p class="text-brand-600 font-light leading-relaxed mb-8">
+                        Bridging the gap between static design and kinetic reality. I write production-ready code that brings complex interactions, WebGL experiences, and custom animations to life without sacrificing performance or accessibility.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-brand-50 text-xs font-mono text-brand-600 rounded">Frontend Arch</span>
+                        <span class="px-3 py-1 bg-brand-50 text-xs font-mono text-brand-600 rounded">Motion UX</span>
+                    </div>
+                </div>
+
+                <!-- Competency 3 -->
+                <div class="service-card group">
+                    <div class="w-12 h-12 rounded-full bg-brand-50 flex items-center justify-center mb-8 border border-brand-100 group-hover:bg-brand-950 group-hover:border-brand-950 transition-colors">
+                        <i class="fa-solid fa-chess-knight text-brand-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-brand-950 mb-4">Digital Strategy</h3>
+                    <p class="text-brand-600 font-light leading-relaxed mb-8">
+                        Ensuring the disruption serves a purpose. I align creative execution with business objectives, analyzing user behavior, market positioning, and technical constraints to plot the most effective path to impact.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-brand-50 text-xs font-mono text-brand-600 rounded">Positioning</span>
+                        <span class="px-3 py-1 bg-brand-50 text-xs font-mono text-brand-600 rounded">UX Research</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical & Soft Skills Matrix -->
+        <section id="skills_matrix" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-40">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+                <!-- Technical Skills -->
+                <div class="lg:col-span-7">
+                    <h2 class="disruptive-text text-5xl text-brand-950 uppercase mb-8">Technical Stack</h2>
+                    
+                    <div class="space-y-6">
+                        <!-- Category 1 -->
+                        <div class="bento-card p-6">
+                            <h4 class="text-sm font-mono text-brand-500 mb-4 uppercase">Design & Prototyping</h4>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="px-4 py-2 bg-brand-950 text-white rounded-full text-sm font-medium">Figma (Expert)</span>
+                                <span class="px-4 py-2 bg-brand-100 text-brand-950 rounded-full text-sm font-medium">Adobe Creative Suite</span>
+                                <span class="px-4 py-2 bg-brand-100 text-brand-950 rounded-full text-sm font-medium">Principle</span>
+                                <span class="px-4 py-2 bg-brand-100 text-brand-950 rounded-full text-sm font-medium">Spline 3D</span>
+                                <span class="px-4 py-2 bg-brand-100 text-brand-950 rounded-full text-sm font-medium">Webflow</span>
+                            </div>
+                        </div>
+
+                        <!-- Category 2 -->
+                        <div class="bento-card p-6">
+                            <h4 class="text-sm font-mono text-brand-500 mb-4 uppercase">Frontend Engineering</h4>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="px-4 py-2 bg-brand-950 text-white rounded-full text-sm font-medium">React / Next.js</span>
+                                <span class="px-4 py-2 bg-brand-950 text-white rounded-full text-sm font-medium">Tailwind CSS</span>
+                                <span class="px-4 py-2 bg-brand-100 text-brand-950 rounded-full text-sm font-medium">TypeScript</span>
+                                <span class="px-4 py-2 bg-brand-100 text-brand-950 rounded-full text-sm font-medium">Three.js / WebGL</span>
+                                <span class="px-4 py-2 bg-brand-100 text-brand-950 rounded-full text-sm font-medium">GSAP</span>
+                                <span class="px-4 py-2 bg-brand-100 text-brand-950 rounded-full text-sm font-medium">Framer Motion</span>
+                            </div>
+                        </div>
+
+                        <!-- Category 3 -->
+                        <div class="bento-card p-6">
+                            <h4 class="text-sm font-mono text-brand-500 mb-4 uppercase">Architecture & CMS</h4>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="px-4 py-2 bg-brand-100 text-brand-950 rounded-full text-sm font-medium">Sanity.io</span>
+                                <span class="px-4 py-2 bg-brand-100 text-brand-950 rounded-full text-sm font-medium">Vercel</span>
+                                <span class="px-4 py-2 bg-brand-100 text-brand-950 rounded-full text-sm font-medium">Supabase</span>
+                                <span class="px-4 py-2 bg-brand-100 text-brand-950 rounded-full text-sm font-medium">REST / GraphQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="lg:col-span-5">
+                    <h2 class="disruptive-text text-5xl text-brand-950 uppercase mb-8">Professional Qualities</h2>
+                    
+                    <div class="space-y-4">
+                        <div class="accordion-item bg-white border border-brand-200 rounded-2xl overflow-hidden cursor-pointer" onclick="this.classList.toggle('active')">
+                            <div class="p-6 flex justify-between items-center bg-white hover:bg-brand-50 transition-colors">
+                                <h4 class="text-lg font-medium text-brand-950">Stakeholder Management</h4>
+                                <div class="w-8 h-8 rounded-full border border-brand-200 flex items-center justify-center shrink-0 accordion-icon">
+                                    <i class="fa-solid fa-plus text-brand-500 text-sm"></i>
+                                </div>
+                            </div>
+                            <div class="accordion-content bg-brand-50/50">
+                                <div class="p-6 pt-0 text-sm text-brand-700 font-light leading-relaxed">
+                                    Demonstrated ability to align C-suite vision with technical realities. Recently navigated a complex merger identity redesign, securing buy-in from three distinct executive boards by grounding creative decisions in market data.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item bg-white border border-brand-200 rounded-2xl overflow-hidden cursor-pointer" onclick="this.classList.toggle('active')">
+                            <div class="p-6 flex justify-between items-center bg-white hover:bg-brand-50 transition-colors">
+                                <h4 class="text-lg font-medium text-brand-950">Lateral Problem Solving</h4>
+                                <div class="w-8 h-8 rounded-full border border-brand-200 flex items-center justify-center shrink-0 accordion-icon">
+                                    <i class="fa-solid fa-plus text-brand-500 text-sm"></i>
+                                </div>
+                            </div>
+                            <div class="accordion-content bg-brand-50/50">
+                                <div class="p-6 pt-0 text-sm text-brand-700 font-light leading-relaxed">
+                                    Approaching technical constraints as creative prompts. When faced with severe performance budgets on an e-commerce build, I devised a CSS-only animation system that achieved the desired kinetic feel without the JavaScript overhead.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item bg-white border border-brand-200 rounded-2xl overflow-hidden cursor-pointer" onclick="this.classList.toggle('active')">
+                            <div class="p-6 flex justify-between items-center bg-white hover:bg-brand-50 transition-colors">
+                                <h4 class="text-lg font-medium text-brand-950">Cross-Disciplinary Leadership</h4>
+                                <div class="w-8 h-8 rounded-full border border-brand-200 flex items-center justify-center shrink-0 accordion-icon">
+                                    <i class="fa-solid fa-plus text-brand-500 text-sm"></i>
+                                </div>
+                            </div>
+                            <div class="accordion-content bg-brand-50/50">
+                                <div class="p-6 pt-0 text-sm text-brand-700 font-light leading-relaxed">
+                                    Fluent in both design and engineering vocabularies. I regularly act as the translator between creative teams and development squads, reducing friction and ensuring the final build matches the initial vision.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Industry Knowledge & Currently Learning -->
+        <section id="industry_learning" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-40">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                <!-- Industry Knowledge -->
+                <div class="relative p-10 bg-white border border-brand-100 rounded-3xl overflow-hidden group hover:border-brand-300 transition-colors">
+                    <div class="process-number">IN</div>
+                    <div class="relative z-10">
+                        <h3 class="text-3xl font-serif text-brand-950 mb-6">Domain Expertise</h3>
+                        <p class="text-brand-600 font-light leading-relaxed mb-8">
+                            My methodologies have been pressure-tested across multiple sectors, allowing for cross-pollination of ideas. I understand the specific regulatory, user, and market dynamics of:
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between border-b border-brand-100 pb-3">
+                                <span class="font-medium text-brand-950">Luxury & High-End Retail</span>
+                                <i class="fa-solid fa-arrow-right text-brand-300 -rotate-45"></i>
+                            </div>
+                            <div class="flex items-center justify-between border-b border-brand-100 pb-3">
+                                <span class="font-medium text-brand-950">FinTech & Web3 Platforms</span>
+                                <i class="fa-solid fa-arrow-right text-brand-300 -rotate-45"></i>
+                            </div>
+                            <div class="flex items-center justify-between border-b border-brand-100 pb-3">
+                                <span class="font-medium text-brand-950">Architecture & Real Estate</span>
+                                <i class="fa-solid fa-arrow-right text-brand-300 -rotate-45"></i>
+                            </div>
+                            <div class="flex items-center justify-between pb-3">
+                                <span class="font-medium text-brand-950">B2B SaaS & Enterprise</span>
+                                <i class="fa-solid fa-arrow-right text-brand-300 -rotate-45"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Currently Learning -->
+                <div class="relative p-10 bg-brand-950 border border-brand-800 rounded-3xl overflow-hidden group text-white">
+                    <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-brand-800 rounded-full blur-[80px] opacity-20 -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+                    <div class="process-number text-brand-800/30">NOW</div>
+                    <div class="relative z-10">
+                        <h3 class="text-3xl font-serif mb-6">Currently Exploring</h3>
+                        <p class="text-brand-300 font-light leading-relaxed mb-8">
+                            Stagnation is the enemy of disruption. Here is where my curiosity is currently directed, exploring the fringes of what's possible in digital interaction.
+                        </p>
+                        <ul class="space-y-6">
+                            <li class="flex items-start gap-4">
+                                <div class="w-2 h-2 rounded-full bg-brand-500 mt-2"></div>
+                                <div>
+                                    <h5 class="font-medium text-white mb-1">Generative AI in UI Design</h5>
+                                    <p class="text-sm text-brand-400 font-light">Experimenting with custom LLM integrations to create interfaces that adapt in real-time to user intent rather than static states.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="w-2 h-2 rounded-full bg-brand-500 mt-2"></div>
+                                <div>
+                                    <h5 class="font-medium text-white mb-1">Advanced WebGL Shaders</h5>
+                                    <p class="text-sm text-brand-400 font-light">Deep diving into GLSL to create bespoke, performant visual distortions and liquid physics for hero sections.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skill Evolution Timeline (Chart) -->
+        <section id="skill_timeline" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-20">
+            <div class="bg-white border border-brand-100 rounded-[32px] p-8 md:p-12 relative overflow-hidden">
+                <div class="flex flex-col md:flex-row justify-between items-start mb-12">
+                    <div>
+                        <h2 class="disruptive-text text-4xl text-brand-950 uppercase mb-4">Evolution of Craft</h2>
+                        <p class="text-brand-600 font-light">The intentional compounding of skills over a decade of practice.</p>
+                    </div>
+                    <div class="mt-4 md:mt-0 flex gap-4">
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 rounded-full bg-brand-950"></div>
+                            <span class="text-xs font-mono text-brand-600 uppercase">Design</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 rounded-full bg-brand-400"></div>
+                            <span class="text-xs font-mono text-brand-600 uppercase">Engineering</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 rounded-full bg-brand-200"></div>
+                            <span class="text-xs font-mono text-brand-600 uppercase">Strategy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Plotly Chart Container -->
+                <div id="skillsChart" class="w-full h-[400px]"></div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section id="cta_section" class="max-w-[1440px] mx-auto px-6 lg:px-12 mb-12">
+            <div class="bg-brand-100 rounded-3xl p-12 md:p-24 text-center relative overflow-hidden">
+                <div class="relative z-10 max-w-3xl mx-auto">
+                    <h2 class="disruptive-text text-6xl md:text-8xl text-brand-950 uppercase mb-8">Deploy <br>Capabilities</h2>
+                    <p class="text-xl text-brand-700 font-light mb-12">
+                        If these skills align with the challenges you are currently facing, let's initiate a conversation about potential collaboration.
+                    </p>
+                    <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 bg-brand-950 text-white text-lg font-medium rounded-full hover:bg-brand-800 transition-all hover:scale-105">
+                        Discuss a Project
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-white border-t border-gray-100 py-12 mt-auto">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-sm text-brand-500">
+                &copy; 2026 Will Beeching. All Rights Reserved.
+            </div>
+            <div class="flex items-center gap-6 text-sm font-medium">
+                <a href="#" class="text-brand-950 hover:text-brand-500 transition-colors">GitHub</a>
+                <a href="#" class="text-brand-950 hover:text-brand-500 transition-colors">LinkedIn</a>
+                <a href="#" class="text-brand-950 hover:text-brand-500 transition-colors">Instagram</a>
+                <a href="#" class="text-brand-950 hover:text-brand-500 transition-colors">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function initializeCharts() {
+            try {
+                const container = document.getElementById('skillsChart');
+                if (!container) return;
+
+                const trace1 = {
+                    x: ['2016', '2018', '2020', '2022', '2024', '2026'],
+                    y: [40, 60, 85, 90, 95, 98],
+                    name: 'Design',
+                    type: 'scatter',
+                    mode: 'lines',
+                    line: { shape: 'spline', smoothing: 1.3, color: '#1a1a1a', width: 3 },
+                    fill: 'tozeroy',
+                    fillcolor: 'rgba(26, 26, 26, 0.05)'
+                };
+
+                const trace2 = {
+                    x: ['2016', '2018', '2020', '2022', '2024', '2026'],
+                    y: [10, 30, 50, 75, 85, 92],
+                    name: 'Engineering',
+                    type: 'scatter',
+                    mode: 'lines',
+                    line: { shape: 'spline', smoothing: 1.3, color: '#888888', width: 3 },
+                };
+
+                const trace3 = {
+                    x: ['2016', '2018', '2020', '2022', '2024', '2026'],
+                    y: [5, 15, 30, 50, 75, 90],
+                    name: 'Strategy',
+                    type: 'scatter',
+                    mode: 'lines',
+                    line: { shape: 'spline', smoothing: 1.3, color: '#d1d1d1', width: 3 },
+                };
+
+                const layout = {
+                    margin: { t: 20, r: 20, b: 40, l: 40 },
+                    plot_bgcolor: 'transparent',
+                    paper_bgcolor: 'transparent',
+                    showlegend: false,
+                    xaxis: {
+                        showgrid: false,
+                        color: '#888888',
+                        tickfont: { family: 'monospace', size: 12 }
+                    },
+                    yaxis: {
+                        showgrid: true,
+                        gridcolor: '#e7e7e7',
+                        gridwidth: 1,
+                        zeroline: false,
+                        color: '#888888',
+                        tickfont: { family: 'monospace', size: 12 }
+                    },
+                    hovermode: 'x unified'
+                };
+
+                const config = {
+                    responsive: true,
+                    displayModeBar: false,
+                    displaylogo: false
+                };
+
+                Plotly.newPlot(container, [trace1, trace2, trace3], layout, config);
+            } catch (e) {
+                console.error('Error initializing chart:', e);
+            }
+        }
+
+        window.addEventListener('load', initializeCharts);
+        setTimeout(initializeCharts, 1200);
+    </script>
+</body>
+</html>

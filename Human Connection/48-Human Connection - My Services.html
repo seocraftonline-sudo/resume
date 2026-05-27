@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Personal Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>window.FontAwesomeConfig = { autoReplaceSvg: "nest"};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        primary: '#1A3626', 
+                        accent: '#4ADE80', 
+                        surface: '#112218', 
+                        textMain: '#F8FAFC',
+                        textMuted: '#94A3B8'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { margin: 0; padding: 0; background-color: #0F172A; color: #F8FAFC; overflow-x: hidden; }
+        .hero-bg {
+            background: linear-gradient(180deg, rgba(26,54,38,0.9) 0%, rgba(15,23,42,1) 100%),
+                        repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(255,255,255,0.03) 40px, rgba(255,255,255,0.03) 80px);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .hand-drawn-border {
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+        }
+        .hand-drawn-border-alt {
+            border-radius: 15px 225px 15px 255px/255px 15px 225px 15px;
+        }
+        ::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="antialiased selection:bg-accent selection:text-primary m-0 p-0">
+
+    <!-- Navigation (Preserved exactly from context) -->
+    <nav id="header" class="fixed w-full top-0 z-50 glass-card border-b-0 py-4 px-6 md:px-12 flex justify-between items-center transition-all duration-300">
+        <a href="#" class="text-2xl font-serif tracking-wide flex items-center gap-2">
+            Michael <span class="text-accent text-sm">✦</span>
+        </a>
+        <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-textMuted">
+            <a href="#" class="hover:text-white transition-colors">Home</a>
+            <a href="#about" class="hover:text-white transition-colors">About Me</a>
+            <a href="#services" class="text-white hover:text-accent transition-colors border-b border-accent pb-1">My Services</a>
+            <a href="#portfolio" class="hover:text-white transition-colors">Portfolio</a>
+        </div>
+        <a href="mailto:hello@example.com" class="hidden md:flex items-center gap-2 text-sm text-textMuted hover:text-white transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            hello@example.com
+        </a>
+        <button class="md:hidden text-white focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+    </nav>
+
+    <!-- Services Introduction Hero -->
+    <section id="services_intro" class="pt-40 pb-20 relative hero-bg min-h-[50vh] flex items-center">
+        <div class="container mx-auto px-6 md:px-12 max-w-[1200px] relative z-10 flex flex-col md:flex-row items-center gap-12">
+            <div class="w-full md:w-3/5 text-left">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-textMuted mb-6">
+                    <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                    How We Can Work Together
+                </div>
+                <h1 class="text-5xl md:text-7xl font-serif mb-6 leading-tight text-white">
+                    Partnership, <br/><span class="text-accent italic">Not Just Production.</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-textMuted font-serif italic leading-relaxed mb-8 max-w-2xl">
+                    I don't just deliver files; I help you navigate the messy middle of product strategy. Whether you're a founder needing clarity or a team needing a fresh perspective, here's how I can help.
+                </p>
+                <div class="flex flex-wrap items-center gap-4">
+                    <a href="#individual_services" class="px-8 py-4 rounded-full bg-accent text-primary font-medium text-lg transition-all shadow-[0_0_20px_rgba(74,222,128,0.2)] hover:shadow-[0_0_30px_rgba(74,222,128,0.4)] flex items-center gap-3">
+                        Explore My Services <i class="fa-solid fa-arrow-down"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="w-full md:w-2/5 relative">
+                <div class="absolute inset-0 bg-accent/20 blur-[100px] rounded-full"></div>
+                <div class="relative w-full aspect-[4/5] rounded-[24px] overflow-hidden border border-white/10 hand-drawn-border">
+                    <img class="w-full h-full object-cover opacity-90" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/ba0a6acdce-4a03aec229f7e5c95079.png" alt="Candid portrait of Michael working" />
+                </div>
+                <div class="absolute -bottom-6 -left-6 glass-card p-4 rounded-[16px] border border-white/10 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-surface border border-white/10 flex items-center justify-center">
+                        <i class="fa-solid fa-mug-hot text-accent text-xl"></i>
+                    </div>
+                    <div>
+                        <p class="text-white font-medium text-sm">Always starts with</p>
+                        <p class="text-textMuted text-xs font-serif italic">A genuine conversation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Individual Service Listings -->
+    <section id="individual_services" class="py-24 bg-[#0F172A] relative">
+        <div class="container mx-auto px-6 md:px-12 max-w-[1200px]">
+            
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-serif text-white mb-4">Core Offerings</h2>
+                <div class="w-24 h-px bg-accent/50 mx-auto"></div>
+            </div>
+
+            <div class="space-y-12">
+                <!-- Service 1 -->
+                <div class="glass-card rounded-[24px] overflow-hidden border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)] transition-transform hover:-translate-y-1 duration-300">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-0">
+                        <div class="lg:col-span-5 relative bg-surface border-r border-white/10 p-8 flex flex-col justify-between">
+                            <div>
+                                <div class="w-16 h-16 rounded-[16px] bg-[#0F172A] border border-white/10 flex items-center justify-center mb-6 shadow-inner">
+                                    <i class="fa-solid fa-compass text-accent text-3xl"></i>
+                                </div>
+                                <h3 class="text-3xl font-serif text-white mb-4">Product Strategy & Discovery</h3>
+                                <p class="text-textMuted leading-relaxed mb-6">
+                                    Before we build, we need to know we're building the right thing. I help founders and teams clarify their vision, map user journeys, and validate concepts before burning development capital.
+                                </p>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center gap-3 text-sm text-textMain/80">
+                                    <i class="fa-regular fa-clock text-accent w-5 text-center"></i> <span>2-4 Weeks</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-sm text-textMain/80">
+                                    <i class="fa-solid fa-tag text-accent w-5 text-center"></i> <span>Starting at $5,000</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-7 p-8 lg:p-12 bg-[#0F172A] flex flex-col justify-center">
+                            <h4 class="text-lg font-serif text-white mb-4 italic">Best suited for:</h4>
+                            <p class="text-textMuted mb-8">Early-stage startups seeking product-market fit, or established teams looking to pivot or introduce a major new feature set.</p>
+                            
+                            <h4 class="text-lg font-serif text-white mb-4 italic">What you get:</h4>
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-start gap-3">
+                                    <div class="mt-1 w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center text-accent flex-shrink-0"><i class="fa-solid fa-check text-[10px]"></i></div>
+                                    <span class="text-textMain/80">Comprehensive user persona and journey mapping</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <div class="mt-1 w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center text-accent flex-shrink-0"><i class="fa-solid fa-check text-[10px]"></i></div>
+                                    <span class="text-textMain/80">High-fidelity wireframes and structural prototypes</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <div class="mt-1 w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center text-accent flex-shrink-0"><i class="fa-solid fa-check text-[10px]"></i></div>
+                                    <span class="text-textMain/80">A strategic roadmap for MVP development</span>
+                                </li>
+                            </ul>
+                            
+                            <div>
+                                <button class="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white hover:bg-white/10 hover:border-accent/50 transition-all font-medium text-sm flex items-center gap-2 w-max">
+                                    Let's discuss strategy <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="glass-card rounded-[24px] overflow-hidden border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)] transition-transform hover:-translate-y-1 duration-300">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-0">
+                        <div class="lg:col-span-5 relative bg-surface border-r border-white/10 p-8 flex flex-col justify-between order-1 lg:order-2">
+                            <div>
+                                <div class="w-16 h-16 rounded-[16px] bg-[#0F172A] border border-white/10 flex items-center justify-center mb-6 shadow-inner">
+                                    <i class="fa-solid fa-wand-magic-sparkles text-blue-400 text-3xl"></i>
+                                </div>
+                                <h3 class="text-3xl font-serif text-white mb-4">UX/UI Design Retainer</h3>
+                                <p class="text-textMuted leading-relaxed mb-6">
+                                    Ongoing design partnership for growing products. I integrate with your engineering team to deliver polished interfaces, maintain design systems, and continuously improve the user experience based on real data.
+                                </p>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center gap-3 text-sm text-textMain/80">
+                                    <i class="fa-regular fa-clock text-blue-400 w-5 text-center"></i> <span>Minimum 3 Months</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-sm text-textMain/80">
+                                    <i class="fa-solid fa-tag text-blue-400 w-5 text-center"></i> <span>Starting at $3,500/mo</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-7 p-8 lg:p-12 bg-[#0F172A] flex flex-col justify-center order-2 lg:order-1 lg:border-r lg:border-white/10">
+                            <h4 class="text-lg font-serif text-white mb-4 italic">Best suited for:</h4>
+                            <p class="text-textMuted mb-8">Post-launch teams who need senior design leadership but aren't ready to hire a full-time lead designer.</p>
+                            
+                            <h4 class="text-lg font-serif text-white mb-4 italic">What you get:</h4>
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-start gap-3">
+                                    <div class="mt-1 w-5 h-5 rounded-full bg-blue-400/10 flex items-center justify-center text-blue-400 flex-shrink-0"><i class="fa-solid fa-check text-[10px]"></i></div>
+                                    <span class="text-textMain/80">Dedicated weekly capacity for UI/UX design</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <div class="mt-1 w-5 h-5 rounded-full bg-blue-400/10 flex items-center justify-center text-blue-400 flex-shrink-0"><i class="fa-solid fa-check text-[10px]"></i></div>
+                                    <span class="text-textMain/80">Creation and maintenance of a scalable design system</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <div class="mt-1 w-5 h-5 rounded-full bg-blue-400/10 flex items-center justify-center text-blue-400 flex-shrink-0"><i class="fa-solid fa-check text-[10px]"></i></div>
+                                    <span class="text-textMain/80">Direct collaboration with your developers for QA</span>
+                                </li>
+                            </ul>
+                            
+                            <div>
+                                <button class="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white hover:bg-white/10 hover:border-blue-400/50 transition-all font-medium text-sm flex items-center gap-2 w-max">
+                                    Explore a retainer <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Engagement Process Steps -->
+    <section id="process_overview" class="py-24 bg-[#0F172A] relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-50"></div>
+        <div class="container mx-auto px-6 md:px-12 max-w-[1000px] relative z-10">
+            
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-serif text-white mb-6">How We Work Together</h2>
+                <p class="text-xl text-textMuted font-serif italic max-w-2xl mx-auto">
+                    A transparent look at the journey from our first hello to the final handoff. No black boxes, just clear communication.
+                </p>
+            </div>
+
+            <div class="relative">
+                <!-- Connecting Line -->
+                <div class="absolute left-[28px] top-8 bottom-8 w-px bg-gradient-to-b from-accent/50 via-white/10 to-transparent hidden md:block"></div>
+
+                <div class="space-y-12">
+                    <!-- Step 1 -->
+                    <div class="relative flex flex-col md:flex-row gap-6 md:gap-12 items-start group">
+                        <div class="w-14 h-14 rounded-full bg-surface border-2 border-accent flex items-center justify-center flex-shrink-0 z-10 shadow-[0_0_15px_rgba(74,222,128,0.2)]">
+                            <span class="text-xl font-serif text-accent">1</span>
+                        </div>
+                        <div class="glass-card p-8 rounded-[24px] border border-white/10 flex-1 transition-all group-hover:border-accent/30 group-hover:bg-white/5">
+                            <h3 class="text-2xl font-serif text-white mb-3">The Alignment Call</h3>
+                            <p class="text-textMuted leading-relaxed">
+                                We start with a 45-minute casual conversation. I want to hear about your vision, your current roadblocks, and what success looks like to you. If we're a good fit, I'll follow up with a detailed proposal.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="relative flex flex-col md:flex-row gap-6 md:gap-12 items-start group">
+                        <div class="w-14 h-14 rounded-full bg-surface border-2 border-white/20 flex items-center justify-center flex-shrink-0 z-10 group-hover:border-white/50 transition-colors">
+                            <span class="text-xl font-serif text-white/50 group-hover:text-white transition-colors">2</span>
+                        </div>
+                        <div class="glass-card p-8 rounded-[24px] border border-white/10 flex-1 transition-all group-hover:border-white/30 group-hover:bg-white/5">
+                            <h3 class="text-2xl font-serif text-white mb-3">Deep Dive & Discovery</h3>
+                            <p class="text-textMuted leading-relaxed">
+                                Once approved, we kick off. I immerse myself in your world—reviewing existing data, talking to your users, and mapping out the strategic foundation before a single pixel is pushed.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="relative flex flex-col md:flex-row gap-6 md:gap-12 items-start group">
+                        <div class="w-14 h-14 rounded-full bg-surface border-2 border-white/20 flex items-center justify-center flex-shrink-0 z-10 group-hover:border-white/50 transition-colors">
+                            <span class="text-xl font-serif text-white/50 group-hover:text-white transition-colors">3</span>
+                        </div>
+                        <div class="glass-card p-8 rounded-[24px] border border-white/10 flex-1 transition-all group-hover:border-white/30 group-hover:bg-white/5">
+                            <h3 class="text-2xl font-serif text-white mb-3">Iterative Creation</h3>
+                            <p class="text-textMuted leading-relaxed">
+                                We work in transparent, weekly cycles. You'll see the messy middle. We'll review concepts, refine them based on feedback, and progressively increase fidelity until we have a polished solution.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="relative flex flex-col md:flex-row gap-6 md:gap-12 items-start group">
+                        <div class="w-14 h-14 rounded-full bg-surface border-2 border-white/20 flex items-center justify-center flex-shrink-0 z-10 group-hover:border-white/50 transition-colors">
+                            <span class="text-xl font-serif text-white/50 group-hover:text-white transition-colors">4</span>
+                        </div>
+                        <div class="glass-card p-8 rounded-[24px] border border-white/10 flex-1 transition-all group-hover:border-white/30 group-hover:bg-white/5">
+                            <h3 class="text-2xl font-serif text-white mb-3">Handoff & Support</h3>
+                            <p class="text-textMuted leading-relaxed">
+                                Delivery isn't just sending a Figma link. I provide comprehensive documentation, walk your developers through the logic, and remain available for QA as they build out the designs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Packages (Optional Tiered Pricing) -->
+    <section id="service_packages" class="py-20 bg-[#0F172A]">
+        <div class="container mx-auto px-6 md:px-12 max-w-[1200px]">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Package 1 -->
+                <div class="glass-card p-8 md:p-10 rounded-[24px] border border-white/10 flex flex-col h-full relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-bl-full -mr-8 -mt-8"></div>
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-serif text-white mb-2">The Audit</h3>
+                        <p class="text-textMuted">A comprehensive review of your existing product to identify friction points.</p>
+                    </div>
+                    <div class="mb-8">
+                        <span class="text-4xl font-serif text-white">$1,500</span>
+                        <span class="text-textMuted text-sm"> / one-time</span>
+                    </div>
+                    <ul class="space-y-4 mb-10 flex-1 text-textMain/80">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accent text-sm"></i> Full heuristic evaluation</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accent text-sm"></i> Accessibility (a11y) check</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accent text-sm"></i> Actionable report with quick wins</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accent text-sm"></i> 1-hour presentation call</li>
+                    </ul>
+                    <button class="w-full py-4 rounded-full bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors font-medium">
+                        Book an Audit
+                    </button>
+                </div>
+
+                <!-- Package 2 -->
+                <div class="glass-card p-8 md:p-10 rounded-[24px] border border-accent/30 bg-surface flex flex-col h-full relative overflow-hidden shadow-[0_0_30px_rgba(74,222,128,0.05)]">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-bl-full -mr-8 -mt-8"></div>
+                    <div class="absolute top-6 right-6 px-3 py-1 rounded-full bg-accent/20 text-accent text-xs font-medium border border-accent/30">
+                        Most Popular
+                    </div>
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-serif text-white mb-2">The Sprint</h3>
+                        <p class="text-textMuted">A focused 2-week engagement to solve a specific, high-priority design challenge.</p>
+                    </div>
+                    <div class="mb-8">
+                        <span class="text-4xl font-serif text-white">$4,000</span>
+                        <span class="text-textMuted text-sm"> / per sprint</span>
+                    </div>
+                    <ul class="space-y-4 mb-10 flex-1 text-textMain/80">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accent text-sm"></i> Dedicated focus on one core flow</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accent text-sm"></i> Rapid prototyping & testing</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accent text-sm"></i> High-fidelity UI delivery</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accent text-sm"></i> Developer handoff session</li>
+                    </ul>
+                    <button class="w-full py-4 rounded-full bg-accent text-primary hover:bg-accent/90 transition-colors font-medium shadow-[0_0_15px_rgba(74,222,128,0.2)]">
+                        Schedule a Sprint
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 bg-[#0F172A]">
+        <div class="container mx-auto px-6 md:px-12 max-w-[800px]">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif text-white mb-4">Common Questions</h2>
+                <p class="text-textMuted font-serif italic">Things people usually ask before we start.</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="glass-card rounded-[16px] border border-white/10 p-6">
+                    <h4 class="text-lg font-medium text-white mb-3">Do you work with early-stage startups?</h4>
+                    <p class="text-textMuted text-sm leading-relaxed">Yes, absolutely. I love the energy of early-stage teams. My strategic discovery service is specifically designed to help founders validate their ideas before committing to expensive development cycles.</p>
+                </div>
+                <!-- FAQ Item 2 -->
+                <div class="glass-card rounded-[16px] border border-white/10 p-6">
+                    <h4 class="text-lg font-medium text-white mb-3">What design tools do you use?</h4>
+                    <p class="text-textMuted text-sm leading-relaxed">Figma is my primary tool for all UI/UX work and prototyping. For strategy and mapping, I often use FigJam or Miro. I'm also comfortable working directly in code (HTML/Tailwind) for rapid prototyping if needed.</p>
+                </div>
+                <!-- FAQ Item 3 -->
+                <div class="glass-card rounded-[16px] border border-white/10 p-6">
+                    <h4 class="text-lg font-medium text-white mb-3">How do you handle revisions?</h4>
+                    <p class="text-textMuted text-sm leading-relaxed">I don't strictly cap revisions because we work iteratively. By reviewing progress weekly, there are no massive "reveals" that require sweeping changes. We pivot together as we learn more about the problem.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="final_cta" class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-surface"></div>
+        <div class="absolute inset-0 hero-bg opacity-50"></div>
+        
+        <div class="container mx-auto px-6 md:px-12 max-w-[800px] relative z-10 text-center">
+            <h2 class="text-4xl md:text-6xl font-serif text-white mb-6 leading-tight">Ready to start the <br/><span class="text-accent italic">conversation?</span></h2>
+            <p class="text-xl text-textMuted mb-10 max-w-2xl mx-auto">
+                No pressure, no aggressive sales pitch. Just a chat about what you're building and whether I'm the right person to help.
+            </p>
+            <a href="mailto:hello@example.com" class="inline-flex px-10 py-5 rounded-full bg-accent text-primary font-medium text-lg transition-all shadow-[0_0_30px_rgba(74,222,128,0.3)] hover:shadow-[0_0_40px_rgba(74,222,128,0.5)] items-center gap-3">
+                Say Hello <i class="fa-solid fa-paper-plane"></i>
+            </a>
+            <p class="mt-6 text-sm text-textMuted font-serif italic">Or reach out directly at hello@example.com</p>
+        </div>
+    </section>
+
+    <!-- Footer (Preserved exactly from context) -->
+    <footer id="footer" class="py-12 border-t border-white/5 bg-black/20 mt-12">
+        <div class="container mx-auto px-6 md:px-12 max-w-[1440px] flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-2xl font-serif tracking-wide flex items-center gap-2">
+                Michael <span class="text-accent text-sm">✦</span>
+            </div>
+            <div class="flex gap-6 text-textMuted">
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-dribbble text-xl"></i></a>
+            </div>
+            <p class="text-sm text-textMuted">© 2023 Michael Design. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Space Grotesk', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #0a0a0a;
+        }
+        ::-webkit-scrollbar { display: none; }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #0a0a0a 0%, #666666 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hover-scale {
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+        
+        .parallax-slow {
+            transition: transform 0.6s ease-out;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .text-outline {
+            -webkit-text-stroke: 1px rgba(0,0,0,0.1);
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .blur-overlay {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-white text-black font-sans overflow-x-hidden">
+
+    <header id="header" class="fixed top-0 left-0 w-full z-50 blur-overlay bg-white/90 border-b border-black/10">
+        <div class="max-w-[1440px] mx-auto px-8 lg:px-16 h-24 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full"></div>
+                <span class="font-bold text-xl tracking-tighter">ARIA CHEN</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-10">
+                <a href="#" class="text-sm font-medium text-gray-600 hover:text-black transition-colors">Work</a>
+                <a href="#" class="text-sm font-medium text-black">About</a>
+                <a href="#" class="text-sm font-medium text-gray-600 hover:text-black transition-colors">Process</a>
+                <a href="#" class="text-sm font-medium text-gray-600 hover:text-black transition-colors">Contact</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <span class="text-xs font-mono text-gray-500 hidden lg:block">NYC 14:22</span>
+                <a href="#contact" class="px-6 py-3 bg-black text-white text-sm font-semibold rounded-full hover:bg-gray-800 transition-colors">Collaborate</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="pt-24">
+        
+        <section id="hero-intro" class="relative h-[800px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-purple-50 via-white to-pink-50">
+            <div class="absolute top-20 left-10 w-96 h-96 bg-purple-200/30 rounded-full blur-3xl floating"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-pink-200/30 rounded-full blur-3xl floating" style="animation-delay: -3s;"></div>
+            
+            <div class="relative z-10 max-w-[1200px] mx-auto px-8 text-center">
+                <div class="mb-8">
+                    <span class="inline-block px-4 py-2 bg-black/5 border border-black/10 rounded-full text-xs font-mono uppercase tracking-wider mb-6">Creative Director • Technologist • Disruptor</span>
+                </div>
+                <h1 class="font-serif text-7xl lg:text-9xl mb-8 leading-none">
+                    <span class="block gradient-text">Breaking Rules</span>
+                    <span class="block text-black/10 text-outline mt-4">Beautifully</span>
+                </h1>
+                <p class="text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light">
+                    I'm Aria Chen, a creative force who sees the world differently. For 12 years, I've been crafting experiences at the intersection of art, technology, and controlled disruption.
+                </p>
+            </div>
+        </section>
+
+        <section id="personal-intro" class="max-w-[1440px] mx-auto px-8 lg:px-16 py-32">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+                <div class="lg:col-span-5">
+                    <div class="sticky top-32">
+                        <span class="text-xs font-mono uppercase tracking-widest text-purple-600 mb-6 block">01 — Who I Am</span>
+                        <h2 class="font-serif text-5xl lg:text-6xl mb-8 leading-tight">The Story Behind the Work</h2>
+                        <div class="w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500"></div>
+                    </div>
+                </div>
+                <div class="lg:col-span-7 space-y-8 text-lg text-gray-700 leading-relaxed">
+                    <p class="text-2xl font-light text-black">
+                        I don't just design interfaces. I orchestrate experiences that make people stop, lean in, and feel something they didn't expect to feel.
+                    </p>
+                    <p>
+                        My journey started in the world of architecture, where I learned that every space tells a story. I spent three years designing physical environments before realizing that digital spaces could be just as emotional, just as powerful, and infinitely more malleable.
+                    </p>
+                    <p>
+                        The transition wasn't smooth. I taught myself to code at 2am in a cramped Brooklyn apartment, fueled by cold brew and the belief that the best designers understand their medium at the deepest level. That decision changed everything.
+                    </p>
+                    <p>
+                        Today, I lead creative strategy for a major tech company while running my own studio on the side. I work with brands that aren't afraid to be different, with founders who understand that safe is the riskiest choice you can make.
+                    </p>
+                    <p class="text-xl text-purple-700 font-medium">
+                        My work has been featured on Awwwards, FWA, and Behance. But the real reward is when someone tells me they've never seen anything quite like what we created together.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="professional-journey" class="max-w-[1440px] mx-auto px-8 lg:px-16 py-32 border-t border-black/10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+                <div class="lg:col-span-5">
+                    <span class="text-xs font-mono uppercase tracking-widest text-pink-600 mb-6 block">02 — The Journey</span>
+                    <h2 class="font-serif text-5xl lg:text-6xl mb-8 leading-tight">From Blueprints to Pixels</h2>
+                </div>
+                <div class="lg:col-span-7">
+                    <div class="space-y-12">
+                        <div class="group hover-scale cursor-pointer">
+                            <div class="flex items-start gap-8 p-8 bg-purple-50 border border-purple-200 rounded-2xl">
+                                <div class="flex-shrink-0 w-24 h-24 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-3xl font-bold text-white">01</div>
+                                <div>
+                                    <h3 class="text-2xl font-semibold mb-3">Architecture School</h3>
+                                    <p class="text-gray-600 mb-2 text-sm font-mono">2010 — 2014</p>
+                                    <p class="text-gray-700 leading-relaxed">Learned that design is about solving problems people didn't know they had. Developed an obsession with spatial relationships and human behavior.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="group hover-scale cursor-pointer">
+                            <div class="flex items-start gap-8 p-8 bg-blue-50 border border-blue-200 rounded-2xl">
+                                <div class="flex-shrink-0 w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-3xl font-bold text-white">02</div>
+                                <div>
+                                    <h3 class="text-2xl font-semibold mb-3">The Pivot</h3>
+                                    <p class="text-gray-600 mb-2 text-sm font-mono">2014 — 2016</p>
+                                    <p class="text-gray-700 leading-relaxed">Self-taught coding, freelanced for startups, failed spectacularly twice. Each failure taught me more than any success ever could.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="group hover-scale cursor-pointer">
+                            <div class="flex items-start gap-8 p-8 bg-pink-50 border border-pink-200 rounded-2xl">
+                                <div class="flex-shrink-0 w-24 h-24 bg-gradient-to-br from-pink-500 to-red-500 rounded-full flex items-center justify-center text-3xl font-bold text-white">03</div>
+                                <div>
+                                    <h3 class="text-2xl font-semibold mb-3">Breaking Through</h3>
+                                    <p class="text-gray-600 mb-2 text-sm font-mono">2016 — 2020</p>
+                                    <p class="text-gray-700 leading-relaxed">Joined a boutique agency in San Francisco. Led projects for Fortune 500 companies. Won my first Awwwards. Realized I could do this at scale.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="group hover-scale cursor-pointer">
+                            <div class="flex items-start gap-8 p-8 bg-green-50 border border-green-200 rounded-2xl">
+                                <div class="flex-shrink-0 w-24 h-24 bg-gradient-to-br from-green-500 to-blue-500 rounded-full flex items-center justify-center text-3xl font-bold text-white">04</div>
+                                <div>
+                                    <h3 class="text-2xl font-semibold mb-3">Leading the Charge</h3>
+                                    <p class="text-gray-600 mb-2 text-sm font-mono">2020 — Present</p>
+                                    <p class="text-gray-700 leading-relaxed">Currently Creative Director at a major tech firm. Founded my own studio, Disrupt. Speaking at conferences. Mentoring the next generation of rule-breakers.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="values-philosophy" class="relative py-32 overflow-hidden bg-gradient-to-b from-white via-purple-50 to-white">
+            <div class="relative z-10 max-w-[1440px] mx-auto px-8 lg:px-16">
+                <div class="text-center mb-20">
+                    <span class="text-xs font-mono uppercase tracking-widest text-purple-600 mb-6 block">03 — Core Beliefs</span>
+                    <h2 class="font-serif text-5xl lg:text-7xl mb-6">What I Stand For</h2>
+                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">These principles guide every decision, every pixel, every conversation.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="group p-8 bg-white border border-purple-200 rounded-2xl hover-scale shadow-sm hover:shadow-lg transition-all">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-purple-200 transition-colors">
+                            <i class="fas fa-brain text-2xl text-purple-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4">Understand Deeply</h3>
+                        <p class="text-gray-600 leading-relaxed">Rules exist to be understood before being broken. Chaos is lazy. Controlled disruption is art.</p>
+                    </div>
+
+                    <div class="group p-8 bg-white border border-pink-200 rounded-2xl hover-scale shadow-sm hover:shadow-lg transition-all">
+                        <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-pink-200 transition-colors">
+                            <i class="fas fa-heart text-2xl text-pink-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4">Emotion First</h3>
+                        <p class="text-gray-600 leading-relaxed">Logic gets attention. Emotion gets remembered. I design for the feeling you can't quite name.</p>
+                    </div>
+
+                    <div class="group p-8 bg-white border border-blue-200 rounded-2xl hover-scale shadow-sm hover:shadow-lg transition-all">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue-200 transition-colors">
+                            <i class="fas fa-eye text-2xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4">Clarity Always</h3>
+                        <p class="text-gray-600 leading-relaxed">Surprise is powerful, but never at the cost of understanding. Delight through clarity, not confusion.</p>
+                    </div>
+
+                    <div class="group p-8 bg-white border border-green-200 rounded-2xl hover-scale shadow-sm hover:shadow-lg transition-all">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-green-200 transition-colors">
+                            <i class="fas fa-rocket text-2xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4">Motion With Purpose</h3>
+                        <p class="text-gray-600 leading-relaxed">Every animation should earn its place. Movement is a language, not decoration.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="personal-life" class="max-w-[1440px] mx-auto px-8 lg:px-16 py-32 border-t border-black/10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <span class="text-xs font-mono uppercase tracking-widest text-pink-600 mb-6 block">04 — Beyond the Screen</span>
+                    <h2 class="font-serif text-5xl lg:text-6xl mb-8 leading-tight">Life Outside Work</h2>
+                    <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
+                        <p>
+                            When I'm not designing, you'll find me hunting for mid-century brutalist furniture in Brooklyn warehouses. There's something about exposed concrete and raw materials that speaks to my design philosophy.
+                        </p>
+                        <p>
+                            I also restore vintage synthesizers—Moogs, Korgs, and Roland classics. The mechanical nature of analog sound design mirrors digital design in ways most people don't see. Both require understanding complex systems to create simple, beautiful outputs.
+                        </p>
+                        <p>
+                            I'm passionate about mentoring young designers, especially those from underrepresented backgrounds. I volunteer with Code2040 and teach weekend workshops on design thinking.
+                        </p>
+                        <p class="text-purple-700 font-medium">
+                            I believe the best work comes from a full life. My hobbies aren't distractions—they're research.
+                        </p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="aspect-square overflow-hidden rounded-2xl hover:shadow-xl transition-all duration-700">
+                        <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/54c7d61b27-ac44c9d70b4e5d3ccce8.png" alt="creative director working in modern studio with brutalist furniture and vintage synthesizers, moody lighting, editorial photography style" />
+                    </div>
+                    <div class="aspect-square overflow-hidden rounded-2xl hover:shadow-xl transition-all duration-700 mt-12">
+                        <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/a9d2754521-785fe28ea9e18bf7fc02.png" alt="female designer speaking at tech conference on stage, dynamic lighting, confident pose, professional photography" />
+                    </div>
+                    <div class="aspect-square overflow-hidden rounded-2xl hover:shadow-xl transition-all duration-700 -mt-12">
+                        <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/d0ffc12cfb-d654e90335934f0bee07.png" alt="close-up of hands working on vintage synthesizer, warm studio lighting, artistic composition" />
+                    </div>
+                    <div class="aspect-square overflow-hidden rounded-2xl hover:shadow-xl transition-all duration-700">
+                        <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/90d85c275b-918aff84bb8378bfaddf.png" alt="designer collaborating with team in creative workspace, natural light, candid moment, documentary style" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements" class="max-w-[1440px] mx-auto px-8 lg:px-16 py-32 border-t border-black/10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+                <div class="lg:col-span-5">
+                    <span class="text-xs font-mono uppercase tracking-widest text-purple-600 mb-6 block">05 — Recognition</span>
+                    <h2 class="font-serif text-5xl lg:text-6xl mb-8 leading-tight">Milestones That Matter</h2>
+                    <p class="text-gray-600 text-lg leading-relaxed">Not all achievements are awards. Some are the problems we solved, the teams we built, the industries we changed.</p>
+                </div>
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="group p-6 bg-purple-50 border-l-4 border-purple-500 hover:bg-purple-100 transition-colors">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-semibold">Led $50M Global Redesign for Major Fintech</h3>
+                            <span class="text-sm font-mono text-gray-500">2025</span>
+                        </div>
+                        <p class="text-gray-600">Transformed user experience for 12M+ users across 47 countries. Increased conversion by 340%.</p>
+                    </div>
+
+                    <div class="group p-6 bg-pink-50 border-l-4 border-pink-500 hover:bg-pink-100 transition-colors">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-semibold">Founded Creative Tech Studio 'Disrupt'</h3>
+                            <span class="text-sm font-mono text-gray-500">2023</span>
+                        </div>
+                        <p class="text-gray-600">Built a team of 12 designers and developers. Serving clients from YC startups to Fortune 500 brands.</p>
+                    </div>
+
+                    <div class="group p-6 bg-blue-50 border-l-4 border-blue-500 hover:bg-blue-100 transition-colors">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-semibold">Keynote Speaker at Awwwards Conference NYC</h3>
+                            <span class="text-sm font-mono text-gray-500">2024</span>
+                        </div>
+                        <p class="text-gray-600">Spoke to 2,000+ designers about controlled disruption and the future of web experiences.</p>
+                    </div>
+
+                    <div class="group p-6 bg-green-50 border-l-4 border-green-500 hover:bg-green-100 transition-colors">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-semibold">Won 7 FWA Site of the Day Awards</h3>
+                            <span class="text-sm font-mono text-gray-500">2020-2024</span>
+                        </div>
+                        <p class="text-gray-600">Including 3 Site of the Month honors for pushing the boundaries of web design.</p>
+                    </div>
+
+                    <div class="group p-6 bg-yellow-50 border-l-4 border-yellow-500 hover:bg-yellow-100 transition-colors">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-semibold">Featured in Design Milk, It's Nice That, The Verge</h3>
+                            <span class="text-sm font-mono text-gray-500">2021-2025</span>
+                        </div>
+                        <p class="text-gray-600">Work profiled in major design and tech publications for innovation and impact.</p>
+                    </div>
+
+                    <div class="group p-6 bg-red-50 border-l-4 border-red-500 hover:bg-red-100 transition-colors">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-semibold">Transitioned from Architecture to Digital Design</h3>
+                            <span class="text-sm font-mono text-gray-500">2014</span>
+                        </div>
+                        <p class="text-gray-600">The scariest and best decision I ever made. Everything changed from here.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="current-focus" class="relative py-32 overflow-hidden bg-gradient-to-b from-white via-pink-50 to-white">
+            <div class="relative z-10 max-w-[1200px] mx-auto px-8 text-center">
+                <span class="text-xs font-mono uppercase tracking-widest text-pink-600 mb-6 block">06 — What's Next</span>
+                <h2 class="font-serif text-5xl lg:text-7xl mb-8 leading-tight">Current Focus</h2>
+                <div class="max-w-3xl mx-auto space-y-6 text-xl text-gray-700 leading-relaxed mb-12">
+                    <p>
+                        Right now, I'm obsessed with the intersection of spatial computing and generative UI. I believe we're on the cusp of a fundamental shift in how humans interact with digital spaces.
+                    </p>
+                    <p>
+                        I'm working on a secret project that reimagines e-commerce for the Vision Pro era. I'm also advising three early-stage startups on design strategy and brand positioning.
+                    </p>
+                    <p class="text-purple-700 font-medium text-2xl">
+                        I'm open to select design commissions for Q4 2026 and advisory roles for companies that want to break the mold.
+                    </p>
+                </div>
+                <a href="#contact" class="inline-block px-10 py-5 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-lg font-semibold rounded-full hover:shadow-2xl hover:shadow-purple-500/50 transition-all">
+                    Let's Create Something Unforgettable
+                </a>
+            </div>
+        </section>
+
+        <section id="massive-name" class="py-32 border-t border-black/10 overflow-hidden">
+            <h2 class="font-serif text-[18vw] lg:text-[20vw] leading-none text-center whitespace-nowrap text-outline">
+                ARIA CHEN
+            </h2>
+        </section>
+
+        <section id="contact-links" class="max-w-[1440px] mx-auto px-8 lg:px-16 py-20">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div>
+                    <h3 class="text-xs font-mono uppercase tracking-widest text-purple-600 mb-6">Get In Touch</h3>
+                    <a href="mailto:hello@ariachen.com" class="text-2xl font-semibold hover:text-purple-600 transition-colors block mb-2">hello@ariachen.com</a>
+                    <p class="text-gray-500 text-sm">Available for select projects</p>
+                </div>
+                <div>
+                    <h3 class="text-xs font-mono uppercase tracking-widest text-pink-600 mb-6">Social</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-lg hover:text-pink-600 transition-colors flex items-center gap-3"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                        <li><a href="#" class="text-lg hover:text-pink-600 transition-colors flex items-center gap-3"><i class="fab fa-behance"></i> Behance</a></li>
+                        <li><a href="#" class="text-lg hover:text-pink-600 transition-colors flex items-center gap-3"><i class="fab fa-dribbble"></i> Dribbble</a></li>
+                        <li><a href="#" class="text-lg hover:text-pink-600 transition-colors flex items-center gap-3"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xs font-mono uppercase tracking-widest text-blue-600 mb-6">Location</h3>
+                    <p class="text-lg mb-2">Brooklyn, New York</p>
+                    <p class="text-gray-500 text-sm">Working globally, living locally</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="footer" class="bg-white border-t border-black/10 py-12">
+        <div class="max-w-[1440px] mx-auto px-8 lg:px-16 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-sm text-gray-500">
+                &copy; 2026 Aria Chen. All Rights Reserved. Designed with controlled disruption.
+            </div>
+            <div class="flex items-center gap-6 text-sm font-medium">
+                <a href="#" class="text-gray-600 hover:text-black transition-colors">GitHub</a>
+                <a href="#" class="text-gray-600 hover:text-black transition-colors">LinkedIn</a>
+                <a href="#" class="text-gray-600 hover:text-black transition-colors">Instagram</a>
+                <a href="#" class="text-gray-600 hover:text-black transition-colors">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
