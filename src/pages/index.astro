@@ -1,0 +1,75 @@
+---
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume Vault — Choose Your Theme</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500&display=swap" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    ::-webkit-scrollbar{display:none}
+    body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#f5f5f5;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;overflow-x:hidden}
+    .blob{position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0}
+    .bl1{width:600px;height:600px;background:rgba(79,70,229,.12);top:-200px;left:-200px}
+    .bl2{width:500px;height:500px;background:rgba(74,222,128,.08);bottom:-150px;right:-100px}
+    .bl3{width:400px;height:400px;background:rgba(255,102,0,.07);top:40%;left:50%;transform:translate(-50%,-50%)}
+    .wrap{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:3.5rem;width:100%;max-width:680px}
+    .hdr{text-align:center;display:flex;flex-direction:column;gap:.9rem}
+    .ey{font-size:.68rem;text-transform:uppercase;letter-spacing:.22em;color:rgba(245,245,245,.3)}
+    h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,6vw,3.8rem);font-weight:500;line-height:1.1;letter-spacing:-.02em}
+    .sub{font-size:.9375rem;color:rgba(245,245,245,.4);line-height:1.65;max-width:380px;margin-inline:auto}
+    .themes{display:flex;flex-direction:column;gap:.65rem;width:100%}
+    .tb{display:flex;align-items:center;justify-content:space-between;width:100%;padding:1.2rem 1.6rem;border-radius:14px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.025);cursor:pointer;text-decoration:none;transition:all .28s cubic-bezier(.4,0,.2,1);gap:1rem}
+    .tb:hover{border-color:var(--c);background:rgba(255,255,255,.06);transform:translateX(5px)}
+    .tb:hover .ar{opacity:1;transform:translateX(0);color:var(--c)}
+    .tb:hover .dot{box-shadow:0 0 14px var(--c)}
+    .tl{display:flex;align-items:center;gap:.9rem}
+    .dot{width:9px;height:9px;border-radius:50%;background:var(--c);flex-shrink:0;transition:box-shadow .28s ease}
+    .tt{display:flex;flex-direction:column;gap:.18rem;text-align:left}
+    .tn{font-size:.9375rem;font-weight:500;color:#f5f5f5;line-height:1}
+    .td{font-size:.75rem;color:rgba(245,245,245,.35);line-height:1}
+    .ar{font-size:.85rem;opacity:0;transform:translateX(-5px);transition:all .28s cubic-bezier(.4,0,.2,1);flex-shrink:0}
+    .qg{--c:#d1d5db}.cd{--c:#b0b0b0}.pp{--c:#6366f1}.dn{--c:#FF6600}.hc{--c:#4ADE80}
+    .fn{font-size:.72rem;color:rgba(245,245,245,.18);letter-spacing:.04em}
+  </style>
+</head>
+<body>
+  <div class="blob bl1"></div>
+  <div class="blob bl2"></div>
+  <div class="blob bl3"></div>
+  <div class="wrap">
+    <div class="hdr">
+      <span class="ey">Resume Vault</span>
+      <h1>Choose Your<br/>Design Theme</h1>
+      <p class="sub">Five distinct portfolio identities. Select one to preview its homepage.</p>
+    </div>
+    <nav class="themes" aria-label="Theme selection">
+      <a href="/qg/" class="tb qg">
+        <div class="tl"><div class="dot"></div><div class="tt"><span class="tn">Quiet Genius</span><span class="td">Minimal editorial — light, refined, serene</span></div></div>
+        <span class="ar">&#8594;</span>
+      </a>
+      <a href="/cd/" class="tb cd">
+        <div class="tl"><div class="dot"></div><div class="tt"><span class="tn">Creative Disruptor</span><span class="td">Bold magazine energy — stark contrast, editorial</span></div></div>
+        <span class="ar">&#8594;</span>
+      </a>
+      <a href="/pp/" class="tb pp">
+        <div class="tl"><div class="dot"></div><div class="tt"><span class="tn">Power Player</span><span class="td">Boardroom prestige — structured, commanding</span></div></div>
+        <span class="ar">&#8594;</span>
+      </a>
+      <a href="/dn/" class="tb dn">
+        <div class="tl"><div class="dot"></div><div class="tt"><span class="tn">Digital Native</span><span class="td">Tech-forward — terminal aesthetics, orange accent</span></div></div>
+        <span class="ar">&#8594;</span>
+      </a>
+      <a href="/hc/" class="tb hc">
+        <div class="tl"><div class="dot"></div><div class="tt"><span class="tn">Human Connection</span><span class="td">Warm deep green — organic, storytelling-driven</span></div></div>
+        <span class="ar">&#8594;</span>
+      </a>
+    </nav>
+    <span class="fn">Resume Vault Design System &copy; 2025</span>
+  </div>
+</body>
+</html>
