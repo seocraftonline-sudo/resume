@@ -1,0 +1,145 @@
+---
+import BaseLayout from '../../layouts/Base.astro';
+import QGNav from '../../components/QGNav.astro';
+---
+<BaseLayout title="Resume — Alex Law" theme="qg">
+  <Fragment slot="head">
+    <link rel="stylesheet" href="/styles/rv.css" />
+    <style>
+      .deco{position:fixed;border-radius:50%;pointer-events:none;z-index:0}
+      .deco1{width:40%;height:40%;top:-10%;left:-10%;background:radial-gradient(circle,rgba(238,242,255,.5) 0%,transparent 70%);filter:blur(60px)}
+      .deco2{width:50%;height:50%;bottom:-10%;right:-5%;background:radial-gradient(circle,rgba(245,243,255,.4) 0%,transparent 70%);filter:blur(60px)}
+      .tl-item{position:relative;padding-bottom:2.5rem;border-left:1px solid #E5E7EB;padding-left:2rem;margin-left:1rem}
+      .tl-item:last-child{border-left-color:transparent}
+      .tl-dot{position:absolute;left:-.35rem;top:.5rem;width:.75rem;height:.75rem;background:#111827;border-radius:50%}
+      .skill-bar{height:3px;background:#E5E7EB;border-radius:999px;overflow:hidden}
+      .skill-fill{height:100%;background:#111827;border-radius:999px;transition:width 1s ease}
+      .cert-badge{display:flex;align-items:center;gap:.75rem;padding:1rem 1.25rem;background:rgba(255,255,255,.8);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.3);border-radius:14px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+      @media(max-width:767px){.resume-layout{grid-template-columns:1fr!important}}
+    </style>
+  </Fragment>
+  <div class="deco deco1"></div>
+  <div class="deco deco2"></div>
+  <QGNav active="resume" />
+
+  <main style="padding-top:5rem;position:relative;z-index:1">
+    <div style="max-width:1440px;margin-inline:auto;padding:5rem 1.5rem 6rem;display:flex;flex-direction:column;gap:4rem">
+
+      <!-- Header -->
+      <section style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;border-bottom:1px solid #E5E7EB;padding-bottom:2.5rem;gap:1.5rem">
+        <div>
+          <h1 style="font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,4rem);font-weight:500;line-height:1.1;letter-spacing:-.03em;color:#111827;margin-bottom:.75rem">Curriculum Vitae</h1>
+          <p style="font-size:1.0625rem;color:#6B7280;font-weight:300">Alex Law &mdash; Design Director &amp; Product Strategist</p>
+        </div>
+        <a href="#" style="display:inline-flex;align-items:center;gap:.6rem;padding:.75rem 1.5rem;background:#111827;color:#fff;border-radius:12px;font-size:.875rem;font-weight:500;transition:all .2s ease">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download PDF
+        </a>
+      </section>
+
+      <!-- Layout -->
+      <div class="resume-layout" style="display:grid;grid-template-columns:3fr 9fr;gap:4rem;align-items:start">
+
+        <!-- Sidebar -->
+        <div style="display:flex;flex-direction:column;gap:3rem;position:sticky;top:7rem">
+          <div>
+            <h3 style="font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:#6B7280;margin-bottom:1.25rem">Contact</h3>
+            <div style="display:flex;flex-direction:column;gap:.6rem">
+              <a href="mailto:hello@alexlaw.design" style="font-size:.8125rem;color:#6B7280">hello@alexlaw.design</a>
+              <a href="tel:+15551234567" style="font-size:.8125rem;color:#6B7280">+1 (555) 123-4567</a>
+              <span style="font-size:.8125rem;color:#6B7280">New York, NY</span>
+            </div>
+          </div>
+          <div>
+            <h3 style="font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:#6B7280;margin-bottom:1.25rem">Education</h3>
+            <div style="display:flex;flex-direction:column;gap:1rem">
+              <div><div style="font-size:.875rem;font-weight:500;color:#111827">MFA, Interaction Design</div><div style="font-size:.75rem;color:#6B7280">RISD &mdash; 2014</div></div>
+              <div><div style="font-size:.875rem;font-weight:500;color:#111827">BA, Architecture</div><div style="font-size:.75rem;color:#6B7280">Yale &mdash; 2012</div></div>
+            </div>
+          </div>
+          <div>
+            <h3 style="font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:#6B7280;margin-bottom:1.25rem">Languages</h3>
+            <div style="display:flex;flex-direction:column;gap:.5rem">
+              <div style="display:flex;justify-content:space-between;font-size:.8125rem"><span style="color:#111827">English</span><span style="color:#6B7280">Native</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:.8125rem"><span style="color:#111827">French</span><span style="color:#6B7280">Fluent</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:.8125rem"><span style="color:#111827">Spanish</span><span style="color:#6B7280">Conversational</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div style="display:flex;flex-direction:column;gap:3.5rem">
+
+          <!-- Experience -->
+          <section>
+            <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:400;color:#111827;margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid #E5E7EB">Work Experience</h2>
+            <div style="display:flex;flex-direction:column">
+              <div class="tl-item"><div class="tl-dot"></div>
+                <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem;gap:.5rem">
+                  <h3 style="font-size:1.0625rem;font-weight:500;color:#111827">Independent Design Director</h3>
+                  <span style="font-size:.75rem;color:#6B7280;background:#F3F4F6;padding:.2rem .6rem;border-radius:999px">2018 — Present</span>
+                </div>
+                <p style="font-size:.8125rem;color:#6B7280;margin-bottom:.75rem">Self-employed &mdash; New York, NY</p>
+                <p style="font-size:.875rem;color:#6B7280;line-height:1.75">Partnering selectively with founders and product teams to architect high-stakes digital experiences. Focusing on fintech, luxury heritage brands, and complex SaaS platforms.</p>
+              </div>
+              <div class="tl-item"><div class="tl-dot"></div>
+                <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem;gap:.5rem">
+                  <h3 style="font-size:1.0625rem;font-weight:500;color:#111827">Lead Designer</h3>
+                  <span style="font-size:.75rem;color:#6B7280;background:#F3F4F6;padding:.2rem .6rem;border-radius:999px">2014 — 2018</span>
+                </div>
+                <p style="font-size:.8125rem;color:#6B7280;margin-bottom:.75rem">Studio O/N &mdash; London, UK</p>
+                <p style="font-size:.875rem;color:#6B7280;line-height:1.75">Led the digital transformation practice, translating physical brand equity into robust, systemic digital languages for global lifestyle brands.</p>
+              </div>
+              <div class="tl-item"><div class="tl-dot"></div>
+                <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem;gap:.5rem">
+                  <h3 style="font-size:1.0625rem;font-weight:500;color:#111827">Junior UX Designer</h3>
+                  <span style="font-size:.75rem;color:#6B7280;background:#F3F4F6;padding:.2rem .6rem;border-radius:999px">2012 — 2014</span>
+                </div>
+                <p style="font-size:.8125rem;color:#6B7280;margin-bottom:.75rem">Frog Design &mdash; New York, NY</p>
+                <p style="font-size:.875rem;color:#6B7280;line-height:1.75">Contributed to enterprise UX projects for Fortune 500 clients, with a focus on complex information architecture and wayfinding systems.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Skills -->
+          <section>
+            <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:400;color:#111827;margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid #E5E7EB">Core Skills</h2>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem 3rem">
+              <div><div style="display:flex;justify-content:space-between;font-size:.8125rem;margin-bottom:.4rem"><span style="color:#111827">Product Strategy</span><span style="color:#6B7280">96%</span></div><div class="skill-bar"><div class="skill-fill" style="width:96%"></div></div></div>
+              <div><div style="display:flex;justify-content:space-between;font-size:.8125rem;margin-bottom:.4rem"><span style="color:#111827">UX Research</span><span style="color:#6B7280">88%</span></div><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+              <div><div style="display:flex;justify-content:space-between;font-size:.8125rem;margin-bottom:.4rem"><span style="color:#111827">Interface Design</span><span style="color:#6B7280">99%</span></div><div class="skill-bar"><div class="skill-fill" style="width:99%"></div></div></div>
+              <div><div style="display:flex;justify-content:space-between;font-size:.8125rem;margin-bottom:.4rem"><span style="color:#111827">Design Systems</span><span style="color:#6B7280">94%</span></div><div class="skill-bar"><div class="skill-fill" style="width:94%"></div></div></div>
+              <div><div style="display:flex;justify-content:space-between;font-size:.8125rem;margin-bottom:.4rem"><span style="color:#111827">Prototyping</span><span style="color:#6B7280">90%</span></div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+              <div><div style="display:flex;justify-content:space-between;font-size:.8125rem;margin-bottom:.4rem"><span style="color:#111827">Motion Design</span><span style="color:#6B7280">75%</span></div><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
+            </div>
+          </section>
+
+          <!-- Certifications -->
+          <section>
+            <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:400;color:#111827;margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid #E5E7EB">Certifications</h2>
+            <div style="display:flex;flex-direction:column;gap:.75rem">
+              <div class="cert-badge">
+                <div style="width:2rem;height:2rem;border-radius:8px;background:#F3F4F6;display:flex;align-items:center;justify-content:center;color:#6B7280;flex-shrink:0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+                <div><div style="font-size:.875rem;font-weight:500;color:#111827">Google UX Design Certificate</div><div style="font-size:.72rem;color:#6B7280">2020</div></div>
+              </div>
+              <div class="cert-badge">
+                <div style="width:2rem;height:2rem;border-radius:8px;background:#F3F4F6;display:flex;align-items:center;justify-content:center;color:#6B7280;flex-shrink:0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+                <div><div style="font-size:.875rem;font-weight:500;color:#111827">Nielsen Norman Group UX Master</div><div style="font-size:.72rem;color:#6B7280">2019</div></div>
+              </div>
+              <div class="cert-badge">
+                <div style="width:2rem;height:2rem;border-radius:8px;background:#F3F4F6;display:flex;align-items:center;justify-content:center;color:#6B7280;flex-shrink:0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+                <div><div style="font-size:.875rem;font-weight:500;color:#111827">IDEO Design Thinking Facilitator</div><div style="font-size:.72rem;color:#6B7280">2018</div></div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer style="border-top:1px solid #E5E7EB;background:#F9FAFB;padding:2rem 0">
+    <div style="max-width:1440px;margin-inline:auto;padding-inline:1.5rem"><p style="font-size:.75rem;color:#6B7280">&copy; 2025 Alex Law. All rights reserved.</p></div>
+  </footer>
+</BaseLayout>

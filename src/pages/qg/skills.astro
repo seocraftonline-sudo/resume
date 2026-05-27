@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../../layouts/Base.astro';
+import QGNav from '../../components/QGNav.astro';
+---
+<BaseLayout title="Skills — Alex Law" theme="qg">
+  <Fragment slot="head">
+    <link rel="stylesheet" href="/styles/rv.css" />
+    <style>
+      .deco{position:fixed;border-radius:50%;pointer-events:none;z-index:0}
+      .deco1{width:40%;height:40%;top:-10%;left:-10%;background:radial-gradient(circle,rgba(238,242,255,.5) 0%,transparent 70%);filter:blur(60px)}
+      .deco2{width:50%;height:50%;bottom:-10%;right:-5%;background:radial-gradient(circle,rgba(245,243,255,.4) 0%,transparent 70%);filter:blur(60px)}
+      .skill-card{background:rgba(255,255,255,.8);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:1.5rem;box-shadow:0 4px 20px -2px rgba(0,0,0,.05);display:flex;flex-direction:column;gap:1rem;transition:all .3s ease}
+      .skill-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px -8px rgba(0,0,0,.08)}
+      .skill-icon{width:2.5rem;height:2.5rem;border-radius:10px;background:#F3F4F6;display:flex;align-items:center;justify-content:center;color:#111827;flex-shrink:0}
+      .bar{height:4px;background:#E5E7EB;border-radius:999px;overflow:hidden}
+      .fill{height:100%;background:#111827;border-radius:999px}
+      .soft-tag{display:inline-flex;align-items:center;gap:.4rem;padding:.375rem .875rem;border-radius:999px;font-size:.8125rem;border:1px solid #E5E7EB;background:transparent;color:#374151}
+    </style>
+  </Fragment>
+  <div class="deco deco1"></div>
+  <div class="deco deco2"></div>
+  <QGNav active="skills" />
+
+  <main style="padding-top:5rem;position:relative;z-index:1">
+    <div style="max-width:1440px;margin-inline:auto;padding:5rem 1.5rem 6rem;display:flex;flex-direction:column;gap:4rem">
+
+      <!-- Header -->
+      <section style="border-bottom:1px solid #E5E7EB;padding-bottom:3rem">
+        <h1 style="font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,4rem);font-weight:500;line-height:1.1;letter-spacing:-.03em;color:#111827;margin-bottom:1rem">Skills &amp; Expertise</h1>
+        <p style="font-size:1.125rem;color:#6B7280;font-weight:300;max-width:560px;line-height:1.7">A candid map of the capabilities I bring to every engagement — both technical and human.</p>
+      </section>
+
+      <!-- Core Competencies -->
+      <section>
+        <p style="font-size:.65rem;color:#6B7280;text-transform:uppercase;letter-spacing:.12em;margin-bottom:1.5rem">Core Competencies</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem">
+          <div class="skill-card"><div style="display:flex;align-items:center;gap:.75rem"><div class="skill-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div><span style="font-size:.9375rem;font-weight:500;color:#111827">Product Strategy</span></div><div class="bar"><div class="fill" style="width:96%"></div></div><span style="font-size:.75rem;color:#6B7280">Expert &mdash; 12 years</span></div>
+          <div class="skill-card"><div style="display:flex;align-items:center;gap:.75rem"><div class="skill-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><span style="font-size:.9375rem;font-weight:500;color:#111827">Interface Design</span></div><div class="bar"><div class="fill" style="width:99%"></div></div><span style="font-size:.75rem;color:#6B7280">Expert &mdash; 12 years</span></div>
+          <div class="skill-card"><div style="display:flex;align-items:center;gap:.75rem"><div class="skill-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><span style="font-size:.9375rem;font-weight:500;color:#111827">Design Systems</span></div><div class="bar"><div class="fill" style="width:94%"></div></div><span style="font-size:.75rem;color:#6B7280">Expert &mdash; 9 years</span></div>
+          <div class="skill-card"><div style="display:flex;align-items:center;gap:.75rem"><div class="skill-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><span style="font-size:.9375rem;font-weight:500;color:#111827">UX Research</span></div><div class="bar"><div class="fill" style="width:88%"></div></div><span style="font-size:.75rem;color:#6B7280">Advanced &mdash; 10 years</span></div>
+        </div>
+      </section>
+
+      <!-- Technical Skills -->
+      <section>
+        <p style="font-size:.65rem;color:#6B7280;text-transform:uppercase;letter-spacing:.12em;margin-bottom:1.5rem">Technical Toolkit</p>
+        <div style="background:#fff;border-radius:24px;border:1px solid rgba(229,231,235,.6);box-shadow:0 4px 20px -2px rgba(0,0,0,.05);padding:2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem">
+          <div><p style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6B7280;margin-bottom:1rem">Design Tools</p><div style="display:flex;flex-direction:column;gap:.5rem"><span style="font-size:.875rem;color:#111827">Figma (Expert)</span><span style="font-size:.875rem;color:#111827">Sketch</span><span style="font-size:.875rem;color:#111827">Adobe XD</span><span style="font-size:.875rem;color:#111827">Principle</span></div></div>
+          <div><p style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6B7280;margin-bottom:1rem">Motion &amp; 3D</p><div style="display:flex;flex-direction:column;gap:.5rem"><span style="font-size:.875rem;color:#111827">After Effects</span><span style="font-size:.875rem;color:#111827">Cinema 4D</span><span style="font-size:.875rem;color:#111827">Framer</span><span style="font-size:.875rem;color:#111827">ProtoPie</span></div></div>
+          <div><p style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6B7280;margin-bottom:1rem">Development</p><div style="display:flex;flex-direction:column;gap:.5rem"><span style="font-size:.875rem;color:#111827">HTML / CSS</span><span style="font-size:.875rem;color:#111827">JavaScript</span><span style="font-size:.875rem;color:#111827">React (Basics)</span><span style="font-size:.875rem;color:#111827">Storybook</span></div></div>
+          <div><p style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6B7280;margin-bottom:1rem">Research</p><div style="display:flex;flex-direction:column;gap:.5rem"><span style="font-size:.875rem;color:#111827">Maze</span><span style="font-size:.875rem;color:#111827">UserTesting</span><span style="font-size:.875rem;color:#111827">Hotjar</span><span style="font-size:.875rem;color:#111827">Miro</span></div></div>
+        </div>
+      </section>
+
+      <!-- Soft Skills -->
+      <section>
+        <p style="font-size:.65rem;color:#6B7280;text-transform:uppercase;letter-spacing:.12em;margin-bottom:1.5rem">Human Skills</p>
+        <div style="display:flex;flex-wrap:wrap;gap:.75rem">
+          <span class="soft-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Strategic Thinking</span>
+          <span class="soft-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Executive Communication</span>
+          <span class="soft-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Workshop Facilitation</span>
+          <span class="soft-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Mentoring &amp; Coaching</span>
+          <span class="soft-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Cross-functional Alignment</span>
+          <span class="soft-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Storytelling</span>
+          <span class="soft-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Ambiguity Navigation</span>
+          <span class="soft-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Radical Candor</span>
+        </div>
+      </section>
+
+      <!-- Domain Expertise -->
+      <section>
+        <p style="font-size:.65rem;color:#6B7280;text-transform:uppercase;letter-spacing:.12em;margin-bottom:1.5rem">Domain Expertise</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem">
+          <div style="background:#fff;border-radius:16px;border:1px solid rgba(229,231,235,.6);padding:1.25rem;box-shadow:0 2px 8px rgba(0,0,0,.04)"><h4 style="font-size:.9375rem;font-weight:500;color:#111827;margin-bottom:.4rem">Fintech &amp; Finance</h4><p style="font-size:.8125rem;color:#6B7280">Wealth mgmt, trading platforms, digital banking, insurtech.</p></div>
+          <div style="background:#fff;border-radius:16px;border:1px solid rgba(229,231,235,.6);padding:1.25rem;box-shadow:0 2px 8px rgba(0,0,0,.04)"><h4 style="font-size:.9375rem;font-weight:500;color:#111827;margin-bottom:.4rem">Luxury &amp; Heritage</h4><p style="font-size:.8125rem;color:#6B7280">Fashion houses, hospitality, art &amp; collectibles, premium retail.</p></div>
+          <div style="background:#fff;border-radius:16px;border:1px solid rgba(229,231,235,.6);padding:1.25rem;box-shadow:0 2px 8px rgba(0,0,0,.04)"><h4 style="font-size:.9375rem;font-weight:500;color:#111827;margin-bottom:.4rem">Enterprise SaaS</h4><p style="font-size:.8125rem;color:#6B7280">Complex dashboards, multi-tenant platforms, B2B products.</p></div>
+          <div style="background:#fff;border-radius:16px;border:1px solid rgba(229,231,235,.6);padding:1.25rem;box-shadow:0 2px 8px rgba(0,0,0,.04)"><h4 style="font-size:.9375rem;font-weight:500;color:#111827;margin-bottom:.4rem">Physical &amp; Digital</h4><p style="font-size:.8125rem;color:#6B7280">Wayfinding, spatial apps, AR interfaces, retail environments.</p></div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer style="border-top:1px solid #E5E7EB;background:#F9FAFB;padding:2rem 0">
+    <div style="max-width:1440px;margin-inline:auto;padding-inline:1.5rem"><p style="font-size:.75rem;color:#6B7280">&copy; 2025 Alex Law. All rights reserved.</p></div>
+  </footer>
+</BaseLayout>

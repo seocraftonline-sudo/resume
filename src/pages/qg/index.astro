@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/Base.astro';
+import QGNav from '../../components/QGNav.astro';
 ---
 <BaseLayout title="Alex Law — Quiet Genius" theme="qg">
   <Fragment slot="head">
@@ -60,8 +61,6 @@ import BaseLayout from '../../layouts/Base.astro';
       .deco { position: fixed; border-radius: 50%; pointer-events: none; z-index: 0; }
       .deco1 { width: 40%; height: 40%; top: -10%; left: -10%; background: radial-gradient(circle, rgba(238,242,255,.5) 0%, transparent 70%); filter: blur(60px); }
       .deco2 { width: 50%; height: 50%; bottom: -10%; right: -5%; background: radial-gradient(circle, rgba(245,243,255,.4) 0%, transparent 70%); filter: blur(60px); }
-      /* nav active */
-      .nav-active { border-bottom: 2px solid var(--t1); padding-bottom: 2px; color: var(--t1) !important; }
       /* section spacing */
       .section { padding-block: 6rem; }
       @media(max-width: 767px) {
@@ -79,36 +78,7 @@ import BaseLayout from '../../layouts/Base.astro';
   <div class="deco deco1"></div>
   <div class="deco deco2"></div>
 
-  <!-- ── NAV ── -->
-  <header class="nav-bg u3 u7" style="top:0;width:100%">
-    <div class="b1" style="height:5rem;display:flex;align-items:center;justify-content:space-between">
-      <a href="/qg/" style="font-family:var(--fs);font-size:1.25rem;font-weight:600;letter-spacing:-.02em;color:var(--t1)">A. Law</a>
-
-      <nav style="display:flex;align-items:center;gap:2.5rem" class="f3">
-        <a href="/qg/" class="f4 nav-active" style="font-size:.875rem;font-weight:500">Home</a>
-        <a href="/qg/portfolio/" class="f4" style="font-size:.875rem;font-weight:500">Work</a>
-        <a href="/qg/about/" class="f4" style="font-size:.875rem;font-weight:500">About</a>
-        <a href="/qg/blog/" class="f4" style="font-size:.875rem;font-weight:500">Insights</a>
-      </nav>
-
-      <div style="display:flex;align-items:center;gap:1.5rem">
-        <a href="/qg/contact/" style="width:2.5rem;height:2.5rem;border-radius:50%;background:var(--ca);box-shadow:var(--sh);display:flex;align-items:center;justify-content:center;color:var(--t1);transition:box-shadow .2s ease" class="md-only">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        </a>
-        <button aria-label="Menu" style="display:none;padding:.5rem;background:none;border:none;color:var(--t1)" data-nav-toggle id="mob-toggle">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-        </button>
-      </div>
-    </div>
-    <!-- mobile menu -->
-    <div id="mob-menu" data-nav-menu style="display:none;flex-direction:column;gap:1rem;padding:1rem 1.5rem 1.5rem;border-top:1px solid var(--br)">
-      <a href="/qg/" style="font-size:.9375rem;color:var(--t1);font-weight:500">Home</a>
-      <a href="/qg/portfolio/" style="font-size:.9375rem;color:var(--t2)">Work</a>
-      <a href="/qg/about/" style="font-size:.9375rem;color:var(--t2)">About</a>
-      <a href="/qg/blog/" style="font-size:.9375rem;color:var(--t2)">Insights</a>
-      <a href="/qg/contact/" style="font-size:.9375rem;color:var(--t2)">Contact</a>
-    </div>
-  </header>
+  <QGNav active="home" />
 
   <main style="padding-top:5rem">
 
@@ -363,35 +333,12 @@ import BaseLayout from '../../layouts/Base.astro';
 
   <Fragment slot="scripts">
     <script>
-      // mobile nav responsive show/hide
-      const toggle = document.getElementById('mob-toggle');
-      const menu = document.getElementById('mob-menu');
-      const navLinks = document.querySelectorAll('.f3 .f4');
-      if (toggle && menu) {
-        toggle.addEventListener('click', () => {
-          const open = menu.style.display === 'flex';
-          menu.style.display = open ? 'none' : 'flex';
-        });
-      }
-      // show mobile toggle on small screens
-      function checkMobile() {
-        const isMobile = window.innerWidth < 768;
-        if (toggle) toggle.style.display = isMobile ? 'flex' : 'none';
-        const desktopNav = document.querySelector('.f3');
-        if (desktopNav) desktopNav.style.display = isMobile ? 'none' : 'flex';
-        const mailBtn = document.querySelector('.md-only');
-        if (mailBtn) mailBtn.style.display = isMobile ? 'none' : 'flex';
-      }
-      checkMobile();
-      window.addEventListener('resize', checkMobile);
-
       // work card hover overlay
       document.querySelectorAll('.work-card').forEach(card => {
         const overlay = card.querySelector('.card-hover-overlay');
         card.addEventListener('mouseenter', () => { if (overlay) overlay.style.opacity = '1'; });
         card.addEventListener('mouseleave', () => { if (overlay) overlay.style.opacity = '0'; });
       });
-
       // stagger offset on work grid for mobile
       if (window.innerWidth < 768) {
         document.querySelectorAll('.work-card').forEach(c => c.style.marginTop = '0');

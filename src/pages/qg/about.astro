@@ -1,0 +1,183 @@
+---
+import BaseLayout from '../../layouts/Base.astro';
+import QGNav from '../../components/QGNav.astro';
+---
+<BaseLayout title="About — Alex Law" theme="qg">
+  <Fragment slot="head">
+    <link rel="stylesheet" href="/styles/rv.css" />
+    <style>
+      .glass-card { background: rgba(255,255,255,.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,.3); }
+      .deco { position: fixed; border-radius: 50%; pointer-events: none; z-index: 0; }
+      .deco1 { width: 40%; height: 40%; top: -10%; left: -10%; background: radial-gradient(circle, rgba(238,242,255,.5) 0%, transparent 70%); filter: blur(60px); }
+      .deco2 { width: 50%; height: 50%; bottom: -10%; right: -5%; background: radial-gradient(circle, rgba(245,243,255,.4) 0%, transparent 70%); filter: blur(60px); }
+      .hero-img { border-radius: 40px; overflow: hidden; box-shadow: 0 32px 80px -16px rgba(0,0,0,.18); position: relative; }
+      .hero-img img { width: 100%; height: 100%; object-fit: cover; }
+      .section { padding-block: 5rem; }
+      .milestone-card { background: rgba(255,255,255,.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,.3); padding: 2rem; border-radius: 24px; box-shadow: 0 4px 20px -2px rgba(0,0,0,.05); display: flex; flex-direction: column; gap: 1rem; }
+      .journey-card { background: rgba(255,255,255,.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,.3); padding: 2rem; border-radius: 24px; box-shadow: 0 4px 20px -2px rgba(0,0,0,.05); display: flex; flex-direction: column; gap: .75rem; }
+      .cta-banner { background: #111827; color: #F9FAFB; border-radius: 32px; padding: 5rem 2rem; text-align: center; position: relative; overflow: hidden; }
+      @media(max-width:767px) { .hero-cols { flex-direction: column; } .two-col { grid-template-columns: 1fr !important; } .gallery-grid { grid-template-columns: 1fr !important; } }
+    </style>
+  </Fragment>
+
+  <div class="deco deco1"></div>
+  <div class="deco deco2"></div>
+
+  <QGNav active="about" />
+
+  <main style="padding-top:5rem;position:relative;z-index:1">
+
+    <!-- Hero -->
+    <section class="section" style="max-width:1440px;margin-inline:auto;padding-inline:1.5rem">
+      <div class="hero-cols" style="display:flex;align-items:center;justify-content:space-between;gap:4rem;min-height:60vh">
+        <div style="flex:1;max-width:560px;display:flex;flex-direction:column;gap:2rem">
+          <h1 style="font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,4.5rem);font-weight:500;line-height:1.1;letter-spacing:-.03em;color:#111827">Quietly shaping the future of digital interaction.</h1>
+          <div style="display:flex;flex-direction:column;gap:1.25rem">
+            <p style="font-size:1.0625rem;color:#6B7280;line-height:1.75;font-weight:300">I believe that the best design is felt before it is seen. My journey into architecture wasn't about building structures, but about understanding how humans move through space—both physical and digital.</p>
+            <p style="font-size:1.0625rem;color:#6B7280;line-height:1.75;font-weight:300">Beyond the pixels and strategy, I am driven by a singular pursuit: clarity. In a world increasingly defined by noise and digital clutter, I find profound satisfaction in stripping away the unnecessary to reveal the essential truth of a product.</p>
+          </div>
+        </div>
+        <div style="flex:0 0 auto;position:relative">
+          <div class="hero-img" style="width:min(480px,42vw);height:min(600px,55vw)">
+            <img src="https://images.pexels.com/photos/3184611/pexels-photo-3184611.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Alex Law portrait" loading="eager" />
+            <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(249,250,251,.35) 0%,transparent 60%)"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Journey -->
+    <section class="section" style="max-width:1440px;margin-inline:auto;padding-inline:1.5rem">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;border-bottom:1px solid #E5E7EB;padding-bottom:2rem;margin-bottom:3rem">
+        <div><h2 style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:400;color:#111827;margin-bottom:.35rem">The Journey</h2><p style="font-size:.8125rem;color:#6B7280">A narrative of progression.</p></div>
+      </div>
+      <div class="two-col" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem">
+        <div style="display:flex;flex-direction:column;gap:1.25rem">
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;color:#111827">From Architecture to Interfaces</h3>
+          <p style="color:#6B7280;line-height:1.75">My career didn't start behind a screen. It started in physical spaces, studying architectural design. I learned early on that a beautiful building is useless if people don't intuitively know how to navigate it. That fundamental truth—that form must follow human behavior—became the cornerstone of my transition into digital design.</p>
+          <p style="color:#6B7280;line-height:1.75">Over the past decade, I've applied those same architectural principles to complex digital ecosystems. Whether it's redefining wealth management platforms or crafting narrative-driven e-commerce experiences, the goal remains the same: build structures that empower rather than overwhelm.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:1.25rem">
+          <div class="journey-card">
+            <span style="font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:#6B7280">2018 — Present</span>
+            <h4 style="font-size:1.125rem;font-weight:500;color:#111827">Independent Design Director</h4>
+            <p style="font-size:.875rem;color:#6B7280;line-height:1.7">Partnering selectively with founders and product teams to architect high-stakes digital experiences. Focusing on fintech, luxury heritage brands, and complex SaaS platforms.</p>
+          </div>
+          <div class="journey-card">
+            <span style="font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:#6B7280">2014 — 2018</span>
+            <h4 style="font-size:1.125rem;font-weight:500;color:#111827">Lead Designer, Studio O/N</h4>
+            <p style="font-size:.875rem;color:#6B7280;line-height:1.7">Led the digital transformation practice, translating physical brand equity into robust, systemic digital languages for global lifestyle brands.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Philosophy -->
+    <section style="max-width:1440px;margin-inline:auto;padding:0 1.5rem 5rem">
+      <div style="background:#fff;border-radius:40px;padding:clamp(3rem,6vw,6rem);box-shadow:0 4px 20px -2px rgba(0,0,0,.05);position:relative;overflow:hidden">
+        <div style="position:absolute;top:0;right:0;width:24rem;height:24rem;background:radial-gradient(circle,rgba(249,250,251,.6) 0%,transparent 70%);filter:blur(60px);border-radius:50%;pointer-events:none"></div>
+        <div style="position:relative;z-index:1;display:flex;flex-direction:column;gap:3rem">
+          <div style="text-align:center"><h2 style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:400;color:#111827;margin-bottom:.5rem">Core Philosophy</h2><p style="font-size:.8125rem;color:#6B7280">The principles I never compromise on.</p></div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:3rem">
+            <div style="display:flex;flex-direction:column;gap:1rem">
+              <span style="font-family:'Playfair Display',serif;font-size:2.5rem;color:#E5E7EB">01</span>
+              <h3 style="font-size:1.125rem;font-weight:500;color:#111827">Restraint is Power</h3>
+              <p style="font-size:.875rem;color:#6B7280;line-height:1.7">Every element added to a screen is a tax on the user's cognitive load. I design by subtraction, ensuring only what is absolutely necessary remains.</p>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:1rem">
+              <span style="font-family:'Playfair Display',serif;font-size:2.5rem;color:#E5E7EB">02</span>
+              <h3 style="font-size:1.125rem;font-weight:500;color:#111827">Systemic Thinking</h3>
+              <p style="font-size:.875rem;color:#6B7280;line-height:1.7">Beautiful screens are fragile. Robust systems are scalable. I build design languages that anticipate growth and maintain integrity across every touchpoint.</p>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:1rem">
+              <span style="font-family:'Playfair Display',serif;font-size:2.5rem;color:#E5E7EB">03</span>
+              <h3 style="font-size:1.125rem;font-weight:500;color:#111827">Quiet Confidence</h3>
+              <p style="font-size:.875rem;color:#6B7280;line-height:1.7">True luxury and high-end utility don't need to shout. The best designs communicate trust through meticulous attention to typography, spacing, and subtle motion.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section style="max-width:1440px;margin-inline:auto;padding:0 1.5rem 5rem">
+      <div class="gallery-grid" style="display:grid;grid-template-columns:8fr 4fr;gap:1.5rem">
+        <div style="height:clamp(320px,45vw,600px);border-radius:32px;overflow:hidden;box-shadow:0 4px 20px -2px rgba(0,0,0,.05);position:relative">
+          <img src="https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Design workshop" style="width:100%;height:100%;object-fit:cover;transition:transform .7s ease" loading="lazy" />
+        </div>
+        <div style="display:flex;flex-direction:column;gap:1.5rem">
+          <div style="flex:1;border-radius:32px;overflow:hidden;box-shadow:0 4px 20px -2px rgba(0,0,0,.05)">
+            <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Wireframe sketching" style="width:100%;height:100%;object-fit:cover" loading="lazy" />
+          </div>
+          <div style="flex:1;border-radius:32px;overflow:hidden;box-shadow:0 4px 20px -2px rgba(0,0,0,.05)">
+            <img src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Designer at work" style="width:100%;height:100%;object-fit:cover" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Milestones -->
+    <section class="section" style="max-width:1440px;margin-inline:auto;padding-inline:1.5rem">
+      <div style="border-bottom:1px solid #E5E7EB;padding-bottom:2rem;margin-bottom:3rem"><h2 style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:400;color:#111827;margin-bottom:.35rem">Milestones</h2><p style="font-size:.8125rem;color:#6B7280">Significant moments of impact.</p></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem">
+        <div class="milestone-card">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start"><h3 style="font-size:1.0625rem;font-weight:500;color:#111827">Awwwards Site of the Year Nominee</h3><span style="font-size:.65rem;color:#6B7280;text-transform:uppercase;letter-spacing:.1em;flex-shrink:0;margin-left:.5rem">2022</span></div>
+          <p style="font-size:.875rem;color:#6B7280;line-height:1.7">Recognized for the architectural redesign of Maison Archive, setting a new standard for narrative-driven luxury e-commerce experiences.</p>
+        </div>
+        <div class="milestone-card">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start"><h3 style="font-size:1.0625rem;font-weight:500;color:#111827">Lumina Wealth Platform Launch</h3><span style="font-size:.65rem;color:#6B7280;text-transform:uppercase;letter-spacing:.1em;flex-shrink:0;margin-left:.5rem">2021</span></div>
+          <p style="font-size:.875rem;color:#6B7280;line-height:1.7">Led the end-to-end product design for a private banking platform that successfully managed over $1B in assets within its first six months.</p>
+        </div>
+        <div class="milestone-card">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start"><h3 style="font-size:1.0625rem;font-weight:500;color:#111827">Guest Lecturer, RISD</h3><span style="font-size:.65rem;color:#6B7280;text-transform:uppercase;letter-spacing:.1em;flex-shrink:0;margin-left:.5rem">2020</span></div>
+          <p style="font-size:.875rem;color:#6B7280;line-height:1.7">Invited to speak on "The Architecture of Silence in UI," discussing the psychological impact of negative space in digital interfaces.</p>
+        </div>
+        <div class="milestone-card">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start"><h3 style="font-size:1.0625rem;font-weight:500;color:#111827">Global Design System Deployment</h3><span style="font-size:.65rem;color:#6B7280;text-transform:uppercase;letter-spacing:.1em;flex-shrink:0;margin-left:.5rem">2019</span></div>
+          <p style="font-size:.875rem;color:#6B7280;line-height:1.7">Architected and deployed a unified design system across 14 international markets for a major enterprise client, reducing time-to-market by 40%.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Beyond the Screen -->
+    <section style="max-width:1440px;margin-inline:auto;padding:0 1.5rem 5rem;display:flex;flex-wrap:wrap;align-items:center;gap:4rem">
+      <div style="flex:0 0 auto;width:min(360px,100%)">
+        <div style="border-radius:32px;overflow:hidden;box-shadow:0 4px 20px -2px rgba(0,0,0,.05)">
+          <img src="https://images.pexels.com/photos/417344/pexels-photo-417344.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Architecture photography" style="width:100%;height:400px;object-fit:cover;filter:grayscale(.8);opacity:.85" loading="lazy" />
+        </div>
+      </div>
+      <div style="flex:1;min-width:260px;display:flex;flex-direction:column;gap:1rem">
+        <h2 style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:400;color:#111827">Beyond the Screen</h2>
+        <p style="font-size:1.0625rem;color:#6B7280;line-height:1.75;font-weight:300">When I am not designing digital systems, I am usually exploring physical ones. I spend my weekends photographing brutalist architecture, studying mid-century furniture design, and slowly curating a collection of rare design monographs. I find that studying how things are built in the physical world profoundly influences how I build them in the digital one.</p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="max-width:1440px;margin-inline:auto;padding:0 1.5rem 6rem">
+      <div class="cta-banner">
+        <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:6rem;background:rgba(255,255,255,.04);filter:blur(40px);border-radius:50%;pointer-events:none"></div>
+        <div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:1.5rem;max-width:600px;margin-inline:auto">
+          <span style="font-size:.65rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.2em">Current Focus</span>
+          <h2 style="font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:500;line-height:1.15">Exploring the intersection of AI and quiet interfaces.</h2>
+          <p style="color:rgba(255,255,255,.55);line-height:1.65;font-weight:300">I am currently deep-diving into how artificial intelligence can make interfaces even more invisible. Accepting select advisory roles for Q4 2025.</p>
+          <a href="/qg/contact/" style="display:inline-flex;align-items:center;gap:.6rem;padding:1rem 2.5rem;background:#fff;color:#111827;border-radius:24px;font-weight:500;font-size:.875rem;transition:all .2s ease;box-shadow:0 4px 16px rgba(0,0,0,.15);margin-top:.5rem">
+            Start a Conversation
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer style="border-top:1px solid #E5E7EB;background:#F9FAFB;padding:2rem 0">
+    <div style="max-width:1440px;margin-inline:auto;padding-inline:1.5rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem">
+      <p style="font-size:.75rem;color:#6B7280">&copy; 2025 Alex Law. All rights reserved.</p>
+      <div style="display:flex;gap:1.5rem">
+        <a href="#" style="color:#6B7280" aria-label="Twitter"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+        <a href="#" style="color:#6B7280" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+      </div>
+    </div>
+  </footer>
+</BaseLayout>

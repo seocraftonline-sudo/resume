@@ -1,0 +1,170 @@
+---
+import BaseLayout from '../../layouts/Base.astro';
+import QGNav from '../../components/QGNav.astro';
+---
+<BaseLayout title="Services — Alex Law" theme="qg">
+  <Fragment slot="head">
+    <link rel="stylesheet" href="/styles/rv.css" />
+    <style>
+      .deco{position:fixed;border-radius:50%;pointer-events:none;z-index:0}
+      .deco1{width:40%;height:40%;top:-10%;left:-10%;background:radial-gradient(circle,rgba(238,242,255,.5) 0%,transparent 70%);filter:blur(60px)}
+      .deco2{width:50%;height:50%;bottom:-10%;right:-5%;background:radial-gradient(circle,rgba(245,243,255,.4) 0%,transparent 70%);filter:blur(60px)}
+      .svc-card{background:#fff;border-radius:24px;border:1px solid rgba(229,231,235,.6);box-shadow:0 4px 20px -2px rgba(0,0,0,.05);padding:2.5rem;display:flex;flex-direction:column;height:100%;transition:border-color .3s ease}
+      .svc-card:hover{border-color:rgba(17,24,39,.2)}
+      .svc-icon{width:4rem;height:4rem;border-radius:16px;background:#F3F4F6;display:flex;align-items:center;justify-content:center;color:#111827;border:1px solid #E5E7EB;margin-bottom:2rem;flex-shrink:0}
+      .tier-card{border-radius:24px;padding:2.5rem;display:flex;flex-direction:column;height:100%}
+      .tier-card.light{background:#fff;border:1px solid rgba(229,231,235,.6);box-shadow:0 4px 20px -2px rgba(0,0,0,.05)}
+      .tier-card.dark{background:#111827;border:1px solid #111827;box-shadow:0 8px 30px rgba(0,0,0,.2);position:relative;overflow:hidden}
+      .label-pill{font-size:.65rem;font-weight:500;color:#6B7280;text-transform:uppercase;letter-spacing:.1em;border:1px solid #E5E7EB;padding:.25rem .75rem;border-radius:999px;display:inline-block}
+      .process-num{width:6rem;height:6rem;border-radius:50%;background:#fff;border:1px solid #E5E7EB;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.5rem;color:#111827;box-shadow:0 4px 20px -2px rgba(0,0,0,.05)}
+      .faq-item{border-bottom:1px solid #E5E7EB;padding-bottom:1.5rem}
+      @media(max-width:767px){.process-grid{grid-template-columns:1fr!important}.two-col{grid-template-columns:1fr!important}}
+    </style>
+  </Fragment>
+  <div class="deco deco1"></div>
+  <div class="deco deco2"></div>
+  <QGNav active="services" />
+
+  <main style="padding-top:5rem;position:relative;z-index:1">
+    <div style="max-width:1440px;margin-inline:auto;padding:5rem 1.5rem 6rem;display:flex;flex-direction:column;gap:5rem">
+
+      <!-- Intro -->
+      <section style="max-width:900px">
+        <h1 style="font-family:'Playfair Display',serif;font-size:clamp(3rem,7vw,5rem);font-weight:500;line-height:1.05;letter-spacing:-.03em;color:#111827;margin-bottom:1.5rem">Clarity in Complexity</h1>
+        <p style="font-size:1.25rem;color:#6B7280;font-weight:300;line-height:1.7;margin-bottom:2rem">I partner with ambitious teams to untangle complex systems and design interfaces that feel inevitable. My practice is focused on reducing cognitive load, establishing rigorous design systems, and elevating the fundamental quality of digital products.</p>
+        <a href="/qg/contact/" style="display:inline-flex;align-items:center;justify-content:center;padding:.9rem 2rem;background:#111827;color:#F9FAFB;font-size:.875rem;font-weight:500;border-radius:999px;transition:all .2s ease;box-shadow:0 4px 20px -2px rgba(0,0,0,.2)">Discuss an Engagement</a>
+      </section>
+
+      <!-- Core Capabilities -->
+      <section>
+        <div style="display:flex;align-items:center;gap:1rem;margin-bottom:3rem">
+          <span class="label-pill">Core Capabilities</span>
+          <div style="height:1px;background:#E5E7EB;flex-grow:1;max-width:200px"></div>
+        </div>
+        <div class="two-col" style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem">
+          <div class="svc-card">
+            <div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+            <div style="flex:1;display:flex;flex-direction:column;gap:1.25rem">
+              <h3 style="font-family:'Playfair Display',serif;font-size:1.75rem;color:#111827">Design Systems Architecture</h3>
+              <p style="font-size:1rem;color:#6B7280;font-weight:300;line-height:1.75">For scaling teams drowning in design debt. I audit, restructure, and build foundational design systems that bridge the gap between design and engineering, ensuring visual consistency without sacrificing velocity.</p>
+              <div style="border-top:1px solid rgba(229,231,235,.5);padding-top:1rem;display:flex;flex-direction:column;gap:.75rem">
+                <div style="display:flex;justify-content:space-between;font-size:.8125rem"><span style="color:#6B7280;text-transform:uppercase;letter-spacing:.08em;font-size:.7rem">Timeline</span><span style="color:#111827;font-weight:500">4-8 Weeks</span></div>
+                <div style="display:flex;justify-content:space-between;font-size:.8125rem"><span style="color:#6B7280;text-transform:uppercase;letter-spacing:.08em;font-size:.7rem">Best For</span><span style="color:#111827;font-weight:500">Series B+ / Enterprise</span></div>
+              </div>
+            </div>
+            <a href="/qg/contact/" style="display:inline-flex;align-items:center;gap:.5rem;font-size:.875rem;font-weight:500;color:#111827;border-bottom:1px solid #111827;padding-bottom:2px;margin-top:2rem;transition:all .2s ease">Enquire about Systems <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+          <div class="svc-card">
+            <div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+            <div style="flex:1;display:flex;flex-direction:column;gap:1.25rem">
+              <h3 style="font-family:'Playfair Display',serif;font-size:1.75rem;color:#111827">Product Strategy &amp; UX Audit</h3>
+              <p style="font-size:1rem;color:#6B7280;font-weight:300;line-height:1.75">A rigorous teardown of your core product flows. I identify points of cognitive friction, usability failures, and visual inconsistencies, delivering a prioritized roadmap for immediate impact and long-term architectural shifts.</p>
+              <div style="border-top:1px solid rgba(229,231,235,.5);padding-top:1rem;display:flex;flex-direction:column;gap:.75rem">
+                <div style="display:flex;justify-content:space-between;font-size:.8125rem"><span style="color:#6B7280;text-transform:uppercase;letter-spacing:.08em;font-size:.7rem">Timeline</span><span style="color:#111827;font-weight:500">2-3 Weeks</span></div>
+                <div style="display:flex;justify-content:space-between;font-size:.8125rem"><span style="color:#6B7280;text-transform:uppercase;letter-spacing:.08em;font-size:.7rem">Best For</span><span style="color:#111827;font-weight:500">Pre-Launch / Pivoting Startups</span></div>
+              </div>
+            </div>
+            <a href="/qg/contact/" style="display:inline-flex;align-items:center;gap:.5rem;font-size:.875rem;font-weight:500;color:#111827;border-bottom:1px solid #111827;padding-bottom:2px;margin-top:2rem;transition:all .2s ease">Enquire about Audits <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Process -->
+      <section>
+        <div style="display:flex;align-items:center;gap:1rem;margin-bottom:3rem">
+          <span class="label-pill">Engagement Process</span>
+          <div style="height:1px;background:#E5E7EB;flex-grow:1;max-width:200px"></div>
+        </div>
+        <div class="process-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;position:relative">
+          <div style="position:absolute;top:3rem;left:10%;right:10%;height:1px;background:#E5E7EB;z-index:0;display:none" id="process-line"></div>
+          <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.5rem;position:relative;z-index:1">
+            <div class="process-num">01</div>
+            <div><h4 style="font-family:'Playfair Display',serif;font-size:1.25rem;color:#111827;margin-bottom:.5rem">Discovery &amp; Alignment</h4><p style="font-size:.875rem;color:#6B7280;line-height:1.7">We begin with a deep dive into your business objectives, technical constraints, and user needs to ensure absolute clarity before a single pixel is placed.</p></div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.5rem;position:relative;z-index:1">
+            <div class="process-num">02</div>
+            <div><h4 style="font-family:'Playfair Display',serif;font-size:1.25rem;color:#111827;margin-bottom:.5rem">Exploration &amp; Architecture</h4><p style="font-size:.875rem;color:#6B7280;line-height:1.7">Rigorous structural planning and visual exploration. This phase defines the foundational rules, spatial logic, and typographic hierarchy of the system.</p></div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.5rem;position:relative;z-index:1">
+            <div class="process-num">03</div>
+            <div><h4 style="font-family:'Playfair Display',serif;font-size:1.25rem;color:#111827;margin-bottom:.5rem">Execution &amp; Handoff</h4><p style="font-size:.875rem;color:#6B7280;line-height:1.7">Meticulous crafting of high-fidelity interfaces, documented thoroughly for engineering teams to ensure the final build matches the intended vision perfectly.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Packages -->
+      <section>
+        <div style="display:flex;align-items:center;gap:1rem;margin-bottom:3rem">
+          <span class="label-pill">Advisory Packages</span>
+          <div style="height:1px;background:#E5E7EB;flex-grow:1;max-width:200px"></div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem">
+          <div class="tier-card light">
+            <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;color:#111827;margin-bottom:.5rem">Design Retainer</h3>
+            <p style="font-size:.875rem;color:#6B7280;margin-bottom:2rem;min-height:2.5rem">Ongoing strategic guidance and design execution for growing teams.</p>
+            <div style="font-size:1.75rem;font-weight:500;color:#111827;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid #E5E7EB">$5k <span style="font-size:.875rem;color:#6B7280;font-weight:300">/month</span></div>
+            <ul style="display:flex;flex-direction:column;gap:1rem;flex:1;margin-bottom:2.5rem">
+              <li style="display:flex;gap:.75rem;font-size:.875rem;color:#6B7280"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2.5" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg>20 hours dedicated capacity</li>
+              <li style="display:flex;gap:.75rem;font-size:.875rem;color:#6B7280"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2.5" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg>Weekly syncs &amp; async reviews</li>
+              <li style="display:flex;gap:.75rem;font-size:.875rem;color:#6B7280"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2.5" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg>Direct Slack channel access</li>
+              <li style="display:flex;gap:.75rem;font-size:.875rem;color:#6B7280"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2.5" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg>Priority scheduling</li>
+            </ul>
+            <button style="width:100%;padding:.75rem 1.5rem;border-radius:999px;border:1px solid #E5E7EB;color:#111827;font-size:.875rem;font-weight:500;background:transparent;cursor:pointer;transition:background .2s ease;font-family:'Inter',sans-serif" onmouseover="this.style.background='#F3F4F6'" onmouseout="this.style.background='transparent'">Select Retainer</button>
+          </div>
+          <div class="tier-card dark">
+            <div style="position:absolute;top:0;right:0;padding:.25rem 1rem;background:rgba(255,255,255,.08);color:rgba(255,255,255,.6);font-size:.625rem;text-transform:uppercase;letter-spacing:.1em;border-radius:0 24px 0 12px">Most Common</div>
+            <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;color:#fff;margin-bottom:.5rem">Project Sprint</h3>
+            <p style="font-size:.875rem;color:rgba(255,255,255,.6);margin-bottom:2rem;min-height:2.5rem">Intensive, focused execution on a specific product surface or flow.</p>
+            <div style="font-size:1.75rem;font-weight:500;color:#fff;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.15)">$12k <span style="font-size:.875rem;color:rgba(255,255,255,.5);font-weight:300">/sprint</span></div>
+            <ul style="display:flex;flex-direction:column;gap:1rem;flex:1;margin-bottom:2.5rem">
+              <li style="display:flex;gap:.75rem;font-size:.875rem;color:rgba(255,255,255,.75)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg>2-week intensive focus</li>
+              <li style="display:flex;gap:.75rem;font-size:.875rem;color:rgba(255,255,255,.75)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg>High-fidelity prototyping</li>
+              <li style="display:flex;gap:.75rem;font-size:.875rem;color:rgba(255,255,255,.75)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg>Comprehensive handoff docs</li>
+              <li style="display:flex;gap:.75rem;font-size:.875rem;color:rgba(255,255,255,.75)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg>1 week post-launch support</li>
+            </ul>
+            <button style="width:100%;padding:.75rem 1.5rem;border-radius:999px;border:none;color:#111827;background:#F9FAFB;font-size:.875rem;font-weight:500;cursor:pointer;font-family:'Inter',sans-serif">Book Sprint</button>
+          </div>
+          <div class="tier-card light">
+            <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;color:#111827;margin-bottom:.5rem">Fractional Head of Design</h3>
+            <p style="font-size:.875rem;color:#6B7280;margin-bottom:2rem;min-height:2.5rem">Leadership, hiring, and high-level strategy for early-stage startups.</p>
+            <div style="font-size:1.75rem;font-weight:500;color:#111827;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid #E5E7EB">Custom</div>
+            <ul style="display:flex;flex-direction:column;gap:1rem;flex:1;margin-bottom:2.5rem">
+              <li style="display:flex;gap:.75rem;font-size:.875rem;color:#6B7280"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2.5" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg>Design team hiring &amp; mentoring</li>
+              <li style="display:flex;gap:.75rem;font-size:.875rem;color:#6B7280"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2.5" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg>Board-level design strategy</li>
+              <li style="display:flex;gap:.75rem;font-size:.875rem;color:#6B7280"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2.5" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg>Process establishment</li>
+              <li style="display:flex;gap:.75rem;font-size:.875rem;color:#6B7280"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2.5" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg>Cross-functional alignment</li>
+            </ul>
+            <button style="width:100%;padding:.75rem 1.5rem;border-radius:999px;border:1px solid #E5E7EB;color:#111827;font-size:.875rem;font-weight:500;background:transparent;cursor:pointer;transition:background .2s ease;font-family:'Inter',sans-serif" onmouseover="this.style.background='#F3F4F6'" onmouseout="this.style.background='transparent'">Discuss Needs</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section style="max-width:700px">
+        <div style="display:flex;align-items:center;gap:1rem;margin-bottom:2.5rem">
+          <span class="label-pill">Common Questions</span>
+          <div style="height:1px;background:#E5E7EB;flex-grow:1;max-width:200px"></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:1.5rem">
+          <div class="faq-item"><h4 style="font-size:1rem;font-weight:500;color:#111827;margin-bottom:.75rem">What is your typical availability?</h4><p style="font-size:.875rem;color:#6B7280;line-height:1.75;font-weight:300">I typically book projects 4-6 weeks in advance. For smaller advisory roles or audits, I can sometimes accommodate within 2 weeks depending on current workload.</p></div>
+          <div class="faq-item"><h4 style="font-size:1rem;font-weight:500;color:#111827;margin-bottom:.75rem">Do you handle implementation or just design?</h4><p style="font-size:.875rem;color:#6B7280;line-height:1.75;font-weight:300">I focus strictly on product strategy, UX architecture, and high-fidelity UI design. However, I provide meticulous documentation and work closely with your engineering team to ensure perfect implementation.</p></div>
+          <div class="faq-item" style="border-bottom:none"><h4 style="font-size:1rem;font-weight:500;color:#111827;margin-bottom:.75rem">How do you handle revisions?</h4><p style="font-size:.875rem;color:#6B7280;line-height:1.75;font-weight:300">My process is highly collaborative, meaning there are rarely 'big reveals' that require massive revisions. We align on strategy and structure early, so visual execution is usually a smooth refinement process.</p></div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section style="background:#fff;border-radius:32px;border:1px solid #E5E7EB;box-shadow:0 4px 20px -2px rgba(0,0,0,.05);padding:clamp(3rem,6vw,6rem);text-align:center;display:flex;flex-direction:column;align-items:center;gap:1.5rem">
+        <h2 style="font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:400;color:#111827">Ready to elevate your product?</h2>
+        <p style="font-size:1rem;color:#6B7280;font-weight:300;max-width:500px;line-height:1.7">If you are looking for thoughtful, rigorous design partnership, let's start a conversation about your current challenges.</p>
+        <a href="/qg/contact/" style="display:inline-flex;align-items:center;padding:.9rem 2.5rem;background:#111827;color:#F9FAFB;font-size:.875rem;font-weight:500;border-radius:999px;transition:all .2s ease;margin-top:.5rem">Get in Touch</a>
+      </section>
+
+    </div>
+  </main>
+
+  <footer style="border-top:1px solid #E5E7EB;background:#F9FAFB;padding:2rem 0">
+    <div style="max-width:1440px;margin-inline:auto;padding-inline:1.5rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem">
+      <p style="font-size:.75rem;color:#6B7280">&copy; 2025 Alex Law. All rights reserved.</p>
+    </div>
+  </footer>
+</BaseLayout>

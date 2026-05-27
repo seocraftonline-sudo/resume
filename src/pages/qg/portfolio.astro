@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../../layouts/Base.astro';
+import QGNav from '../../components/QGNav.astro';
+---
+<BaseLayout title="Portfolio — Alex Law" theme="qg">
+  <Fragment slot="head">
+    <link rel="stylesheet" href="/styles/rv.css" />
+    <style>
+      .deco{position:fixed;border-radius:50%;pointer-events:none;z-index:0}
+      .deco1{width:40%;height:40%;top:-10%;left:-10%;background:radial-gradient(circle,rgba(238,242,255,.5) 0%,transparent 70%);filter:blur(60px)}
+      .deco2{width:50%;height:50%;bottom:-10%;right:-5%;background:radial-gradient(circle,rgba(245,243,255,.4) 0%,transparent 70%);filter:blur(60px)}
+      .proj-card{cursor:pointer;display:flex;flex-direction:column;gap:1.5rem}
+      .proj-thumb{position:relative;width:100%;aspect-ratio:4/3;border-radius:24px;overflow:hidden;background:#F3F4F6;border:1px solid rgba(229,231,235,.5);box-shadow:0 4px 20px -2px rgba(0,0,0,.05)}
+      .proj-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+      .proj-card:hover .proj-thumb img{transform:scale(1.05)}
+      .proj-thumb-overlay{position:absolute;inset:0;background:rgba(17,24,39,0);transition:background .5s ease}
+      .proj-card:hover .proj-thumb-overlay{background:rgba(17,24,39,.04)}
+      .pill-btn{padding:.5rem 1.25rem;border-radius:999px;font-size:.875rem;border:1px solid #E5E7EB;background:#fff;color:#6B7280;cursor:pointer;transition:all .25s ease;font-family:'Inter',sans-serif}
+      .pill-btn:hover{border-color:#111827;color:#111827}
+      .pill-btn.active{background:#111827;color:#fff;border-color:#111827}
+    </style>
+  </Fragment>
+  <div class="deco deco1"></div>
+  <div class="deco deco2"></div>
+  <QGNav active="work" />
+
+  <main style="padding-top:5rem;position:relative;z-index:1">
+    <div style="max-width:1440px;margin-inline:auto;padding:5rem 1.5rem 6rem;display:flex;flex-direction:column;gap:4rem">
+
+      <!-- Intro -->
+      <section style="border-bottom:1px solid #E5E7EB;padding-bottom:3rem">
+        <h1 style="font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,4rem);font-weight:500;line-height:1.1;letter-spacing:-.03em;color:#111827;margin-bottom:1rem">Selected Works</h1>
+        <p style="font-size:1.125rem;color:#6B7280;font-weight:300;line-height:1.7;max-width:600px">An archive of digital systems and spatial interfaces, unified by a pursuit of clarity and quiet sophistication.</p>
+      </section>
+
+      <!-- Filters -->
+      <div style="display:flex;flex-wrap:wrap;gap:.75rem">
+        <button class="pill-btn active" data-filter="all">All Works</button>
+        <button class="pill-btn" data-filter="fintech">Fintech &amp; Finance</button>
+        <button class="pill-btn" data-filter="luxury">Luxury &amp; Heritage</button>
+        <button class="pill-btn" data-filter="systems">Design Systems</button>
+        <button class="pill-btn" data-filter="spatial">Spatial &amp; Architecture</button>
+      </div>
+
+      <!-- Grid -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:3rem 2rem">
+        <div class="proj-card" data-cat="fintech">
+          <div class="proj-thumb"><img src="https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Lumina Wealth" loading="lazy" /><div class="proj-thumb-overlay"></div></div>
+          <div><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.35rem"><h3 style="font-family:'Playfair Display',serif;font-size:1.375rem;color:#111827">Lumina Wealth</h3><span style="font-size:.65rem;color:#6B7280;text-transform:uppercase;letter-spacing:.1em;border:1px solid #E5E7EB;padding:.25rem .75rem;border-radius:999px;flex-shrink:0">Fintech</span></div><p style="font-size:.875rem;color:#6B7280">Architecting a unified asset management platform managing over $1B in AUM.</p></div>
+        </div>
+        <div class="proj-card" data-cat="luxury">
+          <div class="proj-thumb"><img src="https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Maison Archive" loading="lazy" /><div class="proj-thumb-overlay"></div></div>
+          <div><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.35rem"><h3 style="font-family:'Playfair Display',serif;font-size:1.375rem;color:#111827">Maison Archive</h3><span style="font-size:.65rem;color:#6B7280;text-transform:uppercase;letter-spacing:.1em;border:1px solid #E5E7EB;padding:.25rem .75rem;border-radius:999px;flex-shrink:0">Luxury</span></div><p style="font-size:.875rem;color:#6B7280">Digital rebranding and editorial e-commerce platform for a heritage fashion house.</p></div>
+        </div>
+        <div class="proj-card" data-cat="systems">
+          <div class="proj-thumb"><img src="https://images.pexels.com/photos/196645/pexels-photo-196645.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Nexus System" loading="lazy" /><div class="proj-thumb-overlay"></div></div>
+          <div><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.35rem"><h3 style="font-family:'Playfair Display',serif;font-size:1.375rem;color:#111827">Nexus System</h3><span style="font-size:.65rem;color:#6B7280;text-transform:uppercase;letter-spacing:.1em;border:1px solid #E5E7EB;padding:.25rem .75rem;border-radius:999px;flex-shrink:0">Systems</span></div><p style="font-size:.875rem;color:#6B7280">A scalable, multi-brand design language for a global enterprise software suite.</p></div>
+        </div>
+        <div class="proj-card" data-cat="spatial">
+          <div class="proj-thumb"><img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Aura Spaces" loading="lazy" /><div class="proj-thumb-overlay"></div></div>
+          <div><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.35rem"><h3 style="font-family:'Playfair Display',serif;font-size:1.375rem;color:#111827">Aura Spaces</h3><span style="font-size:.65rem;color:#6B7280;text-transform:uppercase;letter-spacing:.1em;border:1px solid #E5E7EB;padding:.25rem .75rem;border-radius:999px;flex-shrink:0">Spatial</span></div><p style="font-size:.875rem;color:#6B7280">Translating physical wayfinding principles into a digital spatial navigation tool.</p></div>
+        </div>
+      </div>
+
+      <!-- Trusted By -->
+      <section style="border-top:1px solid #E5E7EB;padding-top:4rem;display:flex;flex-direction:column;gap:2rem;align-items:center">
+        <p style="font-size:.75rem;color:#6B7280;text-transform:uppercase;letter-spacing:.12em">Trusted By</p>
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:3rem;opacity:.5">
+          <span style="font-size:.875rem;font-weight:600;letter-spacing:.05em;color:#111827">STRIPE</span>
+          <span style="font-size:.875rem;font-weight:600;letter-spacing:.05em;color:#111827">AIRBNB</span>
+          <span style="font-size:.875rem;font-weight:600;letter-spacing:.05em;color:#111827">FIGMA</span>
+          <span style="font-size:.875rem;font-weight:600;letter-spacing:.05em;color:#111827">SPOTIFY</span>
+          <span style="font-size:.875rem;font-weight:600;letter-spacing:.05em;color:#111827">APPLE</span>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer style="border-top:1px solid #E5E7EB;background:#F9FAFB;padding:2rem 0">
+    <div style="max-width:1440px;margin-inline:auto;padding-inline:1.5rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem">
+      <p style="font-size:.75rem;color:#6B7280">&copy; 2025 Alex Law. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <Fragment slot="scripts">
+    <script>
+      document.querySelectorAll('.pill-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.getAttribute('data-filter');
+          document.querySelectorAll('.proj-card').forEach(card => {
+            const el = card as HTMLElement;
+            el.style.display = (filter === 'all' || card.getAttribute('data-cat') === filter) ? 'flex' : 'none';
+          });
+        });
+      });
+    </script>
+  </Fragment>
+</BaseLayout>

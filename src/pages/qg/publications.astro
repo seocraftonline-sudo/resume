@@ -1,0 +1,391 @@
+---
+import BaseLayout from '../../layouts/Base.astro';
+import QGNav from '../../components/QGNav.astro';
+---
+<BaseLayout title="Publications & Achievements — Alex Law" theme="qg">
+  <Fragment slot="head">
+    <link rel="stylesheet" href="/styles/rv.css" />
+    <style>
+      .deco{position:fixed;border-radius:50%;pointer-events:none;z-index:0}
+      .deco1{width:40%;height:40%;top:-10%;left:-10%;background:radial-gradient(circle,rgba(238,242,255,.5) 0%,transparent 70%);filter:blur(60px)}
+      .deco2{width:50%;height:50%;bottom:-10%;right:-5%;background:radial-gradient(circle,rgba(245,243,255,.4) 0%,transparent 70%);filter:blur(60px)}
+      .section{padding-block:5rem}
+      .sec-label{display:inline-flex;align-items:center;gap:.75rem;margin-bottom:3rem}
+      .sec-tag{font-size:.65rem;font-weight:500;color:var(--t2);text-transform:uppercase;letter-spacing:.18em;border:1px solid rgba(229,231,235,.7);padding:.3rem .85rem;border-radius:100px}
+      .sec-line{height:1px;background:var(--br);flex:1}
+      .pub-card{background:var(--ca);border-radius:24px;border:1px solid rgba(229,231,235,.7);box-shadow:var(--sh);padding:2.5rem;display:flex;align-items:flex-start;justify-content:space-between;gap:2rem;transition:all .25s ease}
+      .pub-card:hover{border-color:rgba(17,24,39,.2);box-shadow:0 8px 32px -8px rgba(0,0,0,.1)}
+      .pub-card .arr-btn{width:3rem;height:3rem;border-radius:50%;border:1px solid var(--br);display:flex;align-items:center;justify-content:center;color:var(--t1);flex-shrink:0;transition:all .2s ease}
+      .pub-card:hover .arr-btn{background:var(--t1);color:#fff;border-color:var(--t1)}
+      .speak-card{background:var(--ca);border-radius:24px;border:1px solid rgba(229,231,235,.7);box-shadow:var(--sh);padding:2.5rem;display:flex;flex-direction:column;transition:all .25s ease}
+      .speak-card:hover{border-color:rgba(17,24,39,.2)}
+      .icon-box{width:3rem;height:3rem;border-radius:12px;background:var(--bg2);border:1px solid var(--br);display:flex;align-items:center;justify-content:center;color:var(--t1);flex-shrink:0}
+      .cert-card{background:var(--ca);border-radius:24px;border:1px solid rgba(229,231,235,.7);box-shadow:var(--sh);padding:2rem;display:flex;align-items:flex-start;gap:1.5rem;transition:border .2s ease}
+      .cert-card:hover{border-color:rgba(17,24,39,.2)}
+      .award-block{border-left:2px solid var(--br);padding-left:1.5rem;transition:border-color .2s ease}
+      .award-block:hover{border-color:rgba(17,24,39,.3)}
+      .logo-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2rem;align-items:center;justify-items:center;opacity:.5;transition:opacity .4s ease}
+      .logo-grid:hover{opacity:1}
+      .logo-item{display:flex;align-items:center;justify-content:center}
+      @media(max-width:767px){.logo-grid{grid-template-columns:repeat(2,1fr)}.pub-card{flex-direction:column}.pub-card .arr-btn{align-self:flex-end}.awards-grid{grid-template-columns:1fr}.speak-grid{grid-template-columns:1fr}}
+    </style>
+  </Fragment>
+
+  <div class="deco deco1"></div>
+  <div class="deco deco2"></div>
+
+  <QGNav active="publications" />
+
+  <main style="padding-top:5rem;position:relative;z-index:1">
+
+    <!-- ── PAGE INTRO ── -->
+    <section style="max-width:1440px;margin-inline:auto;padding:5rem 1.5rem 4rem">
+      <div style="display:flex;flex-wrap:wrap;gap:6rem;align-items:flex-start">
+        <div style="flex:1;min-width:280px">
+          <h1 style="font-family:var(--fs);font-size:clamp(3rem,6vw,5rem);font-weight:500;line-height:1.05;letter-spacing:-.03em;color:var(--t1)">Validation &amp;<br/>Discourse</h1>
+        </div>
+        <div style="flex:1;min-width:280px;padding-top:.5rem">
+          <p style="font-size:1.1rem;color:var(--t2);font-weight:300;line-height:1.75;max-width:500px">
+            A formal record of intellectual contributions, external validation, and continuous learning. These artifacts represent the rigorous standard applied to every project — moving beyond internal execution to industry-wide discourse.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── RECOGNIZED BY ── -->
+    <section class="section" style="max-width:1440px;margin-inline:auto;padding-inline:1.5rem">
+      <div class="sec-label" style="width:100%">
+        <span class="sec-tag">Recognized By</span>
+        <div class="sec-line" style="max-width:20rem"></div>
+      </div>
+      <div class="logo-grid">
+        <!-- AWS -->
+        <div class="logo-item">
+          <svg width="48" height="29" viewBox="0 0 80 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="color:var(--t2)">
+            <text x="0" y="36" font-size="28" font-weight="700" fill="currentColor" font-family="sans-serif">AWS</text>
+          </svg>
+        </div>
+        <!-- Google -->
+        <div class="logo-item">
+          <svg width="72" height="24" viewBox="0 0 72 24" fill="none" style="color:var(--t2)">
+            <text x="0" y="20" font-size="18" font-weight="500" fill="currentColor" font-family="sans-serif">Google</text>
+          </svg>
+        </div>
+        <!-- Figma -->
+        <div class="logo-item">
+          <svg width="56" height="24" viewBox="0 0 56 24" fill="none" style="color:var(--t2)">
+            <text x="0" y="20" font-size="18" font-weight="500" fill="currentColor" font-family="sans-serif">Figma</text>
+          </svg>
+        </div>
+        <!-- Apple -->
+        <div class="logo-item">
+          <svg width="56" height="24" viewBox="0 0 56 24" fill="none" style="color:var(--t2)">
+            <text x="0" y="20" font-size="18" font-weight="500" fill="currentColor" font-family="sans-serif">Apple</text>
+          </svg>
+        </div>
+        <!-- Microsoft -->
+        <div class="logo-item">
+          <svg width="80" height="24" viewBox="0 0 80 24" fill="none" style="color:var(--t2)">
+            <text x="0" y="20" font-size="14" font-weight="500" fill="currentColor" font-family="sans-serif">Microsoft</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PUBLICATIONS ── -->
+    <section class="section" style="max-width:1440px;margin-inline:auto;padding-inline:1.5rem">
+      <div class="sec-label" style="width:100%">
+        <span class="sec-tag">Publications &amp; Written Work</span>
+        <div class="sec-line"></div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:1.5rem">
+        <!-- Pub 1 -->
+        <div class="pub-card">
+          <div style="max-width:680px;display:flex;flex-direction:column;gap:.85rem">
+            <div style="display:flex;align-items:center;gap:.75rem">
+              <span style="font-size:.65rem;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--t2)">UX Collective</span>
+              <span style="width:4px;height:4px;border-radius:50%;background:var(--br)"></span>
+              <span style="font-size:.65rem;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--t2)">Oct 2023</span>
+            </div>
+            <h3 style="font-family:var(--fs);font-size:1.5rem;font-weight:500;color:var(--t1);line-height:1.25">The Architecture of Silence: Designing for Cognitive Ease</h3>
+            <p style="font-size:.875rem;color:var(--t2);line-height:1.75;font-weight:300">
+              A deep dive into reducing cognitive load in enterprise SaaS through subtractive design principles. Exploring how whitespace and intentional friction can improve task completion rates by up to 40% in complex workflows.
+            </p>
+          </div>
+          <a href="#" class="arr-btn" aria-label="Read article">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+
+        <!-- Pub 2 -->
+        <div class="pub-card">
+          <div style="max-width:680px;display:flex;flex-direction:column;gap:.85rem">
+            <div style="display:flex;align-items:center;gap:.75rem">
+              <span style="font-size:.65rem;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--t2)">Smashing Magazine</span>
+              <span style="width:4px;height:4px;border-radius:50%;background:var(--br)"></span>
+              <span style="font-size:.65rem;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--t2)">Mar 2022</span>
+            </div>
+            <h3 style="font-family:var(--fs);font-size:1.5rem;font-weight:500;color:var(--t1);line-height:1.25">Bridging the Gap: Design Systems as a Shared Language</h3>
+            <p style="font-size:.875rem;color:var(--t2);line-height:1.75;font-weight:300">
+              A comprehensive guide on structuring design tokens to perfectly align with engineering components — detailing a methodology for reducing design-to-development handoff friction and maintaining visual consistency at scale.
+            </p>
+          </div>
+          <a href="#" class="arr-btn" aria-label="Read article">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+
+        <!-- Pub 3 -->
+        <div class="pub-card">
+          <div style="max-width:680px;display:flex;flex-direction:column;gap:.85rem">
+            <div style="display:flex;align-items:center;gap:.75rem">
+              <span style="font-size:.65rem;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--t2)">A List Apart</span>
+              <span style="width:4px;height:4px;border-radius:50%;background:var(--br)"></span>
+              <span style="font-size:.65rem;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--t2)">Jun 2021</span>
+            </div>
+            <h3 style="font-family:var(--fs);font-size:1.5rem;font-weight:500;color:var(--t1);line-height:1.25">Motion as Meaning: The Ethics of Animation</h3>
+            <p style="font-size:.875rem;color:var(--t2);line-height:1.75;font-weight:300">
+              An examination of when animation aids comprehension and when it becomes noise. A principled framework for deciding where motion belongs in a product interface and how to measure its true communicative value.
+            </p>
+          </div>
+          <a href="#" class="arr-btn" aria-label="Read article">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SPEAKING ── -->
+    <section class="section" style="max-width:1440px;margin-inline:auto;padding-inline:1.5rem">
+      <div class="sec-label" style="width:100%">
+        <span class="sec-tag">Speaking &amp; Appearances</span>
+        <div class="sec-line" style="max-width:20rem"></div>
+      </div>
+
+      <div class="speak-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem">
+        <!-- Event 1 -->
+        <div class="speak-card">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:2rem">
+            <div class="icon-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+            </div>
+            <span style="font-size:.65rem;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--t2)">Nov 2023</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:.75rem;flex:1">
+            <span style="font-size:.75rem;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--t2)">Design Leadership Summit</span>
+            <h3 style="font-family:var(--fs);font-size:1.5rem;font-weight:500;color:var(--t1);line-height:1.2">Scaling Design Operations in Hyper-growth</h3>
+            <p style="font-size:.875rem;color:var(--t2);line-height:1.7;font-weight:300">
+              Keynote on transitioning from solo designer to managing a multi-disciplinary team without losing design quality or slowing product velocity.
+            </p>
+          </div>
+        </div>
+
+        <!-- Event 2 -->
+        <div class="speak-card">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:2rem">
+            <div class="icon-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+            </div>
+            <span style="font-size:.65rem;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--t2)">Aug 2022</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:.75rem;flex:1">
+            <span style="font-size:.75rem;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--t2)">UI Breakfast Podcast</span>
+            <h3 style="font-family:var(--fs);font-size:1.5rem;font-weight:500;color:var(--t1);line-height:1.2">The Psychology of Enterprise UX</h3>
+            <p style="font-size:.875rem;color:var(--t2);line-height:1.7;font-weight:300">
+              Guest episode discussing designing for expert users, managing complex data density, and the critical importance of keyboard accessibility in B2B software.
+            </p>
+          </div>
+        </div>
+
+        <!-- Event 3 -->
+        <div class="speak-card">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:2rem">
+            <div class="icon-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <span style="font-size:.65rem;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--t2)">Apr 2021</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:.75rem;flex:1">
+            <span style="font-size:.75rem;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--t2)">Config — Figma Community</span>
+            <h3 style="font-family:var(--fs);font-size:1.5rem;font-weight:500;color:var(--t1);line-height:1.2">Tokens First: A New Workflow for Scale</h3>
+            <p style="font-size:.875rem;color:var(--t2);line-height:1.7;font-weight:300">
+              Workshop session demonstrating how design tokens, when treated as the source of truth, can radically simplify how teams manage brand evolution across large product portfolios.
+            </p>
+          </div>
+        </div>
+
+        <!-- Event 4 -->
+        <div class="speak-card">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:2rem">
+            <div class="icon-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            </div>
+            <span style="font-size:.65rem;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--t2)">Sep 2020</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:.75rem;flex:1">
+            <span style="font-size:.75rem;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--t2)">Product Design Week</span>
+            <h3 style="font-family:var(--fs);font-size:1.5rem;font-weight:500;color:var(--t1);line-height:1.2">Clarity Over Cleverness</h3>
+            <p style="font-size:.875rem;color:var(--t2);line-height:1.7;font-weight:300">
+              Panel discussion on restraint as a design virtue — why the hardest and most valuable skill a designer can develop is knowing what to leave out entirely.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CERTIFICATIONS + AWARDS ── -->
+    <section class="section" style="max-width:1440px;margin-inline:auto;padding-inline:1.5rem">
+      <div class="awards-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem">
+
+        <!-- Certifications -->
+        <div>
+          <div class="sec-label" style="width:100%">
+            <span class="sec-tag">Professional Certifications</span>
+            <div class="sec-line"></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:1.25rem">
+            <div class="cert-card">
+              <div class="icon-box">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+              </div>
+              <div style="flex:1">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:.5rem;margin-bottom:.4rem">
+                  <h4 style="font-size:1rem;font-weight:500;color:var(--t1)">Certified Usability Analyst (CUA)</h4>
+                  <a href="#" style="color:var(--t2);flex-shrink:0;transition:color .2s ease">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                  </a>
+                </div>
+                <p style="font-size:.8125rem;color:var(--t2);margin-bottom:.5rem">Human Factors International</p>
+                <div style="display:flex;gap:.75rem;font-size:.7rem;color:var(--t2)">
+                  <span>Issued: Jan 2021</span>
+                  <span>·</span>
+                  <span>ID: 2021-8842</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="cert-card">
+              <div class="icon-box">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div style="flex:1">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:.5rem;margin-bottom:.4rem">
+                  <h4 style="font-size:1rem;font-weight:500;color:var(--t1)">Accessibility Core Competencies</h4>
+                  <a href="#" style="color:var(--t2);flex-shrink:0;transition:color .2s ease">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                  </a>
+                </div>
+                <p style="font-size:.8125rem;color:var(--t2);margin-bottom:.5rem">IAAP — International Association of Accessibility Professionals</p>
+                <div style="display:flex;gap:.75rem;font-size:.7rem;color:var(--t2)">
+                  <span>Issued: Mar 2022</span>
+                  <span>·</span>
+                  <span>ID: CPACC-492</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="cert-card">
+              <div class="icon-box">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+              <div style="flex:1">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:.5rem;margin-bottom:.4rem">
+                  <h4 style="font-size:1rem;font-weight:500;color:var(--t1)">Google UX Design Certificate</h4>
+                  <a href="#" style="color:var(--t2);flex-shrink:0;transition:color .2s ease">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                  </a>
+                </div>
+                <p style="font-size:.8125rem;color:var(--t2);margin-bottom:.5rem">Google via Coursera</p>
+                <div style="display:flex;gap:.75rem;font-size:.7rem;color:var(--t2)">
+                  <span>Issued: Nov 2020</span>
+                  <span>·</span>
+                  <span>ID: GUXD-7731</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Awards -->
+        <div>
+          <div class="sec-label" style="width:100%">
+            <span class="sec-tag">Awards &amp; Recognition</span>
+            <div class="sec-line"></div>
+          </div>
+          <div style="background:var(--ca);border-radius:24px;border:1px solid rgba(229,231,235,.7);box-shadow:var(--sh);padding:2.5rem;display:flex;flex-direction:column;gap:2.5rem;position:relative;overflow:hidden">
+            <div style="position:absolute;top:0;right:0;width:8rem;height:8rem;background:var(--bg2);border-radius:0 0 0 100%;opacity:.7"></div>
+            <div style="position:relative;z-index:1;display:flex;flex-direction:column;gap:2.5rem">
+              <div class="award-block">
+                <div style="font-size:.65rem;font-weight:500;text-transform:uppercase;letter-spacing:.15em;color:var(--t2);margin-bottom:.5rem">2023</div>
+                <h4 style="font-family:var(--fs);font-size:1.1rem;font-weight:500;color:var(--t1);margin-bottom:.35rem">Best Enterprise Software Design</h4>
+                <p style="font-size:.8125rem;color:var(--t2);margin-bottom:.5rem">Awwwards</p>
+                <p style="font-size:.8125rem;color:var(--t2);line-height:1.6;font-weight:300">Recognized for the complete redesign of the DataFlow analytics dashboard, simplifying complex query building for non-technical users.</p>
+              </div>
+              <div class="award-block">
+                <div style="font-size:.65rem;font-weight:500;text-transform:uppercase;letter-spacing:.15em;color:var(--t2);margin-bottom:.5rem">2022</div>
+                <h4 style="font-family:var(--fs);font-size:1.1rem;font-weight:500;color:var(--t1);margin-bottom:.35rem">Featured in Design Tools Survey</h4>
+                <p style="font-size:.8125rem;color:var(--t2);margin-bottom:.5rem">State of Design Tools</p>
+                <p style="font-size:.8125rem;color:var(--t2);line-height:1.6;font-weight:300">The Tokens First workshop methodology cited as a top contributor to modern design-to-engineering workflow improvements.</p>
+              </div>
+              <div class="award-block">
+                <div style="font-size:.65rem;font-weight:500;text-transform:uppercase;letter-spacing:.15em;color:var(--t2);margin-bottom:.5rem">2021</div>
+                <h4 style="font-family:var(--fs);font-size:1.1rem;font-weight:500;color:var(--t1);margin-bottom:.35rem">UX Innovation Award</h4>
+                <p style="font-size:.8125rem;color:var(--t2);margin-bottom:.5rem">Interaction Design Association (IxDA)</p>
+                <p style="font-size:.8125rem;color:var(--t2);line-height:1.6;font-weight:300">Awarded for developing a novel, accessible navigation pattern for high-density financial trading platforms.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ACADEMIC RESEARCH ── -->
+    <section class="section" style="max-width:1440px;margin-inline:auto;padding-inline:1.5rem">
+      <div class="sec-label" style="width:100%">
+        <span class="sec-tag">Academic Research</span>
+        <div class="sec-line"></div>
+      </div>
+      <div class="pub-card" style="align-items:center">
+        <div style="display:flex;align-items:flex-start;gap:2rem;flex:1">
+          <div style="width:4rem;height:4rem;border-radius:20px;background:var(--bg2);border:1px solid var(--br);display:flex;align-items:center;justify-content:center;color:var(--t1);flex-shrink:0">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:.85rem;max-width:680px">
+            <div style="display:flex;align-items:center;gap:.75rem">
+              <span style="font-size:.65rem;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--t2)">Master's Thesis</span>
+              <span style="width:4px;height:4px;border-radius:50%;background:var(--br)"></span>
+              <span style="font-size:.65rem;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--t2)">University of Design</span>
+            </div>
+            <h3 style="font-family:var(--fs);font-size:1.5rem;font-weight:500;color:var(--t1);line-height:1.25">The Ethics of Persuasive Design in Digital Habit Formation</h3>
+            <p style="font-size:.875rem;color:var(--t2);line-height:1.75;font-weight:300">
+              An extensive research project examining the psychological mechanisms behind infinite scroll, variable rewards, and dark patterns. The thesis proposed a framework for ethical engagement metrics that prioritize user wellbeing over time-in-app, which later formed the basis of my approach to sustainable product design.
+            </p>
+          </div>
+        </div>
+        <a href="#" class="arr-btn" aria-label="Read thesis">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer style="border-top:1px solid var(--br);background:var(--bg);padding:2rem 0;position:relative;z-index:1">
+    <div style="max-width:1440px;margin-inline:auto;padding-inline:1.5rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem">
+      <p style="font-size:.75rem;color:var(--t2)">&copy; 2025 Alex Law. All rights reserved.</p>
+      <div style="display:flex;gap:1.5rem">
+        <a href="#" aria-label="Twitter" style="color:var(--t2);transition:color .2s ease">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+        </a>
+        <a href="#" aria-label="LinkedIn" style="color:var(--t2);transition:color .2s ease">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="#" aria-label="Dribbble" style="color:var(--t2);transition:color .2s ease">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+</BaseLayout>

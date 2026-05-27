@@ -1,0 +1,168 @@
+---
+export interface Props {
+  active?: string;
+}
+const { active = '' } = Astro.props;
+
+const isActive = (page: string) => active === page;
+---
+
+<header id="qg-header" style="position:fixed;top:0;width:100%;z-index:50;background:rgba(249,250,251,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(229,231,235,.5);transition:box-shadow .3s ease">
+  <div style="max-width:1440px;margin-inline:auto;padding-inline:1.5rem 1.5rem;height:5rem;display:flex;align-items:center;justify-content:space-between">
+
+    <!-- Logo -->
+    <a href="/qg/" style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:600;letter-spacing:-.02em;color:#111827;flex-shrink:0">A. Law</a>
+
+    <!-- Desktop Nav -->
+    <nav id="qg-desk-nav" style="display:flex;align-items:center;gap:2rem">
+      <a href="/qg/" style={`font-size:.875rem;font-weight:500;color:${isActive('home') ? '#111827' : '#6B7280'};${isActive('home') ? 'border-bottom:2px solid #111827;padding-bottom:2px;' : ''}transition:color .2s ease`}>Home</a>
+
+      <!-- Work dropdown -->
+      <div class="qg-dd" style="position:relative">
+        <button class="qg-dd-btn" style={`display:flex;align-items:center;gap:.3rem;font-size:.875rem;font-weight:500;color:${isActive('work') || isActive('projects') ? '#111827' : '#6B7280'};${isActive('work') || isActive('projects') ? 'border-bottom:2px solid #111827;padding-bottom:2px;' : ''}background:none;border:none;cursor:pointer;transition:color .2s ease;font-family:'Inter',sans-serif`}>
+          Work
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="qg-dd-arrow" style="transition:transform .2s ease;margin-top:1px"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="qg-dd-menu" style="position:absolute;top:calc(100% + .75rem);left:50%;transform:translateX(-50%);min-width:180px;background:#fff;border:1px solid #E5E7EB;border-radius:16px;box-shadow:0 8px 32px -8px rgba(0,0,0,.12);padding:.5rem;opacity:0;pointer-events:none;transition:all .2s cubic-bezier(.4,0,.2,1);transform-origin:top center">
+          <a href="/qg/portfolio/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:#6B7280;transition:all .15s ease" class="qg-dd-item">Portfolio</a>
+          <a href="/qg/projects/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:#6B7280;transition:all .15s ease" class="qg-dd-item">Projects</a>
+        </div>
+      </div>
+
+      <!-- About dropdown -->
+      <div class="qg-dd" style="position:relative">
+        <button class="qg-dd-btn" style={`display:flex;align-items:center;gap:.3rem;font-size:.875rem;font-weight:500;color:${isActive('about') || isActive('resume') || isActive('skills') ? '#111827' : '#6B7280'};${isActive('about') || isActive('resume') || isActive('skills') ? 'border-bottom:2px solid #111827;padding-bottom:2px;' : ''}background:none;border:none;cursor:pointer;transition:color .2s ease;font-family:'Inter',sans-serif`}>
+          About
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="qg-dd-arrow" style="transition:transform .2s ease;margin-top:1px"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="qg-dd-menu" style="position:absolute;top:calc(100% + .75rem);left:50%;transform:translateX(-50%);min-width:180px;background:#fff;border:1px solid #E5E7EB;border-radius:16px;box-shadow:0 8px 32px -8px rgba(0,0,0,.12);padding:.5rem;opacity:0;pointer-events:none;transition:all .2s cubic-bezier(.4,0,.2,1);transform-origin:top center">
+          <a href="/qg/about/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:#6B7280;transition:all .15s ease" class="qg-dd-item">About Me</a>
+          <a href="/qg/resume/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:#6B7280;transition:all .15s ease" class="qg-dd-item">Resume</a>
+          <a href="/qg/skills/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:#6B7280;transition:all .15s ease" class="qg-dd-item">Skills</a>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <a href="/qg/services/" style={`font-size:.875rem;font-weight:500;color:${isActive('services') ? '#111827' : '#6B7280'};${isActive('services') ? 'border-bottom:2px solid #111827;padding-bottom:2px;' : ''}transition:color .2s ease`}>Services</a>
+
+      <!-- Insights dropdown -->
+      <div class="qg-dd" style="position:relative">
+        <button class="qg-dd-btn" style={`display:flex;align-items:center;gap:.3rem;font-size:.875rem;font-weight:500;color:${isActive('blog') || isActive('publications') || isActive('testimonials') ? '#111827' : '#6B7280'};${isActive('blog') || isActive('publications') || isActive('testimonials') ? 'border-bottom:2px solid #111827;padding-bottom:2px;' : ''}background:none;border:none;cursor:pointer;transition:color .2s ease;font-family:'Inter',sans-serif`}>
+          Insights
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="qg-dd-arrow" style="transition:transform .2s ease;margin-top:1px"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="qg-dd-menu" style="position:absolute;top:calc(100% + .75rem);left:50%;transform:translateX(-50%);min-width:180px;background:#fff;border:1px solid #E5E7EB;border-radius:16px;box-shadow:0 8px 32px -8px rgba(0,0,0,.12);padding:.5rem;opacity:0;pointer-events:none;transition:all .2s cubic-bezier(.4,0,.2,1);transform-origin:top center">
+          <a href="/qg/blog/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:#6B7280;transition:all .15s ease" class="qg-dd-item">Blog</a>
+          <a href="/qg/publications/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:#6B7280;transition:all .15s ease" class="qg-dd-item">Publications</a>
+          <a href="/qg/testimonials/" style="display:block;padding:.625rem 1rem;border-radius:10px;font-size:.8125rem;color:#6B7280;transition:all .15s ease" class="qg-dd-item">Testimonials</a>
+        </div>
+      </div>
+
+      <a href="/qg/contact/" style={`font-size:.875rem;font-weight:500;color:${isActive('contact') ? '#111827' : '#6B7280'};${isActive('contact') ? 'border-bottom:2px solid #111827;padding-bottom:2px;' : ''}transition:color .2s ease`}>Contact</a>
+    </nav>
+
+    <!-- Right actions -->
+    <div style="display:flex;align-items:center;gap:1rem">
+      <a href="/qg/contact/" id="qg-mail-btn" style="width:2.5rem;height:2.5rem;border-radius:50%;background:#fff;box-shadow:0 4px 20px -2px rgba(0,0,0,.05);display:flex;align-items:center;justify-content:center;color:#111827;transition:box-shadow .2s ease" aria-label="Email">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </a>
+      <!-- Mobile hamburger -->
+      <button id="qg-mob-toggle" aria-label="Menu" style="display:none;padding:.5rem;background:none;border:none;color:#111827;cursor:pointer">
+        <svg id="qg-menu-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg id="qg-close-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="qg-mob-menu" style="display:none;flex-direction:column;padding:1rem 1.5rem 1.5rem;border-top:1px solid #E5E7EB;background:rgba(249,250,251,.97);backdrop-filter:blur(16px)">
+    <a href="/qg/" style="padding:.75rem 0;font-size:.9375rem;color:#111827;border-bottom:1px solid #F3F4F6">Home</a>
+    <div style="padding:.75rem 0;border-bottom:1px solid #F3F4F6">
+      <span style="font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:#6B7280;display:block;margin-bottom:.5rem">Work</span>
+      <div style="display:flex;gap:1.5rem;padding-left:.5rem">
+        <a href="/qg/portfolio/" style="font-size:.875rem;color:#374151">Portfolio</a>
+        <a href="/qg/projects/" style="font-size:.875rem;color:#374151">Projects</a>
+      </div>
+    </div>
+    <div style="padding:.75rem 0;border-bottom:1px solid #F3F4F6">
+      <span style="font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:#6B7280;display:block;margin-bottom:.5rem">About</span>
+      <div style="display:flex;gap:1.5rem;padding-left:.5rem">
+        <a href="/qg/about/" style="font-size:.875rem;color:#374151">About Me</a>
+        <a href="/qg/resume/" style="font-size:.875rem;color:#374151">Resume</a>
+        <a href="/qg/skills/" style="font-size:.875rem;color:#374151">Skills</a>
+      </div>
+    </div>
+    <a href="/qg/services/" style="padding:.75rem 0;font-size:.9375rem;color:#111827;border-bottom:1px solid #F3F4F6">Services</a>
+    <div style="padding:.75rem 0;border-bottom:1px solid #F3F4F6">
+      <span style="font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:#6B7280;display:block;margin-bottom:.5rem">Insights</span>
+      <div style="display:flex;gap:1.5rem;padding-left:.5rem">
+        <a href="/qg/blog/" style="font-size:.875rem;color:#374151">Blog</a>
+        <a href="/qg/publications/" style="font-size:.875rem;color:#374151">Publications</a>
+        <a href="/qg/testimonials/" style="font-size:.875rem;color:#374151">Testimonials</a>
+      </div>
+    </div>
+    <a href="/qg/contact/" style="padding:.75rem 0;font-size:.9375rem;color:#111827">Contact</a>
+  </div>
+</header>
+
+<script>
+  // Dropdown logic
+  document.querySelectorAll('.qg-dd').forEach(dd => {
+    const btn = dd.querySelector('.qg-dd-btn') as HTMLElement;
+    const menu = dd.querySelector('.qg-dd-menu') as HTMLElement;
+    const arrow = dd.querySelector('.qg-dd-arrow') as HTMLElement;
+    let open = false;
+    const show = () => {
+      menu.style.opacity = '1';
+      menu.style.pointerEvents = 'auto';
+      menu.style.transform = 'translateX(-50%) translateY(0)';
+      arrow.style.transform = 'rotate(180deg)';
+      open = true;
+    };
+    const hide = () => {
+      menu.style.opacity = '0';
+      menu.style.pointerEvents = 'none';
+      menu.style.transform = 'translateX(-50%) translateY(-4px)';
+      arrow.style.transform = 'rotate(0)';
+      open = false;
+    };
+    dd.addEventListener('mouseenter', show);
+    dd.addEventListener('mouseleave', hide);
+    btn.addEventListener('click', () => open ? hide() : show());
+  });
+
+  // Hover on dropdown items
+  document.querySelectorAll('.qg-dd-item').forEach(item => {
+    const el = item as HTMLElement;
+    el.addEventListener('mouseenter', () => { el.style.background = '#F9FAFB'; el.style.color = '#111827'; });
+    el.addEventListener('mouseleave', () => { el.style.background = ''; el.style.color = '#6B7280'; });
+  });
+
+  // Mobile toggle
+  const toggle = document.getElementById('qg-mob-toggle') as HTMLElement;
+  const menu = document.getElementById('qg-mob-menu') as HTMLElement;
+  const menuIcon = document.getElementById('qg-menu-icon') as HTMLElement;
+  const closeIcon = document.getElementById('qg-close-icon') as HTMLElement;
+  let mobOpen = false;
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      mobOpen = !mobOpen;
+      menu.style.display = mobOpen ? 'flex' : 'none';
+      menuIcon.style.display = mobOpen ? 'none' : 'block';
+      closeIcon.style.display = mobOpen ? 'block' : 'none';
+    });
+  }
+
+  // Responsive
+  const check = () => {
+    const mob = window.innerWidth < 768;
+    const desk = document.getElementById('qg-desk-nav') as HTMLElement;
+    const mailBtn = document.getElementById('qg-mail-btn') as HTMLElement;
+    if (desk) desk.style.display = mob ? 'none' : 'flex';
+    if (toggle) toggle.style.display = mob ? 'flex' : 'none';
+    if (mailBtn) mailBtn.style.display = mob ? 'none' : 'flex';
+    if (!mob && menu) { menu.style.display = 'none'; mobOpen = false; menuIcon.style.display = 'block'; closeIcon.style.display = 'none'; }
+  };
+  check();
+  window.addEventListener('resize', check);
+</script>
